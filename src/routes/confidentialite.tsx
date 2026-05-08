@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/LanguageContext";
 import { config } from "@/lib/config";
 import { LegalPageWrap } from "@/components/layout/LegalPageWrap";
+import { SchemaJsonLd, breadcrumbs } from "@/components/layout/SchemaJsonLd";
 
 /**
  * Politique de confidentialité — conforme Loi 25 Quebec (en vigueur sept 2023).
@@ -36,6 +37,7 @@ function PrivacyPage() {
           : `Last updated — ${config.legal.effectiveDate}`
       }
     >
+      <SchemaJsonLd schema={breadcrumbs.confidentialite(lang)} />
       {isFr ? <BodyFr /> : <BodyEn />}
     </LegalPageWrap>
   );

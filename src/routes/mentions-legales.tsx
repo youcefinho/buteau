@@ -3,6 +3,7 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { config } from "@/lib/config";
 import { LegalPageWrap } from "@/components/layout/LegalPageWrap";
 import { AmfDisclaimer } from "@/components/layout/AmfDisclaimer";
+import { SchemaJsonLd, breadcrumbs } from "@/components/layout/SchemaJsonLd";
 
 export const Route = createFileRoute("/mentions-legales")({
   component: MentionsLegalesPage,
@@ -21,6 +22,7 @@ function MentionsLegalesPage() {
       title={isFr ? "Mentions légales" : "Legal notice"}
       lastUpdated={lastUpdatedLabel}
     >
+      <SchemaJsonLd schema={breadcrumbs.mentionsLegales(lang)} />
       {isFr ? <BodyFr /> : <BodyEn />}
     </LegalPageWrap>
   );

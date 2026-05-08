@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/LanguageContext";
 import { LegalPageWrap } from "@/components/layout/LegalPageWrap";
+import { SchemaJsonLd, breadcrumbs } from "@/components/layout/SchemaJsonLd";
 import { glossary } from "@/lib/glossary";
 
 /**
@@ -45,6 +46,7 @@ function LexiquePage() {
       eyebrow={isFr ? "Ressource" : "Resource"}
       title={isFr ? "Lexique hypothécaire" : "Mortgage glossary"}
     >
+      <SchemaJsonLd schema={breadcrumbs.lexique(lang)} />
       <p className="text-base leading-relaxed text-[color:var(--color-navy-deep)]/85">
         {isFr
           ? "14 termes essentiels pour comprendre votre dossier hypothécaire au Québec. Sources officielles : SCHL, AMF, ARC, Code civil du Québec."

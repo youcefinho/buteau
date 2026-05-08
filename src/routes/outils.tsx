@@ -7,15 +7,17 @@ import { TikTokTeaser } from "@/components/landing/TikTokTeaser";
 import { BlogTeaser } from "@/components/landing/BlogTeaser";
 import { DocumentsGrid } from "@/components/landing/DocumentsGrid";
 import { ToolsFinalCta } from "@/components/landing/ToolsFinalCta";
+import { SchemaJsonLd, breadcrumbs } from "@/components/layout/SchemaJsonLd";
 
 export const Route = createFileRoute("/outils")({
   component: ToolsPage,
 });
 
 function ToolsPage() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   return (
     <main id="main">
+      <SchemaJsonLd schema={breadcrumbs.tools(lang)} />
       <PageHero
         eyebrow={t("tools.hero.eyebrow")}
         title={t("tools.hero.title")}

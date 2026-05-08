@@ -5,29 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#10223d" />
 
-    <title>Équipe Buteau — Courtage hypothécaire | L'hypothèque autrement</title>
+    <title>Équipe Buteau — Courtier hypothécaire Quebec | Planiprêt</title>
     <meta
       name="description"
-      content="Équipe Buteau — courtiers hypothécaires Planiprêt. Achat, refinancement, renouvellement, investissement. Service rigoureux, transparent, partout au Québec."
+      content="Équipe Buteau, courtiers hypothécaires Planiprêt à Laval. Achat, refinancement, renouvellement, investissement. Service rigoureux et transparent, partout au Québec."
     />
+
+    <link rel="canonical" href="https://equipe-buteau.intralysqc.workers.dev/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fr_CA" />
+    <meta property="og:locale:alternate" content="en_CA" />
+    <meta property="og:site_name" content="Équipe Buteau" />
     <meta property="og:title" content="Équipe Buteau — L'hypothèque autrement" />
     <meta
       property="og:description"
-      content="Courtiers hypothécaires Planiprêt. Une équipe qui structure votre financement avec rigueur et transparence, partout au Québec."
+      content="Courtiers hypothécaires Planiprêt à Laval. Une équipe qui structure votre financement avec rigueur, partout au Québec."
     />
     <meta property="og:url" content="https://equipe-buteau.intralysqc.workers.dev/" />
+    <meta property="og:image" content="https://equipe-buteau.intralysqc.workers.dev/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Équipe Buteau — Courtage hypothécaire Quebec" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Équipe Buteau — L'hypothèque autrement" />
     <meta
       name="twitter:description"
-      content="Courtiers hypothécaires Planiprêt. Achat, refinancement, renouvellement, investissement."
+      content="Courtiers hypothécaires Planiprêt à Laval. Achat, refinancement, renouvellement, investissement, partout au Québec."
     />
+    <meta name="twitter:image" content="https://equipe-buteau.intralysqc.workers.dev/og-image.jpg" />
+
+    <!-- Robots / SEO -->
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Équipe Buteau" />
+    <meta name="geo.region" content="CA-QC" />
+    <meta name="geo.placename" content="Laval" />
 
     <!-- Fonts (préchargement) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,7 +52,74 @@
       rel="stylesheet"
     />
 
-    <!-- Schema.org placeholders — sera enrichi Phase 8 (FinancialService + AggregateRating si avis publics vérifiés) -->
+    <!-- Schema.org JSON-LD : FinancialService LocalBusiness (root entity, partagee via @id) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": ["FinancialService", "LocalBusiness"],
+            "@id": "https://equipe-buteau.intralysqc.workers.dev/#business",
+            "name": "Équipe Buteau",
+            "alternateName": "Andrew Buteau, courtier hypothécaire",
+            "description": "Courtage hypothécaire — achat, refinancement, renouvellement, investissement immobilier. Cabinet d'attache : Planiprêt Cabinet en Courtage Hypothécaire. Inscrit auprès de l'AMF.",
+            "url": "https://equipe-buteau.intralysqc.workers.dev/",
+            "logo": "https://equipe-buteau.intralysqc.workers.dev/logo.png",
+            "image": "https://equipe-buteau.intralysqc.workers.dev/og-image.jpg",
+            "telephone": "+1-438-494-4567",
+            "email": "gestion@equipebuteau.com",
+            "priceRange": "$$",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "2300 boul. Saint-Martin Est, suite 200",
+              "addressLocality": "Laval",
+              "addressRegion": "QC",
+              "postalCode": "H7E 5P3",
+              "addressCountry": "CA"
+            },
+            "areaServed": [
+              { "@type": "AdministrativeArea", "name": "Quebec" },
+              { "@type": "City", "name": "Laval" },
+              { "@type": "City", "name": "Montréal" },
+              { "@type": "City", "name": "Rive-Nord" },
+              { "@type": "City", "name": "Rive-Sud" },
+              { "@type": "City", "name": "Laurentides" }
+            ],
+            "founder": {
+              "@type": "Person",
+              "name": "Andrew Buteau",
+              "jobTitle": "Courtier hypothécaire — Fondateur"
+            },
+            "parentOrganization": {
+              "@type": "Organization",
+              "name": "Planiprêt Cabinet en Courtage Hypothécaire"
+            },
+            "knowsAbout": [
+              "Achat hypothécaire",
+              "Refinancement",
+              "Renouvellement",
+              "Investissement immobilier",
+              "Méthode Smith",
+              "RAP",
+              "CELIAPP"
+            ],
+            "sameAs": [
+              "https://www.facebook.com/andrewbuteaucourtierhypothecaire/",
+              "https://www.threads.com/@andrew.buteau",
+              "https://www.planipret.com/fr/courtier/andrew-buteau"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://equipe-buteau.intralysqc.workers.dev/#website",
+            "url": "https://equipe-buteau.intralysqc.workers.dev/",
+            "name": "Équipe Buteau",
+            "publisher": { "@id": "https://equipe-buteau.intralysqc.workers.dev/#business" },
+            "inLanguage": "fr-CA"
+          }
+        ]
+      }
+    </script>
   </head>
   <body class="antialiased">
     <div id="root"></div>
