@@ -26,6 +26,7 @@ function TeamPage() {
         eyebrow={t("team.hero.eyebrow")}
         title={t("team.hero.title")}
         subtitle={t("team.hero.subtitle")}
+        ornament="II"
       />
       <TeamGrid />
       <TeamMethod />

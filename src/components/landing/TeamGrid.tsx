@@ -17,36 +17,62 @@ export function TeamGrid() {
   );
 
   return (
-    <section className="py-24 surface-cream">
-      <Container size="xl">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+    <section className="py-24 md:py-28 surface-cream relative overflow-hidden">
+      {/* Filigrane "&" decoratif arriere-plan editorial */}
+      <span
+        aria-hidden="true"
+        className="absolute top-12 right-0 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/8 text-[28rem] leading-none pointer-events-none select-none"
+      >
+        &
+      </span>
+
+      <Container size="xl" className="relative">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
           {members.map((m, idx) => (
             <article
               key={idx}
-              className="group flex flex-col bg-[color:var(--color-surface)] overflow-hidden card-luxury"
+              className="group relative flex flex-col"
             >
-              {/* Photo */}
-              <div className="relative h-80 md:h-96 overflow-hidden bg-gradient-to-br from-[color:var(--color-navy)] to-[color:var(--color-taupe)]">
+              {/* Numéro filigrane top-left (01/02/03) */}
+              <span
+                aria-hidden="true"
+                className="absolute -top-2 -left-3 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/30 text-7xl md:text-8xl leading-none pointer-events-none select-none z-10 transition-colors duration-500 group-hover:text-[color:var(--color-bronze)]/35"
+              >
+                {String(idx + 1).padStart(2, "0")}
+              </span>
+
+              {/* Photo with editorial frame */}
+              <div className="relative h-96 md:h-[28rem] overflow-hidden bg-gradient-to-br from-[color:var(--color-navy)] to-[color:var(--color-taupe)]">
                 <img
                   src={m.photo}
                   alt={m.name}
                   loading="lazy"
-                  className="w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-[1.04]"
+                  className="w-full h-full object-cover object-[center_20%] transition-transform duration-[900ms] ease-out group-hover:scale-[1.05]"
+                />
+                {/* Subtle inner overlay au hover pour drama */}
+                <div
+                  className="absolute inset-0 bg-gradient-to-t from-[color:var(--color-navy-deep)]/35 via-transparent to-transparent opacity-60 transition-opacity duration-700 group-hover:opacity-30"
+                  aria-hidden="true"
                 />
               </div>
 
-              {/* Info + bio */}
-              <div className="p-8 md:p-10 flex flex-col flex-1">
-                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-xl md:text-2xl uppercase tracking-[0.04em] mb-2">
-                  {m.name}
-                </h3>
-                <div className="flex items-center gap-2.5 mb-5">
-                  <div className="w-8 h-0.5 bg-[color:var(--color-bronze)]" aria-hidden="true" />
+              {/* Info — design éditorial avec hierarchy magazine */}
+              <div className="pt-7 md:pt-8 space-y-4">
+                {/* Eyebrow rôle (uppercase tracking) */}
+                <div className="flex items-center gap-2.5">
+                  <div className="w-10 h-px bg-[color:var(--color-bronze)] transition-[width] duration-500 group-hover:w-16" aria-hidden="true" />
                   <p className="eyebrow text-[color:var(--color-taupe-dark)]">
                     {m.role}
                   </p>
                 </div>
-                <p className="text-sm md:text-base leading-relaxed text-[color:var(--color-navy-deep)]/85">
+
+                {/* Name display Cormorant italic accent */}
+                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-2xl md:text-3xl uppercase tracking-[0.02em] leading-tight">
+                  {m.name}
+                </h3>
+
+                {/* Bio Open Sans */}
+                <p className="text-sm md:text-base leading-[1.65] text-[color:var(--color-navy-deep)]/80 pt-2">
                   {m.bio}
                 </p>
               </div>

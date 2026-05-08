@@ -28,22 +28,30 @@ export function DocumentsGrid() {
           tone="light"
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-7 max-w-3xl mx-auto">
           {items.map((doc, idx) => {
             const Icon = ICONS[idx % ICONS.length];
             return (
               <article
                 key={idx}
-                className="group card-luxury p-7 flex items-start gap-5"
+                className="group card-luxury p-7 md:p-8 flex items-start gap-5 relative overflow-hidden"
               >
-                <div className="shrink-0 w-12 h-12 rounded-full bg-[color:var(--color-taupe)]/15 flex items-center justify-center text-[color:var(--color-bronze-deep)]">
-                  <Icon size={22} strokeWidth={1.75} aria-hidden="true" />
+                {/* Numéro filigrane Cormorant subtile */}
+                <span
+                  aria-hidden="true"
+                  className="absolute top-3 right-4 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/25 text-4xl leading-none pointer-events-none select-none"
+                >
+                  {String(idx + 1).padStart(2, "0")}
+                </span>
+
+                <div className="shrink-0 w-12 h-12 rounded-full bg-[color:var(--color-taupe)]/15 flex items-center justify-center text-[color:var(--color-bronze-deep)] transition-colors duration-500 group-hover:bg-[color:var(--color-bronze)]/15">
+                  <Icon size={20} strokeWidth={1.5} aria-hidden="true" />
                 </div>
-                <div className="flex-1 min-w-0">
+                <div className="flex-1 min-w-0 pr-6">
                   <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em] leading-snug mb-2">
                     {doc.title}
                   </h3>
-                  <p className="text-xs text-[color:var(--color-taupe-dark)] mb-3">{doc.meta}</p>
+                  <p className="text-xs italic text-[color:var(--color-taupe-dark)] mb-4">{doc.meta}</p>
                   <span className="inline-block eyebrow text-[color:var(--color-bronze-deep)] border-l-2 border-[color:var(--color-bronze)] pl-2.5">
                     {t("tools.documents.comingSoonLabel")}
                   </span>

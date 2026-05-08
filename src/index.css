@@ -90,6 +90,53 @@ body {
 }
 
 /* ============================================================
+   KEYFRAMES — luxury staggered reveal au mount
+   ============================================================ */
+
+@keyframes buteauFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes buteauFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes buteauWidth {
+  from {
+    transform: scaleX(0);
+    transform-origin: center;
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes buteauScale {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ============================================================
    UTILITIES — Grammaire visuelle Buteau
    ============================================================ */
 

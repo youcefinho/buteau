@@ -22,6 +22,7 @@ function ToolsPage() {
         eyebrow={t("tools.hero.eyebrow")}
         title={t("tools.hero.title")}
         subtitle={t("tools.hero.subtitle")}
+        ornament="IV"
       />
       <HypothequeCalculator />
       <GuidesGrid />

@@ -40,42 +40,41 @@ export function Hero() {
 
       <Container size="xl" className="relative py-32 md:py-40">
         <div className="text-center max-w-5xl mx-auto flex flex-col items-center">
-          {/* Eyebrow (Planiprêt — l'arrière-plan métier) */}
-          <p className="eyebrow text-[color:var(--color-taupe)] mb-6 md:mb-8 opacity-90">
+          {/* Eyebrow (Planiprêt — l'arrière-plan métier) — reveal step 1 */}
+          <p className="eyebrow text-[color:var(--color-taupe)] mb-6 md:mb-8 opacity-90 animate-[buteauFadeUp_800ms_ease-out_100ms_both]">
             <span className="inline-block w-6 h-px align-middle bg-[color:var(--color-taupe)] mr-3" />
             {t("home.hero.eyebrow")}
             <span className="inline-block w-6 h-px align-middle bg-[color:var(--color-taupe)] ml-3" />
           </p>
 
-          {/* Brand mark — placeholder Phase 9 (logo image client). Letter-spacing wide,
-              encadré par 2 fines lignes taupe pour signature éditoriale luxury. */}
-          <div className="relative inline-block">
+          {/* Brand mark — reveal step 2 (scale, more dramatic) */}
+          <div className="relative inline-block animate-[buteauScale_900ms_cubic-bezier(0.4,0,0.2,1)_300ms_both]">
             <p className="font-[var(--font-display)] text-[color:var(--color-cream)] text-6xl md:text-8xl lg:text-[8.5rem] font-extrabold tracking-[0.22em] leading-[0.95] pl-[0.22em]">
               {config.brandName}
             </p>
             <span
-              className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-12 md:w-20 h-px bg-[color:var(--color-bronze)]"
+              className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-12 md:w-20 h-px bg-[color:var(--color-bronze)] animate-[buteauWidth_700ms_ease-out_900ms_both]"
               aria-hidden="true"
             />
           </div>
 
-          {/* Tagline mega — Cormorant italic accent éditorial luxury */}
+          {/* Tagline mega — reveal step 3 */}
           <h1
-            className="font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/95 text-3xl md:text-5xl lg:text-[3.5rem] font-light tracking-[0.02em] leading-[1.05] mt-10 md:mt-12 max-w-3xl"
+            className="font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/95 text-3xl md:text-5xl lg:text-[3.5rem] font-light tracking-[0.02em] leading-[1.05] mt-10 md:mt-12 max-w-3xl animate-[buteauFadeUp_800ms_ease-out_700ms_both]"
           >
             {t("home.hero.title")}
           </h1>
 
-          {/* Decorative line taupe — fine, signature */}
-          <div className="w-24 md:w-32 h-px bg-[color:var(--color-taupe)] my-10 md:my-14" />
+          {/* Decorative line taupe — fine, signature — reveal step 4 */}
+          <div className="w-24 md:w-32 h-px bg-[color:var(--color-taupe)] my-10 md:my-14 animate-[buteauWidth_700ms_ease-out_1100ms_both]" />
 
-          {/* Subtitle — leading tight luxury (audit P2-L) */}
-          <p className="text-[color:var(--color-cream)]/85 text-base md:text-lg font-light leading-[1.45] max-w-xl mb-12">
+          {/* Subtitle — reveal step 5 */}
+          <p className="text-[color:var(--color-cream)]/85 text-base md:text-lg font-light leading-[1.45] max-w-xl mb-12 animate-[buteauFadeUp_700ms_ease-out_1200ms_both]">
             {t("home.hero.subtitle")}
           </p>
 
-          {/* CTA stack */}
-          <div className="flex flex-col sm:flex-row gap-5 items-center">
+          {/* CTA stack — reveal step 6 */}
+          <div className="flex flex-col sm:flex-row gap-5 items-center animate-[buteauFadeUp_700ms_ease-out_1400ms_both]">
             <a href="#contact" className="btn-bronze">
               {t("home.hero.ctaPrimary")}
             </a>

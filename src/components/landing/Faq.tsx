@@ -37,27 +37,34 @@ export function Faq() {
           tone="dark"
         />
 
-        <Accordion.Root type="single" collapsible className="space-y-4">
+        <Accordion.Root type="single" collapsible className="space-y-3">
           {items.map((item, idx) => (
             <Accordion.Item
               key={idx}
               value={`faq-${idx}`}
-              className="bg-[color:var(--color-cream)] border-2 border-[color:var(--color-taupe)] overflow-hidden"
+              className="group bg-[color:var(--color-cream)] border border-[color:var(--color-taupe)]/50 overflow-hidden transition-colors duration-300 data-[state=open]:border-[color:var(--color-bronze)]"
             >
               <Accordion.Header>
-                <Accordion.Trigger className="group w-full px-6 md:px-8 py-5 md:py-6 flex items-center justify-between text-left hover:bg-[color:var(--color-cream-warm)] transition-colors gap-4">
-                  <span className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-sm md:text-base uppercase tracking-[0.04em]">
+                <Accordion.Trigger className="w-full px-6 md:px-8 py-5 md:py-6 flex items-center justify-between text-left hover:bg-[color:var(--color-cream-warm)] transition-colors gap-5">
+                  {/* Numero filigrane Cormorant a gauche */}
+                  <span
+                    aria-hidden="true"
+                    className="font-[var(--font-editorial)] italic text-[color:var(--color-taupe)] group-data-[state=open]:text-[color:var(--color-bronze)] text-2xl shrink-0 transition-colors w-8"
+                  >
+                    {String(idx + 1).padStart(2, "0")}
+                  </span>
+                  <span className="flex-1 font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-sm md:text-base uppercase tracking-[0.04em] leading-snug">
                     {item.q}
                   </span>
                   <ChevronDown
-                    className="w-5 h-5 shrink-0 text-[color:var(--color-taupe-dark)] transition-transform duration-300 group-data-[state=open]:rotate-180"
+                    className="w-5 h-5 shrink-0 text-[color:var(--color-taupe-dark)] group-data-[state=open]:text-[color:var(--color-bronze)] transition-all duration-300 group-data-[state=open]:rotate-180"
                     aria-hidden="true"
                   />
                 </Accordion.Trigger>
               </Accordion.Header>
-              <Accordion.Content className="overflow-hidden data-[state=open]:animate-[accordionDown_220ms_ease-out] data-[state=closed]:animate-[accordionUp_180ms_ease-in]">
-                <div className="px-6 md:px-8 pb-6 pt-2 border-t-2 border-[color:var(--color-taupe)]/40">
-                  <p className="text-sm md:text-base leading-relaxed text-[color:var(--color-navy-deep)]/85">
+              <Accordion.Content className="overflow-hidden data-[state=open]:animate-[accordionDown_280ms_ease-out] data-[state=closed]:animate-[accordionUp_220ms_ease-in]">
+                <div className="px-6 md:px-8 pb-6 pt-2 ml-13 md:ml-16 border-t border-[color:var(--color-taupe)]/30">
+                  <p className="text-sm md:text-base leading-[1.65] text-[color:var(--color-navy-deep)]/80 pt-4">
                     {item.a}
                   </p>
                 </div>

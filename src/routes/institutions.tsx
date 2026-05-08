@@ -20,6 +20,7 @@ function InstitutionsPage() {
         eyebrow={t("institutions.hero.eyebrow")}
         title={t("institutions.hero.title")}
         subtitle={t("institutions.hero.subtitle")}
+        ornament="III"
       />
       <InsuranceNote />
       <LendersGrid />

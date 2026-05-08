@@ -40,22 +40,31 @@ export function ToolsTeaser() {
           tone="dark"
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
           {items.map((item, idx) => {
             const Icon = ICONS[idx % ICONS.length];
             return (
               <Link
                 key={idx}
                 to="/outils"
-                className="group block bg-[color:var(--color-cream)]/8 backdrop-blur-sm border border-[color:var(--color-cream)]/20 p-8 text-center transition-all duration-500 hover:bg-[color:var(--color-cream)]/15 hover:border-[color:var(--color-bronze)]/60 hover:-translate-y-1"
+                className="group relative block bg-[color:var(--color-cream)]/8 backdrop-blur-sm border border-[color:var(--color-cream)]/20 p-8 text-center transition-all duration-500 hover:bg-[color:var(--color-cream)]/15 hover:border-[color:var(--color-bronze)]/70 hover:-translate-y-1.5 overflow-hidden"
               >
-                <div className="mb-4 flex justify-center text-[color:var(--color-taupe)] group-hover:text-[color:var(--color-bronze-soft)] transition-colors">
-                  <Icon size={40} strokeWidth={1.5} aria-hidden="true" />
+                {/* Numéro Cormorant filigrane top-right */}
+                <span
+                  aria-hidden="true"
+                  className="absolute top-3 right-4 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/25 text-3xl leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-[color:var(--color-bronze)]/35"
+                >
+                  {String(idx + 1).padStart(2, "0")}
+                </span>
+
+                <div className="mb-5 flex justify-center text-[color:var(--color-taupe)] group-hover:text-[color:var(--color-bronze-soft)] transition-colors">
+                  <Icon size={36} strokeWidth={1.5} aria-hidden="true" />
                 </div>
-                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-lg uppercase tracking-[var(--tracking-eyebrow)] mb-2">
+                <div className="w-8 h-px bg-[color:var(--color-bronze)] mx-auto mb-4 transition-[width] duration-500 group-hover:w-14" />
+                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-base md:text-lg uppercase tracking-[var(--tracking-eyebrow)] mb-2 leading-snug">
                   {item.title}
                 </h3>
-                <p className="text-xs text-[color:var(--color-cream)]/70 leading-relaxed">
+                <p className="text-xs text-[color:var(--color-cream)]/70 leading-[1.6]">
                   {item.desc}
                 </p>
               </Link>
