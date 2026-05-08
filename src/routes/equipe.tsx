@@ -8,7 +8,7 @@ export const Route = createFileRoute("/equipe")({
 function TeamPage() {
   const { t } = useLanguage();
   return (
-    <main className="min-h-screen flex items-center justify-center p-12 surface-cream">
+    <main id="main" className="min-h-screen flex items-center justify-center p-12 pt-32 surface-cream">
       <div className="max-w-2xl text-center space-y-6">
         <p className="eyebrow">{t("team.hero.eyebrow")}</p>
         <h1 className="display text-4xl md:text-5xl">{t("team.hero.title")}</h1>

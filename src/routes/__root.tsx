@@ -1,4 +1,7 @@
 import { Outlet, createRootRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { SkipToContent } from "@/components/layout/SkipToContent";
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -7,8 +10,10 @@ export const Route = createRootRoute({
 function RootComponent() {
   return (
     <>
-      {/* Skip-to-content (a11y WCAG 2.4.1) — sera implémenté Phase 2 */}
+      <SkipToContent />
+      <Navbar />
       <Outlet />
+      <Footer />
     </>
   );
 }
