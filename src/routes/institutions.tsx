@@ -1,5 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/LanguageContext";
+import { PageHero } from "@/components/landing/PageHero";
+import { InsuranceNote } from "@/components/landing/InsuranceNote";
+import { LendersGrid } from "@/components/landing/LendersGrid";
+import { InstitutionMissing } from "@/components/landing/InstitutionMissing";
+import { CtaBlock } from "@/components/landing/CtaBlock";
 
 export const Route = createFileRoute("/institutions")({
   component: InstitutionsPage,
@@ -8,17 +13,16 @@ export const Route = createFileRoute("/institutions")({
 function InstitutionsPage() {
   const { t } = useLanguage();
   return (
-    <main id="main" className="min-h-screen flex items-center justify-center p-12 pt-32 surface-cream">
-      <div className="max-w-2xl text-center space-y-6">
-        <p className="eyebrow">{t("institutions.hero.eyebrow")}</p>
-        <h1 className="display text-4xl md:text-5xl">{t("institutions.hero.title")}</h1>
-        <p className="text-lg text-[color:var(--color-taupe-dark)]">
-          {t("institutions.hero.subtitle")}
-        </p>
-        <p className="text-sm italic mt-12 text-[color:var(--color-taupe-dark)]">
-          [Phase 1 placeholder — Page Institutions sera codée Phase 5 à partir de institutions.html]
-        </p>
-      </div>
+    <main id="main">
+      <PageHero
+        eyebrow={t("institutions.hero.eyebrow")}
+        title={t("institutions.hero.title")}
+        subtitle={t("institutions.hero.subtitle")}
+      />
+      <InsuranceNote />
+      <LendersGrid />
+      <InstitutionMissing />
+      <CtaBlock />
     </main>
   );
 }

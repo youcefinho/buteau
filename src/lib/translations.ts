@@ -317,18 +317,87 @@ export const translations = {
 
     institutions: {
       hero: {
-        eyebrow: "Nos partenaires",
-        title: "9 institutions financières à votre service",
+        eyebrow: "Adresses prêteurs",
+        title: "Adresses pour assurances",
         subtitle:
-          "Nous travaillons avec un large éventail de prêteurs pour vous offrir les meilleures conditions hypothécaires disponibles sur le marché.",
+          "Informations importantes pour votre preuve d'assurance habitation.",
       },
+      reassurance:
+        "Nous travaillons avec un large éventail de prêteurs pour vous offrir les meilleures conditions de financement adaptées à votre situation.",
       insurance: {
-        eyebrow: "Bon à savoir",
-        title: "Protégez votre investissement",
-        body: "Une bonne assurance habitation est essentielle pour sécuriser votre investissement immobilier. Nous pouvons vous orienter vers nos partenaires de confiance pour évaluer vos options et obtenir les meilleures conditions.",
+        eyebrow: "Important",
+        title: "Preuves d'assurance habitation valide",
+        bodyP1:
+          "Vous devrez avoir une preuve d'assurance habitation valide à compter de la date de l'acte de vente.",
+        attentionLabel: "Attention",
+        attentionP1:
+          "Le nom et l'adresse complète de l'institution financière devront apparaître sur la preuve d'assurance.",
+        attentionP2:
+          "Pour un refinancement, il est important d'aviser quand même vos assurances : même s'il n'y a pas de changement sur la police d'assurance ni sur l'adresse de la propriété assurée, votre preuve d'assurance doit afficher le bon créancier.",
       },
-      missingLabel: "Votre institution ne figure pas dans la liste ?",
-      missingCta: "Parlons-en ensemble",
+      lendersSectionTitle: "Adresses des institutions financières",
+      addressVariesNote: "L'adresse varie selon la Caisse choisie.",
+      lenders: [
+        {
+          name: "Banque Nationale",
+          address: "800, rue Saint-Jacques",
+          city: "Montréal (Québec) H3C 1A3",
+          logo: "https://static.wixstatic.com/media/60fa64_ef3269be7b644d2eb233adfb8f1ce3d4~mv2.jpg/v1/fill/w_300,h_300,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/bn_vid_hero_dark_fr.jpg",
+        },
+        {
+          name: "Société de services MCAP",
+          address: "200, rue King Ouest, bureau 400",
+          city: "Toronto (Ontario) M5H 3T4",
+          logo: "https://static.wixstatic.com/media/60fa64_bcf3ebc0984a426ca2bccc5ddfd9323a~mv2.webp/v1/fill/w_300,h_300,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/mcap-lg.webp",
+        },
+        {
+          name: "First National",
+          address: "2000, rue Peel, bureau 200",
+          city: "Montréal (Québec) H3A 2W5",
+          logo: "https://static.wixstatic.com/media/60fa64_596e739841a5440eb4ffe7cc1b894de0~mv2.png/v1/fill/w_300,h_300,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/first-national-financial-corporation--600.png",
+        },
+        {
+          name: "CIBC",
+          address: "81, rue Bay",
+          city: "Toronto (Ontario) M5J 0E7",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/CIBC_logo.svg/2560px-CIBC_logo.svg.png",
+        },
+        {
+          name: "CMLS",
+          address: "530 – 8e Avenue Sud-Ouest, Bureau 1000",
+          city: "Calgary (Alberta) T2P 3S8",
+          logo: "https://b2b2c.ca/wp-content/uploads/2021/04/CMLS-Financial.png",
+        },
+        {
+          name: "Banque Toronto-Dominion",
+          address: "1350, boulevard René-Lévesque Ouest",
+          city: "Montréal (Québec) H3G 1T4",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Toronto-Dominion_Bank_logo.svg/2048px-Toronto-Dominion_Bank_logo.svg.png",
+        },
+        {
+          name: "Banque Scotia",
+          address: "44, rue King Ouest",
+          city: "Toronto (Ontario) M5H 1H1",
+          logo: "https://static.wixstatic.com/media/60fa64_73e0863852c24c888713e4b252db98bb~mv2.png/v1/fill/w_300,h_300,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Scotiabank-1024x1024.png",
+        },
+        {
+          name: "La financière Manuvie",
+          address: "200 Bloor Street East",
+          city: "Toronto (Ontario) M4W 1E5",
+          logo: "https://logos-world.net/wp-content/uploads/2021/09/Manulife-Logo.png",
+        },
+        {
+          name: "Caisses Desjardins",
+          address: "L'adresse varie selon la Caisse choisie.",
+          city: "",
+          logo: "https://static.wixstatic.com/media/60fa64_4018f458f5d54d0685b0fae6956669a8~mv2.png/v1/crop/x_19,y_19,w_474,h_474/fill/w_300,h_300,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/unnamed.png",
+        },
+      ],
+      missing: {
+        title: "Votre institution financière ne figure pas parmi les choix ?",
+        body: "Contactez-nous sans tarder.",
+        cta: "Parler à un courtier",
+      },
     },
 
     tools: {
@@ -618,18 +687,86 @@ export const translations = {
 
     institutions: {
       hero: {
-        eyebrow: "Our partners",
-        title: "9 financial institutions at your service",
-        subtitle:
-          "We work with a wide range of lenders to bring you the best mortgage conditions on the market.",
+        eyebrow: "Lender addresses",
+        title: "Insurance addresses",
+        subtitle: "Important information for your home insurance proof.",
       },
+      reassurance:
+        "We work with a wide range of lenders to deliver the best financing conditions tailored to your situation.",
       insurance: {
-        eyebrow: "Good to know",
-        title: "Protect your investment",
-        body: "Solid home insurance is essential to secure your real-estate investment. We can refer you to our trusted partners to evaluate options and find the best conditions.",
+        eyebrow: "Important",
+        title: "Valid home insurance proof",
+        bodyP1:
+          "You must have a valid home insurance proof effective from the date of the deed of sale.",
+        attentionLabel: "Important",
+        attentionP1:
+          "The name and full address of the financial institution must appear on the insurance proof.",
+        attentionP2:
+          "For a refinance, you must still notify your insurer: even if there's no change to the policy or insured property, your proof must show the correct creditor.",
       },
-      missingLabel: "Your institution isn't on the list?",
-      missingCta: "Let's discuss",
+      lendersSectionTitle: "Financial institution addresses",
+      addressVariesNote: "Address varies by selected Caisse branch.",
+      lenders: [
+        {
+          name: "Banque Nationale",
+          address: "800, rue Saint-Jacques",
+          city: "Montréal (Québec) H3C 1A3",
+          logo: "https://static.wixstatic.com/media/60fa64_ef3269be7b644d2eb233adfb8f1ce3d4~mv2.jpg/v1/fill/w_300,h_300,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/bn_vid_hero_dark_fr.jpg",
+        },
+        {
+          name: "MCAP Service Corporation",
+          address: "200 King Street West, Suite 400",
+          city: "Toronto (Ontario) M5H 3T4",
+          logo: "https://static.wixstatic.com/media/60fa64_bcf3ebc0984a426ca2bccc5ddfd9323a~mv2.webp/v1/fill/w_300,h_300,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/mcap-lg.webp",
+        },
+        {
+          name: "First National",
+          address: "2000 Peel Street, Suite 200",
+          city: "Montréal (Québec) H3A 2W5",
+          logo: "https://static.wixstatic.com/media/60fa64_596e739841a5440eb4ffe7cc1b894de0~mv2.png/v1/fill/w_300,h_300,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/first-national-financial-corporation--600.png",
+        },
+        {
+          name: "CIBC",
+          address: "81 Bay Street",
+          city: "Toronto (Ontario) M5J 0E7",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/CIBC_logo.svg/2560px-CIBC_logo.svg.png",
+        },
+        {
+          name: "CMLS",
+          address: "530 – 8th Avenue SW, Suite 1000",
+          city: "Calgary (Alberta) T2P 3S8",
+          logo: "https://b2b2c.ca/wp-content/uploads/2021/04/CMLS-Financial.png",
+        },
+        {
+          name: "Toronto-Dominion Bank",
+          address: "1350 René-Lévesque Boulevard West",
+          city: "Montréal (Québec) H3G 1T4",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Toronto-Dominion_Bank_logo.svg/2048px-Toronto-Dominion_Bank_logo.svg.png",
+        },
+        {
+          name: "Scotiabank",
+          address: "44 King Street West",
+          city: "Toronto (Ontario) M5H 1H1",
+          logo: "https://static.wixstatic.com/media/60fa64_73e0863852c24c888713e4b252db98bb~mv2.png/v1/fill/w_300,h_300,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Scotiabank-1024x1024.png",
+        },
+        {
+          name: "Manulife Financial",
+          address: "200 Bloor Street East",
+          city: "Toronto (Ontario) M4W 1E5",
+          logo: "https://logos-world.net/wp-content/uploads/2021/09/Manulife-Logo.png",
+        },
+        {
+          name: "Desjardins",
+          address: "Address varies by selected Caisse branch.",
+          city: "",
+          logo: "https://static.wixstatic.com/media/60fa64_4018f458f5d54d0685b0fae6956669a8~mv2.png/v1/crop/x_19,y_19,w_474,h_474/fill/w_300,h_300,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/unnamed.png",
+        },
+      ],
+      missing: {
+        title: "Your financial institution isn't on the list?",
+        body: "Contact us right away.",
+        cta: "Talk to a broker",
+      },
     },
 
     tools: {
