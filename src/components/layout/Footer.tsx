@@ -74,35 +74,35 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Légal */}
+          {/* Légal — utilise Link (SPA) pour ne pas casser le state/cache (audit HI-03) */}
           <div className="md:col-span-2 space-y-3">
             <p className="eyebrow text-[color:var(--color-taupe)]">
               {lang === "fr" ? "Légal" : "Legal"}
             </p>
             <ul className="space-y-2 text-sm">
               <li>
-                <a
-                  href="/mentions-legales"
+                <Link
+                  to="/mentions-legales"
                   className="hover:text-[color:var(--color-bronze-soft)]"
                 >
                   {t("footer.legal")}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/confidentialite"
+                <Link
+                  to="/confidentialite"
                   className="hover:text-[color:var(--color-bronze-soft)]"
                 >
                   {t("footer.privacy")}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/lexique"
+                <Link
+                  to="/lexique"
                   className="hover:text-[color:var(--color-bronze-soft)]"
                 >
                   {t("footer.lexique")}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

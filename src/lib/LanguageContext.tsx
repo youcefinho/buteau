@@ -35,20 +35,40 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   const t = useCallback(
     <T = string,>(path: string): T => {
-      const parts = path.split(".");
-      let acc: unknown = translations[lang];
-      for (const p of parts) {
-        if (acc && typeof acc === "object" && p in (acc as Record<string, unknown>)) {
-          acc = (acc as Record<string, unknown>)[p];
-        } else {
-          // En dev : afficher la clé manquante pour faciliter le debug.
-          if (import.meta.env.DEV) {
-            console.warn(`[i18n] missing key: ${path} (lang=${lang})`);
+      const resolve = (dict: unknown): unknown => {
+        const parts = path.split(".");
+        let acc: unknown = dict;
+        for (const p of parts) {
+          if (acc && typeof acc === "object" && p in (acc as Record<string, unknown>)) {
+            acc = (acc as Record<string, unknown>)[p];
+          } else {
+            return undefined;
           }
-          return path as unknown as T;
+        }
+        return acc;
+      };
+
+      const primary = resolve(translations[lang]);
+      if (primary !== undefined) return primary as T;
+
+      // Audit ME-06 fix : fallback sur FR si la cle manque dans la langue active
+      // (au lieu de retourner le path string en clair pour l'utilisateur).
+      if (lang !== "fr") {
+        const fallback = resolve(translations.fr);
+        if (fallback !== undefined) {
+          if (import.meta.env.DEV) {
+            console.warn(`[i18n] missing en key, fallback to fr: ${path}`);
+          }
+          return fallback as T;
         }
       }
-      return acc as T;
+
+      // En dev : afficher la clé totalement manquante pour faciliter le debug.
+      if (import.meta.env.DEV) {
+        console.warn(`[i18n] missing key (no fallback): ${path} (lang=${lang})`);
+      }
+      // En prod : retourner le path en clair reste le meilleur fallback (visible mais pas catastrophique).
+      return path as unknown as T;
     },
     [lang],
   );

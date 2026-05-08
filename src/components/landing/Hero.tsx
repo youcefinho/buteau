@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { config } from "@/lib/config";
@@ -48,17 +49,17 @@ export function Hero() {
             {t("home.hero.subtitle")}
           </p>
 
-          {/* CTA stack */}
+          {/* CTA stack — anchor #contact reste un <a>, /equipe utilise <Link> SPA */}
           <div className="flex flex-col sm:flex-row gap-4 items-center">
             <a href="#contact" className="btn-bronze">
               {t("home.hero.ctaPrimary")}
             </a>
-            <a
-              href="/equipe"
+            <Link
+              to="/equipe"
               className="font-[var(--font-display)] text-[color:var(--color-cream)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] underline-offset-4 hover:underline transition-all"
             >
-              {t("home.hero.ctaSecondary")} →
-            </a>
+              <span>{t("home.hero.ctaSecondary")} →</span>
+            </Link>
           </div>
         </div>
       </Container>

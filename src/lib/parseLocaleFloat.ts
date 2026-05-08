@@ -23,13 +23,19 @@ export function parseLocaleFloat(input: string | number | null | undefined): num
   }
 
   // Strip dollar, espaces (NNBSP   + NBSP   + espace régulier).
+  // Strip dollar + tous les espaces (NNBSP U+202F + NBSP U+00A0 + reguliers via \s).
   const cleaned = input
     .replace(/\$/g, "")
-    .replace(/[  \s]/g, "")
+    .replace(/\s/g, "")
     .replace(",", ".")
     .trim();
 
   if (cleaned === "") return null;
+
+  // Audit ME-05 fix : rejet strict des formats avec multiples points decimaux
+  // ("5.5,3" ou "1.2.3"), sinon parseFloat tronque silencieusement.
+  if ((cleaned.match(/\./g) ?? []).length > 1) return null;
+  if (!/^-?\d*\.?\d+$/.test(cleaned)) return null;
 
   const n = Number.parseFloat(cleaned);
   return Number.isFinite(n) ? n : null;

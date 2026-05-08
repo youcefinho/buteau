@@ -6,7 +6,20 @@
  * et lit le schema (SPA-friendly).
  *
  * Pour les schemas globaux (LocalBusiness + WebSite), voir le @graph dans index.html.
+ *
+ * Audit HI-01 fix : `safeJsonLd` echappe `</script>`, `<!--`, `<![CDATA[` et separateurs
+ * Unicode pour eviter qu'un champ dynamique (ex: bio CMS, review user) puisse casser le
+ * <script> tag et injecter du HTML/JS arbitraire (XSS stocke).
  */
+function safeJsonLd(value: unknown): string {
+  return JSON.stringify(value)
+    .replace(/</g, "\\u003c")
+    .replace(/>/g, "\\u003e")
+    .replace(/&/g, "\\u0026")
+    .replace(/\u2028/g, "\\u2028")
+    .replace(/\u2029/g, "\\u2029");
+}
+
 type SchemaJsonLdProps = {
   schema: object | object[];
 };
@@ -20,7 +33,7 @@ export function SchemaJsonLd({ schema }: SchemaJsonLdProps) {
     <script
       type="application/ld+json"
       // eslint-disable-next-line react/no-danger
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(json) }}
+      dangerouslySetInnerHTML={{ __html: safeJsonLd(json) }}
     />
   );
 }

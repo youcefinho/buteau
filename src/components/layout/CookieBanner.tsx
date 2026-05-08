@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { Cookie } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useCookieConsent } from "@/hooks/useCookieConsent";
@@ -21,7 +22,11 @@ export function CookieBanner() {
   if (!showBanner) return null;
 
   return (
-    <div
+    <>
+      {/* Audit UI-D fix : spacer pour compenser la hauteur de la banner cookie sur mobile,
+          sinon elle chevauche le contenu (notamment le formulaire de contact en bas de l'Accueil). */}
+      <div aria-hidden="true" className="h-[260px] md:h-[160px] pointer-events-none" />
+      <div
       role="dialog"
       aria-labelledby="cookie-banner-title"
       aria-describedby="cookie-banner-body"
@@ -48,12 +53,12 @@ export function CookieBanner() {
                 className="text-xs md:text-sm leading-relaxed text-[color:var(--color-cream)]/85 max-w-3xl"
               >
                 {t("cookies.body")}{" "}
-                <a
-                  href="/confidentialite"
+                <Link
+                  to="/confidentialite"
                   className="underline underline-offset-2 hover:text-[color:var(--color-bronze-soft)]"
                 >
                   {t("cookies.learnMore")}
-                </a>
+                </Link>
                 .
               </p>
             </div>
@@ -78,6 +83,7 @@ export function CookieBanner() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

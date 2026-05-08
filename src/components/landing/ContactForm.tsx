@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, type FormEvent } from "react";
+import { Link } from "@tanstack/react-router";
 import { Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { cn } from "@/lib/utils";
@@ -157,12 +158,12 @@ export function ContactForm({ source = "home_contact_form" }: ContactFormProps) 
         />
         <span className="text-xs leading-relaxed text-[color:var(--color-navy-deep)]/85">
           {t("form.consentLabel")}{" "}
-          <a
-            href="/confidentialite"
+          <Link
+            to="/confidentialite"
             className="underline underline-offset-2 hover:text-[color:var(--color-bronze-deep)]"
           >
             {t("form.consentLinkLabel")}
-          </a>
+          </Link>
           .
         </span>
       </label>

@@ -77,10 +77,11 @@ async function handleLead(
   ctx: ExecutionContext,
 ): Promise<Response> {
   // Pre-check : D1 doit etre provisionne (Phase 9 par le client).
-  // Tant qu'absent, on accepte silencieusement pour ne pas exposer l'absence d'infra.
+  // Si absent, on REFUSE bruyamment (503) — sinon les leads disparaissent silencieusement
+  // (audit BL-01 : un succes UI sans persistance = perte totale en prod).
   if (!env.DB) {
-    console.warn("[/api/lead] DB binding manquante — Phase 9 D1 a configurer");
-    return jsonOk({ status: "received" });
+    console.error("[/api/lead] DB binding manquante — refus 503. Phase 9 D1 a configurer.");
+    return jsonError("service_unavailable", 503);
   }
 
   const db: D1Database = env.DB;

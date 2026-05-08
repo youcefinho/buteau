@@ -39,6 +39,11 @@ export function Navbar() {
     { to: "/outils", key: "nav.tools" },
   ];
 
+  // Couleur dynamique : cream sur Hero (top), navy-deep apres scroll (sur cream).
+  // Audit UI-BL1 : avant cette correction, le navbar etait navy-on-navy au top → invisible.
+  const fgColor = scrolled ? "var(--color-navy-deep)" : "var(--color-cream)";
+  const accentColor = scrolled ? "var(--color-taupe-dark)" : "var(--color-taupe)";
+
   return (
     <header
       className={cn(
@@ -53,27 +58,27 @@ export function Navbar() {
         <Link to="/" className="group flex items-baseline gap-2">
           <span
             className="font-[var(--font-display)] text-xl md:text-2xl font-bold tracking-[var(--tracking-eyebrow)]"
-            style={{ color: scrolled ? "var(--color-navy-deep)" : "var(--color-navy-deep)" }}
+            style={{ color: fgColor }}
           >
             {config.brandName}
           </span>
           <span
             className="hidden md:inline eyebrow"
-            style={{ color: "var(--color-taupe-dark)" }}
+            style={{ color: accentColor }}
           >
             {t("common.tagline")}
           </span>
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden lg:flex items-center gap-10">
+        <div className="hidden lg:flex items-center gap-10" style={{ color: fgColor }}>
           {navItems.map((item) => (
             <NavLink key={item.to} to={item.to} label={t(item.key)} />
           ))}
         </div>
 
         {/* Right cluster — lang toggle + CTA + burger mobile */}
-        <div className="flex items-center gap-3" style={{ color: "var(--color-navy-deep)" }}>
+        <div className="flex items-center gap-3" style={{ color: fgColor }}>
           <LanguageToggle className="hidden sm:inline-flex" />
           <a
             href={`tel:${config.phone.raw}`}
@@ -132,10 +137,10 @@ function NavLink({ to, label }: { to: "/" | "/equipe" | "/institutions" | "/outi
   return (
     <Link
       to={to}
-      className="font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-bronze-deep)] transition-colors"
+      className="font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-current hover:text-[color:var(--color-bronze)] transition-colors"
       activeProps={{
         className:
-          "text-[color:var(--color-bronze-deep)]",
+          "text-[color:var(--color-bronze)]",
       }}
     >
       {label}

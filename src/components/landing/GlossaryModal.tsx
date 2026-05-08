@@ -30,18 +30,48 @@ export function GlossaryModal() {
     return () => window.clearTimeout(t);
   }, [isOpen, selectedSlug]);
 
-  // Escape pour fermer + body scroll lock.
+  // Escape pour fermer + focus trap reel + restore focus + body scroll lock.
+  // Audit HI-02 fix : avant on n'avait qu'un focus initial, le Tab s'echappait du modal.
   useEffect(() => {
     if (!isOpen) return;
+    const previouslyFocused = document.activeElement as HTMLElement | null;
     document.body.style.overflow = "hidden";
+
+    const FOCUSABLE_SELECTOR =
+      'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") close();
+      if (e.key === "Escape") {
+        close();
+        return;
+      }
+      if (e.key !== "Tab") return;
+      const container = containerRef.current;
+      if (!container) return;
+      const focusables = Array.from(
+        container.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR),
+      ).filter((el) => !el.hasAttribute("inert"));
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      const active = document.activeElement as HTMLElement | null;
+      if (e.shiftKey && active === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && active === last) {
+        e.preventDefault();
+        first.focus();
+      }
     };
+
     document.addEventListener("keydown", onKey);
     closeBtnRef.current?.focus();
+
     return () => {
       document.body.style.overflow = "";
       document.removeEventListener("keydown", onKey);
+      // Restore focus a l'element qui avait declenche l'ouverture (WCAG 2.4.3)
+      previouslyFocused?.focus?.();
     };
   }, [isOpen, close]);
 

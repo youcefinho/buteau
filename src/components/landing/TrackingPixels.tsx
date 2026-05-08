@@ -91,6 +91,9 @@ function injectScript(src: string, opts: { async?: boolean; defer?: boolean } = 
 function injectMetaPixel(pixelId: string) {
   // Meta Pixel snippet officiel + init.
   // ID format : 16 chiffres (ex: "1234567890123456").
+  // Audit ME-01 fix : on retire le noscript fallback car (a) place dans <head> il est
+  // invalide HTML5, (b) en SPA il fire systematiquement = double event PageView.
+  // Le user a forcement JS active (sinon le SPA ne fonctionne pas du tout).
   if (document.getElementById("fb-pixel")) return;
 
   const s = document.createElement("script");
@@ -105,11 +108,6 @@ function injectMetaPixel(pixelId: string) {
     fbq('track', 'PageView');
   `;
   document.head.appendChild(s);
-
-  // No-script fallback image pixel (race-condition backup)
-  const noscript = document.createElement("noscript");
-  noscript.innerHTML = `<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=${pixelId.replace(/[^0-9]/g, "")}&ev=PageView&noscript=1" alt="" />`;
-  document.head.appendChild(noscript);
 }
 
 function injectClarity(projectId: string) {
