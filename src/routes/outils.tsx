@@ -1,5 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/LanguageContext";
+import { PageHero } from "@/components/landing/PageHero";
+import { HypothequeCalculator } from "@/components/landing/calculators/HypothequeCalculator";
+import { GuidesGrid } from "@/components/landing/GuidesGrid";
+import { TikTokTeaser } from "@/components/landing/TikTokTeaser";
+import { BlogTeaser } from "@/components/landing/BlogTeaser";
+import { DocumentsGrid } from "@/components/landing/DocumentsGrid";
+import { ToolsFinalCta } from "@/components/landing/ToolsFinalCta";
 
 export const Route = createFileRoute("/outils")({
   component: ToolsPage,
@@ -8,15 +15,18 @@ export const Route = createFileRoute("/outils")({
 function ToolsPage() {
   const { t } = useLanguage();
   return (
-    <main id="main" className="min-h-screen flex items-center justify-center p-12 pt-32 surface-cream">
-      <div className="max-w-2xl text-center space-y-6">
-        <p className="eyebrow">{t("tools.hero.eyebrow")}</p>
-        <h1 className="display text-4xl md:text-5xl">{t("tools.hero.title")}</h1>
-        <p className="text-lg text-[color:var(--color-taupe-dark)]">{t("tools.hero.subtitle")}</p>
-        <p className="text-sm italic mt-12 text-[color:var(--color-taupe-dark)]">
-          [Phase 1 placeholder — Page Outils sera codée Phase 6 à partir de outils.html]
-        </p>
-      </div>
+    <main id="main">
+      <PageHero
+        eyebrow={t("tools.hero.eyebrow")}
+        title={t("tools.hero.title")}
+        subtitle={t("tools.hero.subtitle")}
+      />
+      <HypothequeCalculator />
+      <GuidesGrid />
+      <TikTokTeaser />
+      <BlogTeaser />
+      <DocumentsGrid />
+      <ToolsFinalCta />
     </main>
   );
 }

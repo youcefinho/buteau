@@ -402,10 +402,78 @@ export const translations = {
 
     tools: {
       hero: {
-        eyebrow: "Outils & ressources",
-        title: "Des outils concrets pour des décisions éclairées",
+        eyebrow: "Ressources",
+        title: "Outils & ressources",
         subtitle:
-          "Calculateur hypothécaire, guides éducatifs, capsules vidéo, documents téléchargeables — tout ce qu'il vous faut pour préparer votre dossier en confiance.",
+          "Tout ce dont vous avez besoin pour structurer votre projet hypothécaire.",
+      },
+      calc: {
+        eyebrow: "Outil",
+        title: "Calculateur hypothécaire",
+        subtitle:
+          "Une estimation rapide selon la formule canadienne (composé semi-annuel).",
+        amountLabel: "Montant ($)",
+        rateLabel: "Taux (%)",
+        yearsLabel: "Durée (ans)",
+        resultLabel: "Paiement mensuel",
+        disclaimer:
+          "Estimation indicative basée sur la formule canadienne semi-annuelle. Les conditions, taux et critères d'admissibilité varient selon le prêteur et le profil de l'emprunteur. Aucune approbation hypothécaire n'est garantie.",
+        ctaLabel: "Discuter de votre projet",
+      },
+      guides: {
+        eyebrow: "Guides",
+        title: "Guides éducatifs",
+        subtitle:
+          "Des ressources complètes pour comprendre le financement hypothécaire.",
+        comingSoonLabel: "Téléchargement bientôt",
+        items: [
+          {
+            title: "Achat d'une première propriété",
+            desc: "Tout ce que vous devez savoir pour franchir cette étape importante : mise de fonds, préqualification, RAP, CELIAPP, et programmes d'aide disponibles.",
+          },
+          {
+            title: "Comprendre les taux d'intérêt",
+            desc: "Taux fixe ou variable ? Comment les taux sont-ils déterminés ? Quand négocier ? Ce guide démystifie les mécanismes du financement hypothécaire.",
+          },
+          {
+            title: "Investissement immobilier",
+            desc: "Stratégies de financement pour immeubles à revenus, multiplex et projets d'investissement. Maximisez votre effet de levier et vos rendements.",
+          },
+        ],
+      },
+      tiktok: {
+        eyebrow: "Prochainement sur TikTok",
+        title: "Nous lançons bientôt une série de capsules éducatives",
+        body: "Pour démystifier le monde hypothécaire. Conseils pratiques, explications claires et stratégies de financement vous seront présentés de façon accessible.",
+        ctaLabel: "Restez à l'affût de nos publications",
+      },
+      blog: {
+        eyebrow: "Articles en préparation",
+        title: "Notre blog sera bientôt disponible",
+        body: "Avec des articles approfondis sur les tendances du marché hypothécaire, des stratégies d'optimisation financière et des conseils d'experts pour maximiser votre patrimoine immobilier.",
+        ctaLabel: "Revenez bientôt pour nos premiers articles",
+      },
+      documents: {
+        eyebrow: "Téléchargements",
+        title: "Documents téléchargeables",
+        subtitle: "Checklists, formulaires et documents de référence.",
+        comingSoonLabel: "Bientôt disponible",
+        items: [
+          {
+            title: "Liste des documents requis",
+            meta: "PDF • 1.2 MB",
+          },
+          {
+            title: "Guide de l'acheteur",
+            meta: "PDF • 3.5 MB",
+          },
+        ],
+      },
+      finalCta: {
+        eyebrow: "Accompagnement",
+        title: "Besoin d'accompagnement ?",
+        body: "Nos outils sont là pour vous guider. Pour un accompagnement structuré et personnalisé, contactez-nous.",
+        button: "Prendre rendez-vous",
       },
     },
 
@@ -771,10 +839,69 @@ export const translations = {
 
     tools: {
       hero: {
-        eyebrow: "Tools & resources",
-        title: "Concrete tools for informed decisions",
-        subtitle:
-          "Mortgage calculator, educational guides, video shorts, downloadable documents — everything you need to confidently prepare your file.",
+        eyebrow: "Resources",
+        title: "Tools & resources",
+        subtitle: "Everything you need to structure your mortgage project.",
+      },
+      calc: {
+        eyebrow: "Tool",
+        title: "Mortgage calculator",
+        subtitle: "A quick estimate using the Canadian semi-annual compounded formula.",
+        amountLabel: "Amount ($)",
+        rateLabel: "Rate (%)",
+        yearsLabel: "Term (years)",
+        resultLabel: "Monthly payment",
+        disclaimer:
+          "Indicative estimate based on the Canadian semi-annual compounding formula. Conditions, rates and eligibility criteria vary depending on the lender and borrower profile. No mortgage approval is guaranteed.",
+        ctaLabel: "Discuss your project",
+      },
+      guides: {
+        eyebrow: "Guides",
+        title: "Educational guides",
+        subtitle: "Comprehensive resources to understand mortgage financing.",
+        comingSoonLabel: "Download coming soon",
+        items: [
+          {
+            title: "Buying your first home",
+            desc: "Everything you need to know to take this important step: down payment, pre-qualification, HBP, FHSA (CELIAPP), and available assistance programs.",
+          },
+          {
+            title: "Understanding interest rates",
+            desc: "Fixed or variable? How are rates determined? When to negotiate? This guide demystifies mortgage financing mechanics.",
+          },
+          {
+            title: "Real-estate investment",
+            desc: "Financing strategies for income properties, plexes and investment projects. Maximize your leverage and returns.",
+          },
+        ],
+      },
+      tiktok: {
+        eyebrow: "Coming soon on TikTok",
+        title: "We're launching a series of educational shorts",
+        body: "To demystify the world of mortgages. Practical tips, clear explanations and financing strategies — presented in an accessible way.",
+        ctaLabel: "Stay tuned for our publications",
+      },
+      blog: {
+        eyebrow: "Articles in preparation",
+        title: "Our blog is coming soon",
+        body: "With deep-dive articles on mortgage market trends, financial optimization strategies and expert advice to grow your real-estate wealth.",
+        ctaLabel: "Come back soon for our first articles",
+      },
+      documents: {
+        eyebrow: "Downloads",
+        title: "Downloadable documents",
+        subtitle: "Checklists, forms and reference documents.",
+        comingSoonLabel: "Coming soon",
+        items: [
+          { title: "Required documents checklist", meta: "PDF • 1.2 MB" },
+          { title: "Buyer's guide", meta: "PDF • 3.5 MB" },
+        ],
+      },
+      finalCta: {
+        eyebrow: "Support",
+        title: "Need guidance?",
+        body: "Our tools are here to guide you. For structured, personalized support, get in touch.",
+        button: "Book an appointment",
       },
     },
 
