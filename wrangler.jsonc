@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "equipe-buteau",
+  "main": "src/worker.ts",
+  "compatibility_date": "2025-04-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  }
+  // D1 — Phase 7 (créée via `bunx wrangler d1 create equipe-buteau-leads`)
+  // "d1_databases": [
+  //   {
+  //     "binding": "DB",
+  //     "database_name": "equipe-buteau-leads",
+  //     "database_id": "<placeholder-fill-after-d1-create>"
+  //   }
+  // ]
+}

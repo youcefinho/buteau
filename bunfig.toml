@@ -1,0 +1,3 @@
+[install]
+# Forcer l'utilisation des binaires natifs (sharp, etc.) sur Windows
+auto = "auto"

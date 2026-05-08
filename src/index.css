@@ -1,0 +1,219 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ============================================================
+   THEME — Équipe Buteau (LUXURY MINIMAL CORPORATE)
+   Palette extraite des 4 HTML mockups.
+   ============================================================ */
+
+@theme inline {
+  /* --- Couleurs principales (oklch) --- */
+  --color-navy: oklch(0.252 0.067 256);          /* #10223d — fond foncé dominant */
+  --color-navy-deep: oklch(0.205 0.060 256);     /* navy plus profond pour contrastes */
+  --color-navy-soft: oklch(0.305 0.065 256);     /* navy clarifié pour cards */
+
+  --color-taupe: oklch(0.722 0.018 84);          /* #b8af9f — taupe signature */
+  --color-taupe-light: oklch(0.840 0.012 84);    /* taupe clarifié dividers */
+  --color-taupe-dark: oklch(0.585 0.020 84);     /* taupe assombri texte secondaire */
+
+  --color-bronze: oklch(0.704 0.077 56);         /* #C69C6D — accent bronze caramel */
+  --color-bronze-deep: oklch(0.620 0.082 52);    /* bronze hover/active */
+  --color-bronze-soft: oklch(0.815 0.060 60);    /* bronze clair tints */
+
+  --color-cream: oklch(0.978 0 0);               /* #f9f9f9 — off-white sections claires */
+  --color-cream-warm: oklch(0.965 0.005 80);     /* off-white teinté chaud */
+
+  /* --- Surface tokens --- */
+  --color-background: var(--color-cream);
+  --color-foreground: var(--color-navy-deep);
+  --color-surface: #ffffff;
+  --color-surface-dark: var(--color-navy);
+  --color-border: var(--color-taupe-light);
+  --color-divider: var(--color-taupe);
+
+  /* --- Typographie --- */
+  --font-sans: "Open Sans", system-ui, -apple-system, sans-serif;
+  --font-display: "Montserrat", "Open Sans", system-ui, sans-serif;
+  --font-editorial: "Cormorant Garamond", "Georgia", serif;
+
+  /* --- Letter-spacing signature (eyebrows, labels uppercase) --- */
+  --tracking-eyebrow: 0.12em;
+  --tracking-headline: -0.02em;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-feature-settings: "ss01", "kern";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--color-bronze);
+  color: var(--color-cream);
+}
+
+/* Focus-visible global (WCAG 2.4.7) — voir skill intralys-skip-content-a11y */
+:focus-visible {
+  outline: 2px solid var(--color-bronze);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* prefers-reduced-motion respect */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   UTILITIES — Grammaire visuelle Buteau
+   ============================================================ */
+
+@layer utilities {
+  /* Eyebrow uppercase signature (tagline, section labels) */
+  .eyebrow {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-eyebrow);
+    color: var(--color-taupe-dark);
+  }
+
+  /* Display heading (Montserrat lourd) */
+  .display {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: var(--tracking-headline);
+    line-height: 1.05;
+  }
+
+  /* Signature line (taupe horizontal entre sections) */
+  .signature-line {
+    height: 1px;
+    background: var(--color-taupe);
+    width: 4rem;
+    display: block;
+  }
+
+  .signature-line-long {
+    height: 1px;
+    background: var(--color-taupe-light);
+    width: 100%;
+    display: block;
+  }
+
+  /* Card surface (white/cream avec ombre douce) */
+  .card-luxury {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    transition: transform 280ms ease, box-shadow 280ms ease, border-color 280ms ease;
+  }
+
+  .card-luxury:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px -16px oklch(0.252 0.067 256 / 0.18);
+    border-color: var(--color-taupe);
+  }
+
+  /* Border-left accent (3px taupe ou bronze) */
+  .accent-border-taupe {
+    border-left: 3px solid var(--color-taupe);
+    padding-left: 1.25rem;
+  }
+
+  .accent-border-bronze {
+    border-left: 3px solid var(--color-bronze);
+    padding-left: 1.25rem;
+  }
+
+  /* Bouton principal bronze */
+  .btn-bronze {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: var(--tracking-eyebrow);
+    text-transform: uppercase;
+    color: var(--color-cream);
+    background: var(--color-bronze);
+    border: 1px solid var(--color-bronze);
+    transition: background 220ms ease, border-color 220ms ease, transform 220ms ease;
+  }
+
+  .btn-bronze:hover {
+    background: var(--color-bronze-deep);
+    border-color: var(--color-bronze-deep);
+    transform: translateY(-1px);
+  }
+
+  /* Bouton ghost navy (sur fond clair) */
+  .btn-ghost-navy {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: var(--tracking-eyebrow);
+    text-transform: uppercase;
+    color: var(--color-navy-deep);
+    background: transparent;
+    border: 1px solid var(--color-navy-deep);
+    transition: background 220ms ease, color 220ms ease;
+  }
+
+  .btn-ghost-navy:hover {
+    background: var(--color-navy-deep);
+    color: var(--color-cream);
+  }
+
+  /* Section dark navy (Hero, CTA finaux) */
+  .surface-navy {
+    background: var(--color-navy);
+    color: var(--color-cream);
+  }
+
+  /* Section claire premium */
+  .surface-cream {
+    background: var(--color-cream);
+    color: var(--color-navy-deep);
+  }
+
+  /* Gradient overlay sur images (navy → transparent) */
+  .gradient-navy-overlay {
+    background: linear-gradient(
+      180deg,
+      oklch(0.252 0.067 256 / 0.85) 0%,
+      oklch(0.252 0.067 256 / 0.55) 50%,
+      oklch(0.252 0.067 256 / 0.92) 100%
+    );
+  }
+}
