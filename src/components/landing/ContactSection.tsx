@@ -3,6 +3,7 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { config } from "@/lib/config";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "./SectionHeading";
+import { ContactForm } from "./ContactForm";
 
 /**
  * Section Contact — placeholder Phase 7 backend leads.
@@ -27,16 +28,12 @@ export function ContactSection() {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Form column — placeholder Phase 7 (worker /api/lead 4 couches) */}
-          <div className="bg-[color:var(--color-surface)] p-8 border-2 border-[color:var(--color-taupe)] order-2 lg:order-1 flex flex-col">
+          {/* Form column — connecté au worker /api/lead (4 couches défense) */}
+          <div className="bg-[color:var(--color-surface)] p-8 border-2 border-[color:var(--color-taupe)] order-2 lg:order-1">
             <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-lg uppercase tracking-[var(--tracking-eyebrow)] mb-6 text-center">
               {t("home.contact.formLabel")}
             </h3>
-            <div className="flex-1 flex items-center justify-center min-h-[280px] text-center">
-              <p className="text-xs italic text-[color:var(--color-taupe-dark)] max-w-xs">
-                [Phase 7 — formulaire connecté au worker /api/lead avec défense en profondeur 4 couches : honeypot + timing + rate limit D1 + validation server-side]
-              </p>
-            </div>
+            <ContactForm source="home_contact_form" />
           </div>
 
           {/* Contact info column */}

@@ -315,6 +315,36 @@ export const translations = {
       button: "Prendre rendez-vous",
     },
 
+    form: {
+      fullNameLabel: "Nom complet",
+      emailLabel: "Courriel",
+      phoneLabel: "Téléphone (optionnel)",
+      messageLabel: "Votre projet (optionnel)",
+      submitLabel: "Envoyer ma demande",
+      submitting: "Envoi en cours...",
+      consentLabel:
+        "J'accepte que mes renseignements soient utilisés par l'Équipe Buteau pour répondre à ma demande, conformément à la",
+      consentLinkLabel: "politique de confidentialité",
+      successTitle: "Demande reçue",
+      successBody:
+        "Merci. Nous vous reviendrons sous peu pour structurer votre projet hypothécaire.",
+      errors: {
+        consent_required: "Vous devez accepter la politique de confidentialité pour soumettre.",
+        name_invalid: "Veuillez saisir votre nom complet (minimum 2 caractères).",
+        name_too_long: "Le nom est trop long.",
+        email_invalid: "Adresse courriel invalide.",
+        email_too_long: "L'adresse courriel est trop longue.",
+        phone_too_long: "Le numéro de téléphone est trop long.",
+        message_too_long: "Le message est trop long.",
+        invalid_json: "Données invalides.",
+        rate_limited:
+          "Trop de tentatives. Veuillez patienter quelques instants avant de réessayer.",
+        db_error: "Erreur serveur. Veuillez réessayer dans un instant.",
+        network_error: "Connexion impossible. Vérifiez votre internet et réessayez.",
+        unknown_error: "Une erreur est survenue.",
+      },
+    },
+
     institutions: {
       hero: {
         eyebrow: "Adresses prêteurs",
@@ -751,6 +781,35 @@ export const translations = {
       title: "Ready to structure your project?",
       subtitle: "Clear decisions. Structured execution. Concrete results.",
       button: "Book an appointment",
+    },
+
+    form: {
+      fullNameLabel: "Full name",
+      emailLabel: "Email",
+      phoneLabel: "Phone (optional)",
+      messageLabel: "Your project (optional)",
+      submitLabel: "Send my request",
+      submitting: "Sending...",
+      consentLabel:
+        "I agree that my information will be used by Équipe Buteau to respond to my request, in accordance with the",
+      consentLinkLabel: "privacy policy",
+      successTitle: "Request received",
+      successBody:
+        "Thank you. We'll get back to you shortly to structure your mortgage project.",
+      errors: {
+        consent_required: "You must accept the privacy policy to submit.",
+        name_invalid: "Please enter your full name (minimum 2 characters).",
+        name_too_long: "Name is too long.",
+        email_invalid: "Invalid email address.",
+        email_too_long: "Email address is too long.",
+        phone_too_long: "Phone number is too long.",
+        message_too_long: "Message is too long.",
+        invalid_json: "Invalid data.",
+        rate_limited: "Too many attempts. Please wait a moment before retrying.",
+        db_error: "Server error. Please try again in a moment.",
+        network_error: "Connection failed. Check your internet and retry.",
+        unknown_error: "An error occurred.",
+      },
     },
 
     institutions: {
