@@ -40,6 +40,9 @@ export function Hero() {
         aria-hidden="true"
       />
 
+      {/* Ambient particles — flotteurs subtils luxury cinematic */}
+      <div className="ambient-particles" aria-hidden="true" />
+
       <Container size="xl" className="relative py-32 md:py-40">
         <div className="text-center max-w-5xl mx-auto flex flex-col items-center">
           {/* Eyebrow (Planiprêt — l'arrière-plan métier) — reveal step 1 */}

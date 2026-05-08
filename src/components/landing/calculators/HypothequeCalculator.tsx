@@ -5,6 +5,7 @@ import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "../SectionHeading";
 import { parseLocaleFloat, formatLocaleCurrency } from "@/lib/parseLocaleFloat";
 import { AmortizationSparkline } from "./AmortizationSparkline";
+import { WhatIfScenarios } from "./WhatIfScenarios";
 
 /**
  * Calculateur hypothécaire — formule canadienne (composé semi-annuel).
@@ -218,6 +219,17 @@ export function HypothequeCalculator() {
               </p>
             </div>
           </div>
+        )}
+
+        {/* === NOVEL : "Et si..." comparative scenarios live === */}
+        {result && (
+          <WhatIfScenarios
+            principal={result.principal}
+            monthlyPayment={result.monthlyPayment}
+            monthlyRate={result.monthlyRate}
+            numberOfPayments={result.numberOfPayments}
+            totalInterest={result.totalInterest}
+          />
         )}
 
         {/* Disclaimer AMF en bas */}

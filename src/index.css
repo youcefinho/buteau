@@ -90,6 +90,98 @@ body {
 }
 
 /* ============================================================
+   CUSTOM SCROLLBAR (luxury fine bronze track)
+   ============================================================ */
+
+@media (pointer: fine) {
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: oklch(0.978 0 0);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(0.722 0.018 84 / 0.55);
+    border: 2px solid oklch(0.978 0 0);
+    border-radius: 0;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.704 0.077 56 / 0.85);
+  }
+  /* Firefox */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(0.722 0.018 84 / 0.55) oklch(0.978 0 0);
+  }
+}
+
+/* ============================================================
+   AMBIENT PARTICLES (Hero — flotteurs taupe subtle, luxury cinematic)
+   ============================================================ */
+
+@keyframes ambientFloat {
+  0%, 100% { transform: translate(0, 0); opacity: 0.3; }
+  25% { transform: translate(8px, -12px); opacity: 0.55; }
+  50% { transform: translate(-6px, -20px); opacity: 0.35; }
+  75% { transform: translate(-12px, -8px); opacity: 0.5; }
+}
+
+.ambient-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.ambient-particles::before,
+.ambient-particles::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: oklch(0.722 0.018 84);
+  box-shadow:
+    /* 12 particules à positions pseudo-random */
+    -120px 80px 0 oklch(0.722 0.018 84 / 0.3),
+    240px 160px 0 oklch(0.722 0.018 84 / 0.4),
+    -80px 320px 0 oklch(0.704 0.077 56 / 0.5),
+    180px -60px 0 oklch(0.722 0.018 84 / 0.35),
+    320px 240px 0 oklch(0.704 0.077 56 / 0.4),
+    -240px 200px 0 oklch(0.722 0.018 84 / 0.45),
+    100px 400px 0 oklch(0.722 0.018 84 / 0.3),
+    -160px -40px 0 oklch(0.704 0.077 56 / 0.5),
+    280px -120px 0 oklch(0.722 0.018 84 / 0.4),
+    -320px 100px 0 oklch(0.722 0.018 84 / 0.35),
+    60px -180px 0 oklch(0.704 0.077 56 / 0.45),
+    160px 320px 0 oklch(0.722 0.018 84 / 0.4);
+  animation: ambientFloat 12s ease-in-out infinite;
+}
+
+.ambient-particles::before {
+  top: 25%;
+  left: 30%;
+  animation-delay: 0s;
+}
+
+.ambient-particles::after {
+  top: 65%;
+  left: 70%;
+  animation-delay: -6s;
+  animation-duration: 14s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-particles::before,
+  .ambient-particles::after {
+    animation: none;
+    opacity: 0.4;
+  }
+}
+
+/* ============================================================
    PRIMITIVES INTRALYS — adaptees Buteau bronze (skill intralys-edito-magazine)
    ============================================================ */
 

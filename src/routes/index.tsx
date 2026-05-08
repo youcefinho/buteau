@@ -10,6 +10,7 @@ import { ContactSection } from "@/components/landing/ContactSection";
 import { Faq } from "@/components/landing/Faq";
 import { ChapterMarker } from "@/components/landing/ChapterMarker";
 import { BrokerLetter } from "@/components/landing/BrokerLetter";
+import { TerritoryMap } from "@/components/landing/TerritoryMap";
 import {
   SchemaJsonLd,
   buildFaqPage,
@@ -59,6 +60,10 @@ function HomePage() {
       <ChapterMarker numeral="III" label={chapter3} tone="light" />
 
       <Reviews />
+
+      {/* Territoire desservi — heatmap stylisé QC interactif (NOVEL) */}
+      <TerritoryMap />
+
       <ContactSection />
       <Faq />
     </main>

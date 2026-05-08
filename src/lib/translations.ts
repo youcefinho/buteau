@@ -315,6 +315,22 @@ export const translations = {
       button: "Prendre rendez-vous",
     },
 
+    territory: {
+      eyebrow: "Territoire desservi",
+      title: "Présents partout au Québec.",
+      subtitle:
+        "Andrew Buteau accompagne ses clients en visioconférence ou en personne dans cinq régions principales. Chaque dossier reçoit la même rigueur, peu importe le code postal.",
+      regions: [
+        { name: "Laval", note: "Siège — 2300 boul. Saint-Martin Est" },
+        { name: "Montréal", note: "Île + couronne" },
+        { name: "Rive-Nord", note: "Laurentides + Lanaudière" },
+        { name: "Rive-Sud", note: "Montérégie" },
+        { name: "Province", note: "Reste du Québec — visioconférence" },
+      ],
+      footnote:
+        "Une question hors région ? Écrivez-nous. La distance n'est jamais un obstacle.",
+    },
+
     letter: {
       eyebrow: "Le mot du courtier",
       heading: "Bonjour,",
@@ -463,6 +479,16 @@ export const translations = {
         disclaimer:
           "Estimation indicative basée sur la formule canadienne semi-annuelle. Les conditions, taux et critères d'admissibilité varient selon le prêteur et le profil de l'emprunteur. Aucune approbation hypothécaire n'est garantie.",
         ctaLabel: "Discuter de votre projet",
+        scenariosTitle: "Et si...",
+        scenariosSubtitle:
+          "Voyez l'impact concret de petites décisions sur votre dossier.",
+        scenarioAcceleratedTitle: "Vous payiez 100 $ de plus par mois",
+        scenarioShorterTitle: "Vous choisissiez un amortissement de 20 ans",
+        scenarioSavingsLabel: "Économie d'intérêts",
+        scenarioMonthsSavedLabel: "Mois épargnés",
+        scenarioNewPaymentLabel: "Nouveau paiement mensuel",
+        scenarioPlusLabel: "+",
+        scenarioEqualsLabel: "=",
       },
       guides: {
         eyebrow: "Guides",
@@ -805,6 +831,22 @@ export const translations = {
       button: "Book an appointment",
     },
 
+    territory: {
+      eyebrow: "Service area",
+      title: "Across all of Quebec.",
+      subtitle:
+        "Andrew Buteau supports clients via video conference or in person across five primary regions. Every file receives the same rigor — wherever you are.",
+      regions: [
+        { name: "Laval", note: "Head office — 2300 Saint-Martin East" },
+        { name: "Montreal", note: "Island + suburbs" },
+        { name: "North Shore", note: "Laurentides + Lanaudière" },
+        { name: "South Shore", note: "Montérégie" },
+        { name: "Province", note: "Rest of Quebec — video conference" },
+      ],
+      footnote:
+        "Got a question outside these regions? Reach out. Distance is never a blocker.",
+    },
+
     letter: {
       eyebrow: "A note from the broker",
       heading: "Hello,",
@@ -948,6 +990,15 @@ export const translations = {
         disclaimer:
           "Indicative estimate based on the Canadian semi-annual compounding formula. Conditions, rates and eligibility criteria vary depending on the lender and borrower profile. No mortgage approval is guaranteed.",
         ctaLabel: "Discuss your project",
+        scenariosTitle: "What if...",
+        scenariosSubtitle: "See the real impact of small choices on your file.",
+        scenarioAcceleratedTitle: "You paid $100 more each month",
+        scenarioShorterTitle: "You chose a 20-year amortization",
+        scenarioSavingsLabel: "Interest savings",
+        scenarioMonthsSavedLabel: "Months saved",
+        scenarioNewPaymentLabel: "New monthly payment",
+        scenarioPlusLabel: "+",
+        scenarioEqualsLabel: "=",
       },
       guides: {
         eyebrow: "Guides",

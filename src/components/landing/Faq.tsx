@@ -3,6 +3,7 @@ import { ChevronDown } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "./SectionHeading";
+import { AutoGlossary } from "./AutoGlossary";
 import { ta, translations } from "@/lib/translations";
 
 /**
@@ -65,7 +66,7 @@ export function Faq() {
               <Accordion.Content className="overflow-hidden data-[state=open]:animate-[accordionDown_280ms_ease-out] data-[state=closed]:animate-[accordionUp_220ms_ease-in]">
                 <div className="px-6 md:px-8 pb-6 pt-2 ml-13 md:ml-16 border-t border-[color:var(--color-taupe)]/30">
                   <p className="text-sm md:text-base leading-[1.65] text-[color:var(--color-navy-deep)]/80 pt-4">
-                    {item.a}
+                    <AutoGlossary text={item.a} maxWraps={3} />
                   </p>
                 </div>
               </Accordion.Content>
