@@ -261,29 +261,58 @@ export const translations = {
 
     team: {
       hero: {
-        eyebrow: "Notre équipe",
-        title: "Une équipe de courtiers hypothécaires passionnés",
+        eyebrow: "L'équipe",
+        title: "Notre équipe",
         subtitle:
-          "Dédiés à structurer votre réussite financière avec rigueur et humanité.",
+          "Une équipe de courtiers hypothécaires passionnés, dédiés à structurer votre réussite financière avec rigueur et humanité.",
       },
+      members: [
+        {
+          name: "Andrew Buteau",
+          role: "Courtier hypothécaire & Fondateur",
+          photo: "https://i.imgur.com/k4bZmLl.jpg",
+          bio: "Animé par la performance et la volonté de faire les choses autrement, Andrew a fondé l'Équipe BUTEAU avec une vision claire : offrir une expérience hypothécaire transparente, structurée et orientée vers les résultats. Reconnu pour sa rigueur et son professionnalisme, il a accompagné plus de 200 familles en 2025 à l'échelle de la province.",
+        },
+        {
+          name: "Abygaèle Gagné",
+          role: "Coordonnatrice exécutive",
+          photo:
+            "https://ugc.production.linktr.ee/5iBsvLTR0iXiJgoKotJw_I4Qhjq9XsUtz0u6v?io=true&size=avatar-v3_0",
+          bio: "Organisée, créative et profondément impliquée, Abygaèle veille à la coordination et au bon fonctionnement de l'Équipe BUTEAU. Elle supervise l'administration, le service à la clientèle et le développement de l'image de marque, incluant la création de contenu et la gestion des réseaux sociaux.",
+        },
+        {
+          name: "Alexis Buteau",
+          role: "Assistant en gestion hypothécaire",
+          photo: "https://i.imgur.com/MUD07Kc.jpg",
+          bio: "Calme, rigoureux et perfectionniste, Alexis occupe le rôle d'Assistant en gestion hypothécaire. Il prend en charge la gestion documentaire, le soutien administratif et l'analyse des documents essentiels au montage de chaque requête. Actuellement dans les derniers milles de sa formation de courtier hypothécaire.",
+        },
+      ],
       method: {
         eyebrow: "Notre méthode",
         title: "Trois piliers, une exécution",
+        intro:
+          "Chaque dossier est traité avec la même rigueur et la même structure. Notre équipe travaille en collaboration étroite pour analyser votre situation, identifier les meilleures options et exécuter une stratégie de financement claire et adaptée à vos objectifs.",
         items: [
           {
             label: "Collaboration",
-            desc: "Nous travaillons à vos côtés, en transparence totale, du premier appel à la clôture.",
+            desc: "Chaque membre de l'équipe contribue à la réussite de votre dossier. De l'analyse initiale à la finalisation, nous travaillons ensemble pour assurer cohérence et efficacité.",
           },
           {
             label: "Analyse",
-            desc: "Chaque dossier est étudié sur mesure : revenus, dettes, projet, profil de risque.",
+            desc: "Nous examinons votre situation financière en profondeur pour identifier les solutions les plus appropriées. Aucune hypothèse, uniquement des données concrètes et vérifiées.",
           },
           {
             label: "Exécution",
-            desc: "Une équipe rigoureuse qui structure et négocie pour vous, sans zones grises.",
+            desc: "Une fois la stratégie définie, nous mettons en œuvre le plan avec rapidité et précision. Chaque étape est suivie rigoureusement jusqu'à la réalisation complète de votre projet.",
           },
         ],
       },
+    },
+
+    cta: {
+      title: "Prêt à structurer votre projet ?",
+      subtitle: "Des décisions claires. Une exécution structurée. Des résultats concrets.",
+      button: "Prendre rendez-vous",
     },
 
     institutions: {
@@ -533,29 +562,58 @@ export const translations = {
 
     team: {
       hero: {
-        eyebrow: "Our team",
-        title: "A team of dedicated mortgage brokers",
+        eyebrow: "The team",
+        title: "Our team",
         subtitle:
-          "Committed to structuring your financial success with rigor and humanity.",
+          "A team of dedicated mortgage brokers, structuring your financial success with rigor and humanity.",
       },
+      members: [
+        {
+          name: "Andrew Buteau",
+          role: "Mortgage broker & Founder",
+          photo: "https://i.imgur.com/k4bZmLl.jpg",
+          bio: "Driven by performance and the desire to do things differently, Andrew founded Équipe BUTEAU with a clear vision: deliver a transparent, structured and results-oriented mortgage experience. Known for his rigor and professionalism, he supported 200+ families across the province in 2025.",
+        },
+        {
+          name: "Abygaèle Gagné",
+          role: "Executive coordinator",
+          photo:
+            "https://ugc.production.linktr.ee/5iBsvLTR0iXiJgoKotJw_I4Qhjq9XsUtz0u6v?io=true&size=avatar-v3_0",
+          bio: "Organized, creative and deeply involved, Abygaèle ensures the coordination and smooth operation of Équipe BUTEAU. She oversees administration, client service and the brand-image development — including content creation and social media management.",
+        },
+        {
+          name: "Alexis Buteau",
+          role: "Mortgage management assistant",
+          photo: "https://i.imgur.com/MUD07Kc.jpg",
+          bio: "Calm, rigorous and detail-oriented, Alexis serves as Mortgage Management Assistant. He handles document management, administrative support, and the analysis of materials essential to building every file. Currently in the final stretch of his mortgage broker training.",
+        },
+      ],
       method: {
         eyebrow: "Our method",
         title: "Three pillars, one execution",
+        intro:
+          "Every file is treated with the same rigor and structure. Our team works in close collaboration to analyze your situation, identify the best options, and execute a clear financing strategy tailored to your goals.",
         items: [
           {
             label: "Collaboration",
-            desc: "We work alongside you, in full transparency, from first call to closing.",
+            desc: "Every team member contributes to your file's success. From initial analysis to closing, we work together to ensure consistency and efficiency.",
           },
           {
             label: "Analysis",
-            desc: "Every file is studied carefully: income, debts, project, risk profile.",
+            desc: "We examine your financial situation in depth to identify the most appropriate solutions. No assumptions — only concrete, verified data.",
           },
           {
             label: "Execution",
-            desc: "A rigorous team that structures and negotiates for you — no grey areas.",
+            desc: "Once the strategy is defined, we execute with speed and precision. Every step is rigorously tracked through to project completion.",
           },
         ],
       },
+    },
+
+    cta: {
+      title: "Ready to structure your project?",
+      subtitle: "Clear decisions. Structured execution. Concrete results.",
+      button: "Book an appointment",
     },
 
     institutions: {
