@@ -24,12 +24,12 @@ export function TeamMethod() {
           tone="light"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-14 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 max-w-5xl mx-auto">
           {items.map((p, idx) => (
-            <div key={idx} className="relative pt-12">
-              {/* Roman numeral filigrane */}
+            <div key={idx} className="relative pt-16 md:pt-20">
+              {/* Roman numeral filigrane — drop cap éditorial XL (audit P2-I) */}
               <span
-                className="absolute -top-2 left-0 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)] text-7xl md:text-8xl leading-none opacity-30 pointer-events-none select-none"
+                className="absolute -top-4 -left-2 md:-left-3 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/30 text-[8rem] md:text-[10rem] lg:text-[11rem] leading-[0.85] pointer-events-none select-none"
                 aria-hidden="true"
               >
                 {["I", "II", "III"][idx]}
@@ -41,10 +41,10 @@ export function TeamMethod() {
               </h3>
 
               {/* Signature line bronze */}
-              <div className="w-12 h-0.5 bg-[color:var(--color-bronze)] mb-5" />
+              <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-5" />
 
               {/* Description */}
-              <p className="text-sm md:text-base leading-relaxed text-[color:var(--color-navy-deep)]/85">
+              <p className="text-sm md:text-base leading-[1.6] text-[color:var(--color-navy-deep)]/80">
                 {p.desc}
               </p>
             </div>

@@ -55,7 +55,7 @@ export function Reviews() {
                 <Star
                   key={i}
                   size={16}
-                  className="fill-[#FFC107] text-[#FFC107]"
+                  className="fill-[color:var(--color-rating-amber)] text-[color:var(--color-rating-amber)]"
                   aria-hidden="true"
                 />
               ))}
@@ -78,7 +78,7 @@ export function Reviews() {
                   <Star
                     key={i}
                     size={16}
-                    className="fill-[#FFC107] text-[#FFC107]"
+                    className="fill-[color:var(--color-rating-amber)] text-[color:var(--color-rating-amber)]"
                     aria-hidden="true"
                   />
                 ))}

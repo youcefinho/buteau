@@ -108,14 +108,30 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Signature line full-width entre top blocks et disclaimer (audit P2-J) */}
+        <div className="signature-line-long mt-16 mb-10 opacity-50" />
+
         {/* Bottom — disclaimer AMF compact + copyright */}
-        <div className="mt-16 pt-10 border-t border-[color:var(--color-taupe)]/30">
-          <p className="text-xs leading-relaxed text-[color:var(--color-cream)]/60 max-w-4xl mb-6">
+        <div>
+          <p className="text-xs leading-relaxed text-[color:var(--color-cream)]/65 max-w-4xl mb-6 italic">
             {config.amf.disclaimer[lang]}
           </p>
-          <p className="text-xs text-[color:var(--color-cream)]/50">
-            © {year} {config.name}. {t("footer.rights")}
-          </p>
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+            <p className="text-xs text-[color:var(--color-cream)]/55">
+              © {year} {config.name}. {t("footer.rights")}
+            </p>
+            <p className="eyebrow text-[color:var(--color-taupe)]/70 text-[10px]">
+              {t("footer.websiteBy")} —{" "}
+              <a
+                href="https://intralys.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[color:var(--color-bronze-soft)] transition-colors"
+              >
+                Intralys
+              </a>
+            </p>
+          </div>
         </div>
       </Container>
     </footer>

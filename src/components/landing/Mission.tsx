@@ -24,12 +24,12 @@ export function Mission() {
       id="mission"
       className="relative py-24 surface-navy overflow-hidden"
     >
-      {/* Background image overlay */}
+      {/* Background image overlay — dégradé tonal, image respire (audit P2-K) */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        className="absolute inset-0 bg-cover bg-center md:bg-fixed"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(16, 34, 61, 0.88), rgba(16, 34, 61, 0.88)), url('https://i.imgur.com/Bw7Zyf4.jpg')",
+            "linear-gradient(180deg, rgba(16, 34, 61, 0.72) 0%, rgba(16, 34, 61, 0.85) 50%, rgba(16, 34, 61, 0.78) 100%), url('https://i.imgur.com/Bw7Zyf4.jpg')",
         }}
         aria-hidden="true"
       />
@@ -63,25 +63,41 @@ export function Mission() {
           </p>
         </div>
 
-        {/* Grid 4 valeurs */}
+        {/* Grid 4 valeurs — pattern signature : numéro filigrane + icône taupe + tag bronze */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {values.map((v, idx) => {
             const Icon = ICONS[idx % ICONS.length];
             return (
-              <div
+              <article
                 key={idx}
-                className="bg-[color:var(--color-cream)] p-10 text-center border border-[color:var(--color-taupe)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(16,34,61,0.18)] hover:border-[color:var(--color-navy)] relative overflow-hidden"
+                className="group relative bg-[color:var(--color-cream)] p-8 md:p-10 border border-[color:var(--color-taupe)]/60 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_18px_48px_-20px_rgba(16,34,61,0.32)] hover:border-[color:var(--color-bronze)] overflow-hidden"
               >
-                <div className="mb-5 flex justify-center text-[color:var(--color-navy-deep)]">
-                  <Icon size={40} strokeWidth={1.5} aria-hidden="true" />
+                {/* Numéro filigrane top-right */}
+                <span
+                  aria-hidden="true"
+                  className="absolute top-4 right-5 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/20 text-5xl leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-[color:var(--color-bronze)]/30"
+                >
+                  {String(idx + 1).padStart(2, "0")}
+                </span>
+
+                {/* Icône */}
+                <div className="mb-6 inline-flex items-center justify-center w-12 h-12 rounded-full bg-[color:var(--color-taupe)]/15 text-[color:var(--color-bronze-deep)] transition-colors duration-500 group-hover:bg-[color:var(--color-bronze)]/15">
+                  <Icon size={22} strokeWidth={1.5} aria-hidden="true" />
                 </div>
-                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[var(--tracking-eyebrow)] mb-3">
+
+                {/* Title */}
+                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[var(--tracking-eyebrow)] mb-3 leading-snug">
                   {v.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-[color:var(--color-navy-deep)]/85">
+
+                {/* Signature line bronze */}
+                <div className="w-8 h-px bg-[color:var(--color-bronze)] mb-4 transition-[width] duration-500 group-hover:w-14" />
+
+                {/* Description */}
+                <p className="text-sm leading-[1.55] text-[color:var(--color-navy-deep)]/80">
                   {v.desc}
                 </p>
-              </div>
+              </article>
             );
           })}
         </div>

@@ -23,6 +23,9 @@
   --color-cream: oklch(0.978 0 0);               /* #f9f9f9 — off-white sections claires */
   --color-cream-warm: oklch(0.965 0.005 80);     /* off-white teinté chaud */
 
+  /* --- Tokens spécialisés (audit P1-G) --- */
+  --color-rating-amber: #FFC107;                 /* Google reviews stars */
+
   /* --- Surface tokens --- */
   --color-background: var(--color-cream);
   --color-foreground: var(--color-navy-deep);
@@ -124,17 +127,35 @@ body {
     display: block;
   }
 
-  /* Card surface (white/cream avec ombre douce) */
+  /* Card surface (white/cream avec ombre douce, luxury micro-interaction) */
   .card-luxury {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    transition: transform 280ms ease, box-shadow 280ms ease, border-color 280ms ease;
+    transition: transform 380ms cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 380ms cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 280ms ease;
+    position: relative;
+  }
+
+  .card-luxury::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-top: 1px solid var(--color-bronze);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
   }
 
   .card-luxury:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 32px -16px oklch(0.252 0.067 256 / 0.18);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px -18px oklch(0.252 0.067 256 / 0.22);
     border-color: var(--color-taupe);
+  }
+
+  .card-luxury:hover::before {
+    transform: scaleX(1);
   }
 
   /* Border-left accent (3px taupe ou bronze) */
@@ -148,7 +169,7 @@ body {
     padding-left: 1.25rem;
   }
 
-  /* Bouton principal bronze */
+  /* Bouton principal bronze — luxury micro-interaction */
   .btn-bronze {
     display: inline-flex;
     align-items: center;
@@ -163,13 +184,35 @@ body {
     color: var(--color-cream);
     background: var(--color-bronze);
     border: 1px solid var(--color-bronze);
-    transition: background 220ms ease, border-color 220ms ease, transform 220ms ease;
+    position: relative;
+    overflow: hidden;
+    transition: color 340ms ease, transform 240ms ease, border-color 240ms ease,
+                box-shadow 340ms ease;
+  }
+
+  .btn-bronze::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--color-bronze-deep);
+    transform: translateX(-101%);
+    transition: transform 420ms cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+  }
+
+  .btn-bronze > * {
+    position: relative;
+    z-index: 1;
   }
 
   .btn-bronze:hover {
-    background: var(--color-bronze-deep);
     border-color: var(--color-bronze-deep);
     transform: translateY(-1px);
+    box-shadow: 0 8px 24px -12px oklch(0.62 0.082 52 / 0.45);
+  }
+
+  .btn-bronze:hover::before {
+    transform: translateX(0);
   }
 
   /* Bouton ghost navy (sur fond clair) */
