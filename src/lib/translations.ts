@@ -512,6 +512,14 @@ export const translations = {
       noPromiseDisclaimer:
         "Aucune approbation hypothécaire n'est garantie. Les conditions, taux et critères d'admissibilité varient selon le prêteur et le profil de l'emprunteur.",
     },
+
+    cookies: {
+      title: "Vos préférences de témoins (cookies)",
+      body: "Nous utilisons des témoins pour le bon fonctionnement du site et, avec votre consentement, pour mesurer notre audience et améliorer votre expérience.",
+      accept: "Accepter tout",
+      refuse: "Refuser tout",
+      learnMore: "En savoir plus",
+    },
   },
 
   en: {
@@ -968,6 +976,14 @@ export const translations = {
       certificateLabel: "AMF registered — Mortgage broker",
       noPromiseDisclaimer:
         "No mortgage approval is guaranteed. Conditions, rates and eligibility criteria vary based on the lender and borrower profile.",
+    },
+
+    cookies: {
+      title: "Your cookie preferences",
+      body: "We use cookies to ensure the site works properly and, with your consent, to measure our audience and improve your experience.",
+      accept: "Accept all",
+      refuse: "Refuse all",
+      learnMore: "Learn more",
     },
   },
 } as const satisfies Record<Lang, BilingualLax>;

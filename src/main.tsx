@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider, createRouter } from "@tanstack/react-router";
 import { LanguageProvider } from "@/lib/LanguageContext";
+import { GlossaryProvider } from "@/lib/GlossaryContext";
 import { routeTree } from "./routeTree.gen";
 import "./index.css";
 
@@ -25,7 +26,9 @@ if (!rootEl) {
 createRoot(rootEl).render(
   <StrictMode>
     <LanguageProvider>
-      <RouterProvider router={router} />
+      <GlossaryProvider>
+        <RouterProvider router={router} />
+      </GlossaryProvider>
     </LanguageProvider>
   </StrictMode>,
 );
