@@ -77,7 +77,7 @@ export function Hero() {
 
           {/* CTA stack — reveal step 6, btn-bronze magnétique */}
           <div className="flex flex-col sm:flex-row gap-5 items-center animate-[buteauFadeUp_700ms_ease-out_1400ms_both]">
-            <a ref={magneticCta} href="#contact" className="btn-bronze">
+            <a ref={magneticCta} href="#contact" className="btn-bronze btn-shine">
               {t("home.hero.ctaPrimary")}
             </a>
             <Link

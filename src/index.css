@@ -90,6 +90,105 @@ body {
 }
 
 /* ============================================================
+   PRIMITIVES INTRALYS — adaptees Buteau bronze (skill intralys-edito-magazine)
+   ============================================================ */
+
+/* halo-glow — lueur bronze au hover sur cards interactives.
+   Adapte de Gatineau (crimson) -> bronze pour direction Buteau corporate luxury. */
+.halo-glow {
+  position: relative;
+  isolation: isolate;
+}
+.halo-glow::before {
+  content: "";
+  position: absolute;
+  inset: -1.25rem;
+  border-radius: inherit;
+  background: oklch(0.704 0.077 56 / 0.45);
+  filter: blur(56px);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  z-index: -1;
+}
+.halo-glow:hover::before,
+.halo-glow:focus-within::before {
+  opacity: 1;
+}
+
+/* text-gradient-bronze — gradient anime sur titres emphasis (chiffres, mots-cles).
+   Fix italic clip avec padding-right 0.12em (Cormorant Garamond italic descenders). */
+@keyframes gradient-shift-buteau {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.text-gradient-bronze {
+  background: linear-gradient(
+    90deg,
+    var(--color-bronze),
+    var(--color-bronze-soft),
+    var(--color-bronze),
+    var(--color-bronze-deep),
+    var(--color-bronze)
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: gradient-shift-buteau 6s ease-in-out infinite;
+  padding-right: 0.12em;
+}
+
+/* btn-shine — reflet diagonal lumineux sur CTAs principaux. */
+@keyframes btn-shine {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  transform: skewX(-20deg);
+  animation: btn-shine 4s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* text-glow-hover — lueur bronze sur liens texte (footer, lexique, footnotes). */
+.text-glow-hover {
+  transition: color 220ms ease, text-shadow 220ms ease;
+}
+.text-glow-hover:hover {
+  color: var(--color-bronze-soft);
+  text-shadow:
+    0 0 8px oklch(0.81 0.06 60 / 0.55),
+    0 0 18px oklch(0.704 0.077 56 / 0.30);
+}
+
+/* Stagger reveal au mount via data-attribute (vs animation classes individuelles).
+   Pattern Intralys (skill intralys-edito-magazine) : appliquer data-stagger="reveal"
+   sur un container -> les enfants directs revealed en cascade 0.05s -> 0.80s. */
+[data-stagger="reveal"] > * {
+  animation: buteauStaggerFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+[data-stagger="reveal"] > *:nth-child(1) { animation-delay: 0.05s; }
+[data-stagger="reveal"] > *:nth-child(2) { animation-delay: 0.18s; }
+[data-stagger="reveal"] > *:nth-child(3) { animation-delay: 0.30s; }
+[data-stagger="reveal"] > *:nth-child(4) { animation-delay: 0.42s; }
+[data-stagger="reveal"] > *:nth-child(5) { animation-delay: 0.55s; }
+[data-stagger="reveal"] > *:nth-child(6) { animation-delay: 0.68s; }
+[data-stagger="reveal"] > *:nth-child(7) { animation-delay: 0.80s; }
+@keyframes buteauStaggerFade {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
    CUSTOM CURSOR (luxury 4-mode, desktop only)
    ============================================================ */
 

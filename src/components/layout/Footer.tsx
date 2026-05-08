@@ -37,7 +37,7 @@ export function Footer() {
                 <Phone size={14} className="mt-1 shrink-0 text-[color:var(--color-taupe)]" aria-hidden="true" />
                 <a
                   href={`tel:${config.phone.raw}`}
-                  className="hover:text-[color:var(--color-bronze-soft)]"
+                  className="text-glow-hover"
                 >
                   {config.phone.display}
                 </a>
@@ -67,10 +67,10 @@ export function Footer() {
               {lang === "fr" ? "Navigation" : "Sitemap"}
             </p>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/" className="hover:text-[color:var(--color-bronze-soft)]">{t("nav.home")}</Link></li>
-              <li><Link to="/equipe" className="hover:text-[color:var(--color-bronze-soft)]">{t("nav.team")}</Link></li>
-              <li><Link to="/institutions" className="hover:text-[color:var(--color-bronze-soft)]">{t("nav.institutions")}</Link></li>
-              <li><Link to="/outils" className="hover:text-[color:var(--color-bronze-soft)]">{t("nav.tools")}</Link></li>
+              <li><Link to="/" className="text-glow-hover">{t("nav.home")}</Link></li>
+              <li><Link to="/equipe" className="text-glow-hover">{t("nav.team")}</Link></li>
+              <li><Link to="/institutions" className="text-glow-hover">{t("nav.institutions")}</Link></li>
+              <li><Link to="/outils" className="text-glow-hover">{t("nav.tools")}</Link></li>
             </ul>
           </div>
 
@@ -83,7 +83,7 @@ export function Footer() {
               <li>
                 <Link
                   to="/mentions-legales"
-                  className="hover:text-[color:var(--color-bronze-soft)]"
+                  className="text-glow-hover"
                 >
                   {t("footer.legal")}
                 </Link>
@@ -91,7 +91,7 @@ export function Footer() {
               <li>
                 <Link
                   to="/confidentialite"
-                  className="hover:text-[color:var(--color-bronze-soft)]"
+                  className="text-glow-hover"
                 >
                   {t("footer.privacy")}
                 </Link>
@@ -99,7 +99,7 @@ export function Footer() {
               <li>
                 <Link
                   to="/lexique"
-                  className="hover:text-[color:var(--color-bronze-soft)]"
+                  className="text-glow-hover"
                 >
                   {t("footer.lexique")}
                 </Link>

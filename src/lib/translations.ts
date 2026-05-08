@@ -315,6 +315,20 @@ export const translations = {
       button: "Prendre rendez-vous",
     },
 
+    letter: {
+      eyebrow: "Le mot du courtier",
+      heading: "Bonjour,",
+      bodyP1:
+        "On me demande souvent ce qui distingue notre approche. Ma réponse est simple :",
+      bodyP1Emphasis: "le temps qu'on prend à comprendre votre dossier avant de signer quoi que ce soit.",
+      bodyP2:
+        "Une hypothèque, ce n'est pas un produit. C'est une décision financière qui vous engage 25 ans. Mon rôle n'est pas de vous vendre le taux le plus bas affiché — c'est de structurer un dossier que vous comprenez, avec un prêteur qui vous correspond.",
+      bodyP3:
+        "Si on travaille ensemble, voici ce que je vous promets : aucune zone grise. Vous saurez chaque chiffre, chaque clause, chaque conséquence. Et quand le marché bougera, vous m'aurez au bout du fil.",
+      closing: "À bientôt,",
+      role: "Andrew Buteau, courtier hypothécaire",
+    },
+
     form: {
       fullNameLabel: "Nom complet",
       emailLabel: "Courriel",
@@ -789,6 +803,19 @@ export const translations = {
       title: "Ready to structure your project?",
       subtitle: "Clear decisions. Structured execution. Concrete results.",
       button: "Book an appointment",
+    },
+
+    letter: {
+      eyebrow: "A note from the broker",
+      heading: "Hello,",
+      bodyP1: "I'm often asked what sets our approach apart. My answer is simple:",
+      bodyP1Emphasis: "the time we take to understand your file before signing anything.",
+      bodyP2:
+        "A mortgage isn't a product. It's a financial decision that binds you for 25 years. My role isn't to sell you the lowest advertised rate — it's to structure a file you understand, with a lender that fits your profile.",
+      bodyP3:
+        "If we work together, here's my promise: no grey areas. You'll know every number, every clause, every consequence. And when the market moves, you'll have me on the line.",
+      closing: "Until soon,",
+      role: "Andrew Buteau, mortgage broker",
     },
 
     form: {

@@ -71,7 +71,7 @@ export function Reviews() {
           {items.map((r, idx) => (
             <article
               key={idx}
-              className="card-luxury p-8 flex flex-col items-center text-center"
+              className="card-luxury halo-glow p-8 flex flex-col items-center text-center"
             >
               <div className="flex gap-1 mb-5" aria-label="5 stars">
                 {Array.from({ length: 5 }).map((_, i) => (

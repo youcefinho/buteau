@@ -4,6 +4,7 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "../SectionHeading";
 import { parseLocaleFloat, formatLocaleCurrency } from "@/lib/parseLocaleFloat";
+import { AmortizationSparkline } from "./AmortizationSparkline";
 
 /**
  * Calculateur hypothécaire — formule canadienne (composé semi-annuel).
@@ -32,7 +33,16 @@ export function HypothequeCalculator() {
   const [rateInput, setRateInput] = useState<string>(String(DEFAULTS.rate));
   const [yearsInput, setYearsInput] = useState<string>(String(DEFAULTS.years));
 
-  const monthlyPayment = useMemo<number | null>(() => {
+  // Multi-résultats : paiement mensuel + total intérêts + total payé + monthly rate canadien
+  // Donne au user la VRAIE image (pas juste le paiement, mais la facture totale 25 ans).
+  const result = useMemo<{
+    monthlyPayment: number;
+    totalInterest: number;
+    totalPaid: number;
+    monthlyRate: number;
+    numberOfPayments: number;
+    principal: number;
+  } | null>(() => {
     const principal = parseLocaleFloat(amountInput) ?? DEFAULTS.amount;
     const annualRate = parseLocaleFloat(rateInput) ?? DEFAULTS.rate;
     const years = parseLocaleFloat(yearsInput) ?? DEFAULTS.years;
@@ -41,20 +51,37 @@ export function HypothequeCalculator() {
 
     const numberOfPayments = years * 12;
 
+    let monthlyRate: number;
+    let monthlyPayment: number;
+
     if (annualRate === 0) {
-      return principal / numberOfPayments;
+      monthlyRate = 0;
+      monthlyPayment = principal / numberOfPayments;
+    } else {
+      // Formule canadienne : composé semi-annuel.
+      const semiAnnualRate = annualRate / 2 / 100;
+      monthlyRate = Math.pow(1 + semiAnnualRate, 2 / 12) - 1;
+      monthlyPayment =
+        (principal * (monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments))) /
+        (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
     }
 
-    // Formule canadienne : composé semi-annuel.
-    const semiAnnualRate = annualRate / 2 / 100;
-    const monthlyRate = Math.pow(1 + semiAnnualRate, 2 / 12) - 1;
+    if (!Number.isFinite(monthlyPayment)) return null;
 
-    const payment =
-      (principal * (monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments))) /
-      (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
+    const totalPaid = monthlyPayment * numberOfPayments;
+    const totalInterest = totalPaid - principal;
 
-    return Number.isFinite(payment) ? payment : null;
+    return {
+      monthlyPayment,
+      totalInterest,
+      totalPaid,
+      monthlyRate,
+      numberOfPayments,
+      principal,
+    };
   }, [amountInput, rateInput, yearsInput]);
+
+  const monthlyPayment = result?.monthlyPayment ?? null;
 
   return (
     <section id="calculateur" className="py-24 surface-cream">
@@ -130,6 +157,68 @@ export function HypothequeCalculator() {
             </Link>
           </div>
         </div>
+
+        {/* === NOVEL : Sparkline amortization + multi-résultats (jamais fait sur autre client) === */}
+        {result && (
+          <div className="mt-10 max-w-5xl mx-auto bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/40 p-7 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
+            {/* Sparkline column */}
+            <div className="lg:col-span-7 space-y-3">
+              <div className="flex items-baseline justify-between gap-3">
+                <p className="eyebrow text-[color:var(--color-taupe-dark)]">
+                  {lang === "fr" ? "Courbe d'amortissement" : "Amortization curve"}
+                </p>
+                <p className="text-xs italic text-[color:var(--color-taupe-dark)]">
+                  {lang === "fr"
+                    ? `sur ${result.numberOfPayments / 12} ans`
+                    : `over ${result.numberOfPayments / 12} years`}
+                </p>
+              </div>
+              <AmortizationSparkline
+                principal={result.principal}
+                monthlyPayment={result.monthlyPayment}
+                monthlyRate={result.monthlyRate}
+                numberOfPayments={result.numberOfPayments}
+              />
+              <p className="text-[10px] italic text-[color:var(--color-taupe-dark)] mt-2">
+                {lang === "fr"
+                  ? "Plus le contrat avance, plus la part capital remplace les intérêts."
+                  : "As the loan progresses, the principal share replaces the interest share."}
+              </p>
+            </div>
+
+            {/* Multi-résultats column — total intérêts vs total payé */}
+            <div className="lg:col-span-5 space-y-5 lg:border-l lg:border-[color:var(--color-taupe)]/40 lg:pl-8">
+              <div>
+                <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-2">
+                  {lang === "fr" ? "Intérêts totaux" : "Total interest"}
+                </p>
+                <p className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-3xl tracking-[-0.01em] tabular-nums">
+                  {formatLocaleCurrency(Math.round(result.totalInterest), lang)}
+                </p>
+              </div>
+
+              <div className="signature-line w-12 bg-[color:var(--color-bronze)]" />
+
+              <div>
+                <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-2">
+                  {lang === "fr" ? "Coût total du prêt" : "Total cost of loan"}
+                </p>
+                <p className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-3xl tracking-[-0.01em] tabular-nums">
+                  {formatLocaleCurrency(Math.round(result.totalPaid), lang)}
+                </p>
+                <p className="text-xs italic text-[color:var(--color-taupe-dark)] mt-1">
+                  {lang === "fr" ? "capital + intérêts" : "principal + interest"}
+                </p>
+              </div>
+
+              <p className="text-[10px] leading-relaxed text-[color:var(--color-taupe-dark)] pt-2 italic border-t border-[color:var(--color-taupe)]/30 mt-4">
+                {lang === "fr"
+                  ? "Estimation à taux constant. La réalité varie selon les renouvellements, les paiements anticipés et les conditions du prêteur."
+                  : "Estimate at constant rate. Actual values vary with renewals, prepayments, and lender conditions."}
+              </p>
+            </div>
+          </div>
+        )}
 
         {/* Disclaimer AMF en bas */}
         <p className="text-xs leading-relaxed text-[color:var(--color-taupe-dark)] max-w-3xl mx-auto text-center mt-8 italic">

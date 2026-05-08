@@ -9,6 +9,7 @@ import { Reviews } from "@/components/landing/Reviews";
 import { ContactSection } from "@/components/landing/ContactSection";
 import { Faq } from "@/components/landing/Faq";
 import { ChapterMarker } from "@/components/landing/ChapterMarker";
+import { BrokerLetter } from "@/components/landing/BrokerLetter";
 import {
   SchemaJsonLd,
   buildFaqPage,
@@ -48,6 +49,10 @@ function HomePage() {
       <TeamTeaser />
       <Services />
       <Mission />
+
+      {/* « Le mot du courtier » — section authentique signature manuscrite (NOVEL) */}
+      <BrokerLetter />
+
       <ToolsTeaser />
 
       {/* Chapter III — annonce témoignages + contact */}
