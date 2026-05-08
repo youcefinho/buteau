@@ -90,6 +90,121 @@ body {
 }
 
 /* ============================================================
+   CUSTOM CURSOR (luxury 4-mode, desktop only)
+   ============================================================ */
+
+.custom-cursor {
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--color-taupe);
+  border-radius: 50%;
+  background: transparent;
+  mix-blend-mode: difference;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-cursor__label {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: 0;
+  color: var(--color-cream);
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  transition: font-size 240ms ease;
+}
+
+.custom-cursor[data-cursor-mode="link"] {
+  width: 12px;
+  height: 12px;
+  background: var(--color-bronze);
+  border-color: var(--color-bronze);
+}
+
+.custom-cursor[data-cursor-mode="text"] {
+  width: 2px;
+  height: 24px;
+  border-radius: 0;
+  background: var(--color-bronze);
+  border-color: var(--color-bronze);
+}
+
+.custom-cursor[data-cursor-mode="image"] {
+  width: 64px;
+  height: 64px;
+  background: oklch(0.722 0.018 84 / 0.35);
+  border-color: var(--color-cream);
+  backdrop-filter: blur(2px);
+}
+
+.custom-cursor[data-cursor-mode="image"] .custom-cursor__label {
+  font-size: 11px;
+}
+
+/* Cacher cursor sur tactile / reduced motion via media query (defense en profondeur) */
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .custom-cursor {
+    display: none !important;
+  }
+  html {
+    cursor: auto !important;
+  }
+}
+
+/* ============================================================
+   GRAIN TEXTURE OVERLAY (print magazine luxury feel)
+   ============================================================ */
+
+.grain-overlay {
+  position: relative;
+}
+
+.grain-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-size: 220px 220px;
+  opacity: 0.045;
+  mix-blend-mode: overlay;
+  z-index: 1;
+}
+
+/* ============================================================
+   SCROLL PROGRESS BAR (fine bronze line top of page)
+   ============================================================ */
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--color-bronze);
+  z-index: 60;
+  transform-origin: left;
+  transition: transform 80ms linear;
+  pointer-events: none;
+}
+
+/* ============================================================
+   DROP CAP éditorial luxury (Cormorant italic 7xl)
+   ============================================================ */
+
+.dropcap::first-letter {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 5em;
+  line-height: 0.85;
+  float: left;
+  margin: 0.05em 0.12em 0 -0.04em;
+  color: var(--color-bronze);
+  padding-top: 0.08em;
+}
+
+/* ============================================================
    KEYFRAMES — luxury staggered reveal au mount
    ============================================================ */
 

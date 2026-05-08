@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { config } from "@/lib/config";
+import { useMagnetic } from "@/hooks/useMagnetic";
 
 /**
  * Hero Accueil — large, plein écran, fond navy avec image overlay,
@@ -11,11 +12,12 @@ import { config } from "@/lib/config";
  */
 export function Hero() {
   const { t } = useLanguage();
+  const magneticCta = useMagnetic<HTMLAnchorElement>({ strength: 0.3, maxOffset: 14 });
 
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden surface-navy"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden surface-navy grain-overlay"
     >
       {/* Background image avec overlay tonal — laisse respirer l'image (luxury éditorial). */}
       {/* Audit P1-B : avant 0.78/0.86 mangeait l'image, on baisse à 0.55/0.78 avec dégradé. */}
@@ -73,9 +75,9 @@ export function Hero() {
             {t("home.hero.subtitle")}
           </p>
 
-          {/* CTA stack — reveal step 6 */}
+          {/* CTA stack — reveal step 6, btn-bronze magnétique */}
           <div className="flex flex-col sm:flex-row gap-5 items-center animate-[buteauFadeUp_700ms_ease-out_1400ms_both]">
-            <a href="#contact" className="btn-bronze">
+            <a ref={magneticCta} href="#contact" className="btn-bronze">
               {t("home.hero.ctaPrimary")}
             </a>
             <Link

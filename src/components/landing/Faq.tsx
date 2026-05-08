@@ -19,7 +19,7 @@ export function Faq() {
   return (
     <section
       id="faq"
-      className="relative py-24 surface-navy overflow-hidden"
+      className="relative py-24 surface-navy overflow-hidden grain-overlay"
     >
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"

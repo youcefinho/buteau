@@ -1,0 +1,57 @@
+import { Container } from "@/components/layout/Container";
+
+/**
+ * ChapterMarker — séparateur éditorial entre sections (numéro romain XL Cormorant
+ * italic + label optionnel). Détail luxury magazine qui rythme la lecture.
+ *
+ * Usage : `<ChapterMarker numeral="II" label="Notre équipe" />` entre 2 sections.
+ */
+type ChapterMarkerProps = {
+  numeral: string; // I / II / III / IV / V / VI / VII / VIII / IX
+  label?: string;
+  tone?: "light" | "dark";
+};
+
+export function ChapterMarker({ numeral, label, tone = "light" }: ChapterMarkerProps) {
+  const numColor =
+    tone === "dark"
+      ? "text-[color:var(--color-taupe)]/40"
+      : "text-[color:var(--color-bronze)]/30";
+  const labelColor =
+    tone === "dark"
+      ? "text-[color:var(--color-taupe)]"
+      : "text-[color:var(--color-taupe-dark)]";
+  const lineColor =
+    tone === "dark"
+      ? "bg-[color:var(--color-taupe)]/40"
+      : "bg-[color:var(--color-taupe)]";
+
+  return (
+    <div
+      className={`relative py-12 md:py-16 ${
+        tone === "dark" ? "surface-navy" : "surface-cream"
+      }`}
+      aria-hidden={!label ? "true" : undefined}
+    >
+      <Container size="md">
+        <div className="flex flex-col items-center text-center gap-5">
+          {/* Roman numeral énorme Cormorant italic — central focus */}
+          <span
+            className={`font-[var(--font-editorial)] italic font-light ${numColor} text-[7rem] md:text-[10rem] lg:text-[12rem] leading-[0.85] pointer-events-none select-none`}
+          >
+            {numeral}
+          </span>
+
+          {/* Label optional eyebrow */}
+          {label && (
+            <p className={`eyebrow ${labelColor} inline-flex items-center gap-3 -mt-2`}>
+              <span className={`inline-block w-6 h-px ${lineColor}`} />
+              {label}
+              <span className={`inline-block w-6 h-px ${lineColor}`} />
+            </p>
+          )}
+        </div>
+      </Container>
+    </div>
+  );
+}

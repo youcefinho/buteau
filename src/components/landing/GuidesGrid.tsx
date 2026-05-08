@@ -18,7 +18,7 @@ export function GuidesGrid() {
   return (
     <section
       id="guides"
-      className="relative py-24 surface-navy overflow-hidden border-t border-[color:var(--color-taupe)]/30"
+      className="relative py-24 surface-navy overflow-hidden border-t border-[color:var(--color-taupe)]/30 grain-overlay"
     >
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"

@@ -12,7 +12,7 @@ export function BlogTeaser() {
   return (
     <section
       id="blog"
-      className="relative py-24 surface-navy overflow-hidden border-t border-[color:var(--color-taupe)]/20"
+      className="relative py-24 surface-navy overflow-hidden border-t border-[color:var(--color-taupe)]/20 grain-overlay"
     >
       <div
         className="absolute inset-0 bg-cover bg-center"

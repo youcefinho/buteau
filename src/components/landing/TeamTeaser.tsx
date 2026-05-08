@@ -42,7 +42,7 @@ export function TeamTeaser() {
   return (
     <section
       id="equipe"
-      className="relative py-24 surface-navy overflow-hidden"
+      className="relative py-24 surface-navy overflow-hidden grain-overlay"
     >
       {/* Background image overlay */}
       <div

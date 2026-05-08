@@ -16,7 +16,7 @@ export function CtaBlock({ bgImageUrl = "https://i.imgur.com/Bw7Zyf4.jpg" }: Cta
   const { t } = useLanguage();
 
   return (
-    <section className="relative py-24 md:py-36 surface-navy overflow-hidden">
+    <section className="relative py-24 md:py-36 surface-navy overflow-hidden grain-overlay">
       {/* Background image avec overlay tonal — image visible */}
       <div
         className="absolute inset-0 bg-cover bg-center md:bg-fixed"

@@ -10,7 +10,7 @@ export function ToolsFinalCta() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative py-24 md:py-32 surface-navy overflow-hidden">
+    <section className="relative py-24 md:py-32 surface-navy overflow-hidden grain-overlay">
       <div
         className="absolute inset-0 bg-cover bg-center md:bg-fixed"
         style={{

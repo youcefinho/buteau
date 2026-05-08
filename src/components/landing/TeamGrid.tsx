@@ -57,7 +57,15 @@ export function TeamGrid() {
               </div>
 
               {/* Info — design éditorial avec hierarchy magazine */}
-              <div className="pt-7 md:pt-8 space-y-4">
+              <div className="pt-7 md:pt-8 space-y-4 relative">
+                {/* Marginalia — signature italic discrete a droite, signature manuscrite */}
+                <span
+                  aria-hidden="true"
+                  className="hidden md:block absolute -right-2 top-2 font-[var(--font-editorial)] italic text-[color:var(--color-bronze)]/45 text-sm rotate-90 origin-right tracking-[0.18em]"
+                >
+                  {["fondateur", "coordo.", "assist."][idx]}
+                </span>
+
                 {/* Eyebrow rôle (uppercase tracking) */}
                 <div className="flex items-center gap-2.5">
                   <div className="w-10 h-px bg-[color:var(--color-bronze)] transition-[width] duration-500 group-hover:w-16" aria-hidden="true" />
