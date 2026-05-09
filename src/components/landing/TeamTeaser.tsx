@@ -6,8 +6,9 @@ import { config } from "@/lib/config";
 
 /**
  * Section Équipe (teaser sur Accueil).
- * 3 cartes : Andrew (lead), Abygaèle (coord), Felix (coordo opérations).
- * Photos studio finales servies depuis /public/equipe/*.jpeg via config.assets.teamPhotos.
+ * 4 cartes : Andrew (lead), Abygaèle (coord), Alexis (assistant), Felix (coordo opérations).
+ * Photos servies depuis config.assets.teamPhotos (3 anciennes imgur + Felix studio).
+ * Grille responsive : 1 col mobile, 2 col tablet, 4 col desktop.
  */
 
 export function TeamTeaser() {
@@ -23,6 +24,11 @@ export function TeamTeaser() {
       name: t("home.teamTeaser.abygaeleName"),
       role: t("home.teamTeaser.abygaeleRole"),
       photo: config.assets.teamPhotos.abygaele,
+    },
+    {
+      name: t("home.teamTeaser.alexisName"),
+      role: t("home.teamTeaser.alexisRole"),
+      photo: config.assets.teamPhotos.alexis,
     },
     {
       name: t("home.teamTeaser.felixName"),
@@ -53,14 +59,14 @@ export function TeamTeaser() {
           tone="dark"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
           {members.map((m) => (
             <Link
               key={m.name}
               to="/equipe"
               className="group block bg-[color:var(--color-cream)] overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-bronze)]/60"
             >
-              <div className="relative h-80 overflow-hidden bg-gradient-to-br from-[color:var(--color-navy)] to-[color:var(--color-taupe)]">
+              <div className="relative h-72 lg:h-80 overflow-hidden bg-gradient-to-br from-[color:var(--color-navy)] to-[color:var(--color-taupe)]">
                 <img
                   src={m.photo}
                   alt={m.name}
@@ -68,13 +74,13 @@ export function TeamTeaser() {
                   className="w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
-              <div className="p-6 text-center">
-                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-lg uppercase tracking-[var(--tracking-eyebrow)] mb-3">
+              <div className="p-5 lg:p-6 text-center">
+                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base lg:text-lg uppercase tracking-[var(--tracking-eyebrow)] mb-3">
                   {m.name}
                 </h3>
                 <div className="flex items-center justify-center gap-2.5">
-                  <div className="w-8 h-0.5 bg-[color:var(--color-bronze)]" aria-hidden="true" />
-                  <p className="eyebrow text-[color:var(--color-taupe-dark)]">
+                  <div className="w-6 h-0.5 bg-[color:var(--color-bronze)]" aria-hidden="true" />
+                  <p className="eyebrow text-[color:var(--color-taupe-dark)] text-[10px] leading-tight">
                     {m.role}
                   </p>
                 </div>

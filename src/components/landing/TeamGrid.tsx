@@ -27,7 +27,7 @@ export function TeamGrid() {
       </span>
 
       <Container size="xl" className="relative">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
           {members.map((m, idx) => (
             <article
               key={idx}
@@ -41,8 +41,8 @@ export function TeamGrid() {
                 {String(idx + 1).padStart(2, "0")}
               </span>
 
-              {/* Photo with editorial frame */}
-              <div className="relative h-96 md:h-[28rem] overflow-hidden bg-gradient-to-br from-[color:var(--color-navy)] to-[color:var(--color-taupe)]">
+              {/* Photo with editorial frame — h-80 lg:h-[24rem] pour 4 cards balance */}
+              <div className="relative h-80 lg:h-[24rem] overflow-hidden bg-gradient-to-br from-[color:var(--color-navy)] to-[color:var(--color-taupe)]">
                 <img
                   src={m.photo}
                   alt={m.name}
@@ -63,7 +63,7 @@ export function TeamGrid() {
                   aria-hidden="true"
                   className="hidden md:block absolute -right-2 top-2 font-[var(--font-editorial)] italic text-[color:var(--color-bronze)]/45 text-sm rotate-90 origin-right tracking-[0.18em]"
                 >
-                  {["fondateur", "coordo.", "opérations"][idx]}
+                  {["fondateur", "coordo.", "assist.", "opérations"][idx]}
                 </span>
 
                 {/* Eyebrow rôle (uppercase tracking) */}
@@ -74,13 +74,13 @@ export function TeamGrid() {
                   </p>
                 </div>
 
-                {/* Name display Cormorant italic accent */}
-                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-2xl md:text-3xl uppercase tracking-[0.02em] leading-tight">
+                {/* Name display — taille adaptée 4 cards (text-xl/2xl vs 2xl/3xl avant) */}
+                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-xl lg:text-2xl uppercase tracking-[0.02em] leading-tight">
                   {m.name}
                 </h3>
 
-                {/* Bio Open Sans */}
-                <p className="text-sm md:text-base leading-[1.65] text-[color:var(--color-navy-deep)]/80 pt-2">
+                {/* Bio Open Sans — text-sm pour densité 4 cards */}
+                <p className="text-sm leading-[1.6] text-[color:var(--color-navy-deep)]/80 pt-2">
                   {m.bio}
                 </p>
               </div>

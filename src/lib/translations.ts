@@ -115,11 +115,13 @@ export const translations = {
 
       teamTeaser: {
         eyebrow: "Notre équipe",
-        title: "Trois pros, une seule rigueur",
+        title: "Quatre pros, une seule rigueur",
         andrewName: "Andrew Buteau",
         andrewRole: "Courtier hypothécaire & Fondateur",
         abygaeleName: "Abygaèle Gagné",
         abygaeleRole: "Coordonnatrice exécutive",
+        alexisName: "Alexis Buteau",
+        alexisRole: "Assistant en gestion hypothécaire",
         felixName: "Felix",
         felixRole: "Coordonnateur des opérations",
         cta: "Découvrir notre équipe",
@@ -294,7 +296,7 @@ export const translations = {
           },
           {
             quote:
-              "Disponibilité incroyable, ils font les choses autrement. Le suivi de dossier avec Abygaèle et Felix était impeccable. On se sent entre de bonnes mains du début à la fin. Fortement recommandé.",
+              "Disponibilité incroyable, ils font les choses autrement. Le suivi de dossier avec Abygaèle et Alexis était impeccable. On se sent entre de bonnes mains du début à la fin. Fortement recommandé.",
             authorInitial: "J",
             author: "Jonathan D.",
             city: "Boisbriand",
@@ -361,14 +363,21 @@ export const translations = {
         {
           name: "Andrew Buteau",
           role: "Courtier hypothécaire & Fondateur",
-          photo: "/equipe/andrew.jpeg",
+          photo: "https://i.imgur.com/k4bZmLl.jpg",
           bio: "Animé par la performance et la volonté de faire les choses autrement, Andrew a fondé l'Équipe BUTEAU avec une vision claire : offrir une expérience hypothécaire transparente, structurée et orientée vers les résultats. Reconnu pour sa rigueur et son professionnalisme, il a accompagné plus de 200 familles en 2025 à l'échelle de la province.",
         },
         {
           name: "Abygaèle Gagné",
           role: "Coordonnatrice exécutive",
-          photo: "/equipe/abygaele.jpeg",
+          photo:
+            "https://ugc.production.linktr.ee/5iBsvLTR0iXiJgoKotJw_I4Qhjq9XsUtz0u6v?io=true&size=avatar-v3_0",
           bio: "Organisée, créative et profondément impliquée, Abygaèle veille à la coordination et au bon fonctionnement de l'Équipe BUTEAU. Elle supervise l'administration, le service à la clientèle et le développement de l'image de marque, incluant la création de contenu et la gestion des réseaux sociaux.",
+        },
+        {
+          name: "Alexis Buteau",
+          role: "Assistant en gestion hypothécaire",
+          photo: "https://i.imgur.com/MUD07Kc.jpg",
+          bio: "Calme, rigoureux et perfectionniste, Alexis occupe le rôle d'Assistant en gestion hypothécaire. Il prend en charge la gestion documentaire, le soutien administratif et l'analyse des documents essentiels au montage de chaque requête. Actuellement dans les derniers milles de sa formation de courtier hypothécaire.",
         },
         {
           name: "Felix",
@@ -1172,11 +1181,13 @@ export const translations = {
 
       teamTeaser: {
         eyebrow: "Our team",
-        title: "Three pros, one rigor",
+        title: "Four pros, one rigor",
         andrewName: "Andrew Buteau",
         andrewRole: "Mortgage broker & Founder",
         abygaeleName: "Abygaèle Gagné",
         abygaeleRole: "Executive coordinator",
+        alexisName: "Alexis Buteau",
+        alexisRole: "Mortgage management assistant",
         felixName: "Felix",
         felixRole: "Brokerage operations coordinator",
         cta: "Meet our team",
@@ -1334,7 +1345,7 @@ export const translations = {
           },
           {
             quote:
-              "Incredible availability — they really do things differently. File follow-up with Abygaèle and Felix was flawless. We felt in good hands from start to finish. Highly recommended.",
+              "Incredible availability — they really do things differently. File follow-up with Abygaèle and Alexis was flawless. We felt in good hands from start to finish. Highly recommended.",
             authorInitial: "J",
             author: "Jonathan D.",
             city: "Boisbriand",
@@ -1401,14 +1412,21 @@ export const translations = {
         {
           name: "Andrew Buteau",
           role: "Mortgage broker & Founder",
-          photo: "/equipe/andrew.jpeg",
+          photo: "https://i.imgur.com/k4bZmLl.jpg",
           bio: "Driven by performance and the desire to do things differently, Andrew founded Équipe BUTEAU with a clear vision: deliver a transparent, structured and results-oriented mortgage experience. Known for his rigor and professionalism, he supported 200+ families across the province in 2025.",
         },
         {
           name: "Abygaèle Gagné",
           role: "Executive coordinator",
-          photo: "/equipe/abygaele.jpeg",
+          photo:
+            "https://ugc.production.linktr.ee/5iBsvLTR0iXiJgoKotJw_I4Qhjq9XsUtz0u6v?io=true&size=avatar-v3_0",
           bio: "Organized, creative and deeply involved, Abygaèle ensures the coordination and smooth operation of Équipe BUTEAU. She oversees administration, client service and the brand-image development — including content creation and social media management.",
+        },
+        {
+          name: "Alexis Buteau",
+          role: "Mortgage management assistant",
+          photo: "https://i.imgur.com/MUD07Kc.jpg",
+          bio: "Calm, rigorous and detail-oriented, Alexis serves as Mortgage Management Assistant. He handles document management, administrative support, and the analysis of materials essential to building every file. Currently in the final stretch of his mortgage broker training.",
         },
         {
           name: "Felix",

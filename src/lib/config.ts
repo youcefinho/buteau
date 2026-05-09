@@ -42,6 +42,12 @@ export const config = {
       role: "Courtière hypothécaire",
       email: "",
     },
+    alexis: {
+      firstName: "Alexis",
+      lastName: "",
+      role: "En formation de courtier hypothécaire",
+      email: "",
+    },
     felix: {
       firstName: "Felix",
       lastName: "",
@@ -96,8 +102,10 @@ export const config = {
     logo: "", // À fournir / créer
     ogImage: "",
     teamPhotos: {
-      andrew: "/equipe/andrew.jpeg",
-      abygaele: "/equipe/abygaele.jpeg",
+      andrew: "https://i.imgur.com/k4bZmLl.jpg",
+      abygaele:
+        "https://ugc.production.linktr.ee/5iBsvLTR0iXiJgoKotJw_I4Qhjq9XsUtz0u6v?io=true&size=avatar-v3_0",
+      alexis: "https://i.imgur.com/MUD07Kc.jpg",
       felix: "/equipe/felix.jpeg",
     },
   },
