@@ -229,6 +229,21 @@ export const translations = {
         ],
       },
 
+      capsulesPreview: {
+        eyebrow: "30 secondes top chrono",
+        title: "L'hypothèque expliquée en capsules.",
+        subtitle:
+          "Andrew répond aux vraies questions hypothécaires en 30 secondes. Mythes, calculs rapides, programmes méconnus, pièges à éviter — sans jargon, sans détour. Voici 5 capsules vedettes parmi 30+ disponibles.",
+        ctaFull: "Voir toutes les capsules",
+        items: [
+          { title: "Le RAP — utiliser ton REER pour acheter", hook: "Y'a pas juste Eminem qui peut rapper… toi aussi tu peux. Mais c'est pas le même RAP." },
+          { title: "La Golf GTI vs ta maison", hook: "Tu veux t'acheter une Golf GTI ? Parfait. Mais ça pourrait te coûter un garage." },
+          { title: "Faillite = plus jamais propriétaire ? Faux.", hook: "Tu as fait faillite ? C'est complètement faux. Une faillite, c'est un chapitre, pas la fin de l'histoire." },
+          { title: "Les paiements accélérés — sauver temps et intérêts", hook: "Diviser ton paiement en deux = 3 ans plus tôt + ~45 000 $ d'intérêts économisés." },
+          { title: "Girl Math ton hypothèque", hook: "Si on peut girl math un sac à 1 200 $, on peut DEFINITIVEMENT girl math une maison." },
+        ],
+      },
+
       calcPreview: {
         eyebrow: "Calculer en direct",
         title: "Combien va vous coûter votre hypothèque ?",
@@ -1297,6 +1312,21 @@ export const translations = {
             excerpt: "Comprehensive list to prepare your mortgage file.",
             tag: "Document",
           },
+        ],
+      },
+
+      capsulesPreview: {
+        eyebrow: "30 seconds, top chrono",
+        title: "Mortgage explained in capsules.",
+        subtitle:
+          "Andrew tackles real mortgage questions in 30 seconds. Myths, quick math, hidden programs, traps — no jargon, no detours. Here are 5 featured capsules from 30+ available.",
+        ctaFull: "View all capsules",
+        items: [
+          { title: "The HBP — using your RRSP to buy", hook: "Eminem isn't the only one who can RAP… you can too. But it's not the same RAP." },
+          { title: "The Golf GTI vs your house", hook: "Want a Golf GTI ? Fine. But it might cost you a garage." },
+          { title: "Bankruptcy = never an owner again ? False.", hook: "Filed bankruptcy ? Completely false. Bankruptcy is a chapter, not the end of the story." },
+          { title: "Accelerated payments — save time & interest", hook: "Splitting your payment in two = 3 years sooner + ~$45k saved in interest." },
+          { title: "Girl Math your mortgage", hook: "If we can girl math a $1,200 bag, we can DEFINITELY girl math a house." },
         ],
       },
 

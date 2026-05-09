@@ -14,6 +14,7 @@ import { TerritoryMap } from "@/components/landing/TerritoryMap";
 import { PreQualQuiz } from "@/components/landing/PreQualQuiz";
 import { CalculatorPreview } from "@/components/landing/CalculatorPreview";
 import { GuidesShelf } from "@/components/landing/GuidesShelf";
+import { CapsulesPreview } from "@/components/landing/CapsulesPreview";
 import { PageFooterMark } from "@/components/layout/PageFooterMark";
 import {
   SchemaJsonLd,
@@ -62,6 +63,11 @@ function HomePage() {
       {/* GuidesShelf — table-of-contents éditoriale des guides + docs
           téléchargeables. Synergie : 5 items préview + lien /outils#guides. */}
       <GuidesShelf />
+
+      {/* CapsulesPreview — table-of-contents éditoriale des capsules vidéo
+          « 30 secondes top chrono ». Pattern miroir GuidesShelf : 5 items
+          vedettes + CTA vers /capsules pour la collection complète (30+). */}
+      <CapsulesPreview />
 
       <ToolsTeaser />
 
