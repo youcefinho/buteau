@@ -1,9 +1,10 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, RotateCcw } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { ta, translations } from "@/lib/translations";
+import { useQuizTier } from "@/hooks/useQuizTier";
 
 /**
  * PreQualQuiz — quiz 3Q tier-based unique pour courtage hypothécaire.
@@ -19,7 +20,10 @@ import { ta, translations } from "@/lib/translations";
  * - Possibilité de refaire le quiz
  */
 
+// Tier importé du hook useQuizTier pour cohérence cross-app
 type Tier = "primo" | "refi" | "investor" | "explorer";
+
+// (Ré-exporté par useQuizTier.ts)
 
 type QuizQuestion = {
   q: string;
@@ -35,6 +39,7 @@ type QuizResult = {
 
 export function PreQualQuiz() {
   const { t, lang } = useLanguage();
+  const { saveTier } = useQuizTier();
   const questions = ta<QuizQuestion[]>(translations[lang], "quiz.questions");
 
   const [step, setStep] = useState<number>(0);
@@ -50,6 +55,14 @@ export function PreQualQuiz() {
       (a, b) => b[1] - a[1],
     )[0][0];
   }, [answers]);
+
+  // Persiste le tier dès que le quiz est complété — debloque les CTAs personnalisés
+  // sur Hero / Calculator / ContactForm partout dans l'app.
+  useEffect(() => {
+    if (isComplete) {
+      saveTier(winningTier);
+    }
+  }, [isComplete, winningTier, saveTier]);
 
   const result = ta<QuizResult>(translations[lang], `quiz.results.${winningTier}`);
 

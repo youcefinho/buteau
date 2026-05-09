@@ -87,6 +87,14 @@ export const translations = {
           "Des stratégies hypothécaires structurées et professionnelles. L'expérience client au cœur de notre succès.",
         ctaPrimary: "Prendre rendez-vous",
         ctaSecondary: "Découvrir notre équipe",
+        // CTAs personnalisés selon le tier du quiz (sauvé en localStorage).
+        // Active si le user a complété le PreQualQuiz, sinon ctaPrimary par défaut.
+        ctaByTier: {
+          primo: "Démarrer mon premier dossier",
+          refi: "Magasiner mes options",
+          investor: "Discuter ma stratégie",
+          explorer: "Prendre 20 minutes avec Andrew",
+        },
         issueLabel: "Édition",
         issueNumber: "N° 01",
         issueDate: "Quebec — MMXXVI",
@@ -338,6 +346,131 @@ export const translations = {
       button: "Prendre rendez-vous",
     },
 
+    journal: {
+      eyebrow: "Le journal",
+      title: "Réflexions de l'Équipe Buteau.",
+      subtitle:
+        "Chroniques, analyses de marché et explications éclairantes — publiées au rythme des tendances et des questions reçues.",
+      readingLabel: "min de lecture",
+      readMoreLabel: "Lire la suite",
+      comingSoonLabel: "Article complet bientôt",
+      categoryLabel: "Catégorie",
+      footnote: "Plus d'articles publiés progressivement — abonnez-vous pour ne rien manquer.",
+      articles: [
+        {
+          slug: "primo-acheteur-2026",
+          category: "Premier achat",
+          date: "5 mai 2026",
+          readingTime: 6,
+          title: "Acheter une première propriété en 2026 : ce qui change.",
+          lead: "Les règles du jeu se sont resserrées. Voici les 5 changements concrets qui affectent un primo-acheteur cette année — et comment s'y préparer sans paniquer.",
+          excerpt:
+            "Le ratio ABD plafonné à 39 %, l'arrivée du CELIAPP, l'augmentation du stress test, la disparition de certaines exemptions... Naviguer le marché de 2026 demande plus qu'un simple calculateur en ligne.",
+        },
+        {
+          slug: "renouvellement-quand-magasiner",
+          category: "Renouvellement",
+          date: "18 avril 2026",
+          readingTime: 4,
+          title: "Renouvellement hypothécaire : quand commencer à magasiner ?",
+          lead: "120 jours avant l'échéance, vous devriez déjà être en train de comparer. Voici pourquoi — et ce que vous risquez d'économiser en agissant tôt.",
+          excerpt:
+            "Votre prêteur actuel vous enverra une lettre 30 jours avant le renouvellement. C'est trop tard. Les meilleures conditions s'obtiennent quand vous êtes en position de négocier, pas quand vous courez après l'échéance.",
+        },
+        {
+          slug: "investisseur-immeuble-revenus",
+          category: "Investissement",
+          date: "2 avril 2026",
+          readingTime: 9,
+          title: "Premier immeuble à revenus : les pièges à éviter.",
+          lead: "L'effet de levier rend l'immobilier accessible. Mais 7 dossiers d'investisseurs sur 10 que je vois ont une faille structurelle évitable. Voici comment ne pas en faire partie.",
+          excerpt:
+            "Le ratio ATD, la cotation différenciée des revenus locatifs, la mise de fonds 20 % minimum, le choix entre prêt résidentiel ou commercial selon le nombre de logements... Chaque détail compte quand on bâtit un portefeuille.",
+        },
+      ],
+    },
+
+    courrier: {
+      eyebrow: "Courrier des lecteurs",
+      title: "Lettres reçues à notre rédaction.",
+      subtitle:
+        "Sélection de témoignages reçus par courriel, en personne ou via Google. Chaque lettre est publiée avec l'autorisation de son auteur.",
+      letterDateLabel: "Reçu le",
+      letterFromLabel: "De",
+      googleLinkLabel: "Voir tous les avis sur Google",
+      footnote: "Les lettres sont publiées de manière chronologique inverse — plus récentes d'abord.",
+      // Lettres étendues — extension de home.reviews.items + 6 lettres additionnelles
+      additionalLetters: [
+        {
+          quote:
+            "Nous avons changé de banque pour le renouvellement et l'écart de taux nous fait économiser plus de 12 000 $ sur 5 ans. Andrew a tout négocié sans qu'on ait à magasiner nous-mêmes — c'est ça la vraie valeur d'un courtier.",
+          authorInitial: "S",
+          author: "Sophie L.",
+          city: "Mirabel",
+          date: "22 janvier 2026",
+        },
+        {
+          quote:
+            "Premier multiplex acheté grâce à la stratégie de levier d'Andrew. Il m'a expliqué chaque ratio, chaque scénario. Pas de surprises au notaire.",
+          authorInitial: "F",
+          author: "François R.",
+          city: "Saint-Eustache",
+          date: "8 janvier 2026",
+        },
+        {
+          quote:
+            "Andrew a pris 45 minutes au téléphone pour comprendre notre situation avant de proposer quoi que ce soit. Personne d'autre n'avait fait ça.",
+          authorInitial: "M",
+          author: "Marie-Pierre G.",
+          city: "Terrebonne",
+          date: "14 décembre 2025",
+        },
+        {
+          quote:
+            "Refinancement de notre RBC pour consolider une marge et un prêt auto. Le tableau d'amortissement qu'Andrew nous a remis avant signature était parfaitement clair.",
+          authorInitial: "É",
+          author: "Étienne B.",
+          city: "Repentigny",
+          date: "30 novembre 2025",
+        },
+        {
+          quote:
+            "Notre courtière précédente avait abandonné notre dossier. Abygaèle a repris le dossier, nous a tenus informés à chaque étape. Closing dans les délais.",
+          authorInitial: "K",
+          author: "Karine T.",
+          city: "Blainville",
+          date: "18 novembre 2025",
+        },
+        {
+          quote:
+            "J'avais 30 ans et zéro idée comment fonctionnait une hypothèque. Andrew m'a tout expliqué — ratios, taux fixes vs variable, RAP, CELIAPP. Aujourd'hui je suis propriétaire.",
+          authorInitial: "L",
+          author: "Lucas M.",
+          city: "Boisbriand",
+          date: "5 octobre 2025",
+        },
+      ],
+    },
+
+    merci: {
+      eyebrow: "Demande reçue",
+      title: "Merci.",
+      subtitle:
+        "Andrew a bien reçu votre demande et reviendra vers vous personnellement sous peu. Aucune zone grise — vous saurez exactement où vous en êtes.",
+      footnote: "Reçu le · Andrew Buteau · Inscrit AMF",
+      nextStepsLabel: "Pendant que vous attendez",
+      nextStepCalc: "Explorer le calculateur",
+      nextStepLexique: "Parcourir le lexique",
+      nextStepBack: "Retour à l'accueil",
+      // Personnalisations selon tier (si quiz fait)
+      tierMessages: {
+        primo: "Votre dossier de premier achat est ma priorité — je vous appelle dans les 24 heures pour démarrer la préapprobation.",
+        refi: "Votre situation actuelle mérite une analyse complète — je vous appelle dans les 24 heures avec mes premières observations.",
+        investor: "Votre projet d'investissement est analysé — je vous appelle dans les 24 heures pour discuter votre stratégie de levier.",
+        explorer: "Pas de pression — je vous appelle dans les 24 heures pour clarifier votre situation, sans engagement.",
+      },
+    },
+
     notFound: {
       eyebrow: "Égaré ?",
       title: "Cette page n'existe pas dans notre édition.",
@@ -579,6 +712,8 @@ export const translations = {
         disclaimer:
           "Estimation indicative basée sur la formule canadienne semi-annuelle. Les conditions, taux et critères d'admissibilité varient selon le prêteur et le profil de l'emprunteur. Aucune approbation hypothécaire n'est garantie.",
         ctaLabel: "Discuter de votre projet",
+        shareLabel: "Partager ce scénario",
+        shareCopiedLabel: "Lien copié",
         scenariosTitle: "Et si...",
         scenariosSubtitle:
           "Voyez l'impact concret de petites décisions sur votre dossier.",
@@ -718,6 +853,12 @@ export const translations = {
           "Structured, professional mortgage strategies. Client experience at the heart of our success.",
         ctaPrimary: "Book an appointment",
         ctaSecondary: "Meet our team",
+        ctaByTier: {
+          primo: "Start my first file",
+          refi: "Compare my options",
+          investor: "Discuss my strategy",
+          explorer: "Take 20 minutes with Andrew",
+        },
         issueLabel: "Edition",
         issueNumber: "Nº 01",
         issueDate: "Quebec — MMXXVI",
@@ -950,6 +1091,129 @@ export const translations = {
       title: "Ready to structure your project?",
       subtitle: "Clear decisions. Structured execution. Concrete results.",
       button: "Book an appointment",
+    },
+
+    journal: {
+      eyebrow: "The journal",
+      title: "Reflections from Équipe Buteau.",
+      subtitle:
+        "Columns, market analyses and clarifying explanations — published at the rhythm of trends and questions received.",
+      readingLabel: "min read",
+      readMoreLabel: "Read more",
+      comingSoonLabel: "Full article coming soon",
+      categoryLabel: "Category",
+      footnote: "More articles published progressively — subscribe to never miss out.",
+      articles: [
+        {
+          slug: "primo-acheteur-2026",
+          category: "First purchase",
+          date: "May 5, 2026",
+          readingTime: 6,
+          title: "Buying a first home in 2026: what's changing.",
+          lead: "The rules have tightened. Here are the 5 concrete changes affecting a first-time buyer this year — and how to prepare without panicking.",
+          excerpt:
+            "GDS ratio capped at 39%, FHSA arrival, stress test increase, disappearance of certain exemptions... Navigating the 2026 market takes more than an online calculator.",
+        },
+        {
+          slug: "renouvellement-quand-magasiner",
+          category: "Renewal",
+          date: "April 18, 2026",
+          readingTime: 4,
+          title: "Mortgage renewal: when to start shopping?",
+          lead: "120 days before maturity, you should already be comparing. Here's why — and what you stand to save by acting early.",
+          excerpt:
+            "Your current lender will send a letter 30 days before renewal. It's too late. The best conditions are obtained when you're in a negotiating position, not when you're chasing the deadline.",
+        },
+        {
+          slug: "investisseur-immeuble-revenus",
+          category: "Investment",
+          date: "April 2, 2026",
+          readingTime: 9,
+          title: "First income property: pitfalls to avoid.",
+          lead: "Leverage makes real estate accessible. But 7 out of 10 investor files I see have an avoidable structural flaw. Here's how to stay clear.",
+          excerpt:
+            "The TDS ratio, differential rental income recognition, 20% minimum down payment, the choice between residential or commercial mortgage by unit count... Every detail matters when building a portfolio.",
+        },
+      ],
+    },
+
+    courrier: {
+      eyebrow: "Letters to the Editor",
+      title: "Letters received at our editorial desk.",
+      subtitle:
+        "A selection of testimonials received by email, in person, or via Google. Each letter is published with the author's permission.",
+      letterDateLabel: "Received",
+      letterFromLabel: "From",
+      googleLinkLabel: "See all reviews on Google",
+      footnote: "Letters are published in reverse chronological order — most recent first.",
+      additionalLetters: [
+        {
+          quote:
+            "We switched banks at renewal and the rate spread is saving us over $12,000 over 5 years. Andrew negotiated everything without us having to shop around — that's the real value of a broker.",
+          authorInitial: "S",
+          author: "Sophie L.",
+          city: "Mirabel",
+          date: "January 22, 2026",
+        },
+        {
+          quote:
+            "First multi-unit purchased thanks to Andrew's leverage strategy. He explained every ratio, every scenario. No surprises at the notary.",
+          authorInitial: "F",
+          author: "François R.",
+          city: "Saint-Eustache",
+          date: "January 8, 2026",
+        },
+        {
+          quote:
+            "Andrew took 45 minutes on the phone to understand our situation before proposing anything. No one else had done that.",
+          authorInitial: "M",
+          author: "Marie-Pierre G.",
+          city: "Terrebonne",
+          date: "December 14, 2025",
+        },
+        {
+          quote:
+            "Refinanced our RBC to consolidate a line of credit and a car loan. The amortization table Andrew gave us before signing was perfectly clear.",
+          authorInitial: "É",
+          author: "Étienne B.",
+          city: "Repentigny",
+          date: "November 30, 2025",
+        },
+        {
+          quote:
+            "Our previous broker had abandoned our file. Abygaèle picked it up, kept us informed every step. Closing on time.",
+          authorInitial: "K",
+          author: "Karine T.",
+          city: "Blainville",
+          date: "November 18, 2025",
+        },
+        {
+          quote:
+            "I was 30 with zero idea how a mortgage worked. Andrew explained everything — ratios, fixed vs variable, HBP, FHSA. Today I'm a homeowner.",
+          authorInitial: "L",
+          author: "Lucas M.",
+          city: "Boisbriand",
+          date: "October 5, 2025",
+        },
+      ],
+    },
+
+    merci: {
+      eyebrow: "Request received",
+      title: "Thank you.",
+      subtitle:
+        "Andrew has received your request and will personally get back to you shortly. No grey areas — you'll know exactly where things stand.",
+      footnote: "Received · Andrew Buteau · AMF registered",
+      nextStepsLabel: "While you wait",
+      nextStepCalc: "Explore the calculator",
+      nextStepLexique: "Browse the glossary",
+      nextStepBack: "Back to home",
+      tierMessages: {
+        primo: "Your first-time buyer file is my priority — I'll call you within 24 hours to start the pre-approval.",
+        refi: "Your current situation deserves a full review — I'll call you within 24 hours with my first observations.",
+        investor: "Your investment project is being analyzed — I'll call you within 24 hours to discuss your leverage strategy.",
+        explorer: "No pressure — I'll call you within 24 hours to clarify your situation, no commitment.",
+      },
     },
 
     notFound: {
@@ -1188,6 +1452,8 @@ export const translations = {
         disclaimer:
           "Indicative estimate based on the Canadian semi-annual compounding formula. Conditions, rates and eligibility criteria vary depending on the lender and borrower profile. No mortgage approval is guaranteed.",
         ctaLabel: "Discuss your project",
+        shareLabel: "Share this scenario",
+        shareCopiedLabel: "Link copied",
         scenariosTitle: "What if...",
         scenariosSubtitle: "See the real impact of small choices on your file.",
         scenarioAcceleratedTitle: "You paid $100 more each month",

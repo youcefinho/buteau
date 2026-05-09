@@ -6,6 +6,7 @@ import { LendersGrid } from "@/components/landing/LendersGrid";
 import { InstitutionMissing } from "@/components/landing/InstitutionMissing";
 import { CtaBlock } from "@/components/landing/CtaBlock";
 import { SchemaJsonLd, breadcrumbs } from "@/components/layout/SchemaJsonLd";
+import { PageFooterMark } from "@/components/layout/PageFooterMark";
 
 export const Route = createFileRoute("/institutions")({
   component: InstitutionsPage,
@@ -26,6 +27,7 @@ function InstitutionsPage() {
       <LendersGrid />
       <InstitutionMissing />
       <CtaBlock />
+      <PageFooterMark numeral="III" label={lang === "fr" ? "Institutions" : "Lenders"} />
     </main>
   );
 }

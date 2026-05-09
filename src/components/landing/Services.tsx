@@ -1,6 +1,7 @@
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "./SectionHeading";
+import { AutoGlossary } from "./AutoGlossary";
 import { ta, translations } from "@/lib/translations";
 
 /**
@@ -72,10 +73,10 @@ export function Services() {
                   <div className="w-8 h-px bg-[color:var(--color-bronze)] mt-4 transition-[width] duration-500 group-hover:w-16" />
                 </div>
 
-                {/* Description — col 7 */}
+                {/* Description — col 7. AutoGlossary wrap les termes hypothécaires détectés. */}
                 <div className="md:col-span-7">
                   <p className="text-base md:text-lg leading-[1.6] text-[color:var(--color-navy-deep)]/80 font-[var(--font-editorial)] italic">
-                    {s.desc}
+                    <AutoGlossary text={s.desc} maxWraps={2} />
                   </p>
                 </div>
               </div>

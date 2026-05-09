@@ -12,6 +12,7 @@ import { ChapterMarker } from "@/components/landing/ChapterMarker";
 import { BrokerLetter } from "@/components/landing/BrokerLetter";
 import { TerritoryMap } from "@/components/landing/TerritoryMap";
 import { PreQualQuiz } from "@/components/landing/PreQualQuiz";
+import { PageFooterMark } from "@/components/layout/PageFooterMark";
 import {
   SchemaJsonLd,
   buildFaqPage,
@@ -70,6 +71,7 @@ function HomePage() {
 
       <ContactSection />
       <Faq />
+      <PageFooterMark numeral="I" label={lang === "fr" ? "Accueil" : "Home"} />
     </main>
   );
 }

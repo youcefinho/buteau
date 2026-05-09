@@ -8,6 +8,7 @@ import { BlogTeaser } from "@/components/landing/BlogTeaser";
 import { DocumentsGrid } from "@/components/landing/DocumentsGrid";
 import { ToolsFinalCta } from "@/components/landing/ToolsFinalCta";
 import { SchemaJsonLd, breadcrumbs } from "@/components/layout/SchemaJsonLd";
+import { PageFooterMark } from "@/components/layout/PageFooterMark";
 
 export const Route = createFileRoute("/outils")({
   component: ToolsPage,
@@ -30,6 +31,7 @@ function ToolsPage() {
       <BlogTeaser />
       <DocumentsGrid />
       <ToolsFinalCta />
+      <PageFooterMark numeral="IV" label={lang === "fr" ? "Outils" : "Tools"} />
     </main>
   );
 }

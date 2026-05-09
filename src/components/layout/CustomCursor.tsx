@@ -14,7 +14,7 @@ import { useEffect, useRef, useState } from "react";
  * Respecte prefers-reduced-motion (pas d'effet — cursor natif visible).
  */
 
-type CursorMode = "default" | "link" | "text" | "image";
+type CursorMode = "default" | "link" | "text" | "image" | "drag";
 
 export function CustomCursor() {
   const dotRef = useRef<HTMLDivElement | null>(null);
@@ -60,7 +60,10 @@ export function CustomCursor() {
     const onOver = (e: Event) => {
       const target = e.target as HTMLElement | null;
       if (!target || !target.closest) return;
-      if (target.closest("a, button, [role='button'], label[for]")) {
+      // Sliders du Calculator -> mode "drag" (signature Buteau Calculator)
+      if (target.closest('input[type="range"], .calc-slider')) {
+        setMode("drag");
+      } else if (target.closest("a, button, [role='button'], label[for]")) {
         setMode("link");
       } else if (target.closest("input, textarea, [contenteditable]")) {
         setMode("text");
@@ -106,7 +109,7 @@ export function CustomCursor() {
       }}
     >
       <span className="custom-cursor__label" aria-hidden="true">
-        Voir
+        {mode === "drag" ? "↔" : "Voir"}
       </span>
     </div>
   );

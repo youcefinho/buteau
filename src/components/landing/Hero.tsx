@@ -4,6 +4,7 @@ import { Container } from "@/components/layout/Container";
 import { config } from "@/lib/config";
 import { useMagnetic } from "@/hooks/useMagnetic";
 import { ta, translations } from "@/lib/translations";
+import { useQuizTier } from "@/hooks/useQuizTier";
 
 /**
  * Hero Accueil — large, plein écran, fond navy avec image overlay,
@@ -15,6 +16,12 @@ export function Hero() {
   const { t, lang } = useLanguage();
   const magneticCta = useMagnetic<HTMLAnchorElement>({ strength: 0.3, maxOffset: 14 });
   const letterWords = ta<string[]>(translations[lang], "home.hero.letterWords");
+  const { tier } = useQuizTier();
+
+  // CTA personnalisé selon le tier du quiz (si complété), sinon CTA par défaut.
+  const ctaLabel = tier
+    ? ta<string>(translations[lang], `home.hero.ctaByTier.${tier}`) || t("home.hero.ctaPrimary")
+    : t("home.hero.ctaPrimary");
 
   return (
     <section
@@ -145,7 +152,7 @@ export function Hero() {
           {/* CTA stack — reveal step 6, btn-bronze magnétique */}
           <div className="flex flex-col sm:flex-row gap-5 items-center animate-[buteauFadeUp_700ms_ease-out_1400ms_both]">
             <a ref={magneticCta} href="#contact" className="btn-bronze btn-shine">
-              {t("home.hero.ctaPrimary")}
+              {ctaLabel}
             </a>
             <Link
               to="/equipe"

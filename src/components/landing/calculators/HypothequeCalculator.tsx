@@ -1,5 +1,6 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "@tanstack/react-router";
+import { Share2, Check } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "../SectionHeading";
@@ -35,9 +36,63 @@ const RANGES = {
 
 export function HypothequeCalculator() {
   const { t, lang } = useLanguage();
-  const [amountInput, setAmountInput] = useState<string>(String(DEFAULTS.amount));
-  const [rateInput, setRateInput] = useState<string>(String(DEFAULTS.rate));
-  const [yearsInput, setYearsInput] = useState<string>(String(DEFAULTS.years));
+
+  // Initialise depuis URL search params si présents (?amount=400000&rate=5.5&years=25)
+  // Permet le partage de scénarios entre utilisateurs (synergie viralité).
+  const initialFromUrl = useMemo(() => {
+    if (typeof window === "undefined") return null;
+    const params = new URLSearchParams(window.location.search);
+    const a = params.get("amount");
+    const r = params.get("rate");
+    const y = params.get("years");
+    if (!a && !r && !y) return null;
+    return {
+      amount: a ?? String(DEFAULTS.amount),
+      rate: r ?? String(DEFAULTS.rate),
+      years: y ?? String(DEFAULTS.years),
+    };
+  }, []);
+
+  const [amountInput, setAmountInput] = useState<string>(
+    initialFromUrl?.amount ?? String(DEFAULTS.amount),
+  );
+  const [rateInput, setRateInput] = useState<string>(
+    initialFromUrl?.rate ?? String(DEFAULTS.rate),
+  );
+  const [yearsInput, setYearsInput] = useState<string>(
+    initialFromUrl?.years ?? String(DEFAULTS.years),
+  );
+  const [shareCopied, setShareCopied] = useState<boolean>(false);
+
+  // Reset le copied state après 2s
+  useEffect(() => {
+    if (!shareCopied) return;
+    const t = window.setTimeout(() => setShareCopied(false), 2000);
+    return () => window.clearTimeout(t);
+  }, [shareCopied]);
+
+  const handleShare = async () => {
+    if (typeof window === "undefined") return;
+    const url = new URL(window.location.href);
+    url.search = "";
+    url.searchParams.set("amount", amountInput);
+    url.searchParams.set("rate", rateInput);
+    url.searchParams.set("years", yearsInput);
+    url.hash = "calculateur";
+    try {
+      await navigator.clipboard.writeText(url.toString());
+      setShareCopied(true);
+    } catch {
+      // Fallback : selectionner le champ d'URL temporaire
+      const tmp = document.createElement("input");
+      tmp.value = url.toString();
+      document.body.appendChild(tmp);
+      tmp.select();
+      document.execCommand("copy");
+      document.body.removeChild(tmp);
+      setShareCopied(true);
+    }
+  };
 
   // Multi-résultats : paiement mensuel + total intérêts + total payé + monthly rate canadien
   // Donne au user la VRAIE image (pas juste le paiement, mais la facture totale 25 ans).
@@ -170,9 +225,23 @@ export function HypothequeCalculator() {
               </div>
             </div>
 
-            <Link to="/" hash="contact" className="btn-bronze w-full relative">
-              {t("tools.calc.ctaLabel")}
-            </Link>
+            <div className="space-y-3">
+              <Link to="/" hash="contact" className="btn-bronze w-full relative">
+                {t("tools.calc.ctaLabel")}
+              </Link>
+              <button
+                type="button"
+                onClick={handleShare}
+                className="group w-full inline-flex items-center justify-center gap-2 py-2 font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-cream)]/70 hover:text-[color:var(--color-bronze-soft)] transition-colors"
+              >
+                {shareCopied ? (
+                  <Check size={14} className="text-[color:var(--color-bronze-soft)]" aria-hidden="true" />
+                ) : (
+                  <Share2 size={14} aria-hidden="true" />
+                )}
+                {shareCopied ? t("tools.calc.shareCopiedLabel") : t("tools.calc.shareLabel")}
+              </button>
+            </div>
           </div>
         </div>
 

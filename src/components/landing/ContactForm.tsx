@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, type FormEvent } from "react";
-import { Link } from "@tanstack/react-router";
-import { Loader2, CheckCircle2, AlertCircle } from "lucide-react";
+import { Link, useNavigate } from "@tanstack/react-router";
+import { Loader2, AlertCircle } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { cn } from "@/lib/utils";
 
@@ -27,6 +27,7 @@ type ContactFormProps = {
 
 export function ContactForm({ source = "home_contact_form" }: ContactFormProps) {
   const { t, lang } = useLanguage();
+  const navigate = useNavigate();
   const [status, setStatus] = useState<Status>("idle");
   const [errorCode, setErrorCode] = useState<string | null>(null);
   const formStartedAtRef = useRef<number>(Date.now());
@@ -69,6 +70,8 @@ export function ContactForm({ source = "home_contact_form" }: ContactFormProps) 
 
       setStatus("success");
       e.currentTarget.reset();
+      // Navigate vers /merci page éditoriale (synergie avec quiz tier)
+      navigate({ to: "/merci" });
     } catch (err) {
       console.error("Lead submit error:", err);
       setErrorCode("network_error");
@@ -76,19 +79,14 @@ export function ContactForm({ source = "home_contact_form" }: ContactFormProps) 
     }
   }
 
+  // Status "success" : on navigate vers /merci immédiatement (cf. handleSubmit).
+  // Si la navigation a un délai, montre un état transitoire minimal.
   if (status === "success") {
     return (
-      <div className="text-center py-12 space-y-4">
-        <CheckCircle2
-          size={56}
-          className="mx-auto text-[color:var(--color-bronze)]"
-          aria-hidden="true"
-        />
-        <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-xl uppercase tracking-[0.04em]">
-          {t("form.successTitle")}
-        </h3>
-        <p className="text-sm text-[color:var(--color-taupe-dark)] max-w-sm mx-auto">
-          {t("form.successBody")}
+      <div className="text-center py-12 space-y-3">
+        <Loader2 size={32} className="mx-auto animate-spin text-[color:var(--color-bronze)]" aria-hidden="true" />
+        <p className="text-sm italic text-[color:var(--color-taupe-dark)]">
+          {t("form.submitting")}
         </p>
       </div>
     );

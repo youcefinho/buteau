@@ -5,6 +5,7 @@ import { TeamGrid } from "@/components/landing/TeamGrid";
 import { TeamMethod } from "@/components/landing/TeamMethod";
 import { CtaBlock } from "@/components/landing/CtaBlock";
 import { SchemaJsonLd, breadcrumbs, buildPerson } from "@/components/layout/SchemaJsonLd";
+import { PageFooterMark } from "@/components/layout/PageFooterMark";
 import { ta, translations } from "@/lib/translations";
 
 export const Route = createFileRoute("/equipe")({
@@ -31,6 +32,7 @@ function TeamPage() {
       <TeamGrid />
       <TeamMethod />
       <CtaBlock />
+      <PageFooterMark numeral="II" label={lang === "fr" ? "Équipe" : "Team"} />
     </main>
   );
 }

@@ -344,6 +344,23 @@ body {
   font-size: 11px;
 }
 
+/* Mode "drag" — affiché sur les sliders du Calculator (signature Buteau).
+   Curseur taupe avec flèche horizontale "↔" pour indiquer drag-able. */
+.custom-cursor[data-cursor-mode="drag"] {
+  width: 48px;
+  height: 48px;
+  background: oklch(0.704 0.077 56 / 0.35);
+  border-color: var(--color-bronze);
+  backdrop-filter: blur(2px);
+}
+
+.custom-cursor[data-cursor-mode="drag"] .custom-cursor__label {
+  font-size: 18px;
+  color: var(--color-cream);
+  font-style: normal;
+  font-weight: 700;
+}
+
 /* Cacher cursor sur tactile / reduced motion via media query (defense en profondeur) */
 @media (pointer: coarse), (prefers-reduced-motion: reduce) {
   .custom-cursor {
