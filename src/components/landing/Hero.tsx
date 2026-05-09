@@ -43,6 +43,36 @@ export function Hero() {
       {/* Ambient particles — flotteurs subtils luxury cinematic */}
       <div className="ambient-particles" aria-hidden="true" />
 
+      {/* === MAGAZINE COVER TREATMENT === */}
+      {/* Issue number top-left — comme la couverture d'un magazine luxury */}
+      <div className="absolute top-24 md:top-28 left-6 md:left-12 z-10 flex flex-col gap-2 animate-[buteauFadeUp_700ms_ease-out_400ms_both]">
+        <p className="eyebrow text-[color:var(--color-taupe)] text-[10px]">
+          {t("home.hero.issueLabel")}
+        </p>
+        <p className="font-[var(--font-editorial)] italic text-[color:var(--color-cream)] text-3xl md:text-4xl leading-none">
+          {t("home.hero.issueNumber")}
+        </p>
+        <p className="font-[var(--font-display)] text-[color:var(--color-taupe)] text-[10px] uppercase tracking-[0.2em] mt-1">
+          {t("home.hero.issueDate")}
+        </p>
+      </div>
+
+      {/* Location top-right (Laval · Québec) */}
+      <div className="absolute top-24 md:top-28 right-6 md:right-12 z-10 text-right animate-[buteauFadeUp_700ms_ease-out_500ms_both]">
+        <p className="eyebrow text-[color:var(--color-taupe)] text-[10px] inline-flex items-center gap-2">
+          <span className="block w-3 h-px bg-[color:var(--color-taupe)]" />
+          {t("home.hero.issueLocation")}
+        </p>
+      </div>
+
+      {/* Scroll hint bottom — fine ligne verticale + texte */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3 animate-[buteauFadeUp_700ms_ease-out_1800ms_both]">
+        <span className="block w-px h-12 bg-gradient-to-b from-transparent via-[color:var(--color-taupe)]/70 to-[color:var(--color-bronze)]" />
+        <p className="eyebrow text-[color:var(--color-taupe)]/70 text-[9px]">
+          {t("home.hero.scrollHint")}
+        </p>
+      </div>
+
       <Container size="xl" className="relative py-32 md:py-40">
         <div className="text-center max-w-5xl mx-auto flex flex-col items-center">
           {/* Eyebrow (Planiprêt — l'arrière-plan métier) — reveal step 1 */}

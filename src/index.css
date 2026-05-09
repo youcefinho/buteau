@@ -65,7 +65,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Custom selection — bronze background + cream text + slight letter-spacing
+   pour effet "highlighter de luxe" magazine éditorial. */
 ::selection {
+  background: var(--color-bronze);
+  color: var(--color-cream);
+  text-shadow: none;
+}
+::-moz-selection {
   background: var(--color-bronze);
   color: var(--color-cream);
 }

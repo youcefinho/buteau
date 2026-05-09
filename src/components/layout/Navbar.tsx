@@ -47,13 +47,24 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 inset-x-0 z-50 transition-all duration-300",
+        "fixed inset-x-0 z-50 transition-all duration-500 ease-out",
+        // Pattern floating pill : quand scrolled, le navbar se rétrécit, s'éloigne
+        // du top, devient une pill arrondie centrée. Vs le navbar pleine largeur initial.
         scrolled
-          ? "bg-[color:var(--color-cream)]/95 backdrop-blur-md border-b border-[color:var(--color-border)]"
-          : "bg-transparent",
+          ? "top-4 mx-auto max-w-6xl px-4"
+          : "top-0",
       )}
     >
-      <Container size="xl" as="nav" className="flex items-center justify-between h-20">
+      <Container
+        size="xl"
+        as="nav"
+        className={cn(
+          "flex items-center justify-between transition-all duration-500 ease-out",
+          scrolled
+            ? "h-14 bg-[color:var(--color-cream)]/95 backdrop-blur-xl border border-[color:var(--color-border)] rounded-full shadow-[0_8px_32px_-12px_rgba(16,34,61,0.18)] px-6 md:px-8"
+            : "h-20 bg-transparent border-b border-transparent px-6 md:px-10",
+        )}
+      >
         {/* Logo */}
         <Link to="/" className="group flex items-baseline gap-2">
           <span

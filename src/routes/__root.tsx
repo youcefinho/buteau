@@ -5,6 +5,7 @@ import { SkipToContent } from "@/components/layout/SkipToContent";
 import { CookieBanner } from "@/components/layout/CookieBanner";
 import { CustomCursor } from "@/components/layout/CustomCursor";
 import { ScrollProgress } from "@/components/layout/ScrollProgress";
+import { SplashIntro } from "@/components/layout/SplashIntro";
 import { TrackingPixels } from "@/components/landing/TrackingPixels";
 import { GlossaryModal } from "@/components/landing/GlossaryModal";
 
@@ -15,6 +16,7 @@ export const Route = createRootRoute({
 function RootComponent() {
   return (
     <>
+      <SplashIntro />
       <TrackingPixels />
       <SkipToContent />
       <ScrollProgress />

@@ -70,6 +70,13 @@ export const translations = {
       territoryLabel: "Territoire desservi",
       territoryValue: "Tout le Québec",
       websiteBy: "Site web par",
+      coverStatement:
+        "L'hypothèque ne devrait jamais être un mystère.",
+      colophon: "Colophon",
+      colophonComposed: "Composé en Montserrat & Cormorant Garamond",
+      colophonPrinted: "Imprimé en pixels — Cloudflare, Quebec",
+      colophonEdition: "Édition N° 01 — MMXXVI",
+      issn: "Andrew Buteau — Inscrit AMF",
     },
 
     home: {
@@ -80,6 +87,11 @@ export const translations = {
           "Des stratégies hypothécaires structurées et professionnelles. L'expérience client au cœur de notre succès.",
         ctaPrimary: "Prendre rendez-vous",
         ctaSecondary: "Découvrir notre équipe",
+        issueLabel: "Édition",
+        issueNumber: "N° 01",
+        issueDate: "Quebec — MMXXVI",
+        issueLocation: "Laval · Québec",
+        scrollHint: "Faire défiler",
       },
 
       partners: {
@@ -183,9 +195,11 @@ export const translations = {
       },
 
       reviews: {
-        eyebrow: "Témoignages",
+        eyebrow: "Courrier des lecteurs",
         title: "Ce que nos clients disent",
         googleBadgeLabel: "Évaluation Excellente",
+        letterDateLabel: "Reçu le",
+        letterFromLabel: "De",
         // Note Google : a verifier en mode incognito avant d'inscrire la note dans
         // Schema.org aggregateRating (skill intralys-compliance, regle A8 anti-pattern).
         // Pour l'instant, on omet le rating chiffre dans le Schema, mais on affiche
@@ -196,18 +210,24 @@ export const translations = {
               "Un service professionnel et rassurant pour notre premier achat d'une propriété. L'équipe a su nous obtenir des conditions exceptionnelles et nous a accompagnés à chaque étape avec une grande clarté.",
             authorInitial: "M",
             author: "Maxime T.",
+            city: "Laval",
+            date: "12 mars 2026",
           },
           {
             quote:
               "Efficacité redoutable pour notre refinancement. Andrew est rigoureux et transparent, il a pris le temps d'analyser tous nos chiffres pour structurer une stratégie vraiment avantageuse.",
             authorInitial: "C",
             author: "Catherine P.",
+            city: "Montréal",
+            date: "28 février 2026",
           },
           {
             quote:
               "Disponibilité incroyable, ils font les choses autrement. Le suivi de dossier avec Abygaèle et Alexis était impeccable. On se sent entre de bonnes mains du début à la fin. Fortement recommandé.",
             authorInitial: "J",
             author: "Jonathan D.",
+            city: "Boisbriand",
+            date: "5 février 2026",
           },
         ],
       },
@@ -602,6 +622,12 @@ export const translations = {
       territoryLabel: "Service area",
       territoryValue: "All of Quebec",
       websiteBy: "Website by",
+      coverStatement: "A mortgage should never be a mystery.",
+      colophon: "Colophon",
+      colophonComposed: "Set in Montserrat & Cormorant Garamond",
+      colophonPrinted: "Printed in pixels — Cloudflare, Quebec",
+      colophonEdition: "Edition Nº 01 — MMXXVI",
+      issn: "Andrew Buteau — AMF registered",
     },
 
     home: {
@@ -612,6 +638,11 @@ export const translations = {
           "Structured, professional mortgage strategies. Client experience at the heart of our success.",
         ctaPrimary: "Book an appointment",
         ctaSecondary: "Meet our team",
+        issueLabel: "Edition",
+        issueNumber: "Nº 01",
+        issueDate: "Quebec — MMXXVI",
+        issueLocation: "Laval · Quebec",
+        scrollHint: "Scroll",
       },
 
       partners: {
@@ -703,27 +734,35 @@ export const translations = {
       },
 
       reviews: {
-        eyebrow: "Testimonials",
+        eyebrow: "Letters to the editor",
         title: "What our clients say",
         googleBadgeLabel: "Excellent rating",
+        letterDateLabel: "Received",
+        letterFromLabel: "From",
         items: [
           {
             quote:
               "A professional and reassuring service for our first home purchase. The team secured exceptional conditions and walked us through every step with great clarity.",
             authorInitial: "M",
             author: "Maxime T.",
+            city: "Laval",
+            date: "March 12, 2026",
           },
           {
             quote:
               "Outstanding efficiency for our refinancing. Andrew is rigorous and transparent — he took the time to analyze every number to structure a truly advantageous strategy.",
             authorInitial: "C",
             author: "Catherine P.",
+            city: "Montreal",
+            date: "February 28, 2026",
           },
           {
             quote:
               "Incredible availability — they really do things differently. File follow-up with Abygaèle and Alexis was flawless. We felt in good hands from start to finish. Highly recommended.",
             authorInitial: "J",
             author: "Jonathan D.",
+            city: "Boisbriand",
+            date: "February 5, 2026",
           },
         ],
       },
