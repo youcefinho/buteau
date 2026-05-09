@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { ExternalLink } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useCarnet } from "@/lib/CarnetContext";
@@ -143,6 +144,35 @@ export function CarnetModal() {
         },
       ];
 
+  // Phase 3 — Schema.org ItemList du Carnet : SEO long-tail (chaque organisme
+  // indexable comme Organization). Inject dans le DOM via dangerouslySetInnerHTML
+  // quand le modal est ouvert. Pour vrai SEO permanent il faudrait une route,
+  // mais ce script est crawlable par les bots JS-rendering quand modal open.
+  const carnetSchema = useMemo(
+    () =>
+      JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: isFr
+          ? "Le carnet du primo-acchéteur — Édition Quebec MMXXVI"
+          : "First-time buyer's address book — Edition Quebec MMXXVI",
+        numberOfItems: sections.reduce((sum, s) => sum + s.entries.length, 0),
+        itemListElement: sections.flatMap((section, sIdx) =>
+          section.entries.map((entry, eIdx) => ({
+            "@type": "ListItem",
+            position: sIdx * 100 + eIdx + 1,
+            item: {
+              "@type": "Organization",
+              name: entry.name,
+              url: entry.url,
+              description: entry.note,
+            },
+          })),
+        ),
+      }),
+    [isFr, sections],
+  );
+
   return (
     <ModalShell
       isOpen={isOpen}
@@ -154,6 +184,13 @@ export function CarnetModal() {
       printable
       printLabel={isFr ? "Imprimer le carnet" : "Print address book"}
     >
+      {/* Phase 3 — Schema.org ItemList JSON-LD */}
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: carnetSchema }}
+      />
+
       {/* Sous-titre */}
       <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-6">
         {isFr ? "Le carnet du primo-acchéteur — Édition Quebec MMXXVI" : "The first-time buyer's address book — Edition Quebec MMXXVI"}
