@@ -2,6 +2,7 @@ import { ExternalLink } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useCarnet } from "@/lib/CarnetContext";
 import { ModalShell } from "@/components/layout/ModalShell";
+import { AutoGlossary } from "@/components/landing/AutoGlossary";
 
 /**
  * CarnetModal — « Le carnet du primo-acchéteur » en modal (pattern Serujan).
@@ -179,7 +180,7 @@ export function CarnetModal() {
               </div>
             </div>
             <p className="font-[var(--font-editorial)] italic text-base leading-[1.7] text-[color:var(--color-navy-deep)]/75 mb-6 ml-12">
-              {section.intro}
+              <AutoGlossary text={section.intro} maxWraps={2} />
             </p>
 
             <ul className="ml-12 space-y-5">
@@ -204,7 +205,7 @@ export function CarnetModal() {
                     <ExternalLink size={12} className="shrink-0 opacity-50 group-hover:opacity-100" aria-hidden="true" />
                   </a>
                   <p className="mt-2 font-[var(--font-editorial)] italic text-sm leading-[1.65] text-[color:var(--color-navy-deep)]/70">
-                    {entry.note}
+                    <AutoGlossary text={entry.note} maxWraps={2} />
                   </p>
                 </li>
               ))}

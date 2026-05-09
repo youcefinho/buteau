@@ -1,6 +1,7 @@
 import { useLanguage } from "@/lib/LanguageContext";
 import { useColophon } from "@/lib/ColophonContext";
 import { ModalShell } from "@/components/layout/ModalShell";
+import { AutoGlossary } from "@/components/landing/AutoGlossary";
 import { config } from "@/lib/config";
 
 /**
@@ -113,7 +114,7 @@ export function ColophonModal() {
                   {title}
                 </p>
                 <p className="text-sm leading-[1.7] text-[color:var(--color-navy-deep)]/75">
-                  {body}
+                  <AutoGlossary text={body} maxWraps={2} />
                 </p>
               </div>
             </li>
