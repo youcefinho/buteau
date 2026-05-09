@@ -85,8 +85,8 @@ export const translations = {
         eyebrow: "Courtage hypothécaire — Planiprêt",
         title: "L'hypothèque autrement",
         subtitle:
-          "200 familles accompagnées en 2025. Premier achat, renouvellement, refinancement, consolidation de dettes, investissement — chaque dossier reçoit la même rigueur.",
-        ctaPrimary: "Prendre rendez-vous",
+          "Première fois ou renouvellement stressant ? On commence par écouter — pas par juger votre dossier. 200 familles accompagnées en 2025, même rigueur pour chacune.",
+        ctaPrimary: "Estimer mon paiement en 60 secondes",
         ctaSecondary: "Découvrir notre équipe",
         // CTAs personnalisés selon le tier du quiz (sauvé en localStorage).
         // Active si le user a complété le PreQualQuiz, sinon ctaPrimary par défaut.
@@ -937,19 +937,23 @@ export const translations = {
       successBody:
         "Merci. Nous vous reviendrons sous peu pour structurer votre projet hypothécaire.",
       errors: {
-        consent_required: "Vous devez accepter la politique de confidentialité pour soumettre.",
-        name_invalid: "Veuillez saisir votre nom complet (minimum 2 caractères).",
-        name_too_long: "Le nom est trop long.",
-        email_invalid: "Adresse courriel invalide.",
-        email_too_long: "L'adresse courriel est trop longue.",
-        phone_too_long: "Le numéro de téléphone est trop long.",
-        message_too_long: "Le message est trop long.",
-        invalid_json: "Données invalides.",
+        consent_required:
+          "Pour qu'on puisse vous répondre, on a besoin de votre permission — cochez la case ci-dessus.",
+        name_invalid: "Pouvez-vous écrire votre nom au complet ? (au moins 2 lettres)",
+        name_too_long: "Votre nom semble un peu long — vérifiez s'il vous plaît.",
+        email_invalid: "On ne reconnaît pas le format de votre courriel — voulez-vous le corriger ?",
+        email_too_long: "Votre adresse courriel semble très longue — vérifiez s'il vous plaît.",
+        phone_too_long: "Votre numéro semble trop long — vérifiez le format.",
+        message_too_long: "Votre message est très long — voulez-vous le raccourcir un peu ?",
+        invalid_json: "Hum, quelque chose n'a pas fonctionné. Voulez-vous réessayer ?",
         rate_limited:
-          "Trop de tentatives. Veuillez patienter quelques instants avant de réessayer.",
-        db_error: "Erreur serveur. Veuillez réessayer dans un instant.",
-        network_error: "Connexion impossible. Vérifiez votre internet et réessayez.",
-        unknown_error: "Une erreur est survenue.",
+          "On a bien reçu vos tentatives. Patientez quelques secondes avant de retenter — c'est juste une protection technique.",
+        db_error:
+          "Notre serveur fait une petite pause. Réessayez dans un instant — vos infos sont en sécurité.",
+        network_error:
+          "On dirait que la connexion a sauté. Vérifiez votre internet et réessayez.",
+        unknown_error:
+          "Quelque chose a buggé de notre côté. Réessayez, ou écrivez-nous directement à andrew@equipebuteau.com.",
       },
     },
 
@@ -1197,8 +1201,8 @@ export const translations = {
         eyebrow: "Mortgage brokerage — Planiprêt",
         title: "Mortgage. Differently.",
         subtitle:
-          "200 families supported in 2025. First purchase, renewal, refinancing, debt consolidation, investment — every file receives the same rigor.",
-        ctaPrimary: "Book an appointment",
+          "First-time or stressful renewal? We start by listening — not by judging your file. 200 families supported in 2025, same rigor for each.",
+        ctaPrimary: "See my payment in 60 seconds",
         ctaSecondary: "Meet our team",
         ctaByTier: {
           primo: "Start my first file",
@@ -2025,18 +2029,22 @@ export const translations = {
       successBody:
         "Thank you. We'll get back to you shortly to structure your mortgage project.",
       errors: {
-        consent_required: "You must accept the privacy policy to submit.",
-        name_invalid: "Please enter your full name (minimum 2 characters).",
-        name_too_long: "Name is too long.",
-        email_invalid: "Invalid email address.",
-        email_too_long: "Email address is too long.",
-        phone_too_long: "Phone number is too long.",
-        message_too_long: "Message is too long.",
-        invalid_json: "Invalid data.",
-        rate_limited: "Too many attempts. Please wait a moment before retrying.",
-        db_error: "Server error. Please try again in a moment.",
-        network_error: "Connection failed. Check your internet and retry.",
-        unknown_error: "An error occurred.",
+        consent_required:
+          "So we can reply, we just need your permission — check the box above please.",
+        name_invalid: "Could you write your full name? (at least 2 letters)",
+        name_too_long: "Your name looks a bit long — could you double-check?",
+        email_invalid: "We don't recognize this email format — would you like to fix it?",
+        email_too_long: "Your email address looks very long — please double-check.",
+        phone_too_long: "Your phone number looks too long — please check the format.",
+        message_too_long: "Your message is quite long — would you like to shorten it a bit?",
+        invalid_json: "Hmm, something didn't go through. Want to try again?",
+        rate_limited:
+          "We received your attempts. Please wait a few seconds before retrying — it's just a technical safety.",
+        db_error: "Our server is taking a short break. Try again in a moment — your info is safe.",
+        network_error:
+          "Looks like the connection dropped. Check your internet and retry.",
+        unknown_error:
+          "Something glitched on our side. Try again, or write us directly at andrew@equipebuteau.com.",
       },
     },
 

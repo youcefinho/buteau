@@ -157,9 +157,11 @@ export function Hero() {
             {t("home.hero.subtitle")}
           </p>
 
-          {/* CTA stack — reveal step 6, btn-bronze magnétique */}
+          {/* CTA stack — reveal step 6, btn-bronze magnétique.
+              Audit P0 council UX : CTA principal pointe vers Calculator (low-friction)
+              au lieu de #contact (engagement max). Le tier-quiz écrase si user a complété. */}
           <div className="flex flex-col sm:flex-row gap-5 items-center animate-[buteauFadeUp_700ms_ease-out_1400ms_both]">
-            <a ref={magneticCta} href="#contact" className="btn-bronze btn-shine">
+            <a ref={magneticCta} href={tier ? "#contact" : "#calc-preview"} className="btn-bronze btn-shine">
               {ctaLabel}
             </a>
             <Link

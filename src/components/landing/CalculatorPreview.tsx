@@ -1,9 +1,10 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { parseLocaleFloat, formatLocaleCurrency } from "@/lib/parseLocaleFloat";
+import { useCountUp } from "@/hooks/useCountUp";
 
 /**
  * CalculatorPreview — version compacte du calculateur sur l'Accueil.
@@ -40,8 +41,31 @@ export function CalculatorPreview() {
     return Number.isFinite(p) ? p : null;
   }, [amount, rate, years]);
 
+  // Intérêts totaux + coût total — calculs déterministes (zéro invention).
+  const { totalInterest, totalCost } = useMemo<{ totalInterest: number | null; totalCost: number | null }>(() => {
+    if (monthlyPayment === null) return { totalInterest: null, totalCost: null };
+    const principal = parseLocaleFloat(amount) ?? DEFAULTS.amount;
+    const n = (parseLocaleFloat(years) ?? DEFAULTS.years) * 12;
+    const total = monthlyPayment * n;
+    return { totalInterest: total - principal, totalCost: total };
+  }, [monthlyPayment, amount, years]);
+
+  // Animation smooth du résultat — countUp depuis ancienne valeur (audit P0 council Motion).
+  // 420ms cubic-bezier easing déjà dans useCountUp (cubic ease-out).
+  const previousPaymentRef = useRef<number>(0);
+  const targetPayment = monthlyPayment ?? 0;
+  const animatedPayment = useCountUp(targetPayment, {
+    from: previousPaymentRef.current,
+    duration: 420,
+    start: monthlyPayment !== null,
+    decimals: 0,
+  });
+  useEffect(() => {
+    previousPaymentRef.current = targetPayment;
+  }, [targetPayment]);
+
   return (
-    <section className="relative py-24 md:py-32 surface-cream overflow-hidden">
+    <section id="calc-preview" className="relative py-24 md:py-32 surface-cream overflow-hidden scroll-mt-24">
       {/* Filigrane "$" Cormorant background */}
       <span
         aria-hidden="true"
@@ -132,7 +156,7 @@ export function CalculatorPreview() {
                   aria-live="polite"
                 >
                   {monthlyPayment !== null
-                    ? formatLocaleCurrency(Math.round(monthlyPayment), lang)
+                    ? formatLocaleCurrency(Math.round(animatedPayment), lang)
                     : "—"}
                 </p>
                 <div className="flex items-center gap-2 mt-3">
@@ -141,6 +165,35 @@ export function CalculatorPreview() {
                     {lang === "fr" ? "par mois" : "per month"}
                   </p>
                 </div>
+
+                {/* Audit P0 council UX : 3 lignes contexte sous le résultat.
+                    System 1 ne traite pas un nombre nu — donner référents (intérêts, coût total)
+                    + ligne empathique pour dédramatiser. */}
+                {monthlyPayment !== null && totalInterest !== null && totalCost !== null && (
+                  <div className="mt-5 pt-4 border-t border-[color:var(--color-taupe)]/20 space-y-2">
+                    <div className="flex items-baseline justify-between gap-3">
+                      <span className="font-[var(--font-display)] text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-taupe)]">
+                        {lang === "fr" ? "Intérêts sur la durée" : "Interest over term"}
+                      </span>
+                      <span className="font-[var(--font-display)] text-sm tabular-nums text-[color:var(--color-cream)]/85">
+                        {formatLocaleCurrency(Math.round(totalInterest), lang)}
+                      </span>
+                    </div>
+                    <div className="flex items-baseline justify-between gap-3">
+                      <span className="font-[var(--font-display)] text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-taupe)]">
+                        {lang === "fr" ? "Coût total" : "Total cost"}
+                      </span>
+                      <span className="font-[var(--font-display)] text-sm tabular-nums text-[color:var(--color-cream)]/85">
+                        {formatLocaleCurrency(Math.round(totalCost), lang)}
+                      </span>
+                    </div>
+                    <p className="font-[var(--font-editorial)] italic text-[10px] text-[color:var(--color-cream)]/60 leading-snug pt-1">
+                      {lang === "fr"
+                        ? "Ce chiffre n'est pas votre verdict — c'est un point de départ pour la conversation."
+                        : "This number isn't your verdict — it's a starting point for the conversation."}
+                    </p>
+                  </div>
+                )}
               </div>
 
               <Link to="/outils" hash="calculateur" className="btn-bronze btn-shine w-full text-xs">
