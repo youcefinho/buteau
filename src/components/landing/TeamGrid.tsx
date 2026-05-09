@@ -33,14 +33,6 @@ export function TeamGrid() {
               key={idx}
               className="group relative flex flex-col"
             >
-              {/* Numéro filigrane top-left (01/02/03) */}
-              <span
-                aria-hidden="true"
-                className="absolute -top-2 -left-3 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/30 text-7xl md:text-8xl leading-none pointer-events-none select-none z-10 transition-colors duration-500 group-hover:text-[color:var(--color-bronze)]/35"
-              >
-                {String(idx + 1).padStart(2, "0")}
-              </span>
-
               {/* Photo with editorial frame — h-80 lg:h-[24rem] pour 4 cards balance */}
               <div className="relative h-80 lg:h-[24rem] overflow-hidden bg-gradient-to-br from-[color:var(--color-navy)] to-[color:var(--color-taupe)]">
                 <img
