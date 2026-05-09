@@ -364,7 +364,7 @@ export const translations = {
           name: "Andrew Buteau",
           role: "Courtier hypothécaire & Fondateur",
           photo: "https://i.imgur.com/k4bZmLl.jpg",
-          bio: "Animé par la performance et la volonté de faire les choses autrement, Andrew a fondé l'Équipe BUTEAU avec une vision claire : offrir une expérience hypothécaire transparente, structurée et orientée vers les résultats. Reconnu pour sa rigueur et son professionnalisme, il a accompagné plus de 200 familles en 2025 à l'échelle de la province.",
+          bio: "Andrew Buteau est courtier hypothécaire à Laval, sous le cabinet Planiprêt. Sa philosophie : « En agissant avec intégrité et transparence, je m'assure que mes clients auront toute l'information pour faire un choix éclairé. » Il fournit les outils de planification nécessaires pour sélectionner le prêt hypothécaire qui répond le mieux aux besoins de chaque dossier. En 2025, son équipe a accompagné plus de 200 familles à travers le Québec — avec rigueur, disponibilité, et l'énergie de faire les choses autrement.",
         },
         {
           name: "Abygaèle Gagné",
@@ -1419,7 +1419,7 @@ export const translations = {
           name: "Andrew Buteau",
           role: "Mortgage broker & Founder",
           photo: "https://i.imgur.com/k4bZmLl.jpg",
-          bio: "Driven by performance and the desire to do things differently, Andrew founded Équipe BUTEAU with a clear vision: deliver a transparent, structured and results-oriented mortgage experience. Known for his rigor and professionalism, he supported 200+ families across the province in 2025.",
+          bio: "Andrew Buteau is a mortgage broker in Laval, under the Planiprêt licence. His philosophy: « By acting with integrity and transparency, I make sure my clients have all the information to make an informed choice. » He provides the planning tools needed to select the mortgage that truly fits each file's needs. In 2025, his team supported 200+ families across Quebec — with rigor, availability, and the energy to do things differently.",
         },
         {
           name: "Abygaèle Gagné",
