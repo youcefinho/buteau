@@ -209,14 +209,15 @@ function CapsulesPage() {
               {romanNumeral(ci + 1)}
             </span>
 
-            {/* Header catégorie — eyebrow tirets longs + h2 + filet bronze + intro avec dropcap */}
+            {/* Header catégorie — eyebrow numéro section + h2 nom catégorie + filet bronze + intro avec dropcap.
+                Fix BLOCKER code-review : eyebrow ne duplique plus le h2 (avant les 2 affichaient cat.eyebrow). */}
             <div className="mb-8 md:mb-10">
               <p className="eyebrow text-[color:var(--color-bronze-deep)] mb-3 inline-flex items-center gap-3">
                 <span className="font-[var(--font-editorial)] italic text-base text-[color:var(--color-bronze)] tabular-nums">
                   {String(ci + 1).padStart(2, "0")}
                 </span>
                 <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
-                {cat.eyebrow}
+                {isFr ? "Rubrique" : "Section"}
               </p>
               <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-2xl md:text-3xl uppercase tracking-[0.04em] leading-[1.15] mb-4">
                 {cat.eyebrow}

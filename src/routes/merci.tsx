@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Phone, Calculator as CalcIcon, BookOpen, Home as HomeIcon } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
@@ -23,6 +24,18 @@ export const Route = createFileRoute("/merci")({
 function MerciPage() {
   const { t, lang } = useLanguage();
   const { tier } = useQuizTier();
+
+  // /merci doit être noindex (post-form confirmation, pas de valeur SEO)
+  // + retire de l'index si déjà cawlé. Set en runtime via meta dynamic.
+  useEffect(() => {
+    const meta = document.createElement("meta");
+    meta.name = "robots";
+    meta.content = "noindex, nofollow";
+    document.head.appendChild(meta);
+    return () => {
+      document.head.removeChild(meta);
+    };
+  }, []);
 
   // Message personnalisé selon le tier (si quiz fait)
   const tierMessage = tier

@@ -319,7 +319,7 @@ function withSecurityHeaders(response: Response): Response {
       "font-src 'self' https://fonts.gstatic.com data:",
       "img-src 'self' data: https://i.imgur.com https://static.wixstatic.com https://upload.wikimedia.org https://b2b2c.ca https://logos-world.net https://ugc.production.linktr.ee https://storage.googleapis.com https://assets.cdn.filesafe.space https://www.google-analytics.com https://www.facebook.com",
       "connect-src 'self' https://services.leadconnectorhq.com https://www.google-analytics.com https://www.clarity.ms https://*.facebook.com",
-      "frame-src 'self' https://api.leadconnectorhq.com",
+      "frame-src 'self' https://api.leadconnectorhq.com https://www.youtube-nocookie.com https://www.youtube.com",
       "object-src 'none'",
       "base-uri 'self'",
       "form-action 'self'",
