@@ -85,7 +85,7 @@ export const translations = {
         eyebrow: "Courtage hypothécaire — Planiprêt",
         title: "L'hypothèque autrement",
         subtitle:
-          "Premier achat, refinancement, renouvellement, consolidation, investissement — chaque dossier reçoit la même rigueur, peu importe où vous en êtes dans votre parcours de propriétaire.",
+          "200 familles accompagnées en 2025. Premier achat, renouvellement, refinancement, consolidation de dettes, investissement — chaque dossier reçoit la même rigueur.",
         ctaPrimary: "Prendre rendez-vous",
         ctaSecondary: "Découvrir notre équipe",
         // CTAs personnalisés selon le tier du quiz (sauvé en localStorage).
@@ -434,6 +434,7 @@ export const translations = {
           lead: "L'automne est une période charnière. Les projets reprennent, les finances se réorganisent, et beaucoup de propriétaires se demandent comment optimiser leur budget avant la fin de l'année.",
           excerpt:
             "Réviser son hypothèque maintenant peut débloquer des liquidités, consolider des dettes coûteuses, ou simplement adapter la structure des paiements à votre nouvelle réalité. Voici les bons réflexes à avoir avant l'hiver.",
+          pullQuote: "Une discussion de 30 minutes pourrait vous économiser sur vos paiements, alléger vos dettes et mieux planifier vos projets futurs.",
           body: [
             "Si vous avez signé votre hypothèque il y a quelques années, il est possible que les conditions économiques aient évolué depuis. Les variations de taux, la volatilité des marchés et vos projets personnels peuvent justifier un examen attentif de votre prêt.",
             "Selon la Banque du Canada, les taux d'intérêt ont connu une hausse rapide entre 2022 et 2023, suivie de périodes de stabilisation. Ce contexte crée des opportunités pour certains propriétaires : accéder à une partie de l'équité accumulée, consolider des dettes à taux élevés en un seul paiement plus avantageux, ou adapter la structure des paiements à une nouvelle situation financière.",
@@ -451,6 +452,7 @@ export const translations = {
           lead: "Avec les années, on signe une hypothèque, on renouvelle, on ajoute des dettes, on ajuste son budget — puis on avance sans toujours vérifier si tout cela est encore optimal.",
           excerpt:
             "Le plus beau cadeau hypothécaire n'est pas un taux plus bas. C'est la clarté. Et cette clarté vient d'un bilan complet — un exercice simple qui prend souvent moins d'une heure.",
+          pullQuote: "Le plus beau cadeau hypothécaire n'est pas un taux plus bas — c'est la clarté.",
           body: [
             "Votre situation financière évolue. Votre hypothèque devrait évoluer elle aussi. Un meilleur taux pour diminuer vos paiements ? Une structure plus flexible pour vos projets ? Un refinancement pour alléger des dettes coûteuses ? Ou simplement une compréhension plus claire de vos options ?",
             "Beaucoup de propriétaires accumulent des décisions prises dans différents contextes, sans jamais revoir l'ensemble. Votre hypothèque est-elle encore alignée avec vos besoins réels ? Est-ce que votre équité travaille pour vous ? Est-ce que votre structure actuelle vous aide… ou vous ralentit ?",
@@ -468,6 +470,7 @@ export const translations = {
           lead: "Détenir un immeuble locatif peut devenir un puissant outil de création de richesse à deux moteurs : l'immeuble lui-même (revenus + appréciation) et la stratégie (bail, flux de trésorerie, fiscalité, financement).",
           excerpt:
             "Un guide pour les futurs propriétaires qui se demandent si c'est réaliste — et pour les propriétaires actuels qui veulent réduire les irritants, protéger leurs liquidités et améliorer leurs résultats.",
+          pullQuote: "Un immeuble locatif bien structuré n'est pas qu'un bâtiment — c'est une véritable plateforme financière.",
           body: [
             "Un immeuble locatif bien structuré peut bâtir de la richesse avec effet de levier, offrir une protection partielle contre l'inflation, créer de la flexibilité familiale (loger un enfant plus tard, soutenir un projet d'études), et donner accès à des stratégies de financement avancées généralement inaccessibles aux non-investisseurs.",
             "Avant d'acheter, validez la clarté des flux de trésorerie : loyer du marché réel (pas le meilleur scénario), taux de vacance, entretien, assurances, taxes municipales et scolaires, services publics, frais de copropriété, gestion (même si vous gérez vous-même — votre temps a une valeur). Objectif : savoir si le projet tient la route dans la vraie vie, pas seulement sur papier.",
@@ -487,6 +490,7 @@ export const translations = {
           lead: "Le prix des maisons n'a jamais été aussi élevé. Et pourtant, posez la question à votre père ou à votre grand-père : ils vous diront tous la même chose. « Quand ils ont acheté leur maison, le prix n'avait aucun sens non plus. »",
           excerpt:
             "Pour beaucoup de propriétaires, la réponse à « comment améliorer ma situation sans déménager ? » ne se trouve pas dans une nouvelle adresse. Elle se trouve dans un changement.",
+          pullQuote: "Dans bien des cas, ce n'est pas la maison qui pose problème — c'est sa configuration.",
           body: [
             "L'immobilier reste un bien appréciatif au Québec. Selon Statistique Canada, le prix moyen des maisons a plus que doublé au cours des 20 dernières années. L'histoire montre que le temps reste l'allié du propriétaire.",
             "La vraie question n'est donc pas de savoir si l'immobilier est trop cher, mais comment améliorer sa situation sans se ruiner et sans nécessairement déménager. Pour beaucoup, ce n'est pas la maison qui pose problème : c'est sa configuration. Une cuisine qui ne correspond plus aux besoins. Une salle de bain devenue inefficace. Un sous-sol sous-exploité. Un espace bureau devenu indispensable. Une extension pour mieux respirer.",
@@ -505,6 +509,7 @@ export const translations = {
           lead: "Dans la majorité des séparations, la première phrase qu'on entend est simple : « Je veux garder la maison. » Mais au Québec, garder la propriété n'est pas une question d'intention. C'est une question de structure financière.",
           excerpt:
             "La résidence principale est souvent l'actif le plus important du patrimoine familial. La hausse des taux depuis 2022 a réduit la capacité d'emprunt de 15 à 20 % — une différence de 75 000 $ à 100 000 $ sur une propriété de 500 000 $.",
+          pullQuote: "Garder la maison peut être un choix du cœur. La garder intelligemment est un choix stratégique.",
           body: [
             "Retirer quelqu'un du titre ne le retire pas automatiquement de l'hypothèque. Seul le prêteur peut libérer un emprunteur. C'est l'erreur la plus fréquente : signer une entente de rachat sans avoir validé la qualification hypothécaire réelle.",
             "Tant que le refinancement n'est pas approuvé et financé, les deux noms demeurent responsables. Un rachat implique une nouvelle qualification complète : les revenus doivent à eux seuls supporter l'hypothèque. Les pensions alimentaires et les dettes influencent directement les ratios d'endettement.",
@@ -522,6 +527,7 @@ export const translations = {
           lead: "Pour beaucoup, l'inflation est un mot des bulletins de nouvelles — jusqu'au jour où l'épicerie coûte plus cher, les loyers augmentent plus vite que le chèque de paie, et emprunter devient soudainement très coûteux.",
           excerpt:
             "Les banques centrales visent 2 % d'inflation. Pas zéro, mais une croissance des prix faible, stable et crédible. Quand l'inflation déraille, vos paiements hypothécaires en paient le prix.",
+          pullQuote: "Le retour de l'inflation, ce n'est pas juste une histoire de prix qui montent — c'est une histoire sur la valeur de l'argent et les choix que vous devez faire quand la certitude disparaît.",
           body: [
             "L'inflation modifie silencieusement la valeur de l'argent. Si vos salaires augmentent de 3 % mais que les prix augmentent de 5 %, vous vous appauvrissez en termes réels. C'est la différence centrale entre revenu nominal et pouvoir d'achat réel.",
             "À court terme, le risque inflationniste le plus immédiat est l'énergie. Le pétrole alimente les camions, les navires, les avions, l'agriculture, le transport en commun. Une hausse soutenue des prix se répercute sur le transport des biens, la fabrication, le chauffage et, éventuellement, les services.",
@@ -540,6 +546,7 @@ export const translations = {
           lead: "À l'approche de la fin de l'année, c'est le moment idéal pour évaluer votre flux de trésorerie et vous assurer que votre stratégie hypothécaire répond toujours à vos besoins pour 2026.",
           excerpt:
             "Quatre leviers à considérer : paiements anticipés, versement forfaitaire, refinancement pour réduire le taux ou consolider, ou libérer du capital pour investir.",
+          pullQuote: "25 000 $ sur une carte à 19,99 % coûtent ~416 $/mois en intérêts. Intégrés à une hypothèque à ~4,5 %, ça tombe à ~85 $/mois — 320 $ libérés chaque mois.",
           body: [
             "Paiements anticipés. La plupart des prêteurs vous permettent d'augmenter vos paiements (souvent de 10 à 20 %) ou d'ajouter des versements forfaitaires sans pénalité. Chaque dollar supplémentaire réduit directement le solde du prêt et crée une marge de manœuvre en cas de hausse de taux. Si vos revenus sont stables et que vous n'avez pas de dettes à taux élevé, c'est souvent la solution la plus simple.",
             "Versements forfaitaires avant la fin de l'année. Primes, remboursements d'impôt, surplus de trésorerie peuvent être versés en un seul montant. Un versement de 5 000 $ peut réduire de plusieurs mois la durée totale du prêt, selon le taux et le terme restant. À privilégier si vous n'avez pas de dettes à taux élevé et n'aurez pas besoin de cette somme dans les 6-12 mois.",
@@ -558,6 +565,7 @@ export const translations = {
           lead: "Les taux ont beaucoup bougé. Plusieurs propriétaires arrivent à un moment décisif. Faut-il renouveler à taux fixe, variable, ou opter pour un produit hybride ?",
           excerpt:
             "Il n'existe pas de bonne ou de mauvaise réponse universelle. Le bon choix dépend de votre situation personnelle, de vos projets, des projections économiques — et surtout de votre tolérance au risque.",
+          pullQuote: "Si l'idée d'une variation de quelques centaines de dollars par mois vous empêche de dormir, le taux fixe est probablement votre solution. Sinon, le variable peut être plus rentable à long terme.",
           body: [
             "Si vous prévoyez rester dans la même propriété pour plusieurs années, le taux fixe est souvent rassurant. Il offre la tranquillité d'esprit d'un paiement stable, sans surprise. Mais si vous pensez vendre, refinancer ou investir ailleurs d'ici 2-3 ans, un terme variable ou un fixe plus court peut être plus avantageux. Les pénalités associées à la rupture d'un terme fixe peuvent grimper à plusieurs milliers de dollars — un détail souvent sous-estimé, mais essentiel.",
             "Votre profil d'emprunteur joue aussi un rôle clé. Certains apprécient la stabilité, quitte à payer un peu plus cher à court terme. D'autres préfèrent garder une flexibilité et profiter du potentiel d'économies du variable. Si l'idée d'une variation de quelques centaines de dollars par mois vous empêche de dormir, le taux fixe est probablement la meilleure solution. Si votre budget est solide et que vous acceptez l'incertitude, le variable peut être plus rentable à long terme.",
@@ -826,25 +834,25 @@ export const translations = {
         primo: {
           eyebrow: "Profil — Premier achat",
           title: "Vous êtes prêt à structurer votre premier dossier.",
-          body: "Andrew vous guide étape par étape : préapprobation, RAP, CELIAPP, taxe de bienvenue. Aucune zone grise, aucun jargon non expliqué.",
+          body: "RAP (jusqu'à 35 000 $ de votre REER sans impôt), CELIAPP (jusqu'à 40 000 $ à vie), taxe de bienvenue, mise de fonds 5 % — Andrew vous guide étape par étape, aucune zone grise, aucun jargon non expliqué.",
           ctaLabel: "Démarrer mon dossier",
         },
         refi: {
           eyebrow: "Profil — Refi, renouvellement ou consolidation",
           title: "Votre hypothèque actuelle peut probablement travailler plus fort.",
-          body: "Renouvellement, refinancement, consolidation de dettes à taux élevé, libération d'équité pour un projet — Andrew analyse votre dossier actuel et négocie les meilleures conditions parmi 9+ prêteurs. Avec ou sans changement de banque.",
+          body: "25 000 $ de carte de crédit à 19,99 % coûtent ~416 $/mois en intérêts seulement. Intégrés à votre hypothèque à ~4,5 %, ça tombe à ~85 $/mois — soit 320 $ libérés chaque mois. Andrew analyse votre dossier parmi 9+ prêteurs et négocie les meilleures conditions, avec ou sans changement de banque.",
           ctaLabel: "Comparer mes options",
         },
         investor: {
           eyebrow: "Profil — Investisseur",
           title: "Une stratégie de financement qui fait travailler votre équité.",
-          body: "Multiplex, immeubles à revenus, refinancement par effet de levier. Andrew structure des dossiers complexes avec des prêteurs qui comprennent l'investissement.",
+          body: "Multiplex, immeubles à revenus, refi par effet de levier sur l'équité existante. Andrew structure des dossiers complexes avec les ~9 prêteurs qui comprennent vraiment l'investissement immobilier — pas juste ceux qui acceptent un dossier résidentiel standard.",
           ctaLabel: "Discuter ma stratégie",
         },
         explorer: {
           eyebrow: "Profil — Upgrade ou exploration",
           title: "Une 2e propriété, un upgrade familial, ou simplement clarifier vos options.",
-          body: "Vendre pour acheter plus grand, garder votre maison actuelle en location, déménager, ou juste comprendre vos vraies marges de manœuvre — Andrew prend 20 minutes pour vous donner l'heure juste, sans engagement, avec des chiffres clairs.",
+          body: "Vendre pour acheter plus grand, garder votre maison actuelle en location, déménager, racheter une part suite à séparation — ou juste comprendre vos vraies marges de manœuvre. Andrew prend 20 minutes pour vous donner l'heure juste, sans engagement, avec des chiffres clairs.",
           ctaLabel: "Prendre 20 minutes avec Andrew",
         },
       },
@@ -1154,7 +1162,7 @@ export const translations = {
         eyebrow: "Mortgage brokerage — Planiprêt",
         title: "Mortgage. Differently.",
         subtitle:
-          "First purchase, refinancing, renewal, debt consolidation, investment — every file receives the same rigor, no matter where you are in your homeowner journey.",
+          "200 families supported in 2025. First purchase, renewal, refinancing, debt consolidation, investment — every file receives the same rigor.",
         ctaPrimary: "Book an appointment",
         ctaSecondary: "Meet our team",
         ctaByTier: {
@@ -1483,6 +1491,7 @@ export const translations = {
           lead: "Fall is a turning point. Projects restart, finances get reorganized, and many homeowners wonder how to optimize their budget before year-end.",
           excerpt:
             "Reviewing your mortgage now can free up cash, consolidate expensive debts, or simply adapt your payment structure to your new reality. Here are the right reflexes before winter.",
+          pullQuote: "A 30-minute discussion could lower your payments, lighten your debts and better plan your future projects.",
           body: [
             "If you signed your mortgage a few years ago, economic conditions may have evolved since. Rate variations, market volatility and personal projects can justify a careful review of your loan.",
             "According to the Bank of Canada, rates rose rapidly between 2022 and 2023, followed by stabilization periods. This context creates opportunities: tap into accumulated equity, consolidate high-interest debts into a single more advantageous payment, or adapt the payment structure to a new financial situation.",
@@ -1500,6 +1509,7 @@ export const translations = {
           lead: "Over the years, you sign a mortgage, you renew, you add debts, you adjust your budget — then you move on without always checking if it's still optimal.",
           excerpt:
             "The best mortgage gift isn't a lower rate. It's clarity. And clarity comes from a complete review — a simple exercise that often takes less than an hour.",
+          pullQuote: "The best mortgage gift isn't a lower rate — it's clarity.",
           body: [
             "Your financial situation evolves. Your mortgage should too. A better rate to lower payments? A more flexible structure for upcoming projects? A refinance to relieve costly debts? Or simply a clearer understanding of your options?",
             "Many homeowners stack decisions made in different contexts, without ever revisiting the whole. Is your mortgage still aligned with your real needs? Is your equity working for you? Is your current structure helping you… or slowing you down?",
@@ -1517,6 +1527,7 @@ export const translations = {
           lead: "Owning an income property can become a powerful wealth-building tool with two engines: the property itself (rents + appreciation) and the strategy (lease, cash flow, taxes, financing).",
           excerpt:
             "A guide for future owners wondering if it's realistic — and for current owners looking to reduce friction, protect liquidity, and improve outcomes.",
+          pullQuote: "A well-structured income property isn't just a building — it's a real financial platform.",
           body: [
             "A well-structured income property can build wealth with leverage, offer partial inflation protection, create family flexibility (housing a child later, supporting a study project), and unlock advanced financing strategies generally unavailable to non-investors.",
             "Before buying, validate cash-flow clarity: real market rent (not best case), vacancy rate, maintenance, insurance, municipal and school taxes, utilities, condo fees, management (even if you self-manage — your time has a value). Goal: know if the project holds in real life, not just on paper.",
@@ -1536,6 +1547,7 @@ export const translations = {
           lead: "Home prices have never been higher. And yet, ask your father or grandfather: they'll all tell you the same thing. « When they bought their home, the price made no sense either. »",
           excerpt:
             "For many homeowners, the answer to « how do I improve my situation without moving? » isn't a new address. It's a change.",
+          pullQuote: "In many cases, it's not the home that's the problem — it's its configuration.",
           body: [
             "Real estate remains an appreciating asset in Quebec. According to Statistics Canada, the average home price has more than doubled in the last 20 years. History shows time stays the homeowner's ally.",
             "The real question isn't whether real estate is too expensive, but how to improve your situation without breaking the bank — and without necessarily moving. For many, it's not the home that's the problem: it's its configuration. A kitchen that no longer fits. A bathroom now inefficient. An underused basement. An indispensable office space. An extension to breathe.",
@@ -1554,6 +1566,7 @@ export const translations = {
           lead: "In most separations, the first sentence heard is simple: « I want to keep the house. » But in Quebec, keeping the property isn't a question of intention. It's a question of financial structure.",
           excerpt:
             "The principal residence is often the family's most important asset. Rate hikes since 2022 reduced borrowing capacity by 15-20% — a $75,000-$100,000 difference on a $500,000 property.",
+          pullQuote: "Keeping the home can be a heart choice. Keeping it intelligently is a strategic choice.",
           body: [
             "Removing someone from title doesn't automatically remove them from the mortgage. Only the lender can release a borrower. The most frequent error: signing a buyout agreement without validating real mortgage qualification.",
             "Until refinancing is approved and funded, both names remain liable. A buyout requires a complete new qualification: income alone must support the mortgage. Spousal support and debts directly influence debt ratios.",
@@ -1571,6 +1584,7 @@ export const translations = {
           lead: "For many, inflation is a news-bulletin word — until grocery costs more, rent rises faster than the paycheque, and borrowing suddenly becomes very expensive.",
           excerpt:
             "Central banks target 2% inflation. Not zero, but low, stable, credible price growth. When inflation derails, your mortgage payments pay the price.",
+          pullQuote: "Inflation's return isn't just a story of rising prices — it's a story about the value of money and the choices you have to make when certainty disappears.",
           body: [
             "Inflation silently changes the value of money. If wages rise 3% but prices rise 5%, you grow poorer in real terms. That's the central distinction: nominal income vs real purchasing power.",
             "Short-term, the most immediate inflation risk is energy. Oil powers trucks, ships, planes, agriculture, public transit. Sustained price hikes pass through to goods transport, manufacturing, heating and eventually services.",
@@ -1589,6 +1603,7 @@ export const translations = {
           lead: "As year-end approaches, it's the ideal time to evaluate your cash flow and ensure your mortgage strategy still meets your 2026 needs.",
           excerpt:
             "Four levers to consider: prepayments, lump-sum, refinancing for rate reduction or debt consolidation, or unlocking capital to invest.",
+          pullQuote: "$25,000 on a card at 19.99% costs ~$416/month in interest. Rolled into a mortgage at ~4.5%, it drops to ~$85/month — $320 freed up every month.",
           body: [
             "Prepayments. Most lenders let you increase payments (often 10-20%) or add lump sums penalty-free. Each extra dollar directly reduces the loan balance and creates margin against rate hikes. If your income is stable and you have no high-interest debt, this is often the simplest play.",
             "Year-end lump sums. Bonuses, tax refunds, cash surpluses can be paid in one shot. A $5,000 lump sum can shorten total loan duration by several months, depending on rate and term remaining. Best if you have no high-interest debt and don't need that cash in 6-12 months.",
@@ -1607,6 +1622,7 @@ export const translations = {
           lead: "Rates have moved a lot. Many homeowners face a decision point. Renew at fixed, variable, or go hybrid?",
           excerpt:
             "There's no universal right answer. The right choice depends on your personal situation, your projects, economic projections — and especially your risk tolerance.",
+          pullQuote: "If a few-hundred-dollar monthly variation keeps you up at night, fixed is probably your fit. Otherwise, variable can pay off long-term.",
           body: [
             "If you plan to stay in the same property for several years, a fixed rate is often reassuring. It offers the peace of mind of stable, surprise-free payments. But if you might sell, refinance or invest elsewhere within 2-3 years, a variable term or shorter fixed can be more advantageous. Penalties tied to breaking a fixed term can climb to thousands of dollars — an often underestimated detail, but essential.",
             "Your borrower profile also plays a key role. Some appreciate stability, accepting a slightly higher cost short-term. Others prefer flexibility and potential variable savings. If a few-hundred-dollar monthly variation keeps you up at night, fixed is probably the better fit. If your budget is solid and you accept uncertainty, variable can pay off long-term.",
@@ -1873,25 +1889,25 @@ export const translations = {
         primo: {
           eyebrow: "Profile — First purchase",
           title: "You're ready to structure your first file.",
-          body: "Andrew guides you step by step: pre-approval, HBP, FHSA, welcome tax. No grey areas, no unexplained jargon.",
+          body: "HBP (up to $35,000 from your RRSP tax-free), FHSA (up to $40,000 lifetime), welcome tax, 5% down payment — Andrew guides you step by step. No grey areas, no unexplained jargon.",
           ctaLabel: "Start my file",
         },
         refi: {
           eyebrow: "Profile — Refi, renewal or consolidation",
           title: "Your current mortgage can probably work harder.",
-          body: "Renewal, refinancing, high-interest debt consolidation, equity release for a project — Andrew reviews your current file and negotiates the best conditions across 9+ lenders. With or without switching banks.",
+          body: "$25,000 of credit card debt at 19.99% costs ~$416/month in interest alone. Rolled into your mortgage at ~4.5%, it drops to ~$85/month — that's $320 freed up every month. Andrew reviews your file across 9+ lenders and negotiates the best conditions, with or without switching banks.",
           ctaLabel: "Compare my options",
         },
         investor: {
           eyebrow: "Profile — Investor",
           title: "A financing strategy that puts your equity to work.",
-          body: "Multi-units, income properties, leverage refinance. Andrew structures complex files with lenders who understand investment.",
+          body: "Multi-units, income properties, leverage refi on existing equity. Andrew structures complex files with the ~9 lenders who truly understand real-estate investment — not just those who accept a standard residential file.",
           ctaLabel: "Discuss my strategy",
         },
         explorer: {
           eyebrow: "Profile — Upgrade or exploring",
           title: "A 2nd property, a family upgrade, or simply clarifying your options.",
-          body: "Sell to buy bigger, keep your current home as a rental, relocate, or just understand your real margins — Andrew takes 20 minutes to give you the straight numbers, no commitment, with clarity.",
+          body: "Sell to buy bigger, keep your current home as a rental, relocate, buy out a share post-separation — or just understand your real margins. Andrew takes 20 minutes to give you the straight numbers, no commitment, with clarity.",
           ctaLabel: "Take 20 minutes with Andrew",
         },
       },

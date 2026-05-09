@@ -72,6 +72,19 @@ function CapsulesPage() {
         {t("capsules.subtitle")}
       </p>
 
+      {/* Pull-quote signature Andrew — pattern intralys-edito-magazine
+          Citation factuelle extraite de la voix Andrew (capsules TikTok existantes) */}
+      <blockquote className="not-prose relative mb-14 py-2 border-l-2 border-[color:var(--color-bronze)] pl-6 lg:pl-8">
+        <p className="font-[var(--font-editorial)] italic text-xl md:text-2xl lg:text-[1.65rem] leading-[1.3] text-[color:var(--color-navy-deep)] tracking-tight">
+          {isFr
+            ? "« L'hypothèque, c'est pas compliqué. Ce qui est compliqué, c'est qu'on te l'explique mal. En 30 secondes, je te montre que la plupart des règles sont plus simples — et plus généreuses — que ce qu'on t'a dit. »"
+            : "« Mortgages aren't complicated. What's complicated is the way it's been explained to you. In 30 seconds, I show you most rules are simpler — and more generous — than you were told. »"}
+        </p>
+        <footer className="mt-3 text-xs eyebrow text-[color:var(--color-bronze-deep)]">
+          — Andrew Buteau
+        </footer>
+      </blockquote>
+
       {/* Compteur + CTAs réseaux sociaux */}
       <div className="not-prose mb-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-[color:var(--color-taupe)]/40">
         <div className="flex items-center gap-4">
@@ -126,7 +139,7 @@ function CapsulesPage() {
               {romanNumeral(ci + 1)}
             </span>
 
-            {/* Header catégorie */}
+            {/* Header catégorie — eyebrow tirets longs + h2 + filet bronze + intro avec dropcap */}
             <div className="mb-8 md:mb-10">
               <p className="eyebrow text-[color:var(--color-bronze-deep)] mb-3 inline-flex items-center gap-3">
                 <span className="font-[var(--font-editorial)] italic text-base text-[color:var(--color-bronze)] tabular-nums">
@@ -138,7 +151,10 @@ function CapsulesPage() {
               <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-2xl md:text-3xl uppercase tracking-[0.04em] leading-[1.15] mb-4">
                 {cat.eyebrow}
               </h2>
-              <p className="font-[var(--font-editorial)] italic text-base md:text-lg leading-[1.65] text-[color:var(--color-navy-deep)]/80 max-w-2xl">
+              {/* Filet décoratif w-10 → w-20 hover (signature line bronze) */}
+              <div className="w-10 h-px bg-[color:var(--color-bronze)] mb-5 transition-[width] duration-500 hover:w-20" />
+              {/* Intro avec dropcap — pattern édito magazine premier paragraphe */}
+              <p className="dropcap text-base md:text-[1.0625rem] leading-[1.7] text-[color:var(--color-navy-deep)]/85 max-w-2xl">
                 {cat.intro}
               </p>
             </div>
