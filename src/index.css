@@ -899,3 +899,79 @@ body {
 .group:hover .photo-edito {
   filter: saturate(1) contrast(1) brightness(1);
 }
+
+/* ════════════════════════════════════════════════════════════
+   Print stylesheet — Phase 2 : impression Carnet/Colophon/Glossary
+   « Comme un magazine d'auteur — imprimable. »
+   ════════════════════════════════════════════════════════════ */
+@media print {
+  html, body {
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Cache UI chrome non-essentielle pour impression */
+  nav,
+  footer,
+  .skip-link,
+  [class*="custom-cursor" i],
+  [class*="MobileSticky" i],
+  [class*="sticky-cta" i],
+  [class*="cookie" i],
+  [class*="exit-intent" i],
+  [class*="splash" i],
+  .scroll-progress,
+  .ambient-particles,
+  .grain-overlay {
+    display: none !important;
+  }
+
+  /* Backdrop modal disparaît */
+  div.fixed.inset-0[aria-hidden="true"] {
+    display: none !important;
+  }
+
+  /* Modal devient document plein page */
+  [role="dialog"] {
+    position: static !important;
+    transform: none !important;
+    max-height: none !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: white !important;
+    color: black !important;
+    overflow: visible !important;
+    page-break-inside: avoid;
+  }
+
+  [role="dialog"] *,
+  [role="dialog"] *::before,
+  [role="dialog"] *::after {
+    color: inherit !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-color: #d4d4d4 !important;
+  }
+
+  /* Hyperliens externes : afficher l'URL en pied */
+  [role="dialog"] a[href^="http"]::after {
+    content: " — " attr(href);
+    font-size: 0.85em;
+    color: #666 !important;
+    word-break: break-all;
+  }
+
+  /* Cache le bouton de fermeture du modal */
+  [role="dialog"] button[aria-label*="ermer" i],
+  [role="dialog"] button[aria-label*="lose" i] {
+    display: none !important;
+  }
+
+  /* Le wrapper portal pointer-events-none reprend le flow normal */
+  body > div.fixed {
+    position: static !important;
+    pointer-events: auto !important;
+  }
+}
