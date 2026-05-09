@@ -16,6 +16,8 @@ import { CalculatorPreview } from "@/components/landing/CalculatorPreview";
 import { GuidesShelf } from "@/components/landing/GuidesShelf";
 import { CapsulesPreview } from "@/components/landing/CapsulesPreview";
 import { ValueTicker } from "@/components/landing/ValueTicker";
+import { AdPage } from "@/components/landing/AdPage";
+import { Erratum } from "@/components/landing/Erratum";
 import { PageFooterMark } from "@/components/layout/PageFooterMark";
 import {
   SchemaJsonLd,
@@ -78,6 +80,11 @@ function HomePage() {
 
       <Mission />
 
+      {/* AdPage — pleine page édito style "publicité magazine luxe" (Cereal vol.18).
+          Insérée entre Mission corporate et BrokerLetter humaine — crée respiration
+          + autorité. Une seule phrase Fraunces italic XL. */}
+      <AdPage />
+
       {/* « Le mot du courtier » — section authentique signature manuscrite (NOVEL) */}
       <BrokerLetter />
 
@@ -94,6 +101,12 @@ function HomePage() {
 
       <ContactSection />
       <Faq />
+
+      {/* Erratum — encart humour signature pied de home (style Apartamento).
+          Présent uniquement sur l'Accueil pour rester signature et ne pas devenir
+          un running gag fatigant. */}
+      <Erratum />
+
       <PageFooterMark numeral="I" label={lang === "fr" ? "Accueil" : "Home"} />
     </main>
   );

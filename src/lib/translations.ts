@@ -270,6 +270,21 @@ export const translations = {
         ctaTools: "Voir tous nos outils",
       },
 
+      // AdPage — pleine page édito style "publicité magazine luxe" (Cereal vol.18).
+      // Statement dérivé du copy existant (4 pros teamTeaser + 5 services + valeur rigueur Mission).
+      adPage: {
+        statement: "Quatre pros. Cinq services. Une seule rigueur.",
+        attribution: "L'Équipe Buteau",
+      },
+
+      // Erratum — encart humour signature en pied d'Accueil (Apartamento style).
+      errata: {
+        eyebrow: "Erratum",
+        body:
+          "Dans notre dernière édition, nous avions oublié de mentionner qu'aucune hypothèque ne se signe sans un mauvais café dans la salle de conférence. Corrigé.",
+        signature: "— La direction",
+      },
+
       tools: {
         eyebrow: "Outils & ressources",
         title: "Tout ce qu'il vous faut pour avancer",
@@ -1379,6 +1394,20 @@ export const translations = {
         resultLabel: "Monthly payment",
         ctaFull: "Full calculator + scenarios",
         ctaTools: "See all our tools",
+      },
+
+      // AdPage — full-bleed editorial spread (Cereal vol.18 style).
+      adPage: {
+        statement: "Four pros. Five services. One rigor.",
+        attribution: "Équipe Buteau",
+      },
+
+      // Erratum — humour signature pied d'Accueil.
+      errata: {
+        eyebrow: "Erratum",
+        body:
+          "In our last edition, we forgot to mention that no mortgage is ever signed without a bad coffee in the conference room. Corrected.",
+        signature: "— The editors",
       },
 
       tools: {

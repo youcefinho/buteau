@@ -93,6 +93,7 @@ export function Footer() {
               <li><Link to="/equipe" className="text-glow-hover">{t("nav.team")}</Link></li>
               <li><Link to="/institutions" className="text-glow-hover">{t("nav.institutions")}</Link></li>
               <li><Link to="/outils" className="text-glow-hover">{t("nav.tools")}</Link></li>
+              <li><Link to="/carnet" className="text-glow-hover">{lang === "fr" ? "Le carnet" : "Address book"}</Link></li>
               <li><Link to="/lexique" className="text-glow-hover">{t("footer.lexique")}</Link></li>
             </ul>
           </div>
@@ -112,8 +113,11 @@ export function Footer() {
               {t("footer.colophonEdition")}
             </p>
 
-            {/* Légal links */}
+            {/* Légal links + colophon */}
             <div className="pt-4 mt-4 border-t border-[color:var(--color-taupe)]/30 flex flex-wrap gap-x-5 gap-y-2 text-xs">
+              <Link to="/colophon" className="text-glow-hover">
+                {lang === "fr" ? "Colophon" : "Colophon"}
+              </Link>
               <Link to="/mentions-legales" className="text-glow-hover">
                 {t("footer.legal")}
               </Link>
