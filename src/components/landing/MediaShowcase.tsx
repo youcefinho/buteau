@@ -207,16 +207,17 @@ export function MediaShowcase() {
             </p>
           </div>
 
-          {/* Galerie 6 photos asymétrique — 7/12 — halo-glow per photo + signature line hover
-              Pattern stagger : col-1 [0, -mt-8, 0] / col-2 [mt-8, 0, mt-8] = rythme magazine */}
+          {/* Galerie 6 photos — 7/12 — halo-glow per photo + signature line hover
+              Layout : mobile 2 cols, desktop 3 cols × 2 lignes (pas de 3e ligne en dessous)
+              Stagger asymétrique vertical subtle pour rythme magazine. */}
           <div className="lg:col-span-7 relative z-10">
-            <div className="grid grid-cols-2 gap-3 md:gap-4">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
               {eventGallery.map((src, idx) => {
                 const staggerClass = (() => {
+                  // Stagger asymétrique : col-2 (idx 1, 4) descend, col-3 (idx 2, 5) reste
                   switch (idx) {
-                    case 1: return "mt-8";
-                    case 2: return "-mt-8";
-                    case 5: return "mt-8";
+                    case 1: return "lg:mt-6";
+                    case 4: return "lg:mt-6";
                     default: return "";
                   }
                 })();
