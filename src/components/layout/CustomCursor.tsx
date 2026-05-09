@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "@/lib/LanguageContext";
 
 /**
  * Custom cursor luxury 4-mode (desktop only, pas tactile).
@@ -17,11 +18,14 @@ import { useEffect, useRef, useState } from "react";
 type CursorMode = "default" | "link" | "text" | "image" | "drag";
 
 export function CustomCursor() {
+  const { lang } = useLanguage();
   const dotRef = useRef<HTMLDivElement | null>(null);
+  const visibleRef = useRef(false); // BLOCKER fix : ref au lieu de state pour éviter re-mount listeners
   const [mode, setMode] = useState<CursorMode>("default");
-  const [visible, setVisible] = useState(false);
   const [enabled, setEnabled] = useState(false);
 
+  // Effect MOUNT-ONLY : attache listeners + raf une seule fois.
+  // Fix BLOCKER code-review : avant deps [visible] re-montait tout à chaque transition idle/active.
   useEffect(() => {
     if (typeof window === "undefined") return;
     // Disable sur mobile/tactile et reduced motion
@@ -36,17 +40,24 @@ export function CustomCursor() {
     let currentX = 0;
     let currentY = 0;
 
+    const setVisibility = (v: boolean) => {
+      if (visibleRef.current === v) return;
+      visibleRef.current = v;
+      if (dotRef.current) {
+        dotRef.current.style.opacity = v ? "1" : "0";
+      }
+    };
+
     const onMove = (e: PointerEvent) => {
       targetX = e.clientX;
       targetY = e.clientY;
-      if (!visible) setVisible(true);
+      if (!visibleRef.current) setVisibility(true);
     };
 
-    const onLeave = () => setVisible(false);
-    const onEnter = () => setVisible(true);
+    const onLeave = () => setVisibility(false);
+    const onEnter = () => setVisibility(true);
 
     const animate = () => {
-      // Lerp ease for buttery smooth follow
       currentX += (targetX - currentX) * 0.22;
       currentY += (targetY - currentY) * 0.22;
       if (dotRef.current) {
@@ -56,11 +67,9 @@ export function CustomCursor() {
     };
     raf = requestAnimationFrame(animate);
 
-    // Detect mode by element under cursor
     const onOver = (e: Event) => {
       const target = e.target as HTMLElement | null;
       if (!target || !target.closest) return;
-      // Sliders du Calculator -> mode "drag" (signature Buteau Calculator)
       if (target.closest('input[type="range"], .calc-slider')) {
         setMode("drag");
       } else if (target.closest("a, button, [role='button'], label[for]")) {
@@ -88,9 +97,12 @@ export function CustomCursor() {
       document.removeEventListener("pointerover", onOver);
       document.documentElement.style.cursor = "";
     };
-  }, [visible]);
+  }, []); // mount-only : visibility géré via ref + DOM directement
 
   if (!enabled) return null;
+
+  // Label i18n FR/EN (fix LOW issue Voir hardcoded)
+  const label = mode === "drag" ? "↔" : lang === "fr" ? "Voir" : "View";
 
   return (
     <div
@@ -99,7 +111,7 @@ export function CustomCursor() {
       aria-hidden="true"
       className="custom-cursor"
       style={{
-        opacity: visible ? 1 : 0,
+        opacity: 0, // initial hidden, géré par ref via DOM
         position: "fixed",
         top: 0,
         left: 0,
@@ -109,7 +121,7 @@ export function CustomCursor() {
       }}
     >
       <span className="custom-cursor__label" aria-hidden="true">
-        {mode === "drag" ? "↔" : "Voir"}
+        {label}
       </span>
     </div>
   );

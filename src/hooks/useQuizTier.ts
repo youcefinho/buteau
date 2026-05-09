@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 /**
  * useQuizTier — hook qui persiste le tier du quiz pré-qualification dans localStorage
@@ -16,31 +16,36 @@ export type QuizTier = "primo" | "refi" | "investor" | "explorer";
 
 const STORAGE_KEY = "buteau:quiz-tier";
 
+// Generate unique instance id pour exclure l'émetteur du listener (BLOCKER fix)
+let instanceCounter = 0;
+
+const isValidTier = (v: unknown): v is QuizTier =>
+  v === "primo" || v === "refi" || v === "investor" || v === "explorer";
+
 export function useQuizTier(): {
   tier: QuizTier | null;
   saveTier: (t: QuizTier) => void;
   clearTier: () => void;
 } {
+  // Instance ID unique par instance du hook — pour ignorer ses propres dispatches
+  const instanceIdRef = useRef<string>("");
+  if (instanceIdRef.current === "") {
+    instanceCounter += 1;
+    instanceIdRef.current = `tier-${instanceCounter}`;
+  }
+
   const [tier, setTier] = useState<QuizTier | null>(() => {
     if (typeof window === "undefined") return null;
     const stored = window.localStorage.getItem(STORAGE_KEY);
-    if (stored === "primo" || stored === "refi" || stored === "investor" || stored === "explorer") {
-      return stored;
-    }
-    return null;
+    return isValidTier(stored) ? stored : null;
   });
 
-  // Synchronise entre tabs/windows ouverts
+  // Synchronise entre tabs/windows ouverts (storage event)
   useEffect(() => {
     if (typeof window === "undefined") return;
     const onStorage = (e: StorageEvent) => {
       if (e.key !== STORAGE_KEY) return;
-      const v = e.newValue;
-      if (v === "primo" || v === "refi" || v === "investor" || v === "explorer") {
-        setTier(v);
-      } else {
-        setTier(null);
-      }
+      setTier(isValidTier(e.newValue) ? e.newValue : null);
     };
     window.addEventListener("storage", onStorage);
     return () => window.removeEventListener("storage", onStorage);
@@ -50,8 +55,10 @@ export function useQuizTier(): {
     setTier(t);
     if (typeof window !== "undefined") {
       window.localStorage.setItem(STORAGE_KEY, t);
-      // Custom event pour synchroniser les composants dans le même tab
-      window.dispatchEvent(new CustomEvent("buteau:tier-changed", { detail: t }));
+      // Dispatch avec source = instance ID pour exclure l'émetteur (BLOCKER fix)
+      window.dispatchEvent(
+        new CustomEvent("buteau:tier-changed", { detail: { tier: t, source: instanceIdRef.current } }),
+      );
     }
   }, []);
 
@@ -59,16 +66,26 @@ export function useQuizTier(): {
     setTier(null);
     if (typeof window !== "undefined") {
       window.localStorage.removeItem(STORAGE_KEY);
-      window.dispatchEvent(new CustomEvent("buteau:tier-changed", { detail: null }));
+      window.dispatchEvent(
+        new CustomEvent("buteau:tier-changed", { detail: { tier: null, source: instanceIdRef.current } }),
+      );
     }
   }, []);
 
-  // Listener pour le custom event (changement dans le même tab)
+  // Listener custom event — IGNORE si source === cet instance (anti-loop BLOCKER fix)
   useEffect(() => {
     if (typeof window === "undefined") return;
     const onChange = (e: Event) => {
-      const detail = (e as CustomEvent).detail;
-      setTier(detail);
+      const detail = (e as CustomEvent).detail as { tier: unknown; source: unknown } | null;
+      if (!detail || typeof detail !== "object") return;
+      // Skip si l'événement vient de cette instance (auto-notification anti-pattern)
+      if (detail.source === instanceIdRef.current) return;
+      // Validation runtime du tier
+      if (detail.tier === null) {
+        setTier(null);
+      } else if (isValidTier(detail.tier)) {
+        setTier(detail.tier);
+      }
     };
     window.addEventListener("buteau:tier-changed", onChange);
     return () => window.removeEventListener("buteau:tier-changed", onChange);

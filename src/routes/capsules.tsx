@@ -26,6 +26,9 @@ export const Route = createFileRoute("/capsules")({
 type CapsuleItem = {
   title: string;
   hook: string;
+  // URL TikTok individuelle de la capsule (optionnel — fallback profile si absent).
+  // À remplir par client quand chaque vidéo TikTok est publiée.
+  url?: string;
 };
 
 type CapsuleCategory = {
@@ -74,6 +77,8 @@ function CapsulesPage() {
               description: it.hook,
               about: cat.eyebrow,
               creator: { "@type": "Person", name: "Andrew Buteau" },
+              // URL TikTok individuelle si fournie (sinon profile via fallback)
+              ...(it.url ? { url: it.url } : {}),
             })),
           ),
         }}
@@ -233,11 +238,14 @@ function CapsulesPage() {
             {/* Liste capsules — table-of-contents éditoriale */}
             <ol className="border-t border-[color:var(--color-taupe)]/40">
               {cat.items.map((item, ii) => (
-                <li key={ii}>
+                <li key={`${cat.id}-${ii}-${item.title.slice(0, 20)}`}>
                   <a
-                    href="https://www.tiktok.com/@equipebuteau"
+                    href={item.url ?? "https://www.tiktok.com/@equipebuteau"}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={item.url
+                      ? `${item.title} — ${isFr ? "voir la capsule" : "watch capsule"}`
+                      : `${item.title} — ${isFr ? "voir le profil TikTok" : "view TikTok profile"}`}
                     className="group flex items-start gap-5 md:gap-7 py-5 md:py-6 border-b border-[color:var(--color-taupe)]/40 transition-colors duration-300 hover:border-[color:var(--color-bronze)]"
                   >
                     {/* Numéro Cormorant italic */}

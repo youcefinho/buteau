@@ -46,9 +46,12 @@ export function PageTransition({ children }: PageTransitionProps) {
 
   if (reduced) return <>{children}</>;
 
+  // Fix BLOCKER code-review : retrait key={pathname} qui forçait remount complet
+  // de l'arbre Outlet → reset state des routes interactives (/capsules filter,
+  // /journal openSlug, etc.). L'animation est maintenant scopée au wrapper
+  // sans démonter les enfants. View Transitions API + cette anim coexistent.
   return (
     <div
-      key={pathname}
       style={{
         animation:
           phase === "entering"
