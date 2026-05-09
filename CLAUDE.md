@@ -1,7 +1,7 @@
 # CLAUDE.md — Équipe Buteau (Andrew Buteau, Planiprêt)
 
 > Lu automatiquement à chaque ouverture du projet. Respecter à la lettre.
-> Dernière mise à jour : 2026-05-09 — 50+ commits sur main, contenu client mail #1 + #2 intégré, audits faits
+> Dernière mise à jour : 2026-05-09 — **60+ commits**, mail #1 + #2 intégrés, audits passés, **21/35 findings code-review fixés (7/7 BLOCKERS + 9/9 HIGH)**, 14 MEDIUM/LOW restants non-bloquants
 
 ## ⚡ MAJ session 2026-05-09 (suite intégration mail client)
 
