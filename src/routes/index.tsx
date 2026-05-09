@@ -13,6 +13,7 @@ import { BrokerLetter } from "@/components/landing/BrokerLetter";
 import { TerritoryMap } from "@/components/landing/TerritoryMap";
 import { PreQualQuiz } from "@/components/landing/PreQualQuiz";
 import { CalculatorPreview } from "@/components/landing/CalculatorPreview";
+import { GuidesShelf } from "@/components/landing/GuidesShelf";
 import { PageFooterMark } from "@/components/layout/PageFooterMark";
 import {
   SchemaJsonLd,
@@ -57,6 +58,10 @@ function HomePage() {
           (feedback user : Outils était trop enterré). Mini calc interactif
           + CTA vers /outils pour la version complète. */}
       <CalculatorPreview />
+
+      {/* GuidesShelf — table-of-contents éditoriale des guides + docs
+          téléchargeables. Synergie : 5 items préview + lien /outils#guides. */}
+      <GuidesShelf />
 
       <ToolsTeaser />
 

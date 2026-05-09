@@ -180,6 +180,48 @@ export const translations = {
         ],
       },
 
+      guidesShelf: {
+        eyebrow: "Bibliothèque",
+        title: "Guides & documents à votre disposition.",
+        subtitle:
+          "Une sélection d'outils éducatifs et de références téléchargeables pour structurer votre dossier en confiance — disponibles progressivement.",
+        ctaFull: "Toute la bibliothèque",
+        comingSoon: "Bientôt",
+        // Items extraits de tools.guides + tools.documents pour preview unifié
+        items: [
+          {
+            kind: "guide",
+            title: "Achat d'une première propriété",
+            excerpt: "Mise de fonds, préapprobation, RAP, CELIAPP, programmes d'aide.",
+            tag: "Guide",
+          },
+          {
+            kind: "guide",
+            title: "Comprendre les taux d'intérêt",
+            excerpt: "Fixe ou variable. Comment les taux sont déterminés. Quand négocier.",
+            tag: "Guide",
+          },
+          {
+            kind: "guide",
+            title: "Investissement immobilier",
+            excerpt: "Stratégies de financement pour immeubles à revenus et multiplex.",
+            tag: "Guide",
+          },
+          {
+            kind: "doc",
+            title: "Liste des documents requis",
+            excerpt: "Checklist exhaustive pour préparer votre dossier hypothécaire.",
+            tag: "Document",
+          },
+          {
+            kind: "doc",
+            title: "Guide de l'acheteur",
+            excerpt: "Référence complète : du premier appel à la signature notariée.",
+            tag: "Document",
+          },
+        ],
+      },
+
       calcPreview: {
         eyebrow: "Calculer en direct",
         title: "Combien va vous coûter votre hypothèque ?",
@@ -952,6 +994,47 @@ export const translations = {
           {
             title: "Wide lender network",
             desc: "Access to multiple institutions for the best rate and conditions.",
+          },
+        ],
+      },
+
+      guidesShelf: {
+        eyebrow: "Library",
+        title: "Guides & documents at your disposal.",
+        subtitle:
+          "A curated selection of educational tools and downloadable references to confidently structure your file — released progressively.",
+        ctaFull: "Browse the library",
+        comingSoon: "Soon",
+        items: [
+          {
+            kind: "guide",
+            title: "Buying your first home",
+            excerpt: "Down payment, pre-approval, HBP, FHSA, assistance programs.",
+            tag: "Guide",
+          },
+          {
+            kind: "guide",
+            title: "Understanding interest rates",
+            excerpt: "Fixed or variable. How rates are set. When to negotiate.",
+            tag: "Guide",
+          },
+          {
+            kind: "guide",
+            title: "Real-estate investment",
+            excerpt: "Financing strategies for income properties and multi-units.",
+            tag: "Guide",
+          },
+          {
+            kind: "doc",
+            title: "Required documents checklist",
+            excerpt: "Comprehensive list to prepare your mortgage file.",
+            tag: "Document",
+          },
+          {
+            kind: "doc",
+            title: "Buyer's guide",
+            excerpt: "Full reference: from first call to notarial signature.",
+            tag: "Document",
           },
         ],
       },
