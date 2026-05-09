@@ -3,6 +3,7 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { PageHero } from "@/components/landing/PageHero";
 import { TeamGrid } from "@/components/landing/TeamGrid";
 import { TeamMethod } from "@/components/landing/TeamMethod";
+import { MediaShowcase } from "@/components/landing/MediaShowcase";
 import { CtaBlock } from "@/components/landing/CtaBlock";
 import { SchemaJsonLd, breadcrumbs, buildPerson } from "@/components/layout/SchemaJsonLd";
 import { PageFooterMark } from "@/components/layout/PageFooterMark";
@@ -31,6 +32,7 @@ function TeamPage() {
       />
       <TeamGrid />
       <TeamMethod />
+      <MediaShowcase />
       <CtaBlock />
       <PageFooterMark numeral="II" label={lang === "fr" ? "Équipe" : "Team"} />
     </main>

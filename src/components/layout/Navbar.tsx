@@ -32,11 +32,12 @@ export function Navbar() {
     };
   }, [mobileOpen]);
 
-  const navItems: Array<{ to: "/" | "/equipe" | "/institutions" | "/outils"; key: string }> = [
+  const navItems: Array<{ to: "/" | "/equipe" | "/institutions" | "/outils" | "/capsules"; key: string }> = [
     { to: "/", key: "nav.home" },
     { to: "/equipe", key: "nav.team" },
     { to: "/institutions", key: "nav.institutions" },
     { to: "/outils", key: "nav.tools" },
+    { to: "/capsules", key: "nav.capsules" },
   ];
 
   // Couleur dynamique : cream sur Hero (top), navy-deep apres scroll (sur cream).
@@ -144,7 +145,7 @@ export function Navbar() {
   );
 }
 
-function NavLink({ to, label }: { to: "/" | "/equipe" | "/institutions" | "/outils"; label: string }) {
+function NavLink({ to, label }: { to: "/" | "/equipe" | "/institutions" | "/outils" | "/capsules"; label: string }) {
   return (
     <Link
       to={to}

@@ -63,7 +63,7 @@ export function TeamGrid() {
                   aria-hidden="true"
                   className="hidden md:block absolute -right-2 top-2 font-[var(--font-editorial)] italic text-[color:var(--color-bronze)]/45 text-sm rotate-90 origin-right tracking-[0.18em]"
                 >
-                  {["fondateur", "coordo.", "assist."][idx]}
+                  {["fondateur", "coordo.", "opérations"][idx]}
                 </span>
 
                 {/* Eyebrow rôle (uppercase tracking) */}

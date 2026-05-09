@@ -1,11 +1,14 @@
-import { Video } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { Play, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 
 /**
- * Teaser "Prochainement sur TikTok".
- * Layout : eyebrow + title + body + label "à l'affût".
- * Surface cream avec accent visuel (icone + carre bronze).
+ * Teaser capsules « 30 secondes top chrono » — pousse vers /capsules.
+ * Réécrit pour amener le visiteur sur la nouvelle page-collection.
+ *
+ * Layout : visual cluster (icone + offset taupe) + content cluster
+ * (eyebrow + title + body + 2 CTAs : interne /capsules + externe TikTok).
  */
 export function TikTokTeaser() {
   const { t } = useLanguage();
@@ -18,7 +21,7 @@ export function TikTokTeaser() {
           <div className="lg:col-span-4 flex justify-center lg:justify-start">
             <div className="relative">
               <div className="w-32 h-32 md:w-40 md:h-40 bg-[color:var(--color-navy)] flex items-center justify-center text-[color:var(--color-bronze-soft)]">
-                <Video size={56} strokeWidth={1.5} aria-hidden="true" />
+                <Play size={56} strokeWidth={1.5} aria-hidden="true" />
               </div>
               {/* Decorative offset block taupe */}
               <div
@@ -40,9 +43,36 @@ export function TikTokTeaser() {
             <p className="text-base md:text-lg leading-relaxed text-[color:var(--color-navy-deep)]/85">
               {t("tools.tiktok.body")}
             </p>
-            <p className="eyebrow text-[color:var(--color-taupe-dark)] pt-2">
-              {t("tools.tiktok.ctaLabel")}
-            </p>
+
+            {/* CTAs : interne /capsules + externe TikTok */}
+            <div className="flex flex-col sm:flex-row gap-4 items-start pt-3">
+              <Link
+                to="/capsules"
+                className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze-deep)] hover:text-[color:var(--color-bronze)] transition-colors"
+              >
+                <span className="relative">
+                  {t("tools.tiktok.ctaCollection")}
+                  <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                </span>
+                <ArrowRight
+                  size={14}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
+              </Link>
+              <a
+                href="https://www.tiktok.com/@equipebuteau"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-taupe-dark)] hover:text-[color:var(--color-bronze-deep)] transition-colors"
+              >
+                <Play size={12} aria-hidden="true" />
+                <span className="relative">
+                  {t("tools.tiktok.ctaTikTok")}
+                  <span className="absolute left-0 -bottom-1 w-0 h-px bg-[color:var(--color-bronze)] group-hover:w-full transition-[width] duration-500" />
+                </span>
+              </a>
+            </div>
           </div>
         </div>
       </Container>

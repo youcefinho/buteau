@@ -2,21 +2,13 @@ import { Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "./SectionHeading";
+import { config } from "@/lib/config";
 
 /**
  * Section Équipe (teaser sur Accueil).
- * 3 cartes : Andrew (lead), Abygaèle (coord), Alexis (assistant).
- * Ref visuelle : Accueil.html lignes 1167-1239.
- *
- * Note : photos issues du HTML mockup. À remplacer par des assets clients
- * définitifs en Phase 9 (config.assets.teamPhotos).
+ * 3 cartes : Andrew (lead), Abygaèle (coord), Felix (coordo opérations).
+ * Photos studio finales servies depuis /public/equipe/*.jpeg via config.assets.teamPhotos.
  */
-
-const photoUrls = {
-  andrew: "https://i.imgur.com/k4bZmLl.jpg",
-  abygaele: "https://ugc.production.linktr.ee/5iBsvLTR0iXiJgoKotJw_I4Qhjq9XsUtz0u6v?io=true&size=avatar-v3_0",
-  alexis: "https://i.imgur.com/MUD07Kc.jpg",
-};
 
 export function TeamTeaser() {
   const { t } = useLanguage();
@@ -25,17 +17,17 @@ export function TeamTeaser() {
     {
       name: t("home.teamTeaser.andrewName"),
       role: t("home.teamTeaser.andrewRole"),
-      photo: photoUrls.andrew,
+      photo: config.assets.teamPhotos.andrew,
     },
     {
       name: t("home.teamTeaser.abygaeleName"),
       role: t("home.teamTeaser.abygaeleRole"),
-      photo: photoUrls.abygaele,
+      photo: config.assets.teamPhotos.abygaele,
     },
     {
-      name: t("home.teamTeaser.alexisName"),
-      role: t("home.teamTeaser.alexisRole"),
-      photo: photoUrls.alexis,
+      name: t("home.teamTeaser.felixName"),
+      role: t("home.teamTeaser.felixRole"),
+      photo: config.assets.teamPhotos.felix,
     },
   ];
 
