@@ -355,6 +355,81 @@ body {
 }
 
 /* ============================================================
+   CUSTOM RANGE SLIDER (Calculator luxury)
+   ============================================================ */
+
+.calc-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2px;
+  background: oklch(0.722 0.018 84 / 0.5);
+  outline: none;
+  cursor: pointer;
+  margin: 0;
+}
+
+.calc-slider::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2px;
+  background: oklch(0.722 0.018 84 / 0.5);
+  border-radius: 0;
+}
+
+.calc-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-bronze);
+  border: 2px solid var(--color-cream);
+  box-shadow: 0 0 0 1px var(--color-bronze), 0 4px 12px -4px oklch(0.704 0.077 56 / 0.5);
+  cursor: grab;
+  margin-top: -8px;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.calc-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 1px var(--color-bronze), 0 6px 18px -4px oklch(0.704 0.077 56 / 0.7);
+}
+
+.calc-slider::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  transform: scale(1.05);
+}
+
+/* Firefox */
+.calc-slider::-moz-range-track {
+  height: 2px;
+  background: oklch(0.722 0.018 84 / 0.5);
+  border-radius: 0;
+}
+
+.calc-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-bronze);
+  border: 2px solid var(--color-cream);
+  box-shadow: 0 0 0 1px var(--color-bronze), 0 4px 12px -4px oklch(0.704 0.077 56 / 0.5);
+  cursor: grab;
+  transition: transform 200ms ease;
+}
+
+.calc-slider::-moz-range-thumb:hover {
+  transform: scale(1.15);
+}
+
+.calc-slider:focus-visible::-webkit-slider-thumb,
+.calc-slider:focus-visible::-moz-range-thumb {
+  outline: 2px solid var(--color-bronze);
+  outline-offset: 4px;
+}
+
+/* ============================================================
    GEOMETRIC PATTERNS (luxury wallpaper / print details)
    ============================================================ */
 
@@ -495,6 +570,18 @@ body {
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+/* Page transition entrance — fade + slide up subtle, sensation "tourner la page" */
+@keyframes buteauPageEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

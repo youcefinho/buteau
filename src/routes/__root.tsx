@@ -8,9 +8,16 @@ import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { SplashIntro } from "@/components/layout/SplashIntro";
 import { TrackingPixels } from "@/components/landing/TrackingPixels";
 import { GlossaryModal } from "@/components/landing/GlossaryModal";
+import { NotFoundEditorial } from "@/components/landing/NotFoundEditorial";
+import { PageTransition } from "@/components/layout/PageTransition";
 
 export const Route = createRootRoute({
   component: RootComponent,
+  notFoundComponent: () => (
+    <>
+      <NotFoundEditorial />
+    </>
+  ),
 });
 
 function RootComponent() {
@@ -21,7 +28,9 @@ function RootComponent() {
       <SkipToContent />
       <ScrollProgress />
       <Navbar />
-      <Outlet />
+      <PageTransition>
+        <Outlet />
+      </PageTransition>
       <Footer />
       <CookieBanner />
       <GlossaryModal />

@@ -338,6 +338,83 @@ export const translations = {
       button: "Prendre rendez-vous",
     },
 
+    notFound: {
+      eyebrow: "Égaré ?",
+      title: "Cette page n'existe pas dans notre édition.",
+      subtitle:
+        "Peut-être qu'un lien a été déplacé, ou que vous cherchez quelque chose de spécifique. Nous pouvons vous remettre sur la bonne voie.",
+      ctaHome: "Retour à l'accueil",
+      ctaCall: "Appeler Andrew",
+      footnote: "Code 404 · Quebec · MMXXVI",
+    },
+
+    quiz: {
+      eyebrow: "Pré-qualification éclair",
+      title: "Trois questions. Un dossier sur mesure.",
+      subtitle:
+        "Répondez en 30 secondes pour découvrir le parcours qui correspond à votre situation — sans engagement.",
+      progressLabel: "Question",
+      ofLabel: "sur",
+      nextLabel: "Continuer",
+      backLabel: "Retour",
+      restartLabel: "Refaire le test",
+      questions: [
+        {
+          q: "Quel est votre projet hypothécaire ?",
+          options: [
+            { label: "Acheter une première propriété", tier: "primo" },
+            { label: "Renouveler / refinancer", tier: "refi" },
+            { label: "Investir dans un immeuble à revenus", tier: "investor" },
+            { label: "Je ne suis pas certain", tier: "explorer" },
+          ],
+        },
+        {
+          q: "Où en êtes-vous dans le processus ?",
+          options: [
+            { label: "Pré-approuvé, je magasine activement", tier: "primo" },
+            { label: "J'évalue mes options", tier: "explorer" },
+            { label: "J'ai déjà une hypothèque en place", tier: "refi" },
+            { label: "J'ai plusieurs propriétés", tier: "investor" },
+          ],
+        },
+        {
+          q: "Qu'est-ce qui compte le plus pour vous ?",
+          options: [
+            { label: "Obtenir le meilleur taux", tier: "refi" },
+            { label: "Comprendre chaque étape", tier: "explorer" },
+            { label: "Maximiser mon effet de levier", tier: "investor" },
+            { label: "Avoir un courtier disponible", tier: "primo" },
+          ],
+        },
+      ],
+      results: {
+        primo: {
+          eyebrow: "Profil — Primo-acheteur",
+          title: "Vous êtes prêt à structurer votre premier dossier.",
+          body: "Andrew vous guide étape par étape : préapprobation, RAP, CELIAPP, taxe de bienvenue. Aucune zone grise, aucun jargon non expliqué.",
+          ctaLabel: "Démarrer mon dossier",
+        },
+        refi: {
+          eyebrow: "Profil — Refinancement / Renouvellement",
+          title: "Le bon moment pour magasiner les conditions.",
+          body: "Andrew analyse votre dossier actuel et négocie les meilleures conditions parmi 9+ prêteurs. Avec ou sans changement de banque.",
+          ctaLabel: "Comparer mes options",
+        },
+        investor: {
+          eyebrow: "Profil — Investisseur",
+          title: "Une stratégie de financement qui fait travailler votre équité.",
+          body: "Multiplex, immeubles à revenus, refinancement par effet de levier. Andrew structure des dossiers complexes avec des prêteurs qui comprennent l'investissement.",
+          ctaLabel: "Discuter ma stratégie",
+        },
+        explorer: {
+          eyebrow: "Profil — Curieux",
+          title: "Commençons par clarifier votre situation.",
+          body: "Pas de pression, pas d'engagement. Andrew prend 20 minutes pour vous donner l'heure juste — vous repartez avec des chiffres clairs.",
+          ctaLabel: "Prendre 20 minutes avec Andrew",
+        },
+      },
+    },
+
     territory: {
       eyebrow: "Territoire desservi",
       title: "Présents partout au Québec.",
@@ -873,6 +950,83 @@ export const translations = {
       title: "Ready to structure your project?",
       subtitle: "Clear decisions. Structured execution. Concrete results.",
       button: "Book an appointment",
+    },
+
+    notFound: {
+      eyebrow: "Lost?",
+      title: "This page doesn't exist in our edition.",
+      subtitle:
+        "Perhaps a link has moved, or you're searching for something specific. We can guide you back on track.",
+      ctaHome: "Back to home",
+      ctaCall: "Call Andrew",
+      footnote: "Code 404 · Quebec · MMXXVI",
+    },
+
+    quiz: {
+      eyebrow: "Quick pre-qualification",
+      title: "Three questions. A tailored file.",
+      subtitle:
+        "Answer in 30 seconds to discover the path that fits your situation — no commitment.",
+      progressLabel: "Question",
+      ofLabel: "of",
+      nextLabel: "Continue",
+      backLabel: "Back",
+      restartLabel: "Retake the quiz",
+      questions: [
+        {
+          q: "What's your mortgage project?",
+          options: [
+            { label: "Buying a first property", tier: "primo" },
+            { label: "Renewal / refinancing", tier: "refi" },
+            { label: "Investing in income property", tier: "investor" },
+            { label: "I'm not sure yet", tier: "explorer" },
+          ],
+        },
+        {
+          q: "Where are you in the process?",
+          options: [
+            { label: "Pre-approved, actively shopping", tier: "primo" },
+            { label: "Evaluating my options", tier: "explorer" },
+            { label: "I already have a mortgage", tier: "refi" },
+            { label: "I own several properties", tier: "investor" },
+          ],
+        },
+        {
+          q: "What matters most to you?",
+          options: [
+            { label: "Getting the best rate", tier: "refi" },
+            { label: "Understanding every step", tier: "explorer" },
+            { label: "Maximizing my leverage", tier: "investor" },
+            { label: "Having a broker on call", tier: "primo" },
+          ],
+        },
+      ],
+      results: {
+        primo: {
+          eyebrow: "Profile — First-time buyer",
+          title: "You're ready to structure your first file.",
+          body: "Andrew guides you step by step: pre-approval, HBP, FHSA, welcome tax. No grey areas, no unexplained jargon.",
+          ctaLabel: "Start my file",
+        },
+        refi: {
+          eyebrow: "Profile — Refinance / Renewal",
+          title: "The right moment to shop conditions.",
+          body: "Andrew reviews your current file and negotiates the best conditions across 9+ lenders. With or without switching banks.",
+          ctaLabel: "Compare my options",
+        },
+        investor: {
+          eyebrow: "Profile — Investor",
+          title: "A financing strategy that puts your equity to work.",
+          body: "Multi-units, income properties, leverage refinance. Andrew structures complex files with lenders who understand investment.",
+          ctaLabel: "Discuss my strategy",
+        },
+        explorer: {
+          eyebrow: "Profile — Curious",
+          title: "Let's start by clarifying your situation.",
+          body: "No pressure, no commitment. Andrew takes 20 minutes to give you the straight numbers — you leave with clarity.",
+          ctaLabel: "Take 20 minutes with Andrew",
+        },
+      },
     },
 
     territory: {

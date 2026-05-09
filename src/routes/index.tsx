@@ -11,6 +11,7 @@ import { Faq } from "@/components/landing/Faq";
 import { ChapterMarker } from "@/components/landing/ChapterMarker";
 import { BrokerLetter } from "@/components/landing/BrokerLetter";
 import { TerritoryMap } from "@/components/landing/TerritoryMap";
+import { PreQualQuiz } from "@/components/landing/PreQualQuiz";
 import {
   SchemaJsonLd,
   buildFaqPage,
@@ -53,6 +54,9 @@ function HomePage() {
 
       {/* « Le mot du courtier » — section authentique signature manuscrite (NOVEL) */}
       <BrokerLetter />
+
+      {/* Quiz pré-qualification 3Q tier-based — qualifie les leads + personalise CTA */}
+      <PreQualQuiz />
 
       <ToolsTeaser />
 

@@ -18,14 +18,19 @@ import { WhatIfScenarios } from "./WhatIfScenarios";
  *
  * NE PAS utiliser monthly_rate = annual_rate / 12 (c'est la formule US).
  *
- * Anti-pattern :
- *   parseLocaleFloat(x) || 0 mange le 0 légitime saisi par l'utilisateur.
- *   On utilise `?? defaultValue` (nullish coalescing) à la place.
+ * UX : sliders visuels (vs text inputs) — le user explore les paramètres en
+ * draggant. Pattern luxury fintech (Wealthsimple, Wise) adapté à un courtage.
  */
 const DEFAULTS = {
   amount: 400000,
   rate: 5.5,
   years: 25,
+};
+
+const RANGES = {
+  amount: { min: 100000, max: 1500000, step: 5000 },
+  rate: { min: 1, max: 9, step: 0.05 },
+  years: { min: 5, max: 30, step: 1 },
 };
 
 export function HypothequeCalculator() {
@@ -95,31 +100,43 @@ export function HypothequeCalculator() {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 max-w-5xl mx-auto">
-          {/* Inputs column (3/5) — magazine layout, espace généreux */}
-          <div className="lg:col-span-3 space-y-8 bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/50 p-8 md:p-12">
-            <CalcField
+          {/* Inputs column (3/5) — sliders visuels luxury */}
+          <div className="lg:col-span-3 space-y-9 bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/50 p-8 md:p-12">
+            <CalcSliderField
               id="calc-amount"
               label={t("tools.calc.amountLabel")}
               value={amountInput}
               onChange={setAmountInput}
-              autoComplete="off"
-              inputMode="decimal"
+              min={RANGES.amount.min}
+              max={RANGES.amount.max}
+              step={RANGES.amount.step}
+              format={(v) => formatLocaleCurrency(Math.round(v), lang)}
+              minLabel={formatLocaleCurrency(RANGES.amount.min, lang)}
+              maxLabel={formatLocaleCurrency(RANGES.amount.max, lang)}
             />
-            <CalcField
+            <CalcSliderField
               id="calc-rate"
               label={t("tools.calc.rateLabel")}
               value={rateInput}
               onChange={setRateInput}
-              autoComplete="off"
-              inputMode="decimal"
+              min={RANGES.rate.min}
+              max={RANGES.rate.max}
+              step={RANGES.rate.step}
+              format={(v) => `${v.toFixed(2)} %`}
+              minLabel={`${RANGES.rate.min} %`}
+              maxLabel={`${RANGES.rate.max} %`}
             />
-            <CalcField
+            <CalcSliderField
               id="calc-years"
               label={t("tools.calc.yearsLabel")}
               value={yearsInput}
               onChange={setYearsInput}
-              autoComplete="off"
-              inputMode="numeric"
+              min={RANGES.years.min}
+              max={RANGES.years.max}
+              step={RANGES.years.step}
+              format={(v) => `${Math.round(v)} ${lang === "fr" ? "ans" : "years"}`}
+              minLabel={`${RANGES.years.min}`}
+              maxLabel={`${RANGES.years.max}`}
             />
           </div>
 
@@ -241,40 +258,74 @@ export function HypothequeCalculator() {
   );
 }
 
-function CalcField({
+function CalcSliderField({
   id,
   label,
   value,
   onChange,
-  autoComplete,
-  inputMode,
+  min,
+  max,
+  step,
+  format,
+  minLabel,
+  maxLabel,
 }: {
   id: string;
   label: string;
   value: string;
   onChange: (v: string) => void;
-  autoComplete?: string;
-  inputMode?: "decimal" | "numeric";
+  min: number;
+  max: number;
+  step: number;
+  format: (v: number) => string;
+  minLabel: string;
+  maxLabel: string;
 }) {
-  // Pattern magazine éditorial : pas de cadre fermé, juste une fine ligne
-  // taupe en bas qui s'épaissit en bronze au focus (audit P2-M).
+  const numValue = parseLocaleFloat(value) ?? min;
+  const clamped = Math.max(min, Math.min(max, numValue));
+  const percent = ((clamped - min) / (max - min)) * 100;
+
   return (
-    <div className="space-y-2 pb-3 border-b border-[color:var(--color-taupe)]/50 focus-within:border-[color:var(--color-bronze)] transition-colors">
-      <label
-        htmlFor={id}
-        className="eyebrow text-[color:var(--color-taupe-dark)] block"
-      >
-        {label}
-      </label>
-      <input
-        id={id}
-        type="text"
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        autoComplete={autoComplete}
-        inputMode={inputMode}
-        className="w-full px-0 py-1 bg-transparent text-2xl md:text-3xl font-[var(--font-display)] font-bold tracking-[-0.01em] text-[color:var(--color-navy-deep)] outline-none border-none placeholder:text-[color:var(--color-taupe)]"
-      />
+    <div className="space-y-3">
+      {/* Label eyebrow + value display */}
+      <div className="flex items-baseline justify-between gap-3">
+        <label htmlFor={id} className="eyebrow text-[color:var(--color-taupe-dark)]">
+          {label}
+        </label>
+        <output
+          htmlFor={id}
+          className="font-[var(--font-display)] font-bold tracking-[-0.01em] text-[color:var(--color-navy-deep)] text-xl md:text-2xl tabular-nums"
+        >
+          {format(clamped)}
+        </output>
+      </div>
+
+      {/* Slider track avec fill bronze */}
+      <div className="relative pt-1">
+        {/* Fill colored portion (bronze) — utilise pseudo-element via background */}
+        <div
+          className="absolute top-1/2 left-0 h-px bg-[color:var(--color-bronze)] pointer-events-none transition-[width] duration-150"
+          style={{ width: `${percent}%`, transform: "translateY(-50%)" }}
+          aria-hidden="true"
+        />
+        <input
+          id={id}
+          type="range"
+          min={min}
+          max={max}
+          step={step}
+          value={clamped}
+          onChange={(e) => onChange(e.target.value)}
+          className="calc-slider relative z-10"
+          aria-label={label}
+        />
+      </div>
+
+      {/* Min/Max labels */}
+      <div className="flex justify-between text-[10px] eyebrow text-[color:var(--color-taupe-dark)]/70">
+        <span>{minLabel}</span>
+        <span>{maxLabel}</span>
+      </div>
     </div>
   );
 }
