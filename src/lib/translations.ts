@@ -92,6 +92,9 @@ export const translations = {
         issueDate: "Quebec — MMXXVI",
         issueLocation: "Laval · Québec",
         scrollHint: "Faire défiler",
+        // Mots signatures révélés au hover sur chaque lettre BUTEAU
+        letterWords: ["Buteau", "Unique", "Transparence", "Expert", "Accessible", "Utile"],
+        letterHint: "Survolez chaque lettre",
       },
 
       partners: {
@@ -643,6 +646,8 @@ export const translations = {
         issueDate: "Quebec — MMXXVI",
         issueLocation: "Laval · Quebec",
         scrollHint: "Scroll",
+        letterWords: ["Buteau", "Unique", "Transparency", "Expert", "Accessible", "Useful"],
+        letterHint: "Hover each letter",
       },
 
       partners: {

@@ -73,7 +73,7 @@ export function Mission() {
             >
               &ldquo;
             </span>
-            <p className="font-[var(--font-editorial)] italic text-[color:var(--color-cream)] text-2xl md:text-4xl leading-[1.2] font-light">
+            <p className="font-signature text-[color:var(--color-cream)] text-2xl md:text-4xl leading-[1.2] font-light tracking-[-0.005em]">
               <span
                 className="inline-block tabular-nums font-bold text-[color:var(--color-bronze)] mr-2"
                 aria-live="polite"

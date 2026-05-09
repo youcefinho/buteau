@@ -40,8 +40,9 @@ export function BrokerLetter() {
               <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
             </p>
 
-            {/* "Bonjour," — accroche Cormorant italic 5xl */}
-            <p className="font-[var(--font-editorial)] italic text-[color:var(--color-navy-deep)] text-4xl md:text-5xl lg:text-6xl leading-none mb-10 tracking-tight">
+            {/* "Bonjour," — accroche Fraunces italic XL avec axes optical + WONK
+                (signature endroit #3, plus distinctive que Cormorant). */}
+            <p className="font-signature text-[color:var(--color-navy-deep)] text-4xl md:text-5xl lg:text-6xl leading-none mb-10 tracking-[-0.015em]">
               {t("letter.heading")}
             </p>
 

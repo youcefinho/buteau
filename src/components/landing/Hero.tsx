@@ -3,6 +3,7 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { config } from "@/lib/config";
 import { useMagnetic } from "@/hooks/useMagnetic";
+import { ta, translations } from "@/lib/translations";
 
 /**
  * Hero Accueil — large, plein écran, fond navy avec image overlay,
@@ -11,8 +12,9 @@ import { useMagnetic } from "@/hooks/useMagnetic";
  * Ref visuelle : Accueil.html lignes 1050-1072.
  */
 export function Hero() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const magneticCta = useMagnetic<HTMLAnchorElement>({ strength: 0.3, maxOffset: 14 });
+  const letterWords = ta<string[]>(translations[lang], "home.hero.letterWords");
 
   return (
     <section
@@ -82,32 +84,52 @@ export function Hero() {
             <span className="inline-block w-6 h-px align-middle bg-[color:var(--color-taupe)] ml-3" />
           </p>
 
-          {/* Brand mark — letter-by-letter cinematic reveal (séquence orchestrée) */}
-          <div className="relative inline-block">
+          {/* Brand mark — letter-by-letter reveal AU MOUNT + hover word reveal interactif.
+              Chaque lettre B/U/T/E/A/U révèle un mot signature au hover (Buteau / Unique /
+              Transparence / Expert / Accessible / Utile). */}
+          <div className="relative inline-block group/brand">
             <p className="font-[var(--font-display)] text-[color:var(--color-cream)] text-6xl md:text-8xl lg:text-[8.5rem] font-extrabold tracking-[0.22em] leading-[0.95] pl-[0.22em] flex">
-              {config.brandName.split("").map((letter, idx) => (
-                <span
-                  key={idx}
-                  className="inline-block"
-                  style={{
-                    animation: `buteauLetterIn 900ms cubic-bezier(0.34, 1.56, 0.64, 1) ${
-                      400 + idx * 90
-                    }ms backwards`,
-                  }}
-                >
-                  {letter}
-                </span>
-              ))}
+              {config.brandName.split("").map((letter, idx) => {
+                const word = letterWords[idx] ?? letter;
+                return (
+                  <span
+                    key={idx}
+                    className="relative inline-block group/letter cursor-default transition-all duration-300 hover:text-[color:var(--color-bronze)] hover:-translate-y-1.5"
+                    style={{
+                      animation: `buteauLetterIn 900ms cubic-bezier(0.34, 1.56, 0.64, 1) ${
+                        400 + idx * 90
+                      }ms backwards`,
+                    }}
+                  >
+                    {letter}
+                    {/* Mot signature révélé au hover — Cormorant italic small sous la lettre */}
+                    <span
+                      aria-hidden="true"
+                      className="pointer-events-none absolute left-1/2 top-[110%] -translate-x-1/2 font-[var(--font-editorial)] italic text-[color:var(--color-bronze-soft)] text-[0.18em] tracking-normal whitespace-nowrap opacity-0 translate-y-2 transition-all duration-400 group-hover/letter:opacity-100 group-hover/letter:translate-y-0"
+                    >
+                      {word}
+                    </span>
+                  </span>
+                );
+              })}
             </p>
             <span
               className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-12 md:w-20 h-px bg-[color:var(--color-bronze)] animate-[buteauWidth_700ms_ease-out_1100ms_both]"
               aria-hidden="true"
             />
+            {/* Hint éducatif — apparaît subtle, fade out au 1er hover sur le brand */}
+            <span
+              aria-hidden="true"
+              className="absolute -bottom-12 left-1/2 -translate-x-1/2 eyebrow text-[color:var(--color-taupe)]/70 text-[10px] whitespace-nowrap opacity-100 transition-opacity duration-500 group-hover/brand:opacity-0 animate-[buteauFadeUp_700ms_ease-out_2000ms_both]"
+            >
+              ↑ {t("home.hero.letterHint")}
+            </span>
           </div>
 
-          {/* Tagline mega — reveal step 3 */}
+          {/* Tagline mega — reveal step 3. Fraunces italic variable (axes optical + WONK)
+              pour distinctiveness vs Cormorant générique. Signature endroit #1. */}
           <h1
-            className="font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/95 text-3xl md:text-5xl lg:text-[3.5rem] font-light tracking-[0.02em] leading-[1.05] mt-10 md:mt-12 max-w-3xl animate-[buteauFadeUp_800ms_ease-out_700ms_both]"
+            className="font-signature text-[color:var(--color-cream)]/95 text-3xl md:text-5xl lg:text-[3.5rem] font-light tracking-[-0.01em] leading-[1.05] mt-10 md:mt-12 max-w-3xl animate-[buteauFadeUp_800ms_ease-out_700ms_both]"
           >
             {t("home.hero.title")}
           </h1>

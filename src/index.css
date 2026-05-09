@@ -38,6 +38,10 @@
   --font-sans: "Open Sans", system-ui, -apple-system, sans-serif;
   --font-display: "Montserrat", "Open Sans", system-ui, sans-serif;
   --font-editorial: "Cormorant Garamond", "Georgia", serif;
+  /* Fraunces variable — utilisé UNIQUEMENT sur 3 endroits signatures (Hero tagline,
+     Mission pull quote, BrokerLetter "Bonjour"). Variable axes : optical size + WONK
+     pour vraie distinctiveness vs Cormorant traditional. */
+  --font-signature: "Fraunces", "Cormorant Garamond", "Georgia", serif;
 
   /* --- Letter-spacing signature (eyebrows, labels uppercase) --- */
   --tracking-eyebrow: 0.12em;
@@ -554,6 +558,20 @@ body {
     font-weight: 700;
     letter-spacing: var(--tracking-headline);
     line-height: 1.05;
+  }
+
+  /* Signature display — Fraunces variable italic avec axes optical + WONK activés.
+     Vraie distinctiveness vs Cormorant traditional. À utiliser UNIQUEMENT sur les
+     3 endroits signature : Hero tagline, Mission pull quote, BrokerLetter "Bonjour". */
+  .font-signature {
+    font-family: var(--font-signature);
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "wght" 400, "SOFT" 50, "WONK" 1;
+  }
+  .font-signature-bold {
+    font-family: var(--font-signature);
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "wght" 600, "SOFT" 50, "WONK" 1;
   }
 
   /* Signature line (taupe horizontal entre sections) */
