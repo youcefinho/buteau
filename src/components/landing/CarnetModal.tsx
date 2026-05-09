@@ -151,6 +151,8 @@ export function CarnetModal() {
       title={isFr ? "Le carnet" : "The address book"}
       closeLabel={isFr ? "Fermer le carnet" : "Close address book"}
       ariaLabelledById="carnet-title"
+      printable
+      printLabel={isFr ? "Imprimer le carnet" : "Print address book"}
     >
       {/* Sous-titre */}
       <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-6">

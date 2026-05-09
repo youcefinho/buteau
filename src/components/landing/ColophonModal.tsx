@@ -24,6 +24,8 @@ export function ColophonModal() {
       title={isFr ? "Colophon" : "Colophon"}
       closeLabel={isFr ? "Fermer le colophon" : "Close colophon"}
       ariaLabelledById="colophon-title"
+      printable
+      printLabel={isFr ? "Imprimer le colophon" : "Print colophon"}
     >
       {/* Sous-titre Volume / Édition */}
       <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-6">

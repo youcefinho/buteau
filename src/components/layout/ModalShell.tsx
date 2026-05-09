@@ -1,5 +1,5 @@
 import { useEffect, useRef, type ReactNode } from "react";
-import { X } from "lucide-react";
+import { X, Printer } from "lucide-react";
 
 /**
  * ModalShell — boilerplate modal réutilisable (focus trap + Escape + body lock + restore focus).
@@ -23,6 +23,10 @@ type ModalShellProps = {
   children: ReactNode;
   /** Largeur max desktop. Défaut max-w-3xl. */
   maxWidth?: string;
+  /** Si true, affiche un bouton Imprimer dans le header (Phase 4). */
+  printable?: boolean;
+  /** Label du bouton Imprimer (i18n). */
+  printLabel?: string;
 };
 
 export function ModalShell({
@@ -34,6 +38,8 @@ export function ModalShell({
   ariaLabelledById,
   children,
   maxWidth = "max-w-3xl",
+  printable = false,
+  printLabel = "Imprimer",
 }: ModalShellProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const closeBtnRef = useRef<HTMLButtonElement | null>(null);
@@ -107,15 +113,28 @@ export function ModalShell({
               {title}
             </h2>
           </div>
-          <button
-            ref={closeBtnRef}
-            type="button"
-            onClick={onClose}
-            aria-label={closeLabel}
-            className="p-2 -mr-2 text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-bronze-deep)] transition-colors"
-          >
-            <X size={24} aria-hidden="true" />
-          </button>
+          <div className="flex items-center gap-1">
+            {printable && (
+              <button
+                type="button"
+                onClick={() => window.print()}
+                aria-label={printLabel}
+                title={printLabel}
+                className="p-2 text-[color:var(--color-taupe-dark)] hover:text-[color:var(--color-bronze-deep)] transition-colors"
+              >
+                <Printer size={20} aria-hidden="true" />
+              </button>
+            )}
+            <button
+              ref={closeBtnRef}
+              type="button"
+              onClick={onClose}
+              aria-label={closeLabel}
+              className="p-2 -mr-2 text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-bronze-deep)] transition-colors"
+            >
+              <X size={24} aria-hidden="true" />
+            </button>
+          </div>
         </div>
 
         {/* Body scrollable */}
