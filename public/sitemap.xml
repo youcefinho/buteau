@@ -21,6 +21,21 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://equipe-buteau.intralysqc.workers.dev/capsules</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://equipe-buteau.intralysqc.workers.dev/journal</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://equipe-buteau.intralysqc.workers.dev/courrier</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://equipe-buteau.intralysqc.workers.dev/lexique</loc>
     <changefreq>quarterly</changefreq>
     <priority>0.7</priority>
