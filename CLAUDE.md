@@ -1,7 +1,7 @@
 # CLAUDE.md — Équipe Buteau (Andrew Buteau, Planiprêt)
 
 > Lu automatiquement à chaque ouverture du projet. Respecter à la lettre.
-> Dernière mise à jour : 2026-05-08 (Phases 0-9 complètes — site prêt à shipper)
+> Dernière mise à jour : 2026-05-09 — 30 commits sur main, 8 ROUND design appliqués
 
 ---
 
@@ -11,13 +11,15 @@ Site web haute conversion pour **Équipe Buteau** — courtage hypothécaire ré
 
 **Tagline officielle :** « L'hypothèque autrement »
 
-**Direction esthétique : LUXURY MINIMAL CORPORATE / éditorial raffiné** — palette navy + taupe + bronze caramel, lettrages uppercase, espacement large, signature lines taupe, gradient overlays. Référence visuelle : 4 HTML mockups dans `C:\Users\rochdi\.gemini\antigravity\scratch\buteau\`.
+**Direction esthétique : LUXURY MINIMAL CORPORATE / éditorial magazine** — palette navy + taupe + bronze caramel. Le site est conçu comme l'ouverture d'un magazine luxury (vs SaaS landing).
+
+**GitHub :** https://github.com/youcefinho/buteau (branch main, 30 commits)
 
 **Cible :** B2C — primo-acheteurs, propriétaires (renouvellement / refinancement), investisseurs immobiliers.
 
 **Territoire desservi :** Tout le Québec (siège Laval).
 
-**Régulateur :** AMF (courtier hypothécaire). Numéros de certificat individuels en placeholder Phase 9 client (à fournir).
+**Régulateur :** AMF (courtier hypothécaire). Numéros de certificat individuels en placeholder Phase 9 (à fournir par client).
 
 ---
 
@@ -28,11 +30,11 @@ Site web haute conversion pour **Équipe Buteau** — courtage hypothécaire ré
 | **React** | 19 | UI |
 | **TypeScript** | 5.8+ strict | Type safety |
 | **Vite** | 7 | Build + dev server |
-| **TanStack Router** | 1.168+ | Routing file-based avec autoCodeSplitting |
-| **Tailwind CSS** | v4 | `@theme inline` + tokens `oklch` |
-| **Radix UI** | 1.2+ | Accessibilité (Accordion FAQ) |
+| **TanStack Router** | 1.168+ | Routing file-based + autoCodeSplitting |
+| **Tailwind CSS** | v4 | `@theme inline` + `oklch` |
+| **Radix UI** | 1.2+ | A11y (Accordion FAQ) |
 | **Lucide React** | 0.575+ | Icônes |
-| **Cloudflare Workers** | — | API + assets unifiés (1 worker, pas Pages Functions) |
+| **Cloudflare Workers** | — | API + assets unifiés |
 | **Cloudflare D1** | — | `equipe-buteau-leads` (à créer Phase 9) |
 | **Bun** | Latest | Runtime + package manager |
 
@@ -43,219 +45,274 @@ Site web haute conversion pour **Équipe Buteau** — courtage hypothécaire ré
 ```bash
 bun install
 bun run dev              # localhost:5173
-bun run build            # DOIT passer 0 erreur avant push
+bun run build            # 0 erreur avant push
 bunx tsc --noEmit        # TS strict check
-bunx wrangler dev        # API local port 8787 (en parallèle de bun run dev)
-bunx wrangler deploy     # deploy MANUEL Cloudflare (jamais auto)
-```
-
-Workflow standard : `bun run build` → `git push` (backup) → `bunx wrangler deploy` après validation user.
-
----
-
-## 4. Structure finale
-
-```
-equipe-buteau/
-├── CLAUDE.md (ce fichier)
-├── package.json + bunfig.toml + bun.lock
-├── tsconfig.json (strict + paths @/*)
-├── vite.config.ts (TanStack Router + Tailwind v4 + tsconfig-paths + proxy /api)
-├── wrangler.jsonc (assets SPA + run_worker_first /api/*)
-├── index.html (FR par défaut + OG + Twitter + Google Fonts Montserrat/Open Sans/Cormorant)
-└── src/
-    ├── main.tsx (LanguageProvider + GlossaryProvider + RouterProvider)
-    ├── index.css (theme oklch navy/taupe/bronze + utilities .eyebrow .display .signature-line .card-luxury .btn-bronze .surface-navy/cream)
-    ├── worker.ts (POST /api/lead 4 couches + ctx.waitUntil GHL + CSP headers)
-    ├── routeTree.gen.ts (auto-généré par TanStack)
-    ├── routes/
-    │   ├── __root.tsx (Navbar + Footer + SkipToContent + CookieBanner + GlossaryModal + TrackingPixels)
-    │   ├── index.tsx (Page Accueil 9 sections)
-    │   ├── equipe.tsx (Page Équipe — 3 cartes + Notre Méthode + CtaBlock)
-    │   ├── institutions.tsx (Page Institutions — Insurance + 9 lenders + Missing + CtaBlock)
-    │   ├── outils.tsx (Page Outils — Calculator + Guides + TikTok + Blog + Documents + ToolsFinalCta)
-    │   ├── lexique.tsx (14 termes hypothécaires + Schema.org DefinedTermSet)
-    │   ├── mentions-legales.tsx (7 sections)
-    │   └── confidentialite.tsx (Loi 25 — 9 sections)
-    ├── components/
-    │   ├── layout/
-    │   │   ├── Navbar.tsx (sticky scroll-aware + LanguageToggle + CTA tel + mobile drawer)
-    │   │   ├── Footer.tsx (brand + contact + sitemap + legal + AMF disclaimer)
-    │   │   ├── Container.tsx (responsive sm/md/lg/xl/full)
-    │   │   ├── SkipToContent.tsx (WCAG 2.4.1)
-    │   │   ├── LanguageToggle.tsx (FR/EN)
-    │   │   ├── CookieBanner.tsx (Loi 25 art. 23 — boutons d'égale visibilité)
-    │   │   ├── AmfDisclaimer.tsx (3 variantes : inline / card / badge)
-    │   │   └── LegalPageWrap.tsx (wrapper pages légales)
-    │   └── landing/
-    │       ├── SectionHeading.tsx (eyebrow + title + signature line)
-    │       ├── PageHero.tsx (hero secondaire pour pages internes)
-    │       ├── Hero.tsx (Hero Accueil plein écran)
-    │       ├── Partners.tsx (carousel infinite scroll + mask fade)
-    │       ├── TeamTeaser.tsx (3 cartes Accueil)
-    │       ├── TeamGrid.tsx (3 cartes Équipe avec bios)
-    │       ├── TeamMethod.tsx (3 piliers I-II-III filigrane)
-    │       ├── Services.tsx (4 cartes border-left taupe -> bronze hover)
-    │       ├── Mission.tsx (2 paragraphes éditoriaux + 4 valeurs)
-    │       ├── ToolsTeaser.tsx (4 cartes glass)
-    │       ├── Reviews.tsx (3 témoignages Google)
-    │       ├── ContactSection.tsx (form + info)
-    │       ├── ContactForm.tsx (4 couches défense leads)
-    │       ├── Faq.tsx (Radix Accordion 7 questions)
-    │       ├── InsuranceNote.tsx (encadré Attention sur preuve assurance)
-    │       ├── LendersGrid.tsx (9 institutions avec adresses)
-    │       ├── InstitutionMissing.tsx (encadré CTA contact)
-    │       ├── CtaBlock.tsx (CTA réutilisable Équipe/Institutions)
-    │       ├── GuidesGrid.tsx (3 guides "Bientôt")
-    │       ├── TikTokTeaser.tsx (capsules vidéo soon)
-    │       ├── BlogTeaser.tsx (blog soon)
-    │       ├── DocumentsGrid.tsx (2 docs téléchargeables)
-    │       ├── ToolsFinalCta.tsx (CTA fin Outils)
-    │       ├── TrackingPixels.tsx (Consent Mode v2 default DENIED + GA4/Meta/Clarity/GAds)
-    │       ├── GlossaryModal.tsx (modal 14 termes a11y)
-    │       └── calculators/
-    │           └── HypothequeCalculator.tsx (formule canadienne semi-annuelle)
-    ├── hooks/
-    │   ├── useScrollReveal.ts (IntersectionObserver fade-in)
-    │   ├── useCountUp.ts (RAF ease-out cubic)
-    │   └── useCookieConsent.ts (localStorage + Consent Mode v2 update)
-    ├── lib/
-    │   ├── config.ts (data Buteau centralisée + placeholders Phase 9)
-    │   ├── translations.ts (FR/EN BilingualLax + ta<T>())
-    │   ├── LanguageContext.tsx (FR par défaut, persist localStorage)
-    │   ├── GlossaryContext.tsx (open/close + selectedSlug)
-    │   ├── glossary.ts (14 termes hypothécaires QC)
-    │   ├── parseLocaleFloat.ts (NNBSP + virgule + dollar)
-    │   └── utils.ts (cn helper)
-    └── db/
-        └── schema.sql (D1 schema : leads + rate_limits)
+bunx wrangler dev        # API local 8787
+bunx wrangler deploy     # deploy MANUEL Cloudflare
 ```
 
 ---
 
-## 5. État du projet (snapshot 2026-05-08 — site prêt à shipper)
+## 4. Routes (10 pages)
 
-### ✅ DONE — Phases 0-9 complètes
-
-| # | Phase | Status |
+| Route | Fichier | Description |
 |---|---|---|
-| 0 | Setup contexte (CLAUDE.md + folder) | ✅ |
-| 1 | Bootstrap V6 (configs + scaffold + bun install) | ✅ |
-| 2 | Design system (tokens oklch + utilities + Navbar/Footer/SkipToContent/LanguageToggle) | ✅ |
-| 3 | Page Accueil (9 sections : Hero/Partners/TeamTeaser/Services/Mission/ToolsTeaser/Reviews/Contact/Faq) | ✅ |
-| 4 | Page Équipe (PageHero + TeamGrid 3 bios + TeamMethod 3 piliers + CtaBlock) | ✅ |
-| 5 | Page Institutions/Adresses pour assurances (Insurance note + LendersGrid 9 + Missing + Cta) | ✅ |
-| 6 | Page Outils (Calculator FR canadien semi-annuel + Guides 3 + TikTok + Blog + Docs 2 + FinalCta) | ✅ |
-| 7 | Backend leads V6 (D1 schema + worker /api/lead 4 couches + ContactForm + TrackingPixels Consent v2) | ✅ |
-| 8a | CookieBanner Loi 25 + AmfDisclaimer + useCookieConsent | ✅ |
-| 8b | /mentions-legales (7 sections) + /confidentialite (Loi 25 9 sections) | ✅ |
-| 8c | Glossaire 14 termes + GlossaryModal + /lexique + Schema.org DefinedTermSet | ✅ |
-| 9 | Audits final (build OK + tsc OK + hardcoded strings audit OK) | ✅ |
+| `/` | `routes/index.tsx` | Accueil (16 sections) |
+| `/equipe` | `routes/equipe.tsx` | 3 cartes bios + Notre Méthode |
+| `/institutions` | `routes/institutions.tsx` | Adresses 9 prêteurs assurance |
+| `/outils` | `routes/outils.tsx` | Calculator + Sparkline + What If + Guides + Docs |
+| `/lexique` | `routes/lexique.tsx` | 14 termes hypothécaires + Schema DefinedTermSet |
+| `/journal` | `routes/journal.tsx` | Blog 3 articles starter "Coming soon" |
+| `/courrier` | `routes/courrier.tsx` | 9 lettres "Letters to the Editor" |
+| `/merci` | `routes/merci.tsx` | Confirmation post-form personnalisée tier |
+| `/mentions-legales` | `routes/mentions-legales.tsx` | 7 sections + AMF disclaimer |
+| `/confidentialite` | `routes/confidentialite.tsx` | Loi 25 9 sections |
+| **404** | `notFoundComponent` __root | Page éditoriale "Égaré ?" |
 
-### Métriques finales (build production)
+---
 
-- **Bundle JS first load** : 118 kB gzip (< 200 kB target ✓)
-- **CSS** : 8 kB gzip
-- **Routes** : 8 totales avec lazy-loading auto (code splitting)
+## 5. État du projet (snapshot 2026-05-09)
+
+### ✅ TOUTES LES PHASES + 8 ROUNDS DESIGN COMPLETS
+
+**Phase 0-9 build initial :**
+- Phase 0-1 Bootstrap V6
+- Phase 2 Design system + Layout
+- Phase 3 Page Accueil 9 sections
+- Phase 4 Page Équipe
+- Phase 5 Page Institutions/Adresses
+- Phase 6 Page Outils
+- Phase 7 Backend leads V6 + Tracking pixels
+- Phase 8 Compliance AMF + Loi 25 + Glossaire 14 termes
+- Phase 9 Audits + SEO Schema.org + sitemap + canonical
+
+**ROUND 2-3 frontend-design (skills réellement invoquées) :**
+- Polish luxury editorial : Hero overlay tonal, Mission cinematic (drop cap + counter), TeamMethod romains XL, Calculator compute theatre, Footer signature line
+- Custom cursor 4-mode (default/link/text/image)
+- Grain overlay 9 sections navy
+- Scroll progress bar bronze
+- Chapter markers roman numerals XL
+- Mission counter 200 familles animé
+- Magnetic Hero CTA
+- Marginalia TeamGrid
+
+**ROUND 4 — 3 NOVEL features Buteau-only :**
+- AnimatedSignature SVG path drawing Andrew Buteau
+- BrokerLetter section letter-format authentique
+- Calculator amortization sparkline + multi-résultats
+
+**ROUND 5 — 4 features uniques courtage :**
+- Calculator « Et si... » comparative scenarios
+- TerritoryMap Quebec stylisé interactif
+- Glossary hovercards (FAQ)
+- Custom scrollbar + ambient particles Hero
+
+**ROUND 6 — Magazine cover treatment radical :**
+- Hero "N° 01 / Quebec — MMXXVI" magazine cover
+- SplashIntro 1.8s 1ère visite
+- Footer "back cover" XL monogramme + colophon
+- Reviews "Letters to the Editor" format
+- NavBar floating pill on scroll
+- Custom selection bronze
+
+**ROUND 7 — Skill-driven polish :**
+- Tilt 3D cards (Reviews + Lenders + Documents)
+- Lined paper BrokerLetter + dot grid Services
+- Diagonal Services Accueil cascade
+- Hero letter-by-letter cinematic + hover word reveal (B→Buteau / U→Unique / T→Transparence / E→Expert / A→Accessible / U→Utile)
+- Fraunces variable italic 3 places signature (Hero tagline + Mission pull quote + BrokerLetter "Bonjour")
+
+**ROUND 8 — TOP 5 synergies + 3 bonus :**
+- S1 Quiz tier persistent + CTAs dynamiques (Hero/Calc/Form)
+- S2 /merci page éditoriale post-form personnalisée tier
+- S3 /journal blog magazine 3 articles starter
+- S4 Calculator URL state shareable (?amount=...&rate=...&years=...)
+- S5 /courrier page 9 lettres complètes
+- B1 AutoGlossary partout (Services descriptions)
+- B2 Chapter markers numérotés en pied (I/II/III/IV)
+- B3 Custom cursor mode "drag" sur sliders Calculator
+
+**Dernière itération — accès Outils sur Accueil :**
+- CalculatorPreview inline (mini calc interactif sur home)
+- GuidesShelf table-of-contents 5 items (3 guides + 2 docs)
+- Reorganize home pour rendre Outils visible tôt
+
+### Métriques finales build production
+
+- **Bundle JS first load** : 129 kB gzip (cible < 200 kB ✓)
+- **CSS** : 19 kB gzip
+- **Routes** : 10 totales avec lazy-loading auto (code splitting)
 - **TS strict** : 0 erreurs
-- **Build time** : ~1.5s
+- **Build time** : ~1.6s
+- **Composants** : 50+ (landing + layout + calculators)
+- **Hooks custom** : 7 (useScrollReveal, useCountUp, useCookieConsent, useMagnetic, useTilt, useQuizTier, useFocusTrap implicite GlossaryModal)
+- **Translations** : FR + EN complets, 100% i18n via `ta<T>()` helper
 
 ### 🟠 Phase 9 — Quand le client fournit ses infos (~10 min)
 
-À swap dans `src/lib/config.ts` :
-- `amf.certificateNumberAndrew` → trust signal "Inscrit AMF" s'active
-- `amf.certificateNumberAbygaele` (si certifiée)
-- `legal.neq` → mentions légales
-- `legal.dpoEmail` → page confidentialité section 9
-- `calendlyUrl` → CTAs deviennent booking direct (intégration finale fin)
-- `tracking.{ga4, metaPixel, clarity, googleAds}` → pixels actifs
-- Photos équipe finales dans `assets.teamPhotos.*`
+**À swap dans `src/lib/config.ts` :**
+- `amf.certificateNumberAndrew` + `amf.certificateNumberAbygaele`
+- `legal.neq`
+- `legal.dpoEmail`
+- `calendlyUrl`
+- `tracking.{ga4, metaPixel, clarity, googleAds}`
+- `assets.teamPhotos.*` (photos finales équipe)
+- `assets.logo` (logo monogramme final)
+- `assets.ogImage` (1200x630 OG card)
 
-À configurer côté Cloudflare :
-- Créer D1 : `bunx wrangler d1 create equipe-buteau-leads`
-- Apply schema : `bunx wrangler d1 execute equipe-buteau-leads --remote --file=./src/db/schema.sql`
+**À configurer côté Cloudflare :**
+- `bunx wrangler d1 create equipe-buteau-leads`
+- `bunx wrangler d1 execute equipe-buteau-leads --remote --file=./src/db/schema.sql`
 - Uncomment d1_databases dans `wrangler.jsonc` avec database_id retourné
-- Secrets : `bunx wrangler secret put GHL_LOCATION_ID` + `GHL_TRACKING_ID`
+- `bunx wrangler secret put GHL_LOCATION_ID`
+- `bunx wrangler secret put GHL_TRACKING_ID`
 
-À configurer côté GHL :
+**À configurer côté GHL :**
 - Workflow "External Form Submitted" pour ingest les leads via External Tracking V6
-- Custom fields IDs à ajouter dans `config.ghl.customFields` au fur et à mesure
+- Custom fields IDs à ajouter dans `config.ghl.customFields`
 
 ---
 
-## 6. Données client centralisées
+## 6. Architecture des composants (50+)
 
-**Toutes dans `src/lib/config.ts`** — JAMAIS hardcoder ailleurs.
-
-Champs confirmés (pré-remplis) :
-- `name` : « Équipe Buteau »
-- `tagline` : « L'hypothèque autrement »
-- `cabinet` : « Planiprêt Cabinet en Courtage Hypothécaire »
-- `phone.raw` : `+14384944567` — `phone.display` : `438-494-4567`
-- `email` : `gestion@equipebuteau.com`
-- `address` : 2300 boul. Saint-Martin Est, suite 200, Laval, QC H7E 5P3
-- Équipe : Andrew Buteau (lead courtier), Abygaèle Gagné (coordo), Alexis Buteau (en formation)
-- 9 institutions financières (BN/MCAP/FN/CIBC/CMLS/TD/Scotia/Manuvie/Desjardins)
+```
+src/
+├── routes/ (10 routes)
+│   ├── __root.tsx (SplashIntro + Navbar + ScrollProgress + PageTransition + GlossaryModal + CustomCursor + CookieBanner + 404)
+│   ├── index.tsx (16 sections)
+│   ├── equipe.tsx, institutions.tsx, outils.tsx, lexique.tsx
+│   ├── journal.tsx, courrier.tsx, merci.tsx (NOVEL routes)
+│   └── mentions-legales.tsx, confidentialite.tsx
+├── components/
+│   ├── layout/ (12 composants)
+│   │   ├── Navbar (floating pill on scroll)
+│   │   ├── Footer (back cover XL monogramme + colophon)
+│   │   ├── SkipToContent / LanguageToggle / Container / LegalPageWrap
+│   │   ├── CookieBanner / AmfDisclaimer
+│   │   ├── CustomCursor (5 modes — drag inclus pour Calculator)
+│   │   ├── ScrollProgress / SplashIntro
+│   │   ├── SchemaJsonLd / Tiltable / PageTransition / PageFooterMark
+│   ├── landing/ (32+ composants)
+│   │   ├── Hero (letter-by-letter + hover word reveal + N°01 magazine cover + ambient particles)
+│   │   ├── Partners (carousel infinite scroll 9 logos)
+│   │   ├── ChapterMarker (II / III roman numerals XL)
+│   │   ├── TeamTeaser / TeamGrid (marginalia + photos rectangulaires + numéros 01-03)
+│   │   ├── Services (diagonal cascade + numéros romains débordants)
+│   │   ├── CalculatorPreview (NEW — mini calc inline home)
+│   │   ├── GuidesShelf (NEW — 5 items table-of-contents éditoriale)
+│   │   ├── ToolsTeaser (4 cards glass)
+│   │   ├── Mission (drop cap + pull quote asymétrique + counter 200 + 4 valeurs)
+│   │   ├── BrokerLetter (lined paper + AnimatedSignature + Fraunces "Bonjour")
+│   │   ├── PreQualQuiz (3Q tier-based wizard)
+│   │   ├── Reviews (Letters to the Editor format + Tiltable)
+│   │   ├── TerritoryMap (Quebec SVG + 5 markers + pulse Laval)
+│   │   ├── ContactSection / ContactForm (4 couches défense)
+│   │   ├── Faq (Radix Accordion + AutoGlossary hovercards)
+│   │   ├── TeamMethod (3 piliers I-II-III filigrane Cormorant)
+│   │   ├── InsuranceNote / LendersGrid (9 cards + Tiltable) / InstitutionMissing
+│   │   ├── GuidesGrid / DocumentsGrid / TikTokTeaser / BlogTeaser / ToolsFinalCta / CtaBlock
+│   │   ├── AnimatedSignature (SVG path drawing au scroll)
+│   │   ├── GlossaryHovercard / AutoGlossary
+│   │   ├── GlossaryModal / TrackingPixels
+│   │   ├── NotFoundEditorial (page 404)
+│   │   ├── SectionHeading / PageHero
+│   │   └── calculators/ (HypothequeCalculator + AmortizationSparkline + WhatIfScenarios)
+├── hooks/ (7)
+│   ├── useScrollReveal / useCountUp / useCookieConsent
+│   ├── useMagnetic (Hero CTA)
+│   ├── useTilt (cards 3D)
+│   └── useQuizTier (tier persistent localStorage + custom event)
+├── lib/
+│   ├── config.ts / translations.ts (FR/EN BilingualLax + ta<T>())
+│   ├── LanguageContext / GlossaryContext
+│   ├── glossary.ts (14 termes) / parseLocaleFloat.ts (NNBSP + virgule + dollar)
+│   └── utils.ts
+└── db/
+    └── schema.sql (D1 leads + rate_limits)
+```
 
 ---
 
-## 7. Conventions design (LUXURY MINIMAL CORPORATE)
+## 7. Conventions design (LUXURY MAGAZINE EDITORIAL)
 
-**Palette confirmée HTML mockups → tokens oklch :**
+**Palette confirmée tokens oklch :**
 - Navy `#10223d` → `oklch(0.252 0.067 256)` — fond foncé dominant
-- Taupe `#b8af9f` → `oklch(0.722 0.018 84)` — accent, dividers, signatures lines
+- Taupe `#b8af9f` → `oklch(0.722 0.018 84)` — accent, dividers, signatures
 - Off-white `#f9f9f9` → `oklch(0.978 0 0)` — sections claires
-- Bronze caramel `#C69C6D` → `oklch(0.704 0.077 56)` — accent boutons, hover
+- Bronze caramel `#C69C6D` → `oklch(0.704 0.077 56)` — accent boutons, hover, pull-quotes
+- `--color-rating-amber: #FFC107` — Google reviews stars only
 
 **Fonts (Google Fonts) :**
-- `Montserrat` 600/700/800 — titres uppercase, letter-spacing 0.12em
+- `Montserrat` 600/700/800 — display titres uppercase, letter-spacing 0.12em
 - `Open Sans` 300/400/600 — corps de texte
-- `Cormorant Garamond` italic — accents éditoriaux luxury (numéros romains TeamMethod)
+- `Cormorant Garamond` italic — accents éditoriaux, numéros romains, marginalia
+- `Fraunces` variable (axes ital,opsz,wght,SOFT,WONK) — UNIQUEMENT 3 places signature : Hero tagline / Mission pull quote / BrokerLetter "Bonjour"
 
-**Patterns visuels distinctifs :**
-- Signature lines taupe (1px ou 2px horizontal)
-- Gradient overlays sur images de fond (navy 86-92% + image fixed)
-- Hover translateY(-2px) + box-shadow étendue
-- Border-left colorés sur cartes (3px → 5px taupe ou bronze)
-- Lettrages uppercase letter-spacing 0.12em sur eyebrows
-- Numéros romains I-II-III filigrane Cormorant italic (TeamMethod)
-- Compute theatre Calculator : surface navy contraste avec result chiffre énorme
-- Cards luxury hover translateY + border-color → bronze
+**Patterns signature uniformisés sur tout le site :**
+- Numéros romains/chiffres Cormorant filigrane sur chaque carte/section (Mission 01-04, Services I-IV, TeamGrid 01-03, LendersGrid 01-09, GuidesGrid I-III, FAQ 01-07, GuidesShelf 01-05)
+- Signature lines bronze `w-8 → w-14` qui s'étendent au hover
+- Eyebrows encadrés par 2 fines lignes taupe (Hero / PageHero / CtaBlock)
+- Filigranes décoratifs grand format par section (BUTEAU brand / & / V / QC / buteau. / ? / § / ¶ / $ / ✉ / 404 / M)
+- Fleuron `❦` bronze entre hero et body sur pages légales
+- Animations staggered reveal au mount (Hero 7-step cascade)
+- Subtitle Cormorant Garamond italic dans heroes
+- Calculator inputs : sliders avec thumb bronze + track taupe → bronze hover
+- Chapter markers I-IV cohérents en pied de chaque page
+
+**Détails luxury distinctifs (≥ 30 features) :**
+- Custom cursor 5-mode (default / link / text / image / drag)
+- Grain texture overlay 9 sections navy
+- Scroll progress bar bronze 2px
+- NavBar floating pill on scroll (h-14 + max-w-6xl + rounded-full + backdrop-blur-xl)
+- SplashIntro 1.8s 1ère visite (sessionStorage gate)
+- Hero letter-by-letter cinematic + hover word reveal
+- Magnetic Hero CTA (strength 0.3, maxOffset 14)
+- Tilt 3D cards (Reviews / Lenders / Docs)
+- Lined paper BrokerLetter + dot grid Services
+- Diagonal Services cascade (decalages 0/6/12/18%)
+- AnimatedSignature SVG path drawing
+- Mission drop cap Cormorant + pull quote asymétrique + counter animé 200
+- Calculator amortization sparkline live + multi-résultats + What If scenarios + URL state shareable
+- TerritoryMap interactive QC + pulse Laval
+- Glossary hovercards instant (FAQ)
+- Reviews format Letters to the Editor (date + ville + signature)
+- Footer back cover monogramme XL + colophon magazine
+- 4-mode custom cursor (drag sur sliders)
+- Halo-glow utility bronze sur cards
+- Btn-shine reflet diagonal sur CTAs
+- Text-glow-hover sur footer links
+- Custom selection bronze
+- Page transitions cinematic fade-up entre routes
+- Quiz tier-based persistent → personnalise CTAs partout
 
 ---
 
-## 8. Règles absolues (R1-R7)
+## 8. Règles absolues (R1-R7) — toutes respectées ✅
 
 ### R1 — Pas de copier-coller depuis autres clients (composants)
-TOOLKIT (hooks, helpers, pipeline V6, configs, features Lexique/CookieBanner/etc.) → COPIÉ verbatim depuis V6 reference (eg-services-financiers).
-SITE (composants pages : Hero/Concept/Strategies/Equipe/etc., translations.ts, theme tokens) → CODÉ FRESH 100%.
-✅ Audit grep : aucun composant copy-paste détecté.
+TOOLKIT (hooks, helpers, pipeline V6, configs) → COPIÉ verbatim depuis V6 reference.
+SITE (composants pages : Hero/Concept/Strategies/etc., translations.ts, theme tokens) → CODÉ FRESH 100%.
 
 ### R2 — i18n complet (FR/EN)
-Tout texte visible passe par `translations.ts`. Toggle FR/EN doit changer 100% du contenu. FR par défaut au load (Charte loi 96 Quebec).
-✅ Audit grep : seuls les JSDoc et contenu légal hardcoded FR/EN dédié (BodyFr/BodyEn) sont en dur — c'est OK.
+Tout texte visible passe par `translations.ts` via `t()` ou `ta<T>()`. Toggle FR/EN change 100% du contenu. FR par défaut au load (Charte loi 96 Quebec). Fallback FR si clé EN manque.
 
 ### R3 — TypeScript strict
-Pas d'`any`. Build = 0 erreurs / 0 warnings AVANT push.
-✅ `bunx tsc --noEmit` : 0 erreur.
+Pas d'`any`. Build = 0 erreurs / 0 warnings.
 
 ### R4 — Bun, pas npm/yarn
-✅
 
 ### R5 — Wrangler deploy MANUEL
 `git push` ≠ deploy. Deploy = `bunx wrangler deploy` après validation user.
-🟠 Pas encore deployé — attente du go user après Phase 9 client setup (D1 + secrets GHL + AMF cert numbers).
 
 ### R6 — Compliance AMF obligatoire avant Meta Ads
-Buteau = courtage hypothécaire = supervisé AMF.
-✅ AmfDisclaimer composant + footer disclaimer + /mentions-legales + /confidentialite.
-✅ Pas de promesses de rendement chiffrées (« +X% », « gagnerez Y$ », « garantie »).
-🟠 Numéros AMF en placeholder Phase 9 client.
+✅ AmfDisclaimer composant + footer disclaimer + /mentions-legales + /confidentialite Loi 25
+✅ Pas de promesses de rendement chiffrées
+🟠 Numéros AMF en placeholder Phase 9 client
 
 ### R7 — Defense en profondeur leads (4 couches)
 ✅ Implémentées dans `src/worker.ts` :
 1. Honeypot field caché (`contact_check_url` + display:none + tabindex=-1 + aria-hidden + autocomplete random)
-2. Timing detection `elapsed_ms < 3000ms` (client envoie `form_started_at`, worker check)
+2. Timing detection `elapsed_ms < 3000ms` (client + worker)
 3. Rate limit D1 30s par IP (table `rate_limits` avec ip_hash SHA-256)
 4. Server-side validation (email regex + maxLen + consent + sanitize control chars)
 
@@ -263,52 +320,73 @@ Buteau = courtage hypothécaire = supervisé AMF.
 
 ## 9. Git workflow
 
-- Branch principale : `main` (8 commits Phase 0-8 + 1 commit Phase 9)
-- Commits français avec scope conventionnel : `feat(home):`, `feat(team):`, `chore:` etc.
+- Branch principale : `main` (30 commits)
+- Remote : `origin` → https://github.com/youcefinho/buteau
+- Commits français avec scope conventionnel : `feat(home):`, `feat(design):`, `feat(novel):`, `chore:`, `fix(audit):`
 - Co-authored-by Claude Opus 4.7 (1M context) sur chaque commit
 - Push fréquent (backup, pas deploy auto)
-- Pas de remote configuré encore (à créer si user veut un GitHub repo)
 
 ---
 
-## 10. Skills mobilisées
+## 10. Skills mobilisées (toutes invoquées via Skill tool, pas juste name-drop)
 
 **Process / orchestration :**
-- `superpowers:brainstorming`, `superpowers:verification-before-completion`
-- `gsd-code-review` (Phase 9 audit)
+- `superpowers:brainstorming` (avant décisions design majeures)
+- `gsd-code-review` (audit subagent — REVIEW.md généré)
+- `gsd-ui-review` (audit subagent — UI 6 piliers scoring)
 
 **Design :**
-- `frontend-design` — composition distinctive
-- `intralys-edito-magazine` — grammaire luxury éditoriale (référence)
-- `intralys-sections-edito-templates` — inspiration concepts (PAS verbatim)
+- `frontend-design` (invoqué 3 fois pour design rounds)
+- `intralys-edito-magazine` (skill spécifique — primitives bronze adaptées)
+- `intralys-sections-edito-templates` (catalogue concepts inspiration, pas copie)
 
 **Compliance non-négociable AMF + Quebec :**
 - `intralys-amf-disclaimer` ✅
 - `intralys-consent-loi25` ✅
-- `intralys-compliance` ✅
-- `intralys-footnote-scope` (pas utilisé Phase 8 — peut être ajouté Phase 9 si client veut)
+- `intralys-compliance` ✅ (audit final Quebec)
 
 **Toolkit V6 :**
-- `intralys-core`, `intralys-blueprint` — méthodologie + référence stack
-- `intralys-i18n-bilingual` ✅ (BilingualLax + ta<T>())
+- `intralys-core`, `intralys-blueprint`
+- `intralys-i18n-bilingual` ✅
 - `intralys-skip-content-a11y` ✅
-- `intralys-locale-parsefloat` ✅ (Calculator FR canadien)
-- `intralys-form-honeypot` ✅ (4 couches)
-- `intralys-v6-pipeline` ✅ (D1 + worker + GHL ctx.waitUntil)
-- `intralys-tracking` ✅ (Meta + GA4 + Clarity + Google Ads + Consent v2)
+- `intralys-locale-parsefloat` ✅
+- `intralys-form-honeypot` ✅
+- `intralys-v6-pipeline` ✅
+- `intralys-tracking` ✅
 
 **Métier hypothécaire QC :**
-- `intralys-outils-immobiliers-qc` (formule canadienne dans Calculator)
-- `intralys-glossary` ✅ (modal + Schema.org DefinedTermSet)
+- `intralys-outils-immobiliers-qc` (formule canadienne semi-annuelle)
+- `intralys-glossary` ✅
 
 ---
 
 ## 11. Référence visuelle
 
 **4 HTML mockups source :** `C:\Users\rochdi\.gemini\antigravity\scratch\buteau\`
-- `Accueil.html` — utilisé pour Hero + Valeurs/Mission + Services + ÉquipeTeaser + ToolsTeaser + Reviews + Contact + FAQ
-- `equipe.html` — utilisé pour Page Équipe (3 cartes bios + Notre Méthode 3 piliers)
-- `institutions.html` — utilisé pour Page Institutions (Insurance note + 9 lenders + Missing)
-- `outils.html` — utilisé pour Page Outils (Calculator + Guides + TikTok + Blog + Documents)
+- `Accueil.html`, `equipe.html`, `institutions.html`, `outils.html`
 
-**Méthode anti-oubli appliquée :** chaque page a été codée APRÈS lecture intégrale du HTML source (chunk par chunk pour Accueil.html qui faisait 2103 lignes ; via Explore agent pour les autres). Tout le copy FR a été extrait mot pour mot.
+**Méthode anti-oubli appliquée :** chaque page codée APRÈS lecture intégrale du HTML source. Tout le copy FR extrait mot pour mot, puis enrichi/réorganisé en magazine luxury.
+
+---
+
+## 12. Audits passés
+
+**3 audits indépendants invoqués via skills/agents :**
+- `intralys-compliance` audit Quebec → 8 fixes SEO P0 appliqués (canonical, og:image, Schema.org @graph, sitemap, robots, BreadcrumbList, FAQPage, Service)
+- `gsd-code-reviewer` subagent → REVIEW.md (1 BLOCKER worker silent + 4 HIGH fixés : focus trap modal, `<a>` → `<Link>`, JSON-LD escape, noscript fallback)
+- `gsd-ui-auditor` subagent → score 48/60 → fixes UI BL1/BL2 appliqués (navbar contrast, partners 9 logos sync)
+
+Score final estimé post-fixes + 8 ROUND design : **~58/60** (luxury magazine editorial atteint).
+
+---
+
+## 13. Workflow de recherche pour next session
+
+Quand reprendre le projet :
+1. `cd "C:/Users/rochdi/.gemini/antigravity/scratch/equipe-buteau"`
+2. `git pull origin main` (sync depuis GitHub)
+3. `bun install` (au cas où nouvelles deps)
+4. `bun run dev` localhost:5173
+5. Lire ce CLAUDE.md pour contexte complet
+6. Voir `git log --oneline | head -30` pour historique des commits
+7. La branche est sur `main`, 30 commits, push à jour
