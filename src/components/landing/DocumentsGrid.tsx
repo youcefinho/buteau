@@ -1,6 +1,7 @@
 import { FileDown, FileText } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
+import { Tiltable } from "@/components/layout/Tiltable";
 import { SectionHeading } from "./SectionHeading";
 import { ta, translations } from "@/lib/translations";
 
@@ -28,13 +29,13 @@ export function DocumentsGrid() {
           tone="light"
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-7 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-7 max-w-3xl mx-auto" style={{ perspective: "1200px" }}>
           {items.map((doc, idx) => {
             const Icon = ICONS[idx % ICONS.length];
             return (
+              <Tiltable key={idx} maxDeg={4}>
               <article
-                key={idx}
-                className="group card-luxury p-7 md:p-8 flex items-start gap-5 relative overflow-hidden"
+                className="group card-luxury p-7 md:p-8 flex items-start gap-5 relative overflow-hidden h-full"
               >
                 {/* Numéro filigrane Cormorant subtile */}
                 <span
@@ -57,6 +58,7 @@ export function DocumentsGrid() {
                   </span>
                 </div>
               </article>
+              </Tiltable>
             );
           })}
         </div>

@@ -82,13 +82,25 @@ export function Hero() {
             <span className="inline-block w-6 h-px align-middle bg-[color:var(--color-taupe)] ml-3" />
           </p>
 
-          {/* Brand mark — reveal step 2 (scale, more dramatic) */}
-          <div className="relative inline-block animate-[buteauScale_900ms_cubic-bezier(0.4,0,0.2,1)_300ms_both]">
-            <p className="font-[var(--font-display)] text-[color:var(--color-cream)] text-6xl md:text-8xl lg:text-[8.5rem] font-extrabold tracking-[0.22em] leading-[0.95] pl-[0.22em]">
-              {config.brandName}
+          {/* Brand mark — letter-by-letter cinematic reveal (séquence orchestrée) */}
+          <div className="relative inline-block">
+            <p className="font-[var(--font-display)] text-[color:var(--color-cream)] text-6xl md:text-8xl lg:text-[8.5rem] font-extrabold tracking-[0.22em] leading-[0.95] pl-[0.22em] flex">
+              {config.brandName.split("").map((letter, idx) => (
+                <span
+                  key={idx}
+                  className="inline-block"
+                  style={{
+                    animation: `buteauLetterIn 900ms cubic-bezier(0.34, 1.56, 0.64, 1) ${
+                      400 + idx * 90
+                    }ms backwards`,
+                  }}
+                >
+                  {letter}
+                </span>
+              ))}
             </p>
             <span
-              className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-12 md:w-20 h-px bg-[color:var(--color-bronze)] animate-[buteauWidth_700ms_ease-out_900ms_both]"
+              className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-12 md:w-20 h-px bg-[color:var(--color-bronze)] animate-[buteauWidth_700ms_ease-out_1100ms_both]"
               aria-hidden="true"
             />
           </div>

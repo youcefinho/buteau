@@ -21,7 +21,7 @@ export function BrokerLetter() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative py-24 md:py-32 surface-cream overflow-hidden">
+    <section className="relative py-24 md:py-32 surface-cream overflow-hidden lined-paper">
       {/* Filigrane "lettre M" Cormorant en filigrane (référence "mot du courtier") */}
       <span
         aria-hidden="true"

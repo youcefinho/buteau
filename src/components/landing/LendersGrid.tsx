@@ -1,5 +1,6 @@
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
+import { Tiltable } from "@/components/layout/Tiltable";
 import { SectionHeading } from "./SectionHeading";
 import { ta, translations } from "@/lib/translations";
 
@@ -30,11 +31,11 @@ export function LendersGrid() {
           tone="light"
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-9">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-9" style={{ perspective: "1200px" }}>
           {lenders.map((l, idx) => (
+            <Tiltable key={idx} maxDeg={5}>
             <article
-              key={idx}
-              className="group relative halo-glow bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/40 p-8 transition-all duration-500 hover:border-[color:var(--color-bronze)]/70 hover:-translate-y-1 hover:shadow-[0_18px_40px_-22px_rgba(16,34,61,0.28)] flex flex-col"
+              className="group relative halo-glow bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/40 p-8 transition-all duration-500 hover:border-[color:var(--color-bronze)]/70 hover:shadow-[0_18px_40px_-22px_rgba(16,34,61,0.28)] flex flex-col h-full"
             >
               {/* Numéro filigrane (01-09) */}
               <span
@@ -73,6 +74,7 @@ export function LendersGrid() {
                 )}
               </address>
             </article>
+            </Tiltable>
           ))}
         </div>
       </Container>

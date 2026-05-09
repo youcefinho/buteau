@@ -1,6 +1,7 @@
 import { Star } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
+import { Tiltable } from "@/components/layout/Tiltable";
 import { SectionHeading } from "./SectionHeading";
 import { ta, translations } from "@/lib/translations";
 
@@ -79,11 +80,11 @@ export function Reviews() {
         </div>
 
         {/* === Letters to the Editor — format magazine === */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-7 lg:gap-9">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-7 lg:gap-9" style={{ perspective: "1200px" }}>
           {items.map((r, idx) => (
+            <Tiltable key={idx} maxDeg={4}>
             <article
-              key={idx}
-              className="group relative bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/45 transition-all duration-500 hover:border-[color:var(--color-bronze)]/70 halo-glow flex flex-col"
+              className="group relative bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/45 transition-all duration-500 hover:border-[color:var(--color-bronze)]/70 halo-glow flex flex-col h-full"
             >
               {/* Letter header — date + ville (pattern courrier) */}
               <header className="flex items-baseline justify-between gap-3 px-6 md:px-7 pt-6 pb-4 border-b border-dashed border-[color:var(--color-taupe)]/40">
@@ -146,6 +147,7 @@ export function Reviews() {
                 </div>
               </footer>
             </article>
+            </Tiltable>
           ))}
         </div>
 
