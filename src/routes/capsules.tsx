@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Play, Sparkles, ArrowRight } from "lucide-react";
+import { Play, Sparkles, ArrowRight, Filter } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { LegalPageWrap } from "@/components/layout/LegalPageWrap";
 import { SchemaJsonLd } from "@/components/layout/SchemaJsonLd";
@@ -39,8 +40,19 @@ function CapsulesPage() {
   const isFr = lang === "fr";
   const categories = ta<CapsuleCategory[]>(translations[lang], "capsules.categories");
 
-  // Total capsules count
+  // Filter state — "all" par défaut, sinon id de catégorie active
+  const [activeFilter, setActiveFilter] = useState<string>("all");
+
+  // Filtered categories — "all" affiche tout, sinon une seule catégorie
+  const filteredCategories =
+    activeFilter === "all"
+      ? categories
+      : categories.filter((c) => c.id === activeFilter);
+
+  // Total capsules count (toutes catégories — affiché dans le header)
   const totalCount = categories.reduce((acc, c) => acc + c.items.length, 0);
+  // Visible count après filtre
+  const visibleCount = filteredCategories.reduce((acc, c) => acc + c.items.length, 0);
 
   return (
     <LegalPageWrap
@@ -127,9 +139,67 @@ function CapsulesPage() {
         </div>
       </div>
 
-      {/* Catégories — sommaire magazine vertical */}
+      {/* Tag filters chips — "Tous" + 7 catégories. Filtrage live au clic.
+          Pattern intralys-edito-magazine : eyebrow italique + chips bordure bronze */}
+      <div className="not-prose mb-12 -mt-2">
+        <div className="flex items-center gap-3 mb-4">
+          <Filter size={12} className="text-[color:var(--color-bronze)]" aria-hidden="true" />
+          <p className="eyebrow text-[color:var(--color-bronze-deep)] text-[10px]">
+            {isFr ? "Filtrer par catégorie" : "Filter by category"}
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {/* Chip "Tous" */}
+          <button
+            type="button"
+            onClick={() => setActiveFilter("all")}
+            className={`group inline-flex items-center gap-2 px-4 py-2 rounded-full border transition-all duration-300 ${
+              activeFilter === "all"
+                ? "bg-[color:var(--color-navy-deep)] border-[color:var(--color-navy-deep)] text-[color:var(--color-cream)]"
+                : "bg-transparent border-[color:var(--color-taupe)]/50 text-[color:var(--color-navy-deep)] hover:border-[color:var(--color-bronze)] hover:text-[color:var(--color-bronze-deep)]"
+            }`}
+          >
+            <span className="font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)]">
+              {isFr ? "Tous" : "All"}
+            </span>
+            <span className="font-[var(--font-editorial)] italic text-xs tabular-nums opacity-70">
+              {totalCount}
+            </span>
+          </button>
+          {/* Chips par catégorie */}
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              type="button"
+              onClick={() => setActiveFilter(cat.id)}
+              className={`group inline-flex items-center gap-2 px-4 py-2 rounded-full border transition-all duration-300 ${
+                activeFilter === cat.id
+                  ? "bg-[color:var(--color-navy-deep)] border-[color:var(--color-navy-deep)] text-[color:var(--color-cream)]"
+                  : "bg-transparent border-[color:var(--color-taupe)]/50 text-[color:var(--color-navy-deep)] hover:border-[color:var(--color-bronze)] hover:text-[color:var(--color-bronze-deep)]"
+              }`}
+            >
+              <span className="font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)]">
+                {cat.eyebrow}
+              </span>
+              <span className="font-[var(--font-editorial)] italic text-xs tabular-nums opacity-70">
+                {cat.items.length}
+              </span>
+            </button>
+          ))}
+        </div>
+        {/* Compteur résultats visibles si filtre actif */}
+        {activeFilter !== "all" && (
+          <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] mt-3">
+            {isFr
+              ? `${visibleCount} capsule${visibleCount > 1 ? "s" : ""} affichée${visibleCount > 1 ? "s" : ""} sur ${totalCount}`
+              : `${visibleCount} capsule${visibleCount > 1 ? "s" : ""} shown of ${totalCount}`}
+          </p>
+        )}
+      </div>
+
+      {/* Catégories — sommaire magazine vertical (filtrées) */}
       <div className="space-y-20 not-prose">
-        {categories.map((cat, ci) => (
+        {filteredCategories.map((cat, ci) => (
           <section key={cat.id} id={cat.id} className="relative">
             {/* Numéro romain XL filigrane à gauche */}
             <span

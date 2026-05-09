@@ -15,6 +15,7 @@ import { PreQualQuiz } from "@/components/landing/PreQualQuiz";
 import { CalculatorPreview } from "@/components/landing/CalculatorPreview";
 import { GuidesShelf } from "@/components/landing/GuidesShelf";
 import { CapsulesPreview } from "@/components/landing/CapsulesPreview";
+import { ADayWithAndrew } from "@/components/landing/ADayWithAndrew";
 import { PageFooterMark } from "@/components/layout/PageFooterMark";
 import {
   SchemaJsonLd,
@@ -72,6 +73,10 @@ function HomePage() {
       <ToolsTeaser />
 
       <Mission />
+
+      {/* « Une journée avec Andrew » — timeline éditoriale storytelling 6 moments
+          (NOVEL — aucun courtier hypothécaire ne fait ça). Humanisation forte. */}
+      <ADayWithAndrew />
 
       {/* « Le mot du courtier » — section authentique signature manuscrite (NOVEL) */}
       <BrokerLetter />

@@ -229,6 +229,46 @@ export const translations = {
         ],
       },
 
+      aDay: {
+        eyebrow: "Une journée à Laval",
+        title: "Une journée avec Andrew.",
+        subtitle:
+          "Le métier de courtier hypothécaire, ce n'est pas juste signer des prêts. C'est un café tôt, des dossiers complexes, des appels qui rassurent, et une vie de famille qu'on protège — comme la vôtre.",
+        footnote: "Une journée type — qui change tous les jours, parce que chaque dossier est différent.",
+        moments: [
+          {
+            time: "06:00",
+            title: "Premier café, dernières actualités",
+            body: "Avant tout le monde, Andrew lit les annonces de la Banque du Canada, les notes économiques du matin, les nouveaux taux des prêteurs. Quand un client appellera à 9h pour parler refinancement, il faut connaître l'heure juste — pas la version recyclée de la veille.",
+          },
+          {
+            time: "09:00",
+            title: "Premier achat — un couple, mille questions",
+            body: "Pré-approbation, RAP, CELIAPP, taxe de bienvenue. Le couple en face vient de visiter une maison à Saint-Eustache et veut savoir s'ils peuvent vraiment se la permettre. 45 minutes au téléphone — chaque chiffre expliqué, aucun jargon non décodé.",
+          },
+          {
+            time: "11:30",
+            title: "Refi consolidation — sortir du tunnel",
+            body: "Une famille avec 25 000 $ de carte de crédit à 19,99 %. On regarde les vrais chiffres : 416 $/mois en intérêts seulement vs ~85 $/mois si intégrés à l'hypothèque. 320 $/mois libérés. Le téléphone se referme avec un plan clair, pas un avis vague.",
+          },
+          {
+            time: "14:00",
+            title: "Investisseur — un triplex à structurer",
+            body: "Un client habitué, 3 propriétés déjà au portefeuille. Il regarde un quadruplex à Boisbriand. On compare les ratios ATD, on regarde les ~9 prêteurs qui comprennent vraiment l'investissement immobilier. La structure compte autant que le taux.",
+          },
+          {
+            time: "16:30",
+            title: "Tournage capsule TikTok",
+            body: "Andrew tourne une nouvelle capsule « 30 secondes top chrono » avec Abygaèle derrière la caméra. Aujourd'hui : pourquoi ta carte débit ne bâtit aucun crédit. Le ton reste authentique — Andrew explique comme s'il parlait à un ami, pas à une caméra.",
+          },
+          {
+            time: "19:00",
+            title: "Famille, souper, déconnexion",
+            body: "Le téléphone reste à portée pour les urgences vraies — mais pas pour les questions qui peuvent attendre demain. Parce qu'un courtier qui s'épuise, c'est un courtier qui rate des détails. Et chez Buteau, les détails, c'est tout ce qui compte.",
+          },
+        ],
+      },
+
       capsulesPreview: {
         eyebrow: "30 secondes top chrono",
         title: "L'hypothèque expliquée en capsules.",
@@ -1311,6 +1351,46 @@ export const translations = {
             title: "Required documents checklist",
             excerpt: "Comprehensive list to prepare your mortgage file.",
             tag: "Document",
+          },
+        ],
+      },
+
+      aDay: {
+        eyebrow: "A day in Laval",
+        title: "A day with Andrew.",
+        subtitle:
+          "Mortgage brokering isn't just signing loans. It's an early coffee, complex files, calls that reassure, and a family life we protect — like yours.",
+        footnote: "A typical day — that changes every day, because every file is different.",
+        moments: [
+          {
+            time: "06:00",
+            title: "First coffee, latest news",
+            body: "Before everyone else, Andrew reads the Bank of Canada announcements, morning economic notes, new lender rates. When a client calls at 9 to talk refinancing, you need to know the truth — not yesterday's recycled version.",
+          },
+          {
+            time: "09:00",
+            title: "First-time buyers — a couple, a thousand questions",
+            body: "Pre-approval, HBP, FHSA, welcome tax. The couple just visited a home in Saint-Eustache and want to know if they can really afford it. 45 minutes on the phone — every number explained, no jargon left undecoded.",
+          },
+          {
+            time: "11:30",
+            title: "Refi consolidation — out of the tunnel",
+            body: "A family with $25k of credit card debt at 19.99%. We look at real numbers: $416/month in interest alone vs ~$85/month rolled into the mortgage. $320/month freed up. The call ends with a clear plan, not a vague opinion.",
+          },
+          {
+            time: "14:00",
+            title: "Investor — a triplex to structure",
+            body: "A repeat client, 3 properties already in portfolio. Looking at a quadruplex in Boisbriand. We compare TDS ratios, look at the ~9 lenders who truly understand real-estate investment. Structure matters as much as rate.",
+          },
+          {
+            time: "16:30",
+            title: "Filming a TikTok capsule",
+            body: "Andrew films a new « 30 seconds top chrono » capsule with Abygaèle behind the camera. Today: why your debit card builds zero credit. The tone stays authentic — Andrew explains as if talking to a friend, not a camera.",
+          },
+          {
+            time: "19:00",
+            title: "Family, dinner, disconnect",
+            body: "The phone stays close for real emergencies — but not for questions that can wait until tomorrow. Because a broker who burns out is a broker who misses details. And at Buteau, details are everything.",
           },
         ],
       },
