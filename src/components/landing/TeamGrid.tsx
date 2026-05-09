@@ -15,6 +15,8 @@ export function TeamGrid() {
     translations[lang],
     "team.members",
   );
+  // Fix HIGH i18n : marginalia déplacé dans translations (avant hardcodé en FR)
+  const marginalia = ta<string[]>(translations[lang], "team.marginalia");
 
   return (
     <section className="py-24 md:py-28 surface-cream relative overflow-hidden">
@@ -30,7 +32,7 @@ export function TeamGrid() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
           {members.map((m, idx) => (
             <article
-              key={idx}
+              key={m.name}
               className="group relative flex flex-col"
             >
               {/* Photo with editorial frame — h-80 lg:h-[24rem] pour 4 cards balance */}
@@ -55,7 +57,7 @@ export function TeamGrid() {
                   aria-hidden="true"
                   className="hidden md:block absolute -right-2 top-2 font-[var(--font-editorial)] italic text-[color:var(--color-bronze)]/45 text-sm rotate-90 origin-right tracking-[0.18em]"
                 >
-                  {["fondateur", "coordo.", "assist.", "opérations"][idx]}
+                  {marginalia[idx]}
                 </span>
 
                 {/* Eyebrow rôle (uppercase tracking) */}

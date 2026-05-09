@@ -153,11 +153,16 @@ function CapsulesPage() {
             {isFr ? "Filtrer par catégorie" : "Filter by category"}
           </p>
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div
+          className="flex flex-wrap gap-2"
+          role="group"
+          aria-label={isFr ? "Filtrer par catégorie" : "Filter by category"}
+        >
           {/* Chip "Tous" */}
           <button
             type="button"
             onClick={() => setActiveFilter("all")}
+            aria-pressed={activeFilter === "all"}
             className={`group inline-flex items-center gap-2 px-4 py-2 rounded-full border transition-all duration-300 ${
               activeFilter === "all"
                 ? "bg-[color:var(--color-navy-deep)] border-[color:var(--color-navy-deep)] text-[color:var(--color-cream)]"
@@ -177,6 +182,7 @@ function CapsulesPage() {
               key={cat.id}
               type="button"
               onClick={() => setActiveFilter(cat.id)}
+              aria-pressed={activeFilter === cat.id}
               className={`group inline-flex items-center gap-2 px-4 py-2 rounded-full border transition-all duration-300 ${
                 activeFilter === cat.id
                   ? "bg-[color:var(--color-navy-deep)] border-[color:var(--color-navy-deep)] text-[color:var(--color-cream)]"

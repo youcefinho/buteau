@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { ta, translations } from "@/lib/translations";
 
@@ -21,13 +22,13 @@ export function ValueTicker() {
   const { lang } = useLanguage();
   const items = ta<string[]>(translations[lang], "home.valueTicker.items");
 
-  // Duplique le tableau pour loop seamless infinite scroll
-  const doubled = [...items, ...items];
+  // Memoized doubled array (fix LOW : pas recréé à chaque render)
+  const doubled = useMemo(() => [...items, ...items], [items]);
 
   return (
     <section
       aria-label={lang === "fr" ? "Faits clés" : "Key facts"}
-      className="relative bg-[color:var(--color-navy-deep)] border-y border-[color:var(--color-bronze)]/20 py-5 overflow-hidden"
+      className="relative bg-[color:var(--color-navy-deep)] border-y border-[color:var(--color-bronze)]/20 py-5 overflow-hidden group"
     >
       {/* Fade gauche/droite pour transition douce hors viewport */}
       <div
@@ -39,22 +40,29 @@ export function ValueTicker() {
         className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[color:var(--color-navy-deep)] to-transparent z-10 pointer-events-none"
       />
 
-      {/* Marquee : translateX -50% sur le double, loop infinite 40s */}
-      <div className="flex animate-[ticker_45s_linear_infinite] whitespace-nowrap will-change-transform">
-        {doubled.map((item, idx) => (
-          <span
-            key={idx}
-            className="inline-flex items-center gap-6 px-8 font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/90 text-base md:text-lg"
-          >
-            <span>{item}</span>
+      {/* Marquee : translateX -50% sur le double, loop infinite 45s.
+          Fix HIGH : pause au hover/focus pour permettre lecture (a11y + UX). */}
+      <div className="flex animate-[ticker_45s_linear_infinite] whitespace-nowrap will-change-transform group-hover:[animation-play-state:paused] focus-within:[animation-play-state:paused]">
+        {doubled.map((item, idx) => {
+          // Fix HIGH a11y : la 2e copie (pour seamless loop) est aria-hidden
+          // pour ne pas être lue 2 fois par les SR.
+          const isClone = idx >= items.length;
+          return (
             <span
-              aria-hidden="true"
-              className="text-[color:var(--color-bronze)] text-2xl select-none"
+              key={`${idx}-${item.slice(0, 12)}`}
+              aria-hidden={isClone ? "true" : undefined}
+              className="inline-flex items-center gap-6 px-8 font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/90 text-base md:text-lg"
             >
-              ❦
+              <span>{item}</span>
+              <span
+                aria-hidden="true"
+                className="text-[color:var(--color-bronze)] text-2xl select-none"
+              >
+                ❦
+              </span>
             </span>
-          </span>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

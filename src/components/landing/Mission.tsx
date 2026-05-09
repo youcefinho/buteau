@@ -26,8 +26,10 @@ export function Mission() {
     "home.mission.values",
   );
 
-  // Counter "200 familles" — démarre quand la section entre dans le viewport
-  const { ref: counterRef, isVisible } = useScrollReveal<HTMLDivElement>({ threshold: 0.4 });
+  // Counter "200 familles" — démarre quand la section entre dans le viewport.
+  // Fix HIGH : threshold 0.1 (vs 0.4) — sur mobile/tablet la section Mission fait >1.5x viewport,
+  // 40% n'était jamais atteint donc le counter restait à 0.
+  const { ref: counterRef, isVisible } = useScrollReveal<HTMLDivElement>({ threshold: 0.1 });
   const familiesCount = useCountUp(200, { duration: 1800, start: isVisible });
 
   return (

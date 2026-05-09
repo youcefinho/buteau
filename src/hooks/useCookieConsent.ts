@@ -77,12 +77,15 @@ function updateConsentMode(state: ConsentState): void {
 export function useCookieConsent() {
   const [state, setState] = useState<ConsentState>(() => loadFromStorage());
 
-  // Sur mount, propager le consent stocke a Consent Mode v2.
+  // Fix HIGH : mount-only. acceptAll/refuseAll/updateGranular appellent déjà
+  // updateConsentMode synchronously — pas besoin de re-fire à chaque [state] change.
+  // Cet effet sert UNIQUEMENT à propager le consent stocké au premier mount.
   useEffect(() => {
     if (state.decided) {
       updateConsentMode(state);
     }
-  }, [state]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const acceptAll = useCallback(() => {
     const next: ConsentState = {

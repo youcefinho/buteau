@@ -82,7 +82,7 @@ export function Reviews() {
         {/* === Letters to the Editor — format magazine === */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-7 lg:gap-9" style={{ perspective: "1200px" }}>
           {items.map((r, idx) => (
-            <Tiltable key={idx} maxDeg={4}>
+            <Tiltable key={`${r.author}-${r.date}`} maxDeg={4}>
             <article
               className="group relative bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/45 transition-all duration-500 hover:border-[color:var(--color-bronze)]/70 halo-glow flex flex-col h-full"
             >

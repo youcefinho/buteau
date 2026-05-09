@@ -41,7 +41,7 @@ export function Faq() {
         <Accordion.Root type="single" collapsible className="space-y-3">
           {items.map((item, idx) => (
             <Accordion.Item
-              key={idx}
+              key={item.q.slice(0, 30)}
               value={`faq-${idx}`}
               className="group bg-[color:var(--color-cream)] border border-[color:var(--color-taupe)]/50 overflow-hidden transition-colors duration-300 data-[state=open]:border-[color:var(--color-bronze)]"
             >

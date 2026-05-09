@@ -24,7 +24,8 @@ export const Route = createFileRoute("/journal")({
 type Article = {
   slug: string;
   category: string;
-  date: string;
+  date: string; // affichage humain (FR/EN)
+  dateIso?: string; // ISO 8601 pour Schema.org datePublished (fix LOW)
   readingTime: number;
   title: string;
   lead: string;
@@ -55,15 +56,18 @@ function JournalPage() {
       if (!el) return;
       const rect = el.getBoundingClientRect();
       const viewportH = window.innerHeight;
-      // Article fully scrolled past = 1 ; just entered viewport = 0
-      const totalScrollable = rect.height - viewportH;
-      if (totalScrollable <= 0) {
-        setReadingProgress(rect.bottom < viewportH ? 1 : 0);
+      // Fix HIGH : utiliser viewport mid pour position de lecture cohérente
+      // (pas position de l'élément). Marche pour articles courts ET longs.
+      const articleStart = rect.top + window.scrollY;
+      const articleEnd = articleStart + rect.height;
+      const viewportMid = window.scrollY + viewportH / 2;
+      const range = articleEnd - articleStart;
+      if (range <= 0) {
+        setReadingProgress(0);
         return;
       }
-      const scrolled = -rect.top;
-      const ratio = Math.max(0, Math.min(1, scrolled / totalScrollable));
-      setReadingProgress(ratio);
+      const ratio = (viewportMid - articleStart) / range;
+      setReadingProgress(Math.max(0, Math.min(1, ratio)));
     };
 
     computeProgress();
@@ -104,7 +108,19 @@ function JournalPage() {
           blogPost: articles.map((a) => ({
             "@type": "BlogPosting",
             headline: a.title,
-            datePublished: a.date,
+            // Fix HIGH : url + mainEntityOfPage + author pour rich snippet Google
+            url: `https://equipe-buteau.intralysqc.workers.dev/journal#${a.slug}`,
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `https://equipe-buteau.intralysqc.workers.dev/journal#${a.slug}`,
+            },
+            author: {
+              "@type": "Person",
+              name: "Andrew Buteau",
+              jobTitle: "Courtier hypothécaire",
+            },
+            // datePublished : ISO si dispo (Schema.org exige ISO 8601), sinon string FR (fallback)
+            datePublished: a.dateIso ?? a.date,
             articleSection: a.category,
             description: a.lead,
             articleBody: (a.body ?? []).join(" "),

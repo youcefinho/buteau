@@ -827,6 +827,15 @@ body {
   }
 }
 
+/* === MobileStickyCta — padding-bottom sur main mobile pour éviter overlap form ===
+   Fix HIGH code-review : sans padding la sticky bar masque les ~70px du bas.
+   Active uniquement < lg (1024px) pour matcher la visibilité du sticky CTA. */
+@media (max-width: 1023px) {
+  main {
+    padding-bottom: calc(70px + env(safe-area-inset-bottom));
+  }
+}
+
 /* === ValueTicker marquee — bandeau scrolling infinite seamless ===
    Translate -50% sur le double-array pour loop perfect. Respect reduced-motion. */
 @keyframes ticker {

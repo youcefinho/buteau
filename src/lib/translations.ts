@@ -386,6 +386,7 @@ export const translations = {
         subtitle:
           "Une équipe de courtiers hypothécaires passionnés, dédiés à structurer votre réussite financière avec rigueur et humanité.",
       },
+      marginalia: ["fondateur", "coordo.", "assist.", "opérations"],
       members: [
         {
           name: "Andrew Buteau",
@@ -1468,6 +1469,7 @@ export const translations = {
         subtitle:
           "A team of dedicated mortgage brokers, structuring your financial success with rigor and humanity.",
       },
+      marginalia: ["founder", "coord.", "assist.", "operations"],
       members: [
         {
           name: "Andrew Buteau",
