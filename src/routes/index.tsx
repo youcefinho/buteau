@@ -15,6 +15,7 @@ import { PreQualQuiz } from "@/components/landing/PreQualQuiz";
 import { CalculatorPreview } from "@/components/landing/CalculatorPreview";
 import { GuidesShelf } from "@/components/landing/GuidesShelf";
 import { CapsulesPreview } from "@/components/landing/CapsulesPreview";
+import { ValueTicker } from "@/components/landing/ValueTicker";
 import { PageFooterMark } from "@/components/layout/PageFooterMark";
 import {
   SchemaJsonLd,
@@ -48,6 +49,10 @@ function HomePage() {
       <SchemaJsonLd schema={homeSchemas} />
       <Hero />
       <Partners />
+
+      {/* ValueTicker — bandeau scrolling éditorial avec faits vérifiés
+          (200 familles, 9+ institutions, AMF, etc.). Effet "live data" sans invention. */}
+      <ValueTicker />
 
       {/* Chapter II — annonce Team + Services + Mission */}
       <ChapterMarker numeral="II" label={chapter2} tone="light" />

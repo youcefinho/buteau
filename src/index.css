@@ -827,6 +827,18 @@ body {
   }
 }
 
+/* === ValueTicker marquee — bandeau scrolling infinite seamless ===
+   Translate -50% sur le double-array pour loop perfect. Respect reduced-motion. */
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-\[ticker_45s_linear_infinite\] {
+    animation: none !important;
+  }
+}
+
 /* === View Transitions API — page transitions cinématiques natives ===
    Browser support : Chrome 111+, Edge, Safari 18+. Fallback gracieux ailleurs.
    Pattern fade-up subtle pour cohérence avec PageTransition existante. */

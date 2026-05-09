@@ -10,6 +10,7 @@ import { TrackingPixels } from "@/components/landing/TrackingPixels";
 import { GlossaryModal } from "@/components/landing/GlossaryModal";
 import { NotFoundEditorial } from "@/components/landing/NotFoundEditorial";
 import { PageTransition } from "@/components/layout/PageTransition";
+import { MobileStickyCta } from "@/components/layout/MobileStickyCta";
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -34,6 +35,7 @@ function RootComponent() {
       <Footer />
       <CookieBanner />
       <GlossaryModal />
+      <MobileStickyCta />
       <CustomCursor />
     </>
   );

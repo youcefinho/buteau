@@ -229,6 +229,18 @@ export const translations = {
         ],
       },
 
+      valueTicker: {
+        items: [
+          "200 familles accompagnées en 2025",
+          "9+ institutions financières partenaires",
+          "Inscrit AMF — Cabinet Planiprêt",
+          "L'hypothèque autrement",
+          "Premier achat · Refinancement · Renouvellement · Investissement",
+          "Tout le Québec — siège à Laval",
+          "Andrew Buteau, courtier hypothécaire",
+        ],
+      },
+
       capsulesPreview: {
         eyebrow: "30 secondes top chrono",
         title: "L'hypothèque expliquée en capsules.",
@@ -1312,6 +1324,18 @@ export const translations = {
             excerpt: "Comprehensive list to prepare your mortgage file.",
             tag: "Document",
           },
+        ],
+      },
+
+      valueTicker: {
+        items: [
+          "200 families supported in 2025",
+          "9+ partner financial institutions",
+          "AMF-registered — Planiprêt firm",
+          "Mortgage, differently",
+          "First purchase · Refinancing · Renewal · Investment",
+          "All of Quebec — head office in Laval",
+          "Andrew Buteau, mortgage broker",
         ],
       },
 
