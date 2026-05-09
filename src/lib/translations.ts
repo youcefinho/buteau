@@ -127,23 +127,27 @@ export const translations = {
 
       services: {
         eyebrow: "Nos services",
-        title: "Quatre services, une seule philosophie",
+        title: "Cinq services, une seule philosophie",
         items: [
           {
-            title: "Achat d'une propriété",
-            desc: "Accompagnement complet pour l'acquisition de votre résidence principale, secondaire ou immeuble à revenus.",
+            title: "Renouvellement",
+            desc: "Analyse de marché 120 jours avant l'échéance et négociation pour obtenir les meilleures conditions — avec ou sans changement de banque.",
           },
           {
             title: "Refinancement",
-            desc: "Restructuration de votre financement pour optimiser vos liquidités et votre taux d'intérêt.",
+            desc: "Restructuration de votre financement pour optimiser vos liquidités, libérer de l'équité ou financer un projet de rénovation, d'études ou d'investissement.",
           },
           {
-            title: "Renouvellement",
-            desc: "Analyse de marché et négociation pour obtenir les meilleures conditions lors du renouvellement.",
+            title: "Consolidation de dettes",
+            desc: "Regroupement de vos dettes à taux élevé (cartes, marges, prêts) dans votre hypothèque pour réduire vos paiements mensuels et reprendre le contrôle.",
+          },
+          {
+            title: "Achat d'une propriété",
+            desc: "Accompagnement complet pour l'acquisition d'une première propriété, d'une 2e propriété, d'un upgrade familial ou d'une résidence secondaire.",
           },
           {
             title: "Investissement",
-            desc: "Stratégies de financement structurées pour développer votre portefeuille immobilier.",
+            desc: "Stratégies de financement structurées pour développer votre portefeuille immobilier — multiplex, immeubles à revenus, effet de levier sur l'équité existante.",
           },
         ],
       },
@@ -370,7 +374,7 @@ export const translations = {
           name: "Felix",
           role: "Coordonnateur des opérations de courtage hypothécaire",
           photo: "/equipe/felix.jpeg",
-          bio: "Felix coordonne les opérations quotidiennes de l'Équipe BUTEAU : suivi des dossiers, gestion documentaire, communication avec les institutions financières et les notaires. Il assure que chaque étape avance dans les délais — du premier contact jusqu'à la signature. Il prépare actuellement son permis de courtier hypothécaire.",
+          bio: "Felix rejoint l'Équipe Buteau comme coordonnateur des opérations de courtage hypothécaire. Sa biographie complète sera publiée prochainement — en attendant, son rôle au sein de l'équipe est d'assurer que chaque dossier avance dans les délais et que la communication entre clients, prêteurs et notaires reste fluide.",
         },
       ],
       method: {
@@ -748,9 +752,9 @@ export const translations = {
 
     media: {
       eyebrow: "Vu & engagé",
-      title: "Andrew dans les médias et dans la communauté",
+      title: "Andrew dans les médias.",
       subtitle:
-        "Le courtage hypothécaire ne se résume pas à un dossier de prêt. C'est aussi des plateaux de télé, des soirées caritatives et des conversations en région — partout où les gens parlent argent, projets et avenir.",
+        "Le courtage hypothécaire ne se résume pas à un dossier de prêt. C'est aussi des plateaux de télé, des conférences en région et des conversations sur la place publique — partout où les gens parlent argent, projets et avenir.",
       tvEyebrow: "Sur les ondes",
       tvTitle: "Andrew Buteau à l'émission « Art de Réussir »",
       tvVideoTitle: "Andrew Buteau à Art de Réussir",
@@ -759,13 +763,15 @@ export const translations = {
         "Une discussion franche sur le courtage hypothécaire au Québec : ce qui distingue un courtier d'une banque, comment magasiner un renouvellement sans paniquer, et pourquoi la « clarté » devrait être le premier critère de choix d'un courtier.",
         "Andrew y partage sa vision d'un service hypothécaire qui ressemble plus à un accompagnement qu'à une transaction.",
       ],
-      eventEyebrow: "Engagement communautaire",
-      eventTitle: "Soirée-bénéfice « Dans la rue »",
-      eventDate: "Novembre 2025 — Montréal",
+      eventEyebrow: "Coulisses du plateau",
+      eventTitle: "Sur le plateau d'Art de Réussir",
+      eventDate: "Tournage — Montréal, janvier 2026",
       eventCaptionLines: [
-        "L'organisme Dans la rue accompagne les jeunes en situation d'itinérance à Montréal depuis plus de 35 ans. L'Équipe Buteau y a contribué financièrement et sur place lors de la soirée-bénéfice de novembre 2025.",
-        "Une mission alignée avec la nôtre : redonner de la stabilité, un toit, un point d'ancrage à ceux qui en ont le plus besoin.",
+        "Quelques images des coulisses du tournage : entrevues face caméra, échanges entre intervenants, et capsules tournées en marge de l'émission principale.",
+        "L'occasion de prolonger la conversation avec d'autres entrepreneurs et professionnels reçus sur le plateau.",
       ],
+      communityNote:
+        "Photos de la soirée-bénéfice « Dans la rue » (novembre 2025) à venir prochainement.",
     },
 
     quiz: {
@@ -1178,23 +1184,27 @@ export const translations = {
 
       services: {
         eyebrow: "Our services",
-        title: "Four services, one philosophy",
+        title: "Five services, one philosophy",
         items: [
           {
-            title: "Property purchase",
-            desc: "Full support for buying your principal residence, second home, or income property.",
+            title: "Renewal",
+            desc: "Market analysis 120 days before maturity and negotiation to secure the best conditions — with or without switching banks.",
           },
           {
             title: "Refinancing",
-            desc: "Restructure your financing to optimize your liquidity and interest rate.",
+            desc: "Restructure your financing to optimize liquidity, unlock equity, or fund a renovation, education or investment project.",
           },
           {
-            title: "Renewal",
-            desc: "Market analysis and negotiation to secure the best conditions at renewal time.",
+            title: "Debt consolidation",
+            desc: "Roll high-interest debts (cards, lines, loans) into your mortgage to lower monthly payments and regain control.",
+          },
+          {
+            title: "Property purchase",
+            desc: "Full support for buying a first home, a 2nd property, a family upgrade, or a secondary residence.",
           },
           {
             title: "Investment",
-            desc: "Structured financing strategies to grow your real-estate portfolio.",
+            desc: "Structured financing strategies to grow your real-estate portfolio — multi-units, income properties, leverage on existing equity.",
           },
         ],
       },
@@ -1404,7 +1414,7 @@ export const translations = {
           name: "Felix",
           role: "Brokerage operations coordinator",
           photo: "/equipe/felix.jpeg",
-          bio: "Felix coordinates Équipe BUTEAU's day-to-day operations: file follow-up, document management, communication with lenders and notaries. He keeps every step on time — from first contact to signing. He's currently preparing his mortgage broker licence.",
+          bio: "Felix joins Équipe Buteau as brokerage operations coordinator. His full biography will be published soon — meanwhile, his role within the team is to keep every file on time and the communication between clients, lenders and notaries flowing smoothly.",
         },
       ],
       method: {
@@ -1780,9 +1790,9 @@ export const translations = {
 
     media: {
       eyebrow: "Featured & engaged",
-      title: "Andrew in the media and in the community",
+      title: "Andrew in the media.",
       subtitle:
-        "Mortgage brokerage isn't just a file. It's also TV sets, charity nights and regional conversations — wherever people talk money, projects and the future.",
+        "Mortgage brokerage isn't just a file. It's also TV sets, regional conferences and public conversations — wherever people talk money, projects and the future.",
       tvEyebrow: "On air",
       tvTitle: "Andrew Buteau on the show « Art de Réussir »",
       tvVideoTitle: "Andrew Buteau on Art de Réussir",
@@ -1791,13 +1801,15 @@ export const translations = {
         "A candid conversation about mortgage brokerage in Quebec: what sets a broker apart from a bank, how to shop a renewal without panic, and why « clarity » should be the first criterion when choosing a broker.",
         "Andrew shares his vision of mortgage service that feels more like support than a transaction.",
       ],
-      eventEyebrow: "Community engagement",
-      eventTitle: "Charity evening « Dans la rue »",
-      eventDate: "November 2025 — Montreal",
+      eventEyebrow: "Behind the scenes",
+      eventTitle: "On the Art de Réussir set",
+      eventDate: "Filming — Montreal, January 2026",
       eventCaptionLines: [
-        "The organization Dans la rue has supported young people experiencing homelessness in Montreal for over 35 years. Équipe Buteau contributed financially and on-site at the November 2025 charity evening.",
-        "A mission aligned with ours: returning stability, a roof, a point of anchor to those who need it most.",
+        "A few behind-the-scenes shots from the shoot: on-camera interviews, exchanges between guests, and capsules filmed alongside the main show.",
+        "An opportunity to continue the conversation with other entrepreneurs and professionals invited on set.",
       ],
+      communityNote:
+        "Photos from the « Dans la rue » charity evening (November 2025) coming soon.",
     },
 
     quiz: {

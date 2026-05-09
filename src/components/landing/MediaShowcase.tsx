@@ -137,6 +137,10 @@ export function MediaShowcase() {
               <Newspaper size={11} className="inline mr-1.5 -mt-0.5" aria-hidden="true" />
               {t("media.eventDate")}
             </p>
+            {/* Note honnête : Dans la rue photos pas encore reçues du client */}
+            <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)]/85 mt-4 leading-[1.55] max-w-md">
+              {t("media.communityNote")}
+            </p>
           </div>
 
           {/* Galerie 4 photos asymétrique — 7/12 */}

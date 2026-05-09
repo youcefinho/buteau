@@ -30,9 +30,9 @@ export function Services() {
     "home.services.items",
   );
 
-  // Décalages en % (escalier diagonal)
-  const offsets = ["0%", "6%", "12%", "18%"];
-  const numerals = ["I", "II", "III", "IV"];
+  // Décalages en % (escalier diagonal). 5 items après ajout consolidation de dettes.
+  const offsets = ["0%", "5%", "10%", "15%", "20%"];
+  const numerals = ["I", "II", "III", "IV", "V"];
 
   return (
     <section id="services" className="relative py-24 md:py-32 surface-cream overflow-hidden dot-grid">
@@ -91,13 +91,14 @@ export function Services() {
         </div>
       </Container>
 
-      {/* CSS inline pour les décalages diagonaux (responsive) */}
+      {/* CSS inline pour les décalages diagonaux (responsive) — 5 items */}
       <style>{`
         @media (min-width: 768px) {
           #services > div > div > article:nth-child(1) { margin-left: ${offsets[0]}; }
           #services > div > div > article:nth-child(2) { margin-left: ${offsets[1]}; }
           #services > div > div > article:nth-child(3) { margin-left: ${offsets[2]}; }
           #services > div > div > article:nth-child(4) { margin-left: ${offsets[3]}; }
+          #services > div > div > article:nth-child(5) { margin-left: ${offsets[4]}; }
         }
       `}</style>
     </section>
