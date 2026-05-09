@@ -180,6 +180,19 @@ export const translations = {
         ],
       },
 
+      calcPreview: {
+        eyebrow: "Calculer en direct",
+        title: "Combien va vous coûter votre hypothèque ?",
+        subtitle:
+          "Estimation instantanée selon la formule canadienne semi-annuelle. Pour la courbe d'amortissement complète + les scénarios « Et si... », rendez-vous sur la page Outils.",
+        amountLabel: "Montant",
+        rateLabel: "Taux",
+        yearsLabel: "Durée",
+        resultLabel: "Paiement mensuel",
+        ctaFull: "Calculateur complet + scénarios",
+        ctaTools: "Voir tous nos outils",
+      },
+
       tools: {
         eyebrow: "Outils & ressources",
         title: "Tout ce qu'il vous faut pour avancer",
@@ -941,6 +954,19 @@ export const translations = {
             desc: "Access to multiple institutions for the best rate and conditions.",
           },
         ],
+      },
+
+      calcPreview: {
+        eyebrow: "Live estimate",
+        title: "How much will your mortgage cost?",
+        subtitle:
+          "Instant estimate using the Canadian semi-annual formula. For the full amortization curve + the «What if...» scenarios, head to the Tools page.",
+        amountLabel: "Amount",
+        rateLabel: "Rate",
+        yearsLabel: "Term",
+        resultLabel: "Monthly payment",
+        ctaFull: "Full calculator + scenarios",
+        ctaTools: "See all our tools",
       },
 
       tools: {

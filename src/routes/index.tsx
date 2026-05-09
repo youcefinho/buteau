@@ -12,6 +12,7 @@ import { ChapterMarker } from "@/components/landing/ChapterMarker";
 import { BrokerLetter } from "@/components/landing/BrokerLetter";
 import { TerritoryMap } from "@/components/landing/TerritoryMap";
 import { PreQualQuiz } from "@/components/landing/PreQualQuiz";
+import { CalculatorPreview } from "@/components/landing/CalculatorPreview";
 import { PageFooterMark } from "@/components/layout/PageFooterMark";
 import {
   SchemaJsonLd,
@@ -51,6 +52,14 @@ function HomePage() {
 
       <TeamTeaser />
       <Services />
+
+      {/* Calculator Preview — accès direct aux outils sur l'Accueil
+          (feedback user : Outils était trop enterré). Mini calc interactif
+          + CTA vers /outils pour la version complète. */}
+      <CalculatorPreview />
+
+      <ToolsTeaser />
+
       <Mission />
 
       {/* « Le mot du courtier » — section authentique signature manuscrite (NOVEL) */}
@@ -58,8 +67,6 @@ function HomePage() {
 
       {/* Quiz pré-qualification 3Q tier-based — qualifie les leads + personalise CTA */}
       <PreQualQuiz />
-
-      <ToolsTeaser />
 
       {/* Chapter III — annonce témoignages + contact */}
       <ChapterMarker numeral="III" label={chapter3} tone="light" />
