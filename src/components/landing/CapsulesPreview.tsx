@@ -82,7 +82,7 @@ export function CapsulesPreview() {
 
                   {/* Body */}
                   <div className="flex-1 min-w-0 space-y-2">
-                    {/* Tag eyebrow + Play icon */}
+                    {/* Tag eyebrow + Play icon — fix LOW i18n (avant FR hardcoded) */}
                     <div className="flex items-center gap-2 mb-1">
                       <Play
                         size={11}
@@ -90,7 +90,7 @@ export function CapsulesPreview() {
                         aria-hidden="true"
                       />
                       <p className="eyebrow text-[color:var(--color-bronze-deep)] text-[10px]">
-                        Capsule · 30 sec
+                        {lang === "fr" ? "Capsule · 30 sec" : "Capsule · 30 sec"}
                       </p>
                     </div>
 

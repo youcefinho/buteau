@@ -55,10 +55,14 @@ export function GlossaryHovercard({ term, children }: GlossaryHovercardProps) {
     });
   }, [isOpen]);
 
-  // Close au scroll ou click outside
+  // Close au scroll (threshold 80px pour éviter fermeture sur micro-scroll trackpad — fix MEDIUM)
+  // ou keypress Escape
   useEffect(() => {
     if (!isOpen) return;
-    const onScroll = () => setIsOpen(false);
+    let lastY = window.scrollY;
+    const onScroll = () => {
+      if (Math.abs(window.scrollY - lastY) > 80) setIsOpen(false);
+    };
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setIsOpen(false);
     };

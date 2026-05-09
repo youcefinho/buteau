@@ -198,14 +198,19 @@ function CapsulesPage() {
             </button>
           ))}
         </div>
-        {/* Compteur résultats visibles si filtre actif */}
-        {activeFilter !== "all" && (
-          <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] mt-3">
-            {isFr
-              ? `${visibleCount} capsule${visibleCount > 1 ? "s" : ""} affichée${visibleCount > 1 ? "s" : ""} sur ${totalCount}`
-              : `${visibleCount} capsule${visibleCount > 1 ? "s" : ""} shown of ${totalCount}`}
-          </p>
-        )}
+        {/* Compteur résultats visibles si filtre actif — Intl.PluralRules pour FR/EN propres (fix MEDIUM) */}
+        {activeFilter !== "all" && (() => {
+          const pluralRules = new Intl.PluralRules(isFr ? "fr-CA" : "en-CA");
+          const isPlural = pluralRules.select(visibleCount) !== "one";
+          const fmt = isFr
+            ? `${visibleCount} ${isPlural ? "capsules affichées" : "capsule affichée"} sur ${totalCount}`
+            : `${visibleCount} ${isPlural ? "capsules shown" : "capsule shown"} of ${totalCount}`;
+          return (
+            <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] mt-3">
+              {fmt}
+            </p>
+          );
+        })()}
       </div>
 
       {/* Catégories — sommaire magazine vertical (filtrées) */}
@@ -316,7 +321,10 @@ function CapsulesPage() {
   );
 }
 
+// Algo génératif jusqu'à 30 (fix MEDIUM hardcoded 1-7)
 function romanNumeral(n: number): string {
-  const map: Record<number, string> = { 1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI", 7: "VII" };
-  return map[n] ?? String(n);
+  if (n < 1 || n >= 30) return String(n);
+  const tens = ["", "X", "XX"];
+  const ones = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
+  return tens[Math.floor(n / 10)] + ones[n % 10];
 }

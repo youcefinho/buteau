@@ -198,29 +198,32 @@ function JournalPage() {
                       ref={openArticleRef}
                       className="border-t border-[color:var(--color-taupe)]/30 pt-7 mt-3 space-y-5 animate-[buteauFadeUp_500ms_ease-out_both]"
                     >
-                      {/* Drop cap sur le 1er paragraphe + pull-quote signature au milieu */}
-                      {a.body!.map((para, pi) => {
-                        const middleIdx = Math.floor(a.body!.length / 2);
-                        const showPullQuote = a.pullQuote && pi === middleIdx;
-                        return (
-                          <div key={pi}>
-                            {showPullQuote && (
-                              <blockquote className="not-prose relative my-8 py-3 border-l-2 border-[color:var(--color-bronze)] pl-6 lg:pl-8">
-                                <p className="font-[var(--font-editorial)] italic text-xl md:text-2xl leading-[1.3] text-[color:var(--color-navy-deep)] tracking-tight">
-                                  « {a.pullQuote} »
-                                </p>
-                              </blockquote>
-                            )}
-                            <p
-                              className={`text-base md:text-[1.0625rem] leading-[1.75] text-[color:var(--color-navy-deep)]/85 ${
-                                pi === 0 ? "dropcap" : ""
-                              }`}
-                            >
-                              {para}
-                            </p>
-                          </div>
-                        );
-                      })}
+                      {/* Drop cap sur 1er paragraphe + pull-quote middle (skip si body < 3 paragraphes — fix MEDIUM) */}
+                      {(() => {
+                        const bodyLen = a.body!.length;
+                        const middleIdx = bodyLen >= 3 ? Math.floor(bodyLen / 2) : -1;
+                        return a.body!.map((para, pi) => {
+                          const showPullQuote = a.pullQuote && pi === middleIdx;
+                          return (
+                            <div key={`${a.slug}-p-${pi}`}>
+                              {showPullQuote && (
+                                <blockquote className="not-prose relative my-8 py-3 border-l-2 border-[color:var(--color-bronze)] pl-6 lg:pl-8">
+                                  <p className="font-[var(--font-editorial)] italic text-xl md:text-2xl leading-[1.3] text-[color:var(--color-navy-deep)] tracking-tight">
+                                    « {a.pullQuote} »
+                                  </p>
+                                </blockquote>
+                              )}
+                              <p
+                                className={`text-base md:text-[1.0625rem] leading-[1.75] text-[color:var(--color-navy-deep)]/85 ${
+                                  pi === 0 ? "dropcap" : ""
+                                }`}
+                              >
+                                {para}
+                              </p>
+                            </div>
+                          );
+                        });
+                      })()}
 
                       {/* Signature de fin d'article */}
                       <div className="pt-6 mt-3 border-t border-[color:var(--color-taupe)]/30 flex items-baseline gap-3">

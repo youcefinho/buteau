@@ -18,6 +18,14 @@ export function Hero() {
   const letterWords = ta<string[]>(translations[lang], "home.hero.letterWords");
   const { tier } = useQuizTier();
 
+  // Fix MEDIUM dev-only warning si letterWords ne matche pas brandName length
+  if (import.meta.env.DEV && letterWords.length !== config.brandName.length) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      `[Hero] letterWords.length (${letterWords.length}) ne matche pas brandName "${config.brandName}" (${config.brandName.length}). Ajuster home.hero.letterWords.`,
+    );
+  }
+
   // CTA personnalisé selon le tier du quiz (si complété), sinon CTA par défaut.
   const ctaLabel = tier
     ? ta<string>(translations[lang], `home.hero.ctaByTier.${tier}`) || t("home.hero.ctaPrimary")
