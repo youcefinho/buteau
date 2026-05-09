@@ -32,12 +32,14 @@ const tvGallery = [
   "/media/art-reussir-02.jpg",
   "/media/art-reussir-03.jpg",
 ];
-// Photos soirée-bénéfice Dans la rue novembre 2025 (mail #2 client)
+// Photos soirée-bénéfice Dans la rue novembre 2025 (mail #2 client) — 6 photos
 const eventGallery = [
   "/media/dans-la-rue-03.jpg",
   "/media/dans-la-rue-02.jpg",
   "/media/dans-la-rue-04.jpg",
   "/media/dans-la-rue-05.jpg",
+  "/media/dans-la-rue-01.jpg",
+  "/media/dans-la-rue-06.jpg",
 ];
 
 export function MediaShowcase() {
@@ -205,21 +207,23 @@ export function MediaShowcase() {
             </p>
           </div>
 
-          {/* Galerie 4 photos asymétrique — 7/12 — halo-glow per photo + signature line hover */}
+          {/* Galerie 6 photos asymétrique — 7/12 — halo-glow per photo + signature line hover
+              Pattern stagger : col-1 [0, -mt-8, 0] / col-2 [mt-8, 0, mt-8] = rythme magazine */}
           <div className="lg:col-span-7 relative z-10">
             <div className="grid grid-cols-2 gap-3 md:gap-4">
-              {eventGallery.map((src, idx) => (
+              {eventGallery.map((src, idx) => {
+                const staggerClass = (() => {
+                  switch (idx) {
+                    case 1: return "mt-8";
+                    case 2: return "-mt-8";
+                    case 5: return "mt-8";
+                    default: return "";
+                  }
+                })();
+                return (
                 <figure
                   key={src}
-                  className={`halo-glow relative overflow-hidden bg-[color:var(--color-navy)] border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-bronze)]/60 transition-colors group ${
-                    idx === 0
-                      ? "aspect-[4/5]"
-                      : idx === 1
-                        ? "aspect-[4/5] mt-8"
-                        : idx === 2
-                          ? "aspect-[4/5] -mt-8"
-                          : "aspect-[4/5]"
-                  }`}
+                  className={`halo-glow relative aspect-[4/5] overflow-hidden bg-[color:var(--color-navy)] border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-bronze)]/60 transition-colors group ${staggerClass}`}
                 >
                   <img
                     src={src}
@@ -239,7 +243,8 @@ export function MediaShowcase() {
                     {String(idx + 1).padStart(2, "0")}
                   </span>
                 </figure>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
