@@ -26,6 +26,13 @@ import { ta, translations } from "@/lib/translations";
  */
 
 const youtubeId = "GojrM7ftwUE"; // Andrew Buteau à Art de Réussir
+// Photos Art de Réussir behind-the-scenes (mail #1 client) — affichées sous le YouTube
+const tvGallery = [
+  "/media/art-reussir-01.jpg",
+  "/media/art-reussir-02.jpg",
+  "/media/art-reussir-03.jpg",
+];
+// Photos soirée-bénéfice Dans la rue novembre 2025 (mail #2 client)
 const eventGallery = [
   "/media/dans-la-rue-03.jpg",
   "/media/dans-la-rue-02.jpg",
@@ -79,8 +86,8 @@ export function MediaShowcase() {
             01
           </span>
 
-          {/* Embed YouTube — 7/12 — halo-glow renforcé */}
-          <div className="lg:col-span-7 order-2 lg:order-1 relative z-10">
+          {/* Embed YouTube + strip thumbnails coulisses — 7/12 — halo-glow renforcé */}
+          <div className="lg:col-span-7 order-2 lg:order-1 relative z-10 space-y-4">
             <div className="halo-glow relative bg-[color:var(--color-navy)] aspect-video overflow-hidden border border-[color:var(--color-taupe)]/40 group">
               <iframe
                 src={`https://www.youtube-nocookie.com/embed/${youtubeId}?rel=0&modestbranding=1`}
@@ -90,6 +97,33 @@ export function MediaShowcase() {
                 loading="lazy"
                 className="absolute inset-0 w-full h-full"
               />
+            </div>
+
+            {/* Strip 3 thumbnails coulisses Art de Réussir — photos mail #1 client */}
+            <div className="grid grid-cols-3 gap-3">
+              {tvGallery.map((src, idx) => (
+                <figure
+                  key={src}
+                  className="halo-glow relative aspect-[4/5] overflow-hidden bg-[color:var(--color-navy)] border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-bronze)]/60 transition-colors group"
+                >
+                  <img
+                    src={src}
+                    alt={`${t("media.tvTitle")} — ${idx + 1}`}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div
+                    className="absolute inset-0 bg-gradient-to-t from-[color:var(--color-navy-deep)]/30 via-transparent to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-20"
+                    aria-hidden="true"
+                  />
+                  <span
+                    aria-hidden="true"
+                    className="absolute bottom-2 right-2 font-[var(--font-editorial)] italic text-[color:var(--color-cream)] text-xs tabular-nums opacity-70"
+                  >
+                    {String(idx + 1).padStart(2, "0")}
+                  </span>
+                </figure>
+              ))}
             </div>
           </div>
 
