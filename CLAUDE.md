@@ -1,7 +1,51 @@
 # CLAUDE.md — Équipe Buteau (Andrew Buteau, Planiprêt)
 
 > Lu automatiquement à chaque ouverture du projet. Respecter à la lettre.
-> Dernière mise à jour : 2026-05-09 — 30 commits sur main, 8 ROUND design appliqués
+> Dernière mise à jour : 2026-05-09 — 50+ commits sur main, contenu client mail #1 + #2 intégré, audits faits
+
+## ⚡ MAJ session 2026-05-09 (suite intégration mail client)
+
+**Équipe : 4 membres maintenant** (Andrew + Abygaèle + Alexis + Felix)
+- Andrew : bio vérifiée Planiprêt (citation officielle intégrité/transparence)
+- Felix : 4e membre AJOUTÉ, rôle "Coordonnateur des opérations de courtage hypothécaire", bio placeholder honnête (en attente client)
+- Photos : anciennes URLs imgur préférées par user (studio JPEG en /public/equipe/ pas utilisées mais conservées)
+
+**Nouveaux composants/routes :**
+- `MediaShowcase` (composant `/equipe`) — Bloc 1 YouTube Art de Réussir + 3 thumbs Art de Réussir (mail #1) ; Bloc 2 galerie 6 photos Dans la rue novembre 2025 en 3 cols stagger (mail #2)
+- `CapsulesPreview` (Accueil) — 5 capsules vedettes pattern GuidesShelf 5/12 + 7/12
+- `ValueTicker` (Accueil) — marquee scrolling 7 faits vérifiés navy/bronze/cormorant/❦
+- `MobileStickyCta` (root) — sticky bottom mobile only (Appeler + Prendre RDV)
+- `/capsules` — route avec 34 capsules en 7 catégories + filtres live chips (Tous + 7 catégories)
+- `/journal` — refondu majeur : 8 articles longs réécrits voix Andrew (depuis 7 PDFs client), body inline accordion + pull-quote middle + reading progress bar fixed top
+- `ADayWithAndrew` — créé puis SUPPRIMÉ (contenu inventé, anti-pattern factualité — réactivable si client envoie vraie routine)
+
+**Pivot 40/60 messaging (mail #2 client : 40% primo + 60% refi/upgrade/famille) :**
+- Hero subtitle reformulé : "200 familles accompagnées en 2025. Premier achat, renouvellement, refinancement, consolidation de dettes, investissement — chaque dossier reçoit la même rigueur."
+- Services : 5 items (ajout "Consolidation de dettes" comme 3e item)
+- Quiz reformulé : refi en #1, options englobent consolidation + upgrade familial, results avec Loss Aversion + Anchoring chiffré (320$/mois libérés exemple concret)
+- GuidesShelf réordonné (Renouvellement & refi en #1)
+
+**Polish & wow factor :**
+- View Transitions API native (defaultViewTransition router + CSS keyframes vtFadeUp/Out)
+- Photo treatment cinématique `.photo-edito` (saturate 0.78 → 1 hover, 700ms cubic-bezier)
+- Reading progress bar `/journal` (fixed top viewport, fill au scroll dans body article ouvert)
+- Tag filters live `/capsules` (chips Tous + 7 catégories + compteur d'items)
+- 5 logos institutions cassés → SVG locaux (CIBC, CMLS, TD, Manuvie, Desjardins via Wikipedia commons + cmls.ca)
+- Numéros filigrane TeamGrid retirés (sur demande user)
+
+**Audits passés :**
+- `intralys-compliance` audit : sitemap fix (+/capsules /journal /courrier), OK Loi 25 + Charte FR + WCAG patterns + Open Graph + Twitter
+- `gsd-code-reviewer` subagent : 35 findings (7 BLOCKERS / 9 HIGH / 12 MED / 7 LOW) — voir REVIEW.md à la racine
+- 3 BLOCKERS critiques fixés : CSP frame-src YouTube (worker.ts), /capsules h2 dupliqué, /merci noindex meta
+- 4 BLOCKERS restants : useQuizTier loop, CustomCursor leak, PageTransition reset, /capsules liens individuels (à faire si temps avant deploy)
+
+**Métriques actuelles :**
+- 0 erreur TS strict
+- Build ~2.0s, 1924+ modules
+- First-load 152.43 kB gzip (cible <200 kB ✓)
+- Routes : 11 (+ 404)
+
+---
 
 ---
 
