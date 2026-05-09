@@ -27,7 +27,7 @@ import { ta, translations } from "@/lib/translations";
 
 const youtubeId = "GojrM7ftwUE"; // Andrew Buteau à Art de Réussir
 const eventGallery = [
-  "/media/art-reussir-01.jpg",
+  "/media/art-reussir-03.jpg",
   "/media/art-reussir-02.jpg",
   "/media/art-reussir-04.jpg",
   "/media/art-reussir-05.jpg",
