@@ -4,7 +4,7 @@ import { Container } from "@/components/layout/Container";
 import { ta, translations } from "@/lib/translations";
 
 /**
- * MediaShowcase — section éditoriale "Vu dans les médias".
+ * MediaShowcase — section éditoriale "Vu dans les médias et dans la communauté".
  *
  * Patterns appliqués (skills) :
  * - intralys-edito-magazine : halo-glow on cards, signature lines bronze qui s'étendent
@@ -17,20 +17,20 @@ import { ta, translations } from "@/lib/translations";
  *
  * Layout :
  * - Header magazine (eyebrow + title + filet bronze)
- * - Bloc 1 (chiffre filigrane "01") : embed YouTube 16:9 + caption éditoriale
- *   à droite avec dropcap (7/5)
- * - Bloc 2 (chiffre filigrane "02") : caption + galerie 4 photos asymétrique (5/7)
+ * - Bloc 1 (chiffre filigrane "01") : embed YouTube 16:9 (Art de Réussir) + caption
+ *   éditoriale à droite avec dropcap (7/5)
+ * - Bloc 2 (chiffre filigrane "02") : caption + galerie 4 photos asymétrique
+ *   soirée-bénéfice Dans la rue, novembre 2025 (5/7)
  *
- * Photos servies depuis /public/media/*.jpg (Art de Réussir behind-the-scenes —
- * les photos Dans la rue ne sont pas encore envoyées par le client, note inline).
+ * Photos /public/media/dans-la-rue-XX.jpg viennent du mail #2 client.
  */
 
 const youtubeId = "GojrM7ftwUE"; // Andrew Buteau à Art de Réussir
 const eventGallery = [
-  "/media/art-reussir-03.jpg",
-  "/media/art-reussir-02.jpg",
-  "/media/art-reussir-04.jpg",
-  "/media/art-reussir-05.jpg",
+  "/media/dans-la-rue-03.jpg",
+  "/media/dans-la-rue-02.jpg",
+  "/media/dans-la-rue-04.jpg",
+  "/media/dans-la-rue-05.jpg",
 ];
 
 export function MediaShowcase() {
@@ -168,10 +168,6 @@ export function MediaShowcase() {
             <p className="eyebrow text-[color:var(--color-taupe-dark)] mt-7 text-[10px] border-l-2 border-[color:var(--color-bronze)] pl-2.5">
               <Newspaper size={11} className="inline mr-1.5 -mt-0.5" aria-hidden="true" />
               {t("media.eventDate")}
-            </p>
-            {/* Note honnête : photos Dans la rue pas encore reçues du client */}
-            <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)]/85 mt-4 leading-[1.55] max-w-md">
-              {t("media.communityNote")}
             </p>
           </div>
 

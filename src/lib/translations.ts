@@ -769,9 +769,9 @@ export const translations = {
 
     media: {
       eyebrow: "Vu & engagé",
-      title: "Andrew dans les médias.",
+      title: "Andrew dans les médias et dans la communauté.",
       subtitle:
-        "Le courtage hypothécaire ne se résume pas à un dossier de prêt. C'est aussi des plateaux de télé, des conférences en région et des conversations sur la place publique — partout où les gens parlent argent, projets et avenir.",
+        "Le courtage hypothécaire ne se résume pas à un dossier de prêt. C'est aussi des plateaux de télé, des soirées caritatives et des conversations en région — partout où les gens parlent argent, projets et avenir.",
       tvEyebrow: "Sur les ondes",
       tvTitle: "Andrew Buteau à l'émission « Art de Réussir »",
       tvVideoTitle: "Andrew Buteau à Art de Réussir",
@@ -780,15 +780,13 @@ export const translations = {
         "Une discussion franche sur le courtage hypothécaire au Québec : ce qui distingue un courtier d'une banque, comment magasiner un renouvellement sans paniquer, et pourquoi la « clarté » devrait être le premier critère de choix d'un courtier.",
         "Andrew y partage sa vision d'un service hypothécaire qui ressemble plus à un accompagnement qu'à une transaction.",
       ],
-      eventEyebrow: "Coulisses du plateau",
-      eventTitle: "Sur le plateau d'Art de Réussir",
-      eventDate: "Tournage — Montréal, janvier 2026",
+      eventEyebrow: "Engagement communautaire",
+      eventTitle: "Soirée-bénéfice « Dans la rue »",
+      eventDate: "Novembre 2025 — Montréal",
       eventCaptionLines: [
-        "Quelques images des coulisses du tournage : entrevues face caméra, échanges entre intervenants, et capsules tournées en marge de l'émission principale.",
-        "L'occasion de prolonger la conversation avec d'autres entrepreneurs et professionnels reçus sur le plateau.",
+        "L'organisme Dans la rue accompagne les jeunes en situation d'itinérance à Montréal depuis plus de 35 ans. L'Équipe Buteau a contribué financièrement et sur place lors de la soirée-bénéfice de novembre 2025.",
+        "Une mission alignée avec la nôtre : redonner de la stabilité, un toit, un point d'ancrage à ceux qui en ont le plus besoin.",
       ],
-      communityNote:
-        "Photos de la soirée-bénéfice « Dans la rue » (novembre 2025) à venir prochainement.",
     },
 
     quiz: {
@@ -1824,9 +1822,9 @@ export const translations = {
 
     media: {
       eyebrow: "Featured & engaged",
-      title: "Andrew in the media.",
+      title: "Andrew in the media and in the community.",
       subtitle:
-        "Mortgage brokerage isn't just a file. It's also TV sets, regional conferences and public conversations — wherever people talk money, projects and the future.",
+        "Mortgage brokerage isn't just a file. It's also TV sets, charity nights and regional conversations — wherever people talk money, projects and the future.",
       tvEyebrow: "On air",
       tvTitle: "Andrew Buteau on the show « Art de Réussir »",
       tvVideoTitle: "Andrew Buteau on Art de Réussir",
@@ -1835,15 +1833,13 @@ export const translations = {
         "A candid conversation about mortgage brokerage in Quebec: what sets a broker apart from a bank, how to shop a renewal without panic, and why « clarity » should be the first criterion when choosing a broker.",
         "Andrew shares his vision of mortgage service that feels more like support than a transaction.",
       ],
-      eventEyebrow: "Behind the scenes",
-      eventTitle: "On the Art de Réussir set",
-      eventDate: "Filming — Montreal, January 2026",
+      eventEyebrow: "Community engagement",
+      eventTitle: "Charity evening « Dans la rue »",
+      eventDate: "November 2025 — Montreal",
       eventCaptionLines: [
-        "A few behind-the-scenes shots from the shoot: on-camera interviews, exchanges between guests, and capsules filmed alongside the main show.",
-        "An opportunity to continue the conversation with other entrepreneurs and professionals invited on set.",
+        "The organization Dans la rue has supported young people experiencing homelessness in Montreal for over 35 years. Équipe Buteau contributed financially and on-site at the November 2025 charity evening.",
+        "A mission aligned with ours: returning stability, a roof, a point of anchor to those who need it most.",
       ],
-      communityNote:
-        "Photos from the « Dans la rue » charity evening (November 2025) coming soon.",
     },
 
     quiz: {
