@@ -1,46 +1,43 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/LanguageContext";
-import { LegalPageWrap } from "@/components/layout/LegalPageWrap";
+import { useColophon } from "@/lib/ColophonContext";
+import { ModalShell } from "@/components/layout/ModalShell";
 import { config } from "@/lib/config";
 
 /**
- * /colophon — page "Colophon" style magazine luxe (Cereal, Apartamento, Aesop).
+ * ColophonModal — mentions techniques magazine en modal (pattern Serujan).
  *
- * Pourquoi NOVEL : aucun courtier hypothécaire au Quebec n'a un colophon. C'est
- * la marque ultime du soin éditorial — détailler les types, palette, principes,
- * équipe, accessibilité comme un magazine d'auteur ferait. Signature non-tech.
- *
- * Pattern : LegalPageWrap (cohérence pages secondaires) + sections empilées en
- * eyebrow + grid 2 colonnes label/value typographique.
+ * Reprise du contenu de l'ancienne route /colophon. Sections : Typographie, Palette
+ * (4 swatches oklch), Principes éditoriaux (4 numérotés), Direction, Accessibilité,
+ * Composition. Drop-cap Cormorant sur intro.
  */
-export const Route = createFileRoute("/colophon")({
-  component: ColophonPage,
-});
-
-function ColophonPage() {
+export function ColophonModal() {
   const { lang } = useLanguage();
+  const { isOpen, close } = useColophon();
   const isFr = lang === "fr";
 
   return (
-    <LegalPageWrap
+    <ModalShell
+      isOpen={isOpen}
+      onClose={close}
       eyebrow={isFr ? "Mentions techniques" : "Technical credits"}
       title={isFr ? "Colophon" : "Colophon"}
-      lastUpdated={
-        isFr
-          ? "Volume I — Édition N° 01 · Quebec MMXXVI"
-          : "Volume I — Edition Nº 01 · Quebec MMXXVI"
-      }
+      closeLabel={isFr ? "Fermer le colophon" : "Close colophon"}
+      ariaLabelledById="colophon-title"
     >
-      {/* Intro éditorial */}
-      <p className="font-[var(--font-editorial)] italic text-lg leading-[1.7] text-[color:var(--color-navy-deep)]/85 first-letter:font-[var(--font-editorial)] first-letter:italic first-letter:text-6xl first-letter:text-[color:var(--color-bronze-deep)] first-letter:float-left first-letter:mr-3 first-letter:leading-[0.85] first-letter:mt-1">
+      {/* Sous-titre Volume / Édition */}
+      <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-6">
+        {isFr ? "Volume I — Édition N° 01 · Quebec MMXXVI" : "Volume I — Edition Nº 01 · Quebec MMXXVI"}
+      </p>
+
+      {/* Intro éditorial avec drop-cap */}
+      <p className="font-[var(--font-editorial)] italic text-base md:text-lg leading-[1.7] text-[color:var(--color-navy-deep)]/85 first-letter:font-[var(--font-editorial)] first-letter:italic first-letter:text-6xl first-letter:text-[color:var(--color-bronze-deep)] first-letter:float-left first-letter:mr-3 first-letter:leading-[0.85] first-letter:mt-1">
         {isFr
           ? "Comme un magazine d'auteur, ce site assume sa fabrication. Voici les choix typographiques, chromatiques et éditoriaux qui composent l'édition que vous parcourez."
           : "Like an author's magazine, this site owns its making. Here are the typographic, chromatic and editorial choices that compose the edition you are browsing."}
       </p>
 
-      {/* === Typographie === */}
-      <section className="pt-8">
-        <ColophonHeader label={isFr ? "Typographie" : "Typography"} />
+      {/* Typographie */}
+      <ColophonSection label={isFr ? "Typographie" : "Typography"}>
         <ColophonRow
           label={isFr ? "Caractères de titre" : "Display"}
           value="Cormorant Garamond"
@@ -60,11 +57,10 @@ function ColophonPage() {
           value="Montserrat"
           note={isFr ? "Sans-serif, eyebrows uppercase tracking 0.12em" : "Sans-serif, uppercase eyebrows tracking 0.12em"}
         />
-      </section>
+      </ColophonSection>
 
-      {/* === Palette === */}
-      <section className="pt-8">
-        <ColophonHeader label={isFr ? "Palette" : "Palette"} />
+      {/* Palette */}
+      <ColophonSection label={isFr ? "Palette" : "Palette"}>
         <ColophonRow
           label={isFr ? "Bleu nuit" : "Deep navy"}
           value="oklch(0.252 0.067 256)"
@@ -89,12 +85,11 @@ function ColophonPage() {
           swatchClass="bg-[color:var(--color-cream)] border border-[color:var(--color-taupe)]/40"
           note={isFr ? "Surface de respiration" : "Breathing surface"}
         />
-      </section>
+      </ColophonSection>
 
-      {/* === Principes éditoriaux === */}
-      <section className="pt-8">
-        <ColophonHeader label={isFr ? "Principes éditoriaux" : "Editorial principles"} />
-        <ol className="space-y-5 mt-4">
+      {/* Principes éditoriaux */}
+      <ColophonSection label={isFr ? "Principes éditoriaux" : "Editorial principles"}>
+        <ol className="space-y-5 mt-2">
           {(isFr
             ? [
                 ["Aucune zone grise.", "Pas de jargon non expliqué, pas de promesse irréaliste, pas de chiffre inventé. Les chiffres affichés (200 familles, 9+ institutions) sont vérifiables."],
@@ -124,20 +119,18 @@ function ColophonPage() {
             </li>
           ))}
         </ol>
-      </section>
+      </ColophonSection>
 
-      {/* === Équipe === */}
-      <section className="pt-8">
-        <ColophonHeader label={isFr ? "Direction" : "Editorial team"} />
+      {/* Équipe */}
+      <ColophonSection label={isFr ? "Direction" : "Editorial team"}>
         <ColophonRow label={isFr ? "Direction" : "Direction"} value="Andrew Buteau" note={isFr ? "Courtier hypothécaire & fondateur" : "Mortgage broker & founder"} />
         <ColophonRow label={isFr ? "Coordination" : "Coordination"} value="Abygaèle Gagné" note={isFr ? "Coordonnatrice exécutive" : "Executive coordinator"} />
         <ColophonRow label={isFr ? "Gestion hypothécaire" : "Mortgage management"} value="Alexis Buteau" note={isFr ? "Assistant en gestion hypothécaire" : "Mortgage management assistant"} />
         <ColophonRow label={isFr ? "Opérations" : "Operations"} value="Felix" note={isFr ? "Coordonnateur des opérations de courtage" : "Brokerage operations coordinator"} />
-      </section>
+      </ColophonSection>
 
-      {/* === Accessibilité === */}
-      <section className="pt-8">
-        <ColophonHeader label={isFr ? "Accessibilité" : "Accessibility"} />
+      {/* Accessibilité */}
+      <ColophonSection label={isFr ? "Accessibilité" : "Accessibility"}>
         <ColophonRow
           label={isFr ? "Norme cible" : "Target standard"}
           value="WCAG 2.2 AA"
@@ -153,20 +146,19 @@ function ColophonPage() {
           value="Loi 25"
           note={isFr ? "Bannière consentement granulaire, droits user, contact DPO" : "Granular consent banner, user rights, DPO contact"}
         />
-      </section>
+      </ColophonSection>
 
-      {/* === Mentions techniques sobres === */}
-      <section className="pt-8">
-        <ColophonHeader label={isFr ? "Composition" : "Composition"} />
+      {/* Composition */}
+      <ColophonSection label={isFr ? "Composition" : "Composition"}>
         <p className="font-[var(--font-editorial)] italic text-base leading-[1.7] text-[color:var(--color-navy-deep)]/80">
           {isFr
             ? "Composé en TypeScript. Hébergé sur Cloudflare. Aucun tracker tiers chargé sans consentement explicite. Le code source des composants suit les principes énoncés ci-dessus — la rigueur visible côté client est la même que la rigueur invisible côté serveur."
             : "Set in TypeScript. Hosted on Cloudflare. No third-party tracker loaded without explicit consent. The source code follows the principles stated above — the rigor visible client-side mirrors the rigor invisible server-side."}
         </p>
-      </section>
+      </ColophonSection>
 
-      {/* === Crédits final === */}
-      <section className="pt-12 mt-8 border-t border-[color:var(--color-taupe)]/40 text-center">
+      {/* Crédits final */}
+      <section className="pt-10 mt-8 border-t border-[color:var(--color-taupe)]/40 text-center">
         <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-3">
           {isFr ? "Imprimé à Laval" : "Printed in Laval"}
         </p>
@@ -179,19 +171,28 @@ function ColophonPage() {
           ☞ {isFr ? "Bureau" : "Office"} — {config.address.streetAddress}, {config.address.addressLocality} ({config.address.addressRegion}) {config.address.postalCode}
         </p>
       </section>
-    </LegalPageWrap>
+    </ModalShell>
   );
 }
 
 /* ─── Sous-composants ────────────────────────────────────────────────── */
 
-function ColophonHeader({ label }: { label: string }) {
+function ColophonSection({
+  label,
+  children,
+}: {
+  label: string;
+  children: React.ReactNode;
+}) {
   return (
-    <div className="flex items-center gap-4 mb-5">
-      <span className="block w-8 h-px bg-[color:var(--color-bronze)]" aria-hidden="true" />
-      <h2 className="eyebrow text-[color:var(--color-bronze-deep)]">{label}</h2>
-      <span className="block flex-1 h-px bg-[color:var(--color-taupe)]/40" aria-hidden="true" />
-    </div>
+    <section className="pt-8">
+      <div className="flex items-center gap-4 mb-5">
+        <span className="block w-8 h-px bg-[color:var(--color-bronze)]" aria-hidden="true" />
+        <h3 className="eyebrow text-[color:var(--color-bronze-deep)]">{label}</h3>
+        <span className="block flex-1 h-px bg-[color:var(--color-taupe)]/40" aria-hidden="true" />
+      </div>
+      {children}
+    </section>
   );
 }
 

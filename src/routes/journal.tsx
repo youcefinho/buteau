@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Clock, ArrowRight, ChevronDown } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
+import { useGlossary } from "@/lib/GlossaryContext";
 import { LegalPageWrap } from "@/components/layout/LegalPageWrap";
 import { Tiltable } from "@/components/layout/Tiltable";
 import { SchemaJsonLd } from "@/components/layout/SchemaJsonLd";
@@ -36,6 +37,7 @@ type Article = {
 
 function JournalPage() {
   const { t, lang } = useLanguage();
+  const { open: openGlossary } = useGlossary();
   const isFr = lang === "fr";
   const articles = ta<Article[]>(translations[lang], "journal.articles");
   const [openSlug, setOpenSlug] = useState<string | null>(null);
@@ -301,8 +303,9 @@ function JournalPage() {
             →
           </span>
         </Link>
-        <Link
-          to="/lexique"
+        <button
+          type="button"
+          onClick={() => openGlossary()}
           className="group inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-base text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-bronze-deep)] transition-colors"
         >
           <span className="relative">
@@ -312,7 +315,7 @@ function JournalPage() {
           <span aria-hidden="true" className="transition-transform duration-500 group-hover:translate-x-1">
             →
           </span>
-        </Link>
+        </button>
       </div>
     </LegalPageWrap>
   );

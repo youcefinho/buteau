@@ -75,11 +75,7 @@ export const breadcrumbs = {
       { name: lang === "fr" ? "Accueil" : "Home", url: `${SITE_URL}/` },
       { name: lang === "fr" ? "Outils" : "Tools", url: `${SITE_URL}/outils` },
     ]),
-  lexique: (lang: "fr" | "en") =>
-    buildBreadcrumbList([
-      { name: lang === "fr" ? "Accueil" : "Home", url: `${SITE_URL}/` },
-      { name: lang === "fr" ? "Lexique" : "Glossary", url: `${SITE_URL}/lexique` },
-    ]),
+  // Note : breadcrumbs.lexique retiré — /lexique est maintenant un modal (pas une route).
   mentionsLegales: (lang: "fr" | "en") =>
     buildBreadcrumbList([
       { name: lang === "fr" ? "Accueil" : "Home", url: `${SITE_URL}/` },

@@ -8,9 +8,13 @@ import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { SplashIntro } from "@/components/layout/SplashIntro";
 import { TrackingPixels } from "@/components/landing/TrackingPixels";
 import { GlossaryModal } from "@/components/landing/GlossaryModal";
+import { ColophonModal } from "@/components/landing/ColophonModal";
+import { CarnetModal } from "@/components/landing/CarnetModal";
 import { NotFoundEditorial } from "@/components/landing/NotFoundEditorial";
 import { PageTransition } from "@/components/layout/PageTransition";
 import { MobileStickyCta } from "@/components/layout/MobileStickyCta";
+import { ColophonProvider } from "@/lib/ColophonContext";
+import { CarnetProvider } from "@/lib/CarnetContext";
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -23,20 +27,24 @@ export const Route = createRootRoute({
 
 function RootComponent() {
   return (
-    <>
-      <SplashIntro />
-      <TrackingPixels />
-      <SkipToContent />
-      <ScrollProgress />
-      <Navbar />
-      <PageTransition>
-        <Outlet />
-      </PageTransition>
-      <Footer />
-      <CookieBanner />
-      <GlossaryModal />
-      <MobileStickyCta />
-      <CustomCursor />
-    </>
+    <ColophonProvider>
+      <CarnetProvider>
+        <SplashIntro />
+        <TrackingPixels />
+        <SkipToContent />
+        <ScrollProgress />
+        <Navbar />
+        <PageTransition>
+          <Outlet />
+        </PageTransition>
+        <Footer />
+        <CookieBanner />
+        <GlossaryModal />
+        <ColophonModal />
+        <CarnetModal />
+        <MobileStickyCta />
+        <CustomCursor />
+      </CarnetProvider>
+    </ColophonProvider>
   );
 }

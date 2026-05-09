@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Phone, Calculator as CalcIcon, BookOpen, Home as HomeIcon } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
+import { useGlossary } from "@/lib/GlossaryContext";
 import { useQuizTier } from "@/hooks/useQuizTier";
 import { config } from "@/lib/config";
 import { Container } from "@/components/layout/Container";
@@ -23,6 +24,7 @@ export const Route = createFileRoute("/merci")({
 
 function MerciPage() {
   const { t, lang } = useLanguage();
+  const { open: openGlossary } = useGlossary();
   const { tier } = useQuizTier();
 
   // /merci doit être noindex (post-form confirmation, pas de valeur SEO)
@@ -125,16 +127,17 @@ function MerciPage() {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/lexique"
-                  className="group flex items-center gap-4 py-3 border-b border-[color:var(--color-taupe)]/30 hover:border-[color:var(--color-bronze)] transition-colors"
+                <button
+                  type="button"
+                  onClick={() => openGlossary()}
+                  className="group w-full flex items-center gap-4 py-3 border-b border-[color:var(--color-taupe)]/30 hover:border-[color:var(--color-bronze)] transition-colors text-left"
                 >
                   <BookOpen size={18} className="shrink-0 text-[color:var(--color-bronze)]" aria-hidden="true" />
                   <span className="font-[var(--font-display)] text-base text-[color:var(--color-navy-deep)] group-hover:text-[color:var(--color-bronze-deep)] transition-colors">
                     {t("merci.nextStepLexique")}
                   </span>
                   <span aria-hidden="true" className="ml-auto text-[color:var(--color-taupe)] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">→</span>
-                </Link>
+                </button>
               </li>
               <li>
                 <Link

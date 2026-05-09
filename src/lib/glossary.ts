@@ -10,7 +10,8 @@
  *
  * Cf. skill `intralys-glossary` + `intralys-outils-immobiliers-qc`.
  *
- * Schema.org DefinedTermSet : exposé sur /lexique pour SEO.
+ * Termes accessibles via le modal Glossary (déclenché depuis Footer + GlossaryHovercard).
+ * Plus de route /lexique dédiée — pattern modal cohérent avec Mathis/Serujan.
  */
 
 export type GlossaryTerm = {

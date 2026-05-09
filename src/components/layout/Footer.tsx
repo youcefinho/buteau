@@ -1,6 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
+import { useGlossary } from "@/lib/GlossaryContext";
+import { useColophon } from "@/lib/ColophonContext";
+import { useCarnet } from "@/lib/CarnetContext";
 import { config } from "@/lib/config";
 import { Container } from "./Container";
 
@@ -16,6 +19,9 @@ import { Container } from "./Container";
  */
 export function Footer() {
   const { t, lang } = useLanguage();
+  const { open: openGlossary } = useGlossary();
+  const { open: openColophon } = useColophon();
+  const { open: openCarnet } = useCarnet();
   const year = new Date().getFullYear();
 
   return (
@@ -93,8 +99,16 @@ export function Footer() {
               <li><Link to="/equipe" className="text-glow-hover">{t("nav.team")}</Link></li>
               <li><Link to="/institutions" className="text-glow-hover">{t("nav.institutions")}</Link></li>
               <li><Link to="/outils" className="text-glow-hover">{t("nav.tools")}</Link></li>
-              <li><Link to="/carnet" className="text-glow-hover">{lang === "fr" ? "Le carnet" : "Address book"}</Link></li>
-              <li><Link to="/lexique" className="text-glow-hover">{t("footer.lexique")}</Link></li>
+              <li>
+                <button type="button" onClick={openCarnet} className="text-glow-hover text-left">
+                  {lang === "fr" ? "Le carnet" : "Address book"}
+                </button>
+              </li>
+              <li>
+                <button type="button" onClick={() => openGlossary()} className="text-glow-hover text-left">
+                  {t("footer.lexique")}
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -113,20 +127,20 @@ export function Footer() {
               {t("footer.colophonEdition")}
             </p>
 
-            {/* Légal links + colophon */}
+            {/* Légal links + colophon (modaux pour lexique/colophon, pages pour légal) */}
             <div className="pt-4 mt-4 border-t border-[color:var(--color-taupe)]/30 flex flex-wrap gap-x-5 gap-y-2 text-xs">
-              <Link to="/colophon" className="text-glow-hover">
+              <button type="button" onClick={openColophon} className="text-glow-hover text-left">
                 {lang === "fr" ? "Colophon" : "Colophon"}
-              </Link>
+              </button>
               <Link to="/mentions-legales" className="text-glow-hover">
                 {t("footer.legal")}
               </Link>
               <Link to="/confidentialite" className="text-glow-hover">
                 {t("footer.privacy")}
               </Link>
-              <Link to="/lexique" className="text-glow-hover">
+              <button type="button" onClick={() => openGlossary()} className="text-glow-hover text-left">
                 {t("footer.lexique")}
-              </Link>
+              </button>
             </div>
           </div>
         </div>

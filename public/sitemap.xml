@@ -36,21 +36,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://equipe-buteau.intralysqc.workers.dev/lexique</loc>
-    <changefreq>quarterly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://equipe-buteau.intralysqc.workers.dev/carnet</loc>
-    <changefreq>quarterly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://equipe-buteau.intralysqc.workers.dev/colophon</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
     <loc>https://equipe-buteau.intralysqc.workers.dev/mentions-legales</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
