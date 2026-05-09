@@ -183,8 +183,10 @@ function CalcSliderMini({
         <label htmlFor={id} className="eyebrow text-[color:var(--color-taupe-dark)]">
           {label}
         </label>
+        {/* Fix MEDIUM : output sans htmlFor (l'attribut for sur output doit pointer vers les
+            éléments source du calcul, pas l'input — sémantique imprécise). Output autonome OK. */}
         <output
-          htmlFor={id}
+          aria-live="polite"
           className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base md:text-lg tabular-nums"
         >
           {format(clamped)}

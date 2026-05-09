@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Play, Newspaper, Camera } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
@@ -44,6 +45,9 @@ const eventGallery = [
 
 export function MediaShowcase() {
   const { t, lang } = useLanguage();
+  // Lazy mount iframe (fix MEDIUM) : économise ~600 kB scripts YouTube au load initial.
+  // Mount uniquement au clic sur le poster.
+  const [videoPlaying, setVideoPlaying] = useState(false);
 
   const tvCaptionLines = ta<string[]>(translations[lang], "media.tvCaptionLines");
   const eventCaptionLines = ta<string[]>(translations[lang], "media.eventCaptionLines");
@@ -88,17 +92,41 @@ export function MediaShowcase() {
             01
           </span>
 
-          {/* Embed YouTube + strip thumbnails coulisses — 7/12 — halo-glow renforcé */}
+          {/* Embed YouTube + strip thumbnails coulisses — 7/12 — halo-glow renforcé.
+              Fix MEDIUM : poster lazy load. Iframe mount UNIQUEMENT au clic (économie ~600 kB scripts YouTube). */}
           <div className="lg:col-span-7 order-2 lg:order-1 relative z-10 space-y-4">
             <div className="halo-glow relative bg-[color:var(--color-navy)] aspect-video overflow-hidden border border-[color:var(--color-taupe)]/40 group">
-              <iframe
-                src={`https://www.youtube-nocookie.com/embed/${youtubeId}?rel=0&modestbranding=1`}
-                title={t("media.tvVideoTitle")}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                loading="lazy"
-                className="absolute inset-0 w-full h-full"
-              />
+              {videoPlaying ? (
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${youtubeId}?rel=0&modestbranding=1&autoplay=1`}
+                  title={t("media.tvVideoTitle")}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                />
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => setVideoPlaying(true)}
+                  aria-label={`${t("media.tvVideoTitle")} — ${lang === "fr" ? "lancer la vidéo" : "play video"}`}
+                  className="absolute inset-0 w-full h-full flex items-center justify-center group/play"
+                >
+                  <img
+                    src={`https://i.ytimg.com/vi/${youtubeId}/maxresdefault.jpg`}
+                    alt=""
+                    loading="lazy"
+                    aria-hidden="true"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 bg-gradient-to-t from-[color:var(--color-navy-deep)]/60 via-[color:var(--color-navy-deep)]/20 to-[color:var(--color-navy-deep)]/40 transition-opacity duration-500 group-hover/play:opacity-80"
+                  />
+                  <span className="relative z-10 flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full bg-[color:var(--color-bronze)]/95 text-[color:var(--color-navy-deep)] shadow-2xl transition-all duration-500 group-hover/play:scale-110 group-hover/play:bg-[color:var(--color-bronze-deep)]">
+                    <Play size={32} className="ml-1" aria-hidden="true" />
+                  </span>
+                </button>
+              )}
             </div>
 
             {/* Strip 3 thumbnails coulisses Art de Réussir — photos mail #1 client */}
@@ -147,7 +175,7 @@ export function MediaShowcase() {
             <div className="space-y-4">
               {tvCaptionLines.map((line, idx) => (
                 <p
-                  key={idx}
+                  key={`tv-${idx}-${line.slice(0, 20)}`}
                   className={
                     idx === 0
                       ? "dropcap text-base md:text-[1.0625rem] leading-[1.75] text-[color:var(--color-navy-deep)]/85"
@@ -190,7 +218,7 @@ export function MediaShowcase() {
             <div className="space-y-4">
               {eventCaptionLines.map((line, idx) => (
                 <p
-                  key={idx}
+                  key={`event-${idx}-${line.slice(0, 20)}`}
                   className={
                     idx === 0
                       ? "dropcap text-base md:text-[1.0625rem] leading-[1.75] text-[color:var(--color-navy-deep)]/85"

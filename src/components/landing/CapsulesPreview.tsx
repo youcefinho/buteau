@@ -17,7 +17,7 @@ import { ta, translations } from "@/lib/translations";
  */
 export function CapsulesPreview() {
   const { t, lang } = useLanguage();
-  const items = ta<Array<{ title: string; hook: string }>>(
+  const items = ta<Array<{ categoryId?: string; title: string; hook: string }>>(
     translations[lang],
     "home.capsulesPreview.items",
   );
@@ -67,9 +67,10 @@ export function CapsulesPreview() {
           {/* Items list — 7/12 — magazine table-of-contents éditorial */}
           <ol className="lg:col-span-7 space-y-0 border-t border-[color:var(--color-taupe)]/40">
             {items.map((item, idx) => (
-              <li key={idx}>
+              <li key={`${idx}-${item.title.slice(0, 20)}`}>
                 <Link
                   to="/capsules"
+                  hash={item.categoryId}
                   className="group flex items-start gap-5 md:gap-7 py-6 md:py-7 border-b border-[color:var(--color-taupe)]/40 transition-colors duration-300 hover:border-[color:var(--color-bronze)]"
                 >
                   {/* Numéro Cormorant italic XL — pattern table-of-contents magazine */}

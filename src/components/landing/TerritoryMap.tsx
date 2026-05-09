@@ -224,7 +224,6 @@ export function TerritoryMap() {
                   <li
                     key={r.name}
                     onMouseEnter={() => setActiveIdx(idx)}
-                    onMouseLeave={() => setActiveIdx(0)}
                     onFocus={() => setActiveIdx(idx)}
                     tabIndex={0}
                     className={`group cursor-pointer flex items-baseline gap-4 py-3 border-b border-[color:var(--color-taupe)]/30 transition-all duration-300 ${

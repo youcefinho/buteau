@@ -21,10 +21,14 @@ export function ScrollProgress() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
+    // Fix MEDIUM : recompute après splash (overflow hidden cache scrollHeight au mount)
+    // 3 timeouts couvrent les délais possibles : 500ms/1500ms/2000ms
+    const timeouts = [500, 1500, 2000].map((delay) => window.setTimeout(onScroll, delay));
     return () => {
       cancelAnimationFrame(raf);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
+      timeouts.forEach((id) => window.clearTimeout(id));
     };
   }, []);
 

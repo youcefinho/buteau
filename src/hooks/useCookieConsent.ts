@@ -36,13 +36,18 @@ function loadFromStorage(): ConsentState {
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY);
     if (!raw) return DEFAULT_STATE;
-    const parsed = JSON.parse(raw) as Partial<ConsentState>;
+    const parsed = JSON.parse(raw) as Record<string, unknown>;
+    // Fix MEDIUM : validation strict bool — !!parsed.analytics acceptait "yes" (chaîne) → true
+    // Maintenant : exiger typeof === "boolean" sinon false (consent doit être prouvable Loi 25 art. 23)
+    const isBool = (v: unknown): v is boolean => typeof v === "boolean";
+    const isIsoDate = (v: unknown): v is string =>
+      typeof v === "string" && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/.test(v);
     return {
       necessary: true,
-      analytics: !!parsed.analytics,
-      marketing: !!parsed.marketing,
-      decided: !!parsed.decided,
-      decidedAt: parsed.decidedAt ?? null,
+      analytics: isBool(parsed.analytics) ? parsed.analytics : false,
+      marketing: isBool(parsed.marketing) ? parsed.marketing : false,
+      decided: isBool(parsed.decided) ? parsed.decided : false,
+      decidedAt: isIsoDate(parsed.decidedAt) ? parsed.decidedAt : null,
     };
   } catch {
     return DEFAULT_STATE;

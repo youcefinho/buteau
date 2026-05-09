@@ -30,8 +30,15 @@ export function Services() {
     "home.services.items",
   );
 
-  // Décalages en % (escalier diagonal). 5 items après ajout consolidation de dettes.
-  const offsets = ["0%", "5%", "10%", "15%", "20%"];
+  // Décalages staircase en classes Tailwind responsive (fix MEDIUM : avant <style> tag inline + sélecteur fragile #services > div > div > article:nth-child)
+  // Tailwind v4 supporte arbitrary values + breakpoint md: → ml appliqué uniquement >= 768px
+  const offsetClasses = [
+    "md:ml-0",
+    "md:ml-[5%]",
+    "md:ml-[10%]",
+    "md:ml-[15%]",
+    "md:ml-[20%]",
+  ];
   const numerals = ["I", "II", "III", "IV", "V"];
 
   return (
@@ -43,15 +50,12 @@ export function Services() {
           tone="light"
         />
 
-        {/* Cascading staircase — diagonal flow desktop */}
+        {/* Cascading staircase — diagonal flow desktop via Tailwind arbitrary values */}
         <div className="space-y-6 md:space-y-8 max-w-5xl mx-auto">
           {items.map((s, idx) => (
             <article
-              key={idx}
-              style={{
-                marginLeft: typeof window === "undefined" ? "0%" : undefined,
-              }}
-              className={`group relative bg-[color:var(--color-surface)] border-l-[3px] border-[color:var(--color-taupe)] transition-all duration-500 hover:border-l-[5px] hover:border-[color:var(--color-bronze)] hover:shadow-[0_18px_44px_-22px_rgba(16,34,61,0.32)] hover:-translate-y-1 overflow-hidden md:max-w-[78%]`}
+              key={s.title}
+              className={`group relative bg-[color:var(--color-surface)] border-l-[3px] border-[color:var(--color-taupe)] transition-all duration-500 hover:border-l-[5px] hover:border-[color:var(--color-bronze)] hover:shadow-[0_18px_44px_-22px_rgba(16,34,61,0.32)] hover:-translate-y-1 overflow-hidden md:max-w-[78%] ${offsetClasses[idx] ?? ""}`}
             >
               {/* Numéro romain XL filigrane DEBORDANT à gauche (signature diagonal) */}
               <span
@@ -90,17 +94,6 @@ export function Services() {
           ))}
         </div>
       </Container>
-
-      {/* CSS inline pour les décalages diagonaux (responsive) — 5 items */}
-      <style>{`
-        @media (min-width: 768px) {
-          #services > div > div > article:nth-child(1) { margin-left: ${offsets[0]}; }
-          #services > div > div > article:nth-child(2) { margin-left: ${offsets[1]}; }
-          #services > div > div > article:nth-child(3) { margin-left: ${offsets[2]}; }
-          #services > div > div > article:nth-child(4) { margin-left: ${offsets[3]}; }
-          #services > div > div > article:nth-child(5) { margin-left: ${offsets[4]}; }
-        }
-      `}</style>
     </section>
   );
 }

@@ -181,9 +181,9 @@ async function handleLead(
   // Phase 9 : remplir GHL_LOCATION_ID + GHL_TRACKING_ID via wrangler secret put
   if (env.GHL_LOCATION_ID && env.GHL_TRACKING_ID) {
     ctx.waitUntil(pushToGhl(env, lead, createdAt));
-  } else {
-    console.log("[GHL] Push skipped — GHL_LOCATION_ID or GHL_TRACKING_ID missing (Phase 9)");
   }
+  // Fix LOW : log silencieux Phase 9 — pas de console.log spam à chaque submit
+  // (acceptable de skip silencieusement tant que GHL secrets sont absents)
 
   return jsonOk({ status: "received" });
 }
@@ -207,8 +207,12 @@ async function pushToGhl(
       eventType: "Lead",
       eventName: "FormSubmission",
       data: {
+        // Split naïf : 1er token = first_name, reste = last_name. Edge case noms composés
+        // (Latam, Marie-Claude) — acceptable pour l'instant. Si client demande Phase 9, ajouter
+        // 2 inputs séparés first_name/last_name dans le ContactForm.
         first_name: lead.full_name.split(" ")[0] ?? "",
-        last_name: lead.full_name.split(" ").slice(1).join(" "),
+        last_name: lead.full_name.split(" ").slice(1).join(" ") || lead.full_name,
+        full_name: lead.full_name, // fallback brut si GHL préfère parser lui-même
         email: lead.email,
         phone: lead.phone ?? "",
         // custom fields à ajouter ici quand GHL fournit les IDs (Phase 9)
@@ -317,7 +321,7 @@ function withSecurityHeaders(response: Response): Response {
       "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://www.clarity.ms",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com data:",
-      "img-src 'self' data: https://i.imgur.com https://static.wixstatic.com https://upload.wikimedia.org https://b2b2c.ca https://logos-world.net https://ugc.production.linktr.ee https://storage.googleapis.com https://assets.cdn.filesafe.space https://www.google-analytics.com https://www.facebook.com",
+      "img-src 'self' data: https://i.imgur.com https://static.wixstatic.com https://upload.wikimedia.org https://b2b2c.ca https://logos-world.net https://ugc.production.linktr.ee https://storage.googleapis.com https://assets.cdn.filesafe.space https://www.google-analytics.com https://www.facebook.com https://i.ytimg.com",
       "connect-src 'self' https://services.leadconnectorhq.com https://www.google-analytics.com https://www.clarity.ms https://*.facebook.com",
       "frame-src 'self' https://api.leadconnectorhq.com https://www.youtube-nocookie.com https://www.youtube.com",
       "object-src 'none'",
