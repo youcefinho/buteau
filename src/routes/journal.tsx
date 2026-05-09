@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Clock, ArrowRight, ChevronDown } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
@@ -38,12 +38,61 @@ function JournalPage() {
   const isFr = lang === "fr";
   const articles = ta<Article[]>(translations[lang], "journal.articles");
   const [openSlug, setOpenSlug] = useState<string | null>(null);
+  const [readingProgress, setReadingProgress] = useState(0);
+  const openArticleRef = useRef<HTMLDivElement | null>(null);
+
+  // Reading progress bar — track scroll position relative to open article body.
+  // Pattern Medium/Substack : barre fine bronze fixed top qui se remplit selon
+  // la progression dans le body de l'article ouvert. Reset quand on ferme.
+  useEffect(() => {
+    if (!openSlug) {
+      setReadingProgress(0);
+      return;
+    }
+
+    const computeProgress = () => {
+      const el = openArticleRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const viewportH = window.innerHeight;
+      // Article fully scrolled past = 1 ; just entered viewport = 0
+      const totalScrollable = rect.height - viewportH;
+      if (totalScrollable <= 0) {
+        setReadingProgress(rect.bottom < viewportH ? 1 : 0);
+        return;
+      }
+      const scrolled = -rect.top;
+      const ratio = Math.max(0, Math.min(1, scrolled / totalScrollable));
+      setReadingProgress(ratio);
+    };
+
+    computeProgress();
+    window.addEventListener("scroll", computeProgress, { passive: true });
+    window.addEventListener("resize", computeProgress);
+    return () => {
+      window.removeEventListener("scroll", computeProgress);
+      window.removeEventListener("resize", computeProgress);
+    };
+  }, [openSlug]);
 
   return (
     <LegalPageWrap
       eyebrow={isFr ? "Le journal" : "The journal"}
       title={ta<string>(translations[lang], "journal.title")}
     >
+      {/* Reading progress bar — visible uniquement quand un article est ouvert.
+          Pattern Medium/Substack premium feeling. Bronze fine ligne top fixed. */}
+      {openSlug && (
+        <div
+          aria-hidden="true"
+          className="fixed top-0 inset-x-0 z-[60] h-[2px] bg-[color:var(--color-taupe)]/20 pointer-events-none"
+        >
+          <div
+            className="h-full bg-gradient-to-r from-[color:var(--color-bronze)] via-[color:var(--color-bronze-deep)] to-[color:var(--color-bronze)] transition-[width] duration-150 ease-out"
+            style={{ width: `${readingProgress * 100}%` }}
+          />
+        </div>
+      )}
       <SchemaJsonLd
         schema={{
           "@context": "https://schema.org",
@@ -129,7 +178,10 @@ function JournalPage() {
 
                   {/* Body complet — affiché en accordion */}
                   {hasBody && isOpen && (
-                    <div className="border-t border-[color:var(--color-taupe)]/30 pt-7 mt-3 space-y-5 animate-[buteauFadeUp_500ms_ease-out_both]">
+                    <div
+                      ref={openArticleRef}
+                      className="border-t border-[color:var(--color-taupe)]/30 pt-7 mt-3 space-y-5 animate-[buteauFadeUp_500ms_ease-out_both]"
+                    >
                       {/* Drop cap sur le 1er paragraphe + pull-quote signature au milieu */}
                       {a.body!.map((para, pi) => {
                         const middleIdx = Math.floor(a.body!.length / 2);

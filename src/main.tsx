@@ -10,6 +10,9 @@ const router = createRouter({
   routeTree,
   defaultPreload: "intent",
   scrollRestoration: true,
+  // View Transitions API native — fade cinematic entre routes (Chrome 111+, Safari 18+).
+  // Fallback : navigation standard sur browsers non-supportés (no-op gracieux).
+  defaultViewTransition: true,
 });
 
 declare module "@tanstack/react-router" {

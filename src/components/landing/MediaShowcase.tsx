@@ -112,7 +112,7 @@ export function MediaShowcase() {
                     src={src}
                     alt={`${t("media.tvTitle")} — ${idx + 1}`}
                     loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="photo-edito w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div
                     className="absolute inset-0 bg-gradient-to-t from-[color:var(--color-navy-deep)]/30 via-transparent to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-20"
@@ -230,7 +230,7 @@ export function MediaShowcase() {
                     src={src}
                     alt={`${t("media.eventTitle")} — ${idx + 1}`}
                     loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="photo-edito w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div
                     className="absolute inset-0 bg-gradient-to-t from-[color:var(--color-navy-deep)]/30 via-transparent to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-20"

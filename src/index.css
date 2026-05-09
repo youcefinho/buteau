@@ -826,3 +826,55 @@ body {
     );
   }
 }
+
+/* === View Transitions API — page transitions cinématiques natives ===
+   Browser support : Chrome 111+, Edge, Safari 18+. Fallback gracieux ailleurs.
+   Pattern fade-up subtle pour cohérence avec PageTransition existante. */
+@keyframes vtFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes vtFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+::view-transition-old(root) {
+  animation: vtFadeOut 280ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+::view-transition-new(root) {
+  animation: vtFadeUp 380ms cubic-bezier(0.16, 1, 0.3, 1) 80ms both;
+}
+
+/* Respect prefers-reduced-motion (a11y) */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 1ms !important;
+  }
+}
+
+/* === Photo treatment cinématique — duotone-ish overlay subtle ===
+   Applique un voile bronze/navy + saturation dynamique pour cohésion édito.
+   Au hover : photo retrouve sa saturation pleine (effet "réveil"). */
+.photo-edito {
+  filter: saturate(0.78) contrast(1.04) brightness(0.96);
+  transition: filter 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.photo-edito:hover,
+.group:hover .photo-edito {
+  filter: saturate(1) contrast(1) brightness(1);
+}
