@@ -68,7 +68,7 @@ export default {
     // ===== Static assets (SPA fallback géré par wrangler config) =====
     // HTMLRewriter swap title/description/og + Schema.org per route SSR-style.
     const assetResponse = await env.ASSETS.fetch(request);
-    const withMeta = await injectRouteMeta(assetResponse, url.pathname);
+    const withMeta = await injectRouteMeta(assetResponse, url.pathname, request);
     return withSecurityHeaders(withMeta);
   },
 };
@@ -83,9 +83,12 @@ export default {
 interface RouteMetaSSR {
   title: string;
   description: string;
+  titleEn?: string;
+  descriptionEn?: string;
   ogImage?: string;
   noindex?: boolean;
   schemaJsonLd?: string;
+  schemaBuilder?: (lang: "fr" | "en") => string;
 }
 
 const SITE_ORIGIN = "https://equipe-buteau.intralysqc.workers.dev";
@@ -93,39 +96,94 @@ const SITE_ORIGIN = "https://equipe-buteau.intralysqc.workers.dev";
 const ROUTE_META_SSR: Record<string, RouteMetaSSR> = {
   "/carnet": {
     title: "Le carnet de l'emprunteur — programmes, notaires, partenaires | Équipe Buteau",
+    titleEn: "The borrower's notebook — programs, notaries, partners | Équipe Buteau",
     description:
       "Carnet vérifié pour emprunteurs hypothécaires Québec — APP/RAP, notaires, inspecteurs, assurances, outils gouvernementaux. Sources officielles signées Équipe Buteau.",
-    schemaJsonLd: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "@id": `${SITE_ORIGIN}/carnet#carnet`,
-      name: "Le carnet de l'emprunteur — Équipe Buteau",
-      description:
-        "Notaires, programmes APP/RAP, inspecteurs, assurances, outils gouvernementaux — sources vérifiables.",
-      inLanguage: "fr-CA",
-      provider: { "@id": `${SITE_ORIGIN}/#business` },
-    }),
+    descriptionEn:
+      "Verified notebook for Quebec mortgage borrowers — FHSA/HBP, notaries, inspectors, insurance, government tools. Official sources signed Équipe Buteau.",
+    schemaBuilder: (lang) => {
+      const items = [
+        { name: lang === "fr" ? "AMF — Autorité des marchés financiers" : "AMF — Quebec Financial Markets Authority", url: "https://lautorite.qc.ca" },
+        { name: lang === "fr" ? "SCHL — Société canadienne d'hypothèques et de logement" : "CMHC — Canada Mortgage and Housing Corporation", url: "https://www.cmhc-schl.gc.ca" },
+        { name: lang === "fr" ? "ARC — Régime d'accession à la propriété (RAP)" : "CRA — Home Buyers' Plan (HBP)", url: "https://www.canada.ca/fr/agence-revenu/services/impot/particuliers/sujets/regime-accession-propriete.html" },
+        { name: lang === "fr" ? "ARC — CELIAPP" : "CRA — FHSA", url: "https://www.canada.ca/fr/agence-revenu/services/impot/particuliers/sujets/celiapp.html" },
+        { name: lang === "fr" ? "Chambre des notaires du Québec" : "Quebec Chamber of Notaries", url: "https://www.cnq.org" },
+        { name: lang === "fr" ? "Planiprêt — Cabinet en courtage hypothécaire" : "Planiprêt — Mortgage brokerage firm", url: "https://www.planipret.com" },
+      ];
+      return JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "@id": `${SITE_ORIGIN}/carnet#carnet`,
+        name: lang === "fr"
+          ? "Le carnet de l'emprunteur — Équipe Buteau"
+          : "The borrower's notebook — Équipe Buteau",
+        description: lang === "fr"
+          ? "Notaires, programmes APP/RAP, inspecteurs, assurances, outils gouvernementaux — sources vérifiables."
+          : "Notaries, FHSA/HBP programs, inspectors, insurance, government tools — verifiable sources.",
+        inLanguage: lang === "fr" ? "fr-CA" : "en-CA",
+        provider: { "@id": `${SITE_ORIGIN}/#business` },
+        itemListElement: items.map((item, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: item.name,
+          url: item.url,
+        })),
+      });
+    },
   },
   "/colophon": {
     title: "Le colophon — méthode et standards | Équipe Buteau",
+    titleEn: "The colophon — method and standards | Équipe Buteau",
     description:
       "L'atelier — typographie, palette, principes éditoriaux et accessibilité du site Équipe Buteau, courtier hypothécaire Planiprêt à Laval.",
-    schemaJsonLd: JSON.stringify({
+    descriptionEn:
+      "The atelier — typography, palette, editorial principles and accessibility of Équipe Buteau's site, Planiprêt mortgage broker in Laval.",
+    schemaBuilder: (lang) => JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebPage",
       "@id": `${SITE_ORIGIN}/colophon`,
-      name: "Le colophon — méthode du cabinet Équipe Buteau",
-      description: "Typographie, palette, principes éditoriaux, accessibilité, mentions techniques.",
-      inLanguage: "fr-CA",
+      name: lang === "fr"
+        ? "Le colophon — méthode du cabinet Équipe Buteau"
+        : "The colophon — Équipe Buteau firm method",
+      description: lang === "fr"
+        ? "Typographie, palette, principes éditoriaux, accessibilité, mentions techniques."
+        : "Typography, palette, editorial principles, accessibility, technical credits.",
+      inLanguage: lang === "fr" ? "fr-CA" : "en-CA",
       isPartOf: { "@id": `${SITE_ORIGIN}/#website` },
     }),
   },
   "/lexique": {
     title: "Lexique hypothécaire — 14 termes essentiels Québec | Équipe Buteau",
+    titleEn: "Mortgage glossary — 14 essential Quebec terms | Équipe Buteau",
     description:
       "Lexique de 14 termes hypothécaires essentiels au Québec — pré-approbation, mise de fonds, taxe de bienvenue, vice caché. Sources : SCHL, AMF, ARC, Code civil du Québec.",
-    // DefinedTermSet COMPLET SSR — généré dynamiquement depuis glossary import (cf. injectRouteMeta).
-    // schemaJsonLd undefined ici car généré au runtime à partir du glossary import.
+    descriptionEn:
+      "Glossary of 14 essential Quebec mortgage terms — pre-approval, down payment, welcome tax, hidden defects. Sources: CMHC, AMF, CRA, Civil Code of Quebec.",
+    // DefinedTermSet COMPLET SSR — généré dynamiquement par schemaBuilder ci-dessous.
+    schemaBuilder: (lang) => {
+      const isFr = lang === "fr";
+      return JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "DefinedTermSet",
+        "@id": `${SITE_ORIGIN}/lexique#termset`,
+        name: isFr
+          ? "Lexique hypothécaire — Équipe Buteau"
+          : "Mortgage glossary — Équipe Buteau",
+        description: isFr
+          ? "14 termes essentiels pour comprendre votre dossier hypothécaire au Québec."
+          : "14 essential terms to understand your mortgage file in Quebec.",
+        inLanguage: isFr ? "fr-CA" : "en-CA",
+        url: `${SITE_ORIGIN}/lexique`,
+        publisher: { "@id": `${SITE_ORIGIN}/#business` },
+        hasDefinedTerm: glossary.map((g) => ({
+          "@type": "DefinedTerm",
+          "@id": `${SITE_ORIGIN}/lexique#${g.slug}`,
+          name: isFr ? g.term.fr : g.term.en,
+          description: isFr ? g.definition.fr : g.definition.en,
+          ...(g.source ? { source: g.source } : {}),
+        })),
+      });
+    },
   },
   "/equipe": {
     title: "Notre équipe — Andrew Buteau et l'équipe Planiprêt à Laval",
@@ -182,30 +240,13 @@ function normalizePathname(pathname: string): string {
   return pathname;
 }
 
-// DefinedTermSet COMPLET généré à partir du glossary import (FR par défaut).
-// Pour /lexique uniquement — autres routes utilisent meta.schemaJsonLd statique.
-function buildLexiqueDefinedTermSet(): string {
-  return JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "DefinedTermSet",
-    "@id": `${SITE_ORIGIN}/lexique#termset`,
-    name: "Lexique hypothécaire — Équipe Buteau",
-    description:
-      "14 termes essentiels pour comprendre votre dossier hypothécaire au Québec.",
-    inLanguage: "fr-CA",
-    url: `${SITE_ORIGIN}/lexique`,
-    publisher: { "@id": `${SITE_ORIGIN}/#business` },
-    hasDefinedTerm: glossary.map((g) => ({
-      "@type": "DefinedTerm",
-      "@id": `${SITE_ORIGIN}/lexique#${g.slug}`,
-      name: g.term.fr,
-      description: g.definition.fr,
-      ...(g.source ? { source: g.source } : {}),
-    })),
-  });
+function detectLang(request: Request): "fr" | "en" {
+  const accept = request.headers.get("Accept-Language") ?? "";
+  const first = accept.split(",")[0]?.trim().toLowerCase() ?? "";
+  return first.startsWith("en") ? "en" : "fr";
 }
 
-async function injectRouteMeta(response: Response, pathname: string): Promise<Response> {
+async function injectRouteMeta(response: Response, pathname: string, request: Request): Promise<Response> {
   const cleanPath = normalizePathname(pathname);
   const meta = ROUTE_META_SSR[cleanPath];
   if (!meta) return response;
@@ -213,32 +254,37 @@ async function injectRouteMeta(response: Response, pathname: string): Promise<Re
   const contentType = response.headers.get("content-type") ?? "";
   if (!contentType.includes("text/html")) return response;
 
+  const lang = detectLang(request);
+  const isEn = lang === "en";
+  const title = isEn && meta.titleEn ? meta.titleEn : meta.title;
+  const description = isEn && meta.descriptionEn ? meta.descriptionEn : meta.description;
   const canonicalUrl = `${SITE_ORIGIN}${cleanPath}`;
-
-  // Pour /lexique : DefinedTermSet COMPLET généré dynamiquement (priorité sur meta.schemaJsonLd statique).
-  const dynamicSchema = cleanPath === "/lexique" ? buildLexiqueDefinedTermSet() : meta.schemaJsonLd;
+  const schemaJsonLd = meta.schemaBuilder ? meta.schemaBuilder(lang) : meta.schemaJsonLd;
 
   const rewriter = new HTMLRewriter()
-    .on("title", { element(el) { el.setInnerContent(meta.title); } })
+    .on("html", { element(el) { el.setAttribute("lang", isEn ? "en" : "fr"); } })
+    .on("title", { element(el) { el.setInnerContent(title); } })
     .on('meta[name="description"]', {
-      element(el) { el.setAttribute("content", meta.description); },
+      element(el) { el.setAttribute("content", description); },
     })
     .on('meta[property="og:title"]', {
-      element(el) { el.setAttribute("content", meta.title); },
+      element(el) { el.setAttribute("content", title); },
     })
     .on('meta[property="og:description"]', {
-      element(el) { el.setAttribute("content", meta.description); },
+      element(el) { el.setAttribute("content", description); },
     })
     .on('meta[name="twitter:title"]', {
-      element(el) { el.setAttribute("content", meta.title); },
+      element(el) { el.setAttribute("content", title); },
     })
     .on('meta[name="twitter:description"]', {
-      element(el) { el.setAttribute("content", meta.description); },
+      element(el) { el.setAttribute("content", description); },
     })
     .on('meta[property="og:url"]', {
       element(el) { el.setAttribute("content", canonicalUrl); },
     })
-    // CRITIQUE SEO : override canonical pour pointer vers la route, pas la home.
+    .on('meta[property="og:locale"]', {
+      element(el) { el.setAttribute("content", isEn ? "en_CA" : "fr_CA"); },
+    })
     .on('link[rel="canonical"]', {
       element(el) { el.setAttribute("href", canonicalUrl); },
     });
@@ -253,15 +299,15 @@ async function injectRouteMeta(response: Response, pathname: string): Promise<Re
       });
   }
 
-  if (meta.noindex || dynamicSchema) {
+  if (meta.noindex || schemaJsonLd) {
     rewriter.on("head", {
       element(el) {
         if (meta.noindex) {
           el.append('<meta name="robots" content="noindex, nofollow">', { html: true });
         }
-        if (dynamicSchema) {
+        if (schemaJsonLd) {
           el.append(
-            `<script type="application/ld+json">${dynamicSchema}</script>`,
+            `<script type="application/ld+json">${schemaJsonLd}</script>`,
             { html: true },
           );
         }
@@ -269,7 +315,17 @@ async function injectRouteMeta(response: Response, pathname: string): Promise<Re
     });
   }
 
-  return rewriter.transform(response);
+  const transformed = rewriter.transform(response);
+  const newHeaders = new Headers(transformed.headers);
+  const existingVary = newHeaders.get("Vary") ?? "";
+  if (!existingVary.toLowerCase().includes("accept-language")) {
+    newHeaders.set("Vary", existingVary ? `${existingVary}, Accept-Language` : "Accept-Language");
+  }
+  return new Response(transformed.body, {
+    status: transformed.status,
+    statusText: transformed.statusText,
+    headers: newHeaders,
+  });
 }
 
 // ============================================================
