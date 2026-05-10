@@ -1,12 +1,11 @@
 import { Link } from "@tanstack/react-router";
-import { BookOpen, Video, FileText, Download, BookMarked, Layers } from "lucide-react";
+import { BookOpen, Video, FileText, Download, BookMarked } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "./SectionHeading";
 import { ta, translations } from "@/lib/translations";
 import { useGlossary } from "@/lib/GlossaryContext";
 import { useCarnet } from "@/lib/CarnetContext";
-import { useColophon } from "@/lib/ColophonContext";
 
 /**
  * Section Outils & Ressources (teaser) — 4 cartes glass sur surface navy.
@@ -18,7 +17,6 @@ export function ToolsTeaser() {
   const { t, lang } = useLanguage();
   const { open: openGlossary } = useGlossary();
   const { open: openCarnet } = useCarnet();
-  const { open: openColophon } = useColophon();
   const items = ta<Array<{ title: string; desc: string }>>(
     translations[lang],
     "home.tools.items",
@@ -83,7 +81,7 @@ export function ToolsTeaser() {
             {t("home.tools.cta")}
           </Link>
 
-          {/* Pont vers les 3 ressources éditoriales (lexique modal + carnet route + colophon route) */}
+          {/* Pont vers ressources éditoriales (lexique modal + carnet) — Colophon réservé au footer global */}
           <div className="mt-8 flex flex-wrap justify-center items-center gap-x-5 gap-y-2 text-sm">
             <button
               type="button"
@@ -101,15 +99,6 @@ export function ToolsTeaser() {
             >
               <BookMarked className="w-3.5 h-3.5 text-[color:var(--color-bronze)]" strokeWidth={1.5} aria-hidden />
               {lang === "fr" ? "Carnet" : "Notebook"}
-            </button>
-            <span className="text-[color:var(--color-bronze)]/30 select-none hidden sm:inline" aria-hidden>·</span>
-            <button
-              type="button"
-              onClick={openColophon}
-              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/80 cursor-pointer"
-            >
-              <Layers className="w-3.5 h-3.5 text-[color:var(--color-bronze)]" strokeWidth={1.5} aria-hidden />
-              {lang === "fr" ? "Colophon" : "Colophon"}
             </button>
           </div>
         </div>

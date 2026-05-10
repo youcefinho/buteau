@@ -140,15 +140,6 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
         />
       </ColophonSection>
 
-      {/* Composition */}
-      <ColophonSection label={isFr ? "Composition" : "Composition"}>
-        <p className="font-[var(--font-editorial)] italic text-base leading-[1.7] text-[color:var(--color-navy-deep)]/80">
-          {isFr
-            ? "Composé en TypeScript. Hébergé sur Cloudflare. Aucun tracker tiers chargé sans consentement explicite. Le code source des composants suit les principes énoncés ci-dessus — la rigueur visible côté client est la même que la rigueur invisible côté serveur."
-            : "Set in TypeScript. Hosted on Cloudflare. No third-party tracker loaded without explicit consent. The source code follows the principles stated above — the rigor visible client-side mirrors the rigor invisible server-side."}
-        </p>
-      </ColophonSection>
-
       {/* Crédits final */}
       <section className="pt-10 mt-8 border-t border-[color:var(--color-taupe)]/40 text-center">
         <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-3">

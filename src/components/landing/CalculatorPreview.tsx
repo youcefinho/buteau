@@ -1,12 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, BookOpen, Layers } from "lucide-react";
+import { ArrowRight, BookOpen } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { parseLocaleFloat, formatLocaleCurrency } from "@/lib/parseLocaleFloat";
 import { useCountUp } from "@/hooks/useCountUp";
 import { useGlossary } from "@/lib/GlossaryContext";
-import { useColophon } from "@/lib/ColophonContext";
 
 /**
  * CalculatorPreview — version compacte du calculateur sur l'Accueil.
@@ -28,7 +27,6 @@ const RANGES = {
 export function CalculatorPreview() {
   const { t, lang } = useLanguage();
   const { open: openGlossary } = useGlossary();
-  const { open: openColophon } = useColophon();
   const [amount, setAmount] = useState<string>(String(DEFAULTS.amount));
   const [rate, setRate] = useState<string>(String(DEFAULTS.rate));
   const [years, setYears] = useState<string>(String(DEFAULTS.years));
@@ -214,7 +212,7 @@ export function CalculatorPreview() {
               ? "Composé semi-annuel canadien — la formule a ses termes."
               : "Canadian semi-annual compounding — the formula has its terms."}
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-x-5 gap-y-2 text-sm">
+          <div className="flex justify-center text-sm">
             <button
               type="button"
               onClick={() => openGlossary()}
@@ -222,15 +220,6 @@ export function CalculatorPreview() {
             >
               <BookOpen className="w-3.5 h-3.5 text-[color:var(--color-bronze-deep)]" strokeWidth={1.5} aria-hidden />
               {lang === "fr" ? "Voir le lexique" : "View glossary"}
-            </button>
-            <span className="text-[color:var(--color-bronze)]/40 select-none hidden sm:inline" aria-hidden>·</span>
-            <button
-              type="button"
-              onClick={openColophon}
-              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[color:var(--color-navy-deep)]/85 cursor-pointer"
-            >
-              <Layers className="w-3.5 h-3.5 text-[color:var(--color-bronze-deep)]" strokeWidth={1.5} aria-hidden />
-              {lang === "fr" ? "Colophon" : "Colophon"}
             </button>
           </div>
         </div>
