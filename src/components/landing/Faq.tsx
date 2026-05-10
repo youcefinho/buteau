@@ -25,7 +25,7 @@ export function Faq() {
   return (
     <section
       id="faq"
-      className="relative py-24 surface-navy overflow-hidden grain-overlay"
+      className="relative py-24 surface-navy overflow-hidden grain-overlay cv-defer"
     >
       {/* Atmospheric continuity — embers per-section signature */}
       <RisingBronzeEmbers count={5} tone="dark" />

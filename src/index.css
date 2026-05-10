@@ -1090,3 +1090,30 @@ body {
     pointer-events: auto !important;
   }
 }
+
+/* ============================================================
+   PERF C.1 — content-visibility: auto sur sections below-fold
+   Browser skip layout+paint quand off-screen (~1 viewport avant entree).
+   Applique via className="cv-defer" sur sections > 3eme viewport.
+   contain-intrinsic-size = hint hauteur estimee (evite scrollbar jump).
+   ============================================================ */
+.cv-defer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
+}
+.cv-defer-sm {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 400px;
+}
+
+/* ============================================================
+   PERF C.12 — prefers-reduced-data : economiser bande passante
+   Chrome only (desactive embers + lourd visuel). Niche mais propre.
+   ============================================================ */
+@media (prefers-reduced-data: reduce) {
+  [class*="ember-"],
+  [class*="rising-ember"],
+  .embers-paused {
+    display: none !important;
+  }
+}
