@@ -63,9 +63,170 @@ export default {
     }
 
     // ===== Static assets (SPA fallback géré par wrangler config) =====
-    return withSecurityHeaders(await env.ASSETS.fetch(request));
+    // HTMLRewriter swap title/description/og + Schema.org per route SSR-style.
+    const assetResponse = await env.ASSETS.fetch(request);
+    const withMeta = await injectRouteMeta(assetResponse, url.pathname);
+    return withSecurityHeaders(withMeta);
   },
 };
+
+// ═══════════════════════════════════════════════════════════
+// SSR meta tags + Schema.org per route via HTMLRewriter
+// ═══════════════════════════════════════════════════════════
+// Buteau n'a pas de RouteMeta côté React — toutes les routes héritent
+// du title statique de index.html. HTMLRewriter swap title/description/og
+// + injecte Schema.org page-specific. FR-CA par défaut.
+
+interface RouteMetaSSR {
+  title: string;
+  description: string;
+  ogImage?: string;
+  noindex?: boolean;
+  schemaJsonLd?: string;
+}
+
+const SITE_ORIGIN = "https://equipe-buteau.intralysqc.workers.dev";
+
+const ROUTE_META_SSR: Record<string, RouteMetaSSR> = {
+  "/carnet": {
+    title: "Le carnet de l'emprunteur — programmes, notaires, partenaires | Équipe Buteau",
+    description:
+      "Carnet vérifié pour emprunteurs hypothécaires Québec — APP/RAP, notaires, inspecteurs, assurances, outils gouvernementaux. Sources officielles signées Équipe Buteau.",
+    schemaJsonLd: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "@id": `${SITE_ORIGIN}/carnet#carnet`,
+      name: "Le carnet de l'emprunteur — Équipe Buteau",
+      description:
+        "Notaires, programmes APP/RAP, inspecteurs, assurances, outils gouvernementaux — sources vérifiables.",
+      inLanguage: "fr-CA",
+      provider: { "@id": `${SITE_ORIGIN}/#business` },
+    }),
+  },
+  "/colophon": {
+    title: "Le colophon — méthode et standards | Équipe Buteau",
+    description:
+      "L'atelier — typographie, palette, principes éditoriaux et accessibilité du site Équipe Buteau, courtier hypothécaire Planiprêt à Laval.",
+    schemaJsonLd: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": `${SITE_ORIGIN}/colophon`,
+      name: "Le colophon — méthode du cabinet Équipe Buteau",
+      description: "Typographie, palette, principes éditoriaux, accessibilité, mentions techniques.",
+      inLanguage: "fr-CA",
+      isPartOf: { "@id": `${SITE_ORIGIN}/#website` },
+    }),
+  },
+  "/lexique": {
+    title: "Lexique hypothécaire — 14 termes essentiels Québec | Équipe Buteau",
+    description:
+      "Lexique de 14 termes hypothécaires essentiels au Québec — pré-approbation, mise de fonds, taxe de bienvenue, vice caché. Sources : SCHL, AMF, ARC, Code civil du Québec.",
+    // DefinedTermSet déjà injecté côté client (dangerouslySetInnerHTML).
+  },
+  "/equipe": {
+    title: "Notre équipe — Andrew Buteau et l'équipe Planiprêt à Laval",
+    description:
+      "Découvrez l'équipe Buteau : Andrew, Abygaèle, Alexis et Felix — courtiers hypothécaires Planiprêt à Laval. Notre méthode, nos valeurs, notre territoire Québec.",
+  },
+  "/institutions": {
+    title: "Nos institutions partenaires — 9 prêteurs hypothécaires | Équipe Buteau",
+    description:
+      "9 institutions financières partenaires : CIBC, TD, Manuvie, Desjardins, CMLS et autres. Couverture pancanadienne pour vos besoins hypothécaires résidentiels et investissement.",
+  },
+  "/outils": {
+    title: "Outils & calculatrices hypothécaires — capacité, refi, taux | Équipe Buteau",
+    description:
+      "Calculateurs hypothécaires, simulation de refinancement, capacité d'emprunt, comparaison de scénarios. Outils gratuits offerts par l'Équipe Buteau, Planiprêt Laval.",
+  },
+  "/journal": {
+    title: "Le journal — articles hypothécaires Québec | Équipe Buteau",
+    description:
+      "Articles factuels sur le marché hypothécaire Québec : refinancement, renouvellement, premier achat, consolidation, investissement. Voix éditoriale signée Andrew Buteau.",
+  },
+  "/courrier": {
+    title: "Le courrier — questions emprunteurs réelles | Équipe Buteau",
+    description:
+      "Lettres à l'éditeur — questions réelles d'emprunteurs hypothécaires au Québec et réponses détaillées par l'Équipe Buteau. Format magazine, ton transparent.",
+  },
+  "/capsules": {
+    title: "Capsules vidéo — stratégies hypothécaires expliquées | Équipe Buteau",
+    description:
+      "34 capsules vidéo classées en 7 catégories — stratégies de refinancement, optimisation, primo-acheteur, investissement. Voix Andrew Buteau, courtier hypothécaire Planiprêt.",
+  },
+  "/mentions-legales": {
+    title: "Mentions légales | Équipe Buteau — Planiprêt Laval",
+    description:
+      "Mentions légales du site Équipe Buteau, courtier hypothécaire Planiprêt à Laval (Québec).",
+  },
+  "/confidentialite": {
+    title: "Politique de confidentialité | Équipe Buteau",
+    description:
+      "Politique de confidentialité conforme à la Loi 25 (Québec) — Équipe Buteau, courtier hypothécaire Planiprêt.",
+  },
+  "/merci": {
+    title: "Merci — l'Équipe Buteau vous contactera bientôt",
+    description:
+      "Merci pour votre demande. L'Équipe Buteau vous contactera dans les meilleurs délais pour discuter de votre projet hypothécaire.",
+    noindex: true,
+  },
+};
+
+async function injectRouteMeta(response: Response, pathname: string): Promise<Response> {
+  const meta = ROUTE_META_SSR[pathname];
+  if (!meta) return response;
+
+  const contentType = response.headers.get("content-type") ?? "";
+  if (!contentType.includes("text/html")) return response;
+
+  const rewriter = new HTMLRewriter()
+    .on("title", { element(el) { el.setInnerContent(meta.title); } })
+    .on('meta[name="description"]', {
+      element(el) { el.setAttribute("content", meta.description); },
+    })
+    .on('meta[property="og:title"]', {
+      element(el) { el.setAttribute("content", meta.title); },
+    })
+    .on('meta[property="og:description"]', {
+      element(el) { el.setAttribute("content", meta.description); },
+    })
+    .on('meta[name="twitter:title"]', {
+      element(el) { el.setAttribute("content", meta.title); },
+    })
+    .on('meta[name="twitter:description"]', {
+      element(el) { el.setAttribute("content", meta.description); },
+    })
+    .on('meta[property="og:url"]', {
+      element(el) { el.setAttribute("content", `${SITE_ORIGIN}${pathname}`); },
+    });
+
+  if (meta.ogImage) {
+    rewriter
+      .on('meta[property="og:image"]', {
+        element(el) { el.setAttribute("content", `${SITE_ORIGIN}${meta.ogImage}`); },
+      })
+      .on('meta[name="twitter:image"]', {
+        element(el) { el.setAttribute("content", `${SITE_ORIGIN}${meta.ogImage}`); },
+      });
+  }
+
+  if (meta.noindex || meta.schemaJsonLd) {
+    rewriter.on("head", {
+      element(el) {
+        if (meta.noindex) {
+          el.append('<meta name="robots" content="noindex, nofollow">', { html: true });
+        }
+        if (meta.schemaJsonLd) {
+          el.append(
+            `<script type="application/ld+json">${meta.schemaJsonLd}</script>`,
+            { html: true },
+          );
+        }
+      },
+    });
+  }
+
+  return rewriter.transform(response);
+}
 
 // ============================================================
 // /api/lead — pipeline V6 4 couches défense
