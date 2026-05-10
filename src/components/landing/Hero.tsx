@@ -44,12 +44,15 @@ export function Hero() {
       <RisingBronzeEmbers count={5} tone="dark" />
 
       {/* Background image avec overlay tonal — laisse respirer l'image (luxury éditorial). */}
-      {/* Audit P1-B : avant 0.78/0.86 mangeait l'image, on baisse à 0.55/0.78 avec dégradé. */}
+      {/* Perf E (2026-05-10) : image self-hostee depuis /hero-buteau.{avif,webp,jpg}.
+          image-set() = browser auto-pick meilleur format supporte (AVIF Chrome 85+,
+          WebP partout). Old browsers (Safari < 14 ~0.5% market share) n'ont pas
+          image-set(), donc on garde un fallback url() comme premiere declaration. */}
       <div
         className="absolute inset-0 bg-cover bg-center md:bg-fixed"
         style={{
           backgroundImage:
-            "linear-gradient(180deg, rgba(16, 34, 61, 0.55) 0%, rgba(16, 34, 61, 0.68) 45%, rgba(16, 34, 61, 0.82) 100%), url('https://i.imgur.com/8cyAet6.jpg')",
+            "linear-gradient(180deg, rgba(16, 34, 61, 0.55) 0%, rgba(16, 34, 61, 0.68) 45%, rgba(16, 34, 61, 0.82) 100%), image-set(url('/hero-buteau.avif') type('image/avif'), url('/hero-buteau.webp') type('image/webp'), url('/hero-buteau.jpg'))",
         }}
         aria-hidden="true"
       />
