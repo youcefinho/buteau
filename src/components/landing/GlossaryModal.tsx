@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
-import { X } from "lucide-react";
+import { X, ArrowRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useGlossary } from "@/lib/GlossaryContext";
 import { glossary } from "@/lib/glossary";
@@ -141,6 +142,22 @@ export function GlossaryModal() {
               )}
             </article>
           ))}
+
+          {/* CTA bas de modal — version SEO indexable du lexique */}
+          <div className="pt-8 mt-4 border-t border-[color:var(--color-taupe)]/40 text-center">
+            <Link
+              to="/lexique"
+              onClick={close}
+              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-sm md:text-base text-[color:var(--color-bronze-deep)] hover:text-[color:var(--color-navy-deep)] transition-colors"
+            >
+              <span>
+                {lang === "fr"
+                  ? "Lire le lexique en version complète"
+                  : "Read the full glossary page"}
+              </span>
+              <ArrowRight className="w-3.5 h-3.5" strokeWidth={1.7} aria-hidden />
+            </Link>
+          </div>
         </div>
       </div>
     </div>
