@@ -1117,3 +1117,17 @@ body {
     display: none !important;
   }
 }
+
+/* ============================================================
+   PERF D.1 — Extend cv-defer auto-apply sur sections below-fold
+   ============================================================ */
+#documents,
+#calculateur,
+#calc-preview,
+#avis,
+#partenaires,
+#capsules,
+#contact {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
+}
