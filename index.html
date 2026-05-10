@@ -44,9 +44,6 @@
     <meta name="geo.region" content="CA-QC" />
     <meta name="geo.placename" content="Laval" />
 
-    <!-- Fonts (préchargement) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- dns-prefetch — services tiers chargés post-load (tracking, forms, analytics) -->
     <link rel="dns-prefetch" href="https://api.leadconnectorhq.com" />
     <link rel="dns-prefetch" href="https://backend.leadconnectorhq.com" />
@@ -55,12 +52,9 @@
     <link rel="dns-prefetch" href="https://connect.facebook.net" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://www.clarity.ms" />
-    <!-- Preload critical font CSS for LCP (Quickwins SEO 2026-05-10) -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&display=swap" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Fonts self-hosted via Fontsource (perf B.1) : Open Sans + Montserrat
+         + Cormorant Garamond + Fraunces variable (italic + WONK/SOFT axes
+         preserves) importes depuis main.tsx. Plus de Google Fonts externe. -->
 
     <!-- Schema.org JSON-LD : FinancialService LocalBusiness (root entity, partagee via @id) -->
     <script type="application/ld+json">

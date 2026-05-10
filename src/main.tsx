@@ -4,6 +4,16 @@ import { RouterProvider, createRouter } from "@tanstack/react-router";
 import { LanguageProvider } from "@/lib/LanguageContext";
 import { GlossaryProvider } from "@/lib/GlossaryContext";
 import { routeTree } from "./routeTree.gen";
+// Fonts self-hosted via Fontsource (perf B.1) — elimine cross-origin
+// fonts.googleapis.com + fonts.gstatic.com pour LCP -200-400ms.
+import "@fontsource-variable/open-sans/index.css";
+import "@fontsource-variable/montserrat/index.css";
+import "@fontsource/cormorant-garamond/400.css";
+import "@fontsource/cormorant-garamond/400-italic.css";
+import "@fontsource/cormorant-garamond/600.css";
+import "@fontsource/cormorant-garamond/600-italic.css";
+import "@fontsource-variable/fraunces/index.css";
+import "@fontsource-variable/fraunces/wght-italic.css";
 import "./index.css";
 
 const router = createRouter({
