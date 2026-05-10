@@ -42,36 +42,52 @@ export function TrackingPixels() {
       wait_for_update: 500, // attend 500ms avant de fire (donne au CookieBanner le temps de set le consent)
     });
 
-    // === GA4 ===
-    if (ga4) {
-      injectScript(`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(ga4)}`, {
-        async: true,
-      });
-      w.gtag("js", new Date());
-      w.gtag("config", ga4, { anonymize_ip: true });
-    }
-
-    // === Google Ads ===
-    if (googleAds) {
-      // GA4 script déjà chargé suffit pour Google Ads tag aussi
-      if (!ga4) {
-        injectScript(
-          `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(googleAds)}`,
-          { async: true },
-        );
-        w.gtag("js", new Date());
+    // Heavy pixel script injections deferred a requestIdleCallback :
+    // - LCP/INP win : main thread libre pendant first paint
+    // - Consent Mode v2 deja set ci-dessus, donc les pixels respectent le state
+    //   quand ils fire (DENIED par defaut → no PII tracking jusqu'a consent)
+    const injectAllPixels = () => {
+      // === GA4 ===
+      if (ga4) {
+        injectScript(`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(ga4)}`, {
+          async: true,
+        });
+        w.gtag!("js", new Date());
+        w.gtag!("config", ga4, { anonymize_ip: true });
       }
-      w.gtag("config", googleAds);
-    }
 
-    // === Meta Pixel ===
-    if (metaPixel) {
-      injectMetaPixel(metaPixel);
-    }
+      // === Google Ads ===
+      if (googleAds) {
+        if (!ga4) {
+          injectScript(
+            `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(googleAds)}`,
+            { async: true },
+          );
+          w.gtag!("js", new Date());
+        }
+        w.gtag!("config", googleAds);
+      }
 
-    // === Microsoft Clarity ===
-    if (clarity) {
-      injectClarity(clarity);
+      // === Meta Pixel ===
+      if (metaPixel) {
+        injectMetaPixel(metaPixel);
+      }
+
+      // === Microsoft Clarity ===
+      if (clarity) {
+        injectClarity(clarity);
+      }
+    };
+
+    type IdleWin = Window & {
+      requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
+    };
+    const idleWin = window as IdleWin;
+    if (typeof idleWin.requestIdleCallback === "function") {
+      idleWin.requestIdleCallback(injectAllPixels, { timeout: 3000 });
+    } else {
+      // Safari < 17.2 : fallback setTimeout
+      setTimeout(injectAllPixels, 1500);
     }
   }, []);
 
