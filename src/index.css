@@ -230,28 +230,30 @@ body {
   will-change: transform, opacity;
 }
 
-/* Variante CREAM/WHITE — pour sections sombres navy (contraste blanc sur bleu) */
+/* Variante CREAM/WHITE — pour sections sombres navy (contraste blanc sur bleu).
+   Opacity bumped 0.75->0.9 + halo bronze chaud pour visibilité réelle (fix 2026-05-10 PM). */
 .ember-buteau-cream {
   position: absolute;
   bottom: -10px;
   border-radius: 50%;
-  background: oklch(0.978 0 0 / 0.75);
+  background: oklch(0.978 0 0 / 0.9);
   box-shadow:
-    0 0 6px oklch(0.978 0 0 / 0.55),
-    0 0 12px oklch(0.978 0 0 / 0.25);
+    0 0 6px oklch(0.978 0 0 / 0.7),
+    0 0 14px oklch(0.704 0.077 56 / 0.35);
   animation: emberRise linear infinite;
   will-change: transform, opacity;
 }
 
-/* Variante NAVY — pour sections claires cream (contraste navy sur cream, prend la couleur du site) */
+/* Variante NAVY — pour sections claires cream (contraste navy sur cream, prend la couleur du site).
+   Opacity bumped 0.55->0.75 (fix 2026-05-10 PM). */
 .ember-buteau-navy {
   position: absolute;
   bottom: -10px;
   border-radius: 50%;
-  background: oklch(0.252 0.067 256 / 0.55);
+  background: oklch(0.252 0.067 256 / 0.75);
   box-shadow:
-    0 0 6px oklch(0.252 0.067 256 / 0.4),
-    0 0 12px oklch(0.252 0.067 256 / 0.18);
+    0 0 6px oklch(0.252 0.067 256 / 0.55),
+    0 0 12px oklch(0.704 0.077 56 / 0.25);
   animation: emberRise linear infinite;
   will-change: transform, opacity;
 }

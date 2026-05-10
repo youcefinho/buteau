@@ -48,7 +48,11 @@ export function RisingBronzeEmbers({
 
   return (
     <div
-      className={`pointer-events-none absolute inset-0 overflow-hidden ${className ?? ""}`}
+      // z-[2] : sit ABOVE bg-image overlays (z-auto = 0) and .ambient-particles (z-1).
+      // Container content uses `relative` later in DOM order so it still paints on top.
+      // FIX 2026-05-10 PM : embers etaient invisibles car bg-image divs (DOM apres)
+      // les recouvraient dans le meme contexte d'empilement.
+      className={`pointer-events-none absolute inset-0 overflow-hidden z-[2] ${className ?? ""}`}
       aria-hidden="true"
     >
       {positions.map((p, i) => (
