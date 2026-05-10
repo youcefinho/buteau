@@ -21,7 +21,7 @@ export function Erratum() {
       className="relative py-16 md:py-20 surface-cream overflow-hidden"
     >
       {/* Atmospheric continuity — embers per-section signature */}
-      <RisingBronzeEmbers count={5} tone="bronze" />
+      <RisingBronzeEmbers count={5} tone="light" />
 
       <Container size="lg" className="relative">
         <div className="max-w-2xl mx-auto">

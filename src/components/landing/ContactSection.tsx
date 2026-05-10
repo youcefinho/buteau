@@ -18,7 +18,7 @@ export function ContactSection() {
   return (
     <section id="contact" className="py-24 md:py-28 surface-cream relative overflow-hidden">
       {/* Atmospheric continuity — embers per-section signature */}
-      <RisingBronzeEmbers count={5} tone="bronze" />
+      <RisingBronzeEmbers count={5} tone="light" />
 
       {/* Filigrane décoratif éditorial */}
       <span

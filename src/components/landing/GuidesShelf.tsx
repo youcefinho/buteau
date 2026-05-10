@@ -25,7 +25,7 @@ export function GuidesShelf() {
   return (
     <section className="relative py-24 md:py-32 surface-cream overflow-hidden lined-paper">
       {/* Atmospheric continuity — embers per-section signature */}
-      <RisingBronzeEmbers count={5} tone="bronze" />
+      <RisingBronzeEmbers count={5} tone="light" />
 
       {/* Filigrane Cormorant "&" decoratif */}
       <span

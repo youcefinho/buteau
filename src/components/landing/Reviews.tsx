@@ -36,7 +36,7 @@ export function Reviews() {
   return (
     <section id="avis" className="relative py-24 md:py-28 surface-cream overflow-hidden">
       {/* Atmospheric continuity — embers per-section signature */}
-      <RisingBronzeEmbers count={5} tone="bronze" />
+      <RisingBronzeEmbers count={5} tone="light" />
 
       {/* Filigrane "✉" enveloppe — Cormorant XL background */}
       <span

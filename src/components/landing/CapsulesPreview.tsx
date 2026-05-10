@@ -26,7 +26,7 @@ export function CapsulesPreview() {
   return (
     <section className="relative py-24 md:py-32 surface-cream overflow-hidden">
       {/* Atmospheric continuity — embers per-section signature */}
-      <RisingBronzeEmbers count={5} tone="bronze" />
+      <RisingBronzeEmbers count={5} tone="light" />
 
       {/* Filigrane Play XL background — signature édito magazine */}
       <span
