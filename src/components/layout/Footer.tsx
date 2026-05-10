@@ -102,18 +102,12 @@ export function Footer() {
               <li>
                 <button type="button" onClick={openCarnet} className="text-glow-hover text-left">
                   {lang === "fr" ? "Le carnet" : "Address book"}
-                </button>{" "}
-                <Link to="/carnet" className="text-glow-hover italic text-[color:var(--color-taupe-dark)] text-xs">
-                  {lang === "fr" ? "(SEO)" : "(SEO)"}
-                </Link>
+                </button>
               </li>
               <li>
                 <button type="button" onClick={() => openGlossary()} className="text-glow-hover text-left">
                   {t("footer.lexique")}
-                </button>{" "}
-                <Link to="/lexique" className="text-glow-hover italic text-[color:var(--color-taupe-dark)] text-xs">
-                  {lang === "fr" ? "(SEO)" : "(SEO)"}
-                </Link>
+                </button>
               </li>
             </ul>
           </div>
@@ -138,9 +132,6 @@ export function Footer() {
               <button type="button" onClick={openColophon} className="text-glow-hover text-left">
                 {lang === "fr" ? "Colophon" : "Colophon"}
               </button>
-              <Link to="/colophon" className="text-glow-hover italic text-[color:var(--color-taupe-dark)]">
-                {lang === "fr" ? "(SEO)" : "(SEO)"}
-              </Link>
               <Link to="/mentions-legales" className="text-glow-hover">
                 {t("footer.legal")}
               </Link>
