@@ -1,36 +1,37 @@
 import { useMemo } from "react";
+import { useAtmospherePresence } from "@/hooks/useAtmospherePresence";
 
 /**
- * RisingBronzeEmbers v3 — STREAK pattern (inspire Serujan/EG, fresh pour Buteau).
+ * RisingBronzeEmbers v4 — UX-optimized.
  *
- * v2 BUG : utilisait des circles 3-4px qui etaient TOTALEMENT invisibles
- * (user feedback "y a rien"). Switch au pattern streak (vertical gradient
- * line) qui est confirme visible sur Serujan/EG.
+ * 3 ameliorations UX (user feedback "defois intrusif") :
  *
- * Caracteristiques :
- * - 6 streaks par instance (count par defaut)
- * - Position X random + duration variee = effet organique
- * - Hauteur variable 80-200px = mix courtes + longues
- * - Animation 7-13s = lent atmospherique
- * - Delais -0 a -12s = etales (pas de "vague")
- * - aria-hidden + pointer-events-none = 100% decoratif
+ * 1. PRELOAD : embers actifs quand section visible OU section suivante dans
+ *    le prochain viewport. Effet "atmospheric continuity" : la prochaine
+ *    demarre avant que user la voit, transition fluide.
+ *
+ * 2. VELOCITY FADE : opacity baisse a 0.3 quand user scroll vite.
+ *    Anti motion sickness + pas distrayant en lecture rapide.
+ *
+ * 3. PAUSE OFF-SCREEN : animation-play-state paused quand off-screen.
+ *    Economie GPU + moins de mouvement peripherique.
+ *
+ * Z-index : wrapper a z-0 (above bg-image z-auto par DOM order, sous content
+ * qui doit avoir relative z-10). Resout user feedback "passe sous le texte".
  *
  * 3 tones (bicolor adaptatif) :
  * - "dark" (defaut) : streak CREAM/WHITE pour navy sections
  * - "light" : streak NAVY pour cream sections
- * - "bronze" : streak BRONZE (legacy, marron du site)
+ * - "bronze" : streak BRONZE (marron du site)
  *
- * Performance : seul transform + opacity = compositor layer, zero reflow.
- * Respecte prefers-reduced-motion.
- *
- * Usage : a placer en absolute inset-0 dans une section relative + overflow-hidden.
+ * Performance : streak GPU-only (transform + opacity), respect prefers-reduced-motion.
  */
 type Tone = "dark" | "light" | "bronze";
 
 const TONE_CLASS: Record<Tone, string> = {
-  dark: "ember-buteau-cream", // cream/white sur navy
-  light: "ember-buteau-navy", // navy sur cream
-  bronze: "ember-bronze", // bronze (marron du site, pour cream sections selon user)
+  dark: "ember-buteau-cream",
+  light: "ember-buteau-navy",
+  bronze: "ember-bronze",
 };
 
 export function RisingBronzeEmbers({
@@ -43,26 +44,29 @@ export function RisingBronzeEmbers({
   className?: string;
 }) {
   const emberClass = TONE_CLASS[tone];
+  const { ref, inView, opacity } = useAtmospherePresence<HTMLDivElement>();
 
-  // Stable random params - calculs une seule fois au mount
   const streaks = useMemo(
     () =>
       Array.from({ length: count }, (_, i) => ({
         left: `${(i / count) * 100 + (Math.random() * 100) / count}%`,
-        duration: 7 + Math.random() * 6, // 7-13s
-        delay: -(Math.random() * 12), // -0 a -12s (negatif = part deja en cours)
-        height: 80 + Math.random() * 120, // 80-200px
+        duration: 12 + Math.random() * 8, // 12-20s (slower = atmospheric)
+        delay: -(Math.random() * 18),
+        height: 80 + Math.random() * 120,
       })),
     [count],
   );
 
   return (
     <div
-      // BREAKOUT pattern : w-screen + left-1/2 + -translate-x-1/2 = span full
-      // viewport width meme dans un container limited-width. h-full prend la
-      // hauteur du parent (la section). z-[2] : ABOVE bg-image overlays (z=0)
-      // et .ambient-particles (z=1).
-      className={`pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-screen h-full overflow-hidden z-[2] ${className ?? ""}`}
+      ref={ref}
+      // BREAKOUT pattern : w-screen + left-1/2 + -translate-x-1/2 = full viewport.
+      // z-0 : wrapper sous content (content doit avoir relative z-10 pour passer dessus).
+      // embers-paused class : pause CSS animation quand off-screen (GPU saving).
+      className={`pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-screen h-full overflow-hidden z-0 transition-opacity duration-300 ease-out ${
+        inView ? "" : "embers-paused"
+      } ${className ?? ""}`}
+      style={{ opacity }}
       aria-hidden="true"
     >
       {streaks.map((s, i) => (

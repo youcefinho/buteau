@@ -284,6 +284,13 @@ body {
   100% { transform: translateY(-130vh); opacity: 0; }
 }
 
+/* Pause animation off-screen (GPU saving + UX moins distrayant) */
+.embers-paused .ember-bronze,
+.embers-paused .ember-buteau-cream,
+.embers-paused .ember-buteau-navy {
+  animation-play-state: paused !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .ember-bronze,
   .ember-buteau-cream,
