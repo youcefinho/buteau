@@ -16,7 +16,7 @@ export function InsuranceNote() {
         <SectionHeading
           eyebrow={t("institutions.insurance.eyebrow")}
           title={t("institutions.insurance.title")}
-          tone="light"
+          tone="bronze"
         />
 
         <div className="space-y-8 max-w-3xl mx-auto">

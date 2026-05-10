@@ -18,7 +18,7 @@ export function ContactSection() {
   return (
     <section id="contact" className="py-24 md:py-28 surface-cream relative overflow-hidden">
       {/* Atmospheric continuity — embers per-section signature */}
-      <RisingBronzeEmbers count={5} tone="light" />
+      <RisingBronzeEmbers count={5} tone="bronze" />
 
       {/* Filigrane décoratif éditorial */}
       <span
@@ -33,7 +33,7 @@ export function ContactSection() {
           eyebrow={t("home.contact.eyebrow")}
           title={t("home.contact.title")}
           subtitle={t("home.contact.subtitle")}
-          tone="light"
+          tone="bronze"
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 max-w-5xl mx-auto">

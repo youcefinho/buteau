@@ -36,7 +36,7 @@ export function TerritoryMap() {
   return (
     <section className="relative py-24 md:py-32 surface-cream overflow-hidden">
       {/* Atmospheric continuity — embers per-section signature */}
-      <RisingBronzeEmbers count={5} tone="light" />
+      <RisingBronzeEmbers count={5} tone="bronze" />
 
       {/* Filigrane "QC" Cormorant italic en arrière-plan */}
       <span

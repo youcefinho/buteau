@@ -26,7 +26,7 @@ export function DocumentsGrid() {
           eyebrow={t("tools.documents.eyebrow")}
           title={t("tools.documents.title")}
           subtitle={t("tools.documents.subtitle")}
-          tone="light"
+          tone="bronze"
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-7 max-w-3xl mx-auto" style={{ perspective: "1200px" }}>

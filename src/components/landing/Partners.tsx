@@ -26,14 +26,14 @@ export function Partners() {
   return (
     <section id="partenaires" className="relative py-24 surface-cream overflow-hidden">
       {/* Atmospheric continuity — embers per-section signature */}
-      <RisingBronzeEmbers count={5} tone="light" />
+      <RisingBronzeEmbers count={5} tone="bronze" />
 
       <Container size="xl">
         <SectionHeading
           eyebrow={t("home.partners.eyebrow")}
           title={t("home.partners.title")}
           subtitle={t("home.partners.subtitle")}
-          tone="light"
+          tone="bronze"
         />
 
         {/* Logo carousel — animation infinite via CSS */}

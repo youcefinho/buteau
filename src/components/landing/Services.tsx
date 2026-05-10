@@ -50,13 +50,13 @@ export function Services() {
   return (
     <section id="services" className="relative py-24 md:py-32 surface-cream overflow-hidden dot-grid">
       {/* Atmospheric continuity — embers per-section signature */}
-      <RisingBronzeEmbers count={5} tone="light" />
+      <RisingBronzeEmbers count={5} tone="bronze" />
 
       <Container size="xl" className="relative">
         <SectionHeading
           eyebrow={t("home.services.eyebrow")}
           title={t("home.services.title")}
-          tone="light"
+          tone="bronze"
         />
 
         {/* Cascading staircase — diagonal flow desktop via Tailwind arbitrary values */}

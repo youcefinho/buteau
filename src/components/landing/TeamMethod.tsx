@@ -21,7 +21,7 @@ export function TeamMethod() {
           eyebrow={t("team.method.eyebrow")}
           title={t("team.method.title")}
           subtitle={t("team.method.intro")}
-          tone="light"
+          tone="bronze"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 max-w-5xl mx-auto">

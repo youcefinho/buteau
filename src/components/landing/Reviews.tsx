@@ -36,7 +36,7 @@ export function Reviews() {
   return (
     <section id="avis" className="relative py-24 md:py-28 surface-cream overflow-hidden">
       {/* Atmospheric continuity — embers per-section signature */}
-      <RisingBronzeEmbers count={5} tone="light" />
+      <RisingBronzeEmbers count={5} tone="bronze" />
 
       {/* Filigrane "✉" enveloppe — Cormorant XL background */}
       <span
@@ -50,7 +50,7 @@ export function Reviews() {
         <SectionHeading
           eyebrow={t("home.reviews.eyebrow")}
           title={t("home.reviews.title")}
-          tone="light"
+          tone="bronze"
         />
 
         {/* Google Trust Badge — texte qualitatif, sans rating chiffre tant que non verifie */}
