@@ -19,6 +19,8 @@ import { ValueTicker } from "@/components/landing/ValueTicker";
 import { AdPage } from "@/components/landing/AdPage";
 import { Erratum } from "@/components/landing/Erratum";
 import { PageFooterMark } from "@/components/layout/PageFooterMark";
+import { ScrollReveal } from "@/components/layout/ScrollReveal";
+import { SectionDivider } from "@/components/layout/SectionDivider";
 import {
   SchemaJsonLd,
   buildFaqPage,
@@ -59,53 +61,62 @@ function HomePage() {
       {/* Chapter II — annonce Team + Services + Mission */}
       <ChapterMarker numeral="II" label={chapter2} tone="light" />
 
-      <TeamTeaser />
-      <Services />
+      <ScrollReveal><TeamTeaser /></ScrollReveal>
+      <ScrollReveal><Services /></ScrollReveal>
 
       {/* Calculator Preview — accès direct aux outils sur l'Accueil
           (feedback user : Outils était trop enterré). Mini calc interactif
           + CTA vers /outils pour la version complète. */}
-      <CalculatorPreview />
+      <ScrollReveal><CalculatorPreview /></ScrollReveal>
 
       {/* GuidesShelf — table-of-contents éditoriale des guides + docs
           téléchargeables. Synergie : 5 items préview + lien /outils#guides. */}
-      <GuidesShelf />
+      <ScrollReveal><GuidesShelf /></ScrollReveal>
 
       {/* CapsulesPreview — table-of-contents éditoriale des capsules vidéo
           « 30 secondes top chrono ». Pattern miroir GuidesShelf : 5 items
           vedettes + CTA vers /capsules pour la collection complète (30+). */}
-      <CapsulesPreview />
+      <ScrollReveal><CapsulesPreview /></ScrollReveal>
 
-      <ToolsTeaser />
+      <ScrollReveal><ToolsTeaser /></ScrollReveal>
 
-      <Mission />
+      <ScrollReveal><Mission /></ScrollReveal>
+
+      {/* SectionDivider — respiration éditoriale entre Mission corporate et AdPage */}
+      <SectionDivider variant="fleuron" tone="light" />
 
       {/* AdPage — pleine page édito style "publicité magazine luxe" (Cereal vol.18).
           Insérée entre Mission corporate et BrokerLetter humaine — crée respiration
           + autorité. Une seule phrase Fraunces italic XL. */}
-      <AdPage />
+      <ScrollReveal><AdPage /></ScrollReveal>
 
       {/* « Le mot du courtier » — section authentique signature manuscrite (NOVEL) */}
-      <BrokerLetter />
+      <ScrollReveal><BrokerLetter /></ScrollReveal>
+
+      {/* SectionDivider — transition vers la qualification du lead */}
+      <SectionDivider variant="ampersand" tone="light" />
 
       {/* Quiz pré-qualification 3Q tier-based — qualifie les leads + personalise CTA */}
-      <PreQualQuiz />
+      <ScrollReveal><PreQualQuiz /></ScrollReveal>
 
       {/* Chapter III — annonce témoignages + contact */}
       <ChapterMarker numeral="III" label={chapter3} tone="light" />
 
-      <Reviews />
+      <ScrollReveal><Reviews /></ScrollReveal>
+
+      {/* SectionDivider — respiration entre la preuve sociale et le territoire */}
+      <SectionDivider variant="fleuron" tone="light" />
 
       {/* Territoire desservi — heatmap stylisé QC interactif (NOVEL) */}
-      <TerritoryMap />
+      <ScrollReveal><TerritoryMap /></ScrollReveal>
 
-      <ContactSection />
-      <Faq />
+      <ScrollReveal><ContactSection /></ScrollReveal>
+      <ScrollReveal><Faq /></ScrollReveal>
 
       {/* Erratum — encart humour signature pied de home (style Apartamento).
           Présent uniquement sur l'Accueil pour rester signature et ne pas devenir
           un running gag fatigant. */}
-      <Erratum />
+      <ScrollReveal><Erratum /></ScrollReveal>
 
       <PageFooterMark numeral="I" label={lang === "fr" ? "Accueil" : "Home"} />
     </main>

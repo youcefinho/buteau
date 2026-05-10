@@ -6,6 +6,7 @@ import { ta, translations } from "@/lib/translations";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useCountUp } from "@/hooks/useCountUp";
 import { useCarnet } from "@/lib/CarnetContext";
+import { RisingBronzeEmbers } from "@/components/atmosphere/RisingBronzeEmbers";
 
 /**
  * Section Mission — refonte cinematic luxury éditorial.
@@ -40,6 +41,9 @@ export function Mission() {
       id="mission"
       className="relative py-24 md:py-32 surface-navy overflow-hidden grain-overlay"
     >
+      {/* Atmospheric continuity — particules bronze qui montent (cross-section signature) */}
+      <RisingBronzeEmbers count={6} />
+
       {/* Background image overlay — dégradé tonal, image visible */}
       <div
         className="absolute inset-0 bg-cover bg-center md:bg-fixed"

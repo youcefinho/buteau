@@ -193,6 +193,52 @@ body {
 }
 
 /* ============================================================
+   RISING EMBERS — particules bronze qui montent, cross-section
+   atmospheric continuity. Adapte du pattern Mathis crimson / Serujan gold.
+   ============================================================ */
+
+@keyframes emberRise {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(-50vh) translateX(8px);
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-105vh) translateX(-4px);
+    opacity: 0;
+  }
+}
+
+.ember-bronze {
+  position: absolute;
+  bottom: -10px;
+  border-radius: 50%;
+  background: oklch(0.704 0.077 56 / 0.7);
+  box-shadow:
+    0 0 6px oklch(0.704 0.077 56 / 0.5),
+    0 0 12px oklch(0.722 0.018 84 / 0.3);
+  animation: emberRise linear infinite;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ember-bronze {
+    animation: none;
+    opacity: 0.25;
+    bottom: 30vh;
+  }
+}
+
+/* ============================================================
    PRIMITIVES INTRALYS — adaptees Buteau bronze (skill intralys-edito-magazine)
    ============================================================ */
 
