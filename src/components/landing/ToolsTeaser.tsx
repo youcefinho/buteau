@@ -1,9 +1,10 @@
 import { Link } from "@tanstack/react-router";
-import { BookOpen, Video, FileText, Download } from "lucide-react";
+import { BookOpen, Video, FileText, Download, BookMarked, Layers } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "./SectionHeading";
 import { ta, translations } from "@/lib/translations";
+import { useGlossary } from "@/lib/GlossaryContext";
 
 /**
  * Section Outils & Ressources (teaser) — 4 cartes glass sur surface navy.
@@ -13,6 +14,7 @@ const ICONS = [BookOpen, Video, FileText, Download];
 
 export function ToolsTeaser() {
   const { t, lang } = useLanguage();
+  const { open: openGlossary } = useGlossary();
   const items = ta<Array<{ title: string; desc: string }>>(
     translations[lang],
     "home.tools.items",
@@ -76,6 +78,34 @@ export function ToolsTeaser() {
           <Link to="/outils" className="btn-bronze">
             {t("home.tools.cta")}
           </Link>
+
+          {/* Pont vers les 3 ressources éditoriales (lexique modal + carnet route + colophon route) */}
+          <div className="mt-8 flex flex-wrap justify-center items-center gap-x-5 gap-y-2 text-sm">
+            <button
+              type="button"
+              onClick={() => openGlossary()}
+              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/80 cursor-pointer"
+            >
+              <BookOpen className="w-3.5 h-3.5 text-[color:var(--color-bronze)]" strokeWidth={1.5} aria-hidden />
+              {lang === "fr" ? "Lexique" : "Glossary"}
+            </button>
+            <span className="text-[color:var(--color-bronze)]/30 select-none hidden sm:inline" aria-hidden>·</span>
+            <Link
+              to="/carnet"
+              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/80"
+            >
+              <BookMarked className="w-3.5 h-3.5 text-[color:var(--color-bronze)]" strokeWidth={1.5} aria-hidden />
+              {lang === "fr" ? "Carnet" : "Notebook"}
+            </Link>
+            <span className="text-[color:var(--color-bronze)]/30 select-none hidden sm:inline" aria-hidden>·</span>
+            <Link
+              to="/colophon"
+              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/80"
+            >
+              <Layers className="w-3.5 h-3.5 text-[color:var(--color-bronze)]" strokeWidth={1.5} aria-hidden />
+              {lang === "fr" ? "Colophon" : "Colophon"}
+            </Link>
+          </div>
         </div>
       </Container>
     </section>

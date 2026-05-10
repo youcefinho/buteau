@@ -1,10 +1,12 @@
 import * as Accordion from "@radix-ui/react-accordion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, BookOpen, BookMarked } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "./SectionHeading";
 import { AutoGlossary } from "./AutoGlossary";
 import { ta, translations } from "@/lib/translations";
+import { useGlossary } from "@/lib/GlossaryContext";
 
 /**
  * Section FAQ — accordion 7 questions hypothecaires courantes.
@@ -15,6 +17,7 @@ import { ta, translations } from "@/lib/translations";
  */
 export function Faq() {
   const { t, lang } = useLanguage();
+  const { open: openGlossary } = useGlossary();
   const items = ta<Array<{ q: string; a: string }>>(translations[lang], "home.faq.items");
 
   return (
@@ -81,6 +84,26 @@ export function Faq() {
           <a href="#contact" className="btn-bronze">
             {t("common.writeUs")}
           </a>
+
+          {/* Pont vers lexique + carnet — déflexion douce avant contact */}
+          <div className="pt-5 flex flex-wrap justify-center items-center gap-x-5 gap-y-2 text-sm">
+            <button
+              type="button"
+              onClick={() => openGlossary()}
+              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/85 cursor-pointer"
+            >
+              <BookOpen className="w-3.5 h-3.5 text-[color:var(--color-bronze)]/80" strokeWidth={1.5} aria-hidden />
+              {lang === "fr" ? "Consulter le lexique" : "Open the glossary"}
+            </button>
+            <span className="text-[color:var(--color-bronze)]/30 select-none hidden sm:inline" aria-hidden>·</span>
+            <Link
+              to="/carnet"
+              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/85"
+            >
+              <BookMarked className="w-3.5 h-3.5 text-[color:var(--color-bronze)]/80" strokeWidth={1.5} aria-hidden />
+              {lang === "fr" ? "Carnet de l'emprunteur" : "Borrower notebook"}
+            </Link>
+          </div>
         </div>
       </Container>
 

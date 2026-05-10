@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, BookOpen, Layers } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { parseLocaleFloat, formatLocaleCurrency } from "@/lib/parseLocaleFloat";
 import { useCountUp } from "@/hooks/useCountUp";
+import { useGlossary } from "@/lib/GlossaryContext";
 
 /**
  * CalculatorPreview — version compacte du calculateur sur l'Accueil.
@@ -25,6 +26,7 @@ const RANGES = {
 
 export function CalculatorPreview() {
   const { t, lang } = useLanguage();
+  const { open: openGlossary } = useGlossary();
   const [amount, setAmount] = useState<string>(String(DEFAULTS.amount));
   const [rate, setRate] = useState<string>(String(DEFAULTS.rate));
   const [years, setYears] = useState<string>(String(DEFAULTS.years));
@@ -200,6 +202,33 @@ export function CalculatorPreview() {
                 {t("home.calcPreview.ctaTools")}
               </Link>
             </div>
+          </div>
+        </div>
+
+        {/* Footer méthodologie + lexique — pédagogie hypothécaire */}
+        <div className="mt-12 pt-8 border-t border-[color:var(--color-taupe)]/30 text-center max-w-2xl mx-auto">
+          <p className="font-[var(--font-editorial)] italic text-sm md:text-base text-[color:var(--color-navy-deep)]/70 leading-relaxed mb-4">
+            {lang === "fr"
+              ? "Composé semi-annuel canadien — la formule a ses termes."
+              : "Canadian semi-annual compounding — the formula has its terms."}
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-x-5 gap-y-2 text-sm">
+            <button
+              type="button"
+              onClick={() => openGlossary()}
+              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[color:var(--color-navy-deep)]/85 cursor-pointer"
+            >
+              <BookOpen className="w-3.5 h-3.5 text-[color:var(--color-bronze-deep)]" strokeWidth={1.5} aria-hidden />
+              {lang === "fr" ? "Voir le lexique" : "View glossary"}
+            </button>
+            <span className="text-[color:var(--color-bronze)]/40 select-none hidden sm:inline" aria-hidden>·</span>
+            <Link
+              to="/colophon"
+              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[color:var(--color-navy-deep)]/85"
+            >
+              <Layers className="w-3.5 h-3.5 text-[color:var(--color-bronze-deep)]" strokeWidth={1.5} aria-hidden />
+              {lang === "fr" ? "Colophon" : "Colophon"}
+            </Link>
           </div>
         </div>
       </Container>

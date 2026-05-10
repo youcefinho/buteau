@@ -1,4 +1,5 @@
-import { CircleHelp, MapPin, Users, Clock } from "lucide-react";
+import { CircleHelp, MapPin, Users, Clock, BookMarked } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "./SectionHeading";
@@ -132,6 +133,19 @@ export function Mission() {
               </article>
             );
           })}
+        </div>
+
+        {/* Pont vers carnet — extension de la méthode (4 valeurs → ressources) */}
+        <div className="mt-14 text-center">
+          <Link
+            to="/carnet"
+            className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-sm md:text-base text-[color:var(--color-cream)]/85"
+          >
+            <BookMarked className="w-4 h-4 text-[color:var(--color-bronze)]" strokeWidth={1.5} aria-hidden />
+            {lang === "fr"
+              ? "Voir notre carnet de l'emprunteur"
+              : "Open our borrower notebook"}
+          </Link>
         </div>
       </Container>
     </section>

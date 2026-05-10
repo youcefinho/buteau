@@ -1,8 +1,11 @@
+import { Link } from "@tanstack/react-router";
+import { BookOpen, BookMarked } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "./SectionHeading";
 import { AutoGlossary } from "./AutoGlossary";
 import { ta, translations } from "@/lib/translations";
+import { useGlossary } from "@/lib/GlossaryContext";
 
 /**
  * Services Accueil — refonte DIAGONAL FLOW (audit frontend-design #2).
@@ -25,6 +28,7 @@ import { ta, translations } from "@/lib/translations";
  */
 export function Services() {
   const { t, lang } = useLanguage();
+  const { open: openGlossary } = useGlossary();
   const items = ta<Array<{ title: string; desc: string }>>(
     translations[lang],
     "home.services.items",
@@ -92,6 +96,33 @@ export function Services() {
               />
             </article>
           ))}
+        </div>
+
+        {/* Footer ressources transversales — chaque service a son vocabulaire */}
+        <div className="mt-16 max-w-4xl mx-auto pt-10 border-t border-[color:var(--color-taupe)]/40 text-center">
+          <p className="font-[var(--font-editorial)] italic text-base md:text-lg text-[color:var(--color-navy-deep)]/80 mb-5">
+            {lang === "fr"
+              ? "Chaque service a son vocabulaire — APP, RAP, ratio, garantie."
+              : "Each service has its vocabulary — FHSA, HBP, ratio, security."}
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-x-5 gap-y-2 text-sm">
+            <button
+              type="button"
+              onClick={() => openGlossary()}
+              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[color:var(--color-navy-deep)] cursor-pointer"
+            >
+              <BookOpen className="w-4 h-4 text-[color:var(--color-bronze-deep)]" strokeWidth={1.5} aria-hidden />
+              {lang === "fr" ? "Voir le lexique" : "View glossary"}
+            </button>
+            <span className="text-[color:var(--color-bronze)]/40 select-none hidden sm:inline" aria-hidden>·</span>
+            <Link
+              to="/carnet"
+              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[color:var(--color-navy-deep)]"
+            >
+              <BookMarked className="w-4 h-4 text-[color:var(--color-bronze-deep)]" strokeWidth={1.5} aria-hidden />
+              {lang === "fr" ? "Carnet de l'emprunteur" : "Borrower notebook"}
+            </Link>
+          </div>
         </div>
       </Container>
     </section>

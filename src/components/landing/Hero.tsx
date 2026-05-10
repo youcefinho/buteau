@@ -1,10 +1,12 @@
 import { Link } from "@tanstack/react-router";
+import { BookOpen } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { config } from "@/lib/config";
 import { useMagnetic } from "@/hooks/useMagnetic";
 import { ta, translations } from "@/lib/translations";
 import { useQuizTier } from "@/hooks/useQuizTier";
+import { useGlossary } from "@/lib/GlossaryContext";
 
 /**
  * Hero Accueil — large, plein écran, fond navy avec image overlay,
@@ -14,6 +16,7 @@ import { useQuizTier } from "@/hooks/useQuizTier";
  */
 export function Hero() {
   const { t, lang } = useLanguage();
+  const { open: openGlossary } = useGlossary();
   const magneticCta = useMagnetic<HTMLAnchorElement>({ strength: 0.3, maxOffset: 14 });
   const letterWords = ta<string[]>(translations[lang], "home.hero.letterWords");
   const { tier } = useQuizTier();
@@ -174,6 +177,20 @@ export function Hero() {
               </span>
               <span aria-hidden="true" className="transition-transform duration-500 group-hover:translate-x-1">→</span>
             </Link>
+          </div>
+
+          {/* Lien lexique discret — premier contact = jargon hypothécaire opaque */}
+          <div className="mt-6 animate-[buteauFadeUp_700ms_ease-out_1600ms_both]">
+            <button
+              type="button"
+              onClick={() => openGlossary()}
+              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-xs md:text-sm text-[color:var(--color-cream)]/70 cursor-pointer"
+            >
+              <BookOpen className="w-3.5 h-3.5 text-[color:var(--color-bronze)]" strokeWidth={1.5} aria-hidden />
+              {lang === "fr"
+                ? "Premier contact ? Voir le lexique hypothécaire."
+                : "First time? View the mortgage glossary."}
+            </button>
           </div>
         </div>
       </Container>
