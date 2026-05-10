@@ -19,6 +19,10 @@ export default defineConfig({
       webp: { quality: 80 },
     }),
   ],
+  // Drop chatty console calls in prod (preserve error/warn for real issues).
+  esbuild: {
+    pure: ["console.log", "console.debug", "console.info", "console.trace"],
+  },
   build: {
     outDir: "dist",
     sourcemap: false,

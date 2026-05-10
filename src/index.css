@@ -258,7 +258,11 @@ body {
   will-change: transform, opacity;
 }
 
-/* Variante NAVY — pour sections claires cream (streak navy sur cream, plus visible). */
+/* Variante NAVY — pour sections claires cream (streak navy sur cream).
+   Bumped 2026-05-10 PM : alpha + double box-shadow (halo bronze externe)
+   + animation emberRiseStreak pour matcher la presence visuelle de cream
+   sur dark. Navy n'emet pas (couleur sombre absorbe sur cream) donc
+   il faut compenser avec saturation forte. */
 .ember-buteau-navy {
   position: absolute;
   bottom: -20%;
@@ -266,13 +270,15 @@ body {
   background: linear-gradient(
     to top,
     transparent 0%,
-    oklch(0.252 0.067 256 / 0.45) 45%,
-    oklch(0.252 0.067 256 / 0.75) 60%,
+    oklch(0.252 0.067 256 / 0.7) 45%,
+    oklch(0.252 0.067 256 / 0.95) 60%,
     transparent 100%
   );
   border-radius: 1px;
-  box-shadow: 0 0 6px oklch(0.252 0.067 256 / 0.4);
-  animation: emberRise linear infinite;
+  box-shadow:
+    0 0 8px 1px oklch(0.252 0.067 256 / 0.5),
+    0 0 16px oklch(0.704 0.077 56 / 0.25);
+  animation: emberRiseStreak linear infinite;
   will-change: transform, opacity;
 }
 
