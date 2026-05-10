@@ -147,8 +147,8 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
         </p>
         <p className="font-[var(--font-editorial)] italic text-[color:var(--color-navy-deep)]/85 text-base leading-relaxed">
           {isFr
-            ? "par L'Équipe Buteau, en cabinet d'attache chez Plani-prêt Cabinet en Courtage Hypothécaire."
-            : "by Équipe Buteau, with Plani-prêt Cabinet en Courtage Hypothécaire as their attached firm."}
+            ? "par L'Équipe Buteau, en cabinet d'attache chez Planiprêt Cabinet en Courtage Hypothécaire."
+            : "by Équipe Buteau, with Planiprêt Cabinet en Courtage Hypothécaire as their attached firm."}
         </p>
         <p className="mt-6 eyebrow text-[color:var(--color-taupe-dark)]/70 text-[10px]">
           ☞ {isFr ? "Bureau" : "Office"} — {config.address.streetAddress}, {config.address.addressLocality} ({config.address.addressRegion}) {config.address.postalCode}
