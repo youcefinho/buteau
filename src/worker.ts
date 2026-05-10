@@ -10,9 +10,12 @@
  *     4. Server-side validation (email + maxLen + consent + sanitization)
  * - INSERT D1 + ctx.waitUntil(GHL POST) — non-bloquant pour le client
  * - CSP headers worker-applied sur toutes les réponses
+ * - HTMLRewriter SSR meta + Schema.org per route (cf. injectRouteMeta)
  *
  * GHL = placeholders pour Phase 9 (locationId / trackingId fournis par client).
  */
+
+import { glossary } from "./lib/glossary";
 
 interface Env {
   ASSETS: { fetch: (req: Request) => Promise<Response> };
@@ -121,7 +124,8 @@ const ROUTE_META_SSR: Record<string, RouteMetaSSR> = {
     title: "Lexique hypothécaire — 14 termes essentiels Québec | Équipe Buteau",
     description:
       "Lexique de 14 termes hypothécaires essentiels au Québec — pré-approbation, mise de fonds, taxe de bienvenue, vice caché. Sources : SCHL, AMF, ARC, Code civil du Québec.",
-    // DefinedTermSet déjà injecté côté client (dangerouslySetInnerHTML).
+    // DefinedTermSet COMPLET SSR — généré dynamiquement depuis glossary import (cf. injectRouteMeta).
+    // schemaJsonLd undefined ici car généré au runtime à partir du glossary import.
   },
   "/equipe": {
     title: "Notre équipe — Andrew Buteau et l'équipe Planiprêt à Laval",
@@ -134,7 +138,7 @@ const ROUTE_META_SSR: Record<string, RouteMetaSSR> = {
       "9 institutions financières partenaires : CIBC, TD, Manuvie, Desjardins, CMLS et autres. Couverture pancanadienne pour vos besoins hypothécaires résidentiels et investissement.",
   },
   "/outils": {
-    title: "Outils & calculatrices hypothécaires — capacité, refi, taux | Équipe Buteau",
+    title: "Outils et calculatrices hypothécaires — capacité, refi, taux | Équipe Buteau",
     description:
       "Calculateurs hypothécaires, simulation de refinancement, capacité d'emprunt, comparaison de scénarios. Outils gratuits offerts par l'Équipe Buteau, Planiprêt Laval.",
   },
@@ -171,12 +175,48 @@ const ROUTE_META_SSR: Record<string, RouteMetaSSR> = {
   },
 };
 
+function normalizePathname(pathname: string): string {
+  if (pathname.length > 1 && pathname.endsWith("/")) {
+    return pathname.slice(0, -1);
+  }
+  return pathname;
+}
+
+// DefinedTermSet COMPLET généré à partir du glossary import (FR par défaut).
+// Pour /lexique uniquement — autres routes utilisent meta.schemaJsonLd statique.
+function buildLexiqueDefinedTermSet(): string {
+  return JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "DefinedTermSet",
+    "@id": `${SITE_ORIGIN}/lexique#termset`,
+    name: "Lexique hypothécaire — Équipe Buteau",
+    description:
+      "14 termes essentiels pour comprendre votre dossier hypothécaire au Québec.",
+    inLanguage: "fr-CA",
+    url: `${SITE_ORIGIN}/lexique`,
+    publisher: { "@id": `${SITE_ORIGIN}/#business` },
+    hasDefinedTerm: glossary.map((g) => ({
+      "@type": "DefinedTerm",
+      "@id": `${SITE_ORIGIN}/lexique#${g.slug}`,
+      name: g.term.fr,
+      description: g.definition.fr,
+      ...(g.source ? { source: g.source } : {}),
+    })),
+  });
+}
+
 async function injectRouteMeta(response: Response, pathname: string): Promise<Response> {
-  const meta = ROUTE_META_SSR[pathname];
+  const cleanPath = normalizePathname(pathname);
+  const meta = ROUTE_META_SSR[cleanPath];
   if (!meta) return response;
 
   const contentType = response.headers.get("content-type") ?? "";
   if (!contentType.includes("text/html")) return response;
+
+  const canonicalUrl = `${SITE_ORIGIN}${cleanPath}`;
+
+  // Pour /lexique : DefinedTermSet COMPLET généré dynamiquement (priorité sur meta.schemaJsonLd statique).
+  const dynamicSchema = cleanPath === "/lexique" ? buildLexiqueDefinedTermSet() : meta.schemaJsonLd;
 
   const rewriter = new HTMLRewriter()
     .on("title", { element(el) { el.setInnerContent(meta.title); } })
@@ -196,7 +236,11 @@ async function injectRouteMeta(response: Response, pathname: string): Promise<Re
       element(el) { el.setAttribute("content", meta.description); },
     })
     .on('meta[property="og:url"]', {
-      element(el) { el.setAttribute("content", `${SITE_ORIGIN}${pathname}`); },
+      element(el) { el.setAttribute("content", canonicalUrl); },
+    })
+    // CRITIQUE SEO : override canonical pour pointer vers la route, pas la home.
+    .on('link[rel="canonical"]', {
+      element(el) { el.setAttribute("href", canonicalUrl); },
     });
 
   if (meta.ogImage) {
@@ -209,15 +253,15 @@ async function injectRouteMeta(response: Response, pathname: string): Promise<Re
       });
   }
 
-  if (meta.noindex || meta.schemaJsonLd) {
+  if (meta.noindex || dynamicSchema) {
     rewriter.on("head", {
       element(el) {
         if (meta.noindex) {
           el.append('<meta name="robots" content="noindex, nofollow">', { html: true });
         }
-        if (meta.schemaJsonLd) {
+        if (dynamicSchema) {
           el.append(
-            `<script type="application/ld+json">${meta.schemaJsonLd}</script>`,
+            `<script type="application/ld+json">${dynamicSchema}</script>`,
             { html: true },
           );
         }
