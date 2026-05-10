@@ -80,6 +80,47 @@ export default {
 // du title statique de index.html. HTMLRewriter swap title/description/og
 // + injecte Schema.org page-specific. FR-CA par défaut.
 
+// ── Noscript fallback HTML helpers (Option 1 polish 2026-05-10) ─
+// Pour bots non-JS (SemRush/Ahrefs/Moz/vieux scrapers FB) qui ignorent React.
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+interface NoscriptItem { name: string; url: string; }
+
+function carnetNoscriptItems(lang: "fr" | "en"): NoscriptItem[] {
+  return [
+    { name: lang === "fr" ? "AMF — Autorité des marchés financiers" : "AMF — Quebec Financial Markets Authority", url: "https://lautorite.qc.ca" },
+    { name: lang === "fr" ? "SCHL — Société canadienne d'hypothèques et de logement" : "CMHC — Canada Mortgage and Housing Corporation", url: "https://www.cmhc-schl.gc.ca" },
+    { name: lang === "fr" ? "ARC — Régime d'accession à la propriété (RAP)" : "CRA — Home Buyers' Plan (HBP)", url: "https://www.canada.ca/fr/agence-revenu/services/impot/particuliers/sujets/regime-accession-propriete.html" },
+    { name: lang === "fr" ? "ARC — CELIAPP" : "CRA — FHSA", url: "https://www.canada.ca/fr/agence-revenu/services/impot/particuliers/sujets/celiapp.html" },
+    { name: lang === "fr" ? "Chambre des notaires du Québec" : "Quebec Chamber of Notaries", url: "https://www.cnq.org" },
+    { name: lang === "fr" ? "Planiprêt — Cabinet en courtage hypothécaire" : "Planiprêt — Mortgage brokerage firm", url: "https://www.planipret.com" },
+  ];
+}
+
+function buildNoscriptInner(path: string, lang: "fr" | "en", title: string, description: string): string {
+  const isFr = lang === "fr";
+  const isEn = !isFr;
+  let body = `<h1>${escapeHtml(title)}</h1><p>${escapeHtml(description)}</p>`;
+
+  if (path === "/lexique") {
+    body += `<dl>${glossary.map((g) => `<dt>${escapeHtml(isFr ? g.term.fr : g.term.en)}</dt><dd>${escapeHtml(isFr ? g.definition.fr : g.definition.en)}</dd>`).join("")}</dl>`;
+  } else if (path === "/carnet") {
+    const items = carnetNoscriptItems(lang);
+    body += `<ul>${items.map(i => `<li><a href="${escapeHtml(i.url)}" rel="noopener nofollow">${escapeHtml(i.name)}</a></li>`).join("")}</ul>`;
+  }
+
+  const navLabel = isEn ? "Site navigation" : "Navigation du site";
+  body += `<nav aria-label="${navLabel}"><a href="/">${isEn ? "Home" : "Accueil"}</a> · <a href="/equipe">${isEn ? "Team" : "Équipe"}</a> · <a href="/carnet">${isEn ? "Notebook" : "Carnet"}</a> · <a href="/lexique">${isEn ? "Glossary" : "Lexique"}</a> · <a href="/journal">Journal</a></nav>`;
+  return body;
+}
+
 interface RouteMetaSSR {
   title: string;
   description: string;
@@ -311,6 +352,16 @@ async function injectRouteMeta(response: Response, pathname: string, request: Re
             { html: true },
           );
         }
+      },
+    });
+  }
+
+  // Noscript fallback (Option 1) : contenu lisible pour bots non-JS.
+  if (!meta.noindex) {
+    const noscriptInner = buildNoscriptInner(cleanPath, lang, title, description);
+    rewriter.on("body", {
+      element(el) {
+        el.append(`<noscript>${noscriptInner}</noscript>`, { html: true });
       },
     });
   }
