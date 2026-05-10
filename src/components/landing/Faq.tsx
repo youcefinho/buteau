@@ -1,12 +1,12 @@
 import * as Accordion from "@radix-ui/react-accordion";
 import { ChevronDown, BookOpen, BookMarked } from "lucide-react";
-import { Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "./SectionHeading";
 import { AutoGlossary } from "./AutoGlossary";
 import { ta, translations } from "@/lib/translations";
 import { useGlossary } from "@/lib/GlossaryContext";
+import { useCarnet } from "@/lib/CarnetContext";
 
 /**
  * Section FAQ — accordion 7 questions hypothecaires courantes.
@@ -18,6 +18,7 @@ import { useGlossary } from "@/lib/GlossaryContext";
 export function Faq() {
   const { t, lang } = useLanguage();
   const { open: openGlossary } = useGlossary();
+  const { open: openCarnet } = useCarnet();
   const items = ta<Array<{ q: string; a: string }>>(translations[lang], "home.faq.items");
 
   return (
@@ -96,13 +97,14 @@ export function Faq() {
               {lang === "fr" ? "Consulter le lexique" : "Open the glossary"}
             </button>
             <span className="text-[color:var(--color-bronze)]/30 select-none hidden sm:inline" aria-hidden>·</span>
-            <Link
-              to="/carnet"
-              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/85"
+            <button
+              type="button"
+              onClick={openCarnet}
+              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/85 cursor-pointer"
             >
               <BookMarked className="w-3.5 h-3.5 text-[color:var(--color-bronze)]/80" strokeWidth={1.5} aria-hidden />
               {lang === "fr" ? "Carnet de l'emprunteur" : "Borrower notebook"}
-            </Link>
+            </button>
           </div>
         </div>
       </Container>

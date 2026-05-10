@@ -1,11 +1,11 @@
 import { CircleHelp, MapPin, Users, Clock, BookMarked } from "lucide-react";
-import { Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "./SectionHeading";
 import { ta, translations } from "@/lib/translations";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useCountUp } from "@/hooks/useCountUp";
+import { useCarnet } from "@/lib/CarnetContext";
 
 /**
  * Section Mission — refonte cinematic luxury éditorial.
@@ -22,6 +22,7 @@ const ICONS = [CircleHelp, Users, Clock, MapPin];
 
 export function Mission() {
   const { t, lang } = useLanguage();
+  const { open: openCarnet } = useCarnet();
   const values = ta<Array<{ title: string; desc: string }>>(
     translations[lang],
     "home.mission.values",
@@ -137,15 +138,16 @@ export function Mission() {
 
         {/* Pont vers carnet — extension de la méthode (4 valeurs → ressources) */}
         <div className="mt-14 text-center">
-          <Link
-            to="/carnet"
-            className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-sm md:text-base text-[color:var(--color-cream)]/85"
+          <button
+            type="button"
+            onClick={openCarnet}
+            className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-sm md:text-base text-[color:var(--color-cream)]/85 cursor-pointer"
           >
             <BookMarked className="w-4 h-4 text-[color:var(--color-bronze)]" strokeWidth={1.5} aria-hidden />
             {lang === "fr"
               ? "Voir notre carnet de l'emprunteur"
               : "Open our borrower notebook"}
-          </Link>
+          </button>
         </div>
       </Container>
     </section>

@@ -6,6 +6,7 @@ import { Container } from "@/components/layout/Container";
 import { parseLocaleFloat, formatLocaleCurrency } from "@/lib/parseLocaleFloat";
 import { useCountUp } from "@/hooks/useCountUp";
 import { useGlossary } from "@/lib/GlossaryContext";
+import { useColophon } from "@/lib/ColophonContext";
 
 /**
  * CalculatorPreview — version compacte du calculateur sur l'Accueil.
@@ -27,6 +28,7 @@ const RANGES = {
 export function CalculatorPreview() {
   const { t, lang } = useLanguage();
   const { open: openGlossary } = useGlossary();
+  const { open: openColophon } = useColophon();
   const [amount, setAmount] = useState<string>(String(DEFAULTS.amount));
   const [rate, setRate] = useState<string>(String(DEFAULTS.rate));
   const [years, setYears] = useState<string>(String(DEFAULTS.years));
@@ -222,13 +224,14 @@ export function CalculatorPreview() {
               {lang === "fr" ? "Voir le lexique" : "View glossary"}
             </button>
             <span className="text-[color:var(--color-bronze)]/40 select-none hidden sm:inline" aria-hidden>·</span>
-            <Link
-              to="/colophon"
-              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[color:var(--color-navy-deep)]/85"
+            <button
+              type="button"
+              onClick={openColophon}
+              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[color:var(--color-navy-deep)]/85 cursor-pointer"
             >
               <Layers className="w-3.5 h-3.5 text-[color:var(--color-bronze-deep)]" strokeWidth={1.5} aria-hidden />
               {lang === "fr" ? "Colophon" : "Colophon"}
-            </Link>
+            </button>
           </div>
         </div>
       </Container>

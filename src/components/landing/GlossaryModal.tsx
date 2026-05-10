@@ -143,19 +143,27 @@ export function GlossaryModal() {
             </article>
           ))}
 
-          {/* CTA bas de modal — version SEO indexable du lexique */}
-          <div className="pt-8 mt-4 border-t border-[color:var(--color-taupe)]/40 text-center">
+          {/* CTA bas de modal — block premium vers /lexique (pattern Carnet/Colophon) */}
+          <div className="pt-8 mt-4 border-t border-[color:var(--color-taupe)]/40">
             <Link
               to="/lexique"
               onClick={close}
-              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-sm md:text-base text-[color:var(--color-bronze-deep)] hover:text-[color:var(--color-navy-deep)] transition-colors"
+              className="group flex items-center justify-between gap-4 p-5 rounded-sm bg-[color:var(--color-bronze)]/8 border border-[color:var(--color-bronze)]/30 hover:bg-[color:var(--color-bronze)]/15 hover:border-[color:var(--color-bronze)]/55 transition-all"
             >
-              <span>
-                {lang === "fr"
-                  ? "Lire le lexique en version complète"
-                  : "Read the full glossary page"}
-              </span>
-              <ArrowRight className="w-3.5 h-3.5" strokeWidth={1.7} aria-hidden />
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.32em] text-[color:var(--color-bronze-deep)] font-bold mb-1">
+                  {lang === "fr" ? "Voir le lexique complet" : "See the full glossary"}
+                </div>
+                <div className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em]">
+                  {lang === "fr"
+                    ? "Le lexique hypothécaire — version éditoriale"
+                    : "Mortgage glossary — editorial version"}
+                </div>
+              </div>
+              <ArrowRight
+                className="w-4 h-4 text-[color:var(--color-bronze-deep)]/70 group-hover:text-[color:var(--color-bronze-deep)] group-hover:translate-x-0.5 transition-all shrink-0"
+                aria-hidden
+              />
             </Link>
           </div>
         </div>

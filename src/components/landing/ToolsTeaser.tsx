@@ -5,6 +5,8 @@ import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "./SectionHeading";
 import { ta, translations } from "@/lib/translations";
 import { useGlossary } from "@/lib/GlossaryContext";
+import { useCarnet } from "@/lib/CarnetContext";
+import { useColophon } from "@/lib/ColophonContext";
 
 /**
  * Section Outils & Ressources (teaser) — 4 cartes glass sur surface navy.
@@ -15,6 +17,8 @@ const ICONS = [BookOpen, Video, FileText, Download];
 export function ToolsTeaser() {
   const { t, lang } = useLanguage();
   const { open: openGlossary } = useGlossary();
+  const { open: openCarnet } = useCarnet();
+  const { open: openColophon } = useColophon();
   const items = ta<Array<{ title: string; desc: string }>>(
     translations[lang],
     "home.tools.items",
@@ -90,21 +94,23 @@ export function ToolsTeaser() {
               {lang === "fr" ? "Lexique" : "Glossary"}
             </button>
             <span className="text-[color:var(--color-bronze)]/30 select-none hidden sm:inline" aria-hidden>·</span>
-            <Link
-              to="/carnet"
-              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/80"
+            <button
+              type="button"
+              onClick={openCarnet}
+              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/80 cursor-pointer"
             >
               <BookMarked className="w-3.5 h-3.5 text-[color:var(--color-bronze)]" strokeWidth={1.5} aria-hidden />
               {lang === "fr" ? "Carnet" : "Notebook"}
-            </Link>
+            </button>
             <span className="text-[color:var(--color-bronze)]/30 select-none hidden sm:inline" aria-hidden>·</span>
-            <Link
-              to="/colophon"
-              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/80"
+            <button
+              type="button"
+              onClick={openColophon}
+              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/80 cursor-pointer"
             >
               <Layers className="w-3.5 h-3.5 text-[color:var(--color-bronze)]" strokeWidth={1.5} aria-hidden />
               {lang === "fr" ? "Colophon" : "Colophon"}
-            </Link>
+            </button>
           </div>
         </div>
       </Container>
