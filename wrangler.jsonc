@@ -4,9 +4,17 @@
   "main": "src/worker.ts",
   "compatibility_date": "2025-04-01",
   "assets": {
+    "binding": "ASSETS",
     "directory": "./dist",
     "not_found_handling": "single-page-application",
-    "run_worker_first": ["/api/*"]
+    // run_worker_first ["/*"] = toutes les requêtes passent par le worker AVANT
+    // les assets statiques. Nécessaire pour que injectRouteMeta() (HTMLRewriter
+    // SSR meta + Schema.org per route) puisse intercepter les responses HTML.
+    // Sans ça, les routes statiques sont servies directement par Cloudflare
+    // avec le title de la home → SEO cassé.
+    // Le "binding": "ASSETS" est OBLIGATOIRE quand run_worker_first ["/*"] —
+    // sinon env.ASSETS est undefined et le worker crash avec error 1101.
+    "run_worker_first": ["/*"]
   }
   // D1 — Phase 7 (créée via `bunx wrangler d1 create equipe-buteau-leads`)
   // "d1_databases": [
