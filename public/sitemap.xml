@@ -1,62 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Sitemap Equipe Buteau - courtier hypothecaire Planipret Laval.
+       Hreflang trio (fr-CA + en-CA + x-default), Vary: Accept-Language.
+       /merci omis (noindex). Refresh 2026-05-10 (Quickwins SEO sprint). -->
   <url>
     <loc>https://equipe-buteau.intralysqc.workers.dev/</loc>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://equipe-buteau.intralysqc.workers.dev/" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://equipe-buteau.intralysqc.workers.dev/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://equipe-buteau.intralysqc.workers.dev/" />
   </url>
   <url>
     <loc>https://equipe-buteau.intralysqc.workers.dev/equipe</loc>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://equipe-buteau.intralysqc.workers.dev/equipe" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://equipe-buteau.intralysqc.workers.dev/equipe" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://equipe-buteau.intralysqc.workers.dev/equipe" />
   </url>
   <url>
     <loc>https://equipe-buteau.intralysqc.workers.dev/institutions</loc>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://equipe-buteau.intralysqc.workers.dev/institutions" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://equipe-buteau.intralysqc.workers.dev/institutions" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://equipe-buteau.intralysqc.workers.dev/institutions" />
   </url>
   <url>
     <loc>https://equipe-buteau.intralysqc.workers.dev/outils</loc>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://equipe-buteau.intralysqc.workers.dev/outils" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://equipe-buteau.intralysqc.workers.dev/outils" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://equipe-buteau.intralysqc.workers.dev/outils" />
   </url>
   <url>
     <loc>https://equipe-buteau.intralysqc.workers.dev/capsules</loc>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://equipe-buteau.intralysqc.workers.dev/capsules" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://equipe-buteau.intralysqc.workers.dev/capsules" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://equipe-buteau.intralysqc.workers.dev/capsules" />
   </url>
   <url>
     <loc>https://equipe-buteau.intralysqc.workers.dev/journal</loc>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://equipe-buteau.intralysqc.workers.dev/journal" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://equipe-buteau.intralysqc.workers.dev/journal" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://equipe-buteau.intralysqc.workers.dev/journal" />
   </url>
   <url>
     <loc>https://equipe-buteau.intralysqc.workers.dev/courrier</loc>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://equipe-buteau.intralysqc.workers.dev/courrier" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://equipe-buteau.intralysqc.workers.dev/courrier" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://equipe-buteau.intralysqc.workers.dev/courrier" />
   </url>
   <url>
     <loc>https://equipe-buteau.intralysqc.workers.dev/lexique</loc>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>quarterly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://equipe-buteau.intralysqc.workers.dev/lexique" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://equipe-buteau.intralysqc.workers.dev/lexique" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://equipe-buteau.intralysqc.workers.dev/lexique" />
   </url>
   <url>
     <loc>https://equipe-buteau.intralysqc.workers.dev/carnet</loc>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://equipe-buteau.intralysqc.workers.dev/carnet" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://equipe-buteau.intralysqc.workers.dev/carnet" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://equipe-buteau.intralysqc.workers.dev/carnet" />
   </url>
   <url>
     <loc>https://equipe-buteau.intralysqc.workers.dev/colophon</loc>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>quarterly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://equipe-buteau.intralysqc.workers.dev/colophon" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://equipe-buteau.intralysqc.workers.dev/colophon" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://equipe-buteau.intralysqc.workers.dev/colophon" />
   </url>
   <url>
     <loc>https://equipe-buteau.intralysqc.workers.dev/mentions-legales</loc>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://equipe-buteau.intralysqc.workers.dev/confidentialite</loc>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

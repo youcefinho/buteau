@@ -353,21 +353,47 @@ async function injectRouteMeta(response: Response, pathname: string, request: Re
       });
   }
 
-  if (meta.noindex || schemaJsonLd) {
-    rewriter.on("head", {
-      element(el) {
-        if (meta.noindex) {
-          el.append('<meta name="robots" content="noindex, nofollow">', { html: true });
-        }
-        if (schemaJsonLd) {
-          el.append(
-            `<script type="application/ld+json">${schemaJsonLd}</script>`,
-            { html: true },
-          );
-        }
-      },
-    });
-  }
+  // Quickwins SEO 2026-05-10 PM : hreflang trio + BreadcrumbList per route interne.
+  rewriter.on('link[rel="alternate"][hreflang]', {
+    element(el) { el.remove(); },
+  });
+  const isHome = cleanPath === "/";
+  const breadcrumbJsonLd = (!isHome && !meta.noindex)
+    ? JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": `${canonicalUrl}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: isEn ? "Home" : "Accueil", item: `${SITE_ORIGIN}/` },
+          { "@type": "ListItem", position: 2, name: title, item: canonicalUrl },
+        ],
+      })
+    : null;
+
+  rewriter.on("head", {
+    element(el) {
+      if (!meta.noindex) {
+        el.append(`<link rel="alternate" hreflang="fr-CA" href="${canonicalUrl}">`, { html: true });
+        el.append(`<link rel="alternate" hreflang="en-CA" href="${canonicalUrl}">`, { html: true });
+        el.append(`<link rel="alternate" hreflang="x-default" href="${canonicalUrl}">`, { html: true });
+      }
+      if (meta.noindex) {
+        el.append('<meta name="robots" content="noindex, nofollow">', { html: true });
+      }
+      if (schemaJsonLd) {
+        el.append(
+          `<script type="application/ld+json">${schemaJsonLd}</script>`,
+          { html: true },
+        );
+      }
+      if (breadcrumbJsonLd) {
+        el.append(
+          `<script type="application/ld+json">${breadcrumbJsonLd}</script>`,
+          { html: true },
+        );
+      }
+    },
+  });
 
   // Noscript fallback (Option 1) : contenu lisible pour bots non-JS.
   if (!meta.noindex) {
