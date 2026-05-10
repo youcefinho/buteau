@@ -14,6 +14,16 @@ export default defineConfig({
   build: {
     outDir: "dist",
     sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          router: ["@tanstack/react-router"],
+          motion: ["motion"],
+          icons: ["lucide-react"],
+          radix: ["@radix-ui/react-accordion"],
+        },
+      },
+    },
   },
   server: {
     proxy: {

@@ -54,7 +54,7 @@ export default {
 
     // ===== API Routes =====
     if (url.pathname === "/api/lead" && request.method === "POST") {
-      return withSecurityHeaders(await handleLead(request, env, ctx));
+      return withSecurityHeaders(await handleLead(request, env, ctx), request);
     }
 
     if (url.pathname.startsWith("/api/")) {
@@ -63,6 +63,7 @@ export default {
           status: 404,
           headers: { "Content-Type": "application/json" },
         }),
+        request,
       );
     }
 
@@ -70,7 +71,7 @@ export default {
     // HTMLRewriter swap title/description/og + Schema.org per route SSR-style.
     const assetResponse = await env.ASSETS.fetch(request);
     const withMeta = await injectRouteMeta(assetResponse, url.pathname, request);
-    return withSecurityHeaders(withMeta);
+    return withSecurityHeaders(withMeta, request);
   },
 };
 
@@ -660,8 +661,17 @@ function jsonError(code: string, status: number): Response {
 // Security headers — appliqués sur TOUTES les réponses
 // ============================================================
 
-function withSecurityHeaders(response: Response): Response {
+function withSecurityHeaders(response: Response, request?: Request): Response {
   const headers = new Headers(response.headers);
+
+  // Cache headers — assets fingerprintés (Vite hash) sont immutables 1 an.
+  // Skip HTML pour rester fresh sur changements meta SSR.
+  if (request) {
+    const url = new URL(request.url);
+    if (url.pathname.startsWith("/assets/")) {
+      headers.set("Cache-Control", "public, max-age=31536000, immutable");
+    }
+  }
 
   // CSP — autorise les sources nécessaires : Google Fonts, Wix images mockup, Imgur, GHL.
   // À durcir Phase 9 quand on aura les domaines exacts (tracking pixels, CDN final, etc.).
