@@ -27,7 +27,7 @@ interface Env {
 
 // Limites + format
 const RATE_LIMIT_WINDOW_MS = 30_000;          // 30 secondes
-const MIN_FORM_FILL_TIME_MS = 3_000;           // < 3s = bot
+const MIN_FORM_FILL_TIME_MS = 1_500;           // < 1.5s = bot (harmonisation cross-sites Intralys 2026-05-10)
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX_FIELD_LEN = {
   full_name: 200,
