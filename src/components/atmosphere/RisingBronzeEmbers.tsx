@@ -61,9 +61,12 @@ export function RisingBronzeEmbers({
     <div
       ref={ref}
       // BREAKOUT pattern : w-screen + left-1/2 + -translate-x-1/2 = full viewport.
-      // z-0 : wrapper sous content (content doit avoir relative z-10 pour passer dessus).
+      // z-[1] : ABOVE bg-image overlays (z-auto level 6) mais sous content
+      // (qui doit avoir relative z-10 pour passer dessus). FIX 2026-05-10 PM :
+      // bug "embers gone" cause par z-0 (meme niveau que z-auto, couvert par
+      // bg-image qui vient apres dans DOM).
       // embers-paused class : pause CSS animation quand off-screen (GPU saving).
-      className={`pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-screen h-full overflow-hidden z-0 transition-opacity duration-300 ease-out ${
+      className={`pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-screen h-full overflow-hidden z-[1] transition-opacity duration-300 ease-out ${
         inView ? "" : "embers-paused"
       } ${className ?? ""}`}
       style={{ opacity }}
