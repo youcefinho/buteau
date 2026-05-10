@@ -58,8 +58,11 @@ export function RisingBronzeEmbers({
 
   return (
     <div
-      // z-[2] : sit ABOVE bg-image overlays (z-auto = 0) and .ambient-particles (z-1).
-      className={`pointer-events-none absolute inset-0 overflow-hidden z-[2] ${className ?? ""}`}
+      // BREAKOUT pattern : w-screen + left-1/2 + -translate-x-1/2 = span full
+      // viewport width meme dans un container limited-width. h-full prend la
+      // hauteur du parent (la section). z-[2] : ABOVE bg-image overlays (z=0)
+      // et .ambient-particles (z=1).
+      className={`pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-screen h-full overflow-hidden z-[2] ${className ?? ""}`}
       aria-hidden="true"
     >
       {streaks.map((s, i) => (
