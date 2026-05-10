@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { RisingBronzeEmbers } from "@/components/atmosphere/RisingBronzeEmbers";
 import { useLanguage } from "@/lib/LanguageContext";
 import { ta, translations } from "@/lib/translations";
 
@@ -30,6 +31,9 @@ export function ValueTicker() {
       aria-label={lang === "fr" ? "Faits clés" : "Key facts"}
       className="relative bg-[color:var(--color-navy-deep)] border-y border-[color:var(--color-bronze)]/20 py-5 overflow-hidden group"
     >
+      {/* Atmospheric continuity — embers per-section signature */}
+      <RisingBronzeEmbers count={5} tone="dark" />
+
       {/* Fade gauche/droite pour transition douce hors viewport */}
       <div
         aria-hidden="true"

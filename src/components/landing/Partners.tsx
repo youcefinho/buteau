@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { RisingBronzeEmbers } from "@/components/atmosphere/RisingBronzeEmbers";
 import { Container } from "@/components/layout/Container";
 import { useLanguage } from "@/lib/LanguageContext";
 import { SectionHeading } from "./SectionHeading";
@@ -23,7 +24,10 @@ export function Partners() {
   const doubled = [...lenders, ...lenders]; // duplicate pour scroll infini
 
   return (
-    <section id="partenaires" className="py-24 surface-cream">
+    <section id="partenaires" className="relative py-24 surface-cream overflow-hidden">
+      {/* Atmospheric continuity — embers per-section signature */}
+      <RisingBronzeEmbers count={5} tone="light" />
+
       <Container size="xl">
         <SectionHeading
           eyebrow={t("home.partners.eyebrow")}

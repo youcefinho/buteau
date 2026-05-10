@@ -230,8 +230,36 @@ body {
   will-change: transform, opacity;
 }
 
+/* Variante CREAM/WHITE — pour sections sombres navy (contraste blanc sur bleu) */
+.ember-buteau-cream {
+  position: absolute;
+  bottom: -10px;
+  border-radius: 50%;
+  background: oklch(0.978 0 0 / 0.75);
+  box-shadow:
+    0 0 6px oklch(0.978 0 0 / 0.55),
+    0 0 12px oklch(0.978 0 0 / 0.25);
+  animation: emberRise linear infinite;
+  will-change: transform, opacity;
+}
+
+/* Variante NAVY — pour sections claires cream (contraste navy sur cream, prend la couleur du site) */
+.ember-buteau-navy {
+  position: absolute;
+  bottom: -10px;
+  border-radius: 50%;
+  background: oklch(0.252 0.067 256 / 0.55);
+  box-shadow:
+    0 0 6px oklch(0.252 0.067 256 / 0.4),
+    0 0 12px oklch(0.252 0.067 256 / 0.18);
+  animation: emberRise linear infinite;
+  will-change: transform, opacity;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .ember-bronze {
+  .ember-bronze,
+  .ember-buteau-cream,
+  .ember-buteau-navy {
     animation: none;
     opacity: 0.25;
     bottom: 30vh;

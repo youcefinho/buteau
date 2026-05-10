@@ -1,30 +1,38 @@
 /**
- * RisingBronzeEmbers — particules atmosphériques cross-section.
+ * RisingBronzeEmbers — particules atmospheriques per-section.
  *
- * Inspiration : Mathis a `RisingCrimsonEmbers`, Serujan a `RisingGoldEmbers` —
- * pattern "fil atmosphérique continu" qui lie les sections sombres.
- * Adapté au theme luxury minimal corporate Buteau :
- * - Particules taupe + bronze (pas crimson ni gold)
- * - Mouvement plus lent et plus subtle (corporate vs flashy)
- * - Pas de trail vivid, juste un float-and-fade discret
+ * v2 (2026-05-10 PM) : ajout du prop `tone` pour bicolor adaptatif :
+ * - tone="dark" (defaut) : embers CREAM/WHITE pour sections navy/sombres
+ * - tone="light" : embers NAVY pour sections claires (cream surface), prend
+ *   la couleur du site comme accent.
+ * - tone="bronze" : retro-compat avec v1 (bronze/taupe), pour cas particuliers
  *
- * Usage : à insérer en absolu dans une section navy avec position relative.
- *   <section className="surface-navy relative overflow-hidden">
- *     <RisingBronzeEmbers />
- *     ...
- *   </section>
+ * Mecanique : particules absolute inset-0 dans une section relative+overflow-hidden.
+ * Animation emberRise CSS pure GPU compositor (translate + opacity), 16-22s loop.
+ * Each section contient ses propres embers — die at section top, respawn next.
  *
- * Respecte prefers-reduced-motion : opacity reduite, animation arrêtée.
+ * Respecte prefers-reduced-motion : opacity reduite, animation arretee.
  */
+type Tone = "dark" | "light" | "bronze";
+
+const TONE_CLASS: Record<Tone, string> = {
+  dark: "ember-buteau-cream", // cream/white sur navy
+  light: "ember-buteau-navy", // navy sur cream
+  bronze: "ember-bronze", // legacy bronze/taupe (pour cas particuliers)
+};
+
 export function RisingBronzeEmbers({
   count = 6,
+  tone = "dark",
   className,
 }: {
-  /** Nombre de particules (4-8 recommandé, défaut 6). */
+  /** Nombre de particules (4-8 recommande, defaut 6). */
   count?: number;
+  /** Tone embers : "dark" (cream sur navy), "light" (navy sur cream), "bronze" (legacy). */
+  tone?: Tone;
   className?: string;
 }) {
-  // Positions pseudo-random pré-calculées pour rendu déterministe SSR-safe.
+  // Positions pseudo-random pre-calculees pour rendu deterministe SSR-safe.
   const positions = [
     { left: "8%", delay: "0s", duration: "16s", size: 3 },
     { left: "22%", delay: "4s", duration: "20s", size: 4 },
@@ -36,6 +44,8 @@ export function RisingBronzeEmbers({
     { left: "62%", delay: "14s", duration: "16s", size: 4 },
   ].slice(0, count);
 
+  const emberClass = TONE_CLASS[tone];
+
   return (
     <div
       className={`pointer-events-none absolute inset-0 overflow-hidden ${className ?? ""}`}
@@ -44,7 +54,7 @@ export function RisingBronzeEmbers({
       {positions.map((p, i) => (
         <span
           key={i}
-          className="ember-bronze"
+          className={emberClass}
           style={{
             left: p.left,
             width: `${p.size}px`,

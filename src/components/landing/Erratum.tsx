@@ -1,4 +1,5 @@
 import { useLanguage } from "@/lib/LanguageContext";
+import { RisingBronzeEmbers } from "@/components/atmosphere/RisingBronzeEmbers";
 import { Container } from "@/components/layout/Container";
 
 /**
@@ -17,8 +18,11 @@ export function Erratum() {
   return (
     <section
       aria-labelledby="errata-heading"
-      className="relative py-16 md:py-20 surface-cream"
+      className="relative py-16 md:py-20 surface-cream overflow-hidden"
     >
+      {/* Atmospheric continuity — embers per-section signature */}
+      <RisingBronzeEmbers count={5} tone="light" />
+
       <Container size="lg" className="relative">
         <div className="max-w-2xl mx-auto">
           {/* Double filet — top */}

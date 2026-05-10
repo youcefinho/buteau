@@ -28,8 +28,8 @@ export function AdPage({ entryKey = "adPage" }: { entryKey?: string }) {
       aria-label="Édition spéciale"
       className="relative surface-navy grain-overlay min-h-[60vh] md:min-h-[70vh] flex items-center overflow-hidden"
     >
-      {/* Atmospheric continuity — particules bronze (cross-section signature) */}
-      <RisingBronzeEmbers count={5} />
+      {/* Atmospheric continuity — embers per-section signature */}
+      <RisingBronzeEmbers count={5} tone="dark" />
 
       {/* Filigrane « ¶ » pilcrow Cormorant — touche éditoriale typographique */}
       <span

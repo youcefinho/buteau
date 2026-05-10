@@ -41,8 +41,8 @@ export function Mission() {
       id="mission"
       className="relative py-24 md:py-32 surface-navy overflow-hidden grain-overlay"
     >
-      {/* Atmospheric continuity — particules bronze qui montent (cross-section signature) */}
-      <RisingBronzeEmbers count={6} />
+      {/* Atmospheric continuity — embers per-section signature */}
+      <RisingBronzeEmbers count={6} tone="dark" />
 
       {/* Background image overlay — dégradé tonal, image visible */}
       <div
