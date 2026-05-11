@@ -217,7 +217,7 @@ function Field({
   inputMode?: "text" | "email" | "tel" | "decimal" | "numeric";
 }) {
   const baseClass =
-    "w-full px-4 py-3 border-2 border-[color:var(--color-taupe)] bg-[color:var(--color-cream)] text-sm text-[color:var(--color-navy-deep)] outline-none transition-colors focus:border-[color:var(--color-bronze)]";
+    "w-full px-4 py-3 border-2 border-[color:var(--color-taupe)] bg-[color:var(--color-cream)] text-sm text-[color:var(--color-navy-deep)] outline-none transition-all duration-300 focus:border-[color:var(--color-bronze)] focus:shadow-[0_0_0_3px_oklch(0.704_0.077_56/0.18)] focus:bg-[color:var(--color-cream-warm)] hover:border-[color:var(--color-bronze)]/45";
 
   return (
     <div className="space-y-1.5">

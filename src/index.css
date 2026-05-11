@@ -965,11 +965,21 @@ body {
     transform: translateX(0);
   }
 
+  /* Touch active state — tap feedback mobile édito magazine.
+     Le bouton se "presse" : scale-down + translate-y reset + bronze-deep
+     intensifié. Donne au tap mobile la même sensation tactile que
+     le hover desktop. */
+  .btn-bronze:active {
+    transform: translateY(0) scale(0.98);
+    transition-duration: 100ms;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .btn-bronze {
       animation: none;
     }
-    .btn-bronze:hover {
+    .btn-bronze:hover,
+    .btn-bronze:active {
       letter-spacing: var(--tracking-eyebrow);
       transform: none;
     }
