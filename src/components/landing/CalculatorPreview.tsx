@@ -109,10 +109,16 @@ export function CalculatorPreview() {
             </Link>
           </div>
 
-          {/* Calculator column — 7/12 */}
-          <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-5 gap-0 border border-[color:var(--color-taupe)]/50">
-            {/* Inputs sliders — 3/5 */}
-            <div className="md:col-span-3 bg-[color:var(--color-surface)] p-7 md:p-8 space-y-7">
+          {/* Calculator column — 7/12.
+              border-beam : faisceau bronze qui tourne autour du perimetre 5s.
+              Pattern adapte EG flagship (gold) → Buteau bronze. Marque la card
+              "outil signature" du site Buteau. mask trick reste a la bordure
+              1.5px = effet contenu dans la card sans deborder. */}
+          <div className="border-beam lg:col-span-7 grid grid-cols-1 md:grid-cols-5 gap-0 rounded-sm overflow-hidden">
+            {/* Inputs sliders — 3/5. Partie gauche convertie en navy pour
+                coherence visuelle avec le site (vs blanc qui rompait l'esthetique
+                luxury). Subtle vertical divider taupe entre sliders et resultat. */}
+            <div className="md:col-span-3 surface-navy border-r border-[color:var(--color-taupe)]/15 p-7 md:p-8 space-y-7">
               <CalcSliderMini
                 id="prev-amount"
                 label={t("home.calcPreview.amountLabel")}
@@ -258,14 +264,13 @@ function CalcSliderMini({
   return (
     <div className="space-y-2">
       <div className="flex items-baseline justify-between gap-3">
-        <label htmlFor={id} className="eyebrow text-[color:var(--color-taupe-dark)]">
+        <label htmlFor={id} className="eyebrow text-[color:var(--color-taupe)]">
           {label}
         </label>
-        {/* Fix MEDIUM : output sans htmlFor (l'attribut for sur output doit pointer vers les
-            éléments source du calcul, pas l'input — sémantique imprécise). Output autonome OK. */}
+        {/* Output sur navy bg : flip text-navy-deep → text-cream pour lisibilite. */}
         <output
           aria-live="polite"
-          className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base md:text-lg tabular-nums"
+          className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-base md:text-lg tabular-nums"
         >
           {format(clamped)}
         </output>
