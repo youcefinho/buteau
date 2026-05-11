@@ -38,7 +38,7 @@ if (!rootEl) {
 
 // Retire le splash HTML après MIN_LOADER_MS (masque le boot React ~2s sur
 // chaque page load — parité avec Mathis/Serujan/EG).
-const MIN_LOADER_MS = 2000;
+const MIN_LOADER_MS = 3000;
 const FADE_MS = 500;
 setTimeout(() => {
   const loader = document.getElementById("app-loader");
