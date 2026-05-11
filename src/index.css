@@ -1133,9 +1133,11 @@ body {
 }
 
 /* ============================================================
-   BORDER-BEAM — flagship visual signaling (adapte EG → bronze Buteau)
-   Rotation conic-gradient bronze autour du perimetre, mask trick
-   pour ne garder que la bordure 1.5px. Reserve cards signature.
+   BORDER-BEAM — flagship visual signaling (adapte EG → navy Buteau)
+   Rotation conic-gradient navy autour du perimetre, mask trick pour
+   ne garder que la bordure 1.5px. Navy choisi pour matcher la card
+   bicolore Calculator (white + navy) — beam visible sur la moitie
+   blanche, se fond sur la moitie navy.
    ============================================================ */
 @keyframes border-beam-rotate {
   to { transform: rotate(360deg); }
@@ -1153,8 +1155,8 @@ body {
     from 0deg,
     transparent 0deg,
     transparent 60deg,
-    var(--color-bronze-soft) 100deg,
-    var(--color-bronze) 130deg,
+    var(--color-navy) 100deg,
+    var(--color-navy-deep) 130deg,
     transparent 180deg,
     transparent 360deg
   );
