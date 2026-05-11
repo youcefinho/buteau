@@ -117,14 +117,18 @@ export function Navbar() {
 
       {/* Mobile drawer */}
       {mobileOpen && (
-        <div className="lg:hidden absolute top-full inset-x-0 bg-[color:var(--color-cream)] border-b border-[color:var(--color-border)] shadow-xl">
+        <div className="lg:hidden absolute top-full inset-x-0 bg-[color:var(--color-cream)] border-b border-[color:var(--color-border)] shadow-xl animate-[buteauFadeUp_300ms_ease-out_both]">
           <Container size="xl" className="py-8 space-y-6">
             <ul className="space-y-4">
-              {navItems.map((item) => (
-                <li key={item.to}>
+              {navItems.map((item, i) => (
+                <li
+                  key={item.to}
+                  style={{ animationDelay: `${i * 70 + 120}ms`, animationFillMode: "backwards" }}
+                  className="animate-[buteauFadeUp_500ms_ease-out_both]"
+                >
                   <Link
                     to={item.to}
-                    className="block font-[var(--font-display)] text-2xl text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-bronze-deep)]"
+                    className="block font-[var(--font-display)] text-2xl text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-bronze-deep)] transition-colors"
                   >
                     {t(item.key)}
                   </Link>
