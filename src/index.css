@@ -1134,10 +1134,14 @@ body {
 
 /* ============================================================
    BORDER-BEAM — flagship visual signaling (adapte EG → blue Buteau)
-   Rotation conic-gradient bleu cobalt autour du perimetre, mask trick
-   pour ne garder que la bordure 1.5px. Cobalt blue (lightness 0.65-0.78
-   + hue 256) visible SUR LES 2 MOITIES de la card bicolore Calculator
-   (white + navy). Navy pur (lightness 0.25) etait invisible cote navy.
+   Rotation conic-gradient bleu navy-clair autour du perimetre.
+   Specs ajustees iteration 2 :
+   - Chroma 0.06-0.07 (meme que site navy 0.067 = reste "in family",
+     pas cobalt vibrant qui sortirait de la palette)
+   - Lightness 0.55-0.75 (bump vs navy bg 0.25 = contraste 0.30+
+     = visible sur LES 2 MOITIES de la card bicolore white + navy)
+   - Padding 2px (au lieu de 1.5px) pour plus de surface visible
+     a chromatic difference modeste
    ============================================================ */
 @keyframes border-beam-rotate {
   to { transform: rotate(360deg); }
@@ -1150,14 +1154,18 @@ body {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  padding: 1.5px;
+  /* Iteration 3 : reduce size — padding 1px (vs 2px) + angle visible
+     reserre 110-160deg (50deg span vs 120deg) = beam plus subtil + court.
+     Quand il "passe a droite" (sur navy bg), la disparition est breve
+     et discrete. User : "baisser la taille pour que ca va pas a droite" */
+  padding: 1px;
   background: conic-gradient(
     from 0deg,
     transparent 0deg,
-    transparent 60deg,
-    oklch(0.78 0.12 256) 100deg,
-    oklch(0.62 0.18 256) 130deg,
-    transparent 180deg,
+    transparent 110deg,
+    oklch(0.75 0.06 256) 125deg,
+    oklch(0.55 0.08 256) 145deg,
+    transparent 160deg,
     transparent 360deg
   );
   -webkit-mask:
