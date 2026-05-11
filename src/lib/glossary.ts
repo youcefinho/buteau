@@ -141,4 +141,58 @@ export const glossary: GlossaryTerm[] = [
     },
     source: "Code civil du Québec",
   },
+  {
+    slug: "stress-test",
+    term: { fr: "Test de résistance", fr_alt: ["Stress test", "Taux qualificatif"], en: "Stress test" },
+    definition: {
+      fr: "Test réglementaire BSIF qui oblige les prêteurs à qualifier les emprunteurs au plus élevé entre (a) leur taux contractuel + 2 % ou (b) le taux de référence de la Banque du Canada. Détermine la capacité d'emprunt réelle, indépendamment du taux négocié.",
+      en: "OSFI regulatory test that requires lenders to qualify borrowers at the higher of (a) their contract rate + 2% or (b) the Bank of Canada benchmark rate. Determines real borrowing capacity regardless of the negotiated rate.",
+    },
+    source: "BSIF — Ligne directrice B-20",
+  },
+  {
+    slug: "ird",
+    term: { fr: "Pénalité IRD", fr_alt: ["Différentiel de taux d'intérêt", "Interest Rate Differential"], en: "IRD penalty" },
+    definition: {
+      fr: "Pénalité de remboursement anticipé sur un prêt à taux fixe, calculée comme la différence entre votre taux et le taux actuel du prêteur pour le terme restant. Peut représenter plusieurs milliers de dollars sur un terme de 5 ans rompu tôt.",
+      en: "Prepayment penalty on a fixed-rate mortgage, calculated as the difference between your rate and the lender's current rate for the remaining term. Can represent thousands of dollars on a 5-year term broken early.",
+    },
+    source: "Agence de la consommation en matière financière du Canada",
+  },
+  {
+    slug: "assurance-pret-hypothecaire",
+    term: { fr: "Assurance prêt hypothécaire", fr_alt: ["APP", "Assurance SCHL"], en: "Mortgage default insurance" },
+    definition: {
+      fr: "Assurance obligatoire pour tout prêt hypothécaire avec mise de fonds inférieure à 20 %. Protège le prêteur en cas de défaut. La prime (2,8 % à 4 % du prêt) est ajoutée au montant emprunté. Offerte par SCHL, Sagen ou Canada Guaranty.",
+      en: "Mandatory insurance for any mortgage with down payment below 20%. Protects the lender in case of default. Premium (2.8% to 4% of the loan) is added to the borrowed amount. Offered by CMHC, Sagen or Canada Guaranty.",
+    },
+    source: "SCHL — Programme d'assurance prêt hypothécaire",
+  },
+  {
+    slug: "hypotheque-inversee",
+    term: { fr: "Hypothèque inversée", en: "Reverse mortgage" },
+    definition: {
+      fr: "Prêt destiné aux propriétaires de 55 ans et plus permettant de retirer jusqu'à 55 % de la valeur de leur résidence sans paiement mensuel. Le remboursement (capital + intérêts cumulés) se fait à la vente ou au décès. Offert par CHIP (HomeEquity Bank) et Equitable Bank au Canada.",
+      en: "Loan for homeowners aged 55+ allowing them to withdraw up to 55% of their home's value with no monthly payment. Repayment (capital + accumulated interest) is due at sale or death. Offered by CHIP (HomeEquity Bank) and Equitable Bank in Canada.",
+    },
+    source: "Agence de la consommation en matière financière du Canada",
+  },
+  {
+    slug: "obsi",
+    term: { fr: "OBSI", fr_alt: ["Ombudsman des services bancaires et d'investissement"], en: "OBSI" },
+    definition: {
+      fr: "Organisme indépendant qui résout sans frais les différends entre consommateurs et institutions financières fédérales (banques, courtiers hypothécaires, courtiers en valeurs mobilières). Recours gratuit si plainte non résolue par le prêteur dans 56 jours.",
+      en: "Independent organization that resolves disputes between consumers and federally regulated financial institutions (banks, mortgage brokers, investment dealers) at no cost. Free recourse if a complaint is not resolved by the lender within 56 days.",
+    },
+    source: "OBSI.ca",
+  },
+  {
+    slug: "saisie-immobiliere",
+    term: { fr: "Saisie immobilière", fr_alt: ["Foreclosure", "Reprise de finance"], en: "Foreclosure" },
+    definition: {
+      fr: "Procédure légale par laquelle un prêteur récupère un immeuble suite au défaut de paiement de l'emprunteur. Au Québec, processus distinct des autres provinces : reprise par dation en paiement, vente sous contrôle de justice ou prise en paiement. Affecte le crédit pendant 6-7 ans.",
+      en: "Legal procedure by which a lender recovers a property following the borrower's default. In Quebec, distinct from other provinces: recovery via giving in payment, court-supervised sale, or taking in payment. Affects credit for 6-7 years.",
+    },
+    source: "Code de procédure civile du Québec",
+  },
 ];

@@ -89,6 +89,17 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
             { name: "Office de la protection du consommateur du Québec", url: "https://www.opc.gouv.qc.ca", note: "Pour signaler ou comprendre les pratiques commerciales en immobilier." },
           ],
         },
+        {
+          numeral: "VI",
+          title: "Crédit & recours",
+          intro:
+            "Votre dossier de crédit est consulté à chaque demande hypothécaire. Et si un litige survient avec une banque ou un courtier, voici les recours canadiens.",
+          entries: [
+            { name: "Equifax Canada", url: "https://www.consumer.equifax.ca/personnel/", note: "Consulter votre dossier de crédit gratuitement 1× par an. Vérifiez avant toute préapprobation pour corriger les erreurs (jusqu'à 60 jours d'écart entre demande et signature)." },
+            { name: "TransUnion Canada", url: "https://www.transunion.ca/fr", note: "Second bureau de crédit. Les prêteurs consultent l'un OU l'autre selon leurs ententes — vérifier les deux donne une vision complète." },
+            { name: "OBSI — Ombudsman des services bancaires et d'investissement", url: "https://www.obsi.ca/fr/", note: "Recours gratuit si un litige avec une banque/courtier hypothécaire n'est pas résolu en 56 jours. Indépendant et impartial." },
+          ],
+        },
       ]
     : [
         {
@@ -142,6 +153,17 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
             { name: "Real estate transfer duties calculator (City of Laval)", url: "https://www.laval.ca", note: "Estimate the « welcome tax » payable to the notary based on property value." },
             { name: "Quebec Housing Tribunal", url: "https://www.tal.gouv.qc.ca", note: "Administrative housing tribunal — tenant/owner rights." },
             { name: "Quebec Consumer Protection Office", url: "https://www.opc.gouv.qc.ca", note: "To report or understand commercial practices in real estate." },
+          ],
+        },
+        {
+          numeral: "VI",
+          title: "Credit & recourse",
+          intro:
+            "Your credit file is consulted on every mortgage application. And if a dispute arises with a bank or broker, here are the Canadian recourses.",
+          entries: [
+            { name: "Equifax Canada", url: "https://www.consumer.equifax.ca/personal/", note: "Check your credit file for free once a year. Verify before any pre-approval to correct errors (up to 60 days between application and signing)." },
+            { name: "TransUnion Canada", url: "https://www.transunion.ca", note: "Second credit bureau. Lenders consult one OR the other based on their agreements — verifying both gives a complete view." },
+            { name: "OBSI — Ombudsman for Banking Services and Investments", url: "https://www.obsi.ca/en/", note: "Free recourse if a dispute with a bank/mortgage broker is not resolved in 56 days. Independent and impartial." },
           ],
         },
       ];
