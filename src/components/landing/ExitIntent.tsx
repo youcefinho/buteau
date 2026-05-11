@@ -170,7 +170,7 @@ export function ExitIntent() {
           type="button"
           onClick={handleClose}
           aria-label={tr.close}
-          className="absolute top-3 right-3 w-9 h-9 inline-flex items-center justify-center rounded-full text-[color:var(--color-cream)]/55 hover:text-[color:var(--color-bronze)] hover:bg-[color:var(--color-navy-deep)]/60 transition-all cursor-pointer"
+          className="absolute top-3 right-3 w-9 h-9 inline-flex items-center justify-center rounded-full text-[color:var(--color-cream)]/55 hover:text-[color:var(--color-bronze)] hover:bg-[color:var(--color-navy-deep)]/60 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
         >
           <X className="w-4 h-4" strokeWidth={1.7} />
         </button>
@@ -204,7 +204,7 @@ export function ExitIntent() {
           <a
             href={`tel:${config.phone.raw}`}
             onClick={handleClose}
-            className="group w-full inline-flex items-center justify-center gap-2 py-3 rounded-sm bg-[color:var(--color-bronze)] text-[color:var(--color-cream)] font-semibold text-sm hover:bg-[color:var(--color-bronze-deep)] transition-all duration-300"
+            className="group w-full inline-flex items-center justify-center gap-2 py-3 rounded-sm bg-[color:var(--color-bronze)] text-[color:var(--color-cream)] font-semibold text-sm hover:bg-[color:var(--color-bronze-deep)] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-10px_oklch(0.62_0.082_52/0.5)] transition-all duration-300"
           >
             <Phone className="w-3.5 h-3.5" strokeWidth={1.8} />
             <span>
@@ -215,7 +215,7 @@ export function ExitIntent() {
           <button
             type="button"
             onClick={handleContactCta}
-            className="group w-full inline-flex items-center justify-center gap-2 py-3 rounded-sm border border-[color:var(--color-bronze)]/35 text-[color:var(--color-cream)] font-medium text-sm hover:border-[color:var(--color-bronze)]/70 hover:bg-[color:var(--color-bronze)]/5 transition-all duration-300"
+            className="group w-full inline-flex items-center justify-center gap-2 py-3 rounded-sm border border-[color:var(--color-bronze)]/35 text-[color:var(--color-cream)] font-medium text-sm hover:border-[color:var(--color-bronze)]/70 hover:bg-[color:var(--color-bronze)]/5 hover:-translate-y-0.5 transition-all duration-300"
           >
             <span>{tr.ctaContact}</span>
             <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
