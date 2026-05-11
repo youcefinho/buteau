@@ -39,14 +39,20 @@ export function Faq() {
         aria-hidden="true"
       />
 
-      <Container size="md" className="relative">
+      <Container size="lg" className="relative">
         <SectionHeading
           eyebrow={t("home.faq.eyebrow")}
           title={t("home.faq.title")}
           tone="dark"
         />
 
-        <Accordion.Root type="single" collapsible className="space-y-3">
+        {/* Grid 2-cols sur lg+ (4 gauche + 4 droite). auto-rows-min + items-start
+            empêche le stretch vertical des items quand un voisin est ouvert. */}
+        <Accordion.Root
+          type="single"
+          collapsible
+          className="space-y-3 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-4 lg:auto-rows-min lg:items-start"
+        >
           {items.map((item, idx) => (
             <Accordion.Item
               key={item.q.slice(0, 30)}
