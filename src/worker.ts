@@ -608,6 +608,7 @@ async function pushToGhl(
     type: "external_form_submission",
     timestamp: Date.now(),
     trackingId,
+    locationId: "aTgKP6OstI7SH8PRcKxB",
     sessionId: crypto.randomUUID(),
     contactId: null,
     userId: null,
