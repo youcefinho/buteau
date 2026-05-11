@@ -6,6 +6,7 @@ import { ta, translations } from "@/lib/translations";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useCountUp } from "@/hooks/useCountUp";
 import { useCarnet } from "@/lib/CarnetContext";
+import { AutoGlossary } from "@/components/landing/AutoGlossary";
 import { RisingBronzeEmbers } from "@/components/atmosphere/RisingBronzeEmbers";
 
 /**
@@ -133,7 +134,7 @@ export function Mission() {
                 <div className="w-8 h-px bg-[color:var(--color-bronze)] mb-4 transition-[width] duration-500 group-hover:w-14" />
 
                 <p className="text-sm leading-[1.55] text-[color:var(--color-navy-deep)]/80">
-                  {v.desc}
+                  <AutoGlossary text={v.desc} />
                 </p>
               </article>
             );

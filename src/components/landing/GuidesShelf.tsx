@@ -4,6 +4,7 @@ import { RisingBronzeEmbers } from "@/components/atmosphere/RisingBronzeEmbers";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { ta, translations } from "@/lib/translations";
+import { AutoGlossary } from "@/components/landing/AutoGlossary";
 
 /**
  * GuidesShelf — table-of-contents éditoriale magazine pour les guides + docs
@@ -108,7 +109,7 @@ export function GuidesShelf() {
 
                       {/* Excerpt italic */}
                       <p className="font-[var(--font-editorial)] italic text-sm md:text-base leading-[1.6] text-[color:var(--color-navy-deep)]/75">
-                        {item.excerpt}
+                        <AutoGlossary text={item.excerpt} />
                       </p>
                     </div>
 

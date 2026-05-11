@@ -4,6 +4,7 @@ import { Container } from "@/components/layout/Container";
 import { Tiltable } from "@/components/layout/Tiltable";
 import { SectionHeading } from "./SectionHeading";
 import { ta, translations } from "@/lib/translations";
+import { AutoGlossary } from "@/components/landing/AutoGlossary";
 
 /**
  * Section Documents téléchargeables.
@@ -52,7 +53,9 @@ export function DocumentsGrid() {
                   <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em] leading-snug mb-2">
                     {doc.title}
                   </h3>
-                  <p className="text-xs italic text-[color:var(--color-taupe-dark)] mb-4">{doc.meta}</p>
+                  <p className="text-xs italic text-[color:var(--color-taupe-dark)] mb-4">
+                    <AutoGlossary text={doc.meta} />
+                  </p>
                   <span className="inline-block eyebrow text-[color:var(--color-bronze-deep)] border-l-2 border-[color:var(--color-bronze)] pl-2.5">
                     {t("tools.documents.comingSoonLabel")}
                   </span>
