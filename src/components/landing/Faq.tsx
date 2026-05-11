@@ -90,26 +90,6 @@ export function Faq() {
             {t("common.writeUs")}
           </a>
 
-          {/* Pont vers lexique + carnet — déflexion douce avant contact */}
-          <div className="pt-5 flex flex-wrap justify-center items-center gap-x-5 gap-y-2 text-sm">
-            <button
-              type="button"
-              onClick={() => openGlossary()}
-              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/85 cursor-pointer"
-            >
-              <BookOpen className="w-3.5 h-3.5 text-[color:var(--color-bronze)]/80" strokeWidth={1.5} aria-hidden />
-              {lang === "fr" ? "Consulter le lexique" : "Open the glossary"}
-            </button>
-            <span className="text-[color:var(--color-bronze)]/30 select-none hidden sm:inline" aria-hidden>·</span>
-            <button
-              type="button"
-              onClick={openCarnet}
-              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/85 cursor-pointer"
-            >
-              <BookMarked className="w-3.5 h-3.5 text-[color:var(--color-bronze)]/80" strokeWidth={1.5} aria-hidden />
-              {lang === "fr" ? "Carnet de l'emprunteur" : "Borrower notebook"}
-            </button>
-          </div>
         </div>
       </Container>
 

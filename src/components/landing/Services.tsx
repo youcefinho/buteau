@@ -103,33 +103,6 @@ export function Services() {
           ))}
         </div>
 
-        {/* Footer ressources transversales — chaque service a son vocabulaire */}
-        <div className="mt-16 max-w-4xl mx-auto pt-10 border-t border-[color:var(--color-taupe)]/40 text-center">
-          <p className="font-[var(--font-editorial)] italic text-base md:text-lg text-[color:var(--color-navy-deep)]/80 mb-5">
-            {lang === "fr"
-              ? "Chaque service a son vocabulaire — APP, RAP, ratio, garantie."
-              : "Each service has its vocabulary — FHSA, HBP, ratio, security."}
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-x-5 gap-y-2 text-sm">
-            <button
-              type="button"
-              onClick={() => openGlossary()}
-              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[color:var(--color-navy-deep)] cursor-pointer"
-            >
-              <BookOpen className="w-4 h-4 text-[color:var(--color-bronze-deep)]" strokeWidth={1.5} aria-hidden />
-              {lang === "fr" ? "Voir le lexique" : "View glossary"}
-            </button>
-            <span className="text-[color:var(--color-bronze)]/40 select-none hidden sm:inline" aria-hidden>·</span>
-            <button
-              type="button"
-              onClick={openCarnet}
-              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[color:var(--color-navy-deep)] cursor-pointer"
-            >
-              <BookMarked className="w-4 h-4 text-[color:var(--color-bronze-deep)]" strokeWidth={1.5} aria-hidden />
-              {lang === "fr" ? "Carnet de l'emprunteur" : "Borrower notebook"}
-            </button>
-          </div>
-        </div>
       </Container>
     </section>
   );

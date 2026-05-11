@@ -85,26 +85,6 @@ export function ToolsTeaser() {
             {t("home.tools.cta")}
           </Link>
 
-          {/* Pont vers ressources éditoriales (lexique modal + carnet) — Colophon réservé au footer global */}
-          <div className="mt-8 flex flex-wrap justify-center items-center gap-x-5 gap-y-2 text-sm">
-            <button
-              type="button"
-              onClick={() => openGlossary()}
-              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/80 cursor-pointer"
-            >
-              <BookOpen className="w-3.5 h-3.5 text-[color:var(--color-bronze)]" strokeWidth={1.5} aria-hidden />
-              {lang === "fr" ? "Lexique" : "Glossary"}
-            </button>
-            <span className="text-[color:var(--color-bronze)]/30 select-none hidden sm:inline" aria-hidden>·</span>
-            <button
-              type="button"
-              onClick={openCarnet}
-              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/80 cursor-pointer"
-            >
-              <BookMarked className="w-3.5 h-3.5 text-[color:var(--color-bronze)]" strokeWidth={1.5} aria-hidden />
-              {lang === "fr" ? "Carnet" : "Notebook"}
-            </button>
-          </div>
         </div>
       </Container>
     </section>
