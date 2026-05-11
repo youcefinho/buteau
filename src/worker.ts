@@ -576,18 +576,48 @@ async function pushToGhl(
   // body type "external_form_submission", trackingId hardcoded (le worker n'a
   // pas acces au bundle clientConfig).
   const trackingId = "tk_a1730dcac9744515864c001895c485ea";
+  // GHL attend formData + formLabels (flat key-value + human labels), pas "data".
+  // Pattern aligne avec Mathis/Serujan. Bug originel : "data" est ignore par GHL.
+  const nameParts = lead.full_name.trim().split(/\s+/);
+  const firstName = nameParts[0] || lead.full_name;
+  const lastName = nameParts.slice(1).join(" ") || "";
+  const formData: Record<string, string> = {
+    email: lead.email.trim().toLowerCase(),
+    first_name: firstName,
+    Timezone: "America/Toronto",
+  };
+  const formLabels: Record<string, string> = {
+    email: "Courriel",
+    first_name: "Prenom",
+  };
+  if (lastName) {
+    formData.last_name = lastName;
+    formLabels.last_name = "Nom";
+  }
+  if (lead.phone) {
+    formData.phone = lead.phone;
+    formLabels.phone = "Telephone";
+  }
+  if (lead.message) {
+    formData.message = lead.message;
+    formLabels.message = "Message";
+  }
+
+  const url = request.headers.get("referer") ?? "https://equipe-buteau.intralysqc.workers.dev/";
   const ghlBody = {
     type: "external_form_submission",
     timestamp: Date.now(),
     trackingId,
+    sessionId: crypto.randomUUID(),
+    contactId: null,
+    userId: null,
     formId: lead.source,
-    data: {
-      name: lead.full_name,
-      email: lead.email,
-      phone: lead.phone ?? "",
-      message: lead.message ?? "",
-    },
-    url: request.headers.get("referer") ?? "",
+    formData,
+    formLabels,
+    url,
+    referrer: "",
+    title: "Equipe Buteau",
+    path: (() => { try { return new URL(url).pathname || "/"; } catch { return "/"; } })(),
     userAgent: request.headers.get("user-agent") ?? "",
   };
 

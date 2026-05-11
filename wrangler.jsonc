@@ -15,13 +15,14 @@
     // Le "binding": "ASSETS" est OBLIGATOIRE quand run_worker_first ["/*"] —
     // sinon env.ASSETS est undefined et le worker crash avec error 1101.
     "run_worker_first": ["/*"]
-  }
-  // D1 — Phase 7 (créée via `bunx wrangler d1 create equipe-buteau-leads`)
-  // "d1_databases": [
-  //   {
-  //     "binding": "DB",
-  //     "database_name": "equipe-buteau-leads",
-  //     "database_id": "<placeholder-fill-after-d1-create>"
-  //   }
-  // ]
+  },
+  // D1 — Phase 7 (creee 2026-05-11 via bunx wrangler d1 create equipe-buteau-leads).
+  // Binding "DB" (pas equipe_buteau_leads) pour matcher env.DB dans worker.ts.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "equipe-buteau-leads",
+      "database_id": "65088730-b488-463f-b1c6-5ea8eadab3b0"
+    }
+  ]
 }
