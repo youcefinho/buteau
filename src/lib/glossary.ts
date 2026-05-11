@@ -1,5 +1,5 @@
 /**
- * Glossaire hypothécaire — 14 termes essentiels pour le marché québécois résidentiel.
+ * Glossaire hypothécaire — 20 termes essentiels pour le marché québécois résidentiel.
  *
  * Sources :
  * - SCHL (Société canadienne d'hypothèques et de logement)

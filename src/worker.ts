@@ -208,12 +208,12 @@ const ROUTE_META_SSR: Record<string, RouteMetaSSR> = {
     }),
   },
   "/lexique": {
-    title: "Lexique hypothécaire — 14 termes essentiels Québec | Équipe Buteau",
-    titleEn: "Mortgage glossary — 14 essential Quebec terms | Équipe Buteau",
+    title: "Lexique hypothécaire — 20 termes essentiels Québec | Équipe Buteau",
+    titleEn: "Mortgage glossary — 20 essential Quebec terms | Équipe Buteau",
     description:
-      "Lexique de 14 termes hypothécaires essentiels au Québec — pré-approbation, mise de fonds, taxe de bienvenue, vice caché. Sources : SCHL, AMF, ARC, Code civil du Québec.",
+      "Lexique de 20 termes hypothécaires essentiels au Québec — pré-approbation, mise de fonds, taxe de bienvenue, vice caché. Sources : SCHL, AMF, ARC, Code civil du Québec.",
     descriptionEn:
-      "Glossary of 14 essential Quebec mortgage terms — pre-approval, down payment, welcome tax, hidden defects. Sources: CMHC, AMF, CRA, Civil Code of Quebec.",
+      "Glossary of 20 essential Quebec mortgage terms — pre-approval, down payment, welcome tax, hidden defects. Sources: CMHC, AMF, CRA, Civil Code of Quebec.",
     // DefinedTermSet COMPLET SSR — généré dynamiquement par schemaBuilder ci-dessous.
     schemaBuilder: (lang) => {
       const isFr = lang === "fr";
@@ -225,8 +225,8 @@ const ROUTE_META_SSR: Record<string, RouteMetaSSR> = {
           ? "Lexique hypothécaire — Équipe Buteau"
           : "Mortgage glossary — Équipe Buteau",
         description: isFr
-          ? "14 termes essentiels pour comprendre votre dossier hypothécaire au Québec."
-          : "14 essential terms to understand your mortgage file in Quebec.",
+          ? "20 termes essentiels pour comprendre votre dossier hypothécaire au Québec."
+          : "20 essential terms to understand your mortgage file in Quebec.",
         inLanguage: isFr ? "fr-CA" : "en-CA",
         url: `${SITE_ORIGIN}/lexique`,
         publisher: { "@id": `${SITE_ORIGIN}/#business` },
