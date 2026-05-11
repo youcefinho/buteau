@@ -83,13 +83,29 @@ export function GlossaryHovercard({ term, children }: GlossaryHovercardProps) {
     <>
       <span
         ref={triggerRef}
+        role="button"
         tabIndex={0}
         aria-describedby={isOpen ? id : undefined}
+        aria-label={`${matched.term[lang]} — ${lang === "fr" ? "voir dans le lexique" : "view in glossary"}`}
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
         onFocus={() => setIsOpen(true)}
         onBlur={() => setIsOpen(false)}
-        className="relative cursor-help underline decoration-[color:var(--color-bronze)] decoration-dotted underline-offset-[3px] decoration-[1.5px] hover:text-[color:var(--color-bronze-deep)] transition-colors"
+        onClick={() => {
+          // Click direct = ouvre modal avec query pré-remplie (label du terme).
+          // Pattern aligné Mathis/Serujan/EG : modal + search bar pre-fill.
+          // Le hover preview reste actif en parallèle pour preview rapide.
+          setIsOpen(false);
+          open(matched.slug, matched.term[lang]);
+        }}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            setIsOpen(false);
+            open(matched.slug, matched.term[lang]);
+          }
+        }}
+        className="relative cursor-pointer underline decoration-[color:var(--color-bronze)] decoration-dotted underline-offset-[3px] decoration-[1.5px] hover:text-[color:var(--color-bronze-deep)] transition-colors"
       >
         {children}
       </span>

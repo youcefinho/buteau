@@ -1,25 +1,46 @@
-import { useEffect, useRef } from "react";
-import { X, ArrowRight } from "lucide-react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { X, ArrowRight, Search } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useGlossary } from "@/lib/GlossaryContext";
 import { glossary } from "@/lib/glossary";
 
 /**
- * GlossaryModal — affiche les 14 termes hypothécaires dans une fenetre modale.
+ * GlossaryModal — affiche les termes hypothécaires dans une fenetre modale.
  *
- * - Trap focus dans la modal (a11y).
- * - Escape pour fermer.
- * - Si selectedSlug fourni, scrolle au terme dès l'ouverture.
+ * - Search bar pré-remplie avec le terme cliqué (initialQuery du context).
+ * - Filtre la liste en live selon le query (label fr/en + fr_alt + definition).
+ * - Scroll auto vers le terme exact si selectedSlug fourni + match query.
+ * - Trap focus + Escape pour fermer.
  * - Mobile : pleine hauteur. Desktop : 900px max width.
  */
 export function GlossaryModal() {
   const { lang } = useLanguage();
-  const { isOpen, selectedSlug, close } = useGlossary();
+  const { isOpen, selectedSlug, initialQuery, close } = useGlossary();
   const containerRef = useRef<HTMLDivElement | null>(null);
   const closeBtnRef = useRef<HTMLButtonElement | null>(null);
+  const [query, setQuery] = useState<string>(initialQuery);
 
-  // Scrolle au terme sélectionné dès l'ouverture.
+  // Reset query quand initialQuery change (nouveau click sur un autre terme).
+  useEffect(() => {
+    if (isOpen) setQuery(initialQuery);
+  }, [isOpen, initialQuery]);
+
+  // Filtre la liste selon la query (label fr/en + fr_alt + definition contiennent query).
+  const filteredGlossary = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return glossary;
+    return glossary.filter((g) => {
+      if (g.term[lang].toLowerCase().includes(q)) return true;
+      if (g.term.fr.toLowerCase().includes(q)) return true;
+      if (g.term.en.toLowerCase().includes(q)) return true;
+      if (g.term.fr_alt?.some((alt) => alt.toLowerCase().includes(q))) return true;
+      if (g.definition[lang].toLowerCase().includes(q)) return true;
+      return false;
+    });
+  }, [query, lang]);
+
+  // Scrolle au terme sélectionné dès l'ouverture (si il est dans le filtre actif).
   useEffect(() => {
     if (!isOpen || !selectedSlug || !containerRef.current) return;
     const t = window.setTimeout(() => {
@@ -27,9 +48,9 @@ export function GlossaryModal() {
       if (el instanceof HTMLElement) {
         el.scrollIntoView({ behavior: "smooth", block: "start" });
       }
-    }, 100);
+    }, 150);
     return () => window.clearTimeout(t);
-  }, [isOpen, selectedSlug]);
+  }, [isOpen, selectedSlug, filteredGlossary]);
 
   // Escape pour fermer + focus trap reel + restore focus + body scroll lock.
   // Audit HI-02 fix : avant on n'avait qu'un focus initial, le Tab s'echappait du modal.
@@ -94,32 +115,57 @@ export function GlossaryModal() {
         className="relative bg-[color:var(--color-cream)] w-full max-w-3xl max-h-[100vh] md:max-h-[88vh] overflow-y-auto shadow-2xl"
       >
         {/* Header */}
-        <div className="sticky top-0 z-10 flex items-center justify-between px-6 md:px-10 py-5 bg-[color:var(--color-cream)] border-b border-[color:var(--color-border)]">
-          <div>
-            <p className="eyebrow text-[color:var(--color-taupe-dark)]">
-              {lang === "fr" ? "Lexique" : "Glossary"}
-            </p>
-            <h2
-              id="glossary-title"
-              className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-xl md:text-2xl uppercase tracking-[0.04em]"
+        <div className="sticky top-0 z-10 px-6 md:px-10 py-5 bg-[color:var(--color-cream)] border-b border-[color:var(--color-border)]">
+          <div className="flex items-center justify-between mb-4">
+            <div>
+              <p className="eyebrow text-[color:var(--color-taupe-dark)]">
+                {lang === "fr" ? "Lexique" : "Glossary"}
+              </p>
+              <h2
+                id="glossary-title"
+                className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-xl md:text-2xl uppercase tracking-[0.04em]"
+              >
+                {lang === "fr" ? "Termes hypothécaires" : "Mortgage terminology"}
+              </h2>
+            </div>
+            <button
+              ref={closeBtnRef}
+              type="button"
+              onClick={close}
+              aria-label={lang === "fr" ? "Fermer le lexique" : "Close glossary"}
+              className="p-2 -mr-2 text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-bronze-deep)] transition-colors"
             >
-              {lang === "fr" ? "Termes hypothécaires" : "Mortgage terminology"}
-            </h2>
+              <X size={24} aria-hidden="true" />
+            </button>
           </div>
-          <button
-            ref={closeBtnRef}
-            type="button"
-            onClick={close}
-            aria-label={lang === "fr" ? "Fermer le lexique" : "Close glossary"}
-            className="p-2 -mr-2 text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-bronze-deep)] transition-colors"
-          >
-            <X size={24} aria-hidden="true" />
-          </button>
+          {/* Search bar — pré-remplie avec le terme cliqué (initialQuery du context). */}
+          <div className="relative">
+            <Search
+              size={16}
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-[color:var(--color-taupe-dark)] pointer-events-none"
+              aria-hidden
+            />
+            <input
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder={lang === "fr" ? "Rechercher un terme..." : "Search a term..."}
+              aria-label={lang === "fr" ? "Rechercher un terme" : "Search a term"}
+              className="w-full pl-10 pr-4 py-2.5 bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/50 rounded-sm text-[color:var(--color-navy-deep)] placeholder:text-[color:var(--color-taupe-dark)] focus:outline-none focus:border-[color:var(--color-bronze)] transition-colors"
+            />
+          </div>
         </div>
 
-        {/* Body — list of terms */}
+        {/* Body — list of terms (filtered by query) */}
         <div className="px-6 md:px-10 py-8 space-y-8">
-          {glossary.map((g) => (
+          {filteredGlossary.length === 0 && (
+            <p className="text-center font-[var(--font-editorial)] italic text-sm text-[color:var(--color-taupe-dark)] py-8">
+              {lang === "fr"
+                ? `Aucun terme ne correspond à "${query}".`
+                : `No term matches "${query}".`}
+            </p>
+          )}
+          {filteredGlossary.map((g) => (
             <article id={`term-${g.slug}`} key={g.slug} className="scroll-mt-24">
               <div className="flex items-baseline gap-3 flex-wrap">
                 <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-lg uppercase tracking-[0.04em]">
