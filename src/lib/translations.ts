@@ -391,6 +391,10 @@ export const translations = {
             q: "Comment puis-je améliorer mon score de crédit ?",
             a: "Plusieurs actions peuvent améliorer votre score : payer vos factures à temps, réduire vos soldes de cartes de crédit, et éviter les nouvelles demandes de crédit inutiles. Nous pouvons vous conseiller sur des stratégies pour optimiser votre profil de crédit.",
           },
+          {
+            q: "Quand devrais-je préparer mon renouvellement hypothécaire ?",
+            a: "Idéalement, 4 à 6 mois avant l'échéance. La majorité des emprunteurs acceptent par défaut l'offre de leur prêteur actuel — souvent sans magasiner. Préparer en avance permet de mettre votre dossier en concurrence auprès de plusieurs institutions, d'obtenir un meilleur taux et d'évaluer si une restructuration (consolidation, refinancement) serait avantageuse. Un renouvellement n'est pas qu'une signature de routine, c'est un point de levier financier.",
+          },
         ],
       },
     },
@@ -1510,6 +1514,10 @@ export const translations = {
           {
             q: "How can I improve my credit score?",
             a: "Several actions help: paying bills on time, reducing credit-card balances, avoiding unnecessary new credit applications. We can advise on strategies to optimize your credit profile.",
+          },
+          {
+            q: "When should I prepare my mortgage renewal?",
+            a: "Ideally 4 to 6 months before maturity. Most borrowers accept their lender's renewal offer by default — often without shopping around. Preparing in advance lets us put your file in competition across multiple institutions, secure a better rate, and assess whether restructuring (consolidation, refinancing) could be advantageous. A renewal isn't a routine signature, it's a financial leverage point.",
           },
         ],
       },
