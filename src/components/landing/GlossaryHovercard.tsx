@@ -91,15 +91,20 @@ export function GlossaryHovercard({ term, children }: GlossaryHovercardProps) {
         onMouseLeave={() => setIsOpen(false)}
         onFocus={() => setIsOpen(true)}
         onBlur={() => setIsOpen(false)}
-        onClick={() => {
+        onClick={(e) => {
           // Click direct = ouvre modal avec query pré-remplie (label du terme).
           // Pattern aligné Mathis/Serujan/EG : modal + search bar pre-fill.
           // Le hover preview reste actif en parallèle pour preview rapide.
+          // CRITICAL : stopPropagation + preventDefault pour ne pas declencher
+          // un parent <Link>/<button> (GuidesShelf items sont dans Link vers /outils).
+          e.stopPropagation();
+          e.preventDefault();
           setIsOpen(false);
           open(matched.slug, matched.term[lang]);
         }}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
+            e.stopPropagation();
             e.preventDefault();
             setIsOpen(false);
             open(matched.slug, matched.term[lang]);
