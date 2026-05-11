@@ -36,6 +36,18 @@ if (!rootEl) {
   throw new Error("#root introuvable dans index.html");
 }
 
+// Retire le splash HTML après MIN_LOADER_MS (masque le boot React ~2s sur
+// chaque page load — parité avec Mathis/Serujan/EG).
+const MIN_LOADER_MS = 2000;
+const FADE_MS = 500;
+setTimeout(() => {
+  const loader = document.getElementById("app-loader");
+  if (loader) {
+    loader.style.opacity = "0";
+    setTimeout(() => loader.remove(), FADE_MS);
+  }
+}, MIN_LOADER_MS);
+
 createRoot(rootEl).render(
   <StrictMode>
     <LanguageProvider>

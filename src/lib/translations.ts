@@ -1160,6 +1160,17 @@ export const translations = {
       refuse: "Refuser tout",
       learnMore: "En savoir plus",
     },
+
+    exitIntent: {
+      eyebrow: "Avant de partir",
+      title: "Un dossier hypothécaire, ça se prépare.",
+      titleAccent: "Une seule conversation suffit.",
+      body: "On structure votre financement sans pression. Vingt minutes au téléphone, c'est suffisant pour clarifier votre dossier — achat, refinancement ou renouvellement.",
+      ctaCall: "Appeler maintenant",
+      ctaContact: "Aller au formulaire",
+      decline: "Plus tard",
+      close: "Fermer",
+    },
   },
 
   en: {
@@ -2253,6 +2264,17 @@ export const translations = {
       accept: "Accept all",
       refuse: "Refuse all",
       learnMore: "Learn more",
+    },
+
+    exitIntent: {
+      eyebrow: "Before you go",
+      title: "A mortgage file deserves preparation.",
+      titleAccent: "One conversation is enough.",
+      body: "We structure your financing without pressure. Twenty minutes on the phone is enough to clarify your file — purchase, refinance or renewal.",
+      ctaCall: "Call now",
+      ctaContact: "Go to form",
+      decline: "Later",
+      close: "Close",
     },
   },
 } as const satisfies Record<Lang, BilingualLax>;
