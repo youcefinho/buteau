@@ -358,11 +358,12 @@ body {
   padding-right: 0.12em;
 }
 
-/* btn-shine v2 — top-edge bronze-clair highlight au hover (édito magazine).
-   La vague blanche horizontale 0.18 alpha faisait « bonbon plastique » sur
-   bronze sombre (vs sun-gleam sur gold pur Serujan). Remplacée par une ligne
-   1.5px en haut du bouton qui apparaît au hover, tons IN-FAMILY (bronze-soft
-   crémeux), fade-in + slide. Calme au resting, contemplation au hover. */
+/* btn-shine v3 — Bronze ember SIGNATURE Buteau au hover (continuité ADN).
+   Au lieu d'un top-edge horizontal générique (qu'on a sur Mathis/EG), un
+   ember bronze radial (8px) apparaît au coin haut-droit du bouton et MONTE
+   vers le haut au hover — micro-particule cohérente avec le système de
+   `RisingBronzeEmbers` déjà présent sur les sections du site. Une braise
+   qui s'élève, métaphore édito magazine Buteau. */
 .btn-shine {
   position: relative;
   isolation: isolate;
@@ -370,35 +371,35 @@ body {
 .btn-shine::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1.5px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    oklch(0.86 0.06 56 / 0.7) 25%,
-    oklch(0.92 0.03 60 / 0.95) 50%,
-    oklch(0.86 0.06 56 / 0.7) 75%,
-    transparent 100%
+  top: 50%;
+  right: 12px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    oklch(0.86 0.10 56 / 1) 0%,
+    oklch(0.78 0.08 56 / 0.6) 40%,
+    transparent 75%
   );
-  filter: blur(0.4px);
+  box-shadow: 0 0 12px 2px oklch(0.704 0.077 56 / 0.5);
   pointer-events: none;
   z-index: 3;
   opacity: 0;
-  transform: translateY(-1px);
+  transform: translateY(50%) scale(0.6);
   transition:
-    opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-shine:hover::after {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(-180%) scale(1);
 }
 @media (prefers-reduced-motion: reduce) {
   .btn-shine::after {
-    transform: none;
+    transform: translateY(-50%) scale(1);
     transition: none;
+    opacity: 0.4;
   }
 }
 
@@ -906,10 +907,13 @@ body {
     background-position: 0% 50%;
     animation: btn-bronze-shimmer 10s ease-in-out infinite;
     border: 1px solid var(--color-bronze);
-    /* Inset 3D — highlight cream haut + ombre warm bas */
+    /* Inset 3D SITE-SPECIFIC Buteau (bronze-soft + navy-deep) :
+       - top : bronze-soft clarifié → highlight chaud bronze
+       - bottom : navy-deep (hue 256) → ombre cool magazine luxe
+       Contraste bronze-warm / navy-cool unique au site. */
     box-shadow:
-      inset 0 1px 0 oklch(0.98 0.03 60 / 0.25),
-      inset 0 -1px 0 oklch(0.4 0.06 50 / 0.20);
+      inset 0 1px 0 oklch(0.815 0.060 60 / 0.40),
+      inset 0 -1px 0 oklch(0.205 0.060 256 / 0.40);
     position: relative;
     overflow: hidden;
     /* isolation: isolate crée un nouveau stacking context. Permet au ::before
