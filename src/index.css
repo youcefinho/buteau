@@ -1154,18 +1154,19 @@ body {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  /* Iteration 3 : reduce size — padding 1px (vs 2px) + angle visible
-     reserre 110-160deg (50deg span vs 120deg) = beam plus subtil + court.
-     Quand il "passe a droite" (sur navy bg), la disparition est breve
-     et discrete. User : "baisser la taille pour que ca va pas a droite" */
-  padding: 1px;
+  /* Iteration 4 (final) : applique sur panel BLANC seulement (left sliders
+     panel CalculatorPreview), pas le wrapper outer. Beam reste contenu
+     dans la moitie visible white, plus de "disparition cote navy".
+     Specs standard restored : padding 1.5px + angle 60-180deg (120deg
+     span). Couleurs muted blue in-family chroma 0.06-0.08 conservees. */
+  padding: 1.5px;
   background: conic-gradient(
     from 0deg,
     transparent 0deg,
-    transparent 110deg,
-    oklch(0.75 0.06 256) 125deg,
-    oklch(0.55 0.08 256) 145deg,
-    transparent 160deg,
+    transparent 60deg,
+    oklch(0.75 0.06 256) 100deg,
+    oklch(0.55 0.08 256) 130deg,
+    transparent 180deg,
     transparent 360deg
   );
   -webkit-mask:

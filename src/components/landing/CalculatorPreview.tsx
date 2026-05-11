@@ -109,14 +109,14 @@ export function CalculatorPreview() {
             </Link>
           </div>
 
-          {/* Calculator column — 7/12.
-              border-beam : faisceau bronze qui tourne autour du perimetre 5s.
-              Pattern adapte EG flagship (gold) → Buteau bronze. Marque la card
-              "outil signature" du site Buteau. mask trick reste a la bordure
-              1.5px = effet contenu dans la card sans deborder. */}
-          <div className="border-beam lg:col-span-7 grid grid-cols-1 md:grid-cols-5 gap-0 rounded-sm overflow-hidden">
-            {/* Inputs sliders — 3/5 */}
-            <div className="md:col-span-3 bg-[color:var(--color-surface)] p-7 md:p-8 space-y-7">
+          {/* Calculator column — 7/12 */}
+          <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-5 gap-0 rounded-sm overflow-hidden border border-[color:var(--color-taupe)]/50">
+            {/* Inputs sliders — 3/5.
+                border-beam applique ICI (sur la moitie BLANCHE uniquement)
+                pour que la rotation reste contenue dans cette zone visible
+                sans "disparaitre" sur la moitie navy droite. rounded-l-sm
+                pour suivre les coins arrondis du parent cote gauche. */}
+            <div className="border-beam md:col-span-3 bg-[color:var(--color-surface)] rounded-l-sm p-7 md:p-8 space-y-7">
               <CalcSliderMini
                 id="prev-amount"
                 label={t("home.calcPreview.amountLabel")}
