@@ -912,6 +912,15 @@ body {
       inset 0 -1px 0 oklch(0.4 0.06 50 / 0.20);
     position: relative;
     overflow: hidden;
+    /* isolation: isolate crée un nouveau stacking context. Permet au ::before
+       d'avoir z-index: -1 (donc PEINT SOUS le texte en flow) tout en restant
+       au-dessus du fond du bouton. Sans isolation, z-index -1 sortirait du
+       stacking context parent et paint sous d'autres éléments de la page.
+       Bug fix : sans isolation, le ::before z-index 0 paintait au-dessus du
+       texte en flow (règle CSS : positioned z-index>=0 paint après inline
+       content), donc le texte disparaissait au hover quand le slide-in fill
+       bronze-deep arrivait. */
+    isolation: isolate;
     transition: color 400ms cubic-bezier(0.16, 1, 0.3, 1),
                 transform 240ms cubic-bezier(0.16, 1, 0.3, 1),
                 letter-spacing 350ms cubic-bezier(0.16, 1, 0.3, 1),
@@ -930,7 +939,7 @@ body {
     background: var(--color-bronze-deep);
     transform: translateX(-101%);
     transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 0;
+    z-index: -1;
   }
 
   .btn-bronze > * {
