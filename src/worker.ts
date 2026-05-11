@@ -21,8 +21,6 @@ import { translations as i18n } from "./lib/translations";
 interface Env {
   ASSETS: { fetch: (req: Request) => Promise<Response> };
   DB?: D1Database; // optionnel tant que D1 pas provisionne (Phase 9 client setup)
-  GHL_LOCATION_ID?: string;
-  GHL_TRACKING_ID?: string;
 }
 
 // Limites + format
@@ -558,12 +556,8 @@ async function handleLead(
   }
 
   // === GHL POST non-bloquant (ctx.waitUntil) ===
-  // Phase 9 : remplir GHL_LOCATION_ID + GHL_TRACKING_ID via wrangler secret put
-  if (env.GHL_LOCATION_ID && env.GHL_TRACKING_ID) {
-    ctx.waitUntil(pushToGhl(env, lead, createdAt));
-  }
-  // Fix LOW : log silencieux Phase 9 — pas de console.log spam à chaque submit
-  // (acceptable de skip silencieusement tant que GHL secrets sont absents)
+  // V6 pipeline : trackingId hardcoded ci-dessous dans pushToGhl().
+  ctx.waitUntil(pushToGhl(lead, createdAt, request));
 
   return jsonOk({ status: "received" });
 }
@@ -573,38 +567,36 @@ async function handleLead(
 // ============================================================
 
 async function pushToGhl(
-  env: Env,
   lead: { full_name: string; email: string; phone: string | null; message: string | null; source: string },
   createdAt: string,
+  request: Request,
 ): Promise<void> {
-  try {
-    // Endpoint GHL External Tracking (cf. skill intralys-v6-pipeline).
-    // Format : POST https://services.leadconnectorhq.com/external-tracking/events
-    // sans auth header (public). Body inclut locationId + trackingId + custom_data.
-    const body = {
-      locationId: env.GHL_LOCATION_ID,
-      trackingId: env.GHL_TRACKING_ID,
-      eventType: "Lead",
-      eventName: "FormSubmission",
-      data: {
-        // Split naïf : 1er token = first_name, reste = last_name. Edge case noms composés
-        // (Latam, Marie-Claude) — acceptable pour l'instant. Si client demande Phase 9, ajouter
-        // 2 inputs séparés first_name/last_name dans le ContactForm.
-        first_name: lead.full_name.split(" ")[0] ?? "",
-        last_name: lead.full_name.split(" ").slice(1).join(" ") || lead.full_name,
-        full_name: lead.full_name, // fallback brut si GHL préfère parser lui-même
-        email: lead.email,
-        phone: lead.phone ?? "",
-        // custom fields à ajouter ici quand GHL fournit les IDs (Phase 9)
-        // formId: "<placeholder>",
-      },
-      timestamp: createdAt,
-    };
+  // V6 pipeline standard (cf. skill intralys-v6-pipeline) : meme pattern que
+  // Mathis, Serujan, EG Services Financiers. Endpoint backend.leadconnectorhq.com,
+  // body type "external_form_submission", trackingId hardcoded (le worker n'a
+  // pas acces au bundle clientConfig).
+  const trackingId = "tk_a1730dcac9744515864c001895c485ea";
+  const ghlBody = {
+    type: "external_form_submission",
+    timestamp: Date.now(),
+    trackingId,
+    formId: lead.source,
+    data: {
+      name: lead.full_name,
+      email: lead.email,
+      phone: lead.phone ?? "",
+      message: lead.message ?? "",
+    },
+    url: request.headers.get("referer") ?? "",
+    userAgent: request.headers.get("user-agent") ?? "",
+  };
 
-    const res = await fetch("https://services.leadconnectorhq.com/external-tracking/events", {
+  try {
+    const res = await fetch("https://backend.leadconnectorhq.com/external-tracking/events", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
+      body: JSON.stringify(ghlBody),
+      signal: AbortSignal.timeout(5000), // fix isolate hung
     });
 
     if (!res.ok) {
