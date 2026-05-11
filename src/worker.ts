@@ -420,7 +420,28 @@ async function injectRouteMeta(response: Response, pathname: string, request: Re
 }
 
 // ============================================================
-// /api/lead — pipeline V6 4 couches défense
+// CSRF basique : Origin pinning (couche 0)
+// ============================================================
+// Si Origin absent (same-origin form classique POSTé depuis le site), on laisse
+// passer. Si Origin présent ET différent du host courant, rejet 403 explicite
+// (pas fake success car CSRF cross-origin n'est jamais un vrai humain).
+function originAllowed(request: Request): boolean {
+  const origin = request.headers.get("Origin");
+  if (!origin) return true;
+  try {
+    return new URL(origin).host === new URL(request.url).host;
+  } catch {
+    return false;
+  }
+}
+
+// ============================================================
+// /api/lead — pipeline V6 5 couches défense
+//   0. Origin pinning (CSRF basique)
+//   1. Honeypot
+//   2. Timing detection (form_started_at + MIN_FORM_FILL_TIME_MS)
+//   3. Rate limit D1 (ip_hash SHA-256 + 30s window)
+//   4. Server-side validation
 // ============================================================
 
 async function handleLead(
@@ -428,6 +449,13 @@ async function handleLead(
   env: Env,
   ctx: ExecutionContext,
 ): Promise<Response> {
+  // === COUCHE 0 — Origin pinning (CSRF) ===
+  // Reject cross-origin POSTs avant toute autre logique (gain de perf + signal clair).
+  if (!originAllowed(request)) {
+    console.warn("[/api/lead] CSRF block: Origin=%s URL=%s", request.headers.get("Origin"), request.url);
+    return jsonError("forbidden", 403);
+  }
+
   // Pre-check : D1 doit etre provisionne (Phase 9 par le client).
   // Si absent, on REFUSE bruyamment (503) — sinon les leads disparaissent silencieusement
   // (audit BL-01 : un succes UI sans persistance = perte totale en prod).
@@ -685,20 +713,31 @@ function withSecurityHeaders(response: Response, request?: Request): Response {
       "img-src 'self' data: https://i.imgur.com https://static.wixstatic.com https://upload.wikimedia.org https://b2b2c.ca https://logos-world.net https://ugc.production.linktr.ee https://storage.googleapis.com https://assets.cdn.filesafe.space https://www.google-analytics.com https://www.facebook.com https://i.ytimg.com",
       "connect-src 'self' https://services.leadconnectorhq.com https://www.google-analytics.com https://www.clarity.ms https://*.facebook.com",
       "frame-src 'self' https://api.leadconnectorhq.com https://www.youtube-nocookie.com https://www.youtube.com",
+      // frame-ancestors 'none' : moderne équivalent de X-Frame-Options DENY.
+      // Empêche tout site (même same-origin) d'embedder ce site dans une iframe.
+      // Anti-clickjacking renforcé.
+      "frame-ancestors 'none'",
       "object-src 'none'",
       "base-uri 'self'",
       "form-action 'self'",
+      "upgrade-insecure-requests",
     ].join("; "),
   );
 
-  headers.set("X-Frame-Options", "SAMEORIGIN");
+  // X-Frame DENY : legacy fallback pour navigateurs anciens qui ne supportent
+  // pas frame-ancestors. Aligné avec EG/Serujan/Mathis (harmonisation cross-sites).
+  headers.set("X-Frame-Options", "DENY");
   headers.set("X-Content-Type-Options", "nosniff");
   headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
-  headers.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
+  // HSTS preload : éligible pour soumission sur hstspreload.org (navigateurs
+  // préchargent la directive avant la 1ère visite). Aligné EG/Serujan/Mathis.
+  headers.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload");
   headers.set(
     "Permissions-Policy",
     "camera=(), microphone=(), geolocation=(), interest-cohort=()",
   );
+  // COOP : isole le browsing context (anti tab-napping via window.opener).
+  headers.set("Cross-Origin-Opener-Policy", "same-origin");
 
   return new Response(response.body, {
     status: response.status,
