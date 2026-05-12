@@ -5,7 +5,7 @@ type SectionHeadingProps = {
   title: string;
   subtitle?: string;
   align?: "center" | "left";
-  tone?: "light" | "dark"; // light = surface claire (navy text), dark = surface navy (cream text)
+  tone?: "light" | "dark" | "bronze"; // light = surface claire (navy text), dark = surface navy (cream text), bronze = cream bg avec eyebrow bronze
   className?: string;
 };
 
@@ -19,7 +19,11 @@ export function SectionHeading({
 }: SectionHeadingProps) {
   const titleColor = tone === "dark" ? "text-[color:var(--color-cream)]" : "text-[color:var(--color-navy-deep)]";
   const subtitleColor = tone === "dark" ? "text-[color:var(--color-cream)]/80" : "text-[color:var(--color-taupe-dark)]";
-  const eyebrowColor = tone === "dark" ? "text-[color:var(--color-taupe)]" : "text-[color:var(--color-taupe-dark)]";
+  const eyebrowColor = tone === "dark"
+    ? "text-[color:var(--color-taupe)]"
+    : tone === "bronze"
+      ? "text-[color:var(--color-bronze)]"
+      : "text-[color:var(--color-taupe-dark)]";
 
   return (
     <div

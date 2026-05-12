@@ -108,7 +108,7 @@ function carnetNoscriptItems(lang: "fr" | "en"): NoscriptItem[] {
 // les 4 membres extraits depuis translations.team.members.
 interface TeamMember { name: string; role: string; bio: string; }
 function equipeNoscriptHtml(lang: "fr" | "en"): string {
-  const dict = (lang === "fr" ? i18n.fr : i18n.en) as { team?: { members?: TeamMember[] } };
+  const dict = (lang === "fr" ? i18n.fr : i18n.en) as unknown as { team?: { members?: readonly TeamMember[] } };
   const members = dict?.team?.members ?? [];
   if (members.length === 0) return "";
   return `<section><h2>${lang === "fr" ? "Notre équipe" : "Our team"}</h2>${members.map(m => `<article><h3>${escapeHtml(m.name)}</h3><p><em>${escapeHtml(m.role)}</em></p><p>${escapeHtml(m.bio)}</p></article>`).join("")}</section>`;

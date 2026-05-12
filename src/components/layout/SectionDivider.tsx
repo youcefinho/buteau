@@ -33,8 +33,8 @@ export function SectionDivider({
   className,
 }: {
   variant?: Variant;
-  /** Tone du contexte autour : "light" = surface cream, "dark" = surface navy */
-  tone?: "light" | "dark";
+  /** Tone du contexte autour : "light" = surface cream, "dark" = surface navy, "bronze" = cream + accent bronze */
+  tone?: "light" | "dark" | "bronze";
   className?: string;
 }) {
   const { ref, isVisible } = useScrollReveal<HTMLDivElement>();

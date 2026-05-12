@@ -9,7 +9,7 @@ import { Container } from "@/components/layout/Container";
 type ChapterMarkerProps = {
   numeral: string; // I / II / III / IV / V / VI / VII / VIII / IX
   label?: string;
-  tone?: "light" | "dark";
+  tone?: "light" | "dark" | "bronze";
 };
 
 export function ChapterMarker({ numeral, label, tone = "light" }: ChapterMarkerProps) {
