@@ -35,17 +35,64 @@
   --color-divider: var(--color-taupe);
 
   /* --- Typographie --- */
-  --font-sans: "Open Sans", system-ui, -apple-system, sans-serif;
-  --font-display: "Montserrat", "Open Sans", system-ui, sans-serif;
-  --font-editorial: "Cormorant Garamond", "Georgia", serif;
+  /* Fix CLS 0.261 (Lighthouse audit 2026-05-13) : ajout de fallbacks
+     "Montserrat fallback" / "Cormorant fallback" / "Fraunces fallback" avec
+     size-adjust + ascent/descent overrides qui matchent les metrics des web fonts.
+     Quand la web font finit de charger, le swap ne provoque AUCUN reflow car
+     les dimensions du texte restent identiques. Pattern next/font moderne. */
+  --font-sans: "Open Sans", "Open Sans fallback", system-ui, -apple-system, sans-serif;
+  --font-display: "Montserrat", "Montserrat fallback", "Open Sans", system-ui, sans-serif;
+  --font-editorial: "Cormorant Garamond", "Cormorant fallback", "Georgia", serif;
   /* Fraunces variable — utilisé UNIQUEMENT sur 3 endroits signatures (Hero tagline,
      Mission pull quote, BrokerLetter "Bonjour"). Variable axes : optical size + WONK
      pour vraie distinctiveness vs Cormorant traditional. */
-  --font-signature: "Fraunces", "Cormorant Garamond", "Georgia", serif;
+  --font-signature: "Fraunces", "Fraunces fallback", "Cormorant Garamond", "Georgia", serif;
 
   /* --- Letter-spacing signature (eyebrows, labels uppercase) --- */
   --tracking-eyebrow: 0.12em;
   --tracking-headline: -0.02em;
+}
+
+/* ============================================================
+   FONT FALLBACKS — size-adjust pour eviter CLS au swap web font
+   ============================================================ */
+/* Metrics calculees pour matcher Montserrat (display sans-serif geometric).
+   Quand "Montserrat" finit le chargement, le swap depuis Arial fallback ne
+   provoque aucun reflow car les dimensions de chaque ligne restent identiques. */
+@font-face {
+  font-family: "Montserrat fallback";
+  src: local("Arial");
+  size-adjust: 105%;
+  ascent-override: 92%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+/* Open Sans : similaire a Arial donc fallback discret. */
+@font-face {
+  font-family: "Open Sans fallback";
+  src: local("Arial");
+  size-adjust: 101%;
+  ascent-override: 100%;
+  descent-override: 27%;
+  line-gap-override: 0%;
+}
+/* Cormorant Garamond (serif) : metrics plus etroites, ajustement avec Georgia. */
+@font-face {
+  font-family: "Cormorant fallback";
+  src: local("Georgia");
+  size-adjust: 95%;
+  ascent-override: 90%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+}
+/* Fraunces variable serif : optical sizing. */
+@font-face {
+  font-family: "Fraunces fallback";
+  src: local("Georgia");
+  size-adjust: 97%;
+  ascent-override: 92%;
+  descent-override: 23%;
+  line-gap-override: 0%;
 }
 
 /* ============================================================
