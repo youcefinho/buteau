@@ -104,7 +104,7 @@ export function Navbar() {
             aria-label="Menu"
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((v) => !v)}
-            className="lg:hidden p-2 -mr-2"
+            className="lg:hidden p-3 -mr-2 min-h-[44px] min-w-[44px] inline-flex items-center justify-center"
           >
             {mobileOpen ? (
               <X size={24} aria-hidden="true" />

@@ -8,8 +8,8 @@ export function LanguageToggle({ className = "" }: { className?: string }) {
       onClick={toggle}
       aria-label={lang === "fr" ? "Switch to English" : "Passer au français"}
       className={`
-        inline-flex items-center gap-1.5
-        px-3 py-1.5
+        inline-flex items-center justify-center gap-1.5
+        px-3 py-1.5 max-md:min-h-[44px] max-md:min-w-[44px] max-md:px-4
         font-[var(--font-display)]
         text-xs font-semibold uppercase
         tracking-[var(--tracking-eyebrow)]

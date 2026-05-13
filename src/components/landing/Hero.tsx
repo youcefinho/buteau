@@ -145,7 +145,7 @@ export function Hero() {
             {/* Hint éducatif — apparaît subtle, fade out au 1er hover sur le brand */}
             <span
               aria-hidden="true"
-              className="absolute -bottom-12 left-1/2 -translate-x-1/2 eyebrow text-[color:var(--color-taupe)]/70 text-[10px] whitespace-nowrap opacity-100 transition-opacity duration-500 group-hover/brand:opacity-0 animate-[buteauFadeUp_700ms_ease-out_2000ms_both]"
+              className="absolute -bottom-12 left-1/2 -translate-x-1/2 eyebrow text-[color:var(--color-taupe)]/70 text-[10px] whitespace-nowrap opacity-100 transition-opacity duration-500 group-hover/brand:opacity-0 animate-[buteauFadeUp_700ms_ease-out_2000ms_both] max-md:hidden"
             >
               ↑ {t("home.hero.letterHint")}
             </span>

@@ -58,6 +58,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -67,6 +68,7 @@ body {
   font-feature-settings: "ss01", "kern";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* Custom selection — bronze background + cream text + slight letter-spacing
