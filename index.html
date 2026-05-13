@@ -13,6 +13,11 @@
 
     <link rel="canonical" href="https://equipe-buteau.intralysqc.workers.dev/" />
 
+    <!-- Preload LCP-critical hero image (AVIF first) — Phase A perf 2026-05-13.
+         Hero est en CSS background-image via image-set() = JAMAIS preloade par
+         defaut. Ce link force le fetch immediat. Gain LCP estime : 200-500ms. -->
+    <link rel="preload" as="image" type="image/avif" href="/hero-buteau.avif" fetchpriority="high" />
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fr_CA" />
