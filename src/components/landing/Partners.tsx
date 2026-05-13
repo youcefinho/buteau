@@ -48,6 +48,8 @@ export function Partners() {
                   src={p.logo}
                   alt={p.name}
                   loading="lazy"
+                  width="160"
+                  height="80"
                   className="h-16 md:h-20 max-w-[160px] w-auto object-contain transition-all hover:scale-110 grayscale-0 hover:grayscale"
                 />
               </div>

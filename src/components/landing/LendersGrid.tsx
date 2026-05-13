@@ -51,6 +51,8 @@ export function LendersGrid() {
                   src={l.logo}
                   alt={l.name}
                   loading="lazy"
+                  width="160"
+                  height="64"
                   className="max-h-full max-w-[160px] w-auto object-contain filter grayscale-[20%] group-hover:grayscale-0 transition-all duration-500"
                 />
               </div>
