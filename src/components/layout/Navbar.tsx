@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Menu, X, Instagram, Linkedin, Facebook, Star } from "lucide-react";
+import { Menu, X, Instagram, Linkedin, Facebook, Star, Phone, BookOpen, CalendarCheck } from "lucide-react";
+import { useGlossary } from "@/lib/GlossaryContext";
 import { useLanguage } from "@/lib/LanguageContext";
 import { config } from "@/lib/config";
 import { Container } from "./Container";
@@ -9,6 +10,15 @@ import { cn } from "@/lib/utils";
 
 export function Navbar() {
   const { t } = useLanguage();
+  const { open: openGlossary } = useGlossary();
+
+  // Calendly bouton mort si URL vide (Phase 9 a venir). Pattern cross-site.
+  const openCalendly = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (config.calendlyUrl) {
+      window.open(config.calendlyUrl, "_blank", "noopener,noreferrer");
+    }
+  };
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { location } = useRouterState();
@@ -92,6 +102,48 @@ export function Navbar() {
         {/* Right cluster — lang toggle + social icons + CTA + burger mobile */}
         <div className="flex items-center gap-3" style={{ color: fgColor }}>
           <LanguageToggle className="hidden sm:inline-flex" />
+
+          {/* 3 icons outline bronze : Phone + Lexique + Calendly. Ajout 2026-05-14
+              cross-site portage. Calendly = bouton mort si calendlyUrl vide. */}
+          <div className="hidden md:flex items-center gap-1.5">
+            <a
+              href={`tel:${config.phone.raw}`}
+              aria-label={`${t("common.callUs")} ${config.phone.display}`}
+              className="inline-flex items-center justify-center w-9 h-9 rounded-md transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+              style={{
+                border: `1px solid color-mix(in oklch, ${fgColor} 25%, transparent)`,
+                color: fgColor,
+              }}
+            >
+              <Phone className="w-4 h-4" strokeWidth={1.7} />
+            </a>
+            <button
+              type="button"
+              onClick={() => openGlossary()}
+              aria-label="Lexique"
+              className="inline-flex items-center justify-center w-9 h-9 rounded-md transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
+              style={{
+                border: `1px solid color-mix(in oklch, ${fgColor} 25%, transparent)`,
+                color: fgColor,
+              }}
+            >
+              <BookOpen className="w-4 h-4" strokeWidth={1.7} />
+            </button>
+            <a
+              href={config.calendlyUrl || "#"}
+              target={config.calendlyUrl ? "_blank" : undefined}
+              rel={config.calendlyUrl ? "noopener noreferrer" : undefined}
+              onClick={openCalendly}
+              aria-label="Calendly"
+              className="inline-flex items-center justify-center w-9 h-9 rounded-md transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+              style={{
+                border: `1px solid color-mix(in oklch, ${fgColor} 25%, transparent)`,
+                color: fgColor,
+              }}
+            >
+              <CalendarCheck className="w-4 h-4" strokeWidth={1.7} />
+            </a>
+          </div>
 
           <a
             href={`tel:${config.phone.raw}`}
