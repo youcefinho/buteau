@@ -36,7 +36,10 @@ export const translations = {
       tagline: "L'hypothèque autrement",
       cabinet: "Planiprêt",
       callUs: "Nous joindre",
-      contactCta: "Prendre rendez-vous",
+      smsLabel: "Texto direct",
+      smsBody:
+        "Bonjour Andrew, je suis interesse(e) par vos services de courtier hypothecaire. Pouvez-vous me rappeler ?",
+      contactCta: "Démarrer mon parcours",
       learnMore: "En savoir plus",
       backHome: "Retour à l'accueil",
       writeUs: "Nous écrire",
@@ -1183,7 +1186,10 @@ export const translations = {
       tagline: "Mortgage. Differently.",
       cabinet: "Planiprêt",
       callUs: "Reach us",
-      contactCta: "Book an appointment",
+      smsLabel: "Direct text",
+      smsBody:
+        "Hello Andrew, I am interested in your mortgage broker services. Could you call me back?",
+      contactCta: "Start my journey",
       learnMore: "Learn more",
       backHome: "Back to home",
       writeUs: "Email us",

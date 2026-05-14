@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { BookOpen } from "lucide-react";
+import { BookOpen, Star } from "lucide-react";
 import { RisingBronzeEmbers } from "@/components/atmosphere/RisingBronzeEmbers";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
@@ -161,6 +161,23 @@ export function Hero() {
 
           {/* Decorative line taupe — fine, signature — reveal step 4 */}
           <div className="w-24 md:w-32 h-px bg-[color:var(--color-taupe)] my-10 md:my-14 animate-[buteauWidth_700ms_ease-out_1100ms_both]" />
+
+          {/* Trust chip Google reviews — vraie note réutilisée de la section
+              Reviews (fiche Andrew Buteau publique vérifiable). Star jaune fill
+              = signal universel Google review (cohérent cross-4-sites Intralys).
+              Cliquable → ouvre la fiche Google en nouvel onglet. */}
+          <a
+            href={config.googleReviewsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 mb-8 rounded-full border border-yellow-400/40 bg-yellow-400/5 hover:border-yellow-400/70 hover:bg-yellow-400/10 transition-colors text-xs sm:text-sm w-fit animate-[buteauFadeUp_700ms_ease-out_1150ms_both]"
+            aria-label={t("home.reviews.googleBadgeLabel")}
+          >
+            <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400 shrink-0" strokeWidth={1.5} aria-hidden />
+            <span className="font-medium text-[color:var(--color-cream)]/95">
+              {t("home.reviews.googleBadgeLabel")} · Google
+            </span>
+          </a>
 
           {/* Subtitle — reveal step 5 */}
           <p className="text-[color:var(--color-cream)]/85 text-base md:text-lg font-light leading-[1.45] max-w-xl mb-12 animate-[buteauFadeUp_700ms_ease-out_1200ms_both]">

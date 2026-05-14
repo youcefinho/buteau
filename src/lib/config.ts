@@ -79,6 +79,12 @@ export const config = {
   // Calendly (Phase 9 — placeholder)
   calendlyUrl: "",
 
+  // Google Reviews — URL publique de la fiche Andrew Buteau
+  // Utilise par Reviews.tsx + Hero trust chip + Footer.
+  // Ne PAS inventer une note chiffree (aggregateRating) sans verification publique.
+  googleReviewsUrl:
+    "https://www.google.com/search?q=Andrew+Buteau+Courtier+Hypothecaire",
+
   // GHL pipeline V6 (Phase 7 — placeholders)
   ghl: {
     locationId: "",
