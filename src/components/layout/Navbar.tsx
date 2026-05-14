@@ -145,12 +145,17 @@ export function Navbar() {
             </a>
           </div>
 
-          <a
-            href={`tel:${config.phone.raw}`}
+          {/* "Nous joindre" — scroll vers #contact (section ContactSection) au
+              lieu de tel: qui ouvrait le composeur OS sur desktop (Skype/FaceTime/
+              Teams popup). L'icone Phone outline-bronze a gauche garde tel: pour
+              appel direct mobile. User choice 2026-05-14 option B. */}
+          <Link
+            to="/"
+            hash="contact"
             className="hidden md:inline-flex btn-bronze"
           >
             {t("common.callUs")}
-          </a>
+          </Link>
 
           {/* Reseaux sociaux compacts — desktop only (mobile dans le drawer).
               Position : APRES le CTA "Nous joindre", AVANT le trust chip. */}
