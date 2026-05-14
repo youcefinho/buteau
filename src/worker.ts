@@ -716,11 +716,18 @@ function withSecurityHeaders(response: Response, request?: Request): Response {
   const headers = new Headers(response.headers);
 
   // Cache headers — assets fingerprintés (Vite hash) sont immutables 1 an.
-  // Skip HTML pour rester fresh sur changements meta SSR.
+  // HTML routes : stale-while-revalidate pour robustness (E.1 anti-soucis
+  // client 2026-05-14). Si serveur down brief, visiteur a derniere version
+  // cached + revalidate background.
   if (request) {
     const url = new URL(request.url);
     if (url.pathname.startsWith("/assets/")) {
       headers.set("Cache-Control", "public, max-age=31536000, immutable");
+    } else {
+      const contentType = response.headers.get("content-type") || "";
+      if (contentType.includes("text/html")) {
+        headers.set("Cache-Control", "public, max-age=0, must-revalidate, stale-while-revalidate=86400");
+      }
     }
   }
 
