@@ -85,6 +85,13 @@ export const config = {
   googleReviewsUrl:
     "https://www.google.com/search?q=Andrew+Buteau+Courtier+Hypothecaire",
 
+  // Reseaux sociaux Andrew Buteau (fournis par user 2026-05-14)
+  socials: {
+    instagram: { url: "https://www.instagram.com/andrew.buteau/" },
+    linkedin: { url: "https://ca.linkedin.com/in/andrew-buteau-a133a415a" },
+    facebook: { url: "https://www.facebook.com/andrew.buteau.1/" },
+  },
+
   // GHL pipeline V6 (Phase 7 — placeholders)
   ghl: {
     locationId: "",

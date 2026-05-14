@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Instagram, Linkedin, Facebook } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { config } from "@/lib/config";
 import { Container } from "./Container";
@@ -89,9 +89,59 @@ export function Navbar() {
           ))}
         </div>
 
-        {/* Right cluster — lang toggle + CTA + burger mobile */}
+        {/* Right cluster — lang toggle + social icons + CTA + burger mobile */}
         <div className="flex items-center gap-3" style={{ color: fgColor }}>
           <LanguageToggle className="hidden sm:inline-flex" />
+
+          {/* Reseaux sociaux compacts — desktop only (mobile dans le drawer) */}
+          <div className="hidden md:flex items-center gap-1.5">
+            {config.socials.instagram && (
+              <a
+                href={config.socials.instagram.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram Andrew Buteau"
+                className="inline-flex items-center justify-center w-9 h-9 rounded-md transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+                style={{
+                  border: `1px solid color-mix(in oklch, ${fgColor} 25%, transparent)`,
+                  color: fgColor,
+                }}
+              >
+                <Instagram className="w-4 h-4" strokeWidth={1.7} />
+              </a>
+            )}
+            {config.socials.linkedin && (
+              <a
+                href={config.socials.linkedin.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Andrew Buteau"
+                className="inline-flex items-center justify-center w-9 h-9 rounded-md transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+                style={{
+                  border: `1px solid color-mix(in oklch, ${fgColor} 25%, transparent)`,
+                  color: fgColor,
+                }}
+              >
+                <Linkedin className="w-4 h-4" strokeWidth={1.7} />
+              </a>
+            )}
+            {config.socials.facebook && (
+              <a
+                href={config.socials.facebook.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook Andrew Buteau"
+                className="inline-flex items-center justify-center w-9 h-9 rounded-md transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+                style={{
+                  border: `1px solid color-mix(in oklch, ${fgColor} 25%, transparent)`,
+                  color: fgColor,
+                }}
+              >
+                <Facebook className="w-4 h-4" strokeWidth={1.7} />
+              </a>
+            )}
+          </div>
+
           <a
             href={`tel:${config.phone.raw}`}
             className="hidden md:inline-flex btn-bronze"
@@ -136,6 +186,44 @@ export function Navbar() {
               ))}
             </ul>
             <div className="signature-line-long" />
+
+            {/* Reseaux sociaux mobile — icons row centree */}
+            <div className="flex items-center justify-center gap-2 pt-2">
+              {config.socials.instagram && (
+                <a
+                  href={config.socials.instagram.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram Andrew Buteau"
+                  className="inline-flex items-center justify-center w-11 h-11 rounded-md border border-[color:var(--color-bronze)]/30 text-[color:var(--color-navy-deep)] hover:bg-[color:var(--color-bronze)]/10 hover:border-[color:var(--color-bronze)]/60 transition-all duration-300 active:scale-95"
+                >
+                  <Instagram className="w-5 h-5" strokeWidth={1.7} />
+                </a>
+              )}
+              {config.socials.linkedin && (
+                <a
+                  href={config.socials.linkedin.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn Andrew Buteau"
+                  className="inline-flex items-center justify-center w-11 h-11 rounded-md border border-[color:var(--color-bronze)]/30 text-[color:var(--color-navy-deep)] hover:bg-[color:var(--color-bronze)]/10 hover:border-[color:var(--color-bronze)]/60 transition-all duration-300 active:scale-95"
+                >
+                  <Linkedin className="w-5 h-5" strokeWidth={1.7} />
+                </a>
+              )}
+              {config.socials.facebook && (
+                <a
+                  href={config.socials.facebook.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook Andrew Buteau"
+                  className="inline-flex items-center justify-center w-11 h-11 rounded-md border border-[color:var(--color-bronze)]/30 text-[color:var(--color-navy-deep)] hover:bg-[color:var(--color-bronze)]/10 hover:border-[color:var(--color-bronze)]/60 transition-all duration-300 active:scale-95"
+                >
+                  <Facebook className="w-5 h-5" strokeWidth={1.7} />
+                </a>
+              )}
+            </div>
+
             <div className="flex items-center justify-between">
               <LanguageToggle />
               <a href={`tel:${config.phone.raw}`} className="btn-bronze">
