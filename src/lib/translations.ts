@@ -319,7 +319,7 @@ export const translations = {
       reviews: {
         eyebrow: "Courrier des lecteurs",
         title: "Ce que nos clients disent",
-        googleBadgeLabel: "5/5 · 111 avis Google",
+        googleBadgeLabel: "111 avis 5 étoiles Google",
         letterDateLabel: "Reçu le",
         letterFromLabel: "De",
         // Note Google : a verifier en mode incognito avant d'inscrire la note dans
@@ -1453,7 +1453,7 @@ export const translations = {
       reviews: {
         eyebrow: "Letters to the editor",
         title: "What our clients say",
-        googleBadgeLabel: "5/5 · 111 Google reviews",
+        googleBadgeLabel: "111 reviews 5 stars Google",
         letterDateLabel: "Received",
         letterFromLabel: "From",
         items: [
