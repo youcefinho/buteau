@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Phone, MessageSquare, Sparkles } from "lucide-react";
+import { Phone, MessageSquare, CalendarCheck } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { config } from "@/lib/config";
 
@@ -48,12 +48,16 @@ export function MobileStickyCta() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Calendly conditional : render seulement si URL fournie (Phase 9 à venir).
-  // Pour l'instant le bouton n'apparait pas, le user voit 3 actions au lieu de 4.
-  const showCalendly = Boolean(config.calendlyUrl);
-  const openCalendly = () => {
-    if (!showCalendly) return;
-    window.open(config.calendlyUrl, "_blank", "noopener,noreferrer");
+  // Calendly : icone toujours visible (4 actions design final). Si calendlyUrl
+  // vide (Phase 9 a venir), fallback scroll vers #contact form pour ne pas
+  // avoir de bouton mort en prod. Quand Andrew fournira la vraie URL Calendly,
+  // le bouton ouvrira automatiquement la popup Calendly.
+  const openCalendly = (e: React.MouseEvent) => {
+    if (config.calendlyUrl) {
+      e.preventDefault();
+      window.open(config.calendlyUrl, "_blank", "noopener,noreferrer");
+    }
+    // Sinon : le href="#contact" natif gere le scroll fallback.
   };
 
   return (
@@ -88,18 +92,19 @@ export function MobileStickyCta() {
             <MessageSquare size={16} strokeWidth={1.7} aria-hidden />
           </a>
 
-          {/* 3. Calendly — icon only, conditional render si calendlyUrl set */}
-          {showCalendly && (
-            <button
-              type="button"
-              onClick={openCalendly}
-              className="inline-flex items-center justify-center w-11 h-11 shrink-0 rounded-md border border-[color:var(--color-bronze)]/25 text-[color:var(--color-cream)]/85 hover:text-[color:var(--color-bronze)] hover:border-[color:var(--color-bronze)]/60 hover:bg-[color:var(--color-bronze)]/5 active:scale-95 transition-all duration-300 cursor-pointer"
-              aria-label="Calendly"
-              tabIndex={visible ? 0 : -1}
-            >
-              <Sparkles size={16} strokeWidth={1.7} aria-hidden />
-            </button>
-          )}
+          {/* 3. Calendly — icone toujours visible. Si calendlyUrl present :
+              ouvre popup en nouvel onglet. Sinon : fallback scroll #contact form. */}
+          <a
+            href={config.calendlyUrl || "#contact"}
+            target={config.calendlyUrl ? "_blank" : undefined}
+            rel={config.calendlyUrl ? "noopener noreferrer" : undefined}
+            onClick={openCalendly}
+            className="inline-flex items-center justify-center w-11 h-11 shrink-0 rounded-md border border-[color:var(--color-bronze)]/25 text-[color:var(--color-cream)]/85 hover:text-[color:var(--color-bronze)] hover:border-[color:var(--color-bronze)]/60 hover:bg-[color:var(--color-bronze)]/5 active:scale-95 transition-all duration-300"
+            aria-label="Calendly"
+            tabIndex={visible ? 0 : -1}
+          >
+            <CalendarCheck size={16} strokeWidth={1.7} aria-hidden />
+          </a>
 
           {/* 4. CTA principal — Démarrer mon parcours (filled bronze)
               Reduit en taille (text-[10px] + py-2.5 + gap-1.5) pour accommoder
