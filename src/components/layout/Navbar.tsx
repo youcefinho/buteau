@@ -93,7 +93,15 @@ export function Navbar() {
         <div className="flex items-center gap-3" style={{ color: fgColor }}>
           <LanguageToggle className="hidden sm:inline-flex" />
 
-          {/* Reseaux sociaux compacts — desktop only (mobile dans le drawer) */}
+          <a
+            href={`tel:${config.phone.raw}`}
+            className="hidden md:inline-flex btn-bronze"
+          >
+            {t("common.callUs")}
+          </a>
+
+          {/* Reseaux sociaux compacts — desktop only (mobile dans le drawer)
+              Position : APRES le CTA "Nous joindre" (a droite du cluster). */}
           <div className="hidden md:flex items-center gap-1.5">
             {config.socials.instagram && (
               <a
@@ -141,13 +149,6 @@ export function Navbar() {
               </a>
             )}
           </div>
-
-          <a
-            href={`tel:${config.phone.raw}`}
-            className="hidden md:inline-flex btn-bronze"
-          >
-            {t("common.callUs")}
-          </a>
 
           <button
             type="button"
