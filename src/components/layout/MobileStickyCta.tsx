@@ -49,15 +49,14 @@ export function MobileStickyCta() {
   }, []);
 
   // Calendly : icone toujours visible (4 actions design final). Si calendlyUrl
-  // vide (Phase 9 a venir), fallback scroll vers #contact form pour ne pas
-  // avoir de bouton mort en prod. Quand Andrew fournira la vraie URL Calendly,
-  // le bouton ouvrira automatiquement la popup Calendly.
+  // vide (Phase 9 a venir) -> bouton no-op (preventDefault, ne fait rien).
+  // Quand Andrew fournira la vraie URL Calendly, le bouton ouvrira la popup.
   const openCalendly = (e: React.MouseEvent) => {
+    e.preventDefault();
     if (config.calendlyUrl) {
-      e.preventDefault();
       window.open(config.calendlyUrl, "_blank", "noopener,noreferrer");
     }
-    // Sinon : le href="#contact" natif gere le scroll fallback.
+    // Sinon : no-op silencieux le temps de mettre l'URL.
   };
 
   return (
@@ -93,9 +92,10 @@ export function MobileStickyCta() {
           </a>
 
           {/* 3. Calendly — icone toujours visible. Si calendlyUrl present :
-              ouvre popup en nouvel onglet. Sinon : fallback scroll #contact form. */}
+              ouvre popup en nouvel onglet. Sinon : no-op (bouton "mort" le temps
+              de mettre l'URL Phase 9). */}
           <a
-            href={config.calendlyUrl || "#contact"}
+            href={config.calendlyUrl || "#"}
             target={config.calendlyUrl ? "_blank" : undefined}
             rel={config.calendlyUrl ? "noopener noreferrer" : undefined}
             onClick={openCalendly}

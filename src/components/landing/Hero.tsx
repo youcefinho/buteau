@@ -175,7 +175,7 @@ export function Hero() {
           >
             <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400 shrink-0" strokeWidth={1.5} aria-hidden />
             <span className="font-medium text-[color:var(--color-cream)]/95">
-              {t("home.reviews.googleBadgeLabel")} · Google
+              {t("home.reviews.googleBadgeLabel")}
             </span>
           </a>
 
