@@ -17,7 +17,7 @@ export function LanguageToggle({ className = "" }: { className?: string }) {
     <div
       role="group"
       aria-label="Selecteur de langue"
-      className={`flex items-center gap-2 select-none shrink-0 whitespace-nowrap ${className}`}
+      className={`items-center gap-2 select-none shrink-0 whitespace-nowrap ${className || "inline-flex"}`}
     >
       <button
         type="button"
