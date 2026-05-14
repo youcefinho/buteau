@@ -1,26 +1,61 @@
 import { useLanguage } from "@/lib/LanguageContext";
 
+/**
+ * LanguageToggle — selecteur FR / EN editorial 2 boutons (refonte 2026-05-14).
+ *
+ * Pattern aligne sur EGSF/Gatineau/Serujan : 2 boutons visibles cote a cote,
+ * langue active en bronze (couleur signature Buteau) + font display + size+1,
+ * langue inactive en muted small caps. Separateur hairline ".".
+ *
+ * Persistance via LanguageProvider (clef buteau-lang). Pas de dropdown,
+ * pas de flag — minimal editorial.
+ */
 export function LanguageToggle({ className = "" }: { className?: string }) {
-  const { lang, toggle } = useLanguage();
+  const { lang, setLang } = useLanguage();
+
   return (
-    <button
-      type="button"
-      onClick={toggle}
-      aria-label={lang === "fr" ? "Switch to English" : "Passer au français"}
-      className={`
-        inline-flex items-center justify-center gap-1.5
-        px-3 py-1.5 max-md:min-h-[44px] max-md:min-w-[44px] max-md:px-4
-        font-[var(--font-display)]
-        text-xs font-semibold uppercase
-        tracking-[var(--tracking-eyebrow)]
-        text-current
-        border border-current/30
-        hover:border-current/70
-        transition-colors
-        ${className}
-      `}
+    <div
+      role="group"
+      aria-label="Selecteur de langue"
+      className={`flex items-center gap-2 select-none shrink-0 whitespace-nowrap ${className}`}
     >
-      <span aria-hidden="true">{lang === "fr" ? "EN" : "FR"}</span>
-    </button>
+      <button
+        type="button"
+        onClick={() => setLang("fr")}
+        aria-label="Francais"
+        aria-pressed={lang === "fr"}
+        className="font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] transition-colors max-md:min-h-[44px] max-md:min-w-[44px] inline-flex items-center justify-center"
+        style={{
+          color: lang === "fr" ? "var(--color-bronze-deep)" : "color-mix(in oklch, currentColor 55%, transparent)",
+          fontSize: lang === "fr" ? "13px" : "11px",
+          fontWeight: lang === "fr" ? 700 : 600,
+        }}
+      >
+        FR
+      </button>
+      <span
+        aria-hidden="true"
+        className="text-[10px]"
+        style={{
+          color: "color-mix(in oklch, currentColor 35%, transparent)",
+        }}
+      >
+        ·
+      </span>
+      <button
+        type="button"
+        onClick={() => setLang("en")}
+        aria-label="English"
+        aria-pressed={lang === "en"}
+        className="font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] transition-colors max-md:min-h-[44px] max-md:min-w-[44px] inline-flex items-center justify-center"
+        style={{
+          color: lang === "en" ? "var(--color-bronze-deep)" : "color-mix(in oklch, currentColor 55%, transparent)",
+          fontSize: lang === "en" ? "13px" : "11px",
+          fontWeight: lang === "en" ? 700 : 600,
+        }}
+      >
+        EN
+      </button>
+    </div>
   );
 }

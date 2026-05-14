@@ -67,10 +67,10 @@ export function Navbar() {
       )}
     >
       <Container
-        size="xl"
+        size="full"
         as="nav"
         className={cn(
-          "flex items-center justify-between transition-all duration-500 ease-out",
+          "flex items-center justify-between transition-all duration-500 ease-out max-w-[1800px]",
           scrolled
             ? "h-14 bg-[color:var(--color-cream)]/95 backdrop-blur-xl border border-[color:var(--color-border)] rounded-full shadow-[0_8px_32px_-12px_rgba(16,34,61,0.18)] px-6 md:px-8"
             : "h-20 bg-transparent border-b border-transparent px-6 md:px-10",
@@ -93,7 +93,7 @@ export function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden lg:flex items-center gap-10" style={{ color: fgColor }}>
+        <div className="hidden lg:flex items-center gap-7 xl:gap-9" style={{ color: fgColor }}>
           {navItems.map((item) => (
             <NavLink key={item.to} to={item.to} label={t(item.key)} />
           ))}
