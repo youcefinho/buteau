@@ -40,6 +40,9 @@ export const translations = {
       smsBody:
         "Bonjour Andrew, je suis interesse(e) par vos services de courtier hypothecaire. Pouvez-vous me rappeler ?",
       contactCta: "Démarrer mon parcours",
+      whatsappMessage:
+        "Bonjour Andrew, je suis interesse(e) par vos services de courtier hypothecaire.",
+      whatsappTooltip: "Écrivez-nous sur WhatsApp",
       learnMore: "En savoir plus",
       backHome: "Retour à l'accueil",
       writeUs: "Nous écrire",
@@ -1190,6 +1193,9 @@ export const translations = {
       smsBody:
         "Hello Andrew, I am interested in your mortgage broker services. Could you call me back?",
       contactCta: "Start my journey",
+      whatsappMessage:
+        "Hello Andrew, I am interested in your mortgage broker services.",
+      whatsappTooltip: "Message us on WhatsApp",
       learnMore: "Learn more",
       backHome: "Back to home",
       writeUs: "Email us",
