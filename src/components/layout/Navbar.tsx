@@ -100,25 +100,8 @@ export function Navbar() {
             {t("common.callUs")}
           </a>
 
-          {/* Trust chip Google reviews — deplace du Hero vers Navbar 2026-05-14.
-              Position : entre CTA "Nous joindre" et social icons (a droite).
-              Star jaune fill universel (cross-4-sites). Cliquable -> fiche Google. */}
-          <a
-            href={config.googleReviewsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-yellow-400/40 bg-yellow-400/5 hover:border-yellow-400/70 hover:bg-yellow-400/10 transition-colors text-xs"
-            aria-label={t("home.reviews.googleBadgeLabel")}
-            style={{ color: fgColor }}
-          >
-            <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400 shrink-0" strokeWidth={1.5} aria-hidden />
-            <span className="font-medium whitespace-nowrap">
-              {t("home.reviews.googleBadgeLabel")}
-            </span>
-          </a>
-
-          {/* Reseaux sociaux compacts — desktop only (mobile dans le drawer)
-              Position : APRES le trust chip (a droite du cluster). */}
+          {/* Reseaux sociaux compacts — desktop only (mobile dans le drawer).
+              Position : APRES le CTA "Nous joindre", AVANT le trust chip. */}
           <div className="hidden md:flex items-center gap-1.5">
             {config.socials.instagram && (
               <a
@@ -166,6 +149,22 @@ export function Navbar() {
               </a>
             )}
           </div>
+
+          {/* Trust chip Google reviews — Position FINALE a droite, apres socials
+              (user demande swap 2026-05-14). Star jaune fill universel. */}
+          <a
+            href={config.googleReviewsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-yellow-400/40 bg-yellow-400/5 hover:border-yellow-400/70 hover:bg-yellow-400/10 transition-colors text-xs"
+            aria-label={t("home.reviews.googleBadgeLabel")}
+            style={{ color: fgColor }}
+          >
+            <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400 shrink-0" strokeWidth={1.5} aria-hidden />
+            <span className="font-medium whitespace-nowrap">
+              {t("home.reviews.googleBadgeLabel")}
+            </span>
+          </a>
 
           <button
             type="button"
