@@ -16,7 +16,6 @@ import { CalcMultiViewsButeau } from "@/components/landing/calculators/CalcMulti
 import { JournalPreview } from "@/components/landing/JournalPreview";
 import { ValueTicker } from "@/components/landing/ValueTicker";
 import { AdPage } from "@/components/landing/AdPage";
-import { Erratum } from "@/components/landing/Erratum";
 import { PageFooterMark } from "@/components/layout/PageFooterMark";
 import { ScrollReveal } from "@/components/layout/ScrollReveal";
 import { SectionDivider } from "@/components/layout/SectionDivider";
@@ -107,11 +106,6 @@ function HomePage() {
 
       <ScrollReveal><ContactSection /></ScrollReveal>
       <ScrollReveal><Faq /></ScrollReveal>
-
-      {/* Erratum — encart humour signature pied de home (style Apartamento).
-          Présent uniquement sur l'Accueil pour rester signature et ne pas devenir
-          un running gag fatigant. */}
-      <ScrollReveal><Erratum /></ScrollReveal>
     </main>
   );
 }

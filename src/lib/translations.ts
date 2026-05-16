@@ -284,14 +284,6 @@ export const translations = {
         attribution: "L'Équipe Buteau",
       },
 
-      // Erratum — encart humour signature en pied d'Accueil (Apartamento style).
-      errata: {
-        eyebrow: "Erratum",
-        body:
-          "Dans notre dernière édition, nous avions oublié de mentionner qu'aucune hypothèque ne se signe sans un mauvais café dans la salle de conférence. Corrigé.",
-        signature: "— La direction",
-      },
-
       tools: {
         eyebrow: "Outils & ressources",
         title: "Tout ce qu'il vous faut pour avancer",
@@ -1289,13 +1281,6 @@ export const translations = {
         attribution: "Équipe Buteau",
       },
 
-      // Erratum — humour signature pied d'Accueil.
-      errata: {
-        eyebrow: "Erratum",
-        body:
-          "In our last edition, we forgot to mention that no mortgage is ever signed without a bad coffee in the conference room. Corrected.",
-        signature: "— The editors",
-      },
 
       tools: {
         eyebrow: "Tools & resources",
