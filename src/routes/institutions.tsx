@@ -17,17 +17,17 @@ function InstitutionsPage() {
   return (
     <main id="main">
       <SchemaJsonLd schema={breadcrumbs.institutions(lang)} />
+      <PageFooterMark numeral="03" label={lang === "fr" ? "Institutions" : "Lenders"} />
       <PageHero
         eyebrow={t("institutions.hero.eyebrow")}
         title={t("institutions.hero.title")}
         subtitle={t("institutions.hero.subtitle")}
-        ornament="III"
+        ornament="03"
       />
       <InsuranceNote />
       <LendersGrid />
       <InstitutionMissing />
       <CtaBlock />
-      <PageFooterMark numeral="03" label={lang === "fr" ? "Institutions" : "Lenders"} />
     </main>
   );
 }

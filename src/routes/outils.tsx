@@ -19,11 +19,12 @@ function ToolsPage() {
   return (
     <main id="main">
       <SchemaJsonLd schema={breadcrumbs.tools(lang)} />
+      <PageFooterMark numeral="04" label={lang === "fr" ? "Outils" : "Tools"} />
       <PageHero
         eyebrow={t("tools.hero.eyebrow")}
         title={t("tools.hero.title")}
         subtitle={t("tools.hero.subtitle")}
-        ornament="IV"
+        ornament="04"
       />
       <HypothequeCalculator />
       <GuidesGrid />
@@ -31,7 +32,6 @@ function ToolsPage() {
       <BlogTeaser />
       <DocumentsGrid />
       <ToolsFinalCta />
-      <PageFooterMark numeral="04" label={lang === "fr" ? "Outils" : "Tools"} />
     </main>
   );
 }

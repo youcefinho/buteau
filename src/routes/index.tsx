@@ -51,6 +51,7 @@ function HomePage() {
   return (
     <main id="main">
       <SchemaJsonLd schema={homeSchemas} />
+      <PageFooterMark numeral="01" label={lang === "fr" ? "Accueil" : "Home"} />
       <Hero />
       <Partners />
 
@@ -117,8 +118,6 @@ function HomePage() {
           Présent uniquement sur l'Accueil pour rester signature et ne pas devenir
           un running gag fatigant. */}
       <ScrollReveal><Erratum /></ScrollReveal>
-
-      <PageFooterMark numeral="01" label={lang === "fr" ? "Accueil" : "Home"} />
     </main>
   );
 }

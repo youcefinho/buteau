@@ -24,17 +24,17 @@ function TeamPage() {
   return (
     <main id="main">
       <SchemaJsonLd schema={teamSchemas} />
+      <PageFooterMark numeral="02" label={lang === "fr" ? "Équipe" : "Team"} />
       <PageHero
         eyebrow={t("team.hero.eyebrow")}
         title={t("team.hero.title")}
         subtitle={t("team.hero.subtitle")}
-        ornament="II"
+        ornament="02"
       />
       <TeamGrid />
       <TeamMethod />
       <MediaShowcase />
       <CtaBlock />
-      <PageFooterMark numeral="02" label={lang === "fr" ? "Équipe" : "Team"} />
     </main>
   );
 }
