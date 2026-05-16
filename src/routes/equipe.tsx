@@ -6,7 +6,6 @@ import { TeamMethod } from "@/components/landing/TeamMethod";
 import { MediaShowcase } from "@/components/landing/MediaShowcase";
 import { CtaBlock } from "@/components/landing/CtaBlock";
 import { SchemaJsonLd, breadcrumbs, buildPerson } from "@/components/layout/SchemaJsonLd";
-import { PageFooterMark } from "@/components/layout/PageFooterMark";
 import { ta, translations } from "@/lib/translations";
 
 export const Route = createFileRoute("/equipe")({
@@ -24,7 +23,6 @@ function TeamPage() {
   return (
     <main id="main">
       <SchemaJsonLd schema={teamSchemas} />
-      <PageFooterMark numeral="02" label={lang === "fr" ? "Équipe" : "Team"} />
       <PageHero
         eyebrow={t("team.hero.eyebrow")}
         title={t("team.hero.title")}

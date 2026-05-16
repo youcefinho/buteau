@@ -7,7 +7,6 @@ import { TikTokTeaser } from "@/components/landing/TikTokTeaser";
 import { DocumentsGrid } from "@/components/landing/DocumentsGrid";
 import { ToolsFinalCta } from "@/components/landing/ToolsFinalCta";
 import { SchemaJsonLd, breadcrumbs } from "@/components/layout/SchemaJsonLd";
-import { PageFooterMark } from "@/components/layout/PageFooterMark";
 
 export const Route = createFileRoute("/outils")({
   component: ToolsPage,
@@ -18,7 +17,6 @@ function ToolsPage() {
   return (
     <main id="main">
       <SchemaJsonLd schema={breadcrumbs.tools(lang)} />
-      <PageFooterMark numeral="04" label={lang === "fr" ? "Outils" : "Tools"} />
       <PageHero
         eyebrow={t("tools.hero.eyebrow")}
         title={t("tools.hero.title")}
