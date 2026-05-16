@@ -12,7 +12,7 @@ import { ChapterMarker } from "@/components/landing/ChapterMarker";
 import { BrokerLetter } from "@/components/landing/BrokerLetter";
 import { TerritoryMap } from "@/components/landing/TerritoryMap";
 import { PreQualQuiz } from "@/components/landing/PreQualQuiz";
-import { CalculatorPreview } from "@/components/landing/CalculatorPreview";
+import { CalcMultiViewsButeau } from "@/components/landing/calculators/CalcMultiViewsButeau";
 import { GuidesShelf } from "@/components/landing/GuidesShelf";
 import { CapsulesPreview } from "@/components/landing/CapsulesPreview";
 import { JournalPreview } from "@/components/landing/JournalPreview";
@@ -69,7 +69,7 @@ function HomePage() {
       {/* Calculator Preview — accès direct aux outils sur l'Accueil
           (feedback user : Outils était trop enterré). Mini calc interactif
           + CTA vers /outils pour la version complète. */}
-      <ScrollReveal><CalculatorPreview /></ScrollReveal>
+      <ScrollReveal><CalcMultiViewsButeau mode="preview" /></ScrollReveal>
 
       {/* GuidesShelf — table-of-contents éditoriale des guides + docs
           téléchargeables. Synergie : 5 items préview + lien /outils#guides. */}

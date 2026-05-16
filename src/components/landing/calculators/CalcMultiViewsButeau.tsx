@@ -588,10 +588,12 @@ function MdfComparisonGrid({
   );
 }
 
+type CalcMode = "full" | "preview";
+
 // ─────────────────────────────────────
 // Tab 1 — Capacite d'emprunt (ABD/ATD)
 // ─────────────────────────────────────
-function TabCapacite() {
+function TabCapacite({ mode }: { mode: CalcMode }) {
   const { lang } = useLanguage();
   const isFr = lang === "fr";
   const [revenuBrut, setRevenuBrut] = useState(95000);
@@ -722,20 +724,22 @@ function TabCapacite() {
         </Link>
       </div>
 
-      {/* Pleine largeur — sensibilite au taux : combien d'emprunt a 5 taux differents */}
-      <div className="lg:col-span-2 mt-6 border-t border-[color:var(--color-taupe)]/30 pt-10">
-        <RateSensitivityChart
-          rates={sensitivityRates}
-          capacities={sensitivityCapacities}
-          currentRate={taux}
-          label={isFr ? "Sensibilité de votre capacité au taux" : "Capacity sensitivity to rate"}
-        />
-        <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] mt-3 leading-snug">
-          {isFr
-            ? "Avec le même revenu et les mêmes dettes, une baisse d'1 % de taux peut bonifier votre capacité de plusieurs dizaines de milliers de dollars. Le timing du marché compte."
-            : "With the same income and debts, a 1% rate drop can lift your capacity by tens of thousands. Market timing matters."}
-        </p>
-      </div>
+      {/* Pleine largeur — sensibilite au taux : combien d'emprunt a 5 taux differents (mode full uniquement) */}
+      {mode === "full" && (
+        <div className="lg:col-span-2 mt-6 border-t border-[color:var(--color-taupe)]/30 pt-10">
+          <RateSensitivityChart
+            rates={sensitivityRates}
+            capacities={sensitivityCapacities}
+            currentRate={taux}
+            label={isFr ? "Sensibilité de votre capacité au taux" : "Capacity sensitivity to rate"}
+          />
+          <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] mt-3 leading-snug">
+            {isFr
+              ? "Avec le même revenu et les mêmes dettes, une baisse d'1 % de taux peut bonifier votre capacité de plusieurs dizaines de milliers de dollars. Le timing du marché compte."
+              : "With the same income and debts, a 1% rate drop can lift your capacity by tens of thousands. Market timing matters."}
+          </p>
+        </div>
+      )}
     </div>
   );
 }
@@ -743,7 +747,7 @@ function TabCapacite() {
 // ─────────────────────────────────────
 // Tab 2 — Paiement mensuel + amortissement
 // ─────────────────────────────────────
-function TabPaiement() {
+function TabPaiement({ mode }: { mode: CalcMode }) {
   const { lang } = useLanguage();
   const isFr = lang === "fr";
   const [prix, setPrix] = useState(450000);
@@ -858,28 +862,28 @@ function TabPaiement() {
         </Link>
       </div>
 
-      {/* Pleine largeur : graph amortissement + What If scenarios — reagit
-          aux sliders du tab Paiement. Restaure features de l'ancien
-          HypothequeCalculator (graph + scenarios) sur ce tab. */}
-      <div className="lg:col-span-2 space-y-10 mt-6">
-        <div className="border-t border-[color:var(--color-taupe)]/30 pt-10">
-          <AmortizationSparkline
-            principal={principal}
-            monthlyPayment={pmt}
-            monthlyRate={monthlyR}
-            numberOfPayments={nPayments}
-          />
+      {/* Pleine largeur : graph amortissement + What If scenarios (mode full uniquement) */}
+      {mode === "full" && (
+        <div className="lg:col-span-2 space-y-10 mt-6">
+          <div className="border-t border-[color:var(--color-taupe)]/30 pt-10">
+            <AmortizationSparkline
+              principal={principal}
+              monthlyPayment={pmt}
+              monthlyRate={monthlyR}
+              numberOfPayments={nPayments}
+            />
+          </div>
+          <div className="border-t border-[color:var(--color-taupe)]/30 pt-10">
+            <WhatIfScenarios
+              principal={principal}
+              monthlyPayment={pmt}
+              monthlyRate={monthlyR}
+              numberOfPayments={nPayments}
+              totalInterest={totalInterets}
+            />
+          </div>
         </div>
-        <div className="border-t border-[color:var(--color-taupe)]/30 pt-10">
-          <WhatIfScenarios
-            principal={principal}
-            monthlyPayment={pmt}
-            monthlyRate={monthlyR}
-            numberOfPayments={nPayments}
-            totalInterest={totalInterets}
-          />
-        </div>
-      </div>
+      )}
     </div>
   );
 }
@@ -887,7 +891,7 @@ function TabPaiement() {
 // ─────────────────────────────────────
 // Tab 3 — Fixe vs Variable (comparaison 5 ans)
 // ─────────────────────────────────────
-function TabComparaison() {
+function TabComparaison({ mode }: { mode: CalcMode }) {
   const { lang } = useLanguage();
   const isFr = lang === "fr";
   const [principal, setPrincipal] = useState(400000);
@@ -1104,21 +1108,23 @@ function TabComparaison() {
         </Link>
       </div>
 
-      {/* Pleine largeur — courbes interets cumules fixe vs variable sur 60 mois */}
-      <div className="lg:col-span-2 mt-6 border-t border-[color:var(--color-taupe)]/30 pt-10">
-        <CumulativeInterestChart
-          fixedSeries={fixedSeries}
-          variableSeries={variableSeries}
-          monthsLabels={monthsLabels}
-          fixedLabel={isFr ? "Fixe" : "Fixed"}
-          variableLabel={isFr ? "Variable" : "Variable"}
-        />
-        <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] mt-3 leading-snug">
-          {isFr
-            ? "L'écart visuel entre les 2 courbes représente votre gain (ou perte) potentiel sur le terme. Plus la courbe est haute, plus vous payez d'intérêts."
-            : "The visual gap between the 2 curves shows your potential gain (or loss) over the term. The higher the curve, the more interest paid."}
-        </p>
-      </div>
+      {/* Pleine largeur — courbes interets cumules fixe vs variable sur 60 mois (mode full uniquement) */}
+      {mode === "full" && (
+        <div className="lg:col-span-2 mt-6 border-t border-[color:var(--color-taupe)]/30 pt-10">
+          <CumulativeInterestChart
+            fixedSeries={fixedSeries}
+            variableSeries={variableSeries}
+            monthsLabels={monthsLabels}
+            fixedLabel={isFr ? "Fixe" : "Fixed"}
+            variableLabel={isFr ? "Variable" : "Variable"}
+          />
+          <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] mt-3 leading-snug">
+            {isFr
+              ? "L'écart visuel entre les 2 courbes représente votre gain (ou perte) potentiel sur le terme. Plus la courbe est haute, plus vous payez d'intérêts."
+              : "The visual gap between the 2 curves shows your potential gain (or loss) over the term. The higher the curve, the more interest paid."}
+          </p>
+        </div>
+      )}
     </div>
   );
 }
@@ -1126,7 +1132,7 @@ function TabComparaison() {
 // ─────────────────────────────────────
 // Tab 4 — Mise de fonds + frais d'acquisition
 // ─────────────────────────────────────
-function TabMiseDeFonds() {
+function TabMiseDeFonds({ mode }: { mode: CalcMode }) {
   const { lang } = useLanguage();
   const isFr = lang === "fr";
   const [prix, setPrix] = useState(450000);
@@ -1289,10 +1295,12 @@ function TabMiseDeFonds() {
         </Link>
       </div>
 
-      {/* Pleine largeur — comparaison 3 scenarios MDF (5 / 10 / 20 %) */}
-      <div className="lg:col-span-2 mt-6 border-t border-[color:var(--color-taupe)]/30 pt-10">
-        <MdfComparisonGrid prix={prix} taux={5.25} amort={25} schlRateFn={schlPremiumRate} />
-      </div>
+      {/* Pleine largeur — comparaison 3 scenarios MDF (5 / 10 / 20 %) — mode full uniquement */}
+      {mode === "full" && (
+        <div className="lg:col-span-2 mt-6 border-t border-[color:var(--color-taupe)]/30 pt-10">
+          <MdfComparisonGrid prix={prix} taux={5.25} amort={25} schlRateFn={schlPremiumRate} />
+        </div>
+      )}
     </div>
   );
 }
@@ -1302,10 +1310,11 @@ function TabMiseDeFonds() {
 // ─────────────────────────────────────
 type TabId = "capacite" | "paiement" | "comparaison" | "mdf";
 
-export function CalcMultiViewsButeau() {
+export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}) {
   const { lang } = useLanguage();
   const isFr = lang === "fr";
   const [activeTab, setActiveTab] = useState<TabId>("paiement");
+  const isPreview = mode === "preview";
 
   const tabs: Array<{ id: TabId; icon: typeof Wallet; label: string; hint: string }> = [
     {
@@ -1337,7 +1346,11 @@ export function CalcMultiViewsButeau() {
   return (
     <section
       id="calculateur"
-      className="relative py-24 md:py-32 surface-cream overflow-hidden border-t border-[color:var(--color-taupe)]/20"
+      className={`relative overflow-hidden ${
+        isPreview
+          ? "py-20 md:py-24 surface-cream border-t border-[color:var(--color-taupe)]/20"
+          : "py-24 md:py-32 surface-cream border-t border-[color:var(--color-taupe)]/20"
+      }`}
     >
       {/* Filigrane $ XL */}
       <span
@@ -1348,20 +1361,32 @@ export function CalcMultiViewsButeau() {
       </span>
 
       <Container size="xl" className="relative">
-        {/* Header signature */}
-        <div className="max-w-3xl mb-12 md:mb-16">
+        {/* Header signature — adapte au mode */}
+        <div className={`max-w-3xl ${isPreview ? "mb-8 md:mb-10" : "mb-12 md:mb-16"}`}>
           <p className="eyebrow text-[color:var(--color-bronze-deep)] inline-flex items-center gap-3 mb-5">
             <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
-            {isFr ? "Calculateur" : "Calculator"}
+            {isPreview
+              ? isFr ? "Calculateur · Aperçu" : "Calculator · Preview"
+              : isFr ? "Calculateur" : "Calculator"}
           </p>
-          <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-3xl md:text-4xl lg:text-5xl uppercase tracking-[0.04em] leading-[1.05] mb-5">
+          <h2
+            className={`font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] uppercase tracking-[0.04em] leading-[1.05] mb-5 ${
+              isPreview
+                ? "text-2xl md:text-3xl lg:text-4xl"
+                : "text-3xl md:text-4xl lg:text-5xl"
+            }`}
+          >
             {isFr ? "Vos chiffres, sans détour." : "Your numbers, no detour."}
           </h2>
           <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-6" />
           <p className="font-[var(--font-editorial)] italic text-base md:text-lg leading-[1.65] text-[color:var(--color-navy-deep)]/80">
-            {isFr
-              ? "Quatre vues du même dossier — capacité, paiement, stratégie de taux, liquidités à prévoir. Les résultats sont indicatifs ; votre dossier réel est validé par un courtier inscrit AMF."
-              : "Four views of the same file — capacity, payment, rate strategy, cash to plan. Results are indicative; your real file is validated by an AMF-registered broker."}
+            {isPreview
+              ? isFr
+                ? "Quatre vues du même dossier — capacité, paiement, stratégie de taux, liquidités. Faites bouger les chiffres, puis ouvrez le calculateur complet pour les graphiques et scénarios approfondis."
+                : "Four views of the same file — capacity, payment, rate strategy, cash. Play with the numbers, then open the full calculator for charts and deeper scenarios."
+              : isFr
+                ? "Quatre vues du même dossier — capacité, paiement, stratégie de taux, liquidités à prévoir. Les résultats sont indicatifs ; votre dossier réel est validé par un courtier inscrit AMF."
+                : "Four views of the same file — capacity, payment, rate strategy, cash to plan. Results are indicative; your real file is validated by an AMF-registered broker."}
           </p>
         </div>
 
@@ -1423,20 +1448,41 @@ export function CalcMultiViewsButeau() {
 
         {/* Active tab content — key remount = fade animation */}
         <div key={activeTab} className="animate-[buteauFadeUp_500ms_ease-out_both]">
-          {activeTab === "capacite" && <TabCapacite />}
-          {activeTab === "paiement" && <TabPaiement />}
-          {activeTab === "comparaison" && <TabComparaison />}
-          {activeTab === "mdf" && <TabMiseDeFonds />}
+          {activeTab === "capacite" && <TabCapacite mode={mode} />}
+          {activeTab === "paiement" && <TabPaiement mode={mode} />}
+          {activeTab === "comparaison" && <TabComparaison mode={mode} />}
+          {activeTab === "mdf" && <TabMiseDeFonds mode={mode} />}
         </div>
 
-        {/* Footer note + AMF */}
-        <div className="mt-12 pt-6 border-t border-[color:var(--color-taupe)]/30 max-w-3xl">
-          <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] leading-relaxed">
-            {isFr
-              ? "Outils indicatifs uniquement. Les conditions, taux, primes SCHL et frais varient selon votre dossier, la propriété, le prêteur et le moment du marché. L'Équipe Buteau opère sous le cabinet Planiprêt — courtage hypothécaire inscrit à l'AMF. Le service de courtage est gratuit pour l'acheteur."
-              : "Indicative tools only. Conditions, rates, CMHC premiums and fees vary based on your file, the property, the lender and market timing. L'Équipe Buteau operates under Planiprêt — mortgage brokerage registered with AMF. Brokerage service is free for the buyer."}
-          </p>
-        </div>
+        {/* CTA Aperçu -> calculateur complet (mode preview uniquement) */}
+        {isPreview && (
+          <div className="mt-10 pt-8 border-t border-[color:var(--color-taupe)]/30 flex flex-col sm:flex-row items-baseline justify-between gap-y-4 gap-x-6">
+            <p className="font-[var(--font-editorial)] italic text-sm text-[color:var(--color-taupe-dark)] leading-snug max-w-xl">
+              {isFr
+                ? "Graphiques d'amortissement, sensibilité au taux, courbes fixe vs variable et comparaisons mise de fonds — disponibles dans le calculateur complet."
+                : "Amortization charts, rate sensitivity, fixed vs variable curves and down payment comparisons — available in the full calculator."}
+            </p>
+            <Link
+              to="/outils"
+              hash="calculateur"
+              className="group inline-flex items-center gap-3 text-xs uppercase tracking-[0.22em] font-bold text-[color:var(--color-bronze-deep)] hover:text-[color:var(--color-bronze)] transition-colors whitespace-nowrap"
+            >
+              {isFr ? "Calculateur complet" : "Full calculator"}
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
+            </Link>
+          </div>
+        )}
+
+        {/* Footer note + AMF (mode full uniquement) */}
+        {!isPreview && (
+          <div className="mt-12 pt-6 border-t border-[color:var(--color-taupe)]/30 max-w-3xl">
+            <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] leading-relaxed">
+              {isFr
+                ? "Outils indicatifs uniquement. Les conditions, taux, primes SCHL et frais varient selon votre dossier, la propriété, le prêteur et le moment du marché. L'Équipe Buteau opère sous le cabinet Planiprêt — courtage hypothécaire inscrit à l'AMF. Le service de courtage est gratuit pour l'acheteur."
+                : "Indicative tools only. Conditions, rates, CMHC premiums and fees vary based on your file, the property, the lender and market timing. L'Équipe Buteau operates under Planiprêt — mortgage brokerage registered with AMF. Brokerage service is free for the buyer."}
+            </p>
+          </div>
+        )}
       </Container>
     </section>
   );
