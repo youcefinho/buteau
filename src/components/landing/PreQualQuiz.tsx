@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, RotateCcw } from "lucide-react";
-import { RisingBronzeEmbers } from "@/components/atmosphere/RisingBronzeEmbers";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { ta, translations } from "@/lib/translations";
@@ -92,7 +91,6 @@ export function PreQualQuiz() {
       className="relative py-24 md:py-32 surface-cream overflow-hidden"
     >
       {/* Atmospheric continuity — embers per-section signature */}
-      <RisingBronzeEmbers count={5} tone="light" />
 
       {/* Filigrane "?" Cormorant XL background */}
       <span

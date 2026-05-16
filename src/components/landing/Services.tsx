@@ -1,5 +1,4 @@
 import { BookOpen, BookMarked } from "lucide-react";
-import { RisingBronzeEmbers } from "@/components/atmosphere/RisingBronzeEmbers";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "./SectionHeading";
@@ -50,7 +49,6 @@ export function Services() {
   return (
     <section id="services" className="relative py-24 md:py-32 surface-cream overflow-hidden dot-grid">
       {/* Atmospheric continuity — embers per-section signature */}
-      <RisingBronzeEmbers count={5} tone="light" />
 
       <Container size="xl" className="relative">
         <SectionHeading

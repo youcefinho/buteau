@@ -1,5 +1,4 @@
 import { MapPin, Mail, Phone, ArrowUpRight } from "lucide-react";
-import { RisingBronzeEmbers } from "@/components/atmosphere/RisingBronzeEmbers";
 import { useLanguage } from "@/lib/LanguageContext";
 import { config } from "@/lib/config";
 import { Container } from "@/components/layout/Container";
@@ -18,7 +17,6 @@ export function ContactSection() {
   return (
     <section id="contact" className="py-24 md:py-28 surface-cream relative overflow-hidden">
       {/* Atmospheric continuity — embers per-section signature */}
-      <RisingBronzeEmbers count={5} tone="light" />
 
       {/* Filigrane décoratif éditorial */}
       <span

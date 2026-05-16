@@ -1,5 +1,4 @@
 import { Link } from "@tanstack/react-router";
-import { RisingBronzeEmbers } from "@/components/atmosphere/RisingBronzeEmbers";
 import { Container } from "@/components/layout/Container";
 import { useLanguage } from "@/lib/LanguageContext";
 import { SectionHeading } from "./SectionHeading";
@@ -26,7 +25,6 @@ export function Partners() {
   return (
     <section id="partenaires" className="relative py-24 surface-cream overflow-hidden">
       {/* Atmospheric continuity — embers per-section signature */}
-      <RisingBronzeEmbers count={5} tone="light" />
 
       <Container size="xl">
         <SectionHeading

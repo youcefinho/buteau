@@ -1,5 +1,4 @@
 import { Link } from "@tanstack/react-router";
-import { RisingBronzeEmbers } from "@/components/atmosphere/RisingBronzeEmbers";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "./SectionHeading";
@@ -44,7 +43,6 @@ export function TeamTeaser() {
       className="relative py-24 surface-navy overflow-hidden grain-overlay"
     >
       {/* Atmospheric continuity — embers per-section signature */}
-      <RisingBronzeEmbers count={5} tone="dark" />
 
       {/* Background image overlay */}
       <div

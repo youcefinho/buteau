@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import { BookOpen, Video, FileText, Download, BookMarked } from "lucide-react";
-import { RisingBronzeEmbers } from "@/components/atmosphere/RisingBronzeEmbers";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "./SectionHeading";
@@ -29,7 +28,6 @@ export function ToolsTeaser() {
       className="relative py-24 surface-navy overflow-hidden grain-overlay"
     >
       {/* Atmospheric continuity — embers per-section signature */}
-      <RisingBronzeEmbers count={5} tone="dark" />
 
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"

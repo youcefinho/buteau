@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, BookOpen, FileText } from "lucide-react";
-import { RisingBronzeEmbers } from "@/components/atmosphere/RisingBronzeEmbers";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { ta, translations } from "@/lib/translations";
@@ -26,7 +25,6 @@ export function GuidesShelf() {
   return (
     <section className="relative py-24 md:py-32 surface-cream overflow-hidden lined-paper">
       {/* Atmospheric continuity — embers per-section signature */}
-      <RisingBronzeEmbers count={5} tone="light" />
 
       {/* Filigrane Cormorant "&" decoratif */}
       <span

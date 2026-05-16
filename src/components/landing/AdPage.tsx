@@ -1,7 +1,6 @@
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { ta, translations } from "@/lib/translations";
-import { RisingBronzeEmbers } from "@/components/atmosphere/RisingBronzeEmbers";
 
 /**
  * AdPage — pleine page éditoriale style "publicité magazine luxe" (Cereal vol.18).
@@ -29,7 +28,6 @@ export function AdPage({ entryKey = "adPage" }: { entryKey?: string }) {
       className="relative surface-navy grain-overlay min-h-[60vh] md:min-h-[70vh] flex items-center overflow-hidden"
     >
       {/* Atmospheric continuity — embers per-section signature */}
-      <RisingBronzeEmbers count={5} tone="dark" />
 
       {/* Filigrane « ¶ » pilcrow Cormorant — touche éditoriale typographique */}
       <span

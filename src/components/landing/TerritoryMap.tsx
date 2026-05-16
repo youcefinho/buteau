@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { RisingBronzeEmbers } from "@/components/atmosphere/RisingBronzeEmbers";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { ta, translations } from "@/lib/translations";
@@ -36,7 +35,6 @@ export function TerritoryMap() {
   return (
     <section className="relative py-24 md:py-32 surface-cream overflow-hidden">
       {/* Atmospheric continuity — embers per-section signature */}
-      <RisingBronzeEmbers count={5} tone="light" />
 
       {/* Filigrane "QC" Cormorant italic en arrière-plan */}
       <span

@@ -7,7 +7,6 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useCountUp } from "@/hooks/useCountUp";
 import { useCarnet } from "@/lib/CarnetContext";
 import { AutoGlossary } from "@/components/landing/AutoGlossary";
-import { RisingBronzeEmbers } from "@/components/atmosphere/RisingBronzeEmbers";
 
 /**
  * Section Mission — refonte cinematic luxury éditorial.
@@ -43,7 +42,6 @@ export function Mission() {
       className="relative py-24 md:py-32 surface-navy overflow-hidden grain-overlay"
     >
       {/* Atmospheric continuity — embers per-section signature */}
-      <RisingBronzeEmbers count={6} tone="dark" />
 
       {/* Background image overlay — dégradé tonal, image visible */}
       <div

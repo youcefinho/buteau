@@ -1,5 +1,4 @@
 import { Star } from "lucide-react";
-import { RisingBronzeEmbers } from "@/components/atmosphere/RisingBronzeEmbers";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { Tiltable } from "@/components/layout/Tiltable";
@@ -36,7 +35,6 @@ export function Reviews() {
   return (
     <section id="avis" className="relative py-24 md:py-28 surface-cream overflow-hidden">
       {/* Atmospheric continuity — embers per-section signature */}
-      <RisingBronzeEmbers count={5} tone="light" />
 
       {/* Filigrane "✉" enveloppe — Cormorant XL background */}
       <span

@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import { BookOpen } from "lucide-react";
-import { RisingBronzeEmbers } from "@/components/atmosphere/RisingBronzeEmbers";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { config } from "@/lib/config";
@@ -41,7 +40,6 @@ export function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden surface-navy grain-overlay"
     >
       {/* Atmospheric continuity — embers per-section signature */}
-      <RisingBronzeEmbers count={5} tone="dark" />
 
       {/* Background image avec overlay tonal — laisse respirer l'image (luxury éditorial). */}
       {/* Perf E (2026-05-10) : image self-hostee depuis /hero-buteau.{avif,webp,jpg}.

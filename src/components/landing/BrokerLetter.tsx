@@ -1,5 +1,4 @@
 import { useLanguage } from "@/lib/LanguageContext";
-import { RisingBronzeEmbers } from "@/components/atmosphere/RisingBronzeEmbers";
 import { Container } from "@/components/layout/Container";
 import { AnimatedSignature } from "./AnimatedSignature";
 import { FootnoteScope, Footnote, FootnoteList } from "@/components/typography/Footnote";
@@ -36,7 +35,6 @@ export function BrokerLetter() {
   return (
     <section className="relative py-24 md:py-32 surface-cream overflow-hidden lined-paper">
       {/* Atmospheric continuity — embers per-section signature */}
-      <RisingBronzeEmbers count={5} tone="light" />
 
       {/* Filigrane "lettre M" Cormorant en filigrane (référence "mot du courtier") */}
       <span

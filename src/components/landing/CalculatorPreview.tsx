@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, BookOpen } from "lucide-react";
-import { RisingBronzeEmbers } from "@/components/atmosphere/RisingBronzeEmbers";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { parseLocaleFloat, formatLocaleCurrency } from "@/lib/parseLocaleFloat";
@@ -70,7 +69,6 @@ export function CalculatorPreview() {
   return (
     <section id="calc-preview" className="relative py-24 md:py-32 surface-cream overflow-hidden scroll-mt-24">
       {/* Atmospheric continuity — embers per-section signature */}
-      <RisingBronzeEmbers count={5} tone="light" />
 
       {/* Filigrane "$" Cormorant background */}
       <span

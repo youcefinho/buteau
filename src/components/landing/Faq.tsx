@@ -1,6 +1,5 @@
 import * as Accordion from "@radix-ui/react-accordion";
 import { ChevronDown, BookOpen, BookMarked } from "lucide-react";
-import { RisingBronzeEmbers } from "@/components/atmosphere/RisingBronzeEmbers";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "./SectionHeading";
@@ -28,7 +27,6 @@ export function Faq() {
       className="relative py-24 surface-navy overflow-hidden grain-overlay cv-defer"
     >
       {/* Atmospheric continuity — embers per-section signature */}
-      <RisingBronzeEmbers count={5} tone="dark" />
 
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
