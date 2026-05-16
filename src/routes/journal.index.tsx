@@ -11,7 +11,7 @@ import { ta, translations } from "@/lib/translations";
  * /journal — index magazine. Chaque article ouvre une page dediee
  * /journal/$slug (pas d'accordion inline) pour exposer le contenu complet.
  */
-export const Route = createFileRoute("/journal")({
+export const Route = createFileRoute("/journal/")({
   component: JournalPage,
 });
 
