@@ -1,9 +1,10 @@
-import { FileText } from "lucide-react";
+import { FileText, ArrowRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 
 /**
- * Teaser "Notre blog sera bientôt disponible".
+ * Teaser /journal — depuis /outils, lien direct vers la page journal.
  * Layout : intro a gauche + visual a droite (inverse de TikTokTeaser pour rythme).
  */
 export function BlogTeaser() {
@@ -37,22 +38,39 @@ export function BlogTeaser() {
             <p className="text-base md:text-lg leading-relaxed text-[color:var(--color-cream)]/85">
               {t("tools.blog.body")}
             </p>
-            <p className="eyebrow text-[color:var(--color-taupe)] pt-2">
-              {t("tools.blog.ctaLabel")}
-            </p>
+            <div className="pt-3">
+              <Link
+                to="/journal"
+                className="group inline-flex items-center gap-2 font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze-soft)] hover:text-[color:var(--color-cream)] transition-colors"
+              >
+                <span className="relative">
+                  {t("tools.blog.ctaLabel")}
+                  <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                </span>
+                <ArrowRight
+                  size={14}
+                  aria-hidden="true"
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
+              </Link>
+            </div>
           </div>
 
           {/* Visual (4 cols) */}
           <div className="lg:col-span-4 flex justify-center lg:justify-end lg:order-2 order-1">
-            <div className="relative">
-              <div className="w-32 h-32 md:w-40 md:h-40 bg-[color:var(--color-cream)] flex items-center justify-center text-[color:var(--color-navy-deep)]">
+            <Link
+              to="/journal"
+              aria-label={t("tools.blog.ctaLabel")}
+              className="relative group"
+            >
+              <div className="w-32 h-32 md:w-40 md:h-40 bg-[color:var(--color-cream)] flex items-center justify-center text-[color:var(--color-navy-deep)] transition-transform duration-500 group-hover:-translate-y-1 group-hover:-translate-x-1">
                 <FileText size={56} strokeWidth={1.5} aria-hidden="true" />
               </div>
               <div
-                className="absolute -bottom-4 -left-4 w-32 h-32 md:w-40 md:h-40 border-2 border-[color:var(--color-taupe)] -z-10"
+                className="absolute -bottom-4 -left-4 w-32 h-32 md:w-40 md:h-40 border-2 border-[color:var(--color-taupe)] -z-10 transition-colors duration-500 group-hover:border-[color:var(--color-bronze)]"
                 aria-hidden="true"
               />
-            </div>
+            </Link>
           </div>
         </div>
       </Container>
