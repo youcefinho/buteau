@@ -34,7 +34,7 @@ function TeamPage() {
       <TeamMethod />
       <MediaShowcase />
       <CtaBlock />
-      <PageFooterMark numeral="II" label={lang === "fr" ? "Équipe" : "Team"} />
+      <PageFooterMark numeral="02" label={lang === "fr" ? "Équipe" : "Team"} />
     </main>
   );
 }

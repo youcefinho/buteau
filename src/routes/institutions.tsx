@@ -27,7 +27,7 @@ function InstitutionsPage() {
       <LendersGrid />
       <InstitutionMissing />
       <CtaBlock />
-      <PageFooterMark numeral="III" label={lang === "fr" ? "Institutions" : "Lenders"} />
+      <PageFooterMark numeral="03" label={lang === "fr" ? "Institutions" : "Lenders"} />
     </main>
   );
 }

@@ -1,13 +1,13 @@
 import { Container } from "@/components/layout/Container";
 
 /**
- * ChapterMarker — séparateur éditorial entre sections (numéro romain XL Cormorant
+ * ChapterMarker — séparateur éditorial entre sections (numéro Cormorant
  * italic + label optionnel). Détail luxury magazine qui rythme la lecture.
  *
- * Usage : `<ChapterMarker numeral="II" label="Notre équipe" />` entre 2 sections.
+ * Usage : `<ChapterMarker numeral="02" label="Notre équipe" />` entre 2 sections.
  */
 type ChapterMarkerProps = {
-  numeral: string; // I / II / III / IV / V / VI / VII / VIII / IX
+  numeral: string; // 01 / 02 / 03 / 04 / 05 / 06 / 07 / 08 / 09
   label?: string;
   tone?: "light" | "dark" | "bronze";
 };

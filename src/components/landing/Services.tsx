@@ -45,7 +45,7 @@ export function Services() {
     "md:ml-[15%]",
     "md:ml-[20%]",
   ];
-  const numerals = ["I", "II", "III", "IV", "V"];
+  const numerals = ["01", "02", "03", "04", "05"];
 
   return (
     <section id="services" className="relative py-24 md:py-32 surface-cream overflow-hidden dot-grid">

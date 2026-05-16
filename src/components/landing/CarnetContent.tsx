@@ -37,7 +37,7 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
   const sections: CarnetSection[] = isFr
     ? [
         {
-          numeral: "I",
+          numeral: "01",
           title: "Notaires & actes",
           intro:
             "Trouver un notaire est une étape obligatoire au Quebec — il signe l'acte de vente et l'acte hypothécaire. Voici les répertoires officiels.",
@@ -47,7 +47,7 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
           ],
         },
         {
-          numeral: "II",
+          numeral: "02",
           title: "Subventions & programmes",
           intro:
             "Les programmes officiels qui peuvent réduire votre mise de fonds, vos taxes ou votre fardeau hypothécaire de premier acchéteur.",
@@ -58,7 +58,7 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
           ],
         },
         {
-          numeral: "III",
+          numeral: "03",
           title: "Inspecteurs & expertise",
           intro:
             "L'inspection préachat n'est pas légalement obligatoire mais fortement recommandée. Voici les ordres et bases de données pour vérifier la qualification.",
@@ -68,7 +68,7 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
           ],
         },
         {
-          numeral: "IV",
+          numeral: "04",
           title: "Assurances & garanties",
           intro:
             "Si votre mise de fonds est inférieure à 20 %, l'assurance prêt hypothécaire est obligatoire. Trois assureurs canadiens dominent ce marché.",
@@ -79,7 +79,7 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
           ],
         },
         {
-          numeral: "V",
+          numeral: "05",
           title: "Outils gouvernementaux",
           intro:
             "Calculatrices, droits de mutation (« taxe de bienvenue ») et outils officiels — directement à la source, sans intermédiaire.",
@@ -90,7 +90,7 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
           ],
         },
         {
-          numeral: "VI",
+          numeral: "06",
           title: "Crédit & recours",
           intro:
             "Votre dossier de crédit est consulté à chaque demande hypothécaire. Et si un litige survient avec une banque ou un courtier, voici les recours canadiens.",
@@ -103,7 +103,7 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
       ]
     : [
         {
-          numeral: "I",
+          numeral: "01",
           title: "Notaries & deeds",
           intro:
             "Hiring a notary is mandatory in Quebec — they sign the deed of sale and the mortgage deed. Here are the official directories.",
@@ -113,7 +113,7 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
           ],
         },
         {
-          numeral: "II",
+          numeral: "02",
           title: "Grants & programs",
           intro:
             "Official programs that may reduce your down payment, taxes or first-time buyer mortgage burden.",
@@ -124,7 +124,7 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
           ],
         },
         {
-          numeral: "III",
+          numeral: "03",
           title: "Inspectors & expertise",
           intro:
             "Pre-purchase inspection isn't legally required but strongly recommended. Here are the bodies and databases to verify qualification.",
@@ -134,7 +134,7 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
           ],
         },
         {
-          numeral: "IV",
+          numeral: "04",
           title: "Insurance & guarantees",
           intro:
             "If your down payment is below 20%, mortgage insurance is mandatory. Three Canadian insurers dominate this market.",
@@ -145,7 +145,7 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
           ],
         },
         {
-          numeral: "V",
+          numeral: "05",
           title: "Government tools",
           intro:
             "Calculators, transfer duties (« welcome tax ») and official tools — straight from the source, no intermediary.",
@@ -156,7 +156,7 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
           ],
         },
         {
-          numeral: "VI",
+          numeral: "06",
           title: "Credit & recourse",
           intro:
             "Your credit file is consulted on every mortgage application. And if a dispute arises with a bank or broker, here are the Canadian recourses.",

@@ -32,7 +32,7 @@ export function TeamMethod() {
                 className="absolute -top-4 -left-2 md:-left-3 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/30 text-[8rem] md:text-[10rem] lg:text-[11rem] leading-[0.85] pointer-events-none select-none"
                 aria-hidden="true"
               >
-                {["I", "II", "III"][idx]}
+                {["01", "02", "03"][idx]}
               </span>
 
               {/* Label uppercase */}

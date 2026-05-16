@@ -59,7 +59,7 @@ function HomePage() {
       <ValueTicker />
 
       {/* Chapter II — annonce Team + Services + Mission */}
-      <ChapterMarker numeral="II" label={chapter2} tone="light" />
+      <ChapterMarker numeral="02" label={chapter2} tone="light" />
 
       <ScrollReveal><TeamTeaser /></ScrollReveal>
       <ScrollReveal><Services /></ScrollReveal>
@@ -100,7 +100,7 @@ function HomePage() {
       <ScrollReveal><PreQualQuiz /></ScrollReveal>
 
       {/* Chapter III — annonce témoignages + contact */}
-      <ChapterMarker numeral="III" label={chapter3} tone="light" />
+      <ChapterMarker numeral="03" label={chapter3} tone="light" />
 
       <ScrollReveal><Reviews /></ScrollReveal>
 
@@ -118,7 +118,7 @@ function HomePage() {
           un running gag fatigant. */}
       <ScrollReveal><Erratum /></ScrollReveal>
 
-      <PageFooterMark numeral="I" label={lang === "fr" ? "Accueil" : "Home"} />
+      <PageFooterMark numeral="01" label={lang === "fr" ? "Accueil" : "Home"} />
     </main>
   );
 }

@@ -31,7 +31,7 @@ function ToolsPage() {
       <BlogTeaser />
       <DocumentsGrid />
       <ToolsFinalCta />
-      <PageFooterMark numeral="IV" label={lang === "fr" ? "Outils" : "Tools"} />
+      <PageFooterMark numeral="04" label={lang === "fr" ? "Outils" : "Tools"} />
     </main>
   );
 }
