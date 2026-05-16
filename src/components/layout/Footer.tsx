@@ -25,7 +25,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative surface-navy mt-24 overflow-hidden grain-overlay">
+    <footer className="relative surface-navy overflow-hidden grain-overlay">
       {/* Monogramme BUTEAU filigrane gigantesque arrière-plan */}
       <span
         aria-hidden="true"
