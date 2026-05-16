@@ -15,6 +15,7 @@ import { PreQualQuiz } from "@/components/landing/PreQualQuiz";
 import { CalculatorPreview } from "@/components/landing/CalculatorPreview";
 import { GuidesShelf } from "@/components/landing/GuidesShelf";
 import { CapsulesPreview } from "@/components/landing/CapsulesPreview";
+import { JournalPreview } from "@/components/landing/JournalPreview";
 import { ValueTicker } from "@/components/landing/ValueTicker";
 import { AdPage } from "@/components/landing/AdPage";
 import { Erratum } from "@/components/landing/Erratum";
@@ -78,6 +79,11 @@ function HomePage() {
           « 30 secondes top chrono ». Pattern miroir GuidesShelf : 5 items
           vedettes + CTA vers /capsules pour la collection complète (30+). */}
       <ScrollReveal><CapsulesPreview /></ScrollReveal>
+
+      {/* JournalPreview — feature article du journal sur navy bg, alterne
+          avec CapsulesPreview cream pour rythme contraste. Card grande
+          format magazine, cliquable vers /journal/$slug. */}
+      <ScrollReveal><JournalPreview /></ScrollReveal>
 
       <ScrollReveal><ToolsTeaser /></ScrollReveal>
 

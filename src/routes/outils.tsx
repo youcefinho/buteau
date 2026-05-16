@@ -4,7 +4,6 @@ import { PageHero } from "@/components/landing/PageHero";
 import { HypothequeCalculator } from "@/components/landing/calculators/HypothequeCalculator";
 import { GuidesGrid } from "@/components/landing/GuidesGrid";
 import { TikTokTeaser } from "@/components/landing/TikTokTeaser";
-import { BlogTeaser } from "@/components/landing/BlogTeaser";
 import { DocumentsGrid } from "@/components/landing/DocumentsGrid";
 import { ToolsFinalCta } from "@/components/landing/ToolsFinalCta";
 import { SchemaJsonLd, breadcrumbs } from "@/components/layout/SchemaJsonLd";
@@ -29,7 +28,6 @@ function ToolsPage() {
       <HypothequeCalculator />
       <GuidesGrid />
       <TikTokTeaser />
-      <BlogTeaser />
       <DocumentsGrid />
       <ToolsFinalCta />
     </main>
