@@ -5,6 +5,7 @@ import { useGlossary } from "@/lib/GlossaryContext";
 import { LegalPageWrap } from "@/components/layout/LegalPageWrap";
 import { Tiltable } from "@/components/layout/Tiltable";
 import { SchemaJsonLd } from "@/components/layout/SchemaJsonLd";
+import { ToolsFinalCta } from "@/components/landing/ToolsFinalCta";
 import { ta, translations } from "@/lib/translations";
 
 /**
@@ -37,6 +38,7 @@ function JournalPage() {
     <LegalPageWrap
       eyebrow={isFr ? "Le journal" : "The journal"}
       title={ta<string>(translations[lang], "journal.title")}
+      afterContent={<ToolsFinalCta />}
     >
       <SchemaJsonLd
         schema={{

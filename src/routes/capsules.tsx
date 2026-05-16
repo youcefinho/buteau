@@ -4,6 +4,7 @@ import { Play, Sparkles, ArrowRight, Filter } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { LegalPageWrap } from "@/components/layout/LegalPageWrap";
 import { SchemaJsonLd } from "@/components/layout/SchemaJsonLd";
+import { ToolsFinalCta } from "@/components/landing/ToolsFinalCta";
 import { ta, translations } from "@/lib/translations";
 import { config } from "@/lib/config";
 
@@ -61,6 +62,7 @@ function CapsulesPage() {
     <LegalPageWrap
       eyebrow={ta<string>(translations[lang], "capsules.eyebrow")}
       title={ta<string>(translations[lang], "capsules.title")}
+      afterContent={<ToolsFinalCta />}
     >
       <SchemaJsonLd
         schema={{

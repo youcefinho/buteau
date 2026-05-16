@@ -11,11 +11,15 @@ export function LegalPageWrap({
   title,
   lastUpdated,
   children,
+  afterContent,
 }: {
   eyebrow?: string;
   title: string;
   lastUpdated?: string;
   children: ReactNode;
+  /** Slot full-width rendu apres le body (avant Footer). Sert aux CTA pleine
+   *  largeur comme ToolsFinalCta sur /journal et /capsules. */
+  afterContent?: ReactNode;
 }) {
   return (
     <main id="main" className="surface-cream">
@@ -73,6 +77,9 @@ export function LegalPageWrap({
           </div>
         </Container>
       </section>
+
+      {/* Slot full-width pour CTAs en pied de page (ex: ToolsFinalCta) */}
+      {afterContent}
     </main>
   );
 }
