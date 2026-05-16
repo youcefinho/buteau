@@ -32,8 +32,53 @@ type Article = {
   lead: string;
   excerpt: string;
   body?: string[];
+  bodyHtml?: string; // HTML brut autonome (rendu iframe srcDoc) — fidelite totale au document source
   pullQuote?: string;
 };
+
+/**
+ * Rich HTML article rendered in an isolated iframe (srcDoc) so the
+ * source document keeps its own styles, scripts and layout intact.
+ * Iframe height auto-grows to fit content via onLoad measurement.
+ */
+function RichHtmlArticle({ html, title }: { html: string; title: string }) {
+  const iframeRef = useRef<HTMLIFrameElement | null>(null);
+
+  const resize = () => {
+    const iframe = iframeRef.current;
+    if (!iframe) return;
+    const doc = iframe.contentDocument;
+    if (!doc) return;
+    const next = Math.max(
+      doc.documentElement.scrollHeight,
+      doc.body?.scrollHeight ?? 0,
+    );
+    iframe.style.height = `${next + 8}px`;
+  };
+
+  useEffect(() => {
+    const onResize = () => resize();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  return (
+    <iframe
+      ref={iframeRef}
+      title={title}
+      srcDoc={html}
+      onLoad={() => {
+        resize();
+        // Re-mesure une fois les fonts/images chargees (layout shift)
+        setTimeout(resize, 300);
+        setTimeout(resize, 1200);
+      }}
+      sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+      className="w-full block border-0 bg-transparent"
+      style={{ minHeight: "600px" }}
+    />
+  );
+}
 
 function JournalPage() {
   const { t, lang } = useLanguage();
@@ -125,7 +170,9 @@ function JournalPage() {
             datePublished: a.dateIso ?? a.date,
             articleSection: a.category,
             description: a.lead,
-            articleBody: (a.body ?? []).join(" "),
+            articleBody: a.bodyHtml
+              ? a.bodyHtml.replace(/<style[\s\S]*?<\/style>/gi, "").replace(/<script[\s\S]*?<\/script>/gi, "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim()
+              : (a.body ?? []).join(" "),
           })),
         }}
       />
@@ -139,7 +186,8 @@ function JournalPage() {
       <div className="space-y-12 not-prose" style={{ perspective: "1500px" }}>
         {articles.map((a, idx) => {
           const isOpen = openSlug === a.slug;
-          const hasBody = Array.isArray(a.body) && a.body.length > 0;
+          const hasRichHtml = typeof a.bodyHtml === "string" && a.bodyHtml.length > 0;
+          const hasBody = hasRichHtml || (Array.isArray(a.body) && a.body.length > 0);
 
           return (
             <Tiltable key={a.slug} maxDeg={isOpen ? 0 : 2}>
@@ -195,7 +243,24 @@ function JournalPage() {
                   </p>
 
                   {/* Body complet — affiché en accordion */}
-                  {hasBody && isOpen && (
+                  {hasBody && isOpen && hasRichHtml && (
+                    <div
+                      ref={openArticleRef}
+                      className="border-t border-[color:var(--color-taupe)]/30 pt-7 mt-3 animate-[buteauFadeUp_500ms_ease-out_both]"
+                    >
+                      <RichHtmlArticle html={a.bodyHtml!} title={a.title} />
+                      {/* Signature de fin d'article */}
+                      <div className="pt-6 mt-6 border-t border-[color:var(--color-taupe)]/30 flex items-baseline gap-3">
+                        <span className="block w-8 h-px bg-[color:var(--color-bronze)]" aria-hidden="true" />
+                        <p className="font-[var(--font-editorial)] italic text-sm text-[color:var(--color-taupe-dark)]">
+                          {isFr ? "Andrew Buteau, courtier hypothécaire" : "Andrew Buteau, mortgage broker"}
+                          {" · "}
+                          {a.date}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                  {hasBody && isOpen && !hasRichHtml && (
                     <div
                       ref={openArticleRef}
                       className="border-t border-[color:var(--color-taupe)]/30 pt-7 mt-3 space-y-5 animate-[buteauFadeUp_500ms_ease-out_both]"

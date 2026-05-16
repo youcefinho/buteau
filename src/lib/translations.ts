@@ -10,6 +10,10 @@
  *   t<string[]>("home.values.list") → string[]
  */
 
+// Article HTML brut autonome (preserve fidelite totale — styles + tables + FAQ + CTAs)
+// Rendu en iframe srcDoc isolee. Cf. routes/journal.tsx > RichHtmlArticle.
+import preapprobationArticleHtml from "./articles/preapprobation-2026.html?raw";
+
 export type Lang = "fr" | "en";
 
 type BilingualLax = {
@@ -491,16 +495,7 @@ export const translations = {
             "Maximisez vos chances d'achat ce printemps. Obtenez une préapprobation rapide avec L'Équipe Buteau — accès à 20+ banques et institutions financières.",
           pullQuote:
             "Dans un marché compétitif, une lettre de préapprobation envoie un signal qui peut faire une vraie différence.",
-          body: [
-            "Chaque printemps, le même scénario se répète au Québec. Les acheteurs reprennent leurs visites, les pancartes « À vendre » se multiplient, et les bonnes propriétés trouvent preneur rapidement. Dès qu'une maison est bien située, bien présentée et au bon prix, les offres peuvent affluer en quelques jours seulement.",
-            "Visiter sans préapprobation, c'est un peu comme arriver à une négociation sans savoir jusqu'où vous pouvez aller. Vous pouvez tomber sous le charme d'une propriété, vous y projeter, et même vouloir déposer une promesse d'achat. Mais sans un financement clair, vous risquez de perdre du temps, de l'énergie — ou pire encore, de voir la maison vous échapper au profit d'un acheteur mieux préparé.",
-            "Avec une préapprobation en main, vous arrivez préparé. Votre capacité d'emprunt est claire, votre mise de fonds est cadrée, et vous avez une bonne idée de vos paiements mensuels potentiels. Vous pouvez aussi profiter d'un taux hypothécaire bloqué pour une période déterminée, souvent entre 90 et 120 jours selon le prêteur.",
-            "Beaucoup d'acheteurs confondent encore préqualification et préapprobation. La préqualification se résume souvent à une estimation rapide basée sur des informations déclarées. La préapprobation, elle, repose sur une analyse plus sérieuse : vérification du dossier de crédit, des revenus, des passifs financiers, de la mise de fonds et du ratio d'endettement (ABD/ATD).",
-            "Concrètement, l'ABD (amortissement de la dette brute) mesure la part de votre revenu brut consacrée aux coûts d'habitation : hypothèque, taxes, chauffage. L'ATD (amortissement de la dette totale) ajoute vos autres dettes — auto, cartes de crédit, prêts personnels. Selon le prêteur et le dossier, les limites tournent souvent autour de 32-39 % pour l'ABD et 40-44 % pour l'ATD.",
-            "Le rôle d'un courtier hypothécaire agréé est de simplifier le processus, comparer les options pour vous et vous aider à prendre une décision éclairée. Avec L'Équipe Buteau, l'objectif est clair : vous donner une lecture rapide de votre pouvoir d'achat, sans vous laisser seul face aux formulaires, aux ratios et aux conditions des institutions financières.",
-            "Plutôt que de cogner à une seule porte, L'Équipe Buteau compare les options de plus de 20 banques et institutions financières grâce à son réseau Planiprêt — TD, BMO, Desjardins et autres selon votre profil. Centraliser la démarche aide aussi à limiter les enquêtes de crédit répétées et désorganisées.",
-            "Avant de visiter, obtenez votre lettre. Avant de négocier, connaissez votre pouvoir d'achat. Avant de déposer une promesse d'achat, assurez-vous que votre financement est solide. La préapprobation n'est pas une simple étape administrative — c'est un outil de sécurité, de clarté et de négociation. Le service de courtage est gratuit pour l'acheteur.",
-          ],
+          bodyHtml: preapprobationArticleHtml,
         },
         {
           slug: "automne-revoir-hypotheque",
@@ -1644,16 +1639,8 @@ export const translations = {
             "Maximize your buying power this spring. Get a fast pre-approval with L'Équipe Buteau — access to 20+ banks and financial institutions.",
           pullQuote:
             "In a competitive market, a pre-approval letter sends a signal that can make a real difference.",
-          body: [
-            "Every spring, the same scenario plays out in Quebec. Buyers resume showings, 'For Sale' signs multiply, and good properties get snapped up quickly. As soon as a home is well located, well presented and fairly priced, offers can pour in within days.",
-            "Visiting without a pre-approval is a bit like walking into a negotiation without knowing how far you can go. You can fall in love with a property, picture yourself living there, even want to submit an offer. But without clear financing, you risk wasting time, energy — or worse, losing the home to a better-prepared buyer.",
-            "With a pre-approval in hand, you arrive prepared. Your borrowing capacity is clear, your down payment is framed, and you have a good idea of your potential monthly payments. You can also benefit from a locked-in mortgage rate for a set period, usually 90 to 120 days depending on the lender.",
-            "Many buyers still confuse pre-qualification with pre-approval. Pre-qualification is often just a quick estimate based on declared information. Pre-approval involves a more serious analysis: credit check, income verification, liabilities, down payment and debt service ratios (GDS/TDS).",
-            "Specifically, GDS (gross debt service) measures the share of your gross income going to housing costs: mortgage, taxes, heating. TDS (total debt service) adds your other debts — car, credit cards, personal loans. Depending on the lender and file, limits typically sit around 32-39% for GDS and 40-44% for TDS.",
-            "A licensed mortgage broker's role is to simplify the process, compare options for you, and help you make an informed decision. With L'Équipe Buteau, the goal is clear: give you a fast read on your purchasing power without leaving you alone with forms, ratios and lender conditions.",
-            "Rather than knocking on a single door, L'Équipe Buteau compares options across 20+ banks and financial institutions through its Planiprêt network — TD, BMO, Desjardins and others depending on your profile. Centralizing the process also helps limit scattered, repeated credit inquiries.",
-            "Before viewing, get your letter. Before negotiating, know your buying power. Before submitting an offer, make sure your financing is solid. Pre-approval isn't just an administrative step — it's a tool of security, clarity and negotiation. The brokerage service is free for the buyer.",
-          ],
+          // Article source FR-only fourni par le client — affiche tel quel meme en EN (langue d'affichage du journal)
+          bodyHtml: preapprobationArticleHtml,
         },
         {
           slug: "automne-revoir-hypotheque",
