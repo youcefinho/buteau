@@ -9,6 +9,8 @@ import {
 } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
+import { AmortizationSparkline } from "./AmortizationSparkline";
+import { WhatIfScenarios } from "./WhatIfScenarios";
 
 /**
  * CalcMultiViewsButeau — Calculateur hypothécaire 4 facettes.
@@ -461,6 +463,9 @@ function TabPaiement() {
   const pmt = monthlyPayment(principal, taux, amort);
   const totalPaye = pmt * amort * 12;
   const totalInterets = Math.max(0, totalPaye - principal);
+  // Taux mensuel composé semi-annuel — pour graph + What If
+  const monthlyR = taux > 0 ? Math.pow(1 + taux / 2 / 100, 2 / 12) - 1 : 0;
+  const nPayments = amort * 12;
 
   const segments: DonutSegment[] = [
     {
@@ -559,6 +564,29 @@ function TabPaiement() {
           {isFr ? "Bloquer ce taux" : "Lock this rate"}
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
         </Link>
+      </div>
+
+      {/* Pleine largeur : graph amortissement + What If scenarios — reagit
+          aux sliders du tab Paiement. Restaure features de l'ancien
+          HypothequeCalculator (graph + scenarios) sur ce tab. */}
+      <div className="lg:col-span-2 space-y-10 mt-6">
+        <div className="border-t border-[color:var(--color-taupe)]/30 pt-10">
+          <AmortizationSparkline
+            principal={principal}
+            monthlyPayment={pmt}
+            monthlyRate={monthlyR}
+            numberOfPayments={nPayments}
+          />
+        </div>
+        <div className="border-t border-[color:var(--color-taupe)]/30 pt-10">
+          <WhatIfScenarios
+            principal={principal}
+            monthlyPayment={pmt}
+            monthlyRate={monthlyR}
+            numberOfPayments={nPayments}
+            totalInterest={totalInterets}
+          />
+        </div>
       </div>
     </div>
   );
