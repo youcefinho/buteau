@@ -70,20 +70,6 @@ export function Hero() {
       {/* Ambient particles — flotteurs subtils luxury cinematic */}
       <div className="ambient-particles" aria-hidden="true" />
 
-      {/* === MAGAZINE COVER TREATMENT === */}
-      {/* Issue number top-left — comme la couverture d'un magazine luxury */}
-      <div className="absolute top-24 md:top-28 left-6 md:left-12 z-10 flex flex-col gap-2 animate-[buteauFadeUp_700ms_ease-out_400ms_both]">
-        <p className="eyebrow text-[color:var(--color-taupe)] text-[10px]">
-          {t("home.hero.issueLabel")}
-        </p>
-        <p className="font-[var(--font-editorial)] italic text-[color:var(--color-cream)] text-3xl md:text-4xl leading-none">
-          {t("home.hero.issueNumber")}
-        </p>
-        <p className="font-[var(--font-display)] text-[color:var(--color-taupe)] text-[10px] uppercase tracking-[0.2em] mt-1">
-          {t("home.hero.issueDate")}
-        </p>
-      </div>
-
       {/* Location top-right (Laval · Québec) */}
       <div className="absolute top-24 md:top-28 right-6 md:right-12 z-10 text-right animate-[buteauFadeUp_700ms_ease-out_500ms_both]">
         <p className="eyebrow text-[color:var(--color-taupe)] text-[10px] inline-flex items-center gap-2">
