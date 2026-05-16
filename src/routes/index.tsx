@@ -51,8 +51,8 @@ function HomePage() {
   return (
     <main id="main">
       <SchemaJsonLd schema={homeSchemas} />
-      <PageFooterMark numeral="01" label={lang === "fr" ? "Accueil" : "Home"} />
       <Hero />
+      <PageFooterMark numeral="01" label={lang === "fr" ? "Le réseau" : "The network"} />
       <Partners />
 
       {/* ValueTicker — bandeau scrolling éditorial avec faits vérifiés
