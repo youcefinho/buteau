@@ -42,11 +42,12 @@ export function Navbar() {
     };
   }, [mobileOpen]);
 
-  const navItems: Array<{ to: "/" | "/equipe" | "/institutions" | "/outils" | "/capsules"; key: string }> = [
+  const navItems: Array<{ to: "/" | "/equipe" | "/institutions" | "/outils" | "/capsules" | "/journal"; key: string }> = [
     { to: "/", key: "nav.home" },
     { to: "/equipe", key: "nav.team" },
     { to: "/institutions", key: "nav.institutions" },
     { to: "/outils", key: "nav.tools" },
+    { to: "/journal", key: "nav.journal" },
     { to: "/capsules", key: "nav.capsules" },
   ];
 
@@ -311,7 +312,7 @@ export function Navbar() {
   );
 }
 
-function NavLink({ to, label }: { to: "/" | "/equipe" | "/institutions" | "/outils" | "/capsules"; label: string }) {
+function NavLink({ to, label }: { to: "/" | "/equipe" | "/institutions" | "/outils" | "/capsules" | "/journal"; label: string }) {
   return (
     <Link
       to={to}

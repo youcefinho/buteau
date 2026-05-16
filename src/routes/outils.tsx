@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/LanguageContext";
 import { PageHero } from "@/components/landing/PageHero";
-import { HypothequeCalculator } from "@/components/landing/calculators/HypothequeCalculator";
+import { CalcMultiViewsButeau } from "@/components/landing/calculators/CalcMultiViewsButeau";
 import { GuidesGrid } from "@/components/landing/GuidesGrid";
 import { TikTokTeaser } from "@/components/landing/TikTokTeaser";
 import { DocumentsGrid } from "@/components/landing/DocumentsGrid";
@@ -25,7 +25,7 @@ function ToolsPage() {
         subtitle={t("tools.hero.subtitle")}
         ornament="04"
       />
-      <HypothequeCalculator />
+      <CalcMultiViewsButeau />
       <GuidesGrid />
       <TikTokTeaser />
       <DocumentsGrid />
