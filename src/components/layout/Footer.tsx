@@ -34,17 +34,17 @@ export function Footer() {
         {config.brandName}
       </span>
 
-      <Container size="xl" className="relative pt-24 md:pt-32 pb-12">
+      <Container size="xl" className="relative pt-14 md:pt-20 pb-8">
         {/* === Couverture statement — Cormorant italic XL === */}
-        <div className="max-w-4xl mb-20 md:mb-28">
-          <p className="eyebrow text-[color:var(--color-taupe)] mb-6 inline-flex items-center gap-3">
+        <div className="max-w-4xl mb-10 md:mb-14">
+          <p className="eyebrow text-[color:var(--color-taupe)] mb-4 inline-flex items-center gap-3">
             <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
             {lang === "fr" ? "Quatrième de couverture" : "Back cover"}
           </p>
-          <p className="font-[var(--font-editorial)] italic text-[color:var(--color-cream)] text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.1] tracking-tight">
+          <p className="font-[var(--font-editorial)] italic text-[color:var(--color-cream)] text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] leading-[1.1] tracking-tight">
             « {t("footer.coverStatement")} »
           </p>
-          <div className="flex items-center gap-4 mt-10">
+          <div className="flex items-center gap-4 mt-6">
             <span className="block w-12 h-px bg-[color:var(--color-bronze)]" />
             <p className="eyebrow text-[color:var(--color-taupe)]">
               Andrew Buteau
@@ -53,13 +53,13 @@ export function Footer() {
         </div>
 
         {/* === Grid asymétrique : Contact / Navigation / Colophon === */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 pb-12 border-b border-[color:var(--color-taupe)]/30">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 pb-8 border-b border-[color:var(--color-taupe)]/30">
           {/* Contact — col 5 */}
-          <div className="md:col-span-5 space-y-5">
+          <div className="md:col-span-5 space-y-4">
             <p className="eyebrow text-[color:var(--color-taupe)]">
               {t("footer.contact")}
             </p>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-2.5 text-sm">
               <li className="flex items-start gap-3">
                 <Phone size={14} className="mt-1 shrink-0 text-[color:var(--color-bronze)]" aria-hidden="true" />
                 <a
@@ -90,11 +90,11 @@ export function Footer() {
           </div>
 
           {/* Navigation — col 3 */}
-          <div className="md:col-span-3 space-y-4">
+          <div className="md:col-span-3 space-y-3">
             <p className="eyebrow text-[color:var(--color-taupe)]">
               {t("footer.sitemap")}
             </p>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-2 text-sm">
               <li><Link to="/" className="text-glow-hover">{t("nav.home")}</Link></li>
               <li><Link to="/equipe" className="text-glow-hover">{t("nav.team")}</Link></li>
               <li><Link to="/institutions" className="text-glow-hover">{t("nav.institutions")}</Link></li>
@@ -113,22 +113,22 @@ export function Footer() {
           </div>
 
           {/* Colophon — col 4 — pattern magazine print (typo credits) */}
-          <div className="md:col-span-4 space-y-3">
+          <div className="md:col-span-4 space-y-2.5">
             <p className="eyebrow text-[color:var(--color-taupe)]">
               {t("footer.colophon")}
             </p>
-            <p className="font-[var(--font-editorial)] italic text-sm leading-[1.65] text-[color:var(--color-cream)]/75">
+            <p className="font-[var(--font-editorial)] italic text-sm leading-[1.55] text-[color:var(--color-cream)]/75">
               {t("footer.colophonComposed")}
             </p>
-            <p className="font-[var(--font-editorial)] italic text-sm leading-[1.65] text-[color:var(--color-cream)]/75">
+            <p className="font-[var(--font-editorial)] italic text-sm leading-[1.55] text-[color:var(--color-cream)]/75">
               {t("footer.colophonPrinted")}
             </p>
-            <p className="font-[var(--font-editorial)] italic text-sm leading-[1.65] text-[color:var(--color-cream)]/75 pt-1">
+            <p className="font-[var(--font-editorial)] italic text-sm leading-[1.55] text-[color:var(--color-cream)]/75">
               {t("footer.colophonEdition")}
             </p>
 
             {/* Légal links + colophon (modaux pour lexique/colophon, pages pour légal) */}
-            <div className="pt-4 mt-4 border-t border-[color:var(--color-taupe)]/30 flex flex-wrap gap-x-5 gap-y-2 text-xs">
+            <div className="pt-3 mt-3 border-t border-[color:var(--color-taupe)]/30 flex flex-wrap gap-x-5 gap-y-2 text-xs">
               <button type="button" onClick={openColophon} className="text-glow-hover text-left">
                 {lang === "fr" ? "Colophon" : "Colophon"}
               </button>
@@ -146,12 +146,12 @@ export function Footer() {
         </div>
 
         {/* === Disclaimer AMF + bottom bar === */}
-        <div className="pt-10 space-y-6">
-          <p className="text-xs leading-[1.7] text-[color:var(--color-cream)]/65 max-w-4xl italic">
+        <div className="pt-6 space-y-4">
+          <p className="text-xs leading-[1.6] text-[color:var(--color-cream)]/65 max-w-4xl italic">
             {config.amf.disclaimer[lang]}
           </p>
 
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3">
             <div className="flex items-center gap-3">
               <span className="block w-8 h-px bg-[color:var(--color-bronze)]" />
               <p className="eyebrow text-[color:var(--color-taupe)] text-[10px]">
