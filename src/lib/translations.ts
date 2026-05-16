@@ -10,10 +10,6 @@
  *   t<string[]>("home.values.list") → string[]
  */
 
-// Article HTML brut autonome (preserve fidelite totale — styles + tables + FAQ + CTAs)
-// Rendu en iframe srcDoc isolee. Cf. routes/journal.tsx > RichHtmlArticle.
-import preapprobationArticleHtml from "./articles/preapprobation-2026.html?raw";
-
 export type Lang = "fr" | "en";
 
 type BilingualLax = {
@@ -495,7 +491,8 @@ export const translations = {
             "Maximisez vos chances d'achat ce printemps. Obtenez une préapprobation rapide avec L'Équipe Buteau — accès à 20+ banques et institutions financières.",
           pullQuote:
             "Dans un marché compétitif, une lettre de préapprobation envoie un signal qui peut faire une vraie différence.",
-          bodyHtml: preapprobationArticleHtml,
+          // bodyHtml injecte cote client par routes/journal.tsx (match slug) — l'HTML brut
+          // ne peut pas vivre ici car le worker SSR (esbuild) ne sait pas resoudre ?raw.
         },
         {
           slug: "automne-revoir-hypotheque",
@@ -1639,8 +1636,7 @@ export const translations = {
             "Maximize your buying power this spring. Get a fast pre-approval with L'Équipe Buteau — access to 20+ banks and financial institutions.",
           pullQuote:
             "In a competitive market, a pre-approval letter sends a signal that can make a real difference.",
-          // Article source FR-only fourni par le client — affiche tel quel meme en EN (langue d'affichage du journal)
-          bodyHtml: preapprobationArticleHtml,
+          // bodyHtml injecte cote client (FR-only HTML, affiche meme en EN) — cf. routes/journal.tsx.
         },
         {
           slug: "automne-revoir-hypotheque",

@@ -7,6 +7,13 @@ import { LegalPageWrap } from "@/components/layout/LegalPageWrap";
 import { Tiltable } from "@/components/layout/Tiltable";
 import { SchemaJsonLd } from "@/components/layout/SchemaJsonLd";
 import { ta, translations } from "@/lib/translations";
+// HTML brut autonome — rendu en iframe srcDoc isolee.
+// Import ici (client-only) car le worker SSR esbuild ne resout pas ?raw.
+import preapprobationArticleHtml from "@/lib/articles/preapprobation-2026.html?raw";
+
+const ARTICLE_BODY_HTML: Record<string, string> = {
+  "preapprobation-hypothecaire-2026": preapprobationArticleHtml,
+};
 
 /**
  * /journal — page index blog éditorial magazine.
@@ -170,9 +177,18 @@ function JournalPage() {
             datePublished: a.dateIso ?? a.date,
             articleSection: a.category,
             description: a.lead,
-            articleBody: a.bodyHtml
-              ? a.bodyHtml.replace(/<style[\s\S]*?<\/style>/gi, "").replace(/<script[\s\S]*?<\/script>/gi, "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim()
-              : (a.body ?? []).join(" "),
+            articleBody: (() => {
+              const html = a.bodyHtml ?? ARTICLE_BODY_HTML[a.slug];
+              if (html) {
+                return html
+                  .replace(/<style[\s\S]*?<\/style>/gi, "")
+                  .replace(/<script[\s\S]*?<\/script>/gi, "")
+                  .replace(/<[^>]+>/g, " ")
+                  .replace(/\s+/g, " ")
+                  .trim();
+              }
+              return (a.body ?? []).join(" ");
+            })(),
           })),
         }}
       />
@@ -186,7 +202,10 @@ function JournalPage() {
       <div className="space-y-12 not-prose" style={{ perspective: "1500px" }}>
         {articles.map((a, idx) => {
           const isOpen = openSlug === a.slug;
-          const hasRichHtml = typeof a.bodyHtml === "string" && a.bodyHtml.length > 0;
+          // Injecte le HTML brut au render (mapping slug -> html), pas dans translations
+          // car le worker SSR esbuild ne resout pas Vite ?raw.
+          const richHtml = a.bodyHtml ?? ARTICLE_BODY_HTML[a.slug];
+          const hasRichHtml = typeof richHtml === "string" && richHtml.length > 0;
           const hasBody = hasRichHtml || (Array.isArray(a.body) && a.body.length > 0);
 
           return (
@@ -248,7 +267,7 @@ function JournalPage() {
                       ref={openArticleRef}
                       className="border-t border-[color:var(--color-taupe)]/30 pt-7 mt-3 animate-[buteauFadeUp_500ms_ease-out_both]"
                     >
-                      <RichHtmlArticle html={a.bodyHtml!} title={a.title} />
+                      <RichHtmlArticle html={richHtml!} title={a.title} />
                       {/* Signature de fin d'article */}
                       <div className="pt-6 mt-6 border-t border-[color:var(--color-taupe)]/30 flex items-baseline gap-3">
                         <span className="block w-8 h-px bg-[color:var(--color-bronze)]" aria-hidden="true" />
