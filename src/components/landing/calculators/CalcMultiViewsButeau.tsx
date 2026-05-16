@@ -319,6 +319,276 @@ const SEG = {
 };
 
 // ─────────────────────────────────────
+// Mini-viz partagees par les autres tabs
+// ─────────────────────────────────────
+
+/** Horizontal bar chart — sensibilite au taux pour Tab Capacite */
+function RateSensitivityChart({
+  rates,
+  capacities,
+  currentRate,
+  label,
+}: {
+  rates: number[];
+  capacities: number[];
+  currentRate: number;
+  label: string;
+}) {
+  const max = Math.max(...capacities);
+  return (
+    <div className="border border-[color:var(--color-taupe)]/40 bg-[color:var(--color-cream)]/60 p-5">
+      <p className="eyebrow text-[color:var(--color-bronze-deep)] mb-4">{label}</p>
+      <div className="space-y-3">
+        {rates.map((r, i) => {
+          const cap = capacities[i];
+          const pct = max > 0 ? (cap / max) * 100 : 0;
+          const isCurrent = Math.abs(r - currentRate) < 0.025;
+          return (
+            <div key={r} className="space-y-1">
+              <div className="flex justify-between items-baseline text-xs">
+                <span
+                  className={`tabular-nums font-semibold ${
+                    isCurrent
+                      ? "text-[color:var(--color-bronze-deep)]"
+                      : "text-[color:var(--color-taupe-dark)]"
+                  }`}
+                >
+                  {r.toFixed(2)}%
+                  {isCurrent && <span className="ml-1.5 text-[10px] uppercase tracking-wider">← actuel</span>}
+                </span>
+                <span
+                  className={`tabular-nums font-semibold ${
+                    isCurrent
+                      ? "text-[color:var(--color-bronze-deep)]"
+                      : "text-[color:var(--color-navy-deep)]"
+                  }`}
+                >
+                  {fmtCAD(cap)}
+                </span>
+              </div>
+              <div className="relative h-2 bg-[color:var(--color-taupe)]/15 rounded-full overflow-hidden">
+                <div
+                  className="absolute inset-y-0 left-0 rounded-full transition-all duration-500"
+                  style={{
+                    width: `${pct}%`,
+                    backgroundColor: isCurrent
+                      ? "var(--color-bronze)"
+                      : "color-mix(in oklch, var(--color-bronze) 45%, transparent)",
+                    boxShadow: isCurrent
+                      ? "0 0 8px color-mix(in oklch, var(--color-bronze) 40%, transparent)"
+                      : "none",
+                  }}
+                />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+/** SVG line chart 2 lignes — courbes interets cumules pour Tab Comparaison */
+function CumulativeInterestChart({
+  fixedSeries,
+  variableSeries,
+  monthsLabels,
+  fixedLabel,
+  variableLabel,
+}: {
+  fixedSeries: number[];
+  variableSeries: number[];
+  monthsLabels: string[];
+  fixedLabel: string;
+  variableLabel: string;
+}) {
+  const W = 520;
+  const H = 200;
+  const PAD = { t: 16, r: 16, b: 28, l: 56 };
+  const innerW = W - PAD.l - PAD.r;
+  const innerH = H - PAD.t - PAD.b;
+  const max = Math.max(...fixedSeries, ...variableSeries, 1);
+  const n = fixedSeries.length - 1;
+
+  const path = (series: number[]) =>
+    series
+      .map((v, i) => {
+        const x = PAD.l + (i / n) * innerW;
+        const y = PAD.t + innerH - (v / max) * innerH;
+        return `${i === 0 ? "M" : "L"}${x.toFixed(1)},${y.toFixed(1)}`;
+      })
+      .join(" ");
+
+  const yTicks = [0, 0.25, 0.5, 0.75, 1].map((p) => Math.round(max * p));
+
+  return (
+    <div className="border border-[color:var(--color-taupe)]/40 bg-[color:var(--color-cream)]/60 p-5">
+      <div className="flex items-center justify-between mb-3">
+        <p className="eyebrow text-[color:var(--color-bronze-deep)]">
+          Intérêts cumulés
+        </p>
+        <div className="flex items-center gap-4 text-[10px] uppercase tracking-wider">
+          <div className="flex items-center gap-1.5">
+            <span className="inline-block w-3 h-0.5 bg-[color:var(--color-navy-deep)]" />
+            <span className="text-[color:var(--color-taupe-dark)]">{fixedLabel}</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <span className="inline-block w-3 h-0.5 bg-[color:var(--color-bronze)]" />
+            <span className="text-[color:var(--color-taupe-dark)]">{variableLabel}</span>
+          </div>
+        </div>
+      </div>
+      <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto" aria-hidden="true">
+        {/* Y-axis ticks */}
+        {yTicks.map((v, i) => {
+          const y = PAD.t + innerH - (v / max) * innerH;
+          return (
+            <g key={i}>
+              <line
+                x1={PAD.l}
+                x2={W - PAD.r}
+                y1={y}
+                y2={y}
+                stroke="color-mix(in oklch, var(--color-taupe) 25%, transparent)"
+                strokeWidth={i === 0 ? 1 : 0.5}
+                strokeDasharray={i === 0 ? "" : "3 3"}
+              />
+              <text
+                x={PAD.l - 8}
+                y={y + 3}
+                textAnchor="end"
+                fill="var(--color-taupe-dark)"
+                fontSize="10"
+                className="tabular-nums"
+              >
+                {fmtCAD(v)}
+              </text>
+            </g>
+          );
+        })}
+        {/* X-axis labels */}
+        {monthsLabels.map((lbl, i) => {
+          const x = PAD.l + (i / (monthsLabels.length - 1)) * innerW;
+          return (
+            <text
+              key={i}
+              x={x}
+              y={H - 8}
+              textAnchor="middle"
+              fill="var(--color-taupe-dark)"
+              fontSize="10"
+            >
+              {lbl}
+            </text>
+          );
+        })}
+        {/* Fixed line — navy */}
+        <path
+          d={path(fixedSeries)}
+          fill="none"
+          stroke="var(--color-navy-deep)"
+          strokeWidth={2}
+          strokeLinecap="round"
+        />
+        {/* Variable line — bronze */}
+        <path
+          d={path(variableSeries)}
+          fill="none"
+          stroke="var(--color-bronze)"
+          strokeWidth={2}
+          strokeLinecap="round"
+        />
+      </svg>
+    </div>
+  );
+}
+
+/** 3 scenarios MDF side-by-side pour Tab Mise de fonds */
+function MdfComparisonGrid({
+  prix,
+  taux,
+  amort,
+  schlRateFn,
+}: {
+  prix: number;
+  taux: number;
+  amort: number;
+  schlRateFn: (ltv: number) => number;
+}) {
+  const scenarios = [5, 10, 20].map((pct) => {
+    const mdf = (prix * pct) / 100;
+    const principal = Math.max(0, prix - mdf);
+    const ltv = principal / prix;
+    const schlApplies = pct < 20;
+    const primeRate = schlApplies ? schlRateFn(ltv) : 0;
+    const prime = schlApplies ? principal * primeRate : 0;
+    const loanWithSchl = principal + prime;
+    // Reuse local monthly payment formula (semi-annual canadien)
+    const m = taux > 0 ? Math.pow(1 + taux / 2 / 100, 2 / 12) - 1 : 0;
+    const n = amort * 12;
+    const pmt =
+      m > 0
+        ? (loanWithSchl * m * Math.pow(1 + m, n)) / (Math.pow(1 + m, n) - 1)
+        : loanWithSchl / n;
+    return { pct, mdf, prime, pmt };
+  });
+
+  return (
+    <div className="border border-[color:var(--color-taupe)]/40 bg-[color:var(--color-cream)]/60 p-5">
+      <p className="eyebrow text-[color:var(--color-bronze-deep)] mb-4">
+        Impact de la mise de fonds
+      </p>
+      <div className="grid grid-cols-3 gap-3">
+        {scenarios.map((s) => (
+          <div
+            key={s.pct}
+            className={`border p-4 text-center ${
+              s.pct === 20
+                ? "border-[color:var(--color-bronze)] bg-[color:var(--color-bronze)]/8"
+                : "border-[color:var(--color-taupe)]/40"
+            }`}
+          >
+            <p className="font-[var(--font-display)] font-bold text-[color:var(--color-bronze-deep)] text-3xl mb-1">
+              {s.pct}%
+            </p>
+            <p className="text-[10px] uppercase tracking-wider text-[color:var(--color-taupe-dark)] mb-3">
+              MDF {fmtCAD(s.mdf)}
+            </p>
+            <div className="space-y-1.5 text-xs">
+              <div>
+                <p className="text-[10px] uppercase tracking-wider text-[color:var(--color-taupe-dark)]">
+                  Paiement
+                </p>
+                <p className="font-bold text-[color:var(--color-navy-deep)] tabular-nums">
+                  {fmtCAD(s.pmt)}/mo
+                </p>
+              </div>
+              <div className="pt-1.5 border-t border-[color:var(--color-taupe)]/30">
+                <p className="text-[10px] uppercase tracking-wider text-[color:var(--color-taupe-dark)]">
+                  Prime SCHL
+                </p>
+                <p
+                  className={`font-bold tabular-nums ${
+                    s.prime > 0
+                      ? "text-[color:var(--color-bronze-deep)]"
+                      : "text-[color:var(--color-taupe-dark)]"
+                  }`}
+                >
+                  {s.prime > 0 ? fmtCAD(s.prime) : "—"}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] mt-4 leading-snug">
+        20 % MDF = aucune prime SCHL + paiement réduit, mais cash initial plus élevé. Le bon arbitrage dépend de votre liquidité disponible.
+      </p>
+    </div>
+  );
+}
+
+// ─────────────────────────────────────
 // Tab 1 — Capacite d'emprunt (ABD/ATD)
 // ─────────────────────────────────────
 function TabCapacite() {
@@ -349,6 +619,13 @@ function TabCapacite() {
   const principalMax =
     m > 0 ? (paimntMax * (Math.pow(1 + m, n) - 1)) / (m * Math.pow(1 + m, n)) : paimntMax * n;
   const prixMax = principalMax + mdf;
+
+  // Sensibilite : capacite d'emprunt a 5 taux differents (autour du taux actuel)
+  const sensitivityRates = [3.5, 4.5, 5.5, 6.5, 7.5];
+  const sensitivityCapacities = sensitivityRates.map((r) => {
+    const mr = Math.pow(1 + r / 2 / 100, 2 / 12) - 1;
+    return mr > 0 ? (paimntMax * (Math.pow(1 + mr, n) - 1)) / (mr * Math.pow(1 + mr, n)) : paimntMax * n;
+  });
 
   const segments: DonutSegment[] = [
     {
@@ -443,6 +720,21 @@ function TabCapacite() {
           {isFr ? "Valider avec Andrew" : "Validate with Andrew"}
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
         </Link>
+      </div>
+
+      {/* Pleine largeur — sensibilite au taux : combien d'emprunt a 5 taux differents */}
+      <div className="lg:col-span-2 mt-6 border-t border-[color:var(--color-taupe)]/30 pt-10">
+        <RateSensitivityChart
+          rates={sensitivityRates}
+          capacities={sensitivityCapacities}
+          currentRate={taux}
+          label={isFr ? "Sensibilité de votre capacité au taux" : "Capacity sensitivity to rate"}
+        />
+        <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] mt-3 leading-snug">
+          {isFr
+            ? "Avec le même revenu et les mêmes dettes, une baisse d'1 % de taux peut bonifier votre capacité de plusieurs dizaines de milliers de dollars. Le timing du marché compte."
+            : "With the same income and debts, a 1% rate drop can lift your capacity by tens of thousands. Market timing matters."}
+        </p>
       </div>
     </div>
   );
@@ -626,6 +918,35 @@ function TabComparaison() {
   const ecartInterets = interetsFixe - interetsVar;
   const variableGagnant = ecart > 0;
 
+  // Series interets cumules sur 60 mois pour le graph
+  function cumulativeInterest(princ: number, ratePct: number, amortYears: number, months: number): number[] {
+    if (ratePct === 0 || princ <= 0) return Array.from({ length: months + 1 }, () => 0);
+    const m = Math.pow(1 + ratePct / 2 / 100, 2 / 12) - 1;
+    const N = amortYears * 12;
+    const pmt = (princ * m * Math.pow(1 + m, N)) / (Math.pow(1 + m, N) - 1);
+    let bal = princ;
+    let cum = 0;
+    const out: number[] = [0];
+    for (let k = 1; k <= months; k++) {
+      const int = bal * m;
+      cum += int;
+      bal = bal + int - pmt;
+      out.push(cum);
+    }
+    return out;
+  }
+  const fixedSeries = cumulativeInterest(principal, tauxFixe, amort, 60);
+  // Variable : 24 mois au tauxVarInit puis 36 mois reamortise au tauxVarMoyen
+  const varSeriesPhase1 = cumulativeInterest(principal, tauxVarInit, amort, 24);
+  const balAfter24Phase = balanceAfter(principal, tauxVarInit, amort, 24);
+  const varSeriesPhase2Raw = cumulativeInterest(balAfter24Phase, tauxVarMoyen, amort - 2, 36);
+  const cumAt24 = varSeriesPhase1[24];
+  const variableSeries = [
+    ...varSeriesPhase1,
+    ...varSeriesPhase2Raw.slice(1).map((v) => v + cumAt24),
+  ];
+  const monthsLabels = ["0", "12", "24", "36", "48", "60"];
+
   return (
     <div className="grid lg:grid-cols-[1fr_1.3fr] gap-10 lg:gap-14 items-start">
       <div className="space-y-5">
@@ -781,6 +1102,22 @@ function TabComparaison() {
           {isFr ? "Discuter de ma stratégie" : "Discuss my strategy"}
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
         </Link>
+      </div>
+
+      {/* Pleine largeur — courbes interets cumules fixe vs variable sur 60 mois */}
+      <div className="lg:col-span-2 mt-6 border-t border-[color:var(--color-taupe)]/30 pt-10">
+        <CumulativeInterestChart
+          fixedSeries={fixedSeries}
+          variableSeries={variableSeries}
+          monthsLabels={monthsLabels}
+          fixedLabel={isFr ? "Fixe" : "Fixed"}
+          variableLabel={isFr ? "Variable" : "Variable"}
+        />
+        <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] mt-3 leading-snug">
+          {isFr
+            ? "L'écart visuel entre les 2 courbes représente votre gain (ou perte) potentiel sur le terme. Plus la courbe est haute, plus vous payez d'intérêts."
+            : "The visual gap between the 2 curves shows your potential gain (or loss) over the term. The higher the curve, the more interest paid."}
+        </p>
       </div>
     </div>
   );
@@ -950,6 +1287,11 @@ function TabMiseDeFonds() {
           {isFr ? "Préparer mon dossier" : "Prepare my file"}
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
         </Link>
+      </div>
+
+      {/* Pleine largeur — comparaison 3 scenarios MDF (5 / 10 / 20 %) */}
+      <div className="lg:col-span-2 mt-6 border-t border-[color:var(--color-taupe)]/30 pt-10">
+        <MdfComparisonGrid prix={prix} taux={5.25} amort={25} schlRateFn={schlPremiumRate} />
       </div>
     </div>
   );
