@@ -13,8 +13,6 @@ import { BrokerLetter } from "@/components/landing/BrokerLetter";
 import { TerritoryMap } from "@/components/landing/TerritoryMap";
 import { PreQualQuiz } from "@/components/landing/PreQualQuiz";
 import { CalcMultiViewsButeau } from "@/components/landing/calculators/CalcMultiViewsButeau";
-import { GuidesShelf } from "@/components/landing/GuidesShelf";
-import { CapsulesPreview } from "@/components/landing/CapsulesPreview";
 import { JournalPreview } from "@/components/landing/JournalPreview";
 import { ValueTicker } from "@/components/landing/ValueTicker";
 import { AdPage } from "@/components/landing/AdPage";
@@ -71,18 +69,8 @@ function HomePage() {
           + CTA vers /outils pour la version complète. */}
       <ScrollReveal><CalcMultiViewsButeau mode="preview" /></ScrollReveal>
 
-      {/* GuidesShelf — table-of-contents éditoriale des guides + docs
-          téléchargeables. Synergie : 5 items préview + lien /outils#guides. */}
-      <ScrollReveal><GuidesShelf /></ScrollReveal>
-
-      {/* CapsulesPreview — table-of-contents éditoriale des capsules vidéo
-          « 30 secondes top chrono ». Pattern miroir GuidesShelf : 5 items
-          vedettes + CTA vers /capsules pour la collection complète (30+). */}
-      <ScrollReveal><CapsulesPreview /></ScrollReveal>
-
-      {/* JournalPreview — feature article du journal sur navy bg, alterne
-          avec CapsulesPreview cream pour rythme contraste. Card grande
-          format magazine, cliquable vers /journal/$slug. */}
+      {/* JournalPreview — feature article du journal sur navy bg.
+          Card grande format magazine, cliquable vers /journal/$slug. */}
       <ScrollReveal><JournalPreview /></ScrollReveal>
 
       <ScrollReveal><ToolsTeaser /></ScrollReveal>
