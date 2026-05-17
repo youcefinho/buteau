@@ -47,9 +47,22 @@ export function BackToTop() {
       }`}
     >
       {/* Tooltip au hover desktop — apparait a droite du bouton */}
-      <span className="pointer-events-none absolute left-full ml-3 px-3 py-1.5 rounded-md bg-[color:var(--color-navy-deep)] border border-[color:var(--color-bronze)]/30 text-[color:var(--color-cream)] text-xs font-medium whitespace-nowrap opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 shadow-elevate">
+      <span className="pointer-events-none absolute left-full ml-3 px-3 py-1.5 rounded-md bg-[color:var(--color-navy-deep)] border border-[color:var(--color-bronze)]/30 text-[color:var(--color-cream)] text-xs font-medium whitespace-nowrap opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 shadow-lg">
         {label}
       </span>
+
+      {/* Halo bronze pulsant 2-layer ripple (parite WhatsApp pill) — pause au hover */}
+      <span
+        className="absolute inset-0 rounded-full bg-[color:var(--color-bronze)]/30 motion-safe:animate-ping pointer-events-none group-hover:hidden"
+        style={{ animationDuration: "2.4s" }}
+        aria-hidden
+      />
+      <span
+        className="absolute -inset-1 rounded-full bg-[color:var(--color-bronze)]/15 motion-safe:animate-ping pointer-events-none group-hover:hidden"
+        style={{ animationDuration: "2.4s", animationDelay: "0.6s" }}
+        aria-hidden
+      />
+
       <ArrowUp className="relative w-4 h-4" strokeWidth={2} aria-hidden />
     </button>
   );
