@@ -63,7 +63,7 @@ export function Navbar() {
         // Pattern floating pill : quand scrolled, le navbar se rétrécit, s'éloigne
         // du top, devient une pill arrondie centrée. Vs le navbar pleine largeur initial.
         scrolled
-          ? "top-4 mx-auto max-w-6xl px-4"
+          ? "top-4 mx-auto max-w-[2200px] px-4"
           : "top-0",
       )}
     >
