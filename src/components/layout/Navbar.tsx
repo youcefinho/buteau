@@ -71,7 +71,7 @@ export function Navbar() {
         size="full"
         as="nav"
         className={cn(
-          "flex items-center justify-between transition-all duration-500 ease-out max-w-[1800px]",
+          "flex items-center justify-between transition-all duration-500 ease-out max-w-[2200px]",
           scrolled
             ? "h-14 bg-[color:var(--color-cream)]/95 backdrop-blur-xl border border-[color:var(--color-border)] rounded-full shadow-[0_8px_32px_-12px_rgba(16,34,61,0.18)] px-6 md:px-8"
             : "h-20 bg-transparent border-b border-transparent px-6 md:px-10",
