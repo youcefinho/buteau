@@ -1203,3 +1203,24 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .border-beam::before { animation: none; opacity: 0.4; }
 }
+
+/* Navbar : compression proportionnelle entre 1024-1699px (desktop seulement).
+   Au-dessus de 1700px (1440p+) : navbar full size, aucun changement.
+   Sous 1024px : hamburger mobile/tablet inchange.
+   Preserve les 21 items sans en retirer aucun. Valeurs fixes par tranche
+   car zoom: calc(100vw/1700) invalide (mix unites px/number non supporte). */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  header > nav { zoom: 0.72; }
+}
+@media (min-width: 1280px) and (max-width: 1399px) {
+  header > nav { zoom: 0.80; }
+}
+@media (min-width: 1400px) and (max-width: 1499px) {
+  header > nav { zoom: 0.86; }
+}
+@media (min-width: 1500px) and (max-width: 1599px) {
+  header > nav { zoom: 0.92; }
+}
+@media (min-width: 1600px) and (max-width: 1699px) {
+  header > nav { zoom: 0.97; }
+}
