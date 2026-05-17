@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Menu, X, Instagram, Linkedin, Facebook, Star, Phone, BookOpen, CalendarCheck } from "lucide-react";
+import { Menu, X, Instagram, Linkedin, Facebook, Star, Phone, BookOpen, CalendarCheck, User } from "lucide-react";
 import { useGlossary } from "@/lib/GlossaryContext";
 import { useLanguage } from "@/lib/LanguageContext";
 import { config } from "@/lib/config";
@@ -77,8 +77,11 @@ export function Navbar() {
             : "h-20 bg-transparent border-b border-transparent px-6 md:px-10",
         )}
       >
-        {/* Logo */}
-        <Link to="/" className="group flex items-baseline gap-2">
+        {/* Logo Buteau + filet vertical + logo cabinet Planiprêt (mockup parity).
+            Pattern HTML original : 2 logos cote-a-cote separes par une ligne
+            taupe 1px verticale 30px. Le logo Planipret rappelle le cabinet
+            d'attache officiel d'Andrew (courtier hypothecaire). */}
+        <Link to="/" className="group flex items-center gap-3 md:gap-4">
           <span
             className="font-[var(--font-display)] text-xl md:text-2xl font-bold tracking-[var(--tracking-eyebrow)]"
             style={{ color: fgColor }}
@@ -91,6 +94,24 @@ export function Navbar() {
           >
             {t("common.tagline")}
           </span>
+          <span
+            aria-hidden="true"
+            className="hidden md:inline-block w-px h-7"
+            style={{ backgroundColor: "color-mix(in oklch, var(--color-taupe) 60%, transparent)" }}
+          />
+          <img
+            src="/planipret-logo.png"
+            alt="Planiprêt — Cabinet en courtage hypothécaire"
+            loading="lazy"
+            decoding="async"
+            className="hidden md:inline-block h-7 lg:h-8 w-auto object-contain transition-opacity"
+            style={{
+              opacity: scrolled ? 0.85 : 0.95,
+              // Invert filter quand fond cream (scrolled) : logo Planipret est
+              // en couleurs sur fond sombre, doit etre lisible sur cream aussi.
+              filter: scrolled ? "none" : "brightness(1.1)",
+            }}
+          />
         </Link>
 
         {/* Desktop nav */}
@@ -157,6 +178,21 @@ export function Navbar() {
           >
             {t("common.callUs")}
           </Link>
+
+          {/* Bouton client portal Planiprêt — mockup parity (icon-only user
+              square bronze, target=_blank vers client.planipret.com). Permet
+              aux clients existants d'acceder a leur dossier sans passer par
+              le form ni call. Position : juste apres le CTA Nous joindre. */}
+          <a
+            href="https://client.planipret.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={lang === "fr" ? "Portail client Planiprêt (nouvel onglet)" : "Planiprêt client portal (new tab)"}
+            title={lang === "fr" ? "Portail client Planiprêt" : "Planiprêt client portal"}
+            className="hidden md:inline-flex items-center justify-center w-9 h-9 rounded-md transition-all duration-300 hover:-translate-y-0.5 active:scale-95 btn-bronze !p-0"
+          >
+            <User className="w-4 h-4" strokeWidth={1.7} />
+          </a>
 
           {/* Reseaux sociaux compacts — desktop only (mobile dans le drawer).
               Position : APRES le CTA "Nous joindre", AVANT le trust chip. */}
