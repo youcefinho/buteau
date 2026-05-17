@@ -1203,16 +1203,3 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .border-beam::before { animation: none; opacity: 0.4; }
 }
-
-/* Navbar : compression proportionnelle entre 1024-1699px (desktop seulement).
-   Au-dessus de 1700px (1440p+) : navbar full size, aucun changement.
-   Sous 1024px : hamburger mobile/tablet inchange.
-   Le zoom CSS preserve tous les 21 items du navbar (BUTEAU + tagline +
-   Planipret + 6 nav links + FR/EN + 3 outline icons + NOUS JOINDRE +
-   user portal + 3 socials + Google chip) sans rien retirer, juste
-   compresses pour rentrer dans la viewport sans debordement. */
-@media (min-width: 1024px) and (max-width: 1699px) {
-  header > nav {
-    zoom: calc(100vw / 1700);
-  }
-}
