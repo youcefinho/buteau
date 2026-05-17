@@ -1213,7 +1213,7 @@ body {
   header > nav { zoom: 0.72; }
 }
 @media (min-width: 1280px) and (max-width: 1399px) {
-  header > nav { zoom: 0.80; }
+  header > nav { zoom: 0.76; }
 }
 @media (min-width: 1400px) and (max-width: 1499px) {
   header > nav { zoom: 0.86; }
