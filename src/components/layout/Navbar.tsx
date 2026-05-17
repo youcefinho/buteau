@@ -82,8 +82,11 @@ export function Navbar() {
             taupe 1px verticale 30px. Le logo Planipret rappelle le cabinet
             d'attache officiel d'Andrew (courtier hypothecaire). */}
         <Link to="/" className="group flex items-center gap-3 md:gap-4">
+          {/* BUTEAU brand mark : visible MOBILE only. Sur desktop (md+),
+              le brand est porte par la tagline + logo Planipret pour alleger
+              le navbar (decision user 2026-05-17 — trop d'items en compet). */}
           <span
-            className="font-[var(--font-display)] text-xl md:text-2xl font-bold tracking-[var(--tracking-eyebrow)]"
+            className="md:hidden font-[var(--font-display)] text-xl font-bold tracking-[var(--tracking-eyebrow)]"
             style={{ color: fgColor }}
           >
             {config.brandName}
