@@ -9,7 +9,7 @@ import { LanguageToggle } from "./LanguageToggle";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const { open: openGlossary } = useGlossary();
 
   // Calendly bouton mort si URL vide (Phase 9 a venir). Pattern cross-site.
