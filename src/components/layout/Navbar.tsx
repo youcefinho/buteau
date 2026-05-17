@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Menu, X, Instagram, Linkedin, Facebook, Star, Phone, BookOpen, CalendarCheck, User } from "lucide-react";
-import { useGlossary } from "@/lib/GlossaryContext";
+import { Menu, X, Instagram, Linkedin, Facebook, Phone, CalendarCheck, User } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { config } from "@/lib/config";
 import { Container } from "./Container";
@@ -10,7 +9,6 @@ import { cn } from "@/lib/utils";
 
 export function Navbar() {
   const { t, lang } = useLanguage();
-  const { open: openGlossary } = useGlossary();
 
   // Calendly bouton mort si URL vide (Phase 9 a venir). Pattern cross-site.
   const openCalendly = (e: React.MouseEvent) => {
@@ -129,8 +127,8 @@ export function Navbar() {
         <div className="flex items-center gap-3" style={{ color: fgColor }}>
           <LanguageToggle className="hidden sm:inline-flex" />
 
-          {/* 3 icons outline bronze : Phone + Lexique + Calendly. Ajout 2026-05-14
-              cross-site portage. Calendly = bouton mort si calendlyUrl vide. */}
+          {/* 2 icons outline bronze : Phone + Calendly (Lexique retire 2026-05-17,
+              deja present dans Footer). Calendly = bouton mort si calendlyUrl vide. */}
           <div className="hidden md:flex items-center gap-1.5">
             <a
               href={`tel:${config.phone.raw}`}
@@ -143,18 +141,6 @@ export function Navbar() {
             >
               <Phone className="w-4 h-4" strokeWidth={1.7} />
             </a>
-            <button
-              type="button"
-              onClick={() => openGlossary()}
-              aria-label="Lexique"
-              className="inline-flex items-center justify-center w-9 h-9 rounded-md transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
-              style={{
-                border: `1px solid color-mix(in oklch, ${fgColor} 25%, transparent)`,
-                color: fgColor,
-              }}
-            >
-              <BookOpen className="w-4 h-4" strokeWidth={1.7} />
-            </button>
             <a
               href={config.calendlyUrl || "#"}
               target={config.calendlyUrl ? "_blank" : undefined}
@@ -247,22 +233,6 @@ export function Navbar() {
               </a>
             )}
           </div>
-
-          {/* Trust chip Google reviews — Position FINALE a droite, apres socials
-              (user demande swap 2026-05-14). Star jaune fill universel. */}
-          <a
-            href={config.googleReviewsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-yellow-400/40 bg-yellow-400/5 hover:border-yellow-400/70 hover:bg-yellow-400/10 transition-colors text-xs"
-            aria-label={t("home.reviews.googleBadgeLabel")}
-            style={{ color: fgColor }}
-          >
-            <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400 shrink-0" strokeWidth={1.5} aria-hidden />
-            <span className="font-medium whitespace-nowrap">
-              {t("home.reviews.googleBadgeLabel")}
-            </span>
-          </a>
 
           <button
             type="button"
