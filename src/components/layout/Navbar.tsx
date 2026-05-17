@@ -117,8 +117,9 @@ export function Navbar() {
           />
         </Link>
 
-        {/* Desktop nav */}
-        <div className="hidden lg:flex items-center gap-7 xl:gap-9" style={{ color: fgColor }}>
+        {/* Desktop nav — ml ajoute pour eviter ACCUEIL qui colle au logo
+            Planipret apres retrait du brand mark BUTEAU desktop. */}
+        <div className="hidden lg:flex items-center gap-7 xl:gap-9 ml-8 xl:ml-12" style={{ color: fgColor }}>
           {navItems.map((item) => (
             <NavLink key={item.to} to={item.to} label={t(item.key)} />
           ))}
