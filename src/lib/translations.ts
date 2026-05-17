@@ -860,19 +860,19 @@ export const translations = {
           name: "Banque Nationale",
           address: "800, rue Saint-Jacques",
           city: "Montréal (Québec) H3C 1A3",
-          logo: "https://static.wixstatic.com/media/60fa64_ef3269be7b644d2eb233adfb8f1ce3d4~mv2.jpg/v1/fill/w_300,h_300,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/bn_vid_hero_dark_fr.jpg",
+          logo: "/institutions/banque-nationale.jpg",
         },
         {
           name: "Société de services MCAP",
           address: "200, rue King Ouest, bureau 400",
           city: "Toronto (Ontario) M5H 3T4",
-          logo: "https://static.wixstatic.com/media/60fa64_bcf3ebc0984a426ca2bccc5ddfd9323a~mv2.webp/v1/fill/w_300,h_300,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/mcap-lg.webp",
+          logo: "/institutions/mcap.webp",
         },
         {
           name: "First National",
           address: "2000, rue Peel, bureau 200",
           city: "Montréal (Québec) H3A 2W5",
-          logo: "https://static.wixstatic.com/media/60fa64_596e739841a5440eb4ffe7cc1b894de0~mv2.png/v1/fill/w_300,h_300,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/first-national-financial-corporation--600.png",
+          logo: "/institutions/first-national.png",
         },
         {
           name: "CIBC",
@@ -896,7 +896,7 @@ export const translations = {
           name: "Banque Scotia",
           address: "44, rue King Ouest",
           city: "Toronto (Ontario) M5H 1H1",
-          logo: "https://static.wixstatic.com/media/60fa64_73e0863852c24c888713e4b252db98bb~mv2.png/v1/fill/w_300,h_300,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Scotiabank-1024x1024.png",
+          logo: "/institutions/scotia.png",
         },
         {
           name: "La financière Manuvie",
@@ -1836,19 +1836,19 @@ export const translations = {
           name: "Banque Nationale",
           address: "800, rue Saint-Jacques",
           city: "Montréal (Québec) H3C 1A3",
-          logo: "https://static.wixstatic.com/media/60fa64_ef3269be7b644d2eb233adfb8f1ce3d4~mv2.jpg/v1/fill/w_300,h_300,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/bn_vid_hero_dark_fr.jpg",
+          logo: "/institutions/banque-nationale.jpg",
         },
         {
           name: "MCAP Service Corporation",
           address: "200 King Street West, Suite 400",
           city: "Toronto (Ontario) M5H 3T4",
-          logo: "https://static.wixstatic.com/media/60fa64_bcf3ebc0984a426ca2bccc5ddfd9323a~mv2.webp/v1/fill/w_300,h_300,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/mcap-lg.webp",
+          logo: "/institutions/mcap.webp",
         },
         {
           name: "First National",
           address: "2000 Peel Street, Suite 200",
           city: "Montréal (Québec) H3A 2W5",
-          logo: "https://static.wixstatic.com/media/60fa64_596e739841a5440eb4ffe7cc1b894de0~mv2.png/v1/fill/w_300,h_300,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/first-national-financial-corporation--600.png",
+          logo: "/institutions/first-national.png",
         },
         {
           name: "CIBC",
@@ -1872,7 +1872,7 @@ export const translations = {
           name: "Scotiabank",
           address: "44 King Street West",
           city: "Toronto (Ontario) M5H 1H1",
-          logo: "https://static.wixstatic.com/media/60fa64_73e0863852c24c888713e4b252db98bb~mv2.png/v1/fill/w_300,h_300,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Scotiabank-1024x1024.png",
+          logo: "/institutions/scotia.png",
         },
         {
           name: "Manulife Financial",
