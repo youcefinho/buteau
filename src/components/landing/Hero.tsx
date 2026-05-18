@@ -192,7 +192,7 @@ export function Hero() {
             <button
               type="button"
               onClick={() => openGlossary()}
-              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-xs md:text-sm text-[color:var(--color-cream)]/70 cursor-pointer"
+              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[clamp(0.75rem,1.1vw,0.875rem)] text-[color:var(--color-cream)]/70 cursor-pointer"
             >
               <BookOpen className="w-3.5 h-3.5 text-[color:var(--color-bronze)]" strokeWidth={1.5} aria-hidden />
               {lang === "fr"

@@ -181,7 +181,7 @@ function DonutSvg({
             </span>
           )}
           {centerValue && (
-            <span className="font-[var(--font-editorial)] italic text-xl md:text-2xl text-[color:var(--color-navy-deep)] tabular-nums mt-1.5 leading-none">
+            <span className="font-[var(--font-editorial)] italic text-[clamp(1.25rem,1.8vw,1.5rem)] text-[color:var(--color-navy-deep)] tabular-nums mt-1.5 leading-none">
               {centerValue}
             </span>
           )}
@@ -296,7 +296,7 @@ function Tile({
       <p className="eyebrow text-[color:var(--color-taupe-dark)] text-[9px] mb-1.5">{label}</p>
       <p
         className={`font-[var(--font-display)] font-bold tabular-nums leading-none ${
-          emphasis ? "text-[color:var(--color-bronze-deep)] text-xl md:text-2xl" : "text-[color:var(--color-navy-deep)] text-lg md:text-xl"
+          emphasis ? "text-[color:var(--color-bronze-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)]" : "text-[color:var(--color-navy-deep)] text-[clamp(1.125rem,1.6vw,1.25rem)]"
         }`}
       >
         {value}
@@ -1372,14 +1372,14 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
           <h2
             className={`font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] uppercase tracking-[0.04em] leading-[1.05] mb-5 text-balance ${
               isPreview
-                ? "text-2xl md:text-3xl lg:text-4xl"
-                : "text-3xl md:text-4xl lg:text-5xl"
+                ? "text-[clamp(1.5rem,3vw,2.25rem)]"
+                : "text-[clamp(1.875rem,4vw,3rem)]"
             }`}
           >
             {isFr ? "Vos chiffres, sans détour." : "Your numbers, no detour."}
           </h2>
           <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-6" />
-          <p className="font-[var(--font-editorial)] italic text-base md:text-lg leading-[1.65] text-[color:var(--color-navy-deep)]/80 text-pretty">
+          <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/80 text-pretty">
             {isPreview
               ? isFr
                 ? "Quatre vues du même dossier — capacité, paiement, stratégie de taux, liquidités. Faites bouger les chiffres, puis ouvrez le calculateur complet pour les graphiques et scénarios approfondis."
@@ -1421,7 +1421,7 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
                     />
                     <div className="flex flex-col items-start text-left">
                       <span
-                        className={`font-[var(--font-display)] font-semibold uppercase tracking-[0.05em] text-xs md:text-sm whitespace-nowrap transition-colors ${
+                        className={`font-[var(--font-display)] font-semibold uppercase tracking-[0.05em] text-[clamp(0.75rem,1.1vw,0.875rem)] whitespace-nowrap transition-colors ${
                           active
                             ? "text-[color:var(--color-navy-deep)]"
                             : "text-[color:var(--color-taupe-dark)] group-hover/tab:text-[color:var(--color-navy-deep)]"

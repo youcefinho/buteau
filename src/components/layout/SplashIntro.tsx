@@ -81,7 +81,7 @@ export function SplashIntro() {
         <span className="block w-16 h-px bg-[color:var(--color-bronze)] mx-auto my-8 animate-[buteauWidth_600ms_ease-out_900ms_both]" />
 
         {/* Tagline italic */}
-        <p className="font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/85 text-xl md:text-2xl lg:text-3xl leading-tight animate-[buteauFadeUp_600ms_ease-out_1100ms_both]">
+        <p className="font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/85 text-[clamp(1.25rem,2.5vw,1.875rem)] leading-tight animate-[buteauFadeUp_600ms_ease-out_1100ms_both]">
           {t("common.tagline")}
         </p>
       </div>

@@ -210,7 +210,7 @@ export function HypothequeCalculator() {
                 {t("tools.calc.resultLabel")}
               </p>
               <p
-                className="font-[var(--font-display)] font-extrabold text-[color:var(--color-cream)] text-5xl md:text-6xl lg:text-7xl tracking-[-0.025em] leading-[0.9]"
+                className="font-[var(--font-display)] font-extrabold text-[color:var(--color-cream)] text-[clamp(3rem,6vw,4.5rem)] tracking-[-0.025em] leading-[0.9]"
                 aria-live="polite"
               >
                 {monthlyPayment !== null
@@ -363,7 +363,7 @@ function CalcSliderField({
         </label>
         <output
           htmlFor={id}
-          className="font-[var(--font-display)] font-bold tracking-[-0.01em] text-[color:var(--color-navy-deep)] text-xl md:text-2xl tabular-nums"
+          className="font-[var(--font-display)] font-bold tracking-[-0.01em] text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] tabular-nums"
         >
           {format(clamped)}
         </output>
