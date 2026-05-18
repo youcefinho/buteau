@@ -47,7 +47,7 @@ export function Services() {
   const numerals = ["01", "02", "03", "04", "05"];
 
   return (
-    <section id="services" className="relative py-24 md:py-32 surface-cream overflow-hidden dot-grid">
+    <section id="services" className="relative py-[clamp(4rem,9vw,8rem)] surface-cream overflow-hidden dot-grid">
       {/* Atmospheric continuity — embers per-section signature */}
 
       <Container size="xl" className="relative">
@@ -58,7 +58,7 @@ export function Services() {
         />
 
         {/* Cascading staircase — diagonal flow desktop via Tailwind arbitrary values */}
-        <div className="space-y-6 md:space-y-8 max-w-5xl mx-auto">
+        <div className="space-y-[clamp(1.5rem,3vw,2rem)] max-w-5xl mx-auto">
           {items.map((s, idx) => (
             <article
               key={s.title}
@@ -72,13 +72,13 @@ export function Services() {
                 {numerals[idx]}
               </span>
 
-              <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 p-7 md:p-10 md:pl-32">
+              <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 p-[clamp(1.75rem,3vw,2.5rem)] md:pl-32">
                 {/* Eyebrow + Title — col 5 */}
                 <div className="md:col-span-5">
                   <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-3">
                     {numerals[idx]} — {lang === "fr" ? "Service" : "Service"}
                   </p>
-                  <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-xl md:text-2xl uppercase tracking-[0.04em] leading-[1.1]">
+                  <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.04em] leading-[1.1]">
                     {s.title}
                   </h3>
                   <div className="w-8 h-px bg-[color:var(--color-bronze)] mt-4 transition-[width] duration-500 group-hover:w-16" />
@@ -86,7 +86,7 @@ export function Services() {
 
                 {/* Description — col 7. AutoGlossary wrap les termes hypothécaires détectés. */}
                 <div className="md:col-span-7">
-                  <p className="text-base md:text-lg leading-[1.6] text-[color:var(--color-navy-deep)]/80 font-[var(--font-editorial)] italic">
+                  <p className="text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/80 font-[var(--font-editorial)] italic">
                     <AutoGlossary text={s.desc} maxWraps={2} />
                   </p>
                 </div>

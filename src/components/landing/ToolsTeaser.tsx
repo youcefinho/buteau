@@ -25,7 +25,7 @@ export function ToolsTeaser() {
   return (
     <section
       id="outils-teaser"
-      className="relative py-24 surface-navy overflow-hidden grain-overlay"
+      className="relative py-[clamp(4rem,8vw,6rem)] surface-navy overflow-hidden grain-overlay"
     >
       {/* Atmospheric continuity — embers per-section signature */}
 
@@ -46,14 +46,14 @@ export function ToolsTeaser() {
           tone="dark"
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[clamp(1.5rem,2.5vw,2rem)] mb-[clamp(2.5rem,5vw,3.5rem)]">
           {items.map((item, idx) => {
             const Icon = ICONS[idx % ICONS.length];
             return (
               <Link
                 key={idx}
                 to="/outils"
-                className="group relative block bg-[color:var(--color-cream)]/8 backdrop-blur-sm border border-[color:var(--color-cream)]/20 p-8 text-center transition-all duration-500 hover:bg-[color:var(--color-cream)]/15 hover:border-[color:var(--color-bronze)]/70 hover:-translate-y-1.5 overflow-hidden"
+                className="group relative block bg-[color:var(--color-cream)]/8 backdrop-blur-sm border border-[color:var(--color-cream)]/20 p-[clamp(1.5rem,2.5vw,2rem)] text-center transition-all duration-500 hover:bg-[color:var(--color-cream)]/15 hover:border-[color:var(--color-bronze)]/70 hover:-translate-y-1.5 overflow-hidden"
               >
                 {/* Numéro Cormorant filigrane top-right */}
                 <span
@@ -67,7 +67,7 @@ export function ToolsTeaser() {
                   <Icon size={36} strokeWidth={1.5} aria-hidden="true" />
                 </div>
                 <div className="w-8 h-px bg-[color:var(--color-bronze)] mx-auto mb-4 transition-[width] duration-500 group-hover:w-14" />
-                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-base md:text-lg uppercase tracking-[var(--tracking-eyebrow)] mb-2 leading-snug">
+                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(1rem,1.4vw,1.125rem)] uppercase tracking-[var(--tracking-eyebrow)] mb-2 leading-snug">
                   {item.title}
                 </h3>
                 <p className="text-xs text-[color:var(--color-cream)]/70 leading-[1.6]">

@@ -67,7 +67,7 @@ export function CalculatorPreview() {
   }, [targetPayment]);
 
   return (
-    <section id="calc-preview" className="relative py-24 md:py-32 surface-cream overflow-hidden scroll-mt-24">
+    <section id="calc-preview" className="relative py-[clamp(4rem,9vw,8rem)] surface-cream overflow-hidden scroll-mt-24">
       {/* Atmospheric continuity — embers per-section signature */}
 
       {/* Filigrane "$" Cormorant background */}
@@ -86,7 +86,7 @@ export function CalculatorPreview() {
               <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
               {t("home.calcPreview.eyebrow")}
             </p>
-            <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-3xl md:text-4xl uppercase tracking-[0.04em] leading-[1.1] mb-5">
+            <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,3vw,2.25rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5">
               {t("home.calcPreview.title")}
             </h2>
             <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-6" />
@@ -114,7 +114,7 @@ export function CalculatorPreview() {
                 pour que la rotation reste contenue dans cette zone visible
                 sans "disparaitre" sur la moitie navy droite. rounded-l-sm
                 pour suivre les coins arrondis du parent cote gauche. */}
-            <div className="border-beam md:col-span-3 bg-[color:var(--color-surface)] rounded-l-sm p-7 md:p-8 space-y-7">
+            <div className="border-beam md:col-span-3 bg-[color:var(--color-surface)] rounded-l-sm p-[clamp(1.75rem,2.5vw,2rem)] space-y-7">
               <CalcSliderMini
                 id="prev-amount"
                 label={t("home.calcPreview.amountLabel")}
@@ -148,7 +148,7 @@ export function CalculatorPreview() {
             </div>
 
             {/* Result compute theatre — 2/5 */}
-            <div className="md:col-span-2 surface-navy p-7 md:p-8 flex flex-col justify-between gap-6 relative overflow-hidden">
+            <div className="md:col-span-2 surface-navy p-[clamp(1.75rem,2.5vw,2rem)] flex flex-col justify-between gap-6 relative overflow-hidden">
               <span
                 aria-hidden="true"
                 className="absolute -top-6 -right-4 font-[var(--font-editorial)] italic text-[color:var(--color-bronze)]/12 text-[10rem] leading-none pointer-events-none select-none"
@@ -160,7 +160,7 @@ export function CalculatorPreview() {
                   {t("home.calcPreview.resultLabel")}
                 </p>
                 <p
-                  className="font-[var(--font-display)] font-extrabold text-[color:var(--color-cream)] text-3xl md:text-4xl tracking-[-0.02em] leading-[0.95] tabular-nums"
+                  className="font-[var(--font-display)] font-extrabold text-[color:var(--color-cream)] text-[clamp(1.875rem,3vw,2.25rem)] tracking-[-0.02em] leading-[0.95] tabular-nums"
                   aria-live="polite"
                 >
                   {monthlyPayment !== null
@@ -213,7 +213,7 @@ export function CalculatorPreview() {
 
         {/* Footer méthodologie + lexique — pédagogie hypothécaire */}
         <div className="mt-12 pt-8 border-t border-[color:var(--color-taupe)]/30 text-center max-w-2xl mx-auto">
-          <p className="font-[var(--font-editorial)] italic text-sm md:text-base text-[color:var(--color-navy-deep)]/70 leading-relaxed mb-4">
+          <p className="font-[var(--font-editorial)] italic text-[clamp(0.875rem,1.2vw,1rem)] text-[color:var(--color-navy-deep)]/70 leading-relaxed mb-4">
             {lang === "fr"
               ? "Composé semi-annuel canadien — la formule a ses termes."
               : "Canadian semi-annual compounding — the formula has its terms."}
@@ -267,7 +267,7 @@ function CalcSliderMini({
             éléments source du calcul, pas l'input — sémantique imprécise). Output autonome OK. */}
         <output
           aria-live="polite"
-          className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base md:text-lg tabular-nums"
+          className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1rem,1.4vw,1.125rem)] tabular-nums"
         >
           {format(clamped)}
         </output>
