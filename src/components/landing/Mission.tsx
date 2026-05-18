@@ -81,21 +81,24 @@ export function Mission() {
               &ldquo;
             </span>
             <p className="font-signature text-[color:var(--color-cream)] text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.2] font-light tracking-[-0.005em]">
+              <span className="text-[color:var(--color-cream)]/85">
+                {t("home.mission.bodyP2Lead")}
+              </span>
+              <span className="font-bold text-[color:var(--color-bronze)] not-italic">
+                {t("home.mission.bodyP2Year")}
+              </span>
+              <span className="text-[color:var(--color-cream)]/85">
+                {t("home.mission.bodyP2Continued")}
+              </span>
               <span
-                className="inline-block tabular-nums font-bold text-[color:var(--color-bronze)] mr-2"
+                className="inline-block tabular-nums font-bold text-[color:var(--color-bronze)] mr-1"
                 aria-live="polite"
               >
                 {familiesCount}
               </span>
-              {t("home.mission.bodyP2Stat")}
               <span className="text-[color:var(--color-cream)]/85">
-                {t("home.mission.bodyP2Continued").trimEnd()}
-              </span>
-              <span className="font-bold text-[color:var(--color-bronze)] not-italic mx-2">
-                {t("home.mission.bodyP2Year")}
-              </span>
-              <span className="text-[color:var(--color-cream)]/85">
-                {t("home.mission.bodyP2End").trimStart()}
+                {t("home.mission.bodyP2Stat")}
+                {t("home.mission.bodyP2End")}
               </span>
             </p>
             <span

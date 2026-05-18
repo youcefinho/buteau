@@ -171,7 +171,7 @@ export const translations = {
         bodyP2Lead: "En ",
         bodyP2Year: "2025",
         bodyP2Continued: ", nous avons accompagné plus de ",
-        bodyP2Stat: "200 familles",
+        bodyP2Stat: "familles",
         bodyP2End:
           " à travers le Québec. Avec rigueur et disponibilité, nous propulsons chaque projet vers la réussite.",
         values: [
@@ -1171,7 +1171,7 @@ export const translations = {
         bodyP2Lead: "In ",
         bodyP2Year: "2025",
         bodyP2Continued: ", we supported more than ",
-        bodyP2Stat: "200 families",
+        bodyP2Stat: "families",
         bodyP2End:
           " across Quebec. With rigor and availability, we move every project toward success.",
         values: [
