@@ -37,11 +37,11 @@ export function GuidesGrid() {
           tone="dark"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-7 lg:gap-9">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[clamp(1.75rem,2.5vw,2.25rem)]">
           {items.map((g, idx) => (
             <article
               key={idx}
-              className="group relative bg-[color:var(--color-cream)]/8 backdrop-blur-sm border border-[color:var(--color-cream)]/20 p-8 md:p-10 transition-all duration-500 hover:border-[color:var(--color-bronze)]/70 hover:bg-[color:var(--color-cream)]/15 hover:-translate-y-1 overflow-hidden"
+              className="group relative bg-[color:var(--color-cream)]/8 backdrop-blur-sm border border-[color:var(--color-cream)]/20 p-[clamp(1.75rem,3vw,2.5rem)] transition-all duration-500 hover:border-[color:var(--color-bronze)]/70 hover:bg-[color:var(--color-cream)]/15 hover:-translate-y-1 overflow-hidden"
             >
               {/* Numéro romain Cormorant filigrane top-right */}
               <span
@@ -57,7 +57,7 @@ export function GuidesGrid() {
               </div>
 
               {/* Titre */}
-              <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-base md:text-lg uppercase tracking-[0.04em] mb-3 leading-snug pr-10">
+              <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(1rem,1.4vw,1.125rem)] uppercase tracking-[0.04em] mb-3 leading-snug pr-10">
                 {g.title}
               </h3>
 

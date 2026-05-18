@@ -36,7 +36,7 @@ export function DocumentsGrid() {
             return (
               <Tiltable key={idx} maxDeg={4}>
               <article
-                className="group card-luxury p-7 md:p-8 flex items-start gap-5 relative overflow-hidden h-full"
+                className="group card-luxury p-[clamp(1.75rem,3vw,2.5rem)] flex items-start gap-5 relative overflow-hidden h-full"
               >
                 {/* Numéro filigrane Cormorant subtile */}
                 <span

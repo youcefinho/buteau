@@ -33,7 +33,7 @@ export function BrokerLetter() {
     : "Planiprêt mortgage brokerage firm — registered with the AMF (Quebec Financial Markets Authority).";
 
   return (
-    <section className="relative py-24 md:py-32 surface-cream overflow-hidden lined-paper">
+    <section className="relative py-[clamp(4rem,9vw,8rem)] surface-cream overflow-hidden lined-paper">
       {/* Atmospheric continuity — embers per-section signature */}
 
       {/* Filigrane "lettre M" Cormorant en filigrane (référence "mot du courtier") */}
@@ -46,7 +46,7 @@ export function BrokerLetter() {
 
       <Container size="lg" className="relative">
         <FootnoteScope id="broker-letter">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-[clamp(2.5rem,5vw,4rem)] items-start">
           {/* Lettre — col 8 */}
           <div className="lg:col-span-8 lg:pr-8">
             <p className="eyebrow text-[color:var(--color-taupe-dark)] inline-flex items-center gap-3 mb-10">
@@ -57,13 +57,13 @@ export function BrokerLetter() {
 
             {/* "Bonjour," — accroche Fraunces italic XL avec axes optical + WONK
                 (signature endroit #3, plus distinctive que Cormorant). */}
-            <p className="font-signature text-[color:var(--color-navy-deep)] text-4xl md:text-5xl lg:text-6xl leading-none mb-10 tracking-[-0.015em]">
+            <p className="font-signature text-[color:var(--color-navy-deep)] text-[clamp(2.25rem,5vw,3.75rem)] leading-none mb-10 tracking-[-0.015em]">
               {t("letter.heading")}
             </p>
 
             {/* Body paragraphes */}
             <div className="space-y-7 max-w-2xl text-[color:var(--color-navy-deep)]/85">
-              <p className="font-[var(--font-editorial)] italic text-lg md:text-xl leading-[1.7]">
+              <p className="font-[var(--font-editorial)] italic text-[clamp(1.125rem,1.6vw,1.25rem)] leading-[1.7]">
                 {t("letter.bodyP1")}{" "}
                 <span className="not-italic font-semibold text-[color:var(--color-bronze-deep)]">
                   {t("letter.bodyP1Emphasis")}
@@ -71,17 +71,17 @@ export function BrokerLetter() {
                 <Footnote n={1}>{noteEmphasis}</Footnote>
               </p>
 
-              <p className="font-[var(--font-editorial)] italic text-base md:text-lg leading-[1.75]">
+              <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.75]">
                 {t("letter.bodyP2")}
               </p>
 
-              <p className="font-[var(--font-editorial)] italic text-base md:text-lg leading-[1.75]">
+              <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.75]">
                 {t("letter.bodyP3")}
               </p>
             </div>
 
             {/* Closing manuscrit */}
-            <p className="font-[var(--font-editorial)] italic text-[color:var(--color-navy-deep)] text-2xl md:text-3xl mt-10 leading-none">
+            <p className="font-[var(--font-editorial)] italic text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] mt-10 leading-none">
               {t("letter.closing")}
             </p>
           </div>

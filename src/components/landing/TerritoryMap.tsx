@@ -33,7 +33,7 @@ export function TerritoryMap() {
   );
 
   return (
-    <section className="relative py-24 md:py-32 surface-cream overflow-hidden">
+    <section className="relative py-[clamp(4rem,9vw,8rem)] surface-cream overflow-hidden">
       {/* Atmospheric continuity — embers per-section signature */}
 
       {/* Filigrane "QC" Cormorant italic en arrière-plan */}
@@ -45,7 +45,7 @@ export function TerritoryMap() {
       </span>
 
       <Container size="xl" className="relative">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-[clamp(2.5rem,5vw,4rem)] items-center">
           {/* Map column — col 7 */}
           <div className="lg:col-span-7 relative">
             <svg
@@ -209,7 +209,7 @@ export function TerritoryMap() {
                 <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
                 {t("territory.eyebrow")}
               </p>
-              <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-3xl md:text-4xl uppercase tracking-[0.04em] leading-[1.1] mb-5">
+              <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,3vw,2.25rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5">
                 {t("territory.title")}
               </h2>
               <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-6" />

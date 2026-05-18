@@ -53,7 +53,7 @@ export function ValueTicker() {
             <span
               key={`${idx}-${item.slice(0, 12)}`}
               aria-hidden={isClone ? "true" : undefined}
-              className="inline-flex items-center gap-6 px-8 font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/90 text-base md:text-lg"
+              className="inline-flex items-center gap-6 px-8 font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/90 text-[clamp(1rem,1.4vw,1.125rem)]"
             >
               <span>{item}</span>
               <span

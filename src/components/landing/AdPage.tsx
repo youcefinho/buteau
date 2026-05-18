@@ -37,7 +37,7 @@ export function AdPage({ entryKey = "adPage" }: { entryKey?: string }) {
         ¶
       </span>
 
-      <Container size="lg" className="relative py-24 md:py-32">
+      <Container size="lg" className="relative py-[clamp(4rem,9vw,8rem)]">
         <div className="max-w-3xl mx-auto text-center">
           {/* Eyebrow magazine */}
           <p className="eyebrow text-[color:var(--color-taupe)] mb-10 inline-flex items-center gap-3">
@@ -53,7 +53,7 @@ export function AdPage({ entryKey = "adPage" }: { entryKey?: string }) {
           </p>
 
           {/* Statement Fraunces italic XL — la "publicité" elle-même */}
-          <p className="font-signature italic text-[color:var(--color-cream)] text-3xl sm:text-4xl md:text-5xl lg:text-[3.75rem] leading-[1.1] tracking-[-0.01em] text-balance">
+          <p className="font-signature italic text-[color:var(--color-cream)] text-[clamp(1.875rem,5vw,3.75rem)] leading-[1.1] tracking-[-0.01em] text-balance">
             « {data.statement} »
           </p>
 

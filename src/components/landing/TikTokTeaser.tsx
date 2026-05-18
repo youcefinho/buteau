@@ -36,11 +36,11 @@ export function TikTokTeaser() {
             <p className="eyebrow text-[color:var(--color-bronze-deep)]">
               {t("tools.tiktok.eyebrow")}
             </p>
-            <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-2xl md:text-3xl lg:text-4xl tracking-[-0.01em] leading-tight">
+            <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,3vw,2.25rem)] tracking-[-0.01em] leading-tight">
               {t("tools.tiktok.title")}
             </h2>
             <div className="signature-line" />
-            <p className="text-base md:text-lg leading-relaxed text-[color:var(--color-navy-deep)]/85">
+            <p className="text-[clamp(1rem,1.4vw,1.125rem)] leading-relaxed text-[color:var(--color-navy-deep)]/85">
               {t("tools.tiktok.body")}
             </p>
 

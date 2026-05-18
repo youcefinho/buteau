@@ -202,7 +202,7 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
       />
 
       {/* Intro éditoriale */}
-      <p className="font-[var(--font-editorial)] italic text-base md:text-lg leading-[1.7] text-[color:var(--color-navy-deep)]/85 first-letter:font-[var(--font-editorial)] first-letter:italic first-letter:text-6xl first-letter:text-[color:var(--color-bronze-deep)] first-letter:float-left first-letter:mr-3 first-letter:leading-[0.85] first-letter:mt-1">
+      <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.7] text-[color:var(--color-navy-deep)]/85 first-letter:font-[var(--font-editorial)] first-letter:italic first-letter:text-6xl first-letter:text-[color:var(--color-bronze-deep)] first-letter:float-left first-letter:mr-3 first-letter:leading-[0.85] first-letter:mt-1">
         {isFr
           ? "Voici les organismes, programmes et calculatrices que nous recommandons à un primo-acchéteur du Québec. Aucun n'est affilié à L'Équipe Buteau — c'est précisément pourquoi vous pouvez vous y fier. On vous tend le carnet, même si vous ne signez pas avec nous."
           : "Here are the organizations, programs and calculators we recommend to a Quebec first-time buyer. None are affiliated with Équipe Buteau — that's precisely why you can rely on them. We hand you the address book, even if you don't sign with us."}
@@ -217,7 +217,7 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
                 {section.numeral}
               </span>
               <div className="flex-1">
-                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-lg md:text-xl uppercase tracking-[0.04em] leading-snug">
+                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.125rem,1.6vw,1.25rem)] uppercase tracking-[0.04em] leading-snug">
                   {section.title}
                 </h3>
                 <div className="w-10 h-px bg-[color:var(--color-bronze)] mt-3" aria-hidden="true" />

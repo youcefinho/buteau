@@ -33,7 +33,7 @@ export function Reviews() {
   >(translations[lang], "home.reviews.items");
 
   return (
-    <section id="avis" className="relative py-24 md:py-28 surface-cream overflow-hidden">
+    <section id="avis" className="relative py-[clamp(4rem,8vw,7rem)] surface-cream overflow-hidden">
       {/* Atmospheric continuity — embers per-section signature */}
 
       {/* Filigrane "✉" enveloppe — Cormorant XL background */}
@@ -82,14 +82,14 @@ export function Reviews() {
         </div>
 
         {/* === Letters to the Editor — format magazine === */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-7 lg:gap-9" style={{ perspective: "1200px" }}>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[clamp(1.75rem,2.5vw,2.25rem)]" style={{ perspective: "1200px" }}>
           {items.map((r, idx) => (
             <Tiltable key={`${r.author}-${r.date}`} maxDeg={4}>
             <article
               className="group relative bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/45 transition-all duration-500 hover:border-[color:var(--color-bronze)]/70 halo-glow flex flex-col h-full"
             >
               {/* Letter header — date + ville (pattern courrier) */}
-              <header className="flex items-baseline justify-between gap-3 px-6 md:px-7 pt-6 pb-4 border-b border-dashed border-[color:var(--color-taupe)]/40">
+              <header className="flex items-baseline justify-between gap-3 px-[clamp(1.5rem,2vw,1.75rem)] pt-6 pb-4 border-b border-dashed border-[color:var(--color-taupe)]/40">
                 <div>
                   <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-1">
                     {t("home.reviews.letterDateLabel")}
@@ -109,7 +109,7 @@ export function Reviews() {
               </header>
 
               {/* Letter body — drop cap subtle + Cormorant italic */}
-              <div className="px-6 md:px-7 py-7 flex-1 flex flex-col">
+              <div className="px-[clamp(1.5rem,2vw,1.75rem)] py-7 flex-1 flex flex-col">
                 <div className="flex gap-1 mb-5" aria-label="5 stars">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star
@@ -121,7 +121,7 @@ export function Reviews() {
                   ))}
                 </div>
 
-                <p className="font-[var(--font-editorial)] italic text-base md:text-[1.05rem] leading-[1.65] text-[color:var(--color-navy-deep)]/90">
+                <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.3vw,1.05rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/90">
                   <span className="font-[var(--font-editorial)] not-italic font-bold text-[color:var(--color-bronze)] text-2xl mr-0.5 leading-none align-baseline">
                     «
                   </span>
@@ -135,7 +135,7 @@ export function Reviews() {
               </div>
 
               {/* Letter footer — signature manuscrite */}
-              <footer className="px-6 md:px-7 pb-6 mt-auto">
+              <footer className="px-[clamp(1.5rem,2vw,1.75rem)] pb-6 mt-auto">
                 <div className="flex items-center gap-3 pt-4 border-t border-[color:var(--color-taupe)]/30">
                   <div
                     className="w-8 h-8 rounded-full bg-[color:var(--color-bronze)]/15 flex items-center justify-center text-[color:var(--color-bronze-deep)] font-[var(--font-display)] font-bold text-xs tracking-wider"

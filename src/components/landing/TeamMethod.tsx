@@ -24,9 +24,9 @@ export function TeamMethod() {
           tone="bronze"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[clamp(3rem,5vw,4rem)] max-w-5xl mx-auto">
           {items.map((p, idx) => (
-            <div key={idx} className="relative pt-16 md:pt-20">
+            <div key={idx} className="relative pt-[clamp(4rem,6vw,5rem)]">
               {/* Roman numeral filigrane — drop cap éditorial XL (audit P2-I) */}
               <span
                 className="absolute -top-4 -left-2 md:-left-3 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/30 text-[8rem] md:text-[10rem] lg:text-[11rem] leading-[0.85] pointer-events-none select-none"
@@ -36,7 +36,7 @@ export function TeamMethod() {
               </span>
 
               {/* Label uppercase */}
-              <h3 className="relative font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-xl md:text-2xl uppercase tracking-[0.06em] mb-4">
+              <h3 className="relative font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.06em] mb-4">
                 {p.label}
               </h3>
 
@@ -44,7 +44,7 @@ export function TeamMethod() {
               <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-5" />
 
               {/* Description */}
-              <p className="text-sm md:text-base leading-[1.6] text-[color:var(--color-navy-deep)]/80">
+              <p className="text-[clamp(0.875rem,1.2vw,1rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/80">
                 {p.desc}
               </p>
             </div>

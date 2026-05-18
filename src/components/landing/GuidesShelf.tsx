@@ -23,7 +23,7 @@ export function GuidesShelf() {
   >(translations[lang], "home.guidesShelf.items");
 
   return (
-    <section className="relative py-24 md:py-32 surface-cream overflow-hidden lined-paper">
+    <section className="relative py-[clamp(4rem,9vw,8rem)] surface-cream overflow-hidden lined-paper">
       {/* Atmospheric continuity — embers per-section signature */}
 
       {/* Filigrane Cormorant "&" decoratif */}
@@ -35,18 +35,18 @@ export function GuidesShelf() {
       </span>
 
       <Container size="xl" className="relative">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-[clamp(2.5rem,5vw,4rem)]">
           {/* Header column — 5/12 sticky desktop */}
           <div className="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
             <p className="eyebrow text-[color:var(--color-taupe-dark)] inline-flex items-center gap-3 mb-5">
               <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
               {t("home.guidesShelf.eyebrow")}
             </p>
-            <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-3xl md:text-4xl uppercase tracking-[0.04em] leading-[1.1] mb-5">
+            <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,3vw,2.25rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5">
               {t("home.guidesShelf.title")}
             </h2>
             <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-6" />
-            <p className="font-[var(--font-editorial)] italic text-base md:text-lg leading-[1.65] text-[color:var(--color-navy-deep)]/80 mb-8">
+            <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/80 mb-8">
               {t("home.guidesShelf.subtitle")}
             </p>
 
@@ -76,12 +76,12 @@ export function GuidesShelf() {
                   <Link
                     to="/outils"
                     hash={item.kind === "guide" ? "guides" : "documents"}
-                    className="group flex items-start gap-5 md:gap-7 py-6 md:py-7 border-b border-[color:var(--color-taupe)]/40 transition-colors duration-300 hover:border-[color:var(--color-bronze)]"
+                    className="group flex items-start gap-[clamp(1.25rem,2vw,1.75rem)] py-[clamp(1.5rem,2vw,1.75rem)] border-b border-[color:var(--color-taupe)]/40 transition-colors duration-300 hover:border-[color:var(--color-bronze)]"
                   >
                     {/* Numéro Cormorant italic XL — pattern table-of-contents magazine */}
                     <span
                       aria-hidden="true"
-                      className="shrink-0 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)] group-hover:text-[color:var(--color-bronze-deep)] text-3xl md:text-4xl leading-none tabular-nums w-12 md:w-14 transition-colors duration-300"
+                      className="shrink-0 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)] group-hover:text-[color:var(--color-bronze-deep)] text-[clamp(1.875rem,3vw,2.25rem)] leading-none tabular-nums w-12 md:w-14 transition-colors duration-300"
                     >
                       {String(idx + 1).padStart(2, "0")}
                     </span>
@@ -101,12 +101,12 @@ export function GuidesShelf() {
                       </div>
 
                       {/* Title */}
-                      <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-lg md:text-xl uppercase tracking-[0.02em] leading-snug group-hover:text-[color:var(--color-bronze-deep)] transition-colors">
+                      <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.125rem,1.6vw,1.25rem)] uppercase tracking-[0.02em] leading-snug group-hover:text-[color:var(--color-bronze-deep)] transition-colors">
                         {item.title}
                       </h3>
 
                       {/* Excerpt italic */}
-                      <p className="font-[var(--font-editorial)] italic text-sm md:text-base leading-[1.6] text-[color:var(--color-navy-deep)]/75">
+                      <p className="font-[var(--font-editorial)] italic text-[clamp(0.875rem,1.2vw,1rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/75">
                         <AutoGlossary text={item.excerpt} />
                       </p>
                     </div>

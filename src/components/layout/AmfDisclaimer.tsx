@@ -43,7 +43,7 @@ export function AmfDisclaimer({ variant = "inline", className }: AmfDisclaimerPr
     return (
       <aside
         className={cn(
-          "bg-[color:var(--color-cream-warm)] border-l-[3px] border-[color:var(--color-bronze)] p-5 md:p-6 space-y-3",
+          "bg-[color:var(--color-cream-warm)] border-l-[3px] border-[color:var(--color-bronze)] p-[clamp(1.25rem,2vw,1.5rem)] space-y-3",
           className,
         )}
         aria-label={t("amf.certificateLabel")}

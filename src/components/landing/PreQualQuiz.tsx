@@ -88,7 +88,7 @@ export function PreQualQuiz() {
   return (
     <section
       id="prequalification"
-      className="relative py-24 md:py-32 surface-cream overflow-hidden"
+      className="relative py-[clamp(4rem,9vw,8rem)] surface-cream overflow-hidden"
     >
       {/* Atmospheric continuity — embers per-section signature */}
 
@@ -102,23 +102,23 @@ export function PreQualQuiz() {
 
       <Container size="lg" className="relative">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16 max-w-2xl mx-auto">
+        <div className="text-center mb-[clamp(3rem,5vw,4rem)] max-w-2xl mx-auto">
           <p className="eyebrow text-[color:var(--color-taupe-dark)] inline-flex items-center gap-3 mb-5">
             <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
             {t("quiz.eyebrow")}
             <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
           </p>
-          <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-3xl md:text-4xl lg:text-5xl uppercase tracking-[0.04em] leading-[1.1] mb-5">
+          <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,4vw,3rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5">
             {t("quiz.title")}
           </h2>
           <div className="w-12 h-px bg-[color:var(--color-bronze)] mx-auto mb-6" />
-          <p className="font-[var(--font-editorial)] italic text-base md:text-lg text-[color:var(--color-navy-deep)]/80 leading-[1.55]">
+          <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-navy-deep)]/80 leading-[1.55]">
             {t("quiz.subtitle")}
           </p>
         </div>
 
         {/* Quiz card */}
-        <div className="max-w-3xl mx-auto bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/45 p-8 md:p-12 relative overflow-hidden halo-glow">
+        <div className="max-w-3xl mx-auto bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/45 p-[clamp(2rem,4vw,3rem)] relative overflow-hidden halo-glow">
           {!isComplete ? (
             <>
               {/* Progress bar fine bronze */}
@@ -155,7 +155,7 @@ export function PreQualQuiz() {
               {/* Question */}
               <h3
                 key={step}
-                className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-2xl md:text-3xl uppercase tracking-[0.02em] leading-[1.2] mb-8 animate-[buteauFadeUp_500ms_ease-out_both]"
+                className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] uppercase tracking-[0.02em] leading-[1.2] mb-8 animate-[buteauFadeUp_500ms_ease-out_both]"
               >
                 {currentQ?.q}
               </h3>
@@ -170,13 +170,13 @@ export function PreQualQuiz() {
                     <button
                       type="button"
                       onClick={() => handleAnswer(opt.tier)}
-                      className="group w-full text-left bg-[color:var(--color-cream-warm)] border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-bronze)]/70 px-5 md:px-6 py-4 md:py-5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-12px_rgba(16,34,61,0.2)] flex items-center justify-between gap-4"
+                      className="group w-full text-left bg-[color:var(--color-cream-warm)] border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-bronze)]/70 px-[clamp(1.25rem,2vw,1.5rem)] py-[clamp(1rem,1.5vw,1.25rem)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-12px_rgba(16,34,61,0.2)] flex items-center justify-between gap-4"
                     >
                       <span className="flex items-baseline gap-4 flex-1">
                         <span className="font-[var(--font-editorial)] italic text-[color:var(--color-bronze)] text-xl tabular-nums">
                           {String.fromCharCode(65 + idx)}
                         </span>
-                        <span className="font-[var(--font-display)] text-[color:var(--color-navy-deep)] text-base md:text-lg leading-snug">
+                        <span className="font-[var(--font-display)] text-[color:var(--color-navy-deep)] text-[clamp(1rem,1.4vw,1.125rem)] leading-snug">
                           {opt.label}
                         </span>
                       </span>
@@ -199,14 +199,14 @@ export function PreQualQuiz() {
               </p>
 
               {/* Title personnalisé */}
-              <h3 className="font-signature text-[color:var(--color-navy-deep)] text-3xl md:text-4xl lg:text-[2.75rem] leading-[1.15] mb-5 tracking-[-0.01em]">
+              <h3 className="font-signature text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,3.5vw,2.75rem)] leading-[1.15] mb-5 tracking-[-0.01em]">
                 {result.title}
               </h3>
 
               <div className="w-12 h-px bg-[color:var(--color-bronze)] mx-auto md:mx-0 mb-7" />
 
               {/* Body */}
-              <p className="text-base md:text-lg leading-[1.65] text-[color:var(--color-navy-deep)]/85 mb-10 max-w-2xl">
+              <p className="text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/85 mb-10 max-w-2xl">
                 {result.body}
               </p>
 

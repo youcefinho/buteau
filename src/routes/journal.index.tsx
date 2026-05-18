@@ -65,7 +65,7 @@ function JournalPage() {
       />
 
       {/* Subtitle Cormorant italic */}
-      <p className="font-[var(--font-editorial)] italic text-base md:text-lg text-[color:var(--color-navy-deep)]/80 leading-[1.65] mb-12">
+      <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-navy-deep)]/80 leading-[1.65] mb-[clamp(2.5rem,5vw,3rem)]">
         {t("journal.subtitle")}
       </p>
 
@@ -81,13 +81,13 @@ function JournalPage() {
               <div className="md:w-[120px] md:shrink-0 bg-[color:var(--color-cream-warm)] border-r border-[color:var(--color-taupe)]/30 flex items-center justify-center py-6 md:py-0">
                 <span
                   aria-hidden="true"
-                  className="font-[var(--font-editorial)] italic text-[color:var(--color-bronze)] text-5xl md:text-7xl leading-none"
+                  className="font-[var(--font-editorial)] italic text-[color:var(--color-bronze)] text-[clamp(3rem,6vw,4.5rem)] leading-none"
                 >
                   {String(idx + 1).padStart(2, "0")}
                 </span>
               </div>
 
-              <div className="flex-1 p-7 md:p-10 flex flex-col">
+              <div className="flex-1 p-[clamp(1.75rem,3vw,2.5rem)] flex flex-col">
                 {/* Meta : category + date + reading time */}
                 <div className="flex flex-wrap items-baseline gap-x-5 gap-y-2 mb-5">
                   <p className="eyebrow text-[color:var(--color-bronze-deep)]">{a.category}</p>
@@ -103,7 +103,7 @@ function JournalPage() {
                 </div>
 
                 {/* Title display — clickable */}
-                <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-2xl md:text-3xl uppercase tracking-[0.02em] leading-[1.15] mb-4 group-hover:text-[color:var(--color-bronze-deep)] transition-colors">
+                <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] uppercase tracking-[0.02em] leading-[1.15] mb-4 group-hover:text-[color:var(--color-bronze-deep)] transition-colors">
                   <Link
                     to="/journal/$slug"
                     params={{ slug: a.slug }}
@@ -116,12 +116,12 @@ function JournalPage() {
                 <div className="w-10 h-px bg-[color:var(--color-bronze)] mb-5 transition-[width] duration-500 group-hover:w-20" />
 
                 {/* Lead Cormorant italic */}
-                <p className="font-[var(--font-editorial)] italic text-base md:text-lg leading-[1.65] text-[color:var(--color-navy-deep)]/85 mb-4">
+                <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/85 mb-4">
                   {a.lead}
                 </p>
 
                 {/* Excerpt */}
-                <p className="text-sm md:text-base leading-[1.65] text-[color:var(--color-navy-deep)]/75 mb-6">
+                <p className="text-[clamp(0.875rem,1.2vw,1rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/75 mb-6">
                   {a.excerpt}
                 </p>
 

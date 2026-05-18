@@ -87,14 +87,14 @@ function CapsulesPage() {
       />
 
       {/* Subtitle Cormorant italic */}
-      <p className="font-[var(--font-editorial)] italic text-base md:text-lg text-[color:var(--color-navy-deep)]/80 leading-[1.65] mb-10">
+      <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-navy-deep)]/80 leading-[1.65] mb-10">
         {t("capsules.subtitle")}
       </p>
 
       {/* Pull-quote signature Andrew — pattern intralys-edito-magazine
           Citation factuelle extraite de la voix Andrew (capsules TikTok existantes) */}
       <blockquote className="not-prose relative mb-14 py-2 border-l-2 border-[color:var(--color-bronze)] pl-6 lg:pl-8">
-        <p className="font-[var(--font-editorial)] italic text-xl md:text-2xl lg:text-[1.65rem] leading-[1.3] text-[color:var(--color-navy-deep)] tracking-tight">
+        <p className="font-[var(--font-editorial)] italic text-[clamp(1.25rem,2.2vw,1.65rem)] leading-[1.3] text-[color:var(--color-navy-deep)] tracking-tight">
           {isFr
             ? "« L'hypothèque, c'est pas compliqué. Ce qui est compliqué, c'est qu'on te l'explique mal. En 30 secondes, je te montre que la plupart des règles sont plus simples — et plus généreuses — que ce qu'on t'a dit. »"
             : "« Mortgages aren't complicated. What's complicated is the way it's been explained to you. In 30 seconds, I show you most rules are simpler — and more generous — than you were told. »"}
@@ -109,7 +109,7 @@ function CapsulesPage() {
         <div className="flex items-center gap-4">
           <span
             aria-hidden="true"
-            className="font-[var(--font-editorial)] italic text-[color:var(--color-bronze)] text-5xl md:text-6xl leading-none tabular-nums"
+            className="font-[var(--font-editorial)] italic text-[color:var(--color-bronze)] text-[clamp(3rem,5vw,3.75rem)] leading-none tabular-nums"
           >
             {String(totalCount).padStart(2, "0")}
           </span>
@@ -237,13 +237,13 @@ function CapsulesPage() {
                 <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
                 {isFr ? "Rubrique" : "Section"}
               </p>
-              <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-2xl md:text-3xl uppercase tracking-[0.04em] leading-[1.15] mb-4">
+              <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] uppercase tracking-[0.04em] leading-[1.15] mb-4">
                 {cat.eyebrow}
               </h2>
               {/* Filet décoratif w-10 → w-20 hover (signature line bronze) */}
               <div className="w-10 h-px bg-[color:var(--color-bronze)] mb-5 transition-[width] duration-500 hover:w-20" />
               {/* Intro avec dropcap — pattern édito magazine premier paragraphe */}
-              <p className="dropcap text-base md:text-[1.0625rem] leading-[1.7] text-[color:var(--color-navy-deep)]/85 max-w-2xl">
+              <p className="dropcap text-[clamp(1rem,1.3vw,1.0625rem)] leading-[1.7] text-[color:var(--color-navy-deep)]/85 max-w-2xl">
                 {cat.intro}
               </p>
             </div>
@@ -259,22 +259,22 @@ function CapsulesPage() {
                     aria-label={item.url
                       ? `${item.title} — ${isFr ? "voir la capsule" : "watch capsule"}`
                       : `${item.title} — ${isFr ? "voir le profil TikTok" : "view TikTok profile"}`}
-                    className="group flex items-start gap-5 md:gap-7 py-5 md:py-6 border-b border-[color:var(--color-taupe)]/40 transition-colors duration-300 hover:border-[color:var(--color-bronze)]"
+                    className="group flex items-start gap-[clamp(1.25rem,2vw,1.75rem)] py-[clamp(1.25rem,1.5vw,1.5rem)] border-b border-[color:var(--color-taupe)]/40 transition-colors duration-300 hover:border-[color:var(--color-bronze)]"
                   >
                     {/* Numéro Cormorant italic */}
                     <span
                       aria-hidden="true"
-                      className="shrink-0 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)] group-hover:text-[color:var(--color-bronze-deep)] text-2xl md:text-3xl leading-none tabular-nums w-10 md:w-12 transition-colors duration-300"
+                      className="shrink-0 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)] group-hover:text-[color:var(--color-bronze-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] leading-none tabular-nums w-10 md:w-12 transition-colors duration-300"
                     >
                       {String(ii + 1).padStart(2, "0")}
                     </span>
 
                     {/* Body */}
                     <div className="flex-1 min-w-0 space-y-2">
-                      <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base md:text-lg uppercase tracking-[0.02em] leading-snug group-hover:text-[color:var(--color-bronze-deep)] transition-colors">
+                      <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1rem,1.4vw,1.125rem)] uppercase tracking-[0.02em] leading-snug group-hover:text-[color:var(--color-bronze-deep)] transition-colors">
                         {item.title}
                       </h3>
-                      <p className="font-[var(--font-editorial)] italic text-sm md:text-base leading-[1.6] text-[color:var(--color-navy-deep)]/75">
+                      <p className="font-[var(--font-editorial)] italic text-[clamp(0.875rem,1.2vw,1rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/75">
                         « {item.hook} »
                       </p>
                     </div>

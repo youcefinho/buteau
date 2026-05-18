@@ -15,7 +15,7 @@ export function ContactSection() {
   const { t } = useLanguage();
 
   return (
-    <section id="contact" className="py-24 md:py-28 surface-cream relative overflow-hidden">
+    <section id="contact" className="py-[clamp(4rem,8vw,7rem)] surface-cream relative overflow-hidden">
       {/* Atmospheric continuity — embers per-section signature */}
 
       {/* Filigrane décoratif éditorial */}
@@ -34,9 +34,9 @@ export function ContactSection() {
           tone="bronze"
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-[clamp(2.5rem,4vw,3.5rem)] max-w-5xl mx-auto">
           {/* Form column — 7/12 */}
-          <div className="lg:col-span-7 bg-[color:var(--color-surface)] p-7 md:p-10 border border-[color:var(--color-taupe)]/50 relative">
+          <div className="lg:col-span-7 bg-[color:var(--color-surface)] p-[clamp(1.75rem,3vw,2.5rem)] border border-[color:var(--color-taupe)]/50 relative">
             {/* Corner accent bronze */}
             <span
               aria-hidden="true"
@@ -117,7 +117,7 @@ function ContactLine({
       <div className="flex-1 min-w-0">
         <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-1">{label}</p>
         <p
-          className={`font-[var(--font-display)] text-[color:var(--color-navy-deep)] text-base md:text-lg font-semibold ${
+          className={`font-[var(--font-display)] text-[color:var(--color-navy-deep)] text-[clamp(1rem,1.4vw,1.125rem)] font-semibold ${
             breakAll ? "break-all" : ""
           }`}
         >

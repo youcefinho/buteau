@@ -63,7 +63,7 @@ function MerciPage() {
         M
       </span>
 
-      <Container size="md" className="relative py-32 md:py-40">
+      <Container size="md" className="relative py-[clamp(5rem,11vw,10rem)]">
         <div className="max-w-3xl mx-auto">
           {/* Eyebrow encadré */}
           <p className="eyebrow text-[color:var(--color-taupe-dark)] inline-flex items-center gap-3 mb-8 animate-[buteauFadeUp_700ms_ease-out_100ms_both]">
@@ -73,7 +73,7 @@ function MerciPage() {
           </p>
 
           {/* Title Fraunces signature XL */}
-          <h1 className="font-signature text-[color:var(--color-navy-deep)] text-6xl md:text-8xl lg:text-[7rem] leading-[0.95] tracking-[-0.02em] mb-8 animate-[buteauFadeUp_900ms_ease-out_200ms_both]">
+          <h1 className="font-signature text-[color:var(--color-navy-deep)] text-[clamp(3.75rem,9vw,7rem)] leading-[0.95] tracking-[-0.02em] mb-8 animate-[buteauFadeUp_900ms_ease-out_200ms_both]">
             {t("merci.title")}
           </h1>
 
@@ -81,14 +81,14 @@ function MerciPage() {
           <div className="w-16 h-px bg-[color:var(--color-bronze)] mb-8 animate-[buteauWidth_700ms_ease-out_500ms_both]" />
 
           {/* Subtitle */}
-          <p className="font-[var(--font-editorial)] italic text-lg md:text-xl text-[color:var(--color-navy-deep)]/85 leading-[1.65] mb-8 max-w-2xl animate-[buteauFadeUp_700ms_ease-out_600ms_both]">
+          <p className="font-[var(--font-editorial)] italic text-[clamp(1.125rem,1.6vw,1.25rem)] text-[color:var(--color-navy-deep)]/85 leading-[1.65] mb-8 max-w-2xl animate-[buteauFadeUp_700ms_ease-out_600ms_both]">
             {t("merci.subtitle")}
           </p>
 
           {/* Tier-personalized message — si quiz fait */}
           {tierMessage && (
-            <div className="mb-12 pl-6 md:pl-8 border-l-2 border-[color:var(--color-bronze)] animate-[buteauFadeUp_700ms_ease-out_750ms_both]">
-              <p className="text-base md:text-lg leading-[1.6] text-[color:var(--color-navy-deep)]/85">
+            <div className="mb-12 pl-[clamp(1.5rem,2.3vw,2rem)] border-l-2 border-[color:var(--color-bronze)] animate-[buteauFadeUp_700ms_ease-out_750ms_both]">
+              <p className="text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/85">
                 {tierMessage}
               </p>
             </div>

@@ -61,7 +61,7 @@ export function TeamTeaser() {
           tone="dark"
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[clamp(1.5rem,2.5vw,2rem)] mb-12">
           {members.map((m) => (
             <Link
               key={m.name}
@@ -76,8 +76,8 @@ export function TeamTeaser() {
                   className="w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
-              <div className="p-5 lg:p-6 text-center">
-                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base lg:text-lg uppercase tracking-[var(--tracking-eyebrow)] mb-3">
+              <div className="p-[clamp(1.25rem,2vw,1.5rem)] text-center">
+                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1rem,1.4vw,1.125rem)] uppercase tracking-[var(--tracking-eyebrow)] mb-3">
                   {m.name}
                 </h3>
                 <div className="flex items-center justify-center gap-2.5">

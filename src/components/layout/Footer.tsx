@@ -34,14 +34,14 @@ export function Footer() {
         {config.brandName}
       </span>
 
-      <Container size="xl" className="relative pt-14 md:pt-20 pb-8">
+      <Container size="xl" className="relative pt-[clamp(3.5rem,6vw,5rem)] pb-8">
         {/* === Couverture statement — Cormorant italic XL === */}
-        <div className="max-w-4xl mb-10 md:mb-14">
+        <div className="max-w-4xl mb-[clamp(2.5rem,4vw,3.5rem)]">
           <p className="eyebrow text-[color:var(--color-taupe)] mb-4 inline-flex items-center gap-3">
             <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
             {lang === "fr" ? "Quatrième de couverture" : "Back cover"}
           </p>
-          <p className="font-[var(--font-editorial)] italic text-[color:var(--color-cream)] text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] leading-[1.1] tracking-tight">
+          <p className="font-[var(--font-editorial)] italic text-[color:var(--color-cream)] text-[clamp(1.5rem,3.5vw,2.75rem)] leading-[1.1] tracking-tight">
             « {t("footer.coverStatement")} »
           </p>
           <div className="flex items-center gap-4 mt-6">
@@ -53,7 +53,7 @@ export function Footer() {
         </div>
 
         {/* === Grid asymétrique : Contact / Navigation / Colophon === */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 pb-8 border-b border-[color:var(--color-taupe)]/30">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-[clamp(2rem,3vw,3rem)] pb-8 border-b border-[color:var(--color-taupe)]/30">
           {/* Contact — col 5 */}
           <div className="md:col-span-5 space-y-4">
             <p className="eyebrow text-[color:var(--color-taupe)]">

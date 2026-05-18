@@ -16,7 +16,7 @@ export function CtaBlock({ bgImageUrl = "https://i.imgur.com/Bw7Zyf4.jpg" }: Cta
   const { t } = useLanguage();
 
   return (
-    <section className="relative py-24 md:py-36 surface-navy overflow-hidden grain-overlay">
+    <section className="relative py-[clamp(4rem,10vw,9rem)] surface-navy overflow-hidden grain-overlay">
       {/* Background image avec overlay tonal — image visible */}
       <div
         className="absolute inset-0 bg-cover bg-center md:bg-fixed"
@@ -43,13 +43,13 @@ export function CtaBlock({ bgImageUrl = "https://i.imgur.com/Bw7Zyf4.jpg" }: Cta
             <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
           </p>
 
-          <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-3xl md:text-5xl lg:text-[3.5rem] uppercase tracking-[0.04em] leading-[1.05]">
+          <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(1.875rem,5vw,3.5rem)] uppercase tracking-[0.04em] leading-[1.05]">
             {t("cta.title")}
           </h2>
 
           <div className="w-16 h-px bg-[color:var(--color-bronze)] mx-auto" />
 
-          <p className="font-[var(--font-editorial)] italic text-base md:text-lg text-[color:var(--color-cream)]/85 leading-[1.5]">
+          <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-cream)]/85 leading-[1.5]">
             {t("cta.subtitle")}
           </p>
 

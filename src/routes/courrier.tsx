@@ -81,13 +81,13 @@ function CourrierPage() {
       />
 
       {/* Subtitle éditorial */}
-      <p className="font-[var(--font-editorial)] italic text-base md:text-lg text-[color:var(--color-navy-deep)]/80 leading-[1.65] mb-12">
+      <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-navy-deep)]/80 leading-[1.65] mb-[clamp(2.5rem,5vw,3rem)]">
         {ta<string>(translations[lang], "courrier.subtitle")}
       </p>
 
       {/* Grid lettres — 2 colonnes desktop pour rythme magazine */}
       <div
-        className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-7 not-prose"
+        className="grid grid-cols-1 md:grid-cols-2 gap-[clamp(1.5rem,2.3vw,1.75rem)] not-prose"
         style={{ perspective: "1200px" }}
       >
         {allLetters.map((r, idx) => (

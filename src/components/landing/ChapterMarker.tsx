@@ -28,7 +28,7 @@ export function ChapterMarker({ numeral, label, tone = "light" }: ChapterMarkerP
 
   return (
     <div
-      className={`relative py-12 md:py-16 ${
+      className={`relative py-[clamp(2.5rem,5vw,4rem)] ${
         tone === "dark" ? "surface-navy" : "surface-cream"
       }`}
       aria-hidden={!label ? "true" : undefined}

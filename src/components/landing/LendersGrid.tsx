@@ -16,7 +16,7 @@ export function LendersGrid() {
   );
 
   return (
-    <section className="py-24 md:py-28 surface-cream border-t border-[color:var(--color-border)] relative overflow-hidden">
+    <section className="py-[clamp(4rem,8vw,7rem)] surface-cream border-t border-[color:var(--color-border)] relative overflow-hidden">
       {/* Filigrane decoratif numero romain V */}
       <span
         aria-hidden="true"
@@ -31,7 +31,7 @@ export function LendersGrid() {
           tone="bronze"
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-9" style={{ perspective: "1200px" }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[clamp(1.75rem,2.5vw,2.25rem)]" style={{ perspective: "1200px" }}>
           {lenders.map((l, idx) => (
             <Tiltable key={idx} maxDeg={5}>
             <article

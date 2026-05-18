@@ -52,23 +52,23 @@ export function SectionDivider({
     <div
       ref={ref}
       className={cn(
-        "py-12 md:py-16 flex items-center justify-center gap-6 md:gap-8 transition-[opacity,transform] duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)]",
+        "py-[clamp(3rem,6vw,5rem)] flex items-center justify-center gap-[clamp(1.5rem,2.5vw,2rem)] transition-[opacity,transform] duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)]",
         isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95",
         tone === "dark" ? "surface-navy" : "",
         className,
       )}
       aria-hidden="true"
     >
-      <span className={cn("h-px flex-1 max-w-[10rem] md:max-w-[14rem]", lineColor)} />
+      <span className={cn("h-px flex-1 max-w-[clamp(10rem,14vw,14rem)]", lineColor)} />
       <span
         className={cn(
-          "font-[family-name:var(--font-editorial)] italic text-2xl md:text-3xl select-none leading-none",
+          "font-[family-name:var(--font-editorial)] italic text-[clamp(1.5rem,2.5vw,1.875rem)] select-none leading-none",
           ornamentColor,
         )}
       >
         {ORNAMENTS[variant]}
       </span>
-      <span className={cn("h-px flex-1 max-w-[10rem] md:max-w-[14rem]", lineColor)} />
+      <span className={cn("h-px flex-1 max-w-[clamp(10rem,14vw,14rem)]", lineColor)} />
     </div>
   );
 }

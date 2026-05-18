@@ -163,7 +163,7 @@ export function ExitIntent() {
       <div
         ref={boxRef}
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-md bg-[color:var(--color-navy)] border border-[color:var(--color-bronze)]/30 rounded-sm p-7 md:p-9 shadow-2xl animate-[buteauScale_400ms_cubic-bezier(0.4,0,0.2,1)_both]"
+        className="relative w-full max-w-md bg-[color:var(--color-navy)] border border-[color:var(--color-bronze)]/30 rounded-sm p-[clamp(1.75rem,3vw,2.25rem)] shadow-2xl animate-[buteauScale_400ms_cubic-bezier(0.4,0,0.2,1)_both]"
       >
         {/* Close */}
         <button
@@ -185,7 +185,7 @@ export function ExitIntent() {
         {/* Titre — Cormorant italic édito */}
         <h3
           id="exit-intent-title"
-          className="font-[var(--font-editorial)] text-[color:var(--color-cream)] text-2xl md:text-3xl leading-[1.15] tracking-tight mb-3 text-balance"
+          className="font-[var(--font-editorial)] text-[color:var(--color-cream)] text-[clamp(1.5rem,2.5vw,1.875rem)] leading-[1.15] tracking-tight mb-3 text-balance"
         >
           {tr.title}{" "}
           <em className="italic text-[color:var(--color-bronze-soft)]">{tr.titleAccent}</em>

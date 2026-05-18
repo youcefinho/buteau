@@ -115,7 +115,7 @@ export function GlossaryModal() {
         className="relative bg-[color:var(--color-cream)] w-full max-w-3xl max-h-[100vh] md:max-h-[88vh] overflow-y-auto shadow-2xl"
       >
         {/* Header */}
-        <div className="sticky top-0 z-10 px-6 md:px-10 py-5 bg-[color:var(--color-cream)] border-b border-[color:var(--color-border)]">
+        <div className="sticky top-0 z-10 px-[clamp(1.5rem,3vw,2.5rem)] py-5 bg-[color:var(--color-cream)] border-b border-[color:var(--color-border)]">
           <div className="flex items-center justify-between mb-4">
             <div>
               <p className="eyebrow text-[color:var(--color-taupe-dark)]">
@@ -123,7 +123,7 @@ export function GlossaryModal() {
               </p>
               <h2
                 id="glossary-title"
-                className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-xl md:text-2xl uppercase tracking-[0.04em]"
+                className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.04em]"
               >
                 {lang === "fr" ? "Termes hypothécaires" : "Mortgage terminology"}
               </h2>
@@ -157,7 +157,7 @@ export function GlossaryModal() {
         </div>
 
         {/* Body — list of terms (filtered by query) */}
-        <div className="px-6 md:px-10 py-8 space-y-8">
+        <div className="px-[clamp(1.5rem,3vw,2.5rem)] py-8 space-y-8">
           {filteredGlossary.length === 0 && (
             <p className="text-center font-[var(--font-editorial)] italic text-sm text-[color:var(--color-taupe-dark)] py-8">
               {lang === "fr"

@@ -55,7 +55,7 @@ export function MediaShowcase() {
   return (
     <section
       id="media"
-      className="relative py-24 md:py-32 surface-cream overflow-hidden"
+      className="relative py-[clamp(4rem,9vw,8rem)] surface-cream overflow-hidden"
     >
       {/* Filigrane "¶" Cormorant XL background — signature édito magazine */}
       <span
@@ -67,23 +67,23 @@ export function MediaShowcase() {
 
       <Container size="xl" className="relative">
         {/* Header magazine — eyebrow encadré tirets longs + h2 + filet signature */}
-        <div className="text-center mb-20 md:mb-24 max-w-3xl mx-auto">
+        <div className="text-center mb-[clamp(4rem,6vw,6rem)] max-w-3xl mx-auto">
           <p className="eyebrow text-[color:var(--color-taupe-dark)] inline-flex items-center gap-3 mb-5">
             <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
             {t("media.eyebrow")}
             <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
           </p>
-          <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-3xl md:text-4xl lg:text-5xl uppercase tracking-[0.04em] leading-[1.1] mb-5">
+          <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,4vw,3rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5">
             {t("media.title")}
           </h2>
           <div className="w-16 h-px bg-[color:var(--color-bronze)] mx-auto mb-6" />
-          <p className="font-[var(--font-editorial)] italic text-base md:text-lg text-[color:var(--color-navy-deep)]/80 leading-[1.55]">
+          <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-navy-deep)]/80 leading-[1.55]">
             {t("media.subtitle")}
           </p>
         </div>
 
         {/* === BLOC 1 — TV (Art de Réussir) — 7/5 split === */}
-        <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-24 md:mb-32 items-center">
+        <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-[clamp(2rem,3vw,3rem)] mb-[clamp(4rem,7vw,8rem)] items-center">
           {/* Chiffre filigrane "01" — pattern signature pages séquentielles */}
           <span
             aria-hidden="true"
@@ -165,7 +165,7 @@ export function MediaShowcase() {
                 {t("media.tvEyebrow")}
               </p>
             </div>
-            <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-2xl md:text-3xl uppercase tracking-[0.02em] leading-[1.15] mb-5">
+            <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] uppercase tracking-[0.02em] leading-[1.15] mb-5">
               {t("media.tvTitle")}
             </h3>
             {/* Signature line bronze qui s'étend au hover (pattern intralys-edito-magazine) */}
@@ -178,8 +178,8 @@ export function MediaShowcase() {
                   key={`tv-${idx}-${line.slice(0, 20)}`}
                   className={
                     idx === 0
-                      ? "dropcap text-base md:text-[1.0625rem] leading-[1.75] text-[color:var(--color-navy-deep)]/85"
-                      : "text-base md:text-lg leading-[1.65] text-[color:var(--color-navy-deep)]/80 font-[var(--font-editorial)] italic"
+                      ? "dropcap text-[clamp(1rem,1.3vw,1.0625rem)] leading-[1.75] text-[color:var(--color-navy-deep)]/85"
+                      : "text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/80 font-[var(--font-editorial)] italic"
                   }
                 >
                   {line}
@@ -193,7 +193,7 @@ export function MediaShowcase() {
         </div>
 
         {/* === BLOC 2 — Coulisses du plateau — 5/7 split === */}
-        <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-[clamp(2rem,3vw,3rem)] items-center">
           {/* Chiffre filigrane "02" — décalé à droite cette fois (asymétrie magazine) */}
           <span
             aria-hidden="true"
@@ -210,7 +210,7 @@ export function MediaShowcase() {
                 {t("media.eventEyebrow")}
               </p>
             </div>
-            <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-2xl md:text-3xl uppercase tracking-[0.02em] leading-[1.15] mb-5">
+            <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] uppercase tracking-[0.02em] leading-[1.15] mb-5">
               {t("media.eventTitle")}
             </h3>
             {/* Signature line bronze + dropcap intro (pattern intralys-edito-magazine) */}
@@ -221,8 +221,8 @@ export function MediaShowcase() {
                   key={`event-${idx}-${line.slice(0, 20)}`}
                   className={
                     idx === 0
-                      ? "dropcap text-base md:text-[1.0625rem] leading-[1.75] text-[color:var(--color-navy-deep)]/85"
-                      : "text-base md:text-lg leading-[1.65] text-[color:var(--color-navy-deep)]/80 font-[var(--font-editorial)] italic"
+                      ? "dropcap text-[clamp(1rem,1.3vw,1.0625rem)] leading-[1.75] text-[color:var(--color-navy-deep)]/85"
+                      : "text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/80 font-[var(--font-editorial)] italic"
                   }
                 >
                   {line}

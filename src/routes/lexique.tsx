@@ -72,7 +72,7 @@ function LexiquePage() {
               )}
             </div>
             <div className="w-8 h-0.5 bg-[color:var(--color-bronze)] my-3" />
-            <p className="text-sm md:text-base leading-relaxed text-[color:var(--color-navy-deep)]/85">
+            <p className="text-[clamp(0.875rem,1.2vw,1rem)] leading-relaxed text-[color:var(--color-navy-deep)]/85">
               {g.definition[lang]}
             </p>
             {g.source && (

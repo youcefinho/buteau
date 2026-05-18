@@ -39,7 +39,7 @@ export function Mission() {
     <section
       ref={counterRef}
       id="mission"
-      className="relative py-24 md:py-32 surface-navy overflow-hidden grain-overlay"
+      className="relative py-[clamp(4rem,9vw,8rem)] surface-navy overflow-hidden grain-overlay"
     >
       {/* Atmospheric continuity — embers per-section signature */}
 
@@ -63,7 +63,7 @@ export function Mission() {
         {/* Body éditorial — drop cap + pull quote asymétrique */}
         <div className="max-w-4xl mx-auto mb-20 md:mb-24 space-y-10 md:space-y-12">
           {/* P1 avec drop cap luxury */}
-          <p className="dropcap text-base md:text-lg leading-[1.8] text-[color:var(--color-cream)]/90 font-light">
+          <p className="dropcap text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.8] text-[color:var(--color-cream)]/90 font-light">
             {t("home.mission.bodyP1Lead")}
             <span className="font-bold text-[color:var(--color-bronze)]">
               {t("home.mission.bodyP1Brand")}
@@ -80,7 +80,7 @@ export function Mission() {
             >
               &ldquo;
             </span>
-            <p className="font-signature text-[color:var(--color-cream)] text-2xl md:text-4xl leading-[1.2] font-light tracking-[-0.005em]">
+            <p className="font-signature text-[color:var(--color-cream)] text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.2] font-light tracking-[-0.005em]">
               <span
                 className="inline-block tabular-nums font-bold text-[color:var(--color-bronze)] mr-2"
                 aria-live="polite"
@@ -112,7 +112,7 @@ export function Mission() {
             return (
               <article
                 key={idx}
-                className="group relative bg-[color:var(--color-cream)] p-8 md:p-10 border border-[color:var(--color-taupe)]/60 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_18px_48px_-20px_rgba(16,34,61,0.32)] hover:border-[color:var(--color-bronze)] overflow-hidden"
+                className="group relative bg-[color:var(--color-cream)] p-[clamp(1.75rem,3vw,2.5rem)] border border-[color:var(--color-taupe)]/60 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_18px_48px_-20px_rgba(16,34,61,0.32)] hover:border-[color:var(--color-bronze)] overflow-hidden"
               >
                 <span
                   aria-hidden="true"
@@ -144,7 +144,7 @@ export function Mission() {
           <button
             type="button"
             onClick={openCarnet}
-            className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-sm md:text-base text-[color:var(--color-cream)]/85 cursor-pointer"
+            className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[clamp(0.875rem,1.2vw,1rem)] text-[color:var(--color-cream)]/85 cursor-pointer"
           >
             <BookMarked className="w-4 h-4 text-[color:var(--color-bronze)]" strokeWidth={1.5} aria-hidden />
             {lang === "fr"

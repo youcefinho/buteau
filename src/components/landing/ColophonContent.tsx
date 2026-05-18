@@ -26,7 +26,7 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
       </p>
 
       {/* Intro éditorial */}
-      <p className="font-[var(--font-editorial)] italic text-base md:text-lg leading-[1.7] text-[color:var(--color-navy-deep)]/85 first-letter:font-[var(--font-editorial)] first-letter:italic first-letter:text-6xl first-letter:text-[color:var(--color-bronze-deep)] first-letter:float-left first-letter:mr-3 first-letter:leading-[0.85] first-letter:mt-1">
+      <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.7] text-[color:var(--color-navy-deep)]/85 first-letter:font-[var(--font-editorial)] first-letter:italic first-letter:text-6xl first-letter:text-[color:var(--color-bronze-deep)] first-letter:float-left first-letter:mr-3 first-letter:leading-[0.85] first-letter:mt-1">
         {isFr
           ? "Comme un magazine d'auteur, ce site assume sa fabrication. Voici les choix typographiques, chromatiques et éditoriaux qui composent l'édition que vous parcourez."
           : "Like an author's magazine, this site owns its making. Here are the typographic, chromatic and editorial choices that compose the edition you are browsing."}

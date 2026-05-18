@@ -31,11 +31,11 @@ export function BlogTeaser() {
             <p className="eyebrow text-[color:var(--color-bronze-soft)]">
               {t("tools.blog.eyebrow")}
             </p>
-            <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-2xl md:text-3xl lg:text-4xl tracking-[-0.01em] leading-tight">
+            <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(1.5rem,3vw,2.25rem)] tracking-[-0.01em] leading-tight">
               {t("tools.blog.title")}
             </h2>
             <div className="w-12 h-0.5 bg-[color:var(--color-bronze)]" />
-            <p className="text-base md:text-lg leading-relaxed text-[color:var(--color-cream)]/85">
+            <p className="text-[clamp(1rem,1.4vw,1.125rem)] leading-relaxed text-[color:var(--color-cream)]/85">
               {t("tools.blog.body")}
             </p>
             <div className="pt-3">

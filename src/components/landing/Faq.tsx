@@ -37,7 +37,7 @@ export function Faq() {
         aria-hidden="true"
       />
 
-      <Container size="full" className="relative max-w-[110rem] !px-6 md:!px-8">
+      <Container size="full" className="relative max-w-[110rem] !px-[clamp(1.5rem,2.5vw,2rem)]">
         <SectionHeading
           eyebrow={t("home.faq.eyebrow")}
           title={t("home.faq.title")}
@@ -58,7 +58,7 @@ export function Faq() {
               className="group bg-[color:var(--color-cream)] border border-[color:var(--color-taupe)]/50 overflow-hidden transition-colors duration-300 data-[state=open]:border-[color:var(--color-bronze)]"
             >
               <Accordion.Header>
-                <Accordion.Trigger className="w-full px-6 md:px-8 py-5 md:py-6 flex items-center justify-between text-left hover:bg-[color:var(--color-cream-warm)] transition-colors gap-5">
+                <Accordion.Trigger className="w-full px-[clamp(1.5rem,2.5vw,2rem)] py-[clamp(1.25rem,1.8vw,1.5rem)] flex items-center justify-between text-left hover:bg-[color:var(--color-cream-warm)] transition-colors gap-5">
                   {/* Numero filigrane Cormorant a gauche */}
                   <span
                     aria-hidden="true"
@@ -66,7 +66,7 @@ export function Faq() {
                   >
                     {String(idx + 1).padStart(2, "0")}
                   </span>
-                  <span className="flex-1 font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-sm md:text-base uppercase tracking-[0.04em] leading-snug">
+                  <span className="flex-1 font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(0.875rem,1.2vw,1rem)] uppercase tracking-[0.04em] leading-snug">
                     {item.q}
                   </span>
                   <ChevronDown
@@ -76,8 +76,8 @@ export function Faq() {
                 </Accordion.Trigger>
               </Accordion.Header>
               <Accordion.Content className="overflow-hidden data-[state=open]:animate-[accordionDown_280ms_ease-out] data-[state=closed]:animate-[accordionUp_220ms_ease-in]">
-                <div className="px-6 md:px-8 pb-6 pt-2 ml-13 md:ml-16 border-t border-[color:var(--color-taupe)]/30">
-                  <p className="text-sm md:text-base leading-[1.65] text-[color:var(--color-navy-deep)]/80 pt-4">
+                <div className="px-[clamp(1.5rem,2.5vw,2rem)] pb-6 pt-2 ml-13 md:ml-16 border-t border-[color:var(--color-taupe)]/30">
+                  <p className="text-[clamp(0.875rem,1.2vw,1rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/80 pt-4">
                     <AutoGlossary text={item.a} maxWraps={3} />
                   </p>
                 </div>

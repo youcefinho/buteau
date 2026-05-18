@@ -24,7 +24,7 @@ export function LegalPageWrap({
   return (
     <main id="main" className="surface-cream">
       {/* Hero compact navy avec filigrane éditorial */}
-      <section className="relative surface-navy pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
+      <section className="relative surface-navy pt-[clamp(8rem,12vw,10rem)] pb-[clamp(4rem,6vw,5rem)] overflow-hidden">
         {/* Filigrane "§" éditorial luxury */}
         <span
           aria-hidden="true"
@@ -42,7 +42,7 @@ export function LegalPageWrap({
                 <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
               </p>
             )}
-            <h1 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-3xl md:text-4xl lg:text-5xl uppercase tracking-[0.04em] leading-[1.1]">
+            <h1 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(1.875rem,4vw,3rem)] uppercase tracking-[0.04em] leading-[1.1]">
               {title}
             </h1>
             <div className="w-16 h-px bg-[color:var(--color-bronze)] mx-auto" />
@@ -59,18 +59,18 @@ export function LegalPageWrap({
       </section>
 
       {/* Fleuron décoratif Cormorant entre hero et body */}
-      <div className="flex items-center justify-center py-10 md:py-14 relative" aria-hidden="true">
+      <div className="flex items-center justify-center py-[clamp(2.5rem,4vw,3.5rem)] relative" aria-hidden="true">
         <div className="flex items-center gap-5">
-          <span className="block w-16 md:w-24 h-px bg-[color:var(--color-taupe)]" />
+          <span className="block w-[clamp(4rem,8vw,6rem)] h-px bg-[color:var(--color-taupe)]" />
           <span className="font-[var(--font-editorial)] italic text-[color:var(--color-bronze)] text-2xl">
             ❦
           </span>
-          <span className="block w-16 md:w-24 h-px bg-[color:var(--color-taupe)]" />
+          <span className="block w-[clamp(4rem,8vw,6rem)] h-px bg-[color:var(--color-taupe)]" />
         </div>
       </div>
 
       {/* Body — prose éditoriale */}
-      <section className="pb-20 md:pb-24">
+      <section className="pb-[clamp(5rem,7vw,6rem)]">
         <Container size="md">
           <div className="prose-legal max-w-3xl mx-auto space-y-8 text-[color:var(--color-navy-deep)]/90 text-base leading-[1.7]">
             {children}
