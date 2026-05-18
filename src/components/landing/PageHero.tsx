@@ -70,7 +70,7 @@ export function PageHero({
             </p>
           )}
 
-          <h1 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(2.25rem,5vw,3.75rem)] uppercase tracking-[0.04em] leading-[1.05] animate-[buteauFadeUp_700ms_ease-out_200ms_both]">
+          <h1 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(2rem,4vw,3rem)] uppercase tracking-[0.04em] leading-[1.05] animate-[buteauFadeUp_700ms_ease-out_200ms_both]">
             {title}
           </h1>
 

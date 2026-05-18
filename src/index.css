@@ -1210,7 +1210,7 @@ body {
    Preserve les 21 items sans en retirer aucun. Valeurs fixes par tranche
    car zoom: calc(100vw/1700) invalide (mix unites px/number non supporte). */
 @media (min-width: 1024px) and (max-width: 1279px) {
-  header > nav { zoom: 0.72; }
+  header > nav { zoom: 0.66; }
 }
 @media (min-width: 1280px) and (max-width: 1399px) {
   header > nav { zoom: 0.68; }
