@@ -1370,7 +1370,7 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
               : isFr ? "Calculateur" : "Calculator"}
           </p>
           <h2
-            className={`font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] uppercase tracking-[0.04em] leading-[1.05] mb-5 ${
+            className={`font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] uppercase tracking-[0.04em] leading-[1.05] mb-5 text-balance ${
               isPreview
                 ? "text-2xl md:text-3xl lg:text-4xl"
                 : "text-3xl md:text-4xl lg:text-5xl"
@@ -1379,7 +1379,7 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
             {isFr ? "Vos chiffres, sans détour." : "Your numbers, no detour."}
           </h2>
           <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-6" />
-          <p className="font-[var(--font-editorial)] italic text-base md:text-lg leading-[1.65] text-[color:var(--color-navy-deep)]/80">
+          <p className="font-[var(--font-editorial)] italic text-base md:text-lg leading-[1.65] text-[color:var(--color-navy-deep)]/80 text-pretty">
             {isPreview
               ? isFr
                 ? "Quatre vues du même dossier — capacité, paiement, stratégie de taux, liquidités. Faites bouger les chiffres, puis ouvrez le calculateur complet pour les graphiques et scénarios approfondis."
@@ -1457,7 +1457,7 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
         {/* CTA Aperçu -> calculateur complet (mode preview uniquement) */}
         {isPreview && (
           <div className="mt-10 pt-8 border-t border-[color:var(--color-taupe)]/30 flex flex-col sm:flex-row items-baseline justify-between gap-y-4 gap-x-6">
-            <p className="font-[var(--font-editorial)] italic text-sm text-[color:var(--color-taupe-dark)] leading-snug max-w-xl">
+            <p className="font-[var(--font-editorial)] italic text-sm text-[color:var(--color-taupe-dark)] leading-snug max-w-xl text-pretty">
               {isFr
                 ? "Graphiques d'amortissement, sensibilité au taux, courbes fixe vs variable et comparaisons mise de fonds — disponibles dans le calculateur complet."
                 : "Amortization charts, rate sensitivity, fixed vs variable curves and down payment comparisons — available in the full calculator."}
@@ -1476,7 +1476,7 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
         {/* Footer note + AMF (mode full uniquement) */}
         {!isPreview && (
           <div className="mt-12 pt-6 border-t border-[color:var(--color-taupe)]/30 max-w-3xl">
-            <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] leading-relaxed">
+            <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] leading-relaxed text-pretty hyphens-auto">
               {isFr
                 ? "Outils indicatifs uniquement. Les conditions, taux, primes SCHL et frais varient selon votre dossier, la propriété, le prêteur et le moment du marché. L'Équipe Buteau opère sous le cabinet Planiprêt — courtage hypothécaire inscrit à l'AMF. Le service de courtage est gratuit pour l'acheteur."
                 : "Indicative tools only. Conditions, rates, CMHC premiums and fees vary based on your file, the property, the lender and market timing. L'Équipe Buteau operates under Planiprêt — mortgage brokerage registered with AMF. Brokerage service is free for the buyer."}

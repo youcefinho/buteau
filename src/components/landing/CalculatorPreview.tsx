@@ -86,11 +86,11 @@ export function CalculatorPreview() {
               <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
               {t("home.calcPreview.eyebrow")}
             </p>
-            <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,3vw,2.25rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5">
+            <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,3vw,2.25rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
               {t("home.calcPreview.title")}
             </h2>
             <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-6" />
-            <p className="text-base leading-[1.65] text-[color:var(--color-navy-deep)]/80 mb-8">
+            <p className="text-base leading-[1.65] text-[color:var(--color-navy-deep)]/80 mb-8 text-pretty">
               {t("home.calcPreview.subtitle")}
             </p>
 

@@ -87,14 +87,14 @@ function CapsulesPage() {
       />
 
       {/* Subtitle Cormorant italic */}
-      <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-navy-deep)]/80 leading-[1.65] mb-10">
+      <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-navy-deep)]/80 leading-[1.65] mb-10 text-pretty">
         {t("capsules.subtitle")}
       </p>
 
       {/* Pull-quote signature Andrew — pattern intralys-edito-magazine
           Citation factuelle extraite de la voix Andrew (capsules TikTok existantes) */}
       <blockquote className="not-prose relative mb-14 py-2 border-l-2 border-[color:var(--color-bronze)] pl-6 lg:pl-8">
-        <p className="font-[var(--font-editorial)] italic text-[clamp(1.25rem,2.2vw,1.65rem)] leading-[1.3] text-[color:var(--color-navy-deep)] tracking-tight">
+        <p className="font-[var(--font-editorial)] italic text-[clamp(1.25rem,2.2vw,1.65rem)] leading-[1.3] text-[color:var(--color-navy-deep)] tracking-tight text-pretty">
           {isFr
             ? "« L'hypothèque, c'est pas compliqué. Ce qui est compliqué, c'est qu'on te l'explique mal. En 30 secondes, je te montre que la plupart des règles sont plus simples — et plus généreuses — que ce qu'on t'a dit. »"
             : "« Mortgages aren't complicated. What's complicated is the way it's been explained to you. In 30 seconds, I show you most rules are simpler — and more generous — than you were told. »"}
@@ -237,13 +237,13 @@ function CapsulesPage() {
                 <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
                 {isFr ? "Rubrique" : "Section"}
               </p>
-              <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] uppercase tracking-[0.04em] leading-[1.15] mb-4">
+              <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] uppercase tracking-[0.04em] leading-[1.15] mb-4 text-balance">
                 {cat.eyebrow}
               </h2>
               {/* Filet décoratif w-10 → w-20 hover (signature line bronze) */}
               <div className="w-10 h-px bg-[color:var(--color-bronze)] mb-5 transition-[width] duration-500 hover:w-20" />
               {/* Intro avec dropcap — pattern édito magazine premier paragraphe */}
-              <p className="dropcap text-[clamp(1rem,1.3vw,1.0625rem)] leading-[1.7] text-[color:var(--color-navy-deep)]/85 max-w-2xl">
+              <p className="dropcap text-[clamp(1rem,1.3vw,1.0625rem)] leading-[1.7] text-[color:var(--color-navy-deep)]/85 max-w-2xl text-pretty hyphens-auto">
                 {cat.intro}
               </p>
             </div>
@@ -271,10 +271,10 @@ function CapsulesPage() {
 
                     {/* Body */}
                     <div className="flex-1 min-w-0 space-y-2">
-                      <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1rem,1.4vw,1.125rem)] uppercase tracking-[0.02em] leading-snug group-hover:text-[color:var(--color-bronze-deep)] transition-colors">
+                      <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1rem,1.4vw,1.125rem)] uppercase tracking-[0.02em] leading-snug text-balance group-hover:text-[color:var(--color-bronze-deep)] transition-colors">
                         {item.title}
                       </h3>
-                      <p className="font-[var(--font-editorial)] italic text-[clamp(0.875rem,1.2vw,1rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/75">
+                      <p className="font-[var(--font-editorial)] italic text-[clamp(0.875rem,1.2vw,1rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/75 text-pretty">
                         « {item.hook} »
                       </p>
                     </div>

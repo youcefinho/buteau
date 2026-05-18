@@ -63,7 +63,7 @@ export function BrokerLetter() {
 
             {/* Body paragraphes */}
             <div className="space-y-7 max-w-2xl text-[color:var(--color-navy-deep)]/85">
-              <p className="font-[var(--font-editorial)] italic text-[clamp(1.125rem,1.6vw,1.25rem)] leading-[1.7]">
+              <p className="font-[var(--font-editorial)] italic text-[clamp(1.125rem,1.6vw,1.25rem)] leading-[1.7] text-pretty hyphens-auto">
                 {t("letter.bodyP1")}{" "}
                 <span className="not-italic font-semibold text-[color:var(--color-bronze-deep)]">
                   {t("letter.bodyP1Emphasis")}
@@ -71,11 +71,11 @@ export function BrokerLetter() {
                 <Footnote n={1}>{noteEmphasis}</Footnote>
               </p>
 
-              <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.75]">
+              <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.75] text-pretty hyphens-auto">
                 {t("letter.bodyP2")}
               </p>
 
-              <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.75]">
+              <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.75] text-pretty hyphens-auto">
                 {t("letter.bodyP3")}
               </p>
             </div>

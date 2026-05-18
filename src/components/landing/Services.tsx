@@ -78,7 +78,7 @@ export function Services() {
                   <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-3">
                     {numerals[idx]} — {lang === "fr" ? "Service" : "Service"}
                   </p>
-                  <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.04em] leading-[1.1]">
+                  <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.04em] leading-[1.1] text-balance">
                     {s.title}
                   </h3>
                   <div className="w-8 h-px bg-[color:var(--color-bronze)] mt-4 transition-[width] duration-500 group-hover:w-16" />
@@ -86,7 +86,7 @@ export function Services() {
 
                 {/* Description — col 7. AutoGlossary wrap les termes hypothécaires détectés. */}
                 <div className="md:col-span-7">
-                  <p className="text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/80 font-[var(--font-editorial)] italic">
+                  <p className="text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/80 font-[var(--font-editorial)] italic text-pretty hyphens-auto">
                     <AutoGlossary text={s.desc} maxWraps={2} />
                   </p>
                 </div>

@@ -21,7 +21,7 @@ export function InsuranceNote() {
 
         <div className="space-y-8 max-w-3xl mx-auto">
           {/* Intro */}
-          <p className="text-[clamp(1rem,1.4vw,1.125rem)] leading-relaxed text-[color:var(--color-navy-deep)]/85 text-center">
+          <p className="text-[clamp(1rem,1.4vw,1.125rem)] leading-relaxed text-[color:var(--color-navy-deep)]/85 text-center text-pretty">
             {t("institutions.insurance.bodyP1")}
           </p>
 
@@ -37,10 +37,10 @@ export function InsuranceNote() {
                 {t("institutions.insurance.attentionLabel")}
               </p>
             </div>
-            <p className="text-[clamp(0.875rem,1.2vw,1rem)] leading-relaxed text-[color:var(--color-navy-deep)]/85">
+            <p className="text-[clamp(0.875rem,1.2vw,1rem)] leading-relaxed text-[color:var(--color-navy-deep)]/85 text-pretty hyphens-auto">
               {t("institutions.insurance.attentionP1")}
             </p>
-            <p className="text-[clamp(0.875rem,1.2vw,1rem)] leading-relaxed text-[color:var(--color-navy-deep)]/85">
+            <p className="text-[clamp(0.875rem,1.2vw,1rem)] leading-relaxed text-[color:var(--color-navy-deep)]/85 text-pretty hyphens-auto">
               {t("institutions.insurance.attentionP2")}
             </p>
           </div>

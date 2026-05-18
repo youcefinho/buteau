@@ -195,7 +195,7 @@ export function ExitIntent() {
         <div className="h-px w-12 bg-[color:var(--color-bronze)]/60 mb-5" aria-hidden />
 
         {/* Body */}
-        <p className="text-sm text-[color:var(--color-cream)]/75 leading-relaxed mb-7">
+        <p className="text-sm text-[color:var(--color-cream)]/75 leading-relaxed mb-7 text-pretty">
           {tr.body}
         </p>
 

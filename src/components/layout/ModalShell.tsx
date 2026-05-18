@@ -108,7 +108,7 @@ export function ModalShell({
             <p className="eyebrow text-[color:var(--color-taupe-dark)]">{eyebrow}</p>
             <h2
               id={ariaLabelledById}
-              className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.04em]"
+              className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.04em] text-balance"
             >
               {title}
             </h2>

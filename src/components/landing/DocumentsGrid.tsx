@@ -50,7 +50,7 @@ export function DocumentsGrid() {
                   <Icon size={20} strokeWidth={1.5} aria-hidden="true" />
                 </div>
                 <div className="flex-1 min-w-0 pr-6">
-                  <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em] leading-snug mb-2">
+                  <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em] leading-snug mb-2 text-balance">
                     {doc.title}
                   </h3>
                   <p className="text-xs italic text-[color:var(--color-taupe-dark)] mb-4">

@@ -202,7 +202,7 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
       />
 
       {/* Intro éditoriale */}
-      <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.7] text-[color:var(--color-navy-deep)]/85 first-letter:font-[var(--font-editorial)] first-letter:italic first-letter:text-6xl first-letter:text-[color:var(--color-bronze-deep)] first-letter:float-left first-letter:mr-3 first-letter:leading-[0.85] first-letter:mt-1">
+      <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.7] text-[color:var(--color-navy-deep)]/85 first-letter:font-[var(--font-editorial)] first-letter:italic first-letter:text-6xl first-letter:text-[color:var(--color-bronze-deep)] first-letter:float-left first-letter:mr-3 first-letter:leading-[0.85] first-letter:mt-1 text-pretty hyphens-auto">
         {isFr
           ? "Voici les organismes, programmes et calculatrices que nous recommandons à un primo-acchéteur du Québec. Aucun n'est affilié à L'Équipe Buteau — c'est précisément pourquoi vous pouvez vous y fier. On vous tend le carnet, même si vous ne signez pas avec nous."
           : "Here are the organizations, programs and calculators we recommend to a Quebec first-time buyer. None are affiliated with Équipe Buteau — that's precisely why you can rely on them. We hand you the address book, even if you don't sign with us."}
@@ -217,13 +217,13 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
                 {section.numeral}
               </span>
               <div className="flex-1">
-                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.125rem,1.6vw,1.25rem)] uppercase tracking-[0.04em] leading-snug">
+                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.125rem,1.6vw,1.25rem)] uppercase tracking-[0.04em] leading-snug text-balance">
                   {section.title}
                 </h3>
                 <div className="w-10 h-px bg-[color:var(--color-bronze)] mt-3" aria-hidden="true" />
               </div>
             </div>
-            <p className="font-[var(--font-editorial)] italic text-base leading-[1.7] text-[color:var(--color-navy-deep)]/75 mb-6 ml-12">
+            <p className="font-[var(--font-editorial)] italic text-base leading-[1.7] text-[color:var(--color-navy-deep)]/75 mb-6 ml-12 text-pretty hyphens-auto">
               <AutoGlossary text={section.intro} maxWraps={2} />
             </p>
 
@@ -248,7 +248,7 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
                     </span>
                     <ExternalLink size={12} className="shrink-0 opacity-50 group-hover:opacity-100" aria-hidden="true" />
                   </a>
-                  <p className="mt-2 font-[var(--font-editorial)] italic text-sm leading-[1.65] text-[color:var(--color-navy-deep)]/70">
+                  <p className="mt-2 font-[var(--font-editorial)] italic text-sm leading-[1.65] text-[color:var(--color-navy-deep)]/70 text-pretty hyphens-auto">
                     <AutoGlossary text={entry.note} maxWraps={2} />
                   </p>
                 </li>
@@ -260,7 +260,7 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
 
       {/* Disclaimer */}
       <section className="pt-12 mt-10 border-t border-[color:var(--color-taupe)]/40 text-center">
-        <p className="font-[var(--font-editorial)] italic text-[color:var(--color-navy-deep)]/65 text-sm leading-relaxed max-w-xl mx-auto">
+        <p className="font-[var(--font-editorial)] italic text-[color:var(--color-navy-deep)]/65 text-sm leading-relaxed max-w-xl mx-auto text-pretty hyphens-auto">
           {isFr
             ? "Ces ressources sont publiques et gratuites. Aucune commission ni rétro-rémunération. Les informations peuvent évoluer — vérifiez toujours auprès de la source officielle au moment de votre démarche."
             : "These resources are public and free. No commission or kickback. Information may evolve — always verify with the official source at the time of your process."}

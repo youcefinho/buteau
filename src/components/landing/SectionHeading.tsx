@@ -34,11 +34,11 @@ export function SectionHeading({
       )}
     >
       {eyebrow && <p className={cn("eyebrow", eyebrowColor)}>{eyebrow}</p>}
-      <h2 className={cn("display text-[clamp(1.875rem,4vw,3rem)] uppercase tracking-[-0.01em]", titleColor)}>
+      <h2 className={cn("display text-[clamp(1.875rem,4vw,3rem)] uppercase tracking-[-0.01em] text-balance", titleColor)}>
         {title}
       </h2>
       <div className={cn("signature-line", align === "center" ? "mx-auto" : "")} />
-      {subtitle && <p className={cn("text-[clamp(1rem,1.4vw,1.125rem)] leading-relaxed", subtitleColor)}>{subtitle}</p>}
+      {subtitle && <p className={cn("text-[clamp(1rem,1.4vw,1.125rem)] leading-relaxed text-pretty", subtitleColor)}>{subtitle}</p>}
     </div>
   );
 }

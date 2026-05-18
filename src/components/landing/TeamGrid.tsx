@@ -69,12 +69,12 @@ export function TeamGrid() {
                 </div>
 
                 {/* Name display — taille adaptée 4 cards (text-xl/2xl vs 2xl/3xl avant) */}
-                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.02em] leading-tight">
+                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.02em] leading-tight text-balance">
                   {m.name}
                 </h3>
 
                 {/* Bio Open Sans — text-sm pour densité 4 cards */}
-                <p className="text-sm leading-[1.6] text-[color:var(--color-navy-deep)]/80 pt-2">
+                <p className="text-sm leading-[1.6] text-[color:var(--color-navy-deep)]/80 pt-2 text-pretty hyphens-auto">
                   {m.bio}
                 </p>
               </div>

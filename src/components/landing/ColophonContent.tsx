@@ -26,7 +26,7 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
       </p>
 
       {/* Intro éditorial */}
-      <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.7] text-[color:var(--color-navy-deep)]/85 first-letter:font-[var(--font-editorial)] first-letter:italic first-letter:text-6xl first-letter:text-[color:var(--color-bronze-deep)] first-letter:float-left first-letter:mr-3 first-letter:leading-[0.85] first-letter:mt-1">
+      <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.7] text-[color:var(--color-navy-deep)]/85 first-letter:font-[var(--font-editorial)] first-letter:italic first-letter:text-6xl first-letter:text-[color:var(--color-bronze-deep)] first-letter:float-left first-letter:mr-3 first-letter:leading-[0.85] first-letter:mt-1 text-pretty hyphens-auto">
         {isFr
           ? "Comme un magazine d'auteur, ce site assume sa fabrication. Voici les choix typographiques, chromatiques et éditoriaux qui composent l'édition que vous parcourez."
           : "Like an author's magazine, this site owns its making. Here are the typographic, chromatic and editorial choices that compose the edition you are browsing."}
@@ -101,10 +101,10 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
                 {String(idx + 1).padStart(2, "0")}
               </span>
               <div className="space-y-2">
-                <p className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em]">
+                <p className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em] text-balance">
                   {title}
                 </p>
-                <p className="text-sm leading-[1.7] text-[color:var(--color-navy-deep)]/75">
+                <p className="text-sm leading-[1.7] text-[color:var(--color-navy-deep)]/75 text-pretty hyphens-auto">
                   <AutoGlossary text={body} maxWraps={2} />
                 </p>
               </div>
@@ -145,7 +145,7 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
         <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-3">
           {isFr ? "Imprimé à Laval" : "Printed in Laval"}
         </p>
-        <p className="font-[var(--font-editorial)] italic text-[color:var(--color-navy-deep)]/85 text-base leading-relaxed">
+        <p className="font-[var(--font-editorial)] italic text-[color:var(--color-navy-deep)]/85 text-base leading-relaxed text-pretty">
           {isFr
             ? "par L'Équipe Buteau, en cabinet d'attache chez Planiprêt Cabinet en Courtage Hypothécaire."
             : "by Équipe Buteau, with Planiprêt Cabinet en Courtage Hypothécaire as their attached firm."}

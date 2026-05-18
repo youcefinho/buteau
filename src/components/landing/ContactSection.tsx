@@ -47,7 +47,7 @@ export function ContactSection() {
               className="absolute top-0 left-0 w-px h-12 bg-[color:var(--color-bronze)]"
             />
 
-            <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[var(--tracking-eyebrow)] mb-6">
+            <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[var(--tracking-eyebrow)] mb-6 text-balance">
               {t("home.contact.formLabel")}
             </h3>
             <ContactForm source="home_contact_form" />

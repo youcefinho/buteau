@@ -50,7 +50,7 @@ export function CookieBanner() {
               </h2>
               <p
                 id="cookie-banner-body"
-                className="text-xs md:text-sm leading-relaxed text-[color:var(--color-cream)]/85 max-w-3xl"
+                className="text-xs md:text-sm leading-relaxed text-[color:var(--color-cream)]/85 max-w-3xl text-pretty"
               >
                 {t("cookies.body")}{" "}
                 <Link

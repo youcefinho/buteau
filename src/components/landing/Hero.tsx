@@ -138,7 +138,7 @@ export function Hero() {
           {/* Tagline mega — reveal step 3. Fraunces italic variable (axes optical + WONK)
               pour distinctiveness vs Cormorant générique. Signature endroit #1. */}
           <h1
-            className="font-signature text-[color:var(--color-cream)]/95 text-[clamp(1.875rem,4.5vw,3.5rem)] font-light tracking-[-0.01em] leading-[1.05] mt-[clamp(2.5rem,4vw,3rem)] max-w-3xl animate-[buteauFadeUp_800ms_ease-out_700ms_both]"
+            className="font-signature text-[color:var(--color-cream)]/95 text-[clamp(1.875rem,4.5vw,3.5rem)] font-light tracking-[-0.01em] leading-[1.05] mt-[clamp(2.5rem,4vw,3rem)] max-w-3xl text-balance animate-[buteauFadeUp_800ms_ease-out_700ms_both]"
           >
             {t("home.hero.title")}
           </h1>
@@ -164,7 +164,7 @@ export function Hero() {
           </a>
 
           {/* Subtitle — reveal step 5 */}
-          <p className="text-[color:var(--color-cream)]/85 text-[clamp(1rem,1.4vw,1.125rem)] font-light leading-[1.45] max-w-xl mb-[clamp(2.5rem,5vw,3rem)] animate-[buteauFadeUp_700ms_ease-out_1200ms_both]">
+          <p className="text-[color:var(--color-cream)]/85 text-[clamp(1rem,1.4vw,1.125rem)] font-light leading-[1.45] max-w-xl mb-[clamp(2.5rem,5vw,3rem)] text-pretty hyphens-auto animate-[buteauFadeUp_700ms_ease-out_1200ms_both]">
             {t("home.hero.subtitle")}
           </p>
 

@@ -52,7 +52,7 @@ function LexiquePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSet) }}
       />
 
-      <p className="text-base leading-relaxed text-[color:var(--color-navy-deep)]/85">
+      <p className="text-base leading-relaxed text-[color:var(--color-navy-deep)]/85 text-pretty">
         {isFr
           ? "20 termes essentiels pour comprendre votre dossier hypothécaire au Québec. Sources officielles : SCHL, AMF, ARC, Code civil du Québec."
           : "20 essential terms to understand your mortgage file in Quebec. Official sources: CMHC, AMF, CRA, Civil Code of Quebec."}
@@ -62,7 +62,7 @@ function LexiquePage() {
         {glossary.map((g) => (
           <article id={g.slug} key={g.slug} className="scroll-mt-32">
             <div className="flex items-baseline gap-3 flex-wrap">
-              <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-xl uppercase tracking-[0.04em]">
+              <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-xl uppercase tracking-[0.04em] text-balance">
                 {g.term[lang]}
               </h2>
               {g.term.fr_alt && lang === "fr" && (
@@ -72,7 +72,7 @@ function LexiquePage() {
               )}
             </div>
             <div className="w-8 h-0.5 bg-[color:var(--color-bronze)] my-3" />
-            <p className="text-[clamp(0.875rem,1.2vw,1rem)] leading-relaxed text-[color:var(--color-navy-deep)]/85">
+            <p className="text-[clamp(0.875rem,1.2vw,1rem)] leading-relaxed text-[color:var(--color-navy-deep)]/85 text-pretty hyphens-auto">
               {g.definition[lang]}
             </p>
             {g.source && (

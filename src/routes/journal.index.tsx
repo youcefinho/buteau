@@ -65,7 +65,7 @@ function JournalPage() {
       />
 
       {/* Subtitle Cormorant italic */}
-      <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-navy-deep)]/80 leading-[1.65] mb-[clamp(2.5rem,5vw,3rem)]">
+      <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-navy-deep)]/80 leading-[1.65] mb-[clamp(2.5rem,5vw,3rem)] text-pretty">
         {t("journal.subtitle")}
       </p>
 
@@ -103,7 +103,7 @@ function JournalPage() {
                 </div>
 
                 {/* Title display — clickable */}
-                <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] uppercase tracking-[0.02em] leading-[1.15] mb-4 group-hover:text-[color:var(--color-bronze-deep)] transition-colors">
+                <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] uppercase tracking-[0.02em] leading-[1.15] mb-4 text-balance group-hover:text-[color:var(--color-bronze-deep)] transition-colors">
                   <Link
                     to="/journal/$slug"
                     params={{ slug: a.slug }}
@@ -116,12 +116,12 @@ function JournalPage() {
                 <div className="w-10 h-px bg-[color:var(--color-bronze)] mb-5 transition-[width] duration-500 group-hover:w-20" />
 
                 {/* Lead Cormorant italic */}
-                <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/85 mb-4">
+                <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/85 mb-4 text-pretty">
                   {a.lead}
                 </p>
 
                 {/* Excerpt */}
-                <p className="text-[clamp(0.875rem,1.2vw,1rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/75 mb-6">
+                <p className="text-[clamp(0.875rem,1.2vw,1rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/75 mb-6 text-pretty hyphens-auto">
                   {a.excerpt}
                 </p>
 

@@ -123,7 +123,7 @@ export function GlossaryModal() {
               </p>
               <h2
                 id="glossary-title"
-                className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.04em]"
+                className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.04em] text-balance"
               >
                 {lang === "fr" ? "Termes hypothécaires" : "Mortgage terminology"}
               </h2>
@@ -168,7 +168,7 @@ export function GlossaryModal() {
           {filteredGlossary.map((g) => (
             <article id={`term-${g.slug}`} key={g.slug} className="scroll-mt-24">
               <div className="flex items-baseline gap-3 flex-wrap">
-                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-lg uppercase tracking-[0.04em]">
+                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-lg uppercase tracking-[0.04em] text-balance">
                   {g.term[lang]}
                 </h3>
                 {g.term.fr_alt && lang === "fr" && (
@@ -178,7 +178,7 @@ export function GlossaryModal() {
                 )}
               </div>
               <div className="w-8 h-0.5 bg-[color:var(--color-bronze)] my-3" />
-              <p className="text-sm leading-relaxed text-[color:var(--color-navy-deep)]/85">
+              <p className="text-sm leading-relaxed text-[color:var(--color-navy-deep)]/85 text-pretty hyphens-auto">
                 {g.definition[lang]}
               </p>
               {g.source && (

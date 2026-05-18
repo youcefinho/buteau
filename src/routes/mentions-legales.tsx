@@ -30,14 +30,14 @@ function MentionsLegalesPage() {
 
 function H2({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.04em] mt-10 mb-3">
+    <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.04em] mt-10 mb-3 text-balance">
       {children}
     </h2>
   );
 }
 
 function P({ children }: { children: React.ReactNode }) {
-  return <p className="leading-relaxed">{children}</p>;
+  return <p className="leading-relaxed text-pretty hyphens-auto">{children}</p>;
 }
 
 function BodyFr() {

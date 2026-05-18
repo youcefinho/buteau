@@ -61,7 +61,7 @@ export function LendersGrid() {
               <div className="w-8 h-px bg-[color:var(--color-bronze)] mb-4 transition-[width] duration-500 group-hover:w-14" />
 
               {/* Nom */}
-              <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em] mb-3 leading-snug">
+              <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em] mb-3 leading-snug text-balance">
                 {l.name}
               </h3>
 

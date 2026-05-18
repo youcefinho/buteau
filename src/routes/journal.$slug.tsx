@@ -97,7 +97,7 @@ function JournalArticlePage() {
       </div>
 
       {/* Lead + filet */}
-      <p className="font-[var(--font-editorial)] italic text-[clamp(1.125rem,1.6vw,1.25rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/85 mb-5">
+      <p className="font-[var(--font-editorial)] italic text-[clamp(1.125rem,1.6vw,1.25rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/85 mb-5 text-pretty hyphens-auto">
         {article.lead}
       </p>
       <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-10" />

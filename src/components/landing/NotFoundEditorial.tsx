@@ -47,7 +47,7 @@ export function NotFoundEditorial() {
           </p>
 
           {/* Titre principal Fraunces signature */}
-          <h1 className="font-signature text-[color:var(--color-cream)] text-[clamp(1.875rem,4vw,3.25rem)] leading-[1.1] tracking-[-0.01em] mb-6 animate-[buteauFadeUp_800ms_ease-out_300ms_both]">
+          <h1 className="font-signature text-[color:var(--color-cream)] text-[clamp(1.875rem,4vw,3.25rem)] leading-[1.1] tracking-[-0.01em] mb-6 text-balance animate-[buteauFadeUp_800ms_ease-out_300ms_both]">
             {t("notFound.title")}
           </h1>
 
@@ -55,7 +55,7 @@ export function NotFoundEditorial() {
           <div className="w-12 h-px bg-[color:var(--color-bronze)] mx-auto mb-8 animate-[buteauWidth_700ms_ease-out_500ms_both]" />
 
           {/* Subtitle */}
-          <p className="text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-cream)]/80 leading-[1.6] mb-12 max-w-xl mx-auto animate-[buteauFadeUp_700ms_ease-out_600ms_both]">
+          <p className="text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-cream)]/80 leading-[1.6] mb-12 max-w-xl mx-auto text-pretty animate-[buteauFadeUp_700ms_ease-out_600ms_both]">
             {t("notFound.subtitle")}
           </p>
 

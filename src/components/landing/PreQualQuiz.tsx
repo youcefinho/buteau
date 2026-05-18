@@ -108,11 +108,11 @@ export function PreQualQuiz() {
             {t("quiz.eyebrow")}
             <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
           </p>
-          <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,4vw,3rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5">
+          <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,4vw,3rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
             {t("quiz.title")}
           </h2>
           <div className="w-12 h-px bg-[color:var(--color-bronze)] mx-auto mb-6" />
-          <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-navy-deep)]/80 leading-[1.55]">
+          <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-navy-deep)]/80 leading-[1.55] text-pretty">
             {t("quiz.subtitle")}
           </p>
         </div>
@@ -155,7 +155,7 @@ export function PreQualQuiz() {
               {/* Question */}
               <h3
                 key={step}
-                className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] uppercase tracking-[0.02em] leading-[1.2] mb-8 animate-[buteauFadeUp_500ms_ease-out_both]"
+                className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] uppercase tracking-[0.02em] leading-[1.2] mb-8 text-balance animate-[buteauFadeUp_500ms_ease-out_both]"
               >
                 {currentQ?.q}
               </h3>
@@ -199,14 +199,14 @@ export function PreQualQuiz() {
               </p>
 
               {/* Title personnalisé */}
-              <h3 className="font-signature text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,3.5vw,2.75rem)] leading-[1.15] mb-5 tracking-[-0.01em]">
+              <h3 className="font-signature text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,3.5vw,2.75rem)] leading-[1.15] mb-5 tracking-[-0.01em] text-balance">
                 {result.title}
               </h3>
 
               <div className="w-12 h-px bg-[color:var(--color-bronze)] mx-auto md:mx-0 mb-7" />
 
               {/* Body */}
-              <p className="text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/85 mb-10 max-w-2xl">
+              <p className="text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/85 mb-10 max-w-2xl text-pretty hyphens-auto">
                 {result.body}
               </p>
 

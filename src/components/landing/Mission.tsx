@@ -63,7 +63,7 @@ export function Mission() {
         {/* Body éditorial — drop cap + pull quote asymétrique */}
         <div className="max-w-4xl mx-auto mb-20 md:mb-24 space-y-10 md:space-y-12">
           {/* P1 avec drop cap luxury */}
-          <p className="dropcap text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.8] text-[color:var(--color-cream)]/90 font-light">
+          <p className="dropcap text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.8] text-[color:var(--color-cream)]/90 font-light text-pretty hyphens-auto">
             {t("home.mission.bodyP1Lead")}
             <span className="font-bold text-[color:var(--color-bronze)]">
               {t("home.mission.bodyP1Brand")}
@@ -128,13 +128,13 @@ export function Mission() {
                   <Icon size={22} strokeWidth={1.5} aria-hidden="true" />
                 </div>
 
-                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[var(--tracking-eyebrow)] mb-3 leading-snug">
+                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[var(--tracking-eyebrow)] mb-3 leading-snug text-balance">
                   {v.title}
                 </h3>
 
                 <div className="w-8 h-px bg-[color:var(--color-bronze)] mb-4 transition-[width] duration-500 group-hover:w-14" />
 
-                <p className="text-sm leading-[1.55] text-[color:var(--color-navy-deep)]/80">
+                <p className="text-sm leading-[1.55] text-[color:var(--color-navy-deep)]/80 text-pretty hyphens-auto">
                   <AutoGlossary text={v.desc} />
                 </p>
               </article>

@@ -66,7 +66,7 @@ export function Faq() {
                   >
                     {String(idx + 1).padStart(2, "0")}
                   </span>
-                  <span className="flex-1 font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(0.875rem,1.2vw,1rem)] uppercase tracking-[0.04em] leading-snug">
+                  <span className="flex-1 min-w-0 font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(0.875rem,1.2vw,1rem)] uppercase tracking-[0.04em] leading-snug text-balance">
                     {item.q}
                   </span>
                   <ChevronDown
@@ -77,7 +77,7 @@ export function Faq() {
               </Accordion.Header>
               <Accordion.Content className="overflow-hidden data-[state=open]:animate-[accordionDown_280ms_ease-out] data-[state=closed]:animate-[accordionUp_220ms_ease-in]">
                 <div className="px-[clamp(1.5rem,2.5vw,2rem)] pb-6 pt-2 ml-13 md:ml-16 border-t border-[color:var(--color-taupe)]/30">
-                  <p className="text-[clamp(0.875rem,1.2vw,1rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/80 pt-4">
+                  <p className="text-[clamp(0.875rem,1.2vw,1rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/80 pt-4 text-pretty hyphens-auto">
                     <AutoGlossary text={item.a} maxWraps={3} />
                   </p>
                 </div>

@@ -42,11 +42,11 @@ export function GuidesShelf() {
               <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
               {t("home.guidesShelf.eyebrow")}
             </p>
-            <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,3vw,2.25rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5">
+            <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,3vw,2.25rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
               {t("home.guidesShelf.title")}
             </h2>
             <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-6" />
-            <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/80 mb-8">
+            <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/80 mb-8 text-pretty">
               {t("home.guidesShelf.subtitle")}
             </p>
 
@@ -101,12 +101,12 @@ export function GuidesShelf() {
                       </div>
 
                       {/* Title */}
-                      <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.125rem,1.6vw,1.25rem)] uppercase tracking-[0.02em] leading-snug group-hover:text-[color:var(--color-bronze-deep)] transition-colors">
+                      <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.125rem,1.6vw,1.25rem)] uppercase tracking-[0.02em] leading-snug group-hover:text-[color:var(--color-bronze-deep)] transition-colors text-balance">
                         {item.title}
                       </h3>
 
                       {/* Excerpt italic */}
-                      <p className="font-[var(--font-editorial)] italic text-[clamp(0.875rem,1.2vw,1rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/75">
+                      <p className="font-[var(--font-editorial)] italic text-[clamp(0.875rem,1.2vw,1rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/75 text-pretty">
                         <AutoGlossary text={item.excerpt} />
                       </p>
                     </div>

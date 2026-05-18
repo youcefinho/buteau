@@ -36,7 +36,7 @@ export function TeamMethod() {
               </span>
 
               {/* Label uppercase */}
-              <h3 className="relative font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.06em] mb-4">
+              <h3 className="relative font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.06em] mb-4 text-balance">
                 {p.label}
               </h3>
 
@@ -44,7 +44,7 @@ export function TeamMethod() {
               <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-5" />
 
               {/* Description */}
-              <p className="text-[clamp(0.875rem,1.2vw,1rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/80">
+              <p className="text-[clamp(0.875rem,1.2vw,1rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/80 text-pretty hyphens-auto">
                 {p.desc}
               </p>
             </div>

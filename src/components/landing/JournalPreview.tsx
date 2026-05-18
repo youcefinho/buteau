@@ -48,11 +48,11 @@ export function JournalPreview() {
               <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
               {isFr ? "Le journal" : "The journal"}
             </p>
-            <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(1.875rem,3vw,2.25rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5">
+            <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(1.875rem,3vw,2.25rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
               {isFr ? "Articles et analyses du marché." : "Articles and market analyses."}
             </h2>
             <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-6" />
-            <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-cream)]/80 mb-8">
+            <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-cream)]/80 mb-8 text-pretty hyphens-auto">
               {isFr
                 ? "Décryptages, stratégies et explications pratiques sur le marché hypothécaire québécois. Lectures longues, rédigées pour aider à mieux décider avant de signer."
                 : "Insights, strategies and practical explanations on the Quebec mortgage market. Long-form reads, written to help you decide better before signing."}
@@ -104,7 +104,7 @@ export function JournalPreview() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] uppercase tracking-[0.02em] leading-[1.15] mb-4 group-hover:text-[color:var(--color-bronze-deep)] transition-colors">
+                  <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] uppercase tracking-[0.02em] leading-[1.15] mb-4 text-balance group-hover:text-[color:var(--color-bronze-deep)] transition-colors">
                     <Link
                       to="/journal/$slug"
                       params={{ slug: featured.slug }}
@@ -117,12 +117,12 @@ export function JournalPreview() {
                   <div className="w-10 h-px bg-[color:var(--color-bronze)] mb-5 transition-[width] duration-500 group-hover:w-20" />
 
                   {/* Lead */}
-                  <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/85 mb-4">
+                  <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/85 mb-4 text-pretty">
                     {featured.lead}
                   </p>
 
                   {/* Excerpt */}
-                  <p className="text-[clamp(0.875rem,1.2vw,1rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/75 mb-6">
+                  <p className="text-[clamp(0.875rem,1.2vw,1rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/75 mb-6 text-pretty hyphens-auto">
                     {featured.excerpt}
                   </p>
 

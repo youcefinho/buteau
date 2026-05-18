@@ -70,14 +70,14 @@ export function PageHero({
             </p>
           )}
 
-          <h1 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(2rem,4vw,3rem)] uppercase tracking-[0.04em] leading-[1.05] animate-[buteauFadeUp_700ms_ease-out_200ms_both]">
+          <h1 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(2rem,4vw,3rem)] uppercase tracking-[0.04em] leading-[1.05] text-balance animate-[buteauFadeUp_700ms_ease-out_200ms_both]">
             {title}
           </h1>
 
           <div className="w-16 h-px bg-[color:var(--color-bronze)] mx-auto my-[clamp(2rem,3vw,2.5rem)] animate-[buteauWidth_700ms_ease-out_400ms_both]" />
 
           {subtitle && (
-            <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.5] text-[color:var(--color-cream)]/85 max-w-2xl mx-auto animate-[buteauFadeUp_700ms_ease-out_500ms_both]">
+            <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.5] text-[color:var(--color-cream)]/85 max-w-2xl mx-auto text-pretty animate-[buteauFadeUp_700ms_ease-out_500ms_both]">
               {subtitle}
             </p>
           )}

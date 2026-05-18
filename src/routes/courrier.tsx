@@ -81,7 +81,7 @@ function CourrierPage() {
       />
 
       {/* Subtitle éditorial */}
-      <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-navy-deep)]/80 leading-[1.65] mb-[clamp(2.5rem,5vw,3rem)]">
+      <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-navy-deep)]/80 leading-[1.65] mb-[clamp(2.5rem,5vw,3rem)] text-pretty">
         {ta<string>(translations[lang], "courrier.subtitle")}
       </p>
 
@@ -133,7 +133,7 @@ function CourrierPage() {
                     />
                   ))}
                 </div>
-                <p className="font-[var(--font-editorial)] italic text-sm leading-[1.6] text-[color:var(--color-navy-deep)]/90">
+                <p className="font-[var(--font-editorial)] italic text-sm leading-[1.6] text-[color:var(--color-navy-deep)]/90 text-pretty">
                   <span className="font-[var(--font-editorial)] not-italic font-bold text-[color:var(--color-bronze)] text-xl mr-0.5 align-baseline">
                     «
                   </span>

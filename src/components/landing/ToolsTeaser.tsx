@@ -67,10 +67,10 @@ export function ToolsTeaser() {
                   <Icon size={36} strokeWidth={1.5} aria-hidden="true" />
                 </div>
                 <div className="w-8 h-px bg-[color:var(--color-bronze)] mx-auto mb-4 transition-[width] duration-500 group-hover:w-14" />
-                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(1rem,1.4vw,1.125rem)] uppercase tracking-[var(--tracking-eyebrow)] mb-2 leading-snug">
+                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(1rem,1.4vw,1.125rem)] uppercase tracking-[var(--tracking-eyebrow)] mb-2 leading-snug text-balance">
                   {item.title}
                 </h3>
-                <p className="text-xs text-[color:var(--color-cream)]/70 leading-[1.6]">
+                <p className="text-xs text-[color:var(--color-cream)]/70 leading-[1.6] text-pretty">
                   {item.desc}
                 </p>
               </Link>

@@ -77,7 +77,7 @@ export function TeamTeaser() {
                 />
               </div>
               <div className="p-[clamp(1.25rem,2vw,1.5rem)] text-center">
-                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1rem,1.4vw,1.125rem)] uppercase tracking-[var(--tracking-eyebrow)] mb-3">
+                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1rem,1.4vw,1.125rem)] uppercase tracking-[var(--tracking-eyebrow)] mb-3 text-balance">
                   {m.name}
                 </h3>
                 <div className="flex items-center justify-center gap-2.5">

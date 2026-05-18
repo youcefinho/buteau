@@ -57,7 +57,7 @@ export function GuidesGrid() {
               </div>
 
               {/* Titre */}
-              <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(1rem,1.4vw,1.125rem)] uppercase tracking-[0.04em] mb-3 leading-snug pr-10">
+              <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(1rem,1.4vw,1.125rem)] uppercase tracking-[0.04em] mb-3 leading-snug pr-10 text-balance">
                 {g.title}
               </h3>
 
@@ -65,7 +65,7 @@ export function GuidesGrid() {
               <div className="w-8 h-px bg-[color:var(--color-bronze)] mb-4 transition-[width] duration-500 group-hover:w-14" />
 
               {/* Description */}
-              <p className="text-sm leading-[1.65] text-[color:var(--color-cream)]/75 mb-6">
+              <p className="text-sm leading-[1.65] text-[color:var(--color-cream)]/75 mb-6 text-pretty hyphens-auto">
                 {g.desc}
               </p>
 

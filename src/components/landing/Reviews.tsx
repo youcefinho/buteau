@@ -121,7 +121,7 @@ export function Reviews() {
                   ))}
                 </div>
 
-                <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.3vw,1.05rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/90">
+                <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.3vw,1.05rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/90 text-pretty">
                   <span className="font-[var(--font-editorial)] not-italic font-bold text-[color:var(--color-bronze)] text-2xl mr-0.5 leading-none align-baseline">
                     «
                   </span>

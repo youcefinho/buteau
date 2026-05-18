@@ -209,11 +209,11 @@ export function TerritoryMap() {
                 <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
                 {t("territory.eyebrow")}
               </p>
-              <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,3vw,2.25rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5">
+              <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,3vw,2.25rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
                 {t("territory.title")}
               </h2>
               <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-6" />
-              <p className="text-base leading-[1.65] text-[color:var(--color-navy-deep)]/80">
+              <p className="text-base leading-[1.65] text-[color:var(--color-navy-deep)]/80 text-pretty">
                 {t("territory.subtitle")}
               </p>
             </div>
