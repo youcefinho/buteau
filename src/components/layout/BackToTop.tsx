@@ -7,7 +7,8 @@ import { useLanguage } from "@/lib/LanguageContext";
  * Position gauche pour ne pas chevaucher le WhatsApp FAB a droite.
  * Smooth-scroll vers le haut, respecte prefers-reduced-motion.
  * Theme bronze Buteau coherent avec navbar + footer.
- * Cache sur mobile (la MobileStickyBar / CTAs occupent deja l'espace bas).
+ * Cache jusqu'a lg (1024px) pour eviter chevauchement avec MobileStickyCta
+ * qui occupe le bottom mobile + tablet jusqu'a lg:hidden.
  */
 export function BackToTop() {
   const { lang } = useLanguage();
@@ -42,7 +43,7 @@ export function BackToTop() {
       type="button"
       onClick={scrollToTop}
       aria-label={label}
-      className={`group hidden md:flex fixed bottom-6 left-6 z-40 w-12 h-12 items-center justify-center rounded-full bg-[color:var(--color-cream)]/95 backdrop-blur-xl border border-[color:var(--color-bronze)]/35 text-[color:var(--color-bronze-deep)] hover:border-[color:var(--color-bronze)]/70 hover:bg-[color:var(--color-bronze)]/10 hover:-translate-y-0.5 active:scale-95 transition-all duration-300 shadow-[0_8px_32px_-12px_rgba(16,34,61,0.18)] ${
+      className={`group hidden lg:flex fixed bottom-6 left-6 z-40 w-12 h-12 items-center justify-center rounded-full bg-[color:var(--color-cream)]/95 backdrop-blur-xl border border-[color:var(--color-bronze)]/35 text-[color:var(--color-bronze-deep)] hover:border-[color:var(--color-bronze)]/70 hover:bg-[color:var(--color-bronze)]/10 hover:-translate-y-0.5 active:scale-95 transition-all duration-300 shadow-[0_8px_32px_-12px_rgba(16,34,61,0.18)] ${
         visible ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none"
       }`}
     >
