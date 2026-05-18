@@ -30,7 +30,7 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`${t("common.whatsappTooltip")} ${config.name} ${config.phone.display}`}
-      className="group fixed bottom-24 lg:bottom-6 right-4 lg:right-6 z-50 inline-flex items-center p-1.5 lg:gap-3 lg:pl-3 lg:pr-4 lg:py-2.5 rounded-full bg-[color:var(--color-navy-deep)] border border-[color:var(--color-bronze)]/35 hover:border-[color:var(--color-bronze)]/70 hover:bg-[color:var(--color-bronze)]/10 hover:-translate-y-0.5 transition-all duration-300 shadow-[0_8px_24px_-4px_rgba(0,0,0,0.4)]"
+      className="group fixed bottom-24 lg:bottom-6 right-4 lg:right-6 z-50 inline-flex items-center gap-3 pl-3 pr-4 py-2.5 rounded-full bg-[color:var(--color-navy-deep)] border border-[color:var(--color-bronze)]/35 hover:border-[color:var(--color-bronze)]/70 hover:bg-[color:var(--color-bronze)]/10 hover:-translate-y-0.5 transition-all duration-300 shadow-[0_8px_24px_-4px_rgba(0,0,0,0.4)]"
     >
       {/* Tooltip au hover desktop — apparait au-dessus du pill */}
       <span className="pointer-events-none hidden lg:block absolute bottom-full mb-3 right-0 px-3 py-1.5 rounded-md bg-[color:var(--color-navy-deep)] border border-[color:var(--color-bronze)]/35 text-[color:var(--color-cream)] text-xs font-medium whitespace-nowrap opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-lg">
@@ -57,8 +57,8 @@ export function WhatsAppButton() {
         </svg>
       </span>
 
-      {/* Nom + numero stack vertical — lg+ uniquement (mobile = cercle compact) */}
-      <span className="relative hidden lg:flex flex-col items-start leading-tight whitespace-nowrap">
+      {/* Nom + numero stack vertical — pill complet sur tous viewports */}
+      <span className="relative flex flex-col items-start leading-tight whitespace-nowrap">
         <span className="text-sm text-[color:var(--color-cream)] font-bold">
           {config.name}
         </span>
