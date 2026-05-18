@@ -84,10 +84,10 @@ export function Hero() {
         </p>
       </div>
 
-      <Container size="xl" className="relative py-32 md:py-40">
+      <Container size="xl" className="relative py-[clamp(5rem,12vw,10rem)]">
         <div className="text-center max-w-5xl mx-auto flex flex-col items-center">
           {/* Eyebrow (Planiprêt — l'arrière-plan métier) — reveal step 1 */}
-          <p className="eyebrow text-[color:var(--color-taupe)] mb-6 md:mb-8 opacity-90 animate-[buteauFadeUp_800ms_ease-out_100ms_both]">
+          <p className="eyebrow text-[color:var(--color-taupe)] mb-[clamp(1.5rem,3vw,2rem)] opacity-90 animate-[buteauFadeUp_800ms_ease-out_100ms_both]">
             <span className="inline-block w-6 h-px align-middle bg-[color:var(--color-taupe)] mr-3" />
             {t("home.hero.eyebrow")}
             <span className="inline-block w-6 h-px align-middle bg-[color:var(--color-taupe)] ml-3" />
@@ -97,7 +97,7 @@ export function Hero() {
               Chaque lettre B/U/T/E/A/U révèle un mot signature au hover (Buteau / Unique /
               Transparence / Expert / Accessible / Utile). */}
           <div className="relative inline-block group/brand">
-            <p className="font-[var(--font-display)] text-[color:var(--color-cream)] text-6xl md:text-8xl lg:text-[8.5rem] font-extrabold tracking-[0.22em] leading-[0.95] pl-[0.22em] flex">
+            <p className="font-[var(--font-display)] text-[color:var(--color-cream)] text-[clamp(3.5rem,9vw,8.5rem)] font-extrabold tracking-[0.22em] leading-[0.95] pl-[0.22em] flex">
               {config.brandName.split("").map((letter, idx) => {
                 const word = letterWords[idx] ?? letter;
                 return (
@@ -123,7 +123,7 @@ export function Hero() {
               })}
             </p>
             <span
-              className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-12 md:w-20 h-px bg-[color:var(--color-bronze)] animate-[buteauWidth_700ms_ease-out_1100ms_both]"
+              className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-[clamp(3rem,5vw,5rem)] h-px bg-[color:var(--color-bronze)] animate-[buteauWidth_700ms_ease-out_1100ms_both]"
               aria-hidden="true"
             />
             {/* Hint éducatif — apparaît subtle, fade out au 1er hover sur le brand */}
@@ -138,13 +138,13 @@ export function Hero() {
           {/* Tagline mega — reveal step 3. Fraunces italic variable (axes optical + WONK)
               pour distinctiveness vs Cormorant générique. Signature endroit #1. */}
           <h1
-            className="font-signature text-[color:var(--color-cream)]/95 text-3xl md:text-5xl lg:text-[3.5rem] font-light tracking-[-0.01em] leading-[1.05] mt-10 md:mt-12 max-w-3xl animate-[buteauFadeUp_800ms_ease-out_700ms_both]"
+            className="font-signature text-[color:var(--color-cream)]/95 text-[clamp(1.875rem,4.5vw,3.5rem)] font-light tracking-[-0.01em] leading-[1.05] mt-[clamp(2.5rem,4vw,3rem)] max-w-3xl animate-[buteauFadeUp_800ms_ease-out_700ms_both]"
           >
             {t("home.hero.title")}
           </h1>
 
           {/* Decorative line taupe — fine, signature — reveal step 4 */}
-          <div className="w-24 md:w-32 h-px bg-[color:var(--color-taupe)] my-10 md:my-14 animate-[buteauWidth_700ms_ease-out_1100ms_both]" />
+          <div className="w-[clamp(6rem,9vw,8rem)] h-px bg-[color:var(--color-taupe)] my-[clamp(2.5rem,5vw,3.5rem)] animate-[buteauWidth_700ms_ease-out_1100ms_both]" />
 
           {/* Trust chip Google reviews — replace dans Hero 2026-05-17 (retrait
               navbar pour aerer). Stylise bronze/cream pour coherence theme,
@@ -154,7 +154,7 @@ export function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={t("home.reviews.googleBadgeLabel")}
-            className="group/chip inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[color:var(--color-bronze)]/35 bg-[color:var(--color-bronze)]/[0.06] hover:border-[color:var(--color-bronze)]/65 hover:bg-[color:var(--color-bronze)]/10 transition-all duration-300 text-xs md:text-sm mb-10 animate-[buteauFadeUp_700ms_ease-out_1000ms_both]"
+            className="group/chip inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[color:var(--color-bronze)]/35 bg-[color:var(--color-bronze)]/[0.06] hover:border-[color:var(--color-bronze)]/65 hover:bg-[color:var(--color-bronze)]/10 transition-all duration-300 text-[clamp(0.75rem,1.1vw,0.875rem)] mb-[clamp(2rem,4vw,2.5rem)] animate-[buteauFadeUp_700ms_ease-out_1000ms_both]"
           >
             <Star className="w-3.5 h-3.5 fill-[color:var(--color-bronze)] text-[color:var(--color-bronze)] shrink-0" strokeWidth={1.5} aria-hidden />
             <span className="font-[var(--font-display)] font-medium tracking-[0.06em] uppercase text-[color:var(--color-cream)]/90 whitespace-nowrap">
@@ -164,7 +164,7 @@ export function Hero() {
           </a>
 
           {/* Subtitle — reveal step 5 */}
-          <p className="text-[color:var(--color-cream)]/85 text-base md:text-lg font-light leading-[1.45] max-w-xl mb-12 animate-[buteauFadeUp_700ms_ease-out_1200ms_both]">
+          <p className="text-[color:var(--color-cream)]/85 text-[clamp(1rem,1.4vw,1.125rem)] font-light leading-[1.45] max-w-xl mb-[clamp(2.5rem,5vw,3rem)] animate-[buteauFadeUp_700ms_ease-out_1200ms_both]">
             {t("home.hero.subtitle")}
           </p>
 

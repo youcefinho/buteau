@@ -23,7 +23,7 @@ export function Partners() {
   const doubled = [...lenders, ...lenders]; // duplicate pour scroll infini
 
   return (
-    <section id="partenaires" className="relative py-24 surface-cream overflow-hidden">
+    <section id="partenaires" className="relative py-[clamp(4rem,8vw,6rem)] surface-cream overflow-hidden">
       {/* Atmospheric continuity — embers per-section signature */}
 
       <Container size="xl">
@@ -35,7 +35,7 @@ export function Partners() {
         />
 
         {/* Logo carousel — animation infinite via CSS */}
-        <div className="relative overflow-hidden mb-12 mask-fade-x">
+        <div className="relative overflow-hidden mb-[clamp(2.5rem,5vw,3rem)] mask-fade-x">
           <div className="flex w-fit animate-[scroll-x_30s_linear_infinite] hover:[animation-play-state:paused]">
             {doubled.map((p, idx) => (
               <div
@@ -48,7 +48,7 @@ export function Partners() {
                   loading="lazy"
                   width="160"
                   height="80"
-                  className="h-16 md:h-20 max-w-[160px] w-auto object-contain transition-all hover:scale-110 grayscale-0 hover:grayscale"
+                  className="h-[clamp(3.5rem,6vw,5rem)] max-w-[160px] w-auto object-contain transition-all hover:scale-110 grayscale-0 hover:grayscale"
                 />
               </div>
             ))}

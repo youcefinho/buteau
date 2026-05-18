@@ -19,7 +19,7 @@ export function TeamGrid() {
   const marginalia = ta<string[]>(translations[lang], "team.marginalia");
 
   return (
-    <section className="py-24 md:py-28 surface-cream relative overflow-hidden">
+    <section className="py-[clamp(4rem,8vw,7rem)] surface-cream relative overflow-hidden">
       {/* Filigrane "&" decoratif arriere-plan editorial */}
       <span
         aria-hidden="true"
@@ -29,14 +29,14 @@ export function TeamGrid() {
       </span>
 
       <Container size="xl" className="relative">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[clamp(2rem,3vw,2.5rem)]">
           {members.map((m, idx) => (
             <article
               key={m.name}
               className="group relative flex flex-col"
             >
               {/* Photo with editorial frame — h-80 lg:h-[24rem] pour 4 cards balance */}
-              <div className="relative h-80 lg:h-[24rem] overflow-hidden bg-gradient-to-br from-[color:var(--color-navy)] to-[color:var(--color-taupe)]">
+              <div className="relative h-[clamp(20rem,30vw,24rem)] overflow-hidden bg-gradient-to-br from-[color:var(--color-navy)] to-[color:var(--color-taupe)]">
                 <img
                   src={m.photo}
                   alt={m.name}
@@ -51,7 +51,7 @@ export function TeamGrid() {
               </div>
 
               {/* Info — design éditorial avec hierarchy magazine */}
-              <div className="pt-7 md:pt-8 space-y-4 relative">
+              <div className="pt-[clamp(1.75rem,2.5vw,2rem)] space-y-4 relative">
                 {/* Marginalia — signature italic discrete a droite, signature manuscrite */}
                 <span
                   aria-hidden="true"
@@ -69,7 +69,7 @@ export function TeamGrid() {
                 </div>
 
                 {/* Name display — taille adaptée 4 cards (text-xl/2xl vs 2xl/3xl avant) */}
-                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-xl lg:text-2xl uppercase tracking-[0.02em] leading-tight">
+                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.02em] leading-tight">
                   {m.name}
                 </h3>
 
