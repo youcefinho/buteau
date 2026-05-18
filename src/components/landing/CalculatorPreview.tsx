@@ -213,7 +213,7 @@ export function CalculatorPreview() {
 
         {/* Footer méthodologie + lexique — pédagogie hypothécaire */}
         <div className="mt-12 pt-8 border-t border-[color:var(--color-taupe)]/30 text-center max-w-2xl mx-auto">
-          <p className="font-[var(--font-editorial)] italic text-[clamp(0.875rem,1.2vw,1rem)] text-[color:var(--color-navy-deep)]/70 leading-relaxed mb-4">
+          <p className="font-[var(--font-editorial)] italic text-[clamp(0.875rem,1.2vw,1rem)] text-[color:var(--color-navy-deep)]/70 leading-relaxed mb-4 text-pretty">
             {lang === "fr"
               ? "Composé semi-annuel canadien — la formule a ses termes."
               : "Canadian semi-annual compounding — the formula has its terms."}

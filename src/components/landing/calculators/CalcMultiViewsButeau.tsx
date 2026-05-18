@@ -683,7 +683,7 @@ function TabCapacite({ mode }: { mode: CalcMode }) {
         />
 
         <div className="pt-2">
-          <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] leading-relaxed">
+          <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] leading-relaxed text-pretty hyphens-auto">
             {isFr
               ? "Estimation basée sur les ratios ABD/ATD courants (35 % / 42 %), amortissement 25 ans, charges habitation 350 $/mois (taxes + chauffage). Hors stress-test B-20 — un courtier valide votre dossier réel."
               : "Estimate based on standard GDS/TDS ratios (35% / 42%), 25-year amortization, $350/mo housing costs (taxes + heating). Excludes B-20 stress test — a broker validates your real file."}
@@ -817,7 +817,7 @@ function TabPaiement({ mode }: { mode: CalcMode }) {
         />
 
         <div className="pt-2">
-          <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] leading-relaxed">
+          <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] leading-relaxed text-pretty hyphens-auto">
             {isFr
               ? "Calcul selon la formule canadienne semi-annuelle composée (LBC art. 6). Indicatif uniquement — votre prêteur établit le paiement réel selon le taux confirmé."
               : "Calculation per Canadian semi-annual compounded formula (IRA s. 6). Indicative only — your lender sets the actual payment based on confirmed rate."}
@@ -991,7 +991,7 @@ function TabComparaison({ mode }: { mode: CalcMode }) {
           unit="%"
         />
 
-        <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] leading-relaxed pt-2">
+        <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] leading-relaxed pt-2 text-pretty hyphens-auto">
           {isFr
             ? "Scénario simplifié : 24 mois au taux variable initial, puis 36 mois au taux moyen anticipé. La réalité dépend des décisions de la Banque du Canada — pas une prédiction."
             : "Simplified scenario: 24 months at initial variable rate, then 36 months at anticipated average. Reality depends on Bank of Canada decisions — not a prediction."}
@@ -1220,7 +1220,7 @@ function TabMiseDeFonds({ mode }: { mode: CalcMode }) {
           </div>
         </div>
 
-        <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] leading-relaxed pt-2">
+        <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] leading-relaxed pt-2 text-pretty hyphens-auto">
           {isFr
             ? "Frais estimés : taxe de bienvenue (barème Québec), notaire ~1 500 $, inspection 600 $, évaluation 400 $, ajustements taxes 800 $. SCHL applicable < 20 % MDF en résidence principale uniquement."
             : "Estimated fees: welcome tax (Quebec scale), notary ~$1,500, inspection $600, appraisal $400, tax adjustments $800. CMHC insurance only applies < 20% DP on primary residence."}

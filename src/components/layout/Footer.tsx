@@ -117,13 +117,13 @@ export function Footer() {
             <p className="eyebrow text-[color:var(--color-taupe)]">
               {t("footer.colophon")}
             </p>
-            <p className="font-[var(--font-editorial)] italic text-sm leading-[1.55] text-[color:var(--color-cream)]/75">
+            <p className="font-[var(--font-editorial)] italic text-sm leading-[1.55] text-[color:var(--color-cream)]/75 text-pretty">
               {t("footer.colophonComposed")}
             </p>
-            <p className="font-[var(--font-editorial)] italic text-sm leading-[1.55] text-[color:var(--color-cream)]/75">
+            <p className="font-[var(--font-editorial)] italic text-sm leading-[1.55] text-[color:var(--color-cream)]/75 text-pretty">
               {t("footer.colophonPrinted")}
             </p>
-            <p className="font-[var(--font-editorial)] italic text-sm leading-[1.55] text-[color:var(--color-cream)]/75">
+            <p className="font-[var(--font-editorial)] italic text-sm leading-[1.55] text-[color:var(--color-cream)]/75 text-pretty">
               {t("footer.colophonEdition")}
             </p>
 
@@ -147,7 +147,7 @@ export function Footer() {
 
         {/* === Disclaimer AMF + bottom bar === */}
         <div className="pt-6 space-y-4">
-          <p className="text-xs leading-[1.6] text-[color:var(--color-cream)]/65 max-w-4xl italic">
+          <p className="text-xs leading-[1.6] text-[color:var(--color-cream)]/65 max-w-4xl italic text-pretty hyphens-auto">
             {config.amf.disclaimer[lang]}
           </p>
 

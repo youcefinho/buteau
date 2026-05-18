@@ -298,7 +298,7 @@ export function HypothequeCalculator() {
                 </p>
               </div>
 
-              <p className="text-[10px] leading-relaxed text-[color:var(--color-taupe-dark)] pt-2 italic border-t border-[color:var(--color-taupe)]/30 mt-4">
+              <p className="text-[10px] leading-relaxed text-[color:var(--color-taupe-dark)] pt-2 italic border-t border-[color:var(--color-taupe)]/30 mt-4 text-pretty hyphens-auto">
                 {lang === "fr"
                   ? "Estimation à taux constant. La réalité varie selon les renouvellements, les paiements anticipés et les conditions du prêteur."
                   : "Estimate at constant rate. Actual values vary with renewals, prepayments, and lender conditions."}
@@ -319,7 +319,7 @@ export function HypothequeCalculator() {
         )}
 
         {/* Disclaimer AMF en bas */}
-        <p className="text-xs leading-relaxed text-[color:var(--color-taupe-dark)] max-w-3xl mx-auto text-center mt-8 italic">
+        <p className="text-xs leading-relaxed text-[color:var(--color-taupe-dark)] max-w-3xl mx-auto text-center mt-8 italic text-pretty hyphens-auto">
           {t("tools.calc.disclaimer")}
         </p>
       </Container>

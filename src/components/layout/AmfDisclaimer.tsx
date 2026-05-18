@@ -55,7 +55,7 @@ export function AmfDisclaimer({ variant = "inline", className }: AmfDisclaimerPr
             {certNumber && <span className="ml-2 font-semibold">№ {certNumber}</span>}
           </p>
         </div>
-        <p className="text-xs leading-relaxed text-[color:var(--color-navy-deep)]/85">
+        <p className="text-xs leading-relaxed text-[color:var(--color-navy-deep)]/85 text-pretty hyphens-auto">
           {disclaimerText}
         </p>
       </aside>
