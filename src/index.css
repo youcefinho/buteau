@@ -106,6 +106,8 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  /* Anchor scroll cale la section sous la navbar fixe (5rem = h-20 navbar) */
+  scroll-padding-top: 5rem;
 }
 
 body {
