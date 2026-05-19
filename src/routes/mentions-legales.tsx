@@ -76,10 +76,6 @@ function BodyFr() {
 
       <H2>Inscription auprès de l'Autorité des marchés financiers (AMF)</H2>
       <P>
-        Andrew Buteau exerce sous le permis de Planiprêt Cabinet en Courtage Hypothécaire,
-        cabinet inscrit auprès de l'Autorité des marchés financiers (AMF).
-      </P>
-      <P>
         <strong>Numéro de certificat AMF :</strong>{" "}
         {config.amf.certificateNumberAndrew || (
           <em className="text-[color:var(--color-taupe-dark)]">(à compléter — voir AMF.qc.ca)</em>
@@ -107,7 +103,7 @@ function BodyFr() {
         Les informations diffusées sur ce site le sont à titre informatif uniquement.
         Elles ne constituent ni une offre de financement ni un engagement contractuel.
         Toute demande hypothécaire est sujette à approbation par le prêteur, selon les
-        critères en vigueur au moment de la demande.
+        critères en vigueur à ce moment.
       </P>
       <P>
         Le calculateur hypothécaire fournit une estimation basée sur la formule
@@ -164,10 +160,6 @@ function BodyEn() {
 
       <H2>AMF registration</H2>
       <P>
-        Andrew Buteau operates under the licence of Planiprêt Cabinet en Courtage Hypothécaire,
-        a firm registered with the Autorité des marchés financiers (AMF).
-      </P>
-      <P>
         <strong>AMF certificate number:</strong>{" "}
         {config.amf.certificateNumberAndrew || (
           <em className="text-[color:var(--color-taupe-dark)]">(to be filled — see lautorite.qc.ca)</em>
@@ -193,8 +185,7 @@ function BodyEn() {
       <P>
         Information published on this site is for informational purposes only. It does
         not constitute a financing offer or a contractual commitment. Every mortgage
-        request is subject to lender approval based on criteria in effect at the time
-        of the request.
+        request is subject to lender approval based on criteria in effect at that time.
       </P>
       <P>
         The mortgage calculator provides an estimate based on the Canadian semi-annual
