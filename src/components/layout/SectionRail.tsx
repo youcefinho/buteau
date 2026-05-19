@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { ChevronLeft } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 
 /**
@@ -206,11 +207,32 @@ export function SectionRail() {
             : "opacity-0 -translate-x-3 invisible bg-[color:var(--color-navy-deep)]"
         }`}
       >
-        {/* Petite flèche pointant vers la rail à gauche — pulse pour attirer l'oeil */}
+        {/* Chevrons cascade pointant vers la rail (right -> left wave).
+            Le chevron le plus proche du tooltip s'allume en premier (delay 0),
+            puis cascade vers la gauche (rail). Stagger 180ms entre chaque. */}
         <span
           aria-hidden="true"
-          className="absolute right-full top-1/2 border-y-[6px] border-r-[8px] border-y-transparent border-r-[color:var(--color-navy-deep)] motion-safe:animate-[sectionRailHintArrowPulse_1.6s_ease-in-out_infinite]"
-        />
+          className="absolute right-full top-1/2 -translate-y-1/2 mr-1.5 inline-flex items-center gap-0"
+        >
+          <ChevronLeft
+            size={16}
+            strokeWidth={2.5}
+            style={{ animationDelay: "360ms" }}
+            className="text-[color:var(--color-taupe)] opacity-25 motion-safe:animate-[sectionRailChevronWave_1.4s_ease-in-out_infinite]"
+          />
+          <ChevronLeft
+            size={16}
+            strokeWidth={2.5}
+            style={{ animationDelay: "180ms" }}
+            className="-ml-2 text-[color:var(--color-taupe)] opacity-25 motion-safe:animate-[sectionRailChevronWave_1.4s_ease-in-out_infinite]"
+          />
+          <ChevronLeft
+            size={16}
+            strokeWidth={2.5}
+            style={{ animationDelay: "0ms" }}
+            className="-ml-2 text-[color:var(--color-taupe)] opacity-25 motion-safe:animate-[sectionRailChevronWave_1.4s_ease-in-out_infinite]"
+          />
+        </span>
         {lang === "fr"
           ? "Cliquez pour naviguer entre les sections"
           : "Click to jump between sections"}

@@ -1220,6 +1220,23 @@ body {
   0%   { background-position: 200% 0; }
   100% { background-position: -100% 0; }
 }
+/* Chevrons wave — 3 chevrons s'allument en cascade direction
+   tooltip -> rail (right-to-left). Stagger via animation-delay inline.
+   Cycle 1.4s ease-in-out infinite, opacity 0.25 -> 1, color taupe -> bronze,
+   slide -2px x. Effet "regarde par la <-" qui pulse en continu. */
+@keyframes sectionRailChevronWave {
+  0%, 60%, 100% {
+    opacity: 0.25;
+    transform: translateX(0);
+    color: var(--color-taupe);
+  }
+  30% {
+    opacity: 1;
+    transform: translateX(-3px);
+    color: var(--color-bronze);
+    filter: drop-shadow(-2px 0 4px oklch(0.704 0.077 56 / 0.45));
+  }
+}
 .border-beam {
   position: relative;
 }
