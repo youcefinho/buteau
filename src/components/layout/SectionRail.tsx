@@ -183,10 +183,10 @@ export function SectionRail() {
             : "opacity-0 -translate-x-3 invisible"
         }`}
       >
-        {/* Petite flèche pointant vers la rail à gauche */}
+        {/* Petite flèche pointant vers la rail à gauche — pulse pour attirer l'oeil */}
         <span
           aria-hidden="true"
-          className="absolute right-full top-1/2 -translate-y-1/2 border-y-[6px] border-r-[8px] border-y-transparent border-r-[color:var(--color-navy-deep)]"
+          className="absolute right-full top-1/2 border-y-[6px] border-r-[8px] border-y-transparent border-r-[color:var(--color-navy-deep)] motion-safe:animate-[sectionRailHintArrowPulse_1.6s_ease-in-out_infinite]"
         />
         {lang === "fr"
           ? "Cliquez pour naviguer entre les sections"

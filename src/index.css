@@ -1183,8 +1183,18 @@ body {
   }
 }
 @keyframes sectionRailHintFloat {
-  0%, 100% { transform: translate(0, -50%); }
-  50%      { transform: translate(0, calc(-50% - 2px)); }
+  0%, 100% { transform: translate(0, -50%) scale(1); }
+  50%      { transform: translate(0, calc(-50% - 5px)) scale(1.015); }
+}
+@keyframes sectionRailHintArrowPulse {
+  0%, 100% {
+    transform: translateY(-50%) scale(1);
+    filter: drop-shadow(0 0 0 oklch(0.704 0.077 56 / 0));
+  }
+  50% {
+    transform: translateY(-50%) scale(1.25);
+    filter: drop-shadow(-2px 0 6px oklch(0.704 0.077 56 / 0.55));
+  }
 }
 .border-beam {
   position: relative;
