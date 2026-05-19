@@ -21,7 +21,7 @@ export function GuidesGrid() {
       className="relative py-24 surface-navy overflow-hidden border-t border-[color:var(--color-taupe)]/30 grain-overlay"
     >
       <div
-        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        className="absolute inset-0 bg-cover bg-center md:bg-fixed"
         style={{
           backgroundImage:
             "linear-gradient(rgba(16, 34, 61, 0.92), rgba(16, 34, 61, 0.92)), url('https://i.imgur.com/Bw7Zyf4.jpg')",

@@ -29,7 +29,7 @@ export function Faq() {
       {/* Atmospheric continuity — embers per-section signature */}
 
       <div
-        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        className="absolute inset-0 bg-cover bg-center md:bg-fixed"
         style={{
           backgroundImage:
             "linear-gradient(rgba(16, 34, 61, 0.92), rgba(16, 34, 61, 0.92)), url('https://i.imgur.com/Bw7Zyf4.jpg')",

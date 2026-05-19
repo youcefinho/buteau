@@ -46,7 +46,7 @@ export function TeamTeaser() {
 
       {/* Background image overlay */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        className="absolute inset-0 bg-cover bg-center md:bg-fixed"
         style={{
           backgroundImage:
             "linear-gradient(rgba(16, 34, 61, 0.86), rgba(16, 34, 61, 0.86)), url('https://i.imgur.com/YsueQT3.jpg')",

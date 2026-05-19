@@ -144,7 +144,7 @@ export function Footer() {
 
         {/* === Disclaimer AMF + bottom bar === */}
         <div className="pt-6 space-y-4">
-          <p className="text-xs leading-[1.6] text-[color:var(--color-cream)]/65 max-w-4xl italic text-pretty hyphens-auto">
+          <p className="text-xs leading-[1.6] text-[color:var(--color-cream)]/85 max-w-4xl italic text-pretty hyphens-auto">
             {config.amf.disclaimer[lang]}
           </p>
 
@@ -155,7 +155,7 @@ export function Footer() {
                 {t("footer.issn")}
               </p>
             </div>
-            <p className="text-xs text-[color:var(--color-cream)]/55">
+            <p className="text-xs text-[color:var(--color-cream)]/75">
               © {year} {config.name}. {t("footer.rights")}
             </p>
             <p className="eyebrow text-[color:var(--color-taupe)]/70 text-[10px]">

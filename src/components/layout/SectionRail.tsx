@@ -65,16 +65,25 @@ export function SectionRail({ sections = HOME_SECTIONS }: SectionRailProps = {})
     return () => window.clearTimeout(t);
   }, []);
 
-  // Tooltip pédagogique — apparait a chaque refresh, visible 5s
-  // Wave luminescente declenche a t=0 (appearance) et t=2.5s (mid-life)
+  // Tooltip pédagogique — 1ère visite uniquement (sessionStorage gate),
+  // visible 5s. Wave luminescente declenche a t=0 (appearance) et t=2.5s (mid-life).
+  // Avant : apparait a chaque refresh = agacant apres la 10eme visite. User feedback 2026-05-19.
   useEffect(() => {
     if (typeof window === "undefined") return;
+    const SEEN_KEY = "sectionrail-hint-seen";
+    try {
+      if (window.sessionStorage.getItem(SEEN_KEY)) return;
+      window.sessionStorage.setItem(SEEN_KEY, "1");
+    } catch {
+      // Storage indisponible (mode incognito strict) — on affiche quand meme,
+      // mieux d'avoir l'aide que rien.
+    }
     const showTimer = window.setTimeout(() => {
       setShowHint(true);
-      setWaveKey((k) => k + 1); // trigger wave #1 immediately on appearance
+      setWaveKey((k) => k + 1);
     }, 1800);
     const wave2Timer = window.setTimeout(() => {
-      setWaveKey((k) => k + 1); // trigger wave #2 a mid-life du tooltip
+      setWaveKey((k) => k + 1);
     }, 1800 + 2500);
     const hideTimer = window.setTimeout(() => setShowHint(false), 6800);
     return () => {
@@ -110,7 +119,7 @@ export function SectionRail({ sections = HOME_SECTIONS }: SectionRailProps = {})
       observed.forEach((el) => observer.unobserve(el));
       observer.disconnect();
     };
-  }, []);
+  }, [sections]);
 
   function handleClick(e: React.MouseEvent<HTMLAnchorElement>, id: string) {
     e.preventDefault();
