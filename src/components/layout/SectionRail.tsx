@@ -87,7 +87,7 @@ export function SectionRail() {
   return (
     <nav
       aria-label={lang === "fr" ? "Navigation des sections" : "Section navigation"}
-      className="hidden lg:flex fixed left-6 top-1/2 -translate-y-1/2 z-40 flex-col gap-2.5 pointer-events-none"
+      className="hidden lg:flex fixed left-6 top-1/2 -translate-y-1/2 z-40 flex-col gap-3.5 pointer-events-none"
     >
       {SECTIONS.map((s) => {
         const isActive = activeId === s.id;
@@ -105,7 +105,7 @@ export function SectionRail() {
             <span
               aria-hidden="true"
               className={`block rounded-full shrink-0 transition-all duration-300 ${
-                isMain ? "w-2.5 h-2.5" : "w-1.5 h-1.5"
+                isMain ? "w-3 h-3" : "w-1.5 h-1.5"
               } ${
                 isActive
                   ? "bg-[color:var(--color-bronze)] shadow-[0_0_0_3px_oklch(0.704_0.077_56/0.18)]"
@@ -116,7 +116,7 @@ export function SectionRail() {
             {/* Label Cormorant italic — taille différente selon type */}
             <span
               className={`font-[var(--font-editorial)] italic transition-all duration-300 whitespace-nowrap ${
-                isMain ? "text-sm" : "text-xs"
+                isMain ? "text-base" : "text-xs"
               } ${
                 isActive
                   ? "text-[color:var(--color-bronze)] opacity-100"
@@ -125,6 +125,14 @@ export function SectionRail() {
             >
               {label}
             </span>
+
+            {/* Hairline bronze à droite du label, visible uniquement quand actif */}
+            <span
+              aria-hidden="true"
+              className={`block h-px bg-[color:var(--color-bronze)] transition-all duration-300 ${
+                isActive ? "w-4 ml-1 opacity-100" : "w-0 ml-0 opacity-0"
+              }`}
+            />
           </a>
         );
       })}
