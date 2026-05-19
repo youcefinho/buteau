@@ -20,16 +20,11 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
 
   return (
     <>
-      {/* Sous-titre */}
-      <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-6">
-        {isFr ? "Volume I — Édition N° 01 · Quebec MMXXVI" : "Volume I — Edition Nº 01 · Quebec MMXXVI"}
-      </p>
-
       {/* Intro éditorial */}
       <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.7] text-[color:var(--color-navy-deep)]/85 first-letter:font-[var(--font-editorial)] first-letter:italic first-letter:text-6xl first-letter:text-[color:var(--color-bronze-deep)] first-letter:float-left first-letter:mr-3 first-letter:leading-[0.85] first-letter:mt-1 text-pretty hyphens-auto">
         {isFr
-          ? "Comme un magazine d'auteur, ce site assume sa fabrication. Voici les choix typographiques, chromatiques et éditoriaux qui composent l'édition que vous parcourez."
-          : "Like an author's magazine, this site owns its making. Here are the typographic, chromatic and editorial choices that compose the edition you are browsing."}
+          ? "Comme un magazine d'auteur, ce site assume sa fabrication. Voici les choix typographiques, chromatiques et de fond qui composent l'édition que vous parcourez."
+          : "Like an author's magazine, this site owns its making. Here are the typographic, chromatic and substantive choices that compose the edition you are browsing."}
       </p>
 
       {/* Typographie */}
@@ -37,7 +32,7 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
         <ColophonRow
           label={isFr ? "Caractères de titre" : "Display"}
           value="Cormorant Garamond"
-          note={isFr ? "Italique éditorial — éclats, marginalia, chiffres romains" : "Editorial italic — accents, marginalia, roman numerals"}
+          note={isFr ? "Italique de titre — éclats, marginalia, chiffres romains" : "Display italic — accents, marginalia, roman numerals"}
         />
         <ColophonRow
           label={isFr ? "Caractères signature" : "Signature"}
@@ -85,13 +80,13 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
           {(isFr
             ? [
                 ["L'hypothèque autrement.", "La promesse signature du site (hero h1) — appliquée à chaque mot, chaque chiffre. Pas de jargon non expliqué, pas de promesse irréaliste."],
-                ["200 familles accompagnées en 2025.", "Chiffre vérifiable — pas une projection. La cible Buteau est large : 40 % primo-acheteurs, 60 % refi/upgrade/famille. Aucun dossier traité avec moins de rigueur parce que plus petit."],
+                ["200 familles accompagnées en 2025.", "Chiffre vérifiable — pas une projection. La cible Buteau est large : 40 % primo-acheteurs, 60 % refi/upgrade/famille. Aucun dossier traité avec moins de soin parce que plus petit."],
                 ["Quatre pros, un seul interlocuteur.", "Andrew, Abygaèle, Alexis et Felix — chaque dossier passe par une équipe de quatre, mais le client a un point de contact principal. Pas de relais à un assistant à mi-parcours."],
                 ["La pédagogie avant la transaction.", "Le calculateur, les guides, les capsules vidéo, le carnet — gratuits, sans email obligatoire. On vous outille même si vous ne signez pas avec nous."],
               ]
             : [
                 ["Mortgage. Differently.", "The site's signature promise (hero h1) — applied to every word, every figure. No unexplained jargon, no unrealistic promise."],
-                ["200 families supported in 2025.", "Verifiable number — not a projection. Buteau's target is broad: 40% first-time buyers, 60% refi/upgrade/family. No file handled with less rigor because smaller."],
+                ["200 families supported in 2025.", "Verifiable number — not a projection. Buteau's target is broad: 40% first-time buyers, 60% refi/upgrade/family. No file handled with less care because smaller."],
                 ["Four pros, one main contact.", "Andrew, Abygaèle, Alexis and Felix — every file goes through a team of four, but the client has one main contact. No mid-process handover to an assistant."],
                 ["Pedagogy before transaction.", "The calculator, guides, video shorts, address book — free, no mandatory email. We equip you even if you don't sign with us."],
               ]

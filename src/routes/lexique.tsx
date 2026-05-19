@@ -41,8 +41,8 @@ function LexiquePage() {
       title={isFr ? "Lexique hypothécaire" : "Mortgage glossary"}
       lastUpdated={
         isFr
-          ? "20 termes essentiels pour comprendre votre dossier hypothécaire au Québec"
-          : "20 essential terms to understand your mortgage file in Quebec"
+          ? "Édition Quebec MMXXVI · Sources officielles SCHL · AMF · ARC"
+          : "Edition Quebec MMXXVI · Official sources CMHC · AMF · CRA"
       }
     >
       {/* Schema.org JSON-LD — SEO long-tail */}
@@ -77,7 +77,7 @@ function LexiquePage() {
             </p>
             {g.source && (
               <p className="eyebrow text-[color:var(--color-taupe-dark)] mt-3">
-                {isFr ? "Source" : "Source"} : {g.source}
+                Source : {g.source}
               </p>
             )}
           </article>

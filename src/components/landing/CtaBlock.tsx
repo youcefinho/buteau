@@ -39,7 +39,7 @@ export function CtaBlock({ bgImageUrl = "https://i.imgur.com/Bw7Zyf4.jpg" }: Cta
           {/* Eyebrow ligne taupe encadrée */}
           <p className="eyebrow text-[color:var(--color-taupe)] inline-flex items-center gap-3">
             <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
-            {t("cta.button")}
+            {t("cta.eyebrow")}
             <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
           </p>
 

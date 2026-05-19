@@ -50,11 +50,11 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
           numeral: "02",
           title: "Subventions & programmes",
           intro:
-            "Les programmes officiels qui peuvent réduire votre mise de fonds, vos taxes ou votre fardeau hypothécaire de premier acchéteur.",
+            "Les programmes officiels qui peuvent réduire votre mise de fonds, vos taxes ou votre fardeau hypothécaire de premier acheteur.",
           entries: [
             { name: "RAP — Régime d'accession à la propriété", url: "https://www.canada.ca/fr/agence-revenu/services/impot/particuliers/sujets/reer-rpac/regime-accession-propriete-rap.html", note: "Retrait jusqu'à 60 000 $ de votre REER sans impôt pour mise de fonds (premier achat ou retour à la propriété 4+ ans)." },
             { name: "CELIAPP — Compte d'épargne libre d'impôt pour l'achat d'une première propriété", url: "https://www.canada.ca/fr/agence-revenu/services/impot/particuliers/sujets/celiapp.html", note: "Cotisez jusqu'à 8 000 $/an (40 000 $ à vie), retraits non imposables si destinés à un premier achat." },
-            { name: "Crédit d'impôt pour l'achat d'une habitation (CIAH)", url: "https://www.canada.ca/fr/agence-revenu/services/impot/particuliers/sujets/tout-votre-declaration-revenus/declaration-revenus/remplir-declaration-revenus/deductions-credits-depenses/ligne-31270-montant-pour-habitation-admissible.html", note: "Crédit d'impôt fédéral non remboursable pouvant atteindre 1 500 $ pour les primo-acchéteurs." },
+            { name: "Crédit d'impôt pour l'achat d'une habitation (CIAH)", url: "https://www.canada.ca/fr/agence-revenu/services/impot/particuliers/sujets/tout-votre-declaration-revenus/declaration-revenus/remplir-declaration-revenus/deductions-credits-depenses/ligne-31270-montant-pour-habitation-admissible.html", note: "Crédit d'impôt fédéral non remboursable pouvant atteindre 1 500 $ pour les primo-acheteurs." },
           ],
         },
         {
@@ -204,7 +204,7 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
       {/* Intro éditoriale */}
       <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.7] text-[color:var(--color-navy-deep)]/85 first-letter:font-[var(--font-editorial)] first-letter:italic first-letter:text-6xl first-letter:text-[color:var(--color-bronze-deep)] first-letter:float-left first-letter:mr-3 first-letter:leading-[0.85] first-letter:mt-1 text-pretty hyphens-auto">
         {isFr
-          ? "Voici les organismes, programmes et calculatrices que nous recommandons à un primo-acchéteur du Québec. Aucun n'est affilié à L'Équipe Buteau — c'est précisément pourquoi vous pouvez vous y fier. On vous tend le carnet, même si vous ne signez pas avec nous."
+          ? "Voici les organismes, programmes et calculatrices que nous recommandons à un primo-acheteur du Québec. Aucun n'est affilié à L'Équipe Buteau — c'est précisément pourquoi vous pouvez vous y fier. On vous tend le carnet, même si vous ne signez pas avec nous."
           : "Here are the organizations, programs and calculators we recommend to a Quebec first-time buyer. None are affiliated with Équipe Buteau — that's precisely why you can rely on them. We hand you the address book, even if you don't sign with us."}
       </p>
 

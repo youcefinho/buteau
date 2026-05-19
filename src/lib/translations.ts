@@ -456,6 +456,7 @@ export const translations = {
     },
 
     cta: {
+      eyebrow: "Prochaine étape",
       title: "Prêt à structurer votre projet ?",
       subtitle: "Des décisions claires. Une exécution structurée. Des résultats concrets.",
       button: "Prendre rendez-vous",
@@ -470,7 +471,7 @@ export const translations = {
       readMoreLabel: "Lire l'article",
       hideLabel: "Replier",
       categoryLabel: "Catégorie",
-      footnote: "Plus d'articles publiés progressivement — suivez nos capsules pour ne rien manquer.",
+      footnote: "Suivez nos capsules pour les sorties intermédiaires.",
       articles: [
         {
           slug: "preapprobation-hypothecaire-2026",
@@ -491,14 +492,12 @@ export const translations = {
     },
 
     courrier: {
-      eyebrow: "Courrier des lecteurs",
-      title: "Lettres reçues à notre rédaction.",
       subtitle:
         "Sélection de témoignages reçus par courriel, en personne ou via Google. Chaque lettre est publiée avec l'autorisation de son auteur.",
       letterDateLabel: "Reçu le",
       letterFromLabel: "De",
       googleLinkLabel: "Voir tous les avis sur Google",
-      footnote: "Les lettres sont publiées de manière chronologique inverse — plus récentes d'abord.",
+      footnote: "Présentées de la plus récente à la plus ancienne.",
       // Lettres étendues — extension de home.reviews.items + 6 lettres additionnelles
       additionalLetters: [
         {
@@ -585,14 +584,12 @@ export const translations = {
       eyebrow: "30 secondes top chrono",
       title: "L'hypothèque, en capsules courtes.",
       subtitle:
-        "Andrew répond à toutes les questions hypothécaires en 30 secondes. Mythes, calculs rapides, programmes méconnus, pièges à éviter — tout y passe, sans détour, dans la voix qu'on lui connaît.",
+        "Andrew répond aux questions hypothécaires sans détour. Mythes, calculs rapides, programmes méconnus, pièges à éviter — dans la voix qu'on lui connaît.",
       ctaTikTok: "Voir tout sur TikTok",
-      ctaInstagram: "Suivre sur Instagram",
       followLine: "Suivre @equipebuteau pour ne rien manquer.",
-      categoryLabel: "Catégorie",
       hookLabel: "Hook",
       footnote:
-        "Capsules tournées en continu — abonnez-vous pour ne rien rater. Les hypothèses chiffrées sont à titre éducatif. Validez votre cas avec Andrew avant toute décision.",
+        "Capsules tournées en continu. Les hypothèses chiffrées sont à titre éducatif — validez votre cas avec un courtier avant toute décision.",
       categories: [
         {
           id: "mise-de-fonds",
@@ -835,25 +832,25 @@ export const translations = {
 
     institutions: {
       hero: {
-        eyebrow: "Adresses prêteurs",
-        title: "Adresses pour assurances",
+        eyebrow: "Référence pratique",
+        title: "Adresses pour vos preuves d'assurance",
         subtitle:
           "Informations importantes pour votre preuve d'assurance habitation.",
       },
       reassurance:
         "Nous travaillons avec un large éventail de prêteurs pour vous offrir les meilleures conditions de financement adaptées à votre situation.",
       insurance: {
-        eyebrow: "Important",
+        eyebrow: "Informations clés",
         title: "Preuves d'assurance habitation valide",
         bodyP1:
           "Vous devrez avoir une preuve d'assurance habitation valide à compter de la date de l'acte de vente.",
         attentionLabel: "Attention",
         attentionP1:
-          "Le nom et l'adresse complète de l'institution financière devront apparaître sur la preuve d'assurance.",
+          "Le nom et l'adresse complète de l'institution financière doivent y apparaître.",
         attentionP2:
-          "Pour un refinancement, il est important d'aviser quand même vos assurances : même s'il n'y a pas de changement sur la police d'assurance ni sur l'adresse de la propriété assurée, votre preuve d'assurance doit afficher le bon créancier.",
+          "Pour un refinancement, avertissez aussi votre assureur : même sans changement de police, le créancier doit être à jour.",
       },
-      lendersSectionTitle: "Adresses des institutions financières",
+      lendersSectionTitle: "Liste des prêteurs",
       addressVariesNote: "L'adresse varie selon la Caisse choisie.",
       lenders: [
         {
@@ -1438,6 +1435,7 @@ export const translations = {
     },
 
     cta: {
+      eyebrow: "Next step",
       title: "Ready to structure your project?",
       subtitle: "Clear decisions. Structured execution. Concrete results.",
       button: "Book an appointment",
@@ -1452,7 +1450,7 @@ export const translations = {
       readMoreLabel: "Read article",
       hideLabel: "Collapse",
       categoryLabel: "Category",
-      footnote: "More articles published progressively — follow our capsules so you don't miss any.",
+      footnote: "Follow our capsules for in-between drops.",
       articles: [
         {
           slug: "preapprobation-hypothecaire-2026",
@@ -1472,14 +1470,12 @@ export const translations = {
     },
 
     courrier: {
-      eyebrow: "Letters to the Editor",
-      title: "Letters received at our editorial desk.",
       subtitle:
         "A selection of testimonials received by email, in person, or via Google. Each letter is published with the author's permission.",
       letterDateLabel: "Received",
       letterFromLabel: "From",
       googleLinkLabel: "See all reviews on Google",
-      footnote: "Letters are published in reverse chronological order — most recent first.",
+      footnote: "Newest first.",
       additionalLetters: [
         {
           quote:
@@ -1564,14 +1560,12 @@ export const translations = {
       eyebrow: "30 seconds, top chrono",
       title: "Mortgage, in short capsules.",
       subtitle:
-        "Andrew tackles every mortgage question in 30 seconds. Myths, quick math, hidden programs, traps to avoid — everything, no detours, in his unmistakable voice.",
+        "Andrew tackles every mortgage question, no detours. Myths, quick math, hidden programs, traps to avoid — in his unmistakable voice.",
       ctaTikTok: "Watch all on TikTok",
-      ctaInstagram: "Follow on Instagram",
       followLine: "Follow @equipebuteau so you don't miss anything.",
-      categoryLabel: "Category",
       hookLabel: "Hook",
       footnote:
-        "Capsules filmed continuously — subscribe so you don't miss any. Numerical examples are educational. Validate your case with Andrew before deciding.",
+        "Capsules filmed continuously. Numerical examples are educational — validate your case with a broker before deciding.",
       categories: [
         {
           id: "down-payment",
@@ -1812,24 +1806,24 @@ export const translations = {
 
     institutions: {
       hero: {
-        eyebrow: "Lender addresses",
-        title: "Insurance addresses",
+        eyebrow: "Practical reference",
+        title: "Addresses for your insurance proof",
         subtitle: "Important information for your home insurance proof.",
       },
       reassurance:
         "We work with a wide range of lenders to deliver the best financing conditions tailored to your situation.",
       insurance: {
-        eyebrow: "Important",
+        eyebrow: "Key information",
         title: "Valid home insurance proof",
         bodyP1:
           "You must have a valid home insurance proof effective from the date of the deed of sale.",
-        attentionLabel: "Important",
+        attentionLabel: "Heads up",
         attentionP1:
-          "The name and full address of the financial institution must appear on the insurance proof.",
+          "The name and full address of the financial institution must appear on it.",
         attentionP2:
-          "For a refinance, you must still notify your insurer: even if there's no change to the policy or insured property, your proof must show the correct creditor.",
+          "For a refinance, notify your insurer too: even without changing the policy, the creditor on file must stay current.",
       },
-      lendersSectionTitle: "Financial institution addresses",
+      lendersSectionTitle: "List of lenders",
       addressVariesNote: "Address varies by selected Caisse branch.",
       lenders: [
         {
