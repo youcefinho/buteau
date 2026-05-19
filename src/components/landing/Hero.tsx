@@ -4,6 +4,7 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { config } from "@/lib/config";
 import { useMagnetic } from "@/hooks/useMagnetic";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { ta, translations } from "@/lib/translations";
 import { useQuizTier } from "@/hooks/useQuizTier";
 import { useGlossary } from "@/lib/GlossaryContext";
@@ -20,6 +21,10 @@ export function Hero() {
   const magneticCta = useMagnetic<HTMLAnchorElement>({ strength: 0.3, maxOffset: 14 });
   const letterWords = ta<string[]>(translations[lang], "home.hero.letterWords");
   const { tier } = useQuizTier();
+  // A11y : skip l'animation inline si user a opt-in prefers-reduced-motion.
+  // Fix audit UI-REVIEW-2026-05-19 motion 7/10 — inline `style={{ animation: ... }}`
+  // avec cubic-bezier custom echappe au global @media rule (bug Chrome).
+  const reduceMotion = useReducedMotion();
 
   // Fix MEDIUM dev-only warning si letterWords ne matche pas brandName length
   if (import.meta.env.DEV && letterWords.length !== config.brandName.length) {
@@ -104,11 +109,15 @@ export function Hero() {
                   <span
                     key={idx}
                     className="relative inline-block group/letter cursor-default transition-all duration-300 hover:text-[color:var(--color-bronze)] hover:-translate-y-1.5"
-                    style={{
-                      animation: `buteauLetterIn 900ms cubic-bezier(0.34, 1.56, 0.64, 1) ${
-                        400 + idx * 90
-                      }ms backwards`,
-                    }}
+                    style={
+                      reduceMotion
+                        ? undefined
+                        : {
+                            animation: `buteauLetterIn 900ms cubic-bezier(0.34, 1.56, 0.64, 1) ${
+                              400 + idx * 90
+                            }ms backwards`,
+                          }
+                    }
                   >
                     {letter}
                     {/* Mot signature révélé au hover — Cormorant italic small sous la lettre */}

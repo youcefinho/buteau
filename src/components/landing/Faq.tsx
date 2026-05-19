@@ -37,7 +37,7 @@ export function Faq() {
         aria-hidden="true"
       />
 
-      <Container size="full" className="relative max-w-[110rem] !px-[clamp(1.5rem,2.5vw,2rem)]">
+      <Container size="full" className="relative max-w-[110rem] px-[clamp(1.5rem,2.5vw,2rem)] md:px-[clamp(1.5rem,2.5vw,2rem)]">
         <SectionHeading
           eyebrow={t("home.faq.eyebrow")}
           title={t("home.faq.title")}

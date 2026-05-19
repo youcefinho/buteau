@@ -61,7 +61,7 @@ export function Mission() {
         />
 
         {/* Body éditorial — drop cap + pull quote asymétrique */}
-        <div className="max-w-4xl mx-auto mb-20 md:mb-24 space-y-10 md:space-y-12">
+        <div className="max-w-4xl mx-auto mb-[clamp(5rem,7vw,6rem)] space-y-[clamp(2.5rem,4vw,3rem)]">
           {/* P1 avec drop cap luxury */}
           <p className="dropcap text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.8] text-[color:var(--color-cream)]/90 font-light text-pretty hyphens-auto">
             {t("home.mission.bodyP1Lead")}
