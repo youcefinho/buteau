@@ -19,7 +19,7 @@ export function TeamGrid() {
   const marginalia = ta<string[]>(translations[lang], "team.marginalia");
 
   return (
-    <section className="py-[clamp(4rem,8vw,7rem)] surface-cream relative overflow-hidden">
+    <section id="membres" className="py-[clamp(4rem,8vw,7rem)] surface-cream relative overflow-hidden">
       {/* Filigrane "&" decoratif arriere-plan editorial */}
       <span
         aria-hidden="true"

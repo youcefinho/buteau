@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Play, Sparkles, ArrowRight, Filter } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { LegalPageWrap } from "@/components/layout/LegalPageWrap";
 import { SchemaJsonLd } from "@/components/layout/SchemaJsonLd";
 import { ToolsFinalCta } from "@/components/landing/ToolsFinalCta";
+import { SectionRail, type SectionEntry } from "@/components/layout/SectionRail";
 import { ta, translations } from "@/lib/translations";
 import { config } from "@/lib/config";
 
@@ -58,7 +59,21 @@ function CapsulesPage() {
   // Visible count après filtre
   const visibleCount = filteredCategories.reduce((acc, c) => acc + c.items.length, 0);
 
+  // SectionRail config — Hero + une entree par catégorie (id varie par lang)
+  // + Contact final. Les eyebrows des catégories sont déjà lang-aware.
+  const capsulesSections: SectionEntry[] = useMemo(() => [
+    { id: "hero", type: "main", label: { fr: "Capsules", en: "Capsules" } },
+    ...categories.map((cat) => ({
+      id: cat.id,
+      type: "sub" as const,
+      label: { fr: cat.eyebrow, en: cat.eyebrow },
+    })),
+    { id: "contact-cta", type: "main", label: { fr: "Contact", en: "Contact" } },
+  ], [categories]);
+
   return (
+    <>
+    <SectionRail sections={capsulesSections} />
     <LegalPageWrap
       eyebrow={ta<string>(translations[lang], "capsules.eyebrow")}
       title={ta<string>(translations[lang], "capsules.title")}
@@ -320,6 +335,7 @@ function CapsulesPage() {
         </Link>
       </div>
     </LegalPageWrap>
+    </>
   );
 }
 

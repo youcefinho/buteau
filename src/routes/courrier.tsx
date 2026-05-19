@@ -4,10 +4,17 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { LegalPageWrap } from "@/components/layout/LegalPageWrap";
 import { Tiltable } from "@/components/layout/Tiltable";
 import { SchemaJsonLd, breadcrumbs } from "@/components/layout/SchemaJsonLd";
+import { SectionRail, type SectionEntry } from "@/components/layout/SectionRail";
 import { ta, translations } from "@/lib/translations";
 
 const GOOGLE_REVIEWS_URL =
   "https://www.google.com/search?q=Andrew+Buteau+Courtier+Hypothecaire";
+
+const COURRIER_SECTIONS: ReadonlyArray<SectionEntry> = [
+  { id: "hero", type: "main", label: { fr: "Le courrier", en: "Letters" } },
+  { id: "courrier-letters", type: "main", label: { fr: "Lettres reçues", en: "Letters received" } },
+  { id: "courrier-google", type: "sub", label: { fr: "Avis Google", en: "Google reviews" } },
+];
 
 /**
  * /courrier — page complète "Courrier des lecteurs" (extension Reviews).
@@ -54,6 +61,8 @@ function CourrierPage() {
   const allLetters = [...homeReviews, ...additional];
 
   return (
+    <>
+    <SectionRail sections={COURRIER_SECTIONS} />
     <LegalPageWrap
       eyebrow={isFr ? "Édition spéciale" : "Special edition"}
       title={isFr ? "Courrier des lecteurs" : "Letters to the Editor"}
@@ -87,7 +96,8 @@ function CourrierPage() {
 
       {/* Grid lettres — 2 colonnes desktop pour rythme magazine */}
       <div
-        className="grid grid-cols-1 md:grid-cols-2 gap-[clamp(1.5rem,2.3vw,1.75rem)] not-prose"
+        id="courrier-letters"
+        className="grid grid-cols-1 md:grid-cols-2 gap-[clamp(1.5rem,2.3vw,1.75rem)] not-prose scroll-mt-24"
         style={{ perspective: "1200px" }}
       >
         {allLetters.map((r, idx) => (
@@ -171,7 +181,7 @@ function CourrierPage() {
       </p>
 
       {/* CTA Google reviews */}
-      <div className="text-center mt-12">
+      <div id="courrier-google" className="text-center mt-12 scroll-mt-24">
         <a
           href={GOOGLE_REVIEWS_URL}
           target="_blank"
@@ -186,5 +196,6 @@ function CourrierPage() {
         </a>
       </div>
     </LegalPageWrap>
+    </>
   );
 }

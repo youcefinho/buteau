@@ -19,7 +19,7 @@ import { AdPage } from "@/components/landing/AdPage";
 import { PageFooterMark } from "@/components/layout/PageFooterMark";
 import { ScrollReveal } from "@/components/layout/ScrollReveal";
 import { SectionDivider } from "@/components/layout/SectionDivider";
-import { SectionRail } from "@/components/layout/SectionRail";
+import { SectionRail, HOME_SECTIONS } from "@/components/layout/SectionRail";
 import {
   SchemaJsonLd,
   buildFaqPage,
@@ -50,7 +50,7 @@ function HomePage() {
   return (
     <main id="main">
       <SchemaJsonLd schema={homeSchemas} />
-      <SectionRail />
+      <SectionRail sections={HOME_SECTIONS} />
       <Hero />
       <PageFooterMark numeral="01" label={lang === "fr" ? "Le réseau" : "The network"} />
       <Partners />

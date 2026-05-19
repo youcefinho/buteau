@@ -19,16 +19,16 @@ import { useLanguage } from "@/lib/LanguageContext";
  * Mobile/tablet : caché (espace écran trop précieux).
  */
 
-type SectionType = "main" | "sub";
+export type SectionType = "main" | "sub";
 
-type SectionEntry = {
+export type SectionEntry = {
   id: string;
   type: SectionType;
   label: { fr: string; en: string };
 };
 
-// Ordre exact correspond au scroll du `routes/index.tsx`
-const SECTIONS: ReadonlyArray<SectionEntry> = [
+// Sections de la home — exportée pour réutilisation dans routes/index.tsx
+export const HOME_SECTIONS: ReadonlyArray<SectionEntry> = [
   { id: "hero", type: "main", label: { fr: "Accueil", en: "Home" } },
   { id: "partenaires", type: "sub", label: { fr: "Partenaires", en: "Partners" } },
   { id: "equipe", type: "sub", label: { fr: "L'équipe", en: "The team" } },
@@ -45,9 +45,14 @@ const SECTIONS: ReadonlyArray<SectionEntry> = [
   { id: "faq", type: "sub", label: { fr: "FAQ", en: "FAQ" } },
 ];
 
-export function SectionRail() {
+type SectionRailProps = {
+  /** Liste des sections à afficher dans la rail. Defaults à HOME_SECTIONS. */
+  sections?: ReadonlyArray<SectionEntry>;
+};
+
+export function SectionRail({ sections = HOME_SECTIONS }: SectionRailProps = {}) {
   const { lang } = useLanguage();
-  const [activeId, setActiveId] = useState<string>(SECTIONS[0].id);
+  const [activeId, setActiveId] = useState<string>(sections[0].id);
   const [mounted, setMounted] = useState(false);
   const [showHint, setShowHint] = useState(false);
   // Wave luminescente — boolean qui declenche cascade bronze a travers les dots
@@ -93,7 +98,7 @@ export function SectionRail() {
     );
 
     const observed: Element[] = [];
-    SECTIONS.forEach((s) => {
+    sections.forEach((s) => {
       const el = document.getElementById(s.id);
       if (el) {
         observer.observe(el);
@@ -133,7 +138,7 @@ export function SectionRail() {
         className="absolute left-[5.5px] top-3 bottom-3 w-px bg-[color:var(--color-taupe)]/30 pointer-events-none"
       />
 
-      {SECTIONS.map((s, index) => {
+      {sections.map((s, index) => {
         const isActive = activeId === s.id;
         const isMain = s.type === "main";
         const label = lang === "fr" ? s.label.fr : s.label.en;

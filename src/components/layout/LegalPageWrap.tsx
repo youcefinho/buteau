@@ -24,7 +24,7 @@ export function LegalPageWrap({
   return (
     <main id="main" className="surface-cream">
       {/* Hero compact navy avec filigrane éditorial */}
-      <section className="relative surface-navy pt-[clamp(8rem,12vw,10rem)] pb-[clamp(4rem,6vw,5rem)] overflow-hidden">
+      <section id="hero" className="relative surface-navy pt-[clamp(8rem,12vw,10rem)] pb-[clamp(4rem,6vw,5rem)] overflow-hidden">
         {/* Filigrane "§" éditorial luxury */}
         <span
           aria-hidden="true"

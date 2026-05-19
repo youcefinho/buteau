@@ -26,6 +26,7 @@ export function PageHero({
 }: PageHeroProps) {
   return (
     <section
+      id="hero"
       className={cn(
         "relative pt-[clamp(10rem,13vw,12rem)] pb-[clamp(6rem,9vw,8rem)] surface-navy overflow-hidden",
         className,

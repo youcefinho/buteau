@@ -6,7 +6,15 @@ import { LegalPageWrap } from "@/components/layout/LegalPageWrap";
 import { Tiltable } from "@/components/layout/Tiltable";
 import { SchemaJsonLd } from "@/components/layout/SchemaJsonLd";
 import { ToolsFinalCta } from "@/components/landing/ToolsFinalCta";
+import { SectionRail, type SectionEntry } from "@/components/layout/SectionRail";
 import { ta, translations } from "@/lib/translations";
+
+const JOURNAL_SECTIONS: ReadonlyArray<SectionEntry> = [
+  { id: "hero", type: "main", label: { fr: "Le journal", en: "The journal" } },
+  { id: "journal-articles", type: "main", label: { fr: "Articles", en: "Articles" } },
+  { id: "journal-explore", type: "sub", label: { fr: "Explorer", en: "Explore" } },
+  { id: "contact-cta", type: "main", label: { fr: "Contact", en: "Contact" } },
+];
 
 /**
  * /journal — index magazine. Chaque article ouvre une page dediee
@@ -35,6 +43,8 @@ function JournalPage() {
   const articles = ta<Article[]>(translations[lang], "journal.articles");
 
   return (
+    <>
+    <SectionRail sections={JOURNAL_SECTIONS} />
     <LegalPageWrap
       eyebrow={isFr ? "Le journal" : "The journal"}
       title={ta<string>(translations[lang], "journal.title")}
@@ -70,7 +80,7 @@ function JournalPage() {
       </p>
 
       {/* Articles list — format magazine editorial */}
-      <div className="space-y-12 not-prose" style={{ perspective: "1500px" }}>
+      <div id="journal-articles" className="space-y-12 not-prose scroll-mt-24" style={{ perspective: "1500px" }}>
         {articles.map((a, idx) => (
           <Tiltable key={a.slug} maxDeg={2}>
             <article
@@ -171,7 +181,7 @@ function JournalPage() {
       </p>
 
       {/* Liens croises Capsules + Lexique */}
-      <div className="text-center mt-8 flex flex-col sm:flex-row gap-6 justify-center items-center">
+      <div id="journal-explore" className="text-center mt-8 flex flex-col sm:flex-row gap-6 justify-center items-center scroll-mt-24">
         <Link
           to="/capsules"
           className="group inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-base text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-bronze-deep)] transition-colors"
@@ -199,5 +209,6 @@ function JournalPage() {
         </button>
       </div>
     </LegalPageWrap>
+    </>
   );
 }

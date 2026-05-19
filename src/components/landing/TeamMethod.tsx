@@ -15,7 +15,7 @@ export function TeamMethod() {
   );
 
   return (
-    <section className="py-24 surface-cream">
+    <section id="methode" className="py-24 surface-cream">
       <Container size="lg">
         <SectionHeading
           eyebrow={t("team.method.eyebrow")}

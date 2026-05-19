@@ -11,7 +11,7 @@ export function InsuranceNote() {
   const { t } = useLanguage();
 
   return (
-    <section className="py-[clamp(3rem,7vw,6rem)] surface-cream">
+    <section id="assurance" className="py-[clamp(3rem,7vw,6rem)] surface-cream">
       <Container size="md">
         <SectionHeading
           eyebrow={t("institutions.insurance.eyebrow")}

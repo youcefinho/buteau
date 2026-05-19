@@ -211,7 +211,11 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
       {/* Sections numérotées */}
       <div className="space-y-12 pt-10">
         {sections.map((section) => (
-          <section key={section.numeral} className={isPage ? "scroll-mt-24" : ""}>
+          <section
+            key={section.numeral}
+            id={isPage ? `carnet-${section.numeral}` : undefined}
+            className={isPage ? "scroll-mt-24" : ""}
+          >
             <div className="flex items-baseline gap-5 mb-5">
               <span className="font-[var(--font-editorial)] italic text-[color:var(--color-bronze-deep)] text-3xl shrink-0 leading-none">
                 {section.numeral}

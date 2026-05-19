@@ -28,7 +28,7 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
       </p>
 
       {/* Typographie */}
-      <ColophonSection label={isFr ? "Typographie" : "Typography"}>
+      <ColophonSection id="colophon-typo" label={isFr ? "Typographie" : "Typography"}>
         <ColophonRow
           label={isFr ? "Caractères de titre" : "Display"}
           value="Cormorant Garamond"
@@ -47,7 +47,7 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
       </ColophonSection>
 
       {/* Palette */}
-      <ColophonSection label={isFr ? "Palette" : "Palette"}>
+      <ColophonSection id="colophon-palette" label={isFr ? "Palette" : "Palette"}>
         <ColophonRow
           label={isFr ? "Bleu nuit" : "Deep navy"}
           value="oklch(0.252 0.067 256)"
@@ -75,7 +75,7 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
       </ColophonSection>
 
       {/* Principes éditoriaux — DÉRIVÉS du copy hero/services Buteau */}
-      <ColophonSection label={isFr ? "Principes éditoriaux" : "Editorial principles"}>
+      <ColophonSection id="colophon-principes" label={isFr ? "Principes éditoriaux" : "Editorial principles"}>
         <ol className="space-y-5 mt-2">
           {(isFr
             ? [
@@ -109,7 +109,7 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
       </ColophonSection>
 
       {/* Direction */}
-      <ColophonSection label={isFr ? "Direction" : "Editorial team"}>
+      <ColophonSection id="colophon-direction" label={isFr ? "Direction" : "Editorial team"}>
         <ColophonRow label={isFr ? "Direction" : "Direction"} value="Andrew Buteau" note={isFr ? "Courtier hypothécaire & fondateur" : "Mortgage broker & founder"} />
         <ColophonRow label={isFr ? "Coordination" : "Coordination"} value="Abygaèle Gagné" note={isFr ? "Coordonnatrice exécutive" : "Executive coordinator"} />
         <ColophonRow label={isFr ? "Gestion hypothécaire" : "Mortgage management"} value="Alexis Buteau" note={isFr ? "Assistant en gestion hypothécaire" : "Mortgage management assistant"} />
@@ -117,7 +117,7 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
       </ColophonSection>
 
       {/* Accessibilité */}
-      <ColophonSection label={isFr ? "Accessibilité" : "Accessibility"}>
+      <ColophonSection id="colophon-a11y" label={isFr ? "Accessibilité" : "Accessibility"}>
         <ColophonRow
           label={isFr ? "Norme cible" : "Target standard"}
           value="WCAG 2.2 AA"
@@ -181,13 +181,15 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
 
 function ColophonSection({
   label,
+  id,
   children,
 }: {
   label: string;
+  id?: string;
   children: React.ReactNode;
 }) {
   return (
-    <section className="pt-8">
+    <section id={id} className="pt-8 scroll-mt-24">
       <div className="flex items-center gap-4 mb-5">
         <span className="block w-8 h-px bg-[color:var(--color-bronze)]" aria-hidden="true" />
         <h3 className="eyebrow text-[color:var(--color-bronze-deep)]">{label}</h3>

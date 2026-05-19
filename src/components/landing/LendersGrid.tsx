@@ -16,7 +16,7 @@ export function LendersGrid() {
   );
 
   return (
-    <section className="py-[clamp(4rem,8vw,7rem)] surface-cream border-t border-[color:var(--color-border)] relative overflow-hidden">
+    <section id="preteurs" className="py-[clamp(4rem,8vw,7rem)] surface-cream border-t border-[color:var(--color-border)] relative overflow-hidden">
       {/* Filigrane decoratif chiffre 9 (= nombre d'institutions) */}
       <span
         aria-hidden="true"
