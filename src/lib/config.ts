@@ -38,8 +38,8 @@ export const config = {
     },
     abygaele: {
       firstName: "Abygaèle",
-      lastName: "",
-      role: "Courtière hypothécaire",
+      lastName: "Gagné",
+      role: "Coordonnatrice exécutive en immobilier",
       email: "",
     },
     alexis: {
@@ -56,11 +56,12 @@ export const config = {
     },
   },
 
-  // Régulateur AMF (Phase 8 — placeholders à remplir par le client)
+  // Régulateur AMF (Phase 8 — placeholder à remplir par le client)
   amf: {
     certificateNumberAndrew: "",
-    certificateNumberAbygaele: "",
-    // Felix : pas encore courtier — coordonnateur des opérations, pas de numéro AMF
+    // Abygaèle = Coordonnatrice exécutive (LinkedIn confirmé), pas courtière → pas d'AMF
+    // Alexis = en formation courtier hypothécaire → AMF à venir
+    // Felix = coordonnateur des opérations → pas d'AMF
     disclaimer: {
       fr: "Les renseignements présentés sur ce site ne constituent pas une offre ni une recommandation personnalisée. Tout dossier hypothécaire est sujet à approbation par le prêteur. Les taux et conditions varient selon le profil de l'emprunteur, la propriété et l'institution financière. Équipe Buteau opère sous le permis de Planiprêt Cabinet en Courtage Hypothécaire, inscrit auprès de l'Autorité des marchés financiers (AMF).",
       en: "The information on this site does not constitute an offer or personalized recommendation. All mortgage applications are subject to lender approval. Rates and conditions vary depending on the borrower's profile, the property, and the financial institution. Équipe Buteau operates under the licence of Planiprêt Cabinet en Courtage Hypothécaire, registered with the Autorité des marchés financiers (AMF).",
