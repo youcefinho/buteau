@@ -1465,9 +1465,9 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
             <Link
               to="/outils"
               hash="calculateur"
-              className="group inline-flex items-center gap-3 text-xs uppercase tracking-[0.22em] font-bold text-[color:var(--color-bronze-deep)] hover:text-[color:var(--color-bronze)] transition-colors whitespace-nowrap"
+              className="group inline-flex items-center gap-2 px-6 py-3 border border-[color:var(--color-bronze)] text-[color:var(--color-bronze-deep)] hover:bg-[color:var(--color-bronze)] hover:text-[color:var(--color-cream)] hover:-translate-y-0.5 text-xs uppercase tracking-[0.22em] font-bold whitespace-nowrap transition-all duration-300"
             >
-              {isFr ? "Calculateur complet" : "Full calculator"}
+              <span>{isFr ? "Calculateur complet" : "Full calculator"}</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
             </Link>
           </div>
