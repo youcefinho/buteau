@@ -406,20 +406,19 @@ export const translations = {
         {
           name: "Andrew Buteau",
           role: "Courtier hypothécaire & Fondateur",
-          photo: "https://i.imgur.com/k4bZmLl.jpg",
+          photo: "/equipe/andrew.jpg",
           bio: "Andrew Buteau est courtier hypothécaire à Laval, sous le cabinet Planiprêt. Sa philosophie : « En agissant avec intégrité et transparence, je m'assure que mes clients auront toute l'information pour faire un choix éclairé. » Il fournit les outils de planification nécessaires pour sélectionner le prêt hypothécaire qui répond le mieux aux besoins de chaque dossier. En 2025, son équipe a accompagné plus de 200 familles à travers le Québec — avec rigueur, disponibilité, et l'énergie de faire les choses autrement.",
         },
         {
           name: "Abygaèle Gagné",
           role: "Coordonnatrice exécutive",
-          photo:
-            "https://ugc.production.linktr.ee/5iBsvLTR0iXiJgoKotJw_I4Qhjq9XsUtz0u6v?io=true&size=avatar-v3_0",
+          photo: "/equipe/abygaele.jpg",
           bio: "Organisée, créative et profondément impliquée, Abygaèle veille à la coordination et au bon fonctionnement de l'Équipe BUTEAU. Elle supervise l'administration, le service à la clientèle et le développement de l'image de marque, incluant la création de contenu et la gestion des réseaux sociaux.",
         },
         {
           name: "Alexis Buteau",
           role: "Assistant en gestion hypothécaire",
-          photo: "https://i.imgur.com/MUD07Kc.jpg",
+          photo: "/equipe/alexis.jpg",
           bio: "Calme, méthodique et perfectionniste, Alexis seconde l'équipe au quotidien : préparation des dossiers, soutien administratif et analyse des documents essentiels au montage de chaque requête. Actuellement dans les derniers milles de sa formation de courtier hypothécaire.",
         },
         {
@@ -1381,20 +1380,19 @@ export const translations = {
         {
           name: "Andrew Buteau",
           role: "Mortgage broker & Founder",
-          photo: "https://i.imgur.com/k4bZmLl.jpg",
+          photo: "/equipe/andrew.jpg",
           bio: "Andrew Buteau is a mortgage broker in Laval, under the Planiprêt licence. His philosophy: « By acting with integrity and transparency, I make sure my clients have all the information to make an informed choice. » He provides the planning tools needed to select the mortgage that truly fits each file's needs. In 2025, his team supported 200+ families across Quebec — with rigor, availability, and the energy to do things differently.",
         },
         {
           name: "Abygaèle Gagné",
           role: "Executive coordinator",
-          photo:
-            "https://ugc.production.linktr.ee/5iBsvLTR0iXiJgoKotJw_I4Qhjq9XsUtz0u6v?io=true&size=avatar-v3_0",
+          photo: "/equipe/abygaele.jpg",
           bio: "Organized, creative and deeply involved, Abygaèle ensures the coordination and smooth operation of Équipe BUTEAU. She oversees administration, client service and the brand-image development — including content creation and social media management.",
         },
         {
           name: "Alexis Buteau",
           role: "Mortgage management assistant",
-          photo: "https://i.imgur.com/MUD07Kc.jpg",
+          photo: "/equipe/alexis.jpg",
           bio: "Calm, methodical and detail-oriented, Alexis backs the team daily: file preparation, administrative support, and analysis of the materials essential to building every file. Currently in the final stretch of his mortgage broker training.",
         },
         {

@@ -79,7 +79,7 @@ export function Hero() {
       {/* Scroll hint bottom — fine ligne verticale + texte */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3 animate-[buteauFadeUp_700ms_ease-out_1800ms_both]">
         <span className="block w-px h-12 bg-gradient-to-b from-transparent via-[color:var(--color-taupe)]/70 to-[color:var(--color-bronze)]" />
-        <p className="eyebrow text-[color:var(--color-taupe)]/70 text-[9px]">
+        <p className="eyebrow text-[color:var(--color-taupe)]/70 text-[10px]">
           {t("home.hero.scrollHint")}
         </p>
       </div>

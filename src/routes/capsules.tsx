@@ -296,7 +296,7 @@ function CapsulesPage() {
 
                     {/* Right column : Play badge */}
                     <div className="shrink-0 flex flex-col items-end gap-2">
-                      <span className="inline-flex items-center gap-1 eyebrow text-[color:var(--color-bronze-deep)] text-[9px] border-l-2 border-[color:var(--color-bronze)] pl-2">
+                      <span className="inline-flex items-center gap-1 eyebrow text-[color:var(--color-bronze-deep)] text-[10px] border-l-2 border-[color:var(--color-bronze)] pl-2">
                         <Play size={9} aria-hidden="true" />
                         TikTok
                       </span>

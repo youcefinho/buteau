@@ -115,10 +115,9 @@ export const config = {
     logo: "", // À fournir / créer
     ogImage: "",
     teamPhotos: {
-      andrew: "https://i.imgur.com/k4bZmLl.jpg",
-      abygaele:
-        "https://ugc.production.linktr.ee/5iBsvLTR0iXiJgoKotJw_I4Qhjq9XsUtz0u6v?io=true&size=avatar-v3_0",
-      alexis: "https://i.imgur.com/MUD07Kc.jpg",
+      andrew: "/equipe/andrew.jpg",
+      abygaele: "/equipe/abygaele.jpg",
+      alexis: "/equipe/alexis.jpg",
       felix: "/equipe/felix.jpeg",
     },
   },

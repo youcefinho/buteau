@@ -740,7 +740,7 @@ function withSecurityHeaders(response: Response, request?: Request): Response {
       "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://www.clarity.ms",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com data:",
-      "img-src 'self' data: https://i.imgur.com https://static.wixstatic.com https://upload.wikimedia.org https://b2b2c.ca https://logos-world.net https://ugc.production.linktr.ee https://storage.googleapis.com https://assets.cdn.filesafe.space https://www.google-analytics.com https://www.facebook.com https://i.ytimg.com",
+      "img-src 'self' data: https://static.wixstatic.com https://upload.wikimedia.org https://b2b2c.ca https://logos-world.net https://storage.googleapis.com https://assets.cdn.filesafe.space https://www.google-analytics.com https://www.facebook.com https://i.ytimg.com",
       "connect-src 'self' https://services.leadconnectorhq.com https://www.google-analytics.com https://www.clarity.ms https://*.facebook.com",
       "frame-src 'self' https://api.leadconnectorhq.com https://www.youtube-nocookie.com https://www.youtube.com",
       // frame-ancestors 'none' : moderne équivalent de X-Frame-Options DENY.

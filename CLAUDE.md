@@ -8,7 +8,7 @@
 **Équipe : 4 membres maintenant** (Andrew + Abygaèle + Alexis + Felix)
 - Andrew : bio vérifiée Planiprêt (citation officielle intégrité/transparence)
 - Felix : 4e membre AJOUTÉ, rôle "Coordonnateur des opérations de courtage hypothécaire", bio placeholder honnête (en attente client)
-- Photos : anciennes URLs imgur préférées par user (studio JPEG en /public/equipe/ pas utilisées mais conservées)
+- Photos : self-host `/public/equipe/{andrew,abygaele,alexis,felix}.{avif,webp,jpg}` (rapatrié 2026-05-19 depuis imgur/linktr.ee — SPOF eliminé, CSP nettoyé). Versions originales préférées par user conservées (mêmes images, juste self-hosted).
 
 **Nouveaux composants/routes :**
 - `MediaShowcase` (composant `/equipe`) — Bloc 1 YouTube Art de Réussir + 3 thumbs Art de Réussir (mail #1) ; Bloc 2 galerie 6 photos Dans la rue novembre 2025 en 3 cols stagger (mail #2)
