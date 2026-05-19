@@ -131,7 +131,7 @@ export const translations = {
         alexisRole: "Assistant en gestion hypothécaire",
         felixName: "Felix",
         felixRole: "Coordonnateur des opérations",
-        cta: "Découvrir notre équipe",
+        cta: "Rencontrer Andrew, Abygaèle, Alexis & Felix",
       },
 
       services: {
@@ -152,7 +152,7 @@ export const translations = {
           },
           {
             title: "Achat d'une propriété",
-            desc: "Accompagnement complet pour l'acquisition d'une première propriété, d'une 2e propriété, d'un upgrade familial ou d'une résidence secondaire.",
+            desc: "Stratégie de A à Z pour l'acquisition d'une première propriété, d'une 2e propriété, d'un upgrade familial ou d'une résidence secondaire.",
           },
           {
             title: "Investissement",
@@ -163,7 +163,7 @@ export const translations = {
 
       mission: {
         eyebrow: "Notre mission",
-        title: "L'hypothèque autrement",
+        title: "Notre raison d'être",
         bodyP1Lead: "Chez ",
         bodyP1Brand: "L'Équipe BUTEAU",
         bodyP1Continued:
@@ -173,7 +173,7 @@ export const translations = {
         bodyP2Continued: ", nous avons accompagné plus de ",
         bodyP2Stat: "familles",
         bodyP2End:
-          " à travers le Québec. Avec rigueur et disponibilité, nous propulsons chaque projet vers la réussite.",
+          " à travers le Québec. Avec méthode et disponibilité, nous propulsons chaque projet vers la réussite.",
         values: [
           {
             title: "Analyse des données",
@@ -181,11 +181,11 @@ export const translations = {
           },
           {
             title: "Expérience étendue",
-            desc: "Plus de 200 familles accompagnées en 2025 à travers la province.",
+            desc: "Plus de 200 familles en 2025. Toutes les régions. Tous les profils.",
           },
           {
             title: "Équipe professionnelle",
-            desc: "Courtiers rigoureux et disponibles pour vous accompagner à chaque étape.",
+            desc: "Courtiers méthodiques et disponibles à chaque étape — du premier appel à la signature.",
           },
           {
             title: "Éventail de prêteurs",
@@ -238,7 +238,7 @@ export const translations = {
 
       valueTicker: {
         items: [
-          "200 familles accompagnées en 2025",
+          "200 dossiers fermés en 2025",
           "9+ institutions financières partenaires",
           "Inscrit AMF — Cabinet Planiprêt",
           "L'hypothèque autrement",
@@ -252,7 +252,7 @@ export const translations = {
         eyebrow: "30 secondes top chrono",
         title: "L'hypothèque expliquée en capsules.",
         subtitle:
-          "Andrew répond aux vraies questions hypothécaires en 30 secondes. Mythes, calculs rapides, programmes méconnus, pièges à éviter — sans jargon, sans détour. Voici 5 capsules vedettes parmi 30+ disponibles.",
+          "Mythes, calculs rapides, programmes méconnus, pièges à éviter — sans jargon, sans détour. Voici 5 capsules vedettes parmi 30+ disponibles.",
         ctaFull: "Voir toutes les capsules",
         // categoryId : ancre vers la rubrique correspondante sur /capsules#${id} (fix MEDIUM)
         items: [
@@ -274,13 +274,13 @@ export const translations = {
         yearsLabel: "Durée",
         resultLabel: "Paiement mensuel",
         ctaFull: "Calculateur complet + scénarios",
-        ctaTools: "Voir tous nos outils",
+        ctaTools: "Explorer la boîte à outils complète",
       },
 
       // AdPage — pleine page édito style "publicité magazine luxe" (Cereal vol.18).
       // Statement dérivé du copy existant (4 pros teamTeaser + 5 services + valeur rigueur Mission).
       adPage: {
-        statement: "Quatre pros. Cinq services. Une seule rigueur.",
+        statement: "Quatre pros. Cinq services. Une signature.",
         attribution: "L'Équipe Buteau",
       },
 
@@ -367,8 +367,8 @@ export const translations = {
             a: "La pré-qualification est simple et rapide. Nous analysons votre situation financière, vos revenus, vos dettes et votre historique de crédit. Une fois complétée, vous recevrez une lettre de pré-qualification valide pour négocier une propriété en toute confiance.",
           },
           {
-            q: "Combien de temps prend le processus hypothécaire ?",
-            a: "Généralement, le processus complet prend entre 30 et 45 jours du moment où l'offre d'achat est acceptée jusqu'à la clôture. Notre équipe travaille pour minimiser ce délai grâce à notre efficacité et nos relations privilégiées avec les prêteurs.",
+            q: "Combien de temps prend un dossier hypothécaire ?",
+            a: "Généralement, comptez 30 à 45 jours du moment où l'offre d'achat est acceptée jusqu'à la clôture. Notre équipe travaille pour minimiser ce délai grâce à nos relations privilégiées avec les prêteurs.",
           },
           {
             q: "Quelle est la mise de fonds minimale requise ?",
@@ -376,7 +376,7 @@ export const translations = {
           },
           {
             q: "Taux fixe ou taux variable : lequel choisir ?",
-            a: "Le choix dépend de votre situation et de votre tolérance au risque. Un taux fixe offre une stabilité prévisible, tandis qu'un taux variable peut être avantageux en période de baisse des taux. Notre équipe analysera vos options pour recommander la meilleure stratégie.",
+            a: "Le choix dépend de votre situation et de votre tolérance au risque. Un taux fixe offre une stabilité prévisible, tandis qu'un taux variable peut être avantageux en période de baisse des taux. Notre équipe analysera vos options pour recommander la stratégie qui colle à votre profil.",
           },
           {
             q: "Y a-t-il des frais cachés ?",
@@ -384,7 +384,7 @@ export const translations = {
           },
           {
             q: "Pouvez-vous refinancer ma propriété actuelle ?",
-            a: "Absolument. Le refinancement est l'une de nos spécialités. Que ce soit pour réduire vos paiements, libérer de l'équité ou consolider vos dettes, nous trouvons la meilleure solution adaptée à votre situation financière.",
+            a: "Absolument. Le refinancement est l'une de nos spécialités. Que ce soit pour réduire vos paiements, libérer de l'équité ou consolider vos dettes, nous trouvons la solution adaptée à votre situation financière.",
           },
           {
             q: "Comment puis-je améliorer mon score de crédit ?",
@@ -403,7 +403,7 @@ export const translations = {
         eyebrow: "L'équipe",
         title: "Notre équipe",
         subtitle:
-          "Une équipe de courtiers hypothécaires passionnés, dédiés à structurer votre réussite financière avec rigueur et humanité.",
+          "Quatre courtiers hypothécaires passionnés, dédiés à structurer votre réussite financière avec méthode et humanité.",
       },
       marginalia: ["fondateur", "coordo.", "assist.", "opérations"],
       members: [
@@ -424,7 +424,7 @@ export const translations = {
           name: "Alexis Buteau",
           role: "Assistant en gestion hypothécaire",
           photo: "https://i.imgur.com/MUD07Kc.jpg",
-          bio: "Calme, rigoureux et perfectionniste, Alexis occupe le rôle d'Assistant en gestion hypothécaire. Il prend en charge la gestion documentaire, le soutien administratif et l'analyse des documents essentiels au montage de chaque requête. Actuellement dans les derniers milles de sa formation de courtier hypothécaire.",
+          bio: "Calme, méthodique et perfectionniste, Alexis seconde l'équipe au quotidien : préparation des dossiers, soutien administratif et analyse des documents essentiels au montage de chaque requête. Actuellement dans les derniers milles de sa formation de courtier hypothécaire.",
         },
         {
           name: "Felix",
@@ -437,11 +437,11 @@ export const translations = {
         eyebrow: "Notre méthode",
         title: "Trois piliers, une exécution",
         intro:
-          "Chaque dossier est traité avec la même rigueur et la même structure. Notre équipe travaille en collaboration étroite pour analyser votre situation, identifier les meilleures options et exécuter une stratégie de financement claire et adaptée à vos objectifs.",
+          "Chaque dossier est traité avec la même méthode et la même structure. Nous travaillons en collaboration étroite pour analyser votre situation, identifier les options les plus pertinentes et exécuter une stratégie de financement claire et adaptée à vos objectifs.",
         items: [
           {
             label: "Collaboration",
-            desc: "Chaque membre de l'équipe contribue à la réussite de votre dossier. De l'analyse initiale à la finalisation, nous travaillons ensemble pour assurer cohérence et efficacité.",
+            desc: "Chaque membre apporte son expertise — analyse, négociation, exécution. De la première rencontre à la finalisation, nous travaillons ensemble pour assurer cohérence et efficacité.",
           },
           {
             label: "Analyse",
@@ -920,7 +920,7 @@ export const translations = {
 
     tools: {
       hero: {
-        eyebrow: "Ressources",
+        eyebrow: "La boîte à outils",
         title: "Outils & ressources",
         subtitle:
           "Tout ce dont vous avez besoin pour structurer votre projet hypothécaire.",
@@ -974,7 +974,7 @@ export const translations = {
       tiktok: {
         eyebrow: "30 secondes top chrono",
         title: "L'hypothèque expliquée en capsules courtes",
-        body: "Andrew répond à toutes les questions hypothécaires en 30 secondes. Mythes, calculs rapides, programmes méconnus, pièges à éviter — sans jargon, sans détour.",
+        body: "Andrew répond à toutes les questions hypothécaires — mythes, calculs rapides, programmes méconnus, pièges à éviter. Sans jargon, sans détour.",
         ctaCollection: "Voir la collection complète",
         ctaTikTok: "Suivre sur TikTok",
       },
@@ -1001,9 +1001,9 @@ export const translations = {
         ],
       },
       finalCta: {
-        eyebrow: "Accompagnement",
-        title: "Besoin d'accompagnement ?",
-        body: "Nos outils sont là pour vous guider. Pour un accompagnement structuré et personnalisé, contactez-nous.",
+        eyebrow: "Au-delà des outils",
+        title: "Besoin d'un humain ?",
+        body: "Les outils ouvrent une porte. Andrew et son équipe vous aident à la franchir — sans pression, avec une stratégie chiffrée.",
         button: "Prendre rendez-vous",
       },
     },
@@ -1131,7 +1131,7 @@ export const translations = {
         alexisRole: "Mortgage management assistant",
         felixName: "Felix",
         felixRole: "Brokerage operations coordinator",
-        cta: "Meet our team",
+        cta: "Meet Andrew, Abygaèle, Alexis & Felix",
       },
 
       services: {
@@ -1152,7 +1152,7 @@ export const translations = {
           },
           {
             title: "Property purchase",
-            desc: "Full support for buying a first home, a 2nd property, a family upgrade, or a secondary residence.",
+            desc: "Strategy from A to Z for buying a first home, a 2nd property, a family upgrade, or a secondary residence.",
           },
           {
             title: "Investment",
@@ -1163,7 +1163,7 @@ export const translations = {
 
       mission: {
         eyebrow: "Our mission",
-        title: "Mortgage. Differently.",
+        title: "Why we exist",
         bodyP1Lead: "At ",
         bodyP1Brand: "Équipe BUTEAU",
         bodyP1Continued:
@@ -1173,7 +1173,7 @@ export const translations = {
         bodyP2Continued: ", we supported more than ",
         bodyP2Stat: "families",
         bodyP2End:
-          " across Quebec. With rigor and availability, we move every project toward success.",
+          " across Quebec. With method and availability, we move every project toward success.",
         values: [
           {
             title: "Data-driven analysis",
@@ -1181,11 +1181,11 @@ export const translations = {
           },
           {
             title: "Extensive experience",
-            desc: "200+ families supported in 2025 across the province.",
+            desc: "200+ families in 2025. All regions. All profiles.",
           },
           {
             title: "Professional team",
-            desc: "Rigorous, available brokers guiding you at every step.",
+            desc: "Methodical, available brokers at every step — from the first call to the signature.",
           },
           {
             title: "Wide lender network",
@@ -1237,7 +1237,7 @@ export const translations = {
 
       valueTicker: {
         items: [
-          "200 families supported in 2025",
+          "200 files closed in 2025",
           "9+ partner financial institutions",
           "AMF-registered — Planiprêt firm",
           "Mortgage, differently",
@@ -1251,7 +1251,7 @@ export const translations = {
         eyebrow: "30 seconds, top chrono",
         title: "Mortgage explained in capsules.",
         subtitle:
-          "Andrew tackles real mortgage questions in 30 seconds. Myths, quick math, hidden programs, traps — no jargon, no detours. Here are 5 featured capsules from 30+ available.",
+          "Myths, quick math, hidden programs, traps to avoid — no jargon, no detours. Here are 5 featured capsules from 30+ available.",
         ctaFull: "View all capsules",
         items: [
           { categoryId: "down-payment", title: "The HBP — using your RRSP to buy", hook: "Eminem isn't the only one who can RAP… you can too. But it's not the same RAP." },
@@ -1272,12 +1272,12 @@ export const translations = {
         yearsLabel: "Term",
         resultLabel: "Monthly payment",
         ctaFull: "Full calculator + scenarios",
-        ctaTools: "See all our tools",
+        ctaTools: "Explore the full toolkit",
       },
 
       // AdPage — full-bleed editorial spread (Cereal vol.18 style).
       adPage: {
-        statement: "Four pros. Five services. One rigor.",
+        statement: "Four pros. Five services. One signature.",
         attribution: "Équipe Buteau",
       },
 
@@ -1349,8 +1349,8 @@ export const translations = {
             a: "Pre-qualification is simple and fast. We analyze your financial situation — income, debts, credit history — and once complete, you receive a pre-qualification letter to negotiate a property with confidence.",
           },
           {
-            q: "How long does the mortgage process take?",
-            a: "The full process typically takes 30 to 45 days from accepted offer to closing. Our team works to minimize that delay through efficiency and strong lender relationships.",
+            q: "How long does a mortgage file take?",
+            a: "Generally, count on 30 to 45 days from accepted offer to closing. Our team works to minimize that delay through strong lender relationships.",
           },
           {
             q: "What's the minimum down payment?",
@@ -1358,7 +1358,7 @@ export const translations = {
           },
           {
             q: "Fixed or variable rate — which to choose?",
-            a: "It depends on your situation and risk tolerance. A fixed rate offers predictable stability; a variable rate can pay off in falling-rate environments. We analyze your options and recommend the best strategy.",
+            a: "It depends on your situation and risk tolerance. A fixed rate offers predictable stability; a variable rate can pay off in falling-rate environments. We analyze your options and recommend the strategy that fits you.",
           },
           {
             q: "Are there hidden fees?",
@@ -1366,7 +1366,7 @@ export const translations = {
           },
           {
             q: "Can you refinance my current property?",
-            a: "Absolutely. Refinancing is one of our specialties. Whether to reduce your payments, free up equity, or consolidate debts, we find the best fit for your financial situation.",
+            a: "Absolutely. Refinancing is one of our specialties. Whether to reduce your payments, free up equity, or consolidate debts, we find the right fit for your financial situation.",
           },
           {
             q: "How can I improve my credit score?",
@@ -1385,7 +1385,7 @@ export const translations = {
         eyebrow: "The team",
         title: "Our team",
         subtitle:
-          "A team of dedicated mortgage brokers, structuring your financial success with rigor and humanity.",
+          "Four dedicated mortgage brokers, structuring your financial success with method and humanity.",
       },
       marginalia: ["founder", "coord.", "assist.", "operations"],
       members: [
@@ -1406,7 +1406,7 @@ export const translations = {
           name: "Alexis Buteau",
           role: "Mortgage management assistant",
           photo: "https://i.imgur.com/MUD07Kc.jpg",
-          bio: "Calm, rigorous and detail-oriented, Alexis serves as Mortgage Management Assistant. He handles document management, administrative support, and the analysis of materials essential to building every file. Currently in the final stretch of his mortgage broker training.",
+          bio: "Calm, methodical and detail-oriented, Alexis backs the team daily: file preparation, administrative support, and analysis of the materials essential to building every file. Currently in the final stretch of his mortgage broker training.",
         },
         {
           name: "Felix",
@@ -1419,11 +1419,11 @@ export const translations = {
         eyebrow: "Our method",
         title: "Three pillars, one execution",
         intro:
-          "Every file is treated with the same rigor and structure. Our team works in close collaboration to analyze your situation, identify the best options, and execute a clear financing strategy tailored to your goals.",
+          "Every file is treated with the same method and structure. We work in close collaboration to analyze your situation, identify the most relevant options, and execute a clear financing strategy tailored to your goals.",
         items: [
           {
             label: "Collaboration",
-            desc: "Every team member contributes to your file's success. From initial analysis to closing, we work together to ensure consistency and efficiency.",
+            desc: "Each member brings their expertise — analysis, negotiation, execution. From the first meeting to closing, we work together to ensure consistency and efficiency.",
           },
           {
             label: "Analysis",
@@ -1896,7 +1896,7 @@ export const translations = {
 
     tools: {
       hero: {
-        eyebrow: "Resources",
+        eyebrow: "The toolkit",
         title: "Tools & resources",
         subtitle: "Everything you need to structure your mortgage project.",
       },
@@ -1946,7 +1946,7 @@ export const translations = {
       tiktok: {
         eyebrow: "30 seconds, top chrono",
         title: "Mortgage explained in short capsules",
-        body: "Andrew tackles every mortgage question in 30 seconds. Myths, quick math, hidden programs, traps to avoid — no jargon, no detours.",
+        body: "Andrew tackles every mortgage question — myths, quick math, hidden programs, traps to avoid. No jargon, no detours.",
         ctaCollection: "View the full collection",
         ctaTikTok: "Follow on TikTok",
       },
@@ -1967,9 +1967,9 @@ export const translations = {
         ],
       },
       finalCta: {
-        eyebrow: "Support",
-        title: "Need guidance?",
-        body: "Our tools are here to guide you. For structured, personalized support, get in touch.",
+        eyebrow: "Beyond the tools",
+        title: "Need a human?",
+        body: "Tools open a door. Andrew and the team help you walk through it — no pressure, with a numbered strategy.",
         button: "Book an appointment",
       },
     },
