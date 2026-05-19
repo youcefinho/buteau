@@ -9,6 +9,11 @@ import { useLanguage } from "@/lib/LanguageContext";
  * mini cercles pour les sous-sections. Active section tracking via
  * IntersectionObserver. Smooth scroll vers la section au click.
  *
+ * Visuel signature :
+ * - Spine verticale taupe derrière les dots (chapter index magazine).
+ * - Slide-in mount animation (depuis -16px gauche, opacity 0 -> 1).
+ * - Tooltip pédagogique 1ère visite (sessionStorage gate, visible 5s).
+ *
  * Position : fixed left-6 top-1/2 -translate-y-1/2, visible lg+ (≥1024px).
  * Mobile/tablet : caché (espace écran trop précieux).
  */
@@ -39,13 +44,47 @@ const SECTIONS: ReadonlyArray<SectionEntry> = [
   { id: "faq", type: "sub", label: { fr: "FAQ", en: "FAQ" } },
 ];
 
+const HINT_SEEN_KEY = "buteau-sectionrail-hint-seen";
+
 export function SectionRail() {
   const { lang } = useLanguage();
   const [activeId, setActiveId] = useState<string>(SECTIONS[0].id);
+  const [mounted, setMounted] = useState(false);
+  const [showHint, setShowHint] = useState(false);
 
+  // Slide-in animation au mount (delay 800ms, puis fade-in 600ms)
   useEffect(() => {
-    // IntersectionObserver détecte quelle section est centrée dans le viewport.
-    // rootMargin -40%/-40% = zone d'intérêt = milieu vertical de l'écran.
+    const t = window.setTimeout(() => setMounted(true), 800);
+    return () => window.clearTimeout(t);
+  }, []);
+
+  // Tooltip pédagogique 1ère visite — sessionStorage gate, visible 5s
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      if (sessionStorage.getItem(HINT_SEEN_KEY)) return;
+    } catch {
+      return; // sessionStorage bloqué (private mode strict) → pas de hint
+    }
+
+    const showTimer = window.setTimeout(() => setShowHint(true), 1800);
+    const hideTimer = window.setTimeout(() => {
+      setShowHint(false);
+      try {
+        sessionStorage.setItem(HINT_SEEN_KEY, "1");
+      } catch {
+        /* sessionStorage bloqué */
+      }
+    }, 6800); // 1800ms delay + 5000ms visible
+
+    return () => {
+      window.clearTimeout(showTimer);
+      window.clearTimeout(hideTimer);
+    };
+  }, []);
+
+  // IntersectionObserver détecte quelle section est centrée dans le viewport
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -72,13 +111,23 @@ export function SectionRail() {
     };
   }, []);
 
+  function dismissHint() {
+    if (!showHint) return;
+    setShowHint(false);
+    try {
+      sessionStorage.setItem(HINT_SEEN_KEY, "1");
+    } catch {
+      /* sessionStorage bloqué */
+    }
+  }
+
   function handleClick(e: React.MouseEvent<HTMLAnchorElement>, id: string) {
     e.preventDefault();
+    dismissHint();
     const el = document.getElementById(id);
     if (!el) return;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     el.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
-    // Update URL hash sans déclencher de scroll natif additionnel
     if (typeof window.history.replaceState === "function") {
       window.history.replaceState(null, "", `#${id}`);
     }
@@ -87,8 +136,17 @@ export function SectionRail() {
   return (
     <nav
       aria-label={lang === "fr" ? "Navigation des sections" : "Section navigation"}
-      className="hidden lg:flex fixed left-6 top-1/2 -translate-y-1/2 z-40 flex-col gap-3.5 pointer-events-none"
+      className={`hidden lg:flex fixed left-6 top-1/2 -translate-y-1/2 z-40 flex-col gap-3.5 pointer-events-none transition-all duration-700 ease-out ${
+        mounted ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
+      }`}
     >
+      {/* Spine verticale — chapter index magazine, ligne fine taupe derrière les dots.
+          Positionnée à x=6px (centre des dot containers w-3 = 12px). */}
+      <span
+        aria-hidden="true"
+        className="absolute left-[5.5px] top-3 bottom-3 w-px bg-[color:var(--color-taupe)]/30 pointer-events-none"
+      />
+
       {SECTIONS.map((s) => {
         const isActive = activeId === s.id;
         const isMain = s.type === "main";
@@ -99,19 +157,22 @@ export function SectionRail() {
             href={`#${s.id}`}
             onClick={(e) => handleClick(e, s.id)}
             aria-current={isActive ? "true" : undefined}
-            className="group pointer-events-auto inline-flex items-center gap-3 py-1 transition-colors"
+            className="group pointer-events-auto relative inline-flex items-center gap-3 py-1 transition-colors"
           >
-            {/* Cercle — taille différente selon type (main/sub) */}
-            <span
-              aria-hidden="true"
-              className={`block rounded-full shrink-0 transition-all duration-300 ${
-                isMain ? "w-3 h-3" : "w-1.5 h-1.5"
-              } ${
-                isActive
-                  ? "bg-[color:var(--color-bronze)] shadow-[0_0_0_3px_oklch(0.704_0.077_56/0.18)]"
-                  : "bg-[color:var(--color-taupe)]/45 group-hover:bg-[color:var(--color-bronze)]"
-              }`}
-            />
+            {/* Dot container fixed-width — assure que centres des dots s'alignent
+                pile sur la spine verticale (sinon main 12px vs sub 6px desalignerait). */}
+            <span className="w-3 flex justify-center shrink-0 relative z-10">
+              <span
+                aria-hidden="true"
+                className={`block rounded-full transition-all duration-300 ${
+                  isMain ? "w-3 h-3" : "w-1.5 h-1.5"
+                } ${
+                  isActive
+                    ? "bg-[color:var(--color-bronze)] shadow-[0_0_0_3px_oklch(0.704_0.077_56/0.18)]"
+                    : "bg-[color:var(--color-taupe)]/45 group-hover:bg-[color:var(--color-bronze)]"
+                }`}
+              />
+            </span>
 
             {/* Label Cormorant italic — taille différente selon type */}
             <span
@@ -136,6 +197,26 @@ export function SectionRail() {
           </a>
         );
       })}
+
+      {/* Tooltip pédagogique 1ère visite (sessionStorage gate, 5s visible) */}
+      <div
+        role="status"
+        aria-live="polite"
+        className={`pointer-events-none absolute left-full top-1/2 -translate-y-1/2 ml-6 px-3.5 py-2 bg-[color:var(--color-navy-deep)] text-[color:var(--color-cream)] font-[var(--font-editorial)] italic text-sm rounded-md whitespace-nowrap shadow-[0_8px_24px_-12px_rgba(16,34,61,0.6)] transition-all duration-400 ${
+          showHint
+            ? "opacity-100 translate-x-0"
+            : "opacity-0 -translate-x-3 invisible"
+        }`}
+      >
+        {/* Petite flèche pointant vers la rail à gauche */}
+        <span
+          aria-hidden="true"
+          className="absolute right-full top-1/2 -translate-y-1/2 border-y-[6px] border-r-[8px] border-y-transparent border-r-[color:var(--color-navy-deep)]"
+        />
+        {lang === "fr"
+          ? "Cliquez pour naviguer entre les sections"
+          : "Click to jump between sections"}
+      </div>
     </nav>
   );
 }
