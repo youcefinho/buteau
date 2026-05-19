@@ -68,9 +68,10 @@ export const config = {
     },
   },
 
-  // Mentions légales / Loi 25 (Phase 8 — placeholders)
+  // Mentions légales / Loi 25 (NEQ + adresse confirmes 2026-05-19 via registre QC)
   legal: {
-    neq: "", // À fournir
+    legalName: "Andrew Buteau inc.", // raison sociale immatriculee 2025-01-23
+    neq: "1180553555",
     cabinet: "Planiprêt Cabinet en Courtage Hypothécaire",
     streetAddress: "2300 boul. Saint-Martin Est, suite 200, Laval, QC H7E 5P3",
     dpoEmail: "", // À fournir Phase 8
