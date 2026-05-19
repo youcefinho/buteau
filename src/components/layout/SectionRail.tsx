@@ -162,9 +162,11 @@ export function SectionRail() {
               />
             </span>
 
-            {/* Label Cormorant italic — taille différente selon type */}
+            {/* Label Cormorant italic — taille différente selon type.
+                Hover : scale-110 origin-left (zoom subtil sans pousser le dot)
+                + active déjà bronze + pulse. */}
             <span
-              className={`font-[var(--font-editorial)] italic transition-all duration-300 whitespace-nowrap ${
+              className={`font-[var(--font-editorial)] italic transition-all duration-300 whitespace-nowrap origin-left group-hover:scale-110 ${
                 isMain ? "text-base" : "text-xs"
               } ${
                 isActive
