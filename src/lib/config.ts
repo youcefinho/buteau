@@ -114,8 +114,8 @@ export const config = {
 
   // Assets (à enrichir au fur et à mesure du build — Phase 2-3)
   assets: {
-    logo: "", // À fournir / créer
-    ogImage: "",
+    logo: "", // À fournir / créer (le site utilise actuellement le monogramme texte BUTEAU)
+    ogImage: "/og-buteau.jpg", // genere 2026-05-19 via scripts/gen-og-image.cjs (1200x630)
     teamPhotos: {
       andrew: "/equipe/andrew.jpg",
       abygaele: "/equipe/abygaele.jpg",
