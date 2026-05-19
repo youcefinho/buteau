@@ -1196,6 +1196,30 @@ body {
     filter: drop-shadow(-2px 0 6px oklch(0.704 0.077 56 / 0.55));
   }
 }
+/* Wave luminescent — cascade bronze qui descend a travers tous les dots
+   quand le tooltip apparait. Chaque dot a son animationDelay (idx * 80ms)
+   pour creer l'effet vague. Durée 800ms, run-once (forwards). */
+@keyframes sectionRailDotWave {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 oklch(0.704 0.077 56 / 0);
+  }
+  35% {
+    transform: scale(1.8);
+    box-shadow: 0 0 0 6px oklch(0.704 0.077 56 / 0.45);
+    background-color: oklch(0.704 0.077 56);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 oklch(0.704 0.077 56 / 0);
+  }
+}
+/* Tooltip shimmer — sweep gradient bronze qui traverse le fond navy
+   en boucle 3s. Effet "lettre prestige" magazine luxury. */
+@keyframes sectionRailHintShimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -100% 0; }
+}
 .border-beam {
   position: relative;
 }

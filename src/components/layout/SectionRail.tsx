@@ -49,6 +49,9 @@ export function SectionRail() {
   const [activeId, setActiveId] = useState<string>(SECTIONS[0].id);
   const [mounted, setMounted] = useState(false);
   const [showHint, setShowHint] = useState(false);
+  // Wave luminescente — boolean qui declenche cascade bronze a travers les dots
+  // (1x sur appearance, 1x re-trigger a mid-life pour effet attention double)
+  const [waveKey, setWaveKey] = useState(0);
 
   // Slide-in animation au mount (delay 800ms, puis fade-in 600ms)
   useEffect(() => {
@@ -57,12 +60,20 @@ export function SectionRail() {
   }, []);
 
   // Tooltip pédagogique — apparait a chaque refresh, visible 5s
+  // Wave luminescente declenche a t=0 (appearance) et t=2.5s (mid-life)
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const showTimer = window.setTimeout(() => setShowHint(true), 1800);
+    const showTimer = window.setTimeout(() => {
+      setShowHint(true);
+      setWaveKey((k) => k + 1); // trigger wave #1 immediately on appearance
+    }, 1800);
+    const wave2Timer = window.setTimeout(() => {
+      setWaveKey((k) => k + 1); // trigger wave #2 a mid-life du tooltip
+    }, 1800 + 2500);
     const hideTimer = window.setTimeout(() => setShowHint(false), 6800);
     return () => {
       window.clearTimeout(showTimer);
+      window.clearTimeout(wave2Timer);
       window.clearTimeout(hideTimer);
     };
   }, []);
@@ -121,7 +132,7 @@ export function SectionRail() {
         className="absolute left-[5.5px] top-3 bottom-3 w-px bg-[color:var(--color-taupe)]/30 pointer-events-none"
       />
 
-      {SECTIONS.map((s) => {
+      {SECTIONS.map((s, index) => {
         const isActive = activeId === s.id;
         const isMain = s.type === "main";
         const label = lang === "fr" ? s.label.fr : s.label.en;
@@ -137,12 +148,14 @@ export function SectionRail() {
                 pile sur la spine verticale (sinon main 12px vs sub 6px desalignerait). */}
             <span className="w-3 flex justify-center shrink-0 relative z-10">
               <span
+                key={`${s.id}-wave-${waveKey}`}
                 aria-hidden="true"
-                className={`block rounded-full transition-all duration-300 ${
+                style={{ animationDelay: `${index * 70}ms` }}
+                className={`block rounded-full transition-all duration-300 motion-safe:animate-[sectionRailDotWave_900ms_ease-out_both] ${
                   isMain ? "w-3 h-3" : "w-1.5 h-1.5"
                 } ${
                   isActive
-                    ? "bg-[color:var(--color-bronze)] shadow-[0_0_0_3px_oklch(0.704_0.077_56/0.18)] motion-safe:animate-[sectionRailActivePulse_2.2s_ease-in-out_infinite]"
+                    ? "bg-[color:var(--color-bronze)] shadow-[0_0_0_3px_oklch(0.704_0.077_56/0.18)]"
                     : "bg-[color:var(--color-taupe)]/45 group-hover:bg-[color:var(--color-bronze)]"
                 }`}
               />
@@ -173,14 +186,24 @@ export function SectionRail() {
       })}
 
       {/* Tooltip pédagogique — apparait a chaque refresh, visible 5s.
-          Float subtil en boucle (translateY +/-2px) pour attirer l'oeil sans agresser. */}
+          Float subtil en boucle + shimmer gradient bronze sweep traversant
+          le fond navy (effet lettre prestige magazine). */}
       <div
         role="status"
         aria-live="polite"
-        className={`pointer-events-none absolute left-full top-1/2 -translate-y-1/2 ml-6 px-3.5 py-2 bg-[color:var(--color-navy-deep)] text-[color:var(--color-cream)] font-[var(--font-editorial)] italic text-sm rounded-md whitespace-nowrap shadow-[0_8px_24px_-12px_rgba(16,34,61,0.6)] transition-all duration-400 ${
+        style={
           showHint
-            ? "opacity-100 translate-x-0 motion-safe:animate-[sectionRailHintFloat_3.2s_ease-in-out_infinite]"
-            : "opacity-0 -translate-x-3 invisible"
+            ? {
+                background:
+                  "linear-gradient(110deg, oklch(0.252 0.067 256) 0%, oklch(0.252 0.067 256) 35%, oklch(0.704 0.077 56 / 0.45) 50%, oklch(0.252 0.067 256) 65%, oklch(0.252 0.067 256) 100%)",
+                backgroundSize: "220% 100%",
+              }
+            : undefined
+        }
+        className={`pointer-events-none absolute left-full top-1/2 -translate-y-1/2 ml-6 px-3.5 py-2 text-[color:var(--color-cream)] font-[var(--font-editorial)] italic text-sm rounded-md whitespace-nowrap shadow-[0_8px_24px_-12px_rgba(16,34,61,0.6)] transition-all duration-400 ${
+          showHint
+            ? "opacity-100 translate-x-0 motion-safe:animate-[sectionRailHintFloat_3.2s_ease-in-out_infinite,sectionRailHintShimmer_2.8s_linear_infinite]"
+            : "opacity-0 -translate-x-3 invisible bg-[color:var(--color-navy-deep)]"
         }`}
       >
         {/* Petite flèche pointant vers la rail à gauche — pulse pour attirer l'oeil */}
