@@ -1171,6 +1171,21 @@ body {
 @keyframes border-beam-rotate {
   to { transform: rotate(360deg); }
 }
+
+/* SectionRail — micro-animations pour faire respirer la rail (active dot + tooltip).
+   prefers-reduced-motion respecté via motion-safe: utility Tailwind. */
+@keyframes sectionRailActivePulse {
+  0%, 100% {
+    box-shadow: 0 0 0 3px oklch(0.704 0.077 56 / 0.18);
+  }
+  50% {
+    box-shadow: 0 0 0 6px oklch(0.704 0.077 56 / 0.10);
+  }
+}
+@keyframes sectionRailHintFloat {
+  0%, 100% { transform: translate(0, -50%); }
+  50%      { transform: translate(0, calc(-50% - 2px)); }
+}
 .border-beam {
   position: relative;
 }

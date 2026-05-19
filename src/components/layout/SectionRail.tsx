@@ -32,7 +32,7 @@ const SECTIONS: ReadonlyArray<SectionEntry> = [
   { id: "partenaires", type: "sub", label: { fr: "Partenaires", en: "Partners" } },
   { id: "equipe", type: "sub", label: { fr: "L'équipe", en: "The team" } },
   { id: "services", type: "main", label: { fr: "Services", en: "Services" } },
-  { id: "calc-preview", type: "main", label: { fr: "Calculateur", en: "Calculator" } },
+  { id: "calculateur", type: "main", label: { fr: "Calculateur", en: "Calculator" } },
   { id: "journal-preview", type: "sub", label: { fr: "Journal", en: "Journal" } },
   { id: "outils-teaser", type: "sub", label: { fr: "Outils", en: "Tools" } },
   { id: "mission", type: "main", label: { fr: "Mission", en: "Mission" } },
@@ -43,8 +43,6 @@ const SECTIONS: ReadonlyArray<SectionEntry> = [
   { id: "contact", type: "main", label: { fr: "Contact", en: "Contact" } },
   { id: "faq", type: "sub", label: { fr: "FAQ", en: "FAQ" } },
 ];
-
-const HINT_SEEN_KEY = "buteau-sectionrail-hint-seen";
 
 export function SectionRail() {
   const { lang } = useLanguage();
@@ -58,25 +56,11 @@ export function SectionRail() {
     return () => window.clearTimeout(t);
   }, []);
 
-  // Tooltip pédagogique 1ère visite — sessionStorage gate, visible 5s
+  // Tooltip pédagogique — apparait a chaque refresh, visible 5s
   useEffect(() => {
     if (typeof window === "undefined") return;
-    try {
-      if (sessionStorage.getItem(HINT_SEEN_KEY)) return;
-    } catch {
-      return; // sessionStorage bloqué (private mode strict) → pas de hint
-    }
-
     const showTimer = window.setTimeout(() => setShowHint(true), 1800);
-    const hideTimer = window.setTimeout(() => {
-      setShowHint(false);
-      try {
-        sessionStorage.setItem(HINT_SEEN_KEY, "1");
-      } catch {
-        /* sessionStorage bloqué */
-      }
-    }, 6800); // 1800ms delay + 5000ms visible
-
+    const hideTimer = window.setTimeout(() => setShowHint(false), 6800);
     return () => {
       window.clearTimeout(showTimer);
       window.clearTimeout(hideTimer);
@@ -111,19 +95,9 @@ export function SectionRail() {
     };
   }, []);
 
-  function dismissHint() {
-    if (!showHint) return;
-    setShowHint(false);
-    try {
-      sessionStorage.setItem(HINT_SEEN_KEY, "1");
-    } catch {
-      /* sessionStorage bloqué */
-    }
-  }
-
   function handleClick(e: React.MouseEvent<HTMLAnchorElement>, id: string) {
     e.preventDefault();
-    dismissHint();
+    if (showHint) setShowHint(false);
     const el = document.getElementById(id);
     if (!el) return;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -168,7 +142,7 @@ export function SectionRail() {
                   isMain ? "w-3 h-3" : "w-1.5 h-1.5"
                 } ${
                   isActive
-                    ? "bg-[color:var(--color-bronze)] shadow-[0_0_0_3px_oklch(0.704_0.077_56/0.18)]"
+                    ? "bg-[color:var(--color-bronze)] shadow-[0_0_0_3px_oklch(0.704_0.077_56/0.18)] motion-safe:animate-[sectionRailActivePulse_2.2s_ease-in-out_infinite]"
                     : "bg-[color:var(--color-taupe)]/45 group-hover:bg-[color:var(--color-bronze)]"
                 }`}
               />
@@ -198,13 +172,14 @@ export function SectionRail() {
         );
       })}
 
-      {/* Tooltip pédagogique 1ère visite (sessionStorage gate, 5s visible) */}
+      {/* Tooltip pédagogique — apparait a chaque refresh, visible 5s.
+          Float subtil en boucle (translateY +/-2px) pour attirer l'oeil sans agresser. */}
       <div
         role="status"
         aria-live="polite"
         className={`pointer-events-none absolute left-full top-1/2 -translate-y-1/2 ml-6 px-3.5 py-2 bg-[color:var(--color-navy-deep)] text-[color:var(--color-cream)] font-[var(--font-editorial)] italic text-sm rounded-md whitespace-nowrap shadow-[0_8px_24px_-12px_rgba(16,34,61,0.6)] transition-all duration-400 ${
           showHint
-            ? "opacity-100 translate-x-0"
+            ? "opacity-100 translate-x-0 motion-safe:animate-[sectionRailHintFloat_3.2s_ease-in-out_infinite]"
             : "opacity-0 -translate-x-3 invisible"
         }`}
       >
