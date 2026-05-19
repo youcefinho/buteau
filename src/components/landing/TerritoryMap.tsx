@@ -33,7 +33,7 @@ export function TerritoryMap() {
   );
 
   return (
-    <section className="relative py-[clamp(4rem,9vw,8rem)] surface-cream overflow-hidden">
+    <section id="territoire" className="relative py-[clamp(4rem,9vw,8rem)] surface-cream overflow-hidden">
       {/* Atmospheric continuity — embers per-section signature */}
 
       {/* Filigrane "QC" Cormorant italic en arrière-plan */}

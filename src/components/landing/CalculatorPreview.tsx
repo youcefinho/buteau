@@ -97,12 +97,9 @@ export function CalculatorPreview() {
             <Link
               to="/outils"
               hash="calculateur"
-              className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze-deep)] hover:text-[color:var(--color-bronze)] transition-colors"
+              className="group inline-flex items-center gap-2 px-6 py-3 border border-[color:var(--color-bronze)] text-[color:var(--color-bronze-deep)] hover:bg-[color:var(--color-bronze)] hover:text-[color:var(--color-cream)] hover:-translate-y-0.5 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] transition-all duration-300"
             >
-              <span className="relative">
-                {t("home.calcPreview.ctaFull")}
-                <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-              </span>
+              <span>{t("home.calcPreview.ctaFull")}</span>
               <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
             </Link>
           </div>

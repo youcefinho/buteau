@@ -31,7 +31,7 @@ export function JournalPreview() {
   const featured = articles[0];
 
   return (
-    <section className="relative py-[clamp(4rem,9vw,8rem)] surface-navy overflow-hidden border-t border-[color:var(--color-taupe)]/20 grain-overlay">
+    <section id="journal-preview" className="relative py-[clamp(4rem,9vw,8rem)] surface-navy overflow-hidden border-t border-[color:var(--color-taupe)]/20 grain-overlay">
       {/* Filigrane § XL background — signature editoriale */}
       <span
         aria-hidden="true"

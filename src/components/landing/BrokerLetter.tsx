@@ -33,7 +33,7 @@ export function BrokerLetter() {
     : "Planiprêt mortgage brokerage firm — registered with the AMF (Quebec Financial Markets Authority).";
 
   return (
-    <section className="relative py-[clamp(4rem,9vw,8rem)] surface-cream overflow-hidden lined-paper">
+    <section id="lettre" className="relative py-[clamp(4rem,9vw,8rem)] surface-cream overflow-hidden lined-paper">
       {/* Atmospheric continuity — embers per-section signature */}
 
       {/* Filigrane "lettre M" Cormorant en filigrane (référence "mot du courtier") */}
