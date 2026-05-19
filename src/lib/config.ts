@@ -56,9 +56,9 @@ export const config = {
     },
   },
 
-  // Régulateur AMF (Phase 8 — placeholder à remplir par le client)
+  // Régulateur AMF (numéro Andrew confirmé par client 2026-05-19)
   amf: {
-    certificateNumberAndrew: "",
+    certificateNumberAndrew: "609394",
     // Abygaèle = Coordonnatrice exécutive (LinkedIn confirmé), pas courtière → pas d'AMF
     // Alexis = en formation courtier hypothécaire → AMF à venir
     // Felix = coordonnateur des opérations → pas d'AMF
