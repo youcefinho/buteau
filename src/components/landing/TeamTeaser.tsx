@@ -49,7 +49,7 @@ export function TeamTeaser() {
         className="absolute inset-0 bg-cover bg-center md:bg-fixed"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(16, 34, 61, 0.86), rgba(16, 34, 61, 0.86)), url('https://i.imgur.com/YsueQT3.jpg')",
+            "linear-gradient(rgba(16, 34, 61, 0.86), rgba(16, 34, 61, 0.86)), image-set(url('/texture-team-fixed.avif') type('image/avif'), url('/texture-team-fixed.webp') type('image/webp'), url('/texture-team-fixed.jpg'))",
         }}
         aria-hidden="true"
       />

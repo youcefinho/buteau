@@ -12,7 +12,7 @@ type CtaBlockProps = {
   bgImageUrl?: string;
 };
 
-export function CtaBlock({ bgImageUrl = "https://i.imgur.com/Bw7Zyf4.jpg" }: CtaBlockProps = {}) {
+export function CtaBlock({ bgImageUrl = "/texture-navy-fixed.jpg" }: CtaBlockProps = {}) {
   const { t } = useLanguage();
 
   return (

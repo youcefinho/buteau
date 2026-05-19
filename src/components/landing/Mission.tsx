@@ -48,7 +48,7 @@ export function Mission() {
         className="absolute inset-0 bg-cover bg-center md:bg-fixed"
         style={{
           backgroundImage:
-            "linear-gradient(180deg, rgba(16, 34, 61, 0.72) 0%, rgba(16, 34, 61, 0.85) 50%, rgba(16, 34, 61, 0.78) 100%), url('https://i.imgur.com/Bw7Zyf4.jpg')",
+            "linear-gradient(180deg, rgba(16, 34, 61, 0.72) 0%, rgba(16, 34, 61, 0.85) 50%, rgba(16, 34, 61, 0.78) 100%), image-set(url('/texture-navy-fixed.avif') type('image/avif'), url('/texture-navy-fixed.webp') type('image/webp'), url('/texture-navy-fixed.jpg'))",
         }}
         aria-hidden="true"
       />

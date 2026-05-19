@@ -20,7 +20,7 @@ export function PageHero({
   eyebrow,
   title,
   subtitle,
-  bgImageUrl = "https://i.imgur.com/YsueQT3.jpg",
+  bgImageUrl = "/texture-team-fixed.jpg",
   ornament,
   className,
 }: PageHeroProps) {

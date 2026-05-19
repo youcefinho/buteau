@@ -33,7 +33,7 @@ export function ToolsTeaser() {
         className="absolute inset-0 bg-cover bg-center md:bg-fixed"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(16, 34, 61, 0.88), rgba(16, 34, 61, 0.88)), url('https://i.imgur.com/Bw7Zyf4.jpg')",
+            "linear-gradient(rgba(16, 34, 61, 0.88), rgba(16, 34, 61, 0.88)), image-set(url('/texture-navy-fixed.avif') type('image/avif'), url('/texture-navy-fixed.webp') type('image/webp'), url('/texture-navy-fixed.jpg'))",
         }}
         aria-hidden="true"
       />
