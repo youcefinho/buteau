@@ -19,6 +19,7 @@ import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { BackToTop } from "@/components/layout/BackToTop";
 import { ColophonProvider } from "@/lib/ColophonContext";
 import { CarnetProvider } from "@/lib/CarnetContext";
+import { useLenis } from "@/hooks/useLenis";
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -30,6 +31,7 @@ export const Route = createRootRoute({
 });
 
 function RootComponent() {
+  useLenis();
   return (
     <ColophonProvider>
       <CarnetProvider>
