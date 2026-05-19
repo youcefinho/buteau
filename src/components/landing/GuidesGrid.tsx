@@ -43,12 +43,12 @@ export function GuidesGrid() {
               key={idx}
               className="group relative bg-[color:var(--color-cream)]/8 backdrop-blur-sm border border-[color:var(--color-cream)]/20 p-[clamp(1.75rem,3vw,2.5rem)] transition-all duration-500 hover:border-[color:var(--color-bronze)]/70 hover:bg-[color:var(--color-cream)]/15 hover:-translate-y-1 overflow-hidden"
             >
-              {/* Numéro romain Cormorant filigrane top-right */}
+              {/* Numéro Cormorant filigrane top-right */}
               <span
                 aria-hidden="true"
                 className="absolute top-4 right-5 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/30 text-5xl leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-[color:var(--color-bronze)]/45"
               >
-                {["I", "II", "III"][idx]}
+                {["01", "02", "03"][idx]}
               </span>
 
               {/* Icone dans cercle bronze + halo subtle */}

@@ -123,9 +123,6 @@ export function Footer() {
             <p className="font-[var(--font-editorial)] italic text-sm leading-[1.55] text-[color:var(--color-cream)]/75 text-pretty">
               {t("footer.colophonPrinted")}
             </p>
-            <p className="font-[var(--font-editorial)] italic text-sm leading-[1.55] text-[color:var(--color-cream)]/75 text-pretty">
-              {t("footer.colophonEdition")}
-            </p>
 
             {/* Légal links + colophon (modaux pour lexique/colophon, pages pour légal) */}
             <div className="pt-3 mt-3 border-t border-[color:var(--color-taupe)]/30 flex flex-wrap gap-x-5 gap-y-2 text-xs">

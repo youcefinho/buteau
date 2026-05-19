@@ -41,8 +41,8 @@ function LexiquePage() {
       title={isFr ? "Lexique hypothécaire" : "Mortgage glossary"}
       lastUpdated={
         isFr
-          ? "Édition Quebec MMXXVI · Sources officielles SCHL · AMF · ARC"
-          : "Edition Quebec MMXXVI · Official sources CMHC · AMF · CRA"
+          ? "Sources officielles : SCHL · AMF · ARC"
+          : "Official sources: CMHC · AMF · CRA"
       }
     >
       {/* Schema.org JSON-LD — SEO long-tail */}

@@ -21,11 +21,6 @@ function ColophonPage() {
     <LegalPageWrap
       eyebrow={isFr ? "Mentions techniques" : "Technical credits"}
       title={isFr ? "L'atelier — méthode et standards" : "The atelier — method and standards"}
-      lastUpdated={
-        isFr
-          ? "Volume I — Édition N° 01 · Quebec MMXXVI"
-          : "Volume I — Edition Nº 01 · Quebec MMXXVI"
-      }
     >
       <ColophonContent variant="page" />
     </LegalPageWrap>

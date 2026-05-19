@@ -83,7 +83,6 @@ export const translations = {
       colophon: "Colophon",
       colophonComposed: "Composé en Montserrat & Cormorant Garamond",
       colophonPrinted: "Imprimé en pixels — Cloudflare, Quebec",
-      colophonEdition: "Édition N° 01 — MMXXVI",
       issn: "Andrew Buteau — Inscrit AMF",
     },
 
@@ -103,9 +102,6 @@ export const translations = {
           investor: "Discuter ma stratégie",
           explorer: "Prendre 20 minutes avec Andrew",
         },
-        issueLabel: "Édition",
-        issueNumber: "N° 01",
-        issueDate: "Quebec — MMXXVI",
         issueLocation: "Laval · Québec",
         scrollHint: "Faire défiler",
         // Mots signatures révélés au hover sur chaque lettre BUTEAU
@@ -577,7 +573,7 @@ export const translations = {
         "Peut-être qu'un lien a été déplacé, ou que vous cherchez quelque chose de spécifique. Nous pouvons vous remettre sur la bonne voie.",
       ctaHome: "Retour à l'accueil",
       ctaCall: "Appeler Andrew",
-      footnote: "Code 404 · Quebec · MMXXVI",
+      footnote: "Code 404",
     },
 
     capsules: {
@@ -1083,7 +1079,6 @@ export const translations = {
       colophon: "Colophon",
       colophonComposed: "Set in Montserrat & Cormorant Garamond",
       colophonPrinted: "Printed in pixels — Cloudflare, Quebec",
-      colophonEdition: "Edition Nº 01 — MMXXVI",
       issn: "Andrew Buteau — AMF registered",
     },
 
@@ -1101,9 +1096,6 @@ export const translations = {
           investor: "Discuss my strategy",
           explorer: "Take 20 minutes with Andrew",
         },
-        issueLabel: "Edition",
-        issueNumber: "Nº 01",
-        issueDate: "Quebec — MMXXVI",
         issueLocation: "Laval · Quebec",
         scrollHint: "Scroll",
         letterWords: ["Buteau", "Unique", "Transparency", "Expert", "Accessible", "Useful"],
@@ -1553,7 +1545,7 @@ export const translations = {
         "Perhaps a link has moved, or you're searching for something specific. We can guide you back on track.",
       ctaHome: "Back to home",
       ctaCall: "Call Andrew",
-      footnote: "Code 404 · Quebec · MMXXVI",
+      footnote: "Code 404",
     },
 
     capsules: {

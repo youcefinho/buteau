@@ -17,7 +17,7 @@ import { config } from "@/lib/config";
 const STORAGE_KEY = "buteau:splash-shown";
 
 export function SplashIntro() {
-  const { t, lang } = useLanguage();
+  const { t } = useLanguage();
   const [phase, setPhase] = useState<"hidden" | "visible" | "fading">("hidden");
 
   useEffect(() => {
@@ -65,13 +65,6 @@ export function SplashIntro() {
       }}
     >
       <div className="text-center px-6 max-w-3xl">
-        {/* Eyebrow */}
-        <p className="eyebrow text-[color:var(--color-taupe)] mb-8 inline-flex items-center gap-3 animate-[buteauFadeUp_500ms_ease-out_0ms_both]">
-          <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
-          {lang === "fr" ? "Édition" : "Edition"} N° 01
-          <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
-        </p>
-
         {/* Brand mark XL */}
         <p className="font-[var(--font-display)] text-[color:var(--color-cream)] text-7xl md:text-9xl lg:text-[10rem] font-extrabold tracking-[0.22em] leading-[0.95] pl-[0.22em] animate-[buteauScale_900ms_cubic-bezier(0.4,0,0.2,1)_200ms_both]">
           {config.brandName}

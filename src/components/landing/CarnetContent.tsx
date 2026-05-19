@@ -174,8 +174,8 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
         "@context": "https://schema.org",
         "@type": "ItemList",
         name: isFr
-          ? "Le carnet de l'emprunteur québécois — Édition MMXXVI"
-          : "The Quebec borrower's address book — Edition MMXXVI",
+          ? "Le carnet de l'emprunteur québécois"
+          : "The Quebec borrower's address book",
         numberOfItems: sections.reduce((sum, s) => sum + s.entries.length, 0),
         itemListElement: sections.flatMap((section, sIdx) =>
           section.entries.map((entry, eIdx) => ({

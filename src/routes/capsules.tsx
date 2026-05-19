@@ -219,12 +219,12 @@ function CapsulesPage() {
       <div className="space-y-20 not-prose">
         {filteredCategories.map((cat, ci) => (
           <section key={cat.id} id={cat.id} className="relative">
-            {/* Numéro romain XL filigrane à gauche */}
+            {/* Numéro XL filigrane à gauche */}
             <span
               aria-hidden="true"
-              className="hidden md:block absolute -left-20 top-0 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/15 text-[10rem] leading-none pointer-events-none select-none"
+              className="hidden md:block absolute -left-20 top-0 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/15 text-[10rem] leading-none pointer-events-none select-none tabular-nums"
             >
-              {romanNumeral(ci + 1)}
+              {String(ci + 1).padStart(2, "0")}
             </span>
 
             {/* Header catégorie — eyebrow numéro section + h2 nom catégorie + filet bronze + intro avec dropcap.
@@ -323,10 +323,3 @@ function CapsulesPage() {
   );
 }
 
-// Algo génératif jusqu'à 30 (fix MEDIUM hardcoded 1-7)
-function romanNumeral(n: number): string {
-  if (n < 1 || n >= 30) return String(n);
-  const tens = ["", "X", "XX"];
-  const ones = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
-  return tens[Math.floor(n / 10)] + ones[n % 10];
-}

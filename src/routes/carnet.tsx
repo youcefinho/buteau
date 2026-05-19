@@ -24,8 +24,8 @@ function CarnetPage() {
       title={isFr ? "Le carnet de l'emprunteur" : "The borrower's address book"}
       lastUpdated={
         isFr
-          ? "Édition Quebec MMXXVI — Ressources hypothécaires officielles"
-          : "Edition Quebec MMXXVI — Official mortgage resources"
+          ? "Ressources hypothécaires officielles"
+          : "Official mortgage resources"
       }
     >
       <CarnetContent variant="page" />

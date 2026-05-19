@@ -32,7 +32,7 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
         <ColophonRow
           label={isFr ? "Caractères de titre" : "Display"}
           value="Cormorant Garamond"
-          note={isFr ? "Italique de titre — éclats, marginalia, chiffres romains" : "Display italic — accents, marginalia, roman numerals"}
+          note={isFr ? "Italique de titre — éclats, marginalia, numéros décoratifs" : "Display italic — accents, marginalia, decorative numerals"}
         />
         <ColophonRow
           label={isFr ? "Caractères signature" : "Signature"}

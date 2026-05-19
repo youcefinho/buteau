@@ -17,12 +17,12 @@ export function LendersGrid() {
 
   return (
     <section className="py-[clamp(4rem,8vw,7rem)] surface-cream border-t border-[color:var(--color-border)] relative overflow-hidden">
-      {/* Filigrane decoratif numero romain V */}
+      {/* Filigrane decoratif chiffre 9 (= nombre d'institutions) */}
       <span
         aria-hidden="true"
         className="absolute -top-12 left-1/2 -translate-x-1/2 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/10 text-[24rem] leading-none pointer-events-none select-none"
       >
-        V
+        9
       </span>
 
       <Container size="xl" className="relative">
