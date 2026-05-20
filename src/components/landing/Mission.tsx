@@ -60,10 +60,12 @@ export function Mission() {
           tone="dark"
         />
 
-        {/* Body éditorial — drop cap + pull quote asymétrique */}
-        <div className="max-w-4xl mx-auto mb-[clamp(5rem,7vw,6rem)] space-y-[clamp(2.5rem,4vw,3rem)]">
-          {/* P1 avec drop cap luxury */}
-          <p className="dropcap text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.8] text-[color:var(--color-cream)]/90 font-light text-pretty hyphens-auto">
+        {/* Body éditorial — grid 2-col (paragraphe gauche / pull quote droite)
+            au lieu du stack vertical. User 2026-05-20 : "trop vertical, mieux structurer".
+            Mobile : vertical naturel. Desktop : 5/7 cols avec items-center magazine. */}
+        <div className="max-w-6xl mx-auto mb-[clamp(5rem,7vw,6rem)] grid grid-cols-1 lg:grid-cols-12 gap-[clamp(2.5rem,5vw,4rem)] items-center">
+          {/* P1 avec drop cap luxury — col 5 desktop */}
+          <p className="lg:col-span-5 dropcap text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.8] text-[color:var(--color-cream)]/90 font-light text-pretty hyphens-auto">
             {t("home.mission.bodyP1Lead")}
             <span className="font-bold text-[color:var(--color-bronze)]">
               {t("home.mission.bodyP1Brand")}
@@ -71,8 +73,8 @@ export function Mission() {
             {t("home.mission.bodyP1Continued")}
           </p>
 
-          {/* Pull quote asymétrique — Cormorant italic XL avec décalage */}
-          <blockquote className="relative pl-8 md:pl-14 pr-4 md:pr-0 md:max-w-2xl md:ml-auto">
+          {/* Pull quote — col 7 desktop, Cormorant italic XL */}
+          <blockquote className="lg:col-span-7 relative pl-8 md:pl-14 pr-4 md:pr-0">
 
             <span
               aria-hidden="true"
