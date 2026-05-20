@@ -101,12 +101,14 @@ export function Navbar() {
             alt="Planiprêt — Cabinet en courtage hypothécaire"
             loading="lazy"
             decoding="async"
-            className="hidden md:inline-block h-7 lg:h-8 w-auto object-contain transition-opacity"
+            className="hidden md:inline-block h-7 lg:h-8 w-auto object-contain transition-[filter,opacity] duration-300"
             style={{
               opacity: scrolled ? 0.85 : 0.95,
-              // Invert filter quand fond cream (scrolled) : logo Planipret est
-              // en couleurs sur fond sombre, doit etre lisible sur cream aussi.
-              filter: scrolled ? "none" : "brightness(1.1)",
+              // Le logo Planipret PNG est pur blanc transparent. Sur navy
+              // (!scrolled) il est lisible avec brightness boost. Sur cream
+              // (scrolled) il devient invisible — on inverse en noir via
+              // filter:invert(1). Fix user feedback 2026-05-20.
+              filter: scrolled ? "invert(1)" : "brightness(1.1)",
             }}
           />
         </Link>
