@@ -1,7 +1,6 @@
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { AnimatedSignature } from "./AnimatedSignature";
-import { FootnoteScope, Footnote, FootnoteList } from "@/components/typography/Footnote";
 
 /**
  * « Le mot du courtier » — section letter-format AUTHENTIQUE.
@@ -19,18 +18,7 @@ import { FootnoteScope, Footnote, FootnoteList } from "@/components/typography/F
  * Layout : asymétrique 8/4 (texte 8, signature 4) sur desktop ; vertical mobile.
  */
 export function BrokerLetter() {
-  const { t, lang } = useLanguage();
-  const isFr = lang === "fr";
-
-  // Notes hardcodees bilingues — documenter discretement les claims
-  // editoriaux du letter (200 familles + cabinet AMF Planipret).
-  // Justifie pour ton "magazine luxury corporate" + jargon hypothecaire.
-  const noteEmphasis = isFr
-    ? "Donnée interne 2025 — dossiers fermés à travers le Québec."
-    : "Internal data 2025 — closed cases across Quebec.";
-  const noteRole = isFr
-    ? "Cabinet en courtage hypothécaire Planiprêt — inscrit auprès de l'AMF (Autorité des marchés financiers du Québec)."
-    : "Planiprêt mortgage brokerage firm — registered with the AMF (Quebec Financial Markets Authority).";
+  const { t } = useLanguage();
 
   return (
     <section id="lettre" className="relative py-[clamp(4rem,9vw,8rem)] surface-cream overflow-hidden lined-paper">
@@ -45,7 +33,6 @@ export function BrokerLetter() {
       </span>
 
       <Container size="lg" className="relative">
-        <FootnoteScope id="broker-letter">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-[clamp(2.5rem,5vw,4rem)] items-start">
           {/* Lettre — col 8 */}
           <div className="lg:col-span-8 lg:pr-8">
@@ -68,7 +55,6 @@ export function BrokerLetter() {
                 <span className="not-italic font-semibold text-[color:var(--color-bronze-deep)]">
                   {t("letter.bodyP1Emphasis")}
                 </span>
-                <Footnote n={1}>{noteEmphasis}</Footnote>
               </p>
 
               <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.75] text-pretty hyphens-auto">
@@ -95,17 +81,10 @@ export function BrokerLetter() {
               <div className="w-12 h-px bg-[color:var(--color-bronze)] lg:mx-auto mb-3" />
               <p className="eyebrow text-[color:var(--color-taupe-dark)]">
                 {t("letter.role")}
-                <Footnote n={2}>{noteRole}</Footnote>
               </p>
             </div>
           </div>
         </div>
-
-        {/* Notes editoriales en pied de scope */}
-        <div className="max-w-2xl mt-2 lg:pr-8">
-          <FootnoteList />
-        </div>
-        </FootnoteScope>
       </Container>
     </section>
   );
