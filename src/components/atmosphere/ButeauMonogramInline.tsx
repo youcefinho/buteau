@@ -1,26 +1,32 @@
 /**
- * ButeauMonogramInline — version mini du monogramme B Buteau pour usage inline
- * dans le texte (remplace l'ancien char ❦ Cormorant italic inline).
+ * ButeauMonogramInline — monogramme B Buteau pour usage inline dans le texte
+ * (remplace l'ancien char ❦ Cormorant italic inline).
  *
- * 18x14 SVG inline-block + currentColor sur le B = hérite la couleur du texte
- * parent. Petit point bronze sous le B pour signature minimale.
+ * Sizing RELATIF en em -> scale automatiquement avec font-size du parent.
+ * Par defaut "sm" = 1.2em width (eyebrow context). "lg" = 1.6em (ticker, dividers).
+ * currentColor sur le B = herite la couleur texte parent.
  *
  * Usage : `<ButeauMonogramInline /> Lire le carnet complet`
- *
- * Pourquoi pas le monogramme complet (cercle médaillon + losanges + swash) ?
- * Inline dans texte = 18px max sinon ça casse la baseline + se voit comme
- * un objet a part. Cette mini version se fond dans le flow de lecture.
+ *         `<ButeauMonogramInline size="lg" />` (ticker, hero divider)
  */
-export function ButeauMonogramInline({ className }: { className?: string }) {
+export function ButeauMonogramInline({
+  className,
+  size = "sm",
+}: {
+  className?: string;
+  size?: "sm" | "lg";
+}) {
+  const widthEm = size === "lg" ? "1.6em" : "1.2em";
+  const heightEm = size === "lg" ? "1.3em" : "0.95em";
   return (
     <svg
-      width="18"
-      height="14"
+      width={widthEm}
+      height={heightEm}
       viewBox="0 0 18 14"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
       className={className}
-      style={{ display: "inline-block", verticalAlign: "-2px" }}
+      style={{ display: "inline-block", verticalAlign: "-0.18em" }}
     >
       {/* "B" du logo officiel scale tres petit, fill currentColor pour heriter
           la couleur du parent (bronze sur cards cream, taupe sur fond navy, etc.) */}

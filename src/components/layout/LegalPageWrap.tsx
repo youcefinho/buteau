@@ -64,8 +64,8 @@ export function LegalPageWrap({
       <div className="flex items-center justify-center py-[clamp(2.5rem,4vw,3.5rem)] relative" aria-hidden="true">
         <div className="flex items-center gap-5">
           <span className="block w-[clamp(4rem,8vw,6rem)] h-px bg-[color:var(--color-taupe)]" />
-          <span className="text-[color:var(--color-navy-deep)] inline-flex items-center" style={{ transform: "scale(1.5)" }}>
-            <ButeauMonogramInline />
+          <span className="text-[color:var(--color-navy-deep)] inline-flex items-center text-2xl">
+            <ButeauMonogramInline size="lg" />
           </span>
           <span className="block w-[clamp(4rem,8vw,6rem)] h-px bg-[color:var(--color-taupe)]" />
         </div>
