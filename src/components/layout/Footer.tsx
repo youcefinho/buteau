@@ -199,6 +199,19 @@ export function Footer() {
 
         {/* === Disclaimer AMF + bottom bar === */}
         <div className="pt-6 space-y-4">
+          {/* Ligne compliance explicite — AMF cert + NEQ (visibles en footer
+              au-dessus du disclaimer, lecture rapide pour visiteurs verifiant
+              la legitimite). User feedback 2026-05-20. */}
+          <p className="text-[11px] tracking-[0.04em] text-[color:var(--color-cream)]/80">
+            {lang === "fr" ? "Inscrit AMF — N° " : "AMF registered — No. "}
+            <span className="font-semibold text-[color:var(--color-cream)]">{config.amf.certificateNumberAndrew}</span>
+            <span className="mx-2 text-[color:var(--color-taupe)]/60">·</span>
+            {lang === "fr" ? "NEQ " : "BIN "}
+            <span className="font-semibold text-[color:var(--color-cream)]">{config.legal.neq}</span>
+            <span className="mx-2 text-[color:var(--color-taupe)]/60">·</span>
+            {lang === "fr" ? "Cabinet : " : "Firm: "}
+            <span className="font-semibold text-[color:var(--color-cream)]">{config.cabinet}</span>
+          </p>
           <p className="text-xs leading-[1.6] text-[color:var(--color-cream)]/85 max-w-4xl italic text-pretty hyphens-auto">
             {config.amf.disclaimer[lang]}
           </p>
