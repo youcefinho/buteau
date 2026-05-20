@@ -111,7 +111,7 @@ export const translations = {
 
       partners: {
         eyebrow: "Nos partenaires",
-        title: "Plus de 9 institutions financières",
+        title: "Un réseau de prêteurs reconnus",
         subtitle: "Quelques-unes de nos institutions financières partenaires.",
         cta: "Consulter les institutions financières",
       },
@@ -1103,7 +1103,7 @@ export const translations = {
 
       partners: {
         eyebrow: "Our partners",
-        title: "9+ financial institutions",
+        title: "A network of leading lenders",
         subtitle: "A few of our financial institution partners.",
         cta: "Browse all financial institutions",
       },
