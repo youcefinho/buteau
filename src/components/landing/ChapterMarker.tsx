@@ -7,16 +7,12 @@ import { Container } from "@/components/layout/Container";
  * Usage : `<ChapterMarker numeral="02" label="Notre équipe" />` entre 2 sections.
  */
 type ChapterMarkerProps = {
-  numeral: string; // 01 / 02 / 03 / 04 / 05 / 06 / 07 / 08 / 09
+  numeral?: string; // Conserve pour backward compat — n'est plus affiche (user 2026-05-20 "plus epure").
   label?: string;
   tone?: "light" | "dark" | "bronze";
 };
 
-export function ChapterMarker({ numeral, label, tone = "light" }: ChapterMarkerProps) {
-  const numColor =
-    tone === "dark"
-      ? "text-[color:var(--color-taupe)]/40"
-      : "text-[color:var(--color-bronze)]/30";
+export function ChapterMarker({ label, tone = "light" }: ChapterMarkerProps) {
   const labelColor =
     tone === "dark"
       ? "text-[color:var(--color-taupe)]"
@@ -28,26 +24,19 @@ export function ChapterMarker({ numeral, label, tone = "light" }: ChapterMarkerP
 
   return (
     <div
-      className={`relative py-[clamp(2.5rem,5vw,4rem)] ${
+      className={`relative py-[clamp(2rem,4vw,3rem)] ${
         tone === "dark" ? "surface-navy" : "surface-cream"
       }`}
       aria-hidden={!label ? "true" : undefined}
     >
       <Container size="md">
-        <div className="flex flex-col items-center text-center gap-5">
-          {/* Roman numeral énorme Cormorant italic — central focus */}
-          <span
-            className={`font-[var(--font-editorial)] italic font-light ${numColor} text-[7rem] md:text-[10rem] lg:text-[12rem] leading-[0.85] pointer-events-none select-none`}
-          >
-            {numeral}
-          </span>
-
-          {/* Label optional eyebrow */}
+        <div className="flex flex-col items-center text-center">
+          {/* Label eyebrow seul — le numero romain XL retire 2026-05-20 (user epuration). */}
           {label && (
-            <p className={`eyebrow ${labelColor} inline-flex items-center gap-3 -mt-2`}>
-              <span className={`inline-block w-6 h-px ${lineColor}`} />
+            <p className={`eyebrow ${labelColor} inline-flex items-center gap-3`}>
+              <span className={`inline-block w-10 h-px ${lineColor}`} />
               {label}
-              <span className={`inline-block w-6 h-px ${lineColor}`} />
+              <span className={`inline-block w-10 h-px ${lineColor}`} />
             </p>
           )}
         </div>

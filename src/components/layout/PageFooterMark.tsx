@@ -17,19 +17,16 @@ import { Container } from "./Container";
  *   VII  — Courrier
  */
 type PageFooterMarkProps = {
-  numeral: string;
+  numeral?: string; // Conserve pour backward compat — n'est plus affiche (user 2026-05-20 "plus epure").
   label: string;
 };
 
-export function PageFooterMark({ numeral, label }: PageFooterMarkProps) {
+export function PageFooterMark({ label }: PageFooterMarkProps) {
   return (
     <div className="surface-cream pt-12 pb-6 border-t border-[color:var(--color-taupe)]/30">
       <Container size="md">
         <div className="flex items-center justify-center gap-4 opacity-70 hover:opacity-100 transition-opacity">
           <span className="block w-12 h-px bg-[color:var(--color-taupe)]" />
-          <span className="font-[var(--font-editorial)] italic text-[color:var(--color-bronze-deep)] text-2xl tracking-[-0.02em]">
-            {numeral}
-          </span>
           <span className="eyebrow text-[color:var(--color-taupe-dark)]">
             {label}
           </span>
