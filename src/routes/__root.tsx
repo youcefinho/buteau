@@ -1,4 +1,5 @@
-import { Outlet, createRootRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
+import { Outlet, createRootRoute, useRouterState } from "@tanstack/react-router";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SkipToContent } from "@/components/layout/SkipToContent";
@@ -32,6 +33,20 @@ export const Route = createRootRoute({
 
 function RootComponent() {
   useLenis();
+
+  // Scroll-to-top + strip hash sur chaque navigation de route (initial mount,
+  // refresh, back/forward nav). SectionRail clicks restent OK (scroll intra-page,
+  // pas de pathname change donc effect ne se re-execute pas).
+  // User feedback 2026-05-20 cross-4-sites : refresh/back doit revenir en haut.
+  const { location } = useRouterState();
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.location.hash) {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [location.pathname]);
+
   return (
     <ColophonProvider>
       <CarnetProvider>

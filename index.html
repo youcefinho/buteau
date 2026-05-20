@@ -147,6 +147,16 @@
       }
     </script>
 
+    <!-- Strip URL hash AVANT React mount = refresh/back nav reviennent en haut
+         de page au lieu de jumper sur la section sauvegardee par SectionRail.
+         User feedback 2026-05-20 cross-4-sites. SectionRail clicks restent OK
+         (scroll intra-page, pas de route change donc pas affecte par ce strip). -->
+    <script>
+      if (window.location.hash) {
+        history.replaceState(null, "", window.location.pathname + window.location.search);
+      }
+    </script>
+
     <!-- Loading splash édito — typographic mark "ÉQUIPE BUTEAU" Cormorant italic
          + ligne bronze, navy bg. Masque le boot React ~2s sur chaque page load. -->
     <style>
