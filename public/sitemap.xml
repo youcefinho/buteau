@@ -1,108 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Sitemap Equipe Buteau - courtier hypothecaire Planipret Laval.
-       Hreflang trio (fr-CA + en-CA + x-default), Vary: Accept-Language.
-       /merci omis (noindex). Refresh 2026-05-10 (Quickwins SEO sprint). -->
+       Hreflang RETIRE 2026-05-20 (audit Gemini SEO) : le site utilise un toggle
+       CSS bilingue sur la MEME URL, donc hreflang fr-CA/en-CA pointant vers
+       la meme URL = signal SEO confus / penalisant. Solution = retirer hreflang,
+       laisser og:locale (fr_CA primary + en_CA alternate) gerer le partage social.
+       /merci + /retour omis (noindex). Articles individuels journal ajoutes B-fix. -->
   <url>
     <loc>https://equipe-buteau.intralysqc.workers.dev/</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://equipe-buteau.intralysqc.workers.dev/" />
-    <xhtml:link rel="alternate" hreflang="en-CA" href="https://equipe-buteau.intralysqc.workers.dev/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://equipe-buteau.intralysqc.workers.dev/" />
   </url>
   <url>
     <loc>https://equipe-buteau.intralysqc.workers.dev/equipe</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://equipe-buteau.intralysqc.workers.dev/equipe" />
-    <xhtml:link rel="alternate" hreflang="en-CA" href="https://equipe-buteau.intralysqc.workers.dev/equipe" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://equipe-buteau.intralysqc.workers.dev/equipe" />
   </url>
   <url>
     <loc>https://equipe-buteau.intralysqc.workers.dev/institutions</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://equipe-buteau.intralysqc.workers.dev/institutions" />
-    <xhtml:link rel="alternate" hreflang="en-CA" href="https://equipe-buteau.intralysqc.workers.dev/institutions" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://equipe-buteau.intralysqc.workers.dev/institutions" />
   </url>
   <url>
     <loc>https://equipe-buteau.intralysqc.workers.dev/outils</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://equipe-buteau.intralysqc.workers.dev/outils" />
-    <xhtml:link rel="alternate" hreflang="en-CA" href="https://equipe-buteau.intralysqc.workers.dev/outils" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://equipe-buteau.intralysqc.workers.dev/outils" />
   </url>
   <url>
     <loc>https://equipe-buteau.intralysqc.workers.dev/capsules</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://equipe-buteau.intralysqc.workers.dev/capsules" />
-    <xhtml:link rel="alternate" hreflang="en-CA" href="https://equipe-buteau.intralysqc.workers.dev/capsules" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://equipe-buteau.intralysqc.workers.dev/capsules" />
   </url>
   <url>
     <loc>https://equipe-buteau.intralysqc.workers.dev/journal</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://equipe-buteau.intralysqc.workers.dev/journal" />
-    <xhtml:link rel="alternate" hreflang="en-CA" href="https://equipe-buteau.intralysqc.workers.dev/journal" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://equipe-buteau.intralysqc.workers.dev/journal" />
+  </url>
+  <!-- B-fix Gemini : article individuel du journal (1 publie actuellement,
+       a ajouter ici lors de chaque nouvel article publie). -->
+  <url>
+    <loc>https://equipe-buteau.intralysqc.workers.dev/journal/preapprobation-hypothecaire-2026</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://equipe-buteau.intralysqc.workers.dev/courrier</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://equipe-buteau.intralysqc.workers.dev/courrier" />
-    <xhtml:link rel="alternate" hreflang="en-CA" href="https://equipe-buteau.intralysqc.workers.dev/courrier" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://equipe-buteau.intralysqc.workers.dev/courrier" />
   </url>
   <url>
     <loc>https://equipe-buteau.intralysqc.workers.dev/lexique</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>quarterly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://equipe-buteau.intralysqc.workers.dev/lexique" />
-    <xhtml:link rel="alternate" hreflang="en-CA" href="https://equipe-buteau.intralysqc.workers.dev/lexique" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://equipe-buteau.intralysqc.workers.dev/lexique" />
   </url>
   <url>
     <loc>https://equipe-buteau.intralysqc.workers.dev/carnet</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://equipe-buteau.intralysqc.workers.dev/carnet" />
-    <xhtml:link rel="alternate" hreflang="en-CA" href="https://equipe-buteau.intralysqc.workers.dev/carnet" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://equipe-buteau.intralysqc.workers.dev/carnet" />
   </url>
   <url>
     <loc>https://equipe-buteau.intralysqc.workers.dev/colophon</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>quarterly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://equipe-buteau.intralysqc.workers.dev/colophon" />
-    <xhtml:link rel="alternate" hreflang="en-CA" href="https://equipe-buteau.intralysqc.workers.dev/colophon" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://equipe-buteau.intralysqc.workers.dev/colophon" />
   </url>
   <url>
     <loc>https://equipe-buteau.intralysqc.workers.dev/mentions-legales</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://equipe-buteau.intralysqc.workers.dev/confidentialite</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

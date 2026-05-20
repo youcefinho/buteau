@@ -63,7 +63,7 @@ function JournalArticlePage() {
           inLanguage: isFr ? "fr-CA" : "en-CA",
           datePublished: article.dateIso ?? article.date,
           articleSection: article.category,
-          author: { "@type": "Person", name: "Andrew Buteau", jobTitle: "Courtier hypothécaire" },
+          author: { "@id": "https://equipe-buteau.intralysqc.workers.dev/#andrew-buteau" },
           publisher: { "@id": "https://equipe-buteau.intralysqc.workers.dev/#business" },
           mainEntityOfPage: {
             "@type": "WebPage",
