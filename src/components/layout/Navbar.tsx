@@ -52,7 +52,6 @@ export function Navbar() {
   // Couleur dynamique : cream sur Hero (top), navy-deep apres scroll (sur cream).
   // Audit UI-BL1 : avant cette correction, le navbar etait navy-on-navy au top → invisible.
   const fgColor = scrolled ? "var(--color-navy-deep)" : "var(--color-cream)";
-  const accentColor = scrolled ? "var(--color-taupe-dark)" : "var(--color-taupe)";
 
   return (
     <header
@@ -80,21 +79,18 @@ export function Navbar() {
             taupe 1px verticale 30px. Le logo Planipret rappelle le cabinet
             d'attache officiel d'Andrew (courtier hypothecaire). */}
         <Link to="/" className="group flex items-center gap-3 md:gap-4">
-          {/* BUTEAU brand mark : visible MOBILE only. Sur desktop (md+),
-              le brand est porte par la tagline + logo Planipret pour alleger
-              le navbar (decision user 2026-05-17 — trop d'items en compet). */}
-          <span
-            className="md:hidden font-[var(--font-display)] text-xl font-bold tracking-[var(--tracking-eyebrow)]"
-            style={{ color: fgColor }}
-          >
-            {config.brandName}
-          </span>
-          <span
-            className="hidden md:inline eyebrow"
-            style={{ color: accentColor }}
-          >
-            {t("common.tagline")}
-          </span>
+          {/* Logo officiel Équipe Buteau (guide identite visuelle 2026-05-19) —
+              SVG complet "BUTEAU L'HYPOTHEQUE AUTREMENT". Swap blanc/navy selon
+              fond du navbar : white sur Hero transparent (top), navy sur pill
+              cream apres scroll. Remplace l'ancien text BUTEAU + tagline span. */}
+          <img
+            src={scrolled ? "/logo-buteau-navy.svg" : "/logo-buteau-white.svg"}
+            alt={`${config.brandName} — ${t("common.tagline")}`}
+            width={1267}
+            height={368}
+            decoding="async"
+            className="h-7 md:h-8 lg:h-9 w-auto object-contain transition-opacity duration-300"
+          />
           <span
             aria-hidden="true"
             className="hidden md:inline-block w-px h-7"
