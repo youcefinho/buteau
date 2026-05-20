@@ -102,7 +102,7 @@ export function Hero() {
               Chaque lettre B/U/T/E/A/U révèle un mot signature au hover (Buteau / Unique /
               Transparence / Expert / Accessible / Utile). */}
           <div className="relative inline-block group/brand">
-            <p className="font-[var(--font-display)] text-[color:var(--color-cream)] text-[clamp(3.5rem,9vw,8.5rem)] font-extrabold tracking-[0.22em] leading-[0.95] pl-[0.22em] flex">
+            <p className="font-[var(--font-display)] text-[color:var(--color-cream)] text-[clamp(4rem,11vw,10rem)] font-extrabold tracking-[0.22em] leading-[0.95] pl-[0.22em] flex">
               {config.brandName.split("").map((letter, idx) => {
                 const word = letterWords[idx] ?? letter;
                 return (
