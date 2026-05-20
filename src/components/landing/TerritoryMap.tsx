@@ -63,8 +63,10 @@ export function TerritoryMap() {
     "territory.regions",
   );
 
-  // C - Position du marker actif pour halo qui suit (fallback Laval si null)
-  const activePos = activeIdx !== null ? REGIONS_POSITIONS[activeIdx] : LAVAL_POS;
+  // C - Position du marker actif pour halo qui suit. Fallback Laval si null
+  // OU si activeIdx pointe vers la liste regions (idx 4 = Province, sans marker
+  // carte = REGIONS_POSITIONS[4] undefined -> crash sur .x). Fix 2026-05-20.
+  const activePos = (activeIdx !== null && REGIONS_POSITIONS[activeIdx]) || LAVAL_POS;
 
   return (
     <section id="territoire" className="relative py-[clamp(4rem,9vw,8rem)] surface-cream overflow-hidden">
