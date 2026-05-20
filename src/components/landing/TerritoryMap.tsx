@@ -15,12 +15,14 @@ import { ta, translations } from "@/lib/translations";
  */
 
 // Coordonnées approximatives sur le SVG (silhouette QC stylisée).
+// Note : "province" (index 4 dans regions list) n'a pas de marker carte car
+// pointerait vers une zone forestiere sans ville visible sur la carte OSM reelle.
+// Couverte en visio = mention dans la liste a droite uniquement (user 2026-05-20).
 const REGIONS_POSITIONS: Array<{ key: string; x: number; y: number }> = [
   { key: "laval", x: 196, y: 305 }, // Laval (siège, gros marker)
   { key: "montreal", x: 200, y: 322 }, // Montréal (au sud de Laval)
   { key: "rive-nord", x: 168, y: 268 }, // Rive-Nord (Laurentides, NW de Laval)
   { key: "rive-sud", x: 226, y: 340 }, // Rive-Sud (au sud de Montréal)
-  { key: "province", x: 138, y: 200 }, // Reste du QC (centre nord)
 ];
 
 export function TerritoryMap() {
@@ -104,11 +106,23 @@ export function TerritoryMap() {
                 </filter>
               </defs>
 
-              {/* Fond carte OSM reelle (Greater Montreal + Laurentides, z=8, 9 tuiles).
-                  Sepia + desaturee a la generation pour matcher palette cream/bronze.
-                  Mask feather (blur stdDev=8) = visible plein dans la silhouette,
-                  fade progressivement autour pour halo cartographique doux.
-                  Attribution OSM en bas (legal CC-BY-SA). User 2026-05-20. */}
+              {/* LAYER 1 — Carte OSM en CONTEXTE full-bg (visible partout dans la zone
+                  map, opacity faible). Donne le contexte cartographique reel autour
+                  de la silhouette QC. User 2026-05-20 : "vraie carte autour". */}
+              <image
+                href="/territory-map-bg.webp"
+                x="0"
+                y="0"
+                width="400"
+                height="480"
+                preserveAspectRatio="xMidYMid slice"
+                opacity="0.28"
+              />
+
+              {/* LAYER 2 — Meme carte AMPLIFIEE dans la silhouette QC (mask feather)
+                  pour faire ressortir la "zone cible" desservie par Andrew. Le contraste
+                  d'opacite (0.28 dehors / 0.70 dedans) cree l'effet "carte cible se demarque".
+                  Attribution OSM en bas (legal CC-BY-SA). */}
               <image
                 href="/territory-map-bg.webp"
                 x="0"
@@ -117,11 +131,12 @@ export function TerritoryMap() {
                 height="480"
                 mask="url(#qc-mask)"
                 preserveAspectRatio="xMidYMid slice"
-                opacity="0.55"
+                opacity="0.70"
               />
 
-              {/* Silhouette stylisée — fill reduit pour laisser passer la carte reelle,
-                  stroke pointille conserve pour le look magazine. */}
+              {/* Silhouette stylisée — stroke amplifie pour delimiter clairement
+                  la zone cible (1px -> 1.8px, color taupe-dark plus dense).
+                  Fill garde le warm tint cream/taupe pour cohesion editorial. */}
               <path
                 d="
                   M 80 80
@@ -148,9 +163,9 @@ export function TerritoryMap() {
                   Z
                 "
                 fill="url(#qc-fill)"
-                stroke="oklch(0.722 0.018 84 / 0.5)"
-                strokeWidth="1"
-                strokeDasharray="3 4"
+                stroke="oklch(0.55 0.025 80 / 0.75)"
+                strokeWidth="1.8"
+                strokeDasharray="4 5"
               />
 
               {/* Halo radial au siège (Laval) */}
