@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useGlossary } from "@/lib/GlossaryContext";
 import { useColophon } from "@/lib/ColophonContext";
@@ -87,6 +87,50 @@ export function Footer() {
                 </span>
               </li>
             </ul>
+
+            {/* Reseaux sociaux — deplaces de la Navbar vers le Footer 2026-05-19.
+                Style identique a la Navbar (border + hover translate + scale active).
+                Adapte au fond navy : foreground cream + hover bronze. */}
+            <div className="pt-4 space-y-3">
+              <p className="eyebrow text-[color:var(--color-taupe)]">
+                {lang === "fr" ? "Suivez-moi" : "Follow"}
+              </p>
+              <div className="flex items-center gap-1.5">
+                {config.socials.instagram && (
+                  <a
+                    href={config.socials.instagram.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram Andrew Buteau"
+                    className="inline-flex items-center justify-center w-9 h-9 rounded-md border border-[color:var(--color-cream)]/25 text-[color:var(--color-cream)] hover:border-[color:var(--color-bronze)] hover:text-[color:var(--color-bronze)] transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+                  >
+                    <Instagram className="w-4 h-4" strokeWidth={1.7} />
+                  </a>
+                )}
+                {config.socials.linkedin && (
+                  <a
+                    href={config.socials.linkedin.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn Andrew Buteau"
+                    className="inline-flex items-center justify-center w-9 h-9 rounded-md border border-[color:var(--color-cream)]/25 text-[color:var(--color-cream)] hover:border-[color:var(--color-bronze)] hover:text-[color:var(--color-bronze)] transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+                  >
+                    <Linkedin className="w-4 h-4" strokeWidth={1.7} />
+                  </a>
+                )}
+                {config.socials.facebook && (
+                  <a
+                    href={config.socials.facebook.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook Andrew Buteau"
+                    className="inline-flex items-center justify-center w-9 h-9 rounded-md border border-[color:var(--color-cream)]/25 text-[color:var(--color-cream)] hover:border-[color:var(--color-bronze)] hover:text-[color:var(--color-bronze)] transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+                  >
+                    <Facebook className="w-4 h-4" strokeWidth={1.7} />
+                  </a>
+                )}
+              </div>
+            </div>
           </div>
 
           {/* Navigation — col 3 */}
