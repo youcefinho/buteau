@@ -47,8 +47,7 @@ function ButeauMonogram({ tone }: { tone: "light" | "dark" | "bronze" }) {
       className="select-none shrink-0"
       style={{ overflow: "visible" }}
     >
-      {/* Cercle medaillon hairline bronze (vibe sceau de cire vintage)
-          Centre (28, 17), rayon 13 = englobe le B avec ~3 unites d'air. */}
+      {/* Cercle medaillon hairline bronze (vibe sceau de cire vintage) */}
       <circle
         cx="28"
         cy="17"
@@ -68,17 +67,16 @@ function ButeauMonogram({ tone }: { tone: "light" | "dark" | "bronze" }) {
         strokeWidth="0.3"
         opacity="0.3"
       />
-      {/* "B" du logo officiel - scale 0.065 (un peu plus petit pour respecter le medaillon)
-          Centre vertical y=17 (B range y[10, 24]) inscrit dans le cercle. */}
+      {/* "B" du logo officiel - scale 0.065, centre vertical y=17 */}
       <g transform="translate(28, 17) scale(0.065) translate(-235, -705)">
         <path d={B_PATH} fill={bColor} />
       </g>
-      {/* 2 petits losanges (lozenges) serif terminaux gauche+droite (style chapter book) */}
+      {/* 2 petits losanges (lozenges) serif terminaux gauche+droite */}
       <g fill={bronzeColor} opacity="0.7">
         <path d="M 6 17 L 9 14 L 12 17 L 9 20 Z" />
         <path d="M 44 17 L 47 14 L 50 17 L 47 20 Z" />
       </g>
-      {/* Swash bronze courbe sous medaillon (signature flourish editorial) */}
+      {/* Swash bronze courbe sous medaillon */}
       <path
         d="M 8 38 Q 28 44, 48 38"
         stroke={bronzeColor}
