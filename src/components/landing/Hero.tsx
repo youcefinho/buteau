@@ -135,19 +135,14 @@ export function Hero() {
               className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-[clamp(3rem,5vw,5rem)] h-px bg-[color:var(--color-bronze)] animate-[buteauWidth_700ms_ease-out_1100ms_both]"
               aria-hidden="true"
             />
-            {/* Hint éducatif — apparaît subtle, fade out au 1er hover sur le brand */}
-            <span
-              aria-hidden="true"
-              className="absolute -bottom-12 left-1/2 -translate-x-1/2 eyebrow text-[color:var(--color-taupe)]/70 text-[10px] whitespace-nowrap opacity-100 transition-opacity duration-500 group-hover/brand:opacity-0 animate-[buteauFadeUp_700ms_ease-out_2000ms_both] max-md:hidden"
-            >
-              ↑ {t("home.hero.letterHint")}
-            </span>
+            {/* Hint educatif "Survolez chaque lettre" retire 2026-05-19 (demande Andrew) */}
           </div>
 
           {/* Tagline mega — reveal step 3. Fraunces italic variable (axes optical + WONK)
-              pour distinctiveness vs Cormorant générique. Signature endroit #1. */}
+              pour distinctiveness vs Cormorant générique. Signature endroit #1.
+              Agrandi 2026-05-19 (demande Andrew) : 30-56px -> 40-80px (+43% max). */}
           <h1
-            className="font-signature text-[color:var(--color-cream)]/95 text-[clamp(1.875rem,4.5vw,3.5rem)] font-light tracking-[-0.01em] leading-[1.05] mt-[clamp(2.5rem,4vw,3rem)] max-w-3xl text-balance animate-[buteauFadeUp_800ms_ease-out_700ms_both]"
+            className="font-signature text-[color:var(--color-cream)]/95 text-[clamp(2.5rem,6vw,5rem)] font-light tracking-[-0.01em] leading-[1.05] mt-[clamp(2.5rem,4vw,3rem)] max-w-3xl text-balance animate-[buteauFadeUp_800ms_ease-out_700ms_both]"
           >
             {t("home.hero.title")}
           </h1>
