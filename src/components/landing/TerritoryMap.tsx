@@ -57,17 +57,62 @@ export function TerritoryMap() {
             >
               <defs>
                 <linearGradient id="qc-fill" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="oklch(0.722 0.018 84 / 0.18)" />
-                  <stop offset="100%" stopColor="oklch(0.722 0.018 84 / 0.06)" />
+                  <stop offset="0%" stopColor="oklch(0.722 0.018 84 / 0.10)" />
+                  <stop offset="100%" stopColor="oklch(0.722 0.018 84 / 0.04)" />
                 </linearGradient>
                 <radialGradient id="qc-glow" cx="50%" cy="50%" r="50%">
                   <stop offset="0%" stopColor="oklch(0.704 0.077 56 / 0.35)" />
                   <stop offset="100%" stopColor="oklch(0.704 0.077 56 / 0)" />
                 </radialGradient>
+                {/* Clip-path : la carte reelle OSM en fond ne sera visible
+                    qu'a l'interieur de la silhouette QC (effet "fenetre magazine"). */}
+                <clipPath id="qc-clip">
+                  <path
+                    d="
+                      M 80 80
+                      L 130 60
+                      L 200 50
+                      L 280 70
+                      L 340 90
+                      L 360 130
+                      L 350 180
+                      L 330 220
+                      L 310 260
+                      L 290 290
+                      L 280 320
+                      L 270 360
+                      L 240 380
+                      L 200 360
+                      L 180 340
+                      L 160 320
+                      L 140 290
+                      L 120 250
+                      L 100 210
+                      L 90 170
+                      L 80 130
+                      Z
+                    "
+                  />
+                </clipPath>
               </defs>
 
-              {/* Silhouette stylisée du Quebec — pas une vraie projection,
-                  mais une forme reconnaissable (région inférieure + golfe St-Laurent). */}
+              {/* Fond carte OSM reelle (Greater Montreal + Laurentides, z=8, 9 tuiles).
+                  Sepia + desaturee a la generation pour matcher palette cream/bronze.
+                  Clip a la silhouette QC = visible uniquement a l'interieur du contour.
+                  Attribution OSM en bas (legal CC-BY-SA). User 2026-05-20. */}
+              <image
+                href="/territory-map-bg.webp"
+                x="0"
+                y="0"
+                width="400"
+                height="480"
+                clipPath="url(#qc-clip)"
+                preserveAspectRatio="xMidYMid slice"
+                opacity="0.55"
+              />
+
+              {/* Silhouette stylisée — fill reduit pour laisser passer la carte reelle,
+                  stroke pointille conserve pour le look magazine. */}
               <path
                 d="
                   M 80 80
@@ -196,9 +241,20 @@ export function TerritoryMap() {
               })}
             </svg>
 
-            {/* Légende sous la map — texte d'accessibilité */}
+            {/* Légende sous la map — texte d'accessibilité + attribution OSM (CC-BY-SA). */}
             <p className="mt-6 text-xs italic text-[color:var(--color-taupe-dark)] text-center lg:text-left">
               {t("territory.footnote")}
+            </p>
+            <p className="mt-2 text-[10px] text-[color:var(--color-taupe-dark)]/70 text-center lg:text-left">
+              {lang === "fr" ? "Fond cartographique : " : "Map data: "}
+              <a
+                href="https://www.openstreetmap.org/copyright"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-dotted underline-offset-2 hover:text-[color:var(--color-bronze-deep)] transition-colors"
+              >
+                © OpenStreetMap contributors
+              </a>
             </p>
           </div>
 
