@@ -35,7 +35,7 @@ export const translations = {
       brand: "Équipe Buteau",
       tagline: "L'hypothèque autrement",
       cabinet: "Planiprêt",
-      callUs: "Nous joindre",
+      callUs: "Discuter avec Andrew",
       smsLabel: "Texto direct",
       smsBody:
         "Bonjour Andrew, je suis interesse(e) par vos services de courtier hypothecaire. Pouvez-vous me rappeler ?",
@@ -1031,7 +1031,7 @@ export const translations = {
       brand: "Équipe Buteau",
       tagline: "Mortgage. Differently.",
       cabinet: "Planiprêt",
-      callUs: "Reach us",
+      callUs: "Talk to Andrew",
       smsLabel: "Direct text",
       smsBody:
         "Hello Andrew, I am interested in your mortgage broker services. Could you call me back?",
