@@ -64,9 +64,12 @@ export function TerritoryMap() {
                   <stop offset="0%" stopColor="oklch(0.704 0.077 56 / 0.35)" />
                   <stop offset="100%" stopColor="oklch(0.704 0.077 56 / 0)" />
                 </radialGradient>
-                {/* Clip-path : la carte reelle OSM en fond ne sera visible
-                    qu'a l'interieur de la silhouette QC (effet "fenetre magazine"). */}
-                <clipPath id="qc-clip">
+                {/* Mask feather : silhouette QC en blanc + Gaussian blur sur les
+                    bords = la carte OSM fade doucement autour du contour au lieu
+                    d'un cutoff sec. Donne un halo cartographique naturel "magazine".
+                    User feedback 2026-05-20 : "meme au alentour un peux pour faire plus jolie". */}
+                <mask id="qc-mask">
+                  <rect x="0" y="0" width="400" height="480" fill="black" />
                   <path
                     d="
                       M 80 80
@@ -92,13 +95,19 @@ export function TerritoryMap() {
                       L 80 130
                       Z
                     "
+                    fill="white"
+                    filter="url(#qc-feather)"
                   />
-                </clipPath>
+                </mask>
+                <filter id="qc-feather" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="8" />
+                </filter>
               </defs>
 
               {/* Fond carte OSM reelle (Greater Montreal + Laurentides, z=8, 9 tuiles).
                   Sepia + desaturee a la generation pour matcher palette cream/bronze.
-                  Clip a la silhouette QC = visible uniquement a l'interieur du contour.
+                  Mask feather (blur stdDev=8) = visible plein dans la silhouette,
+                  fade progressivement autour pour halo cartographique doux.
                   Attribution OSM en bas (legal CC-BY-SA). User 2026-05-20. */}
               <image
                 href="/territory-map-bg.webp"
@@ -106,7 +115,7 @@ export function TerritoryMap() {
                 y="0"
                 width="400"
                 height="480"
-                clipPath="url(#qc-clip)"
+                mask="url(#qc-mask)"
                 preserveAspectRatio="xMidYMid slice"
                 opacity="0.55"
               />
