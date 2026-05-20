@@ -150,32 +150,15 @@ export function Hero() {
           {/* Decorative line taupe — fine, signature — reveal step 4 */}
           <div className="w-[clamp(6rem,9vw,8rem)] h-px bg-[color:var(--color-taupe)] my-[clamp(2.5rem,5vw,3.5rem)] animate-[buteauWidth_700ms_ease-out_1100ms_both]" />
 
-          {/* Trust chip Google reviews — replace dans Hero 2026-05-17 (retrait
-              navbar pour aerer). Stylise bronze/cream pour coherence theme,
-              au lieu du Star jaune universel utilise dans Navbar avant. */}
-          <a
-            href={config.googleReviewsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={t("home.reviews.googleBadgeLabel")}
-            className="group/chip inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[color:var(--color-bronze)]/35 bg-[color:var(--color-bronze)]/[0.06] hover:border-[color:var(--color-bronze)]/65 hover:bg-[color:var(--color-bronze)]/10 transition-all duration-300 text-[clamp(0.75rem,1.1vw,0.875rem)] mb-[clamp(2rem,4vw,2.5rem)] animate-[buteauFadeUp_700ms_ease-out_1000ms_both]"
-          >
-            <Star className="w-3.5 h-3.5 fill-[color:var(--color-bronze)] text-[color:var(--color-bronze)] shrink-0" strokeWidth={1.5} aria-hidden />
-            <span className="font-[var(--font-display)] font-medium tracking-[0.06em] uppercase text-[color:var(--color-cream)]/90 whitespace-nowrap">
-              {t("home.reviews.googleBadgeLabel")}
-            </span>
-            <span aria-hidden="true" className="text-[color:var(--color-bronze)] transition-transform duration-300 group-hover/chip:translate-x-0.5">→</span>
-          </a>
-
-          {/* Subtitle — reveal step 5 */}
-          <p className="text-[color:var(--color-cream)]/85 text-[clamp(1rem,1.4vw,1.125rem)] font-light leading-[1.45] max-w-xl mb-[clamp(2.5rem,5vw,3rem)] text-pretty hyphens-auto animate-[buteauFadeUp_700ms_ease-out_1200ms_both]">
+          {/* Subtitle — reveal step 4 */}
+          <p className="text-[color:var(--color-cream)]/85 text-[clamp(1rem,1.4vw,1.125rem)] font-light leading-[1.45] max-w-xl mb-[clamp(2.5rem,5vw,3rem)] text-pretty hyphens-auto animate-[buteauFadeUp_700ms_ease-out_1000ms_both]">
             {t("home.hero.subtitle")}
           </p>
 
-          {/* CTA stack — reveal step 6, btn-bronze magnétique.
+          {/* CTA stack — reveal step 5, btn-bronze magnétique.
               Audit P0 council UX : CTA principal pointe vers Calculator (low-friction)
               au lieu de #contact (engagement max). Le tier-quiz écrase si user a complété. */}
-          <div className="flex flex-col sm:flex-row gap-5 items-center animate-[buteauFadeUp_700ms_ease-out_1400ms_both]">
+          <div className="flex flex-col sm:flex-row gap-5 items-center animate-[buteauFadeUp_700ms_ease-out_1200ms_both]">
             <a ref={magneticCta} href={tier ? "#contact" : "#calc-preview"} className="btn-bronze btn-shine">
               {ctaLabel}
             </a>
@@ -192,7 +175,7 @@ export function Hero() {
           </div>
 
           {/* Lien lexique discret — premier contact = jargon hypothécaire opaque */}
-          <div className="mt-6 animate-[buteauFadeUp_700ms_ease-out_1600ms_both]">
+          <div className="mt-6 animate-[buteauFadeUp_700ms_ease-out_1400ms_both]">
             <button
               type="button"
               onClick={() => openGlossary()}
@@ -204,6 +187,24 @@ export function Hero() {
                 : "First time? View the mortgage glossary."}
             </button>
           </div>
+
+          {/* Trust chip Google reviews — deplace sous lexique 2026-05-20 (user :
+              "plus epuree mieux organise"). Avant : positionne entre tagline et
+              subtitle = competition visuelle avec H1 + paragraphe. Maintenant en
+              "preuve sociale finale" sous CTA + lexique = closing argument calme. */}
+          <a
+            href={config.googleReviewsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={t("home.reviews.googleBadgeLabel")}
+            className="group/chip mt-8 inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[color:var(--color-bronze)]/35 bg-[color:var(--color-bronze)]/[0.06] hover:border-[color:var(--color-bronze)]/65 hover:bg-[color:var(--color-bronze)]/10 transition-all duration-300 text-[clamp(0.75rem,1.1vw,0.875rem)] animate-[buteauFadeUp_700ms_ease-out_1600ms_both]"
+          >
+            <Star className="w-3.5 h-3.5 fill-[color:var(--color-bronze)] text-[color:var(--color-bronze)] shrink-0" strokeWidth={1.5} aria-hidden />
+            <span className="font-[var(--font-display)] font-medium tracking-[0.06em] uppercase text-[color:var(--color-cream)]/90 whitespace-nowrap">
+              {t("home.reviews.googleBadgeLabel")}
+            </span>
+            <span aria-hidden="true" className="text-[color:var(--color-bronze)] transition-transform duration-300 group-hover/chip:translate-x-0.5">→</span>
+          </a>
         </div>
       </Container>
 
