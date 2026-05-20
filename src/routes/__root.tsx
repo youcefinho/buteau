@@ -16,7 +16,7 @@ import { ExitIntent } from "@/components/landing/ExitIntent";
 import { NotFoundEditorial } from "@/components/landing/NotFoundEditorial";
 import { PageTransition } from "@/components/layout/PageTransition";
 import { MobileStickyCta } from "@/components/layout/MobileStickyCta";
-import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
+import { SmsButton } from "@/components/layout/SmsButton";
 import { BackToTop } from "@/components/layout/BackToTop";
 import { ColophonProvider } from "@/lib/ColophonContext";
 import { CarnetProvider } from "@/lib/CarnetContext";
@@ -66,7 +66,7 @@ function RootComponent() {
         <CarnetModal />
         <ExitIntent />
         <MobileStickyCta />
-        <WhatsAppButton />
+        <SmsButton />
         <BackToTop />
         <CustomCursor />
       </CarnetProvider>

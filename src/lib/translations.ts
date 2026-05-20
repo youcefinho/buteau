@@ -43,6 +43,9 @@ export const translations = {
       whatsappMessage:
         "Bonjour Andrew, je suis interesse(e) par vos services de courtier hypothecaire.",
       whatsappTooltip: "Écrivez-nous sur WhatsApp",
+      smsButtonBody:
+        "Bonjour Andrew, j'ai consulté votre site et j'aimerais discuter d'un projet hypothécaire. Quel serait le meilleur moment pour échanger ?",
+      smsButtonTooltip: "Écrivez-nous par SMS",
       learnMore: "En savoir plus",
       backHome: "Retour à l'accueil",
       writeUs: "Nous écrire",
@@ -1039,6 +1042,9 @@ export const translations = {
       whatsappMessage:
         "Hello Andrew, I am interested in your mortgage broker services.",
       whatsappTooltip: "Message us on WhatsApp",
+      smsButtonBody:
+        "Hello Andrew, I visited your website and would like to discuss a mortgage project. When would be a good time to chat?",
+      smsButtonTooltip: "Text us",
       learnMore: "Learn more",
       backHome: "Back to home",
       writeUs: "Email us",
