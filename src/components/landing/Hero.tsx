@@ -142,7 +142,7 @@ export function Hero() {
               pour distinctiveness vs Cormorant générique. Signature endroit #1.
               Agrandi 2026-05-19 (demande Andrew) : 30-56px -> 40-80px (+43% max). */}
           <h1
-            className="font-signature text-[color:var(--color-cream)]/95 text-[clamp(2.5rem,6vw,5rem)] font-light tracking-[-0.01em] leading-[1.05] mt-[clamp(2.5rem,4vw,3rem)] max-w-3xl text-balance animate-[buteauFadeUp_800ms_ease-out_700ms_both]"
+            className="font-signature text-[color:var(--color-cream)]/95 text-[clamp(2.5rem,6vw,5rem)] font-light tracking-[-0.01em] leading-[1.05] mt-[clamp(2.5rem,4vw,3rem)] text-balance md:whitespace-nowrap animate-[buteauFadeUp_800ms_ease-out_700ms_both]"
           >
             {t("home.hero.title")}
           </h1>
