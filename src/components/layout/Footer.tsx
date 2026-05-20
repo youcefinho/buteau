@@ -34,7 +34,7 @@ export function Footer() {
         {config.brandName}
       </span>
 
-      <Container size="xl" className="relative pt-[clamp(3.5rem,6vw,5rem)] pb-8">
+      <Container size="xl" className="relative pt-[clamp(2.5rem,5vw,4rem)] pb-6">
         {/* === Logo SVG officiel (guide identite visuelle 2026-05-19) === */}
         <img
           src="/logo-buteau-white.svg"
@@ -43,11 +43,11 @@ export function Footer() {
           height={368}
           loading="lazy"
           decoding="async"
-          className="h-[clamp(2.5rem,4vw,3.5rem)] w-auto mb-[clamp(2rem,3vw,2.5rem)] opacity-95"
+          className="h-[clamp(2.5rem,4vw,3.5rem)] w-auto mb-[clamp(1.5rem,2.5vw,2rem)] opacity-95"
         />
 
         {/* === Couverture statement — Cormorant italic XL === */}
-        <div className="max-w-4xl mb-[clamp(2.5rem,4vw,3.5rem)]">
+        <div className="max-w-4xl mb-[clamp(2rem,3vw,2.5rem)]">
           <p className="eyebrow text-[color:var(--color-taupe)] mb-4 inline-flex items-center gap-3">
             <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
             {lang === "fr" ? "Quatrième de couverture" : "Back cover"}
@@ -64,7 +64,7 @@ export function Footer() {
         </div>
 
         {/* === Grid asymétrique : Contact / Navigation / Colophon === */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-[clamp(2rem,3vw,3rem)] pb-8 border-b border-[color:var(--color-taupe)]/30">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-[clamp(2rem,3vw,3rem)] pb-6 border-b border-[color:var(--color-taupe)]/30">
           {/* Contact — col 5 */}
           <div className="md:col-span-5 space-y-4">
             <p className="eyebrow text-[color:var(--color-taupe)]">
@@ -167,8 +167,10 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Colophon — col 4 — pattern magazine print (typo credits) */}
-          <div className="md:col-span-4 space-y-2.5">
+          {/* Colophon — col 4 — pattern magazine print (typo credits).
+              Compression verticale 2026-05-20 (user) : space-y-2.5 -> space-y-2,
+              pt-3 mt-3 -> pt-2 mt-2. Doublon "Lexique" retire (deja dans Navigation col 3). */}
+          <div className="md:col-span-4 space-y-2">
             <p className="eyebrow text-[color:var(--color-taupe)]">
               {t("footer.colophon")}
             </p>
@@ -179,8 +181,8 @@ export function Footer() {
               {t("footer.colophonPrinted")}
             </p>
 
-            {/* Légal links + colophon (modaux pour lexique/colophon, pages pour légal) */}
-            <div className="pt-3 mt-3 border-t border-[color:var(--color-taupe)]/30 flex flex-wrap gap-x-5 gap-y-2 text-xs">
+            {/* Legal/colophon links (modal pour colophon, pages pour legal) */}
+            <div className="pt-2 mt-2 border-t border-[color:var(--color-taupe)]/30 flex flex-wrap gap-x-5 gap-y-2 text-xs">
               <button type="button" onClick={openColophon} className="text-glow-hover text-left">
                 {lang === "fr" ? "Colophon" : "Colophon"}
               </button>
@@ -190,15 +192,12 @@ export function Footer() {
               <Link to="/confidentialite" className="text-glow-hover">
                 {t("footer.privacy")}
               </Link>
-              <button type="button" onClick={() => openGlossary()} className="text-glow-hover text-left">
-                {t("footer.lexique")}
-              </button>
             </div>
           </div>
         </div>
 
         {/* === Disclaimer AMF + bottom bar === */}
-        <div className="pt-6 space-y-4">
+        <div className="pt-5 space-y-3">
           {/* Ligne compliance explicite — AMF cert + NEQ (visibles en footer
               au-dessus du disclaimer, lecture rapide pour visiteurs verifiant
               la legitimite). User feedback 2026-05-20. */}
