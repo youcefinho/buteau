@@ -13,7 +13,7 @@ import { useLanguage } from "@/lib/LanguageContext";
  * Visuel signature :
  * - Spine verticale taupe derrière les dots (chapter index magazine).
  * - Slide-in mount animation (depuis -16px gauche, opacity 0 -> 1).
- * - Tooltip pédagogique 1ère visite (sessionStorage gate, visible 5s).
+ * - Tooltip pédagogique chaque visite (visible 5s a 1.8s apres mount).
  *
  * Position : fixed left-6 top-1/2 -translate-y-1/2, visible lg+ (≥1024px).
  * Mobile/tablet : caché (espace écran trop précieux).
@@ -65,19 +65,10 @@ export function SectionRail({ sections = HOME_SECTIONS }: SectionRailProps = {})
     return () => window.clearTimeout(t);
   }, []);
 
-  // Tooltip pédagogique — 1ère visite uniquement (sessionStorage gate),
-  // visible 5s. Wave luminescente declenche a t=0 (appearance) et t=2.5s (mid-life).
-  // Avant : apparait a chaque refresh = agacant apres la 10eme visite. User feedback 2026-05-19.
+  // Tooltip pédagogique — visible 5s a chaque visite (user feedback 2026-05-20 : "on le vois plus").
+  // Wave luminescente declenche a t=0 (appearance) et t=2.5s (mid-life).
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const SEEN_KEY = "sectionrail-hint-seen";
-    try {
-      if (window.sessionStorage.getItem(SEEN_KEY)) return;
-      window.sessionStorage.setItem(SEEN_KEY, "1");
-    } catch {
-      // Storage indisponible (mode incognito strict) — on affiche quand meme,
-      // mieux d'avoir l'aide que rien.
-    }
     const showTimer = window.setTimeout(() => {
       setShowHint(true);
       setWaveKey((k) => k + 1);
