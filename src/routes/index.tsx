@@ -53,6 +53,12 @@ function HomePage() {
       <ValueTicker />
 
       <ScrollReveal><TeamTeaser /></ScrollReveal>
+
+      {/* « Le mot du courtier » — section authentique signature manuscrite (NOVEL).
+          Deplacee 2026-05-20 entre TeamTeaser et Services (user : flow editorial
+          presentation equipe -> mot du leader -> ce qu'on fait). */}
+      <ScrollReveal><BrokerLetter /></ScrollReveal>
+
       <ScrollReveal><Services /></ScrollReveal>
 
       {/* Calculator Preview — accès direct aux outils sur l'Accueil
@@ -72,12 +78,9 @@ function HomePage() {
       <SectionDivider variant="fleuron" tone="light" />
 
       {/* AdPage — pleine page édito style "publicité magazine luxe" (Cereal vol.18).
-          Insérée entre Mission corporate et BrokerLetter humaine — crée respiration
-          + autorité. Une seule phrase Fraunces italic XL. */}
+          Une seule phrase Fraunces italic XL. Cree respiration entre Mission
+          corporate et la qualification du lead (Quiz). */}
       <ScrollReveal><AdPage /></ScrollReveal>
-
-      {/* « Le mot du courtier » — section authentique signature manuscrite (NOVEL) */}
-      <ScrollReveal><BrokerLetter /></ScrollReveal>
 
       {/* SectionDivider — transition vers la qualification du lead */}
       <SectionDivider variant="ampersand" tone="light" />
