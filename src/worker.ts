@@ -352,7 +352,10 @@ async function injectRouteMeta(response: Response, pathname: string, request: Re
       });
   }
 
-  // Quickwins SEO 2026-05-10 PM : hreflang trio + BreadcrumbList per route interne.
+  // Quickwins SEO 2026-05-10 PM : BreadcrumbList per route interne.
+  // Hreflang RETIRE 2026-05-20 (audit Gemini 3 Flash) : le site utilise toggle
+  // CSS bilingue sur MEME URL, donc hreflang fr-CA/en-CA pointant vers meme
+  // URL = signal SEO confus / penalisant. og:locale fr_CA + en_CA suffisent.
   rewriter.on('link[rel="alternate"][hreflang]', {
     element(el) { el.remove(); },
   });
@@ -371,11 +374,9 @@ async function injectRouteMeta(response: Response, pathname: string, request: Re
 
   rewriter.on("head", {
     element(el) {
-      if (!meta.noindex) {
-        el.append(`<link rel="alternate" hreflang="fr-CA" href="${canonicalUrl}">`, { html: true });
-        el.append(`<link rel="alternate" hreflang="en-CA" href="${canonicalUrl}">`, { html: true });
-        el.append(`<link rel="alternate" hreflang="x-default" href="${canonicalUrl}">`, { html: true });
-      }
+      // Hreflang trio RETIRE 2026-05-20 (audit Gemini 3 Flash) :
+      // toggle CSS bilingue = MEME URL pour FR/EN, hreflang serait penalisant.
+      // og:locale fr_CA primary + og:locale:alternate en_CA suffisent.
       if (meta.noindex) {
         el.append('<meta name="robots" content="noindex, nofollow">', { html: true });
       }
