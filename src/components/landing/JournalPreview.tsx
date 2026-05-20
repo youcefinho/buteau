@@ -46,7 +46,7 @@ export function JournalPreview() {
           <div className="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
             <p className="eyebrow text-[color:var(--color-bronze-soft)] inline-flex items-center gap-3 mb-5">
               <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
-              {isFr ? "Le journal" : "The journal"}
+              Articles
             </p>
             <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(1.875rem,3vw,2.25rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
               {isFr ? "Articles et analyses du marché." : "Articles and market analyses."}

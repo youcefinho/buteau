@@ -129,7 +129,7 @@ function buildNoscriptInner(path: string, lang: "fr" | "en", title: string, desc
   }
 
   const navLabel = isEn ? "Site navigation" : "Navigation du site";
-  body += `<nav aria-label="${navLabel}"><a href="/">${isEn ? "Home" : "Accueil"}</a> · <a href="/equipe">${isEn ? "Team" : "Équipe"}</a> · <a href="/carnet">${isEn ? "Notebook" : "Carnet"}</a> · <a href="/lexique">${isEn ? "Glossary" : "Lexique"}</a> · <a href="/journal">Journal</a></nav>`;
+  body += `<nav aria-label="${navLabel}"><a href="/">${isEn ? "Home" : "Accueil"}</a> · <a href="/equipe">${isEn ? "Team" : "Équipe"}</a> · <a href="/carnet">${isEn ? "Notebook" : "Carnet"}</a> · <a href="/lexique">${isEn ? "Glossary" : "Lexique"}</a> · <a href="/journal">Articles</a></nav>`;
   return body;
 }
 
@@ -254,7 +254,7 @@ const ROUTE_META_SSR: Record<string, RouteMetaSSR> = {
       "Calculateurs hypothécaires, simulation de refinancement, capacité d'emprunt, comparaison de scénarios. Outils gratuits offerts par l'Équipe Buteau, Planiprêt Laval.",
   },
   "/journal": {
-    title: "Le journal — articles hypothécaires Québec | Équipe Buteau",
+    title: "Articles — analyses hypothécaires Québec | Équipe Buteau",
     description:
       "Articles factuels sur le marché hypothécaire Québec : refinancement, renouvellement, premier achat, consolidation, investissement. Voix éditoriale signée Andrew Buteau.",
   },

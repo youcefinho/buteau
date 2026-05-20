@@ -46,7 +46,7 @@ function JournalArticlePage() {
     return (
       <LegalPageWrap eyebrow={isFr ? "Article introuvable" : "Article not found"} title="404">
         <Link to="/journal" className="font-[var(--font-editorial)] italic text-[color:var(--color-bronze-deep)]">
-          {isFr ? "Retour au journal" : "Back to the journal"}
+          {isFr ? "Retour aux articles" : "Back to articles"}
         </Link>
       </LegalPageWrap>
     );
@@ -84,7 +84,7 @@ function JournalArticlePage() {
             className="transition-transform duration-300 group-hover:-translate-x-1"
           />
           <span className="relative">
-            {isFr ? "Retour au journal" : "Back to the journal"}
+            {isFr ? "Retour aux articles" : "Back to articles"}
             <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
           </span>
         </Link>

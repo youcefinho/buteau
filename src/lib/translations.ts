@@ -55,7 +55,7 @@ export const translations = {
       team: "Équipe",
       institutions: "Institutions",
       tools: "Outils",
-      journal: "Journal",
+      journal: "Articles",
       capsules: "Capsules",
       lexique: "Lexique",
       contact: "Contact",
@@ -458,7 +458,7 @@ export const translations = {
     },
 
     journal: {
-      eyebrow: "Le journal",
+      eyebrow: "Articles",
       title: "Réflexions de l'Équipe Buteau.",
       subtitle:
         "Chroniques, analyses de marché et explications éclairantes — publiées au rythme des tendances et des questions reçues. Cliquez un titre pour ouvrir l'article complet.",
@@ -971,9 +971,9 @@ export const translations = {
         ctaTikTok: "Suivre sur TikTok",
       },
       blog: {
-        eyebrow: "Le journal",
+        eyebrow: "Articles",
         title: "Articles et analyses du marché hypothécaire",
-        body: "Notre journal regroupe nos articles complets — préapprobation, refinancement, stratégies de taux, achat d'un immeuble locatif. Tous rédigés pour aider à mieux décider avant de signer.",
+        body: "Nos articles couvrent les sujets complets — préapprobation, refinancement, stratégies de taux, achat d'un immeuble locatif. Tous rédigés pour aider à mieux décider avant de signer.",
         ctaLabel: "Lire les articles",
       },
       documents: {
@@ -1051,7 +1051,7 @@ export const translations = {
       team: "Team",
       institutions: "Lenders",
       tools: "Tools",
-      journal: "Journal",
+      journal: "Articles",
       capsules: "Capsules",
       lexique: "Glossary",
       contact: "Contact",
@@ -1432,7 +1432,7 @@ export const translations = {
     },
 
     journal: {
-      eyebrow: "The journal",
+      eyebrow: "Articles",
       title: "Reflections from Équipe Buteau.",
       subtitle:
         "Columns, market analyses and clarifying explanations — published at the rhythm of trends and questions received. Click a title to open the full article.",
@@ -1935,9 +1935,9 @@ export const translations = {
         ctaTikTok: "Follow on TikTok",
       },
       blog: {
-        eyebrow: "The journal",
+        eyebrow: "Articles",
         title: "Articles and mortgage market analyses",
-        body: "Our journal collects our long-form articles — pre-approval, refinancing, rate strategies, buying a rental property. All written to help you decide better before signing.",
+        body: "Our articles cover the full subjects — pre-approval, refinancing, rate strategies, buying a rental property. All written to help you decide better before signing.",
         ctaLabel: "Read the articles",
       },
       documents: {

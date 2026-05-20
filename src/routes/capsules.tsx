@@ -326,7 +326,7 @@ function CapsulesPage() {
           className="group inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-base text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-bronze-deep)] transition-colors"
         >
           <span className="relative">
-            {isFr ? "Lire les articles longs au Journal" : "Read the long articles in the Journal"}
+            {isFr ? "Lire nos articles longs" : "Read our long articles"}
             <span className="absolute left-0 -bottom-0.5 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
           </span>
           <span aria-hidden="true" className="transition-transform duration-500 group-hover:translate-x-1">

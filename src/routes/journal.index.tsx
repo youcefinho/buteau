@@ -10,8 +10,8 @@ import { SectionRail, type SectionEntry } from "@/components/layout/SectionRail"
 import { ta, translations } from "@/lib/translations";
 
 const JOURNAL_SECTIONS: ReadonlyArray<SectionEntry> = [
-  { id: "hero", type: "main", label: { fr: "Le journal", en: "The journal" } },
-  { id: "journal-articles", type: "main", label: { fr: "Articles", en: "Articles" } },
+  { id: "hero", type: "main", label: { fr: "Articles", en: "Articles" } },
+  { id: "journal-articles", type: "main", label: { fr: "Liste", en: "List" } },
   { id: "journal-explore", type: "sub", label: { fr: "Explorer", en: "Explore" } },
   { id: "contact-cta", type: "main", label: { fr: "Contact", en: "Contact" } },
 ];
@@ -46,7 +46,7 @@ function JournalPage() {
     <>
     <SectionRail sections={JOURNAL_SECTIONS} />
     <LegalPageWrap
-      eyebrow={isFr ? "Le journal" : "The journal"}
+      eyebrow="Articles"
       title={ta<string>(translations[lang], "journal.title")}
       afterContent={<ToolsFinalCta />}
     >

@@ -35,7 +35,7 @@ export const HOME_SECTIONS: ReadonlyArray<SectionEntry> = [
   { id: "lettre", type: "sub", label: { fr: "Andrew", en: "Andrew" } },
   { id: "services", type: "main", label: { fr: "Services", en: "Services" } },
   { id: "calculateur", type: "main", label: { fr: "Calculateur", en: "Calculator" } },
-  { id: "journal-preview", type: "sub", label: { fr: "Journal", en: "Journal" } },
+  { id: "journal-preview", type: "sub", label: { fr: "Articles", en: "Articles" } },
   { id: "outils-teaser", type: "sub", label: { fr: "Outils", en: "Tools" } },
   { id: "mission", type: "main", label: { fr: "Mission", en: "Mission" } },
   { id: "prequalification", type: "sub", label: { fr: "Quiz", en: "Quiz" } },
