@@ -5,6 +5,7 @@ import { InsuranceNote } from "@/components/landing/InsuranceNote";
 import { LendersGrid } from "@/components/landing/LendersGrid";
 import { InstitutionMissing } from "@/components/landing/InstitutionMissing";
 import { CtaBlock } from "@/components/landing/CtaBlock";
+import { PageFooterMark } from "@/components/layout/PageFooterMark";
 import { SectionRail, type SectionEntry } from "@/components/layout/SectionRail";
 import { SchemaJsonLd, breadcrumbs } from "@/components/layout/SchemaJsonLd";
 
@@ -36,6 +37,7 @@ function InstitutionsPage() {
       <LendersGrid />
       <InstitutionMissing />
       <CtaBlock />
+      <PageFooterMark />
     </main>
   );
 }

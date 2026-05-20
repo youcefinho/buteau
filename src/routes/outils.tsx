@@ -6,6 +6,7 @@ import { GuidesGrid } from "@/components/landing/GuidesGrid";
 import { TikTokTeaser } from "@/components/landing/TikTokTeaser";
 import { DocumentsGrid } from "@/components/landing/DocumentsGrid";
 import { ToolsFinalCta } from "@/components/landing/ToolsFinalCta";
+import { PageFooterMark } from "@/components/layout/PageFooterMark";
 import { SectionRail, type SectionEntry } from "@/components/layout/SectionRail";
 import { SchemaJsonLd, breadcrumbs } from "@/components/layout/SchemaJsonLd";
 
@@ -39,6 +40,7 @@ function ToolsPage() {
       <TikTokTeaser />
       <DocumentsGrid />
       <ToolsFinalCta />
+      <PageFooterMark />
     </main>
   );
 }

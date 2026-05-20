@@ -15,6 +15,7 @@ import { CalcMultiViewsButeau } from "@/components/landing/calculators/CalcMulti
 import { JournalPreview } from "@/components/landing/JournalPreview";
 import { ValueTicker } from "@/components/landing/ValueTicker";
 import { AdPage } from "@/components/landing/AdPage";
+import { PageFooterMark } from "@/components/layout/PageFooterMark";
 import { ScrollReveal } from "@/components/layout/ScrollReveal";
 import { SectionDivider } from "@/components/layout/SectionDivider";
 import { SectionRail, HOME_SECTIONS } from "@/components/layout/SectionRail";
@@ -98,6 +99,9 @@ function HomePage() {
 
       <ScrollReveal><ContactSection /></ScrollReveal>
       <ScrollReveal><Faq /></ScrollReveal>
+
+      {/* Signature page : monogramme B Buteau avant Footer (magazine seal) */}
+      <PageFooterMark />
     </main>
   );
 }

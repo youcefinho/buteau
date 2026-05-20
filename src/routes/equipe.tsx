@@ -5,6 +5,7 @@ import { TeamGrid } from "@/components/landing/TeamGrid";
 import { TeamMethod } from "@/components/landing/TeamMethod";
 import { MediaShowcase } from "@/components/landing/MediaShowcase";
 import { CtaBlock } from "@/components/landing/CtaBlock";
+import { PageFooterMark } from "@/components/layout/PageFooterMark";
 import { SectionRail, type SectionEntry } from "@/components/layout/SectionRail";
 import { SchemaJsonLd, breadcrumbs, buildPerson } from "@/components/layout/SchemaJsonLd";
 import { ta, translations } from "@/lib/translations";
@@ -43,6 +44,7 @@ function TeamPage() {
       <TeamMethod />
       <MediaShowcase />
       <CtaBlock />
+      <PageFooterMark />
     </main>
   );
 }

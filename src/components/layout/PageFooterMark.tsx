@@ -1,36 +1,29 @@
 import { Container } from "./Container";
+import { ButeauMonogramInline } from "@/components/atmosphere/ButeauMonogramInline";
 
 /**
- * PageFooterMark — petite signature numérotée en pied de chaque page.
+ * PageFooterMark — signature de page Buteau, placée juste avant le Footer.
  *
- * Pourquoi NOVEL : pattern ChapterMarker miniature qui rappelle le numéro
- * de chapitre du magazine — discret mais cohérent. À placer juste avant
- * le Footer global.
+ * Pattern magazine : chaque page se ferme sur une marque éditoriale discrète.
+ * Style minimal qui se distingue du SectionDivider (qui a medaillon complet +
+ * swash + losanges). Ici juste le monogramme B + hairlines flanquants.
  *
- * Numérotation cohérente :
- *   I    — Accueil
- *   II   — Équipe
- *   III  — Institutions
- *   IV   — Outils
- *   V    — Lexique
- *   VI   — Journal
- *   VII  — Courrier
+ * Refait 2026-05-20 : version label retire (etait dupliquant les eyebrows
+ * des sections suivantes) -> juste monogramme.
  */
-type PageFooterMarkProps = {
-  numeral?: string; // Conserve pour backward compat — n'est plus affiche (user 2026-05-20 "plus epure").
-  label: string;
-};
-
-export function PageFooterMark({ label }: PageFooterMarkProps) {
+export function PageFooterMark() {
   return (
-    <div className="surface-cream pt-12 pb-6 border-t border-[color:var(--color-taupe)]/30">
+    <div
+      className="surface-cream pt-10 pb-6 border-t border-[color:var(--color-taupe)]/30"
+      aria-hidden="true"
+    >
       <Container size="md">
-        <div className="flex items-center justify-center gap-4 opacity-70 hover:opacity-100 transition-opacity">
-          <span className="block w-12 h-px bg-[color:var(--color-taupe)]" />
-          <span className="eyebrow text-[color:var(--color-taupe-dark)]">
-            {label}
+        <div className="flex items-center justify-center gap-5 opacity-65 hover:opacity-100 transition-opacity duration-700">
+          <span className="block w-[clamp(3rem,6vw,5rem)] h-px bg-[color:var(--color-taupe)]/70" />
+          <span className="text-[color:var(--color-navy-deep)] inline-flex items-center text-xl">
+            <ButeauMonogramInline size="lg" />
           </span>
-          <span className="block w-12 h-px bg-[color:var(--color-taupe)]" />
+          <span className="block w-[clamp(3rem,6vw,5rem)] h-px bg-[color:var(--color-taupe)]/70" />
         </div>
       </Container>
     </div>
