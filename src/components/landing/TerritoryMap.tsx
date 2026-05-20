@@ -30,12 +30,19 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 type RegionPos = { key: string; x: number; y: number; siège?: boolean };
 
 // Coords REELLES lat/lng -> pixels viewBox (mercator projection precomputee).
-// User 2026-05-20 : markers alignes sur la carte OSM reelle.
+// User 2026-05-20 v2 : recalcul precis apres verif visuelle (markers etaient
+// compresses ~50% verticalement). Methode : pixel_in_tile + offset grid + scale viewBox.
+//
+// Formule mercator slippy-map :
+//   pixel_y = ((1 - asinh(tan(lat_rad))/π) / 2 * 2^z - tile_y) * 256
+//   pixel_x = ((lng+180)/360 * 2^z - tile_x) * 256
+// Puis viewBox_y = (pixel_grid_y) * (480/768),
+//      viewBox_x = (pixel_grid_x - 64) * (400/640).
 const REGIONS_POSITIONS: ReadonlyArray<RegionPos> = [
-  { key: "laval", x: 217, y: 222, siège: true }, // 45.612°N, -73.687°W (siege Andrew)
-  { key: "montreal", x: 230, y: 238 },           // 45.501°N, -73.567°W
-  { key: "rive-nord", x: 180, y: 213 },          // 45.781°N, -74.000°W (Saint-Jerome)
-  { key: "rive-sud", x: 243, y: 242 },           // 45.456°N, -73.451°W (Brossard)
+  { key: "laval", x: 208, y: 228, siège: true }, // 45.612°N, -73.687°W (siege Andrew)
+  { key: "montreal", x: 230, y: 253 },           // 45.501°N, -73.567°W (centre-ville)
+  { key: "rive-nord", x: 180, y: 209 },          // 45.781°N, -74.000°W (Saint-Jerome)
+  { key: "rive-sud", x: 249, y: 264 },           // 45.456°N, -73.451°W (Brossard)
 ];
 
 const LAVAL_POS = REGIONS_POSITIONS[0];
