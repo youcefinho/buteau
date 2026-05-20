@@ -39,32 +39,57 @@ function ButeauMonogram({ tone }: { tone: "light" | "dark" | "bronze" }) {
   const bronzeColor = "var(--color-bronze)";
   return (
     <svg
-      width="48"
-      height="44"
-      viewBox="0 0 48 44"
+      width="56"
+      height="48"
+      viewBox="0 0 56 48"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
       className="select-none shrink-0"
       style={{ overflow: "visible" }}
     >
-      {/* "B" du logo officiel (175x214 source) - scale 0.07 = 12.25 x 15
-          Centre vertical a y=15 (B range y[7.5, 22.5]) avec marge top 7.5 +
-          espace bas 8.5 pour swash + dots. Fix coupure user 2026-05-20 v2. */}
-      <g transform="translate(24, 15) scale(0.07) translate(-235, -705)">
+      {/* Cercle medaillon hairline bronze (vibe sceau de cire vintage)
+          Centre (28, 17), rayon 13 = englobe le B avec ~3 unites d'air. */}
+      <circle
+        cx="28"
+        cy="17"
+        r="13"
+        fill="none"
+        stroke={bronzeColor}
+        strokeWidth="0.6"
+        opacity={tone === "dark" ? "0.55" : "0.65"}
+      />
+      {/* Arc bronze subtle interieur (depth de medaillon) */}
+      <circle
+        cx="28"
+        cy="17"
+        r="11.5"
+        fill="none"
+        stroke={bronzeColor}
+        strokeWidth="0.3"
+        opacity="0.3"
+      />
+      {/* "B" du logo officiel - scale 0.065 (un peu plus petit pour respecter le medaillon)
+          Centre vertical y=17 (B range y[10, 24]) inscrit dans le cercle. */}
+      <g transform="translate(28, 17) scale(0.065) translate(-235, -705)">
         <path d={B_PATH} fill={bColor} />
       </g>
-      {/* Swash bronze courbe sous le B (signature flourish) */}
+      {/* 2 petits losanges (lozenges) serif terminaux gauche+droite (style chapter book) */}
+      <g fill={bronzeColor} opacity="0.7">
+        <path d="M 6 17 L 9 14 L 12 17 L 9 20 Z" />
+        <path d="M 44 17 L 47 14 L 50 17 L 47 20 Z" />
+      </g>
+      {/* Swash bronze courbe sous medaillon (signature flourish editorial) */}
       <path
-        d="M 8 34 Q 24 38, 40 34"
+        d="M 8 38 Q 28 44, 48 38"
         stroke={bronzeColor}
         strokeWidth="0.9"
         fill="none"
         strokeLinecap="round"
         opacity={tone === "dark" ? "0.75" : "0.9"}
       />
-      {/* Micro-dots bronze terminaux (bookends serif) */}
-      <circle cx="4" cy="34" r="0.9" fill={bronzeColor} opacity="0.7" />
-      <circle cx="44" cy="34" r="0.9" fill={bronzeColor} opacity="0.7" />
+      {/* Micro-dots terminaux du swash */}
+      <circle cx="5" cy="38" r="0.8" fill={bronzeColor} opacity="0.6" />
+      <circle cx="51" cy="38" r="0.8" fill={bronzeColor} opacity="0.6" />
     </svg>
   );
 }

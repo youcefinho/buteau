@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Container } from "./Container";
+import { ButeauMonogramInline } from "@/components/atmosphere/ButeauMonogramInline";
 
 /**
  * Wrapper layout pour les pages légales (mentions / confidentialité / lexique).
@@ -58,12 +59,13 @@ export function LegalPageWrap({
         <div className="absolute bottom-0 left-0 right-0 h-px bg-[color:var(--color-taupe)]" />
       </section>
 
-      {/* Fleuron décoratif Cormorant entre hero et body */}
+      {/* Monogramme B Buteau decoratif entre hero et body (remplace ancien ❦ 2026-05-20).
+          Style mini par souci d'integration discrete (pas un divider hero proeminent). */}
       <div className="flex items-center justify-center py-[clamp(2.5rem,4vw,3.5rem)] relative" aria-hidden="true">
         <div className="flex items-center gap-5">
           <span className="block w-[clamp(4rem,8vw,6rem)] h-px bg-[color:var(--color-taupe)]" />
-          <span className="font-[var(--font-editorial)] italic text-[color:var(--color-bronze)] text-2xl">
-            ❦
+          <span className="text-[color:var(--color-navy-deep)] inline-flex items-center" style={{ transform: "scale(1.5)" }}>
+            <ButeauMonogramInline />
           </span>
           <span className="block w-[clamp(4rem,8vw,6rem)] h-px bg-[color:var(--color-taupe)]" />
         </div>
