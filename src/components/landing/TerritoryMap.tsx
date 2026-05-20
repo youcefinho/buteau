@@ -5,43 +5,57 @@ import { ta, translations } from "@/lib/translations";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 /**
- * TerritoryMap — silhouette Quebec stylisée + 4 régions desservies cliquables.
+ * TerritoryMap — silhouette QC sud + carte OSM reelle en fond + markers
+ * positionnes aux VRAIES coordonnees lat/lng des regions desservies.
  *
- * Embellissements 2026-05-20 (user "tout") :
- *  A) Atlas magazine : compass rose (top-right) + scale bar (bottom-right)
- *  B) Lignes reseau bronze de Laval (siege) vers les 3 autres regions,
- *     animated draw au scroll-reveal (metaphore visuelle "reseau Andrew")
- *  C) Markers numerotes 01/02/03/04 (toujours visibles discrets) + mini-card
- *     au hover montrant NAME + NOTE (cards cream avec border bronze)
- *  D) Reveal cinematic au scroll : maps fade-in -> silhouette -> compass/scale
- *     -> halo Laval -> network lines drawn -> markers staggered fade-in
+ * Embellissements 2026-05-20 (user "tout" - tier A+B+C+D) :
+ *  A) Atlas magazine : compass rose + scale bar calibree + double-line frame
+ *     + corner accents bronze + ★ Siege micro-badge sous Laval
+ *     + etiquettes distance reelles (12/30 km) sur lignes reseau au hover
+ *  B) Markers repositionnes aux VRAIES coordonnees lat/lng (alignes sur la
+ *     carte OSM reelle). Silhouette redessinee pour framer les positions reelles.
+ *     Scale bar recalibree (47 units = ≈ 30 km au lat 45.7°N).
+ *  C) Halo radial qui SUIT le marker actif (au lieu de fixe sur Laval seul).
+ *     Pulse halo sur n'importe quel marker actif (pas juste Laval).
+ *     Inner shadow SVG filter sur silhouette = effet "decoupe magazine" profonde.
+ *  D) Polish magazine : paper grain pattern overlay + coordinate ticks lat/lng
+ *     sur les bords (atlas signature) + mini-stats summary sous la carte.
+ *
+ * Conversion lat/lng -> viewBox (precomputed via mercator projection) :
+ *   OSM image z=8, tuiles (74-76, 90-92), bbox 44.26-47.06°N x -75.94 a -71.72°W
+ *   Image 768x768 -> viewBox 400x480 via preserveAspectRatio="xMidYMid slice"
+ *   = visible area lat 44.26-47.06°N, lng -75.51 a -72.15°W = 260x310 km
  */
 
-// Coordonnées approximatives sur le SVG (silhouette QC stylisée).
-// Note : "province" (index 4 dans regions list) n'a pas de marker carte car
-// pointerait vers une zone forestiere sans ville visible sur la carte OSM reelle.
-// Couverte en visio = mention dans la liste a droite uniquement (user 2026-05-20).
-const REGIONS_POSITIONS: Array<{ key: string; x: number; y: number }> = [
-  { key: "laval", x: 196, y: 305 }, // Laval (siège, gros marker)
-  { key: "montreal", x: 200, y: 322 }, // Montréal (au sud de Laval)
-  { key: "rive-nord", x: 168, y: 268 }, // Rive-Nord (Laurentides, NW de Laval)
-  { key: "rive-sud", x: 226, y: 340 }, // Rive-Sud (au sud de Montréal)
+type RegionPos = { key: string; x: number; y: number; siège?: boolean };
+
+// Coords REELLES lat/lng -> pixels viewBox (mercator projection precomputee).
+// User 2026-05-20 : markers alignes sur la carte OSM reelle.
+const REGIONS_POSITIONS: ReadonlyArray<RegionPos> = [
+  { key: "laval", x: 217, y: 222, siège: true }, // 45.612°N, -73.687°W (siege Andrew)
+  { key: "montreal", x: 230, y: 238 },           // 45.501°N, -73.567°W
+  { key: "rive-nord", x: 180, y: 213 },          // 45.781°N, -74.000°W (Saint-Jerome)
+  { key: "rive-sud", x: 243, y: 242 },           // 45.456°N, -73.451°W (Brossard)
 ];
 
-// Pre-compute lignes reseau de Laval vers chaque autre marker, avec longueur
-// pour anim stroke-dashoffset (drawing effect). Calcul Pythagore une fois.
 const LAVAL_POS = REGIONS_POSITIONS[0];
 const NETWORK_LINES = REGIONS_POSITIONS.slice(1).map((pos) => {
   const dx = pos.x - LAVAL_POS.x;
   const dy = pos.y - LAVAL_POS.y;
-  return { to: pos, length: Math.sqrt(dx * dx + dy * dy) };
+  const length = Math.sqrt(dx * dx + dy * dy);
+  // Distance reelle approximative (km) : 400 viewBox-units = 260 km au lat 45.7°N
+  const distKm = Math.round((length / 400) * 260);
+  return { to: pos, length, distKm };
 });
+
+// Silhouette redessinee : trace approximatif sud-Quebec qui frame les
+// markers reels positionnes dans le centre du viewBox.
+const SILHOUETTE_PATH =
+  "M 92 215 L 112 145 L 195 105 L 305 140 L 360 195 L 372 270 L 320 312 L 220 322 L 138 302 L 90 240 Z";
 
 export function TerritoryMap() {
   const { t, lang } = useLanguage();
   const [activeIdx, setActiveIdx] = useState<number | null>(0);
-  // Scroll-reveal hook pour orchestrer toutes les animations cinematic.
-  // Respecte prefers-reduced-motion (revele immediatement si user le demande).
   const { ref: mapWrapRef, isVisible } = useScrollReveal<HTMLDivElement>({ threshold: 0.2 });
 
   const regions = ta<Array<{ name: string; note: string }>>(
@@ -49,11 +63,12 @@ export function TerritoryMap() {
     "territory.regions",
   );
 
+  // C - Position du marker actif pour halo qui suit (fallback Laval si null)
+  const activePos = activeIdx !== null ? REGIONS_POSITIONS[activeIdx] : LAVAL_POS;
+
   return (
     <section id="territoire" className="relative py-[clamp(4rem,9vw,8rem)] surface-cream overflow-hidden">
-      {/* Atmospheric continuity — embers per-section signature */}
-
-      {/* Filigrane "QC" Cormorant italic en arrière-plan */}
+      {/* Filigrane "QC" Cormorant italic arriere-plan */}
       <span
         aria-hidden="true"
         className="absolute -bottom-16 -right-8 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/10 text-[24rem] leading-none pointer-events-none select-none"
@@ -63,7 +78,7 @@ export function TerritoryMap() {
 
       <Container size="xl" className="relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-[clamp(2.5rem,5vw,4rem)] items-center">
-          {/* Map column — col 7. ref scroll-reveal attache pour orchestrer anim. */}
+          {/* Map column - col 7. ref scroll-reveal pour orchestrer cinematic */}
           <div ref={mapWrapRef} className="lg:col-span-7 relative">
             <svg
               viewBox="0 0 400 480"
@@ -73,55 +88,59 @@ export function TerritoryMap() {
               aria-label={t("territory.title")}
             >
               <defs>
+                {/* Silhouette path defini UNE fois, reutilise via <use> pour fill + mask */}
+                <path id="qc-path" d={SILHOUETTE_PATH} />
+
                 <linearGradient id="qc-fill" x1="0" y1="0" x2="1" y2="1">
                   <stop offset="0%" stopColor="oklch(0.722 0.018 84 / 0.10)" />
                   <stop offset="100%" stopColor="oklch(0.722 0.018 84 / 0.04)" />
                 </linearGradient>
-                <radialGradient id="qc-glow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="oklch(0.704 0.077 56 / 0.35)" />
+
+                {/* C - Halo radial qui SUIT marker actif (centre dynamique via cx/cy) */}
+                <radialGradient
+                  id="qc-glow-follow"
+                  cx={activePos.x}
+                  cy={activePos.y}
+                  r="100"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0%" stopColor="oklch(0.704 0.077 56 / 0.30)" />
+                  <stop offset="55%" stopColor="oklch(0.704 0.077 56 / 0.10)" />
                   <stop offset="100%" stopColor="oklch(0.704 0.077 56 / 0)" />
                 </radialGradient>
-                {/* Mask feather : silhouette QC en blanc + Gaussian blur sur les
-                    bords = la carte OSM fade doucement autour du contour au lieu
-                    d'un cutoff sec. Donne un halo cartographique naturel "magazine".
-                    User feedback 2026-05-20 : "meme au alentour un peux pour faire plus jolie". */}
+
+                {/* Mask feather identique - applique au path partage via use */}
                 <mask id="qc-mask">
                   <rect x="0" y="0" width="400" height="480" fill="black" />
-                  <path
-                    d="
-                      M 80 80
-                      L 130 60
-                      L 200 50
-                      L 280 70
-                      L 340 90
-                      L 360 130
-                      L 350 180
-                      L 330 220
-                      L 310 260
-                      L 290 290
-                      L 280 320
-                      L 270 360
-                      L 240 380
-                      L 200 360
-                      L 180 340
-                      L 160 320
-                      L 140 290
-                      L 120 250
-                      L 100 210
-                      L 90 170
-                      L 80 130
-                      Z
-                    "
-                    fill="white"
-                    filter="url(#qc-feather)"
-                  />
+                  <use href="#qc-path" fill="white" filter="url(#qc-feather)" />
                 </mask>
                 <filter id="qc-feather" x="-20%" y="-20%" width="140%" height="140%">
                   <feGaussianBlur stdDeviation="8" />
                 </filter>
+
+                {/* C - Inner shadow SVG filter (effet "decoupe magazine" profonde) */}
+                <filter id="qc-inner-shadow" x="-10%" y="-10%" width="120%" height="120%">
+                  <feGaussianBlur in="SourceAlpha" stdDeviation="2.5" />
+                  <feOffset dy="1.5" result="shadow" />
+                  <feFlood floodColor="#0E2442" floodOpacity="0.28" />
+                  <feComposite in2="shadow" operator="in" />
+                  <feComposite in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowResult" />
+                  <feMerge>
+                    <feMergeNode in="SourceGraphic" />
+                    <feMergeNode in="shadowResult" />
+                  </feMerge>
+                </filter>
+
+                {/* D - Paper grain pattern overlay (texture magazine subtle) */}
+                <pattern id="paper-grain" patternUnits="userSpaceOnUse" width="8" height="8">
+                  <rect width="8" height="8" fill="transparent" />
+                  <circle cx="2" cy="2" r="0.3" fill="oklch(0.55 0.025 80)" opacity="0.18" />
+                  <circle cx="6" cy="6" r="0.25" fill="oklch(0.55 0.025 80)" opacity="0.12" />
+                  <circle cx="6" cy="2" r="0.18" fill="oklch(0.55 0.025 80)" opacity="0.08" />
+                </pattern>
               </defs>
 
-              {/* LAYER 1 — Carte OSM en CONTEXTE full-bg, fade-in (0 -> 0.28). */}
+              {/* LAYER 1 - OSM contexte full-bg, fade-in */}
               <image
                 href="/territory-map-bg.webp"
                 x="0"
@@ -129,13 +148,10 @@ export function TerritoryMap() {
                 width="400"
                 height="480"
                 preserveAspectRatio="xMidYMid slice"
-                style={{
-                  opacity: isVisible ? 0.28 : 0,
-                  transition: "opacity 900ms ease-out 100ms",
-                }}
+                style={{ opacity: isVisible ? 0.28 : 0, transition: "opacity 900ms ease-out 100ms" }}
               />
 
-              {/* LAYER 2 — Meme carte AMPLIFIEE dans la silhouette QC, fade-in (0 -> 0.70). */}
+              {/* LAYER 2 - OSM amplified dans silhouette (mask feather) */}
               <image
                 href="/territory-map-bg.webp"
                 x="0"
@@ -144,89 +160,100 @@ export function TerritoryMap() {
                 height="480"
                 mask="url(#qc-mask)"
                 preserveAspectRatio="xMidYMid slice"
-                style={{
-                  opacity: isVisible ? 0.70 : 0,
-                  transition: "opacity 900ms ease-out 250ms",
-                }}
+                style={{ opacity: isVisible ? 0.70 : 0, transition: "opacity 900ms ease-out 250ms" }}
               />
 
-              {/* Silhouette stylisée — fade in apres les maps (delay 500ms).
-                  Le fleuve St-Laurent decoratif retire 2026-05-20 (doublonnait
-                  avec le vrai St-Laurent visible dans le fond OSM). */}
-              <path
-                d="
-                  M 80 80
-                  L 130 60
-                  L 200 50
-                  L 280 70
-                  L 340 90
-                  L 360 130
-                  L 350 180
-                  L 330 220
-                  L 310 260
-                  L 290 290
-                  L 280 320
-                  L 270 360
-                  L 240 380
-                  L 200 360
-                  L 180 340
-                  L 160 320
-                  L 140 290
-                  L 120 250
-                  L 100 210
-                  L 90 170
-                  L 80 130
-                  Z
-                "
+              {/* D - Paper grain overlay subtle (toute la zone map) */}
+              <rect
+                x="0"
+                y="0"
+                width="400"
+                height="480"
+                fill="url(#paper-grain)"
+                opacity="0.35"
+                pointerEvents="none"
+                style={{ opacity: isVisible ? 0.35 : 0, transition: "opacity 900ms ease-out 600ms" }}
+              />
+
+              {/* Silhouette + inner shadow */}
+              <use
+                href="#qc-path"
                 fill="url(#qc-fill)"
                 stroke="oklch(0.55 0.025 80 / 0.75)"
                 strokeWidth="1.8"
                 strokeDasharray="4 5"
-                style={{
-                  opacity: isVisible ? 1 : 0,
-                  transition: "opacity 800ms ease-out 500ms",
-                }}
+                filter="url(#qc-inner-shadow)"
+                style={{ opacity: isVisible ? 1 : 0, transition: "opacity 800ms ease-out 500ms" }}
               />
 
-              {/* Halo radial au siège (Laval) — fade in delay 800ms */}
-              <circle
-                cx="196"
-                cy="305"
-                r="60"
-                fill="url(#qc-glow)"
-                style={{
-                  opacity: isVisible ? 1 : 0,
-                  transition: "opacity 700ms ease-out 800ms",
-                }}
+              {/* C - Halo radial qui SUIT marker actif (full-bg fill via gradient userSpace) */}
+              <rect
+                x="0"
+                y="0"
+                width="400"
+                height="480"
+                fill="url(#qc-glow-follow)"
+                pointerEvents="none"
+                style={{ opacity: isVisible ? 1 : 0, transition: "opacity 700ms ease-out 800ms" }}
               />
 
-              {/* B — Lignes reseau bronze de Laval vers chaque autre region.
-                  Anim drawing via stroke-dashoffset (length -> 0) au scroll-reveal.
-                  Metaphore visuelle "reseau Andrew couvre 4 zones depuis Laval". */}
+              {/* B - Network lines + A - etiquettes distance au hover */}
               <g style={{ pointerEvents: "none" }}>
-                {NETWORK_LINES.map((line, idx) => (
-                  <line
-                    key={`net-${line.to.key}`}
-                    x1={LAVAL_POS.x}
-                    y1={LAVAL_POS.y}
-                    x2={line.to.x}
-                    y2={line.to.y}
-                    stroke="oklch(0.704 0.077 56 / 0.55)"
-                    strokeWidth="0.8"
-                    strokeDasharray={String(line.length)}
-                    strokeDashoffset={isVisible ? 0 : line.length}
-                    style={{
-                      transition: `stroke-dashoffset 800ms cubic-bezier(.45,.05,.55,.95) ${900 + idx * 150}ms`,
-                    }}
-                  />
-                ))}
+                {NETWORK_LINES.map((line, idx) => {
+                  const targetIdx = idx + 1;
+                  const isTargetActive = activeIdx === targetIdx;
+                  const midX = (LAVAL_POS.x + line.to.x) / 2;
+                  const midY = (LAVAL_POS.y + line.to.y) / 2;
+                  return (
+                    <g key={`net-${line.to.key}`}>
+                      <line
+                        x1={LAVAL_POS.x}
+                        y1={LAVAL_POS.y}
+                        x2={line.to.x}
+                        y2={line.to.y}
+                        stroke="oklch(0.704 0.077 56 / 0.55)"
+                        strokeWidth={isTargetActive ? "1.4" : "0.8"}
+                        strokeDasharray={String(line.length)}
+                        strokeDashoffset={isVisible ? 0 : line.length}
+                        style={{
+                          transition: `stroke-dashoffset 800ms cubic-bezier(.45,.05,.55,.95) ${900 + idx * 150}ms, stroke-width 250ms ease`,
+                        }}
+                      />
+                      {/* A - Etiquette distance reelle au hover du target */}
+                      {isTargetActive && line.distKm > 0 && (
+                        <g style={{ pointerEvents: "none" }}>
+                          <rect
+                            x={midX - 11}
+                            y={midY - 6}
+                            width="22"
+                            height="11"
+                            rx="2"
+                            fill="oklch(0.978 0 0)"
+                            stroke="oklch(0.704 0.077 56 / 0.5)"
+                            strokeWidth="0.4"
+                          />
+                          <text
+                            x={midX}
+                            y={midY + 2.5}
+                            fontSize="6"
+                            fontFamily="Georgia, serif"
+                            fontStyle="italic"
+                            fill="oklch(0.55 0.025 80)"
+                            textAnchor="middle"
+                          >
+                            {line.distKm} km
+                          </text>
+                        </g>
+                      )}
+                    </g>
+                  );
+                })}
               </g>
 
-              {/* C+D — Markers numerotes 01/02/03/04 + mini-card NAME+NOTE au hover.
-                  Staggered fade-in (delays 1100/1230/1360/1490ms) en cascade Laval-first. */}
+              {/* C - Markers (pulse halo sur n'importe quel actif) + A - ★ Siege badge */}
               {REGIONS_POSITIONS.map((pos, idx) => {
                 const isActive = activeIdx === idx;
-                const isMain = idx === 0; // Laval = siège
+                const isMain = idx === 0;
                 const noteRaw = regions[idx]?.note || "";
                 const noteDisplay = noteRaw.length > 26 ? noteRaw.slice(0, 24) + "…" : noteRaw;
                 return (
@@ -241,27 +268,15 @@ export function TerritoryMap() {
                       transition: `opacity 500ms ease-out ${1100 + idx * 130}ms`,
                     }}
                   >
-                    {/* Pulse outer ring (Laval siege seul) */}
-                    {isMain && (
+                    {/* C - Pulse halo sur n'importe quel marker actif (pas juste Laval) */}
+                    {isActive && (
                       <circle r="14" fill="oklch(0.704 0.077 56 / 0.3)">
-                        <animate
-                          attributeName="r"
-                          from="10"
-                          to="22"
-                          dur="2s"
-                          repeatCount="indefinite"
-                        />
-                        <animate
-                          attributeName="opacity"
-                          from="0.5"
-                          to="0"
-                          dur="2s"
-                          repeatCount="indefinite"
-                        />
+                        <animate attributeName="r" from="10" to="22" dur="2s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" from="0.5" to="0" dur="2s" repeatCount="indefinite" />
                       </circle>
                     )}
 
-                    {/* Outer ring static */}
+                    {/* Outer ring */}
                     <circle
                       r={isActive ? 9 : 7}
                       fill="none"
@@ -272,8 +287,24 @@ export function TerritoryMap() {
                     {/* Inner dot */}
                     <circle r={isMain ? 4 : 3} fill="oklch(0.704 0.077 56)" />
 
-                    {/* C — Numero magazine 01/02/03/04 a cote du marker, Cormorant
-                        italic discret. Hidden au hover (mini-card prend la place). */}
+                    {/* A - Micro-badge ★ Siege sous Laval (visible quand pas actif) */}
+                    {isMain && !isActive && (
+                      <text
+                        x="0"
+                        y="20"
+                        fontSize="6"
+                        fontFamily="Georgia, serif"
+                        fontStyle="italic"
+                        fill="oklch(0.252 0.067 256)"
+                        textAnchor="middle"
+                        opacity="0.85"
+                        pointerEvents="none"
+                      >
+                        ★ Siège
+                      </text>
+                    )}
+
+                    {/* C - Numero magazine 01-04 (hidden au active = mini-card prend place) */}
                     <text
                       x="11"
                       y="-2"
@@ -287,7 +318,7 @@ export function TerritoryMap() {
                       {String(idx + 1).padStart(2, "0")}
                     </text>
 
-                    {/* C — Mini-card actif (NAME bold + NOTE italic, cream bg + border bronze) */}
+                    {/* C - Mini-card actif (NAME bold + NOTE italic, cream bg + border bronze) */}
                     {isActive && (
                       <g style={{ pointerEvents: "none" }}>
                         <line
@@ -336,20 +367,16 @@ export function TerritoryMap() {
                       </g>
                     )}
 
-                    {/* Hit area transparent pour mobile/touch */}
                     <circle r="20" fill="transparent" />
                     <title>{regions[idx]?.name}</title>
                   </g>
                 );
               })}
 
-              {/* A — Compass rose top-right (atlas magazine signature) */}
+              {/* A - Compass rose top-right (atlas magazine signature) */}
               <g
                 transform="translate(355, 60)"
-                style={{
-                  opacity: isVisible ? 0.55 : 0,
-                  transition: "opacity 700ms ease-out 700ms",
-                }}
+                style={{ opacity: isVisible ? 0.55 : 0, transition: "opacity 700ms ease-out 700ms" }}
                 aria-hidden="true"
               >
                 <circle r="13" fill="none" stroke="oklch(0.55 0.025 80)" strokeWidth="0.6" />
@@ -369,21 +396,18 @@ export function TerritoryMap() {
                 </text>
               </g>
 
-              {/* A — Scale bar bottom-right (≈30 km a z=8, calcul approximatif viewBox) */}
+              {/* A - Scale bar bottom-right (47 units = ≈ 30 km au lat 45.7°N, calibre B) */}
               <g
                 transform="translate(290, 445)"
-                style={{
-                  opacity: isVisible ? 0.6 : 0,
-                  transition: "opacity 700ms ease-out 800ms",
-                }}
+                style={{ opacity: isVisible ? 0.6 : 0, transition: "opacity 700ms ease-out 800ms" }}
                 aria-hidden="true"
               >
-                <line x1="0" y1="0" x2="50" y2="0" stroke="oklch(0.55 0.025 80)" strokeWidth="1.1" />
+                <line x1="0" y1="0" x2="47" y2="0" stroke="oklch(0.55 0.025 80)" strokeWidth="1.1" />
                 <line x1="0" y1="-3" x2="0" y2="3" stroke="oklch(0.55 0.025 80)" strokeWidth="1" />
-                <line x1="25" y1="-2" x2="25" y2="2" stroke="oklch(0.55 0.025 80)" strokeWidth="0.7" />
-                <line x1="50" y1="-3" x2="50" y2="3" stroke="oklch(0.55 0.025 80)" strokeWidth="1" />
+                <line x1="23.5" y1="-2" x2="23.5" y2="2" stroke="oklch(0.55 0.025 80)" strokeWidth="0.7" />
+                <line x1="47" y1="-3" x2="47" y2="3" stroke="oklch(0.55 0.025 80)" strokeWidth="1" />
                 <text
-                  x="25"
+                  x="23.5"
                   y="13"
                   fontSize="6.5"
                   fontFamily="Georgia, serif"
@@ -391,13 +415,63 @@ export function TerritoryMap() {
                   textAnchor="middle"
                   fill="oklch(0.55 0.025 80)"
                 >
-                  ≈ 30 km
+                  30 km
                 </text>
+              </g>
+
+              {/* D - Atlas double-line frame autour du SVG (vintage editorial) */}
+              <g
+                style={{ opacity: isVisible ? 0.55 : 0, transition: "opacity 800ms ease-out 600ms" }}
+                aria-hidden="true"
+                pointerEvents="none"
+              >
+                <rect x="6" y="6" width="388" height="468" fill="none" stroke="oklch(0.55 0.025 80)" strokeWidth="0.8" />
+                <rect x="10" y="10" width="380" height="460" fill="none" stroke="oklch(0.55 0.025 80)" strokeWidth="0.3" />
+                {/* Corner accents bronze (atlas vintage) */}
+                <g fill="oklch(0.704 0.077 56)">
+                  <circle cx="10" cy="10" r="1.4" />
+                  <circle cx="390" cy="10" r="1.4" />
+                  <circle cx="10" cy="470" r="1.4" />
+                  <circle cx="390" cy="470" r="1.4" />
+                </g>
+              </g>
+
+              {/* D - Coordinate ticks lat/lng (atlas signature) */}
+              <g
+                style={{ opacity: isVisible ? 0.5 : 0, transition: "opacity 700ms ease-out 900ms" }}
+                aria-hidden="true"
+                pointerEvents="none"
+              >
+                {/* Lat ticks gauche : 46°N a ~170, 45°N a ~342 (calcul mercator pour bbox) */}
+                <g transform="translate(12, 170)">
+                  <line x1="0" y1="0" x2="6" y2="0" stroke="oklch(0.55 0.025 80)" strokeWidth="0.5" />
+                  <text x="20" y="2" fontSize="5" fontFamily="Georgia, serif" fontStyle="italic" fill="oklch(0.55 0.025 80)">46°N</text>
+                </g>
+                <g transform="translate(12, 342)">
+                  <line x1="0" y1="0" x2="6" y2="0" stroke="oklch(0.55 0.025 80)" strokeWidth="0.5" />
+                  <text x="20" y="2" fontSize="5" fontFamily="Georgia, serif" fontStyle="italic" fill="oklch(0.55 0.025 80)">45°N</text>
+                </g>
+                {/* Lng ticks bas : -74°W a ~165, -73°W a ~285 */}
+                <g transform="translate(165, 468)">
+                  <line x1="0" y1="0" x2="0" y2="-6" stroke="oklch(0.55 0.025 80)" strokeWidth="0.5" />
+                  <text x="0" y="-9" fontSize="5" fontFamily="Georgia, serif" fontStyle="italic" textAnchor="middle" fill="oklch(0.55 0.025 80)">74°W</text>
+                </g>
+                <g transform="translate(285, 468)">
+                  <line x1="0" y1="0" x2="0" y2="-6" stroke="oklch(0.55 0.025 80)" strokeWidth="0.5" />
+                  <text x="0" y="-9" fontSize="5" fontFamily="Georgia, serif" fontStyle="italic" textAnchor="middle" fill="oklch(0.55 0.025 80)">73°W</text>
+                </g>
               </g>
             </svg>
 
-            {/* Légende sous la map — texte d'accessibilité + attribution OSM (CC-BY-SA). */}
-            <p className="mt-6 text-xs italic text-[color:var(--color-taupe-dark)] text-center lg:text-left">
+            {/* D - Mini-stats summary editorial sous la carte */}
+            <p className="mt-4 text-[10px] font-[var(--font-display)] tracking-[0.15em] uppercase text-[color:var(--color-taupe-dark)]/85 text-center lg:text-left">
+              {lang === "fr"
+                ? "4 régions desservies · 1 siège à Laval · 200 dossiers fermés en 2025"
+                : "4 regions served · 1 head office in Laval · 200 closed cases in 2025"}
+            </p>
+
+            {/* Footnote + attribution OSM */}
+            <p className="mt-3 text-xs italic text-[color:var(--color-taupe-dark)] text-center lg:text-left">
               {t("territory.footnote")}
             </p>
             <p className="mt-2 text-[10px] text-[color:var(--color-taupe-dark)]/70 text-center lg:text-left">
@@ -413,7 +487,7 @@ export function TerritoryMap() {
             </p>
           </div>
 
-          {/* Liste régions column — col 5 */}
+          {/* Liste regions column - col 5, INCHANGE */}
           <div className="lg:col-span-5 space-y-7">
             <div>
               <p className="eyebrow text-[color:var(--color-taupe-dark)] inline-flex items-center gap-3 mb-5">
@@ -429,7 +503,6 @@ export function TerritoryMap() {
               </p>
             </div>
 
-            {/* Liste régions avec hover sync */}
             <ul className="space-y-3 pt-3">
               {regions.map((r, idx) => {
                 const isActive = activeIdx === idx;
