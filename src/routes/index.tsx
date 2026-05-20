@@ -8,7 +8,6 @@ import { ToolsTeaser } from "@/components/landing/ToolsTeaser";
 import { Reviews } from "@/components/landing/Reviews";
 import { ContactSection } from "@/components/landing/ContactSection";
 import { Faq } from "@/components/landing/Faq";
-import { ChapterMarker } from "@/components/landing/ChapterMarker";
 import { BrokerLetter } from "@/components/landing/BrokerLetter";
 import { TerritoryMap } from "@/components/landing/TerritoryMap";
 import { PreQualQuiz } from "@/components/landing/PreQualQuiz";
@@ -16,7 +15,6 @@ import { CalcMultiViewsButeau } from "@/components/landing/calculators/CalcMulti
 import { JournalPreview } from "@/components/landing/JournalPreview";
 import { ValueTicker } from "@/components/landing/ValueTicker";
 import { AdPage } from "@/components/landing/AdPage";
-import { PageFooterMark } from "@/components/layout/PageFooterMark";
 import { ScrollReveal } from "@/components/layout/ScrollReveal";
 import { SectionDivider } from "@/components/layout/SectionDivider";
 import { SectionRail, HOME_SECTIONS } from "@/components/layout/SectionRail";
@@ -43,24 +41,16 @@ function HomePage() {
   // Schema.org @graph pour l'Accueil — FAQPage + 4 Service entities.
   const homeSchemas = [buildFaqPage(faqItems), ...buildServices(serviceItems, lang)];
 
-  // Labels chapter markers selon langue
-  const chapter2 = lang === "fr" ? "Notre équipe" : "Our team";
-  const chapter3 = lang === "fr" ? "La preuve" : "Proof";
-
   return (
     <main id="main">
       <SchemaJsonLd schema={homeSchemas} />
       <SectionRail sections={HOME_SECTIONS} />
       <Hero />
-      <PageFooterMark numeral="01" label={lang === "fr" ? "Le réseau" : "The network"} />
       <Partners />
 
       {/* ValueTicker — bandeau scrolling éditorial avec faits vérifiés
           (200 familles, 9+ institutions, AMF, etc.). Effet "live data" sans invention. */}
       <ValueTicker />
-
-      {/* Chapter II — annonce Team + Services + Mission */}
-      <ChapterMarker numeral="02" label={chapter2} tone="light" />
 
       <ScrollReveal><TeamTeaser /></ScrollReveal>
       <ScrollReveal><Services /></ScrollReveal>
@@ -94,9 +84,6 @@ function HomePage() {
 
       {/* Quiz pré-qualification 3Q tier-based — qualifie les leads + personalise CTA */}
       <ScrollReveal><PreQualQuiz /></ScrollReveal>
-
-      {/* Chapter III — annonce témoignages + contact */}
-      <ChapterMarker numeral="03" label={chapter3} tone="light" />
 
       <ScrollReveal><Reviews /></ScrollReveal>
 
