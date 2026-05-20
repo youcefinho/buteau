@@ -39,20 +39,23 @@ function ButeauMonogram({ tone }: { tone: "light" | "dark" | "bronze" }) {
   const bronzeColor = "var(--color-bronze)";
   return (
     <svg
-      width="44"
-      height="40"
-      viewBox="0 0 44 40"
+      width="48"
+      height="44"
+      viewBox="0 0 48 44"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
       className="select-none shrink-0"
+      style={{ overflow: "visible" }}
     >
-      {/* "B" du logo officiel, scale et centre */}
-      <g transform="translate(22, 6) scale(0.075) translate(-235, -705)">
+      {/* "B" du logo officiel (175x214 source) - scale 0.07 = 12.25 x 15
+          Centre vertical a y=15 (B range y[7.5, 22.5]) avec marge top 7.5 +
+          espace bas 8.5 pour swash + dots. Fix coupure user 2026-05-20 v2. */}
+      <g transform="translate(24, 15) scale(0.07) translate(-235, -705)">
         <path d={B_PATH} fill={bColor} />
       </g>
       {/* Swash bronze courbe sous le B (signature flourish) */}
       <path
-        d="M 6 32 Q 22 36, 38 32"
+        d="M 8 34 Q 24 38, 40 34"
         stroke={bronzeColor}
         strokeWidth="0.9"
         fill="none"
@@ -60,8 +63,8 @@ function ButeauMonogram({ tone }: { tone: "light" | "dark" | "bronze" }) {
         opacity={tone === "dark" ? "0.75" : "0.9"}
       />
       {/* Micro-dots bronze terminaux (bookends serif) */}
-      <circle cx="3" cy="32" r="0.9" fill={bronzeColor} opacity="0.7" />
-      <circle cx="41" cy="32" r="0.9" fill={bronzeColor} opacity="0.7" />
+      <circle cx="4" cy="34" r="0.9" fill={bronzeColor} opacity="0.7" />
+      <circle cx="44" cy="34" r="0.9" fill={bronzeColor} opacity="0.7" />
     </svg>
   );
 }
