@@ -35,6 +35,17 @@ export function Footer() {
       </span>
 
       <Container size="xl" className="relative pt-[clamp(3.5rem,6vw,5rem)] pb-8">
+        {/* === Logo SVG officiel (guide identite visuelle 2026-05-19) === */}
+        <img
+          src="/logo-buteau-white.svg"
+          alt="Buteau — L'hypothèque autrement"
+          width={1267}
+          height={368}
+          loading="lazy"
+          decoding="async"
+          className="h-[clamp(2.5rem,4vw,3.5rem)] w-auto mb-[clamp(2rem,3vw,2.5rem)] opacity-95"
+        />
+
         {/* === Couverture statement — Cormorant italic XL === */}
         <div className="max-w-4xl mb-[clamp(2.5rem,4vw,3.5rem)]">
           <p className="eyebrow text-[color:var(--color-taupe)] mb-4 inline-flex items-center gap-3">
