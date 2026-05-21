@@ -13,19 +13,15 @@ export function scrollToHash(id: string): void {
   if (typeof document === 'undefined') return;
   const el = document.getElementById(id);
   if (!el) return;
-  // v53 : utiliser scroll-padding-top du html CSS (= 5rem/80px sur Buteau)
-  // au lieu de chercher un <nav> (Buteau navbar = <header>, donc querySelector
-  // tombait sur SectionRail = hidden mobile = height 0 = mauvais offset).
-  const scrollPadding = parseFloat(
-    getComputedStyle(document.documentElement).scrollPaddingTop || '80',
-  );
+  const nav = document.querySelector('nav') as HTMLElement | null;
+  const navHeight = nav?.getBoundingClientRect().height ?? 100;
   let top = 0;
   let current: HTMLElement | null = el;
   while (current) {
     top += current.offsetTop;
     current = current.offsetParent as HTMLElement | null;
   }
-  const targetY = top - (Number.isFinite(scrollPadding) ? scrollPadding : 80);
+  const targetY = top - navHeight - 24;
   const useJump = id === 'contact';
   if (lenisInstance) {
     if (useJump) lenisInstance.scrollTo(targetY, { immediate: true });
