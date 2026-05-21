@@ -98,14 +98,10 @@ export function useLenis() {
       // v50 : use shared scrollToHash helper (also used by ExitIntent et al.)
       scrollToHash(id);
     };
-    // Mobile : capture phase pour fire AVANT browser default action sur
-    // plain <a href="#X"> (iOS Safari traite default eagerly avant bubble).
-    // Desktop : bubble (par default) marche bien.
-    const useCapture = window.matchMedia('(pointer: coarse)').matches;
-    document.addEventListener('click', handleAnchorClick, useCapture);
+    document.addEventListener('click', handleAnchorClick);
 
     return () => {
-      document.removeEventListener('click', handleAnchorClick, useCapture);
+      document.removeEventListener('click', handleAnchorClick);
       if (rafId) cancelAnimationFrame(rafId);
       if (lenis) {
         lenis.destroy();

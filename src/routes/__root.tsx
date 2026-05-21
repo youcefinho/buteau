@@ -20,7 +20,7 @@ import { SmsButton } from "@/components/layout/SmsButton";
 import { BackToTop } from "@/components/layout/BackToTop";
 import { ColophonProvider } from "@/lib/ColophonContext";
 import { CarnetProvider } from "@/lib/CarnetContext";
-import { useLenis, scrollToHash } from "@/hooks/useLenis";
+import { useLenis, getLenis } from "@/hooks/useLenis";
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -34,34 +34,14 @@ export const Route = createRootRoute({
 function RootComponent() {
   useLenis();
 
-  // v52 user 2026-05-21 : cross-page hash nav (ex: /journal/X → /#contact)
-  // utilise scrollToHash helper (sync Lenis + offset navbar + fallback mobile).
-  // Retry rapide (50ms × 20 = max 1s) pour laisser sections mounter avant scroll.
-  // Si pas de hash → strip + scroll top (comportement classique route change).
+  // v51 user 2026-05-21 : timer 1.5s cross-page scroll RETIRE. Strip hash
+  // + scroll top sur tout changement de route. Cross-page hash nav (clic
+  // <Link hash> depuis sub-page) landera au top home. User scroll manuel.
   const { location } = useRouterState();
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const hash = window.location.hash;
-    if (hash) {
-      const id = hash.replace(/^#/, '');
-      let timerId = 0;
-      let attempts = 0;
-      const tryScroll = () => {
-        attempts++;
-        if (document.getElementById(id)) {
-          scrollToHash(id);
-          return;
-        }
-        if (attempts < 20) {
-          timerId = window.setTimeout(tryScroll, 50);
-        } else {
-          // Target jamais trouve → strip + top
-          window.history.replaceState(null, "", window.location.pathname + window.location.search);
-          window.scrollTo({ top: 0, behavior: "instant" });
-        }
-      };
-      tryScroll();
-      return () => { if (timerId) window.clearTimeout(timerId); };
+    if (window.location.hash) {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
     }
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [location.pathname]);
