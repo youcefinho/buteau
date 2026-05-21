@@ -34,41 +34,14 @@ export const Route = createRootRoute({
 function RootComponent() {
   useLenis();
 
-  // Scroll handling on route change. v2 Buteau 2026-05-21 (port EGSF v48) :
-  // deps [pathname] uniquement. Hash branch reste pour CROSS-PAGE nav
-  // (pathname change avec hash present, ex: /journal/X → /#contact).
-  // Same-page hash nav (Navbar items) gere par useLenis intercept.
-  // Sans lock+force (causait fight Lenis avec SectionRail).
+  // v51 user 2026-05-21 : timer 1.5s cross-page scroll RETIRE. Strip hash
+  // + scroll top sur tout changement de route. Cross-page hash nav (clic
+  // <Link hash> depuis sub-page) landera au top home. User scroll manuel.
   const { location } = useRouterState();
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const hash = window.location.hash;
-    if (hash) {
-      const id = hash.replace(/^#/, '');
-      const timer = window.setTimeout(() => {
-        const el = document.getElementById(id);
-        if (!el) {
-          window.history.replaceState(null, "", window.location.pathname + window.location.search);
-          window.scrollTo({ top: 0, behavior: "instant" });
-          return;
-        }
-        const nav = document.querySelector('nav') as HTMLElement | null;
-        const navHeight = nav?.getBoundingClientRect().height ?? 100;
-        let top = 0;
-        let current: HTMLElement | null = el;
-        while (current) {
-          top += current.offsetTop;
-          current = current.offsetParent as HTMLElement | null;
-        }
-        const target = top - navHeight - 24;
-        const lenis = getLenis();
-        if (lenis) {
-          lenis.scrollTo(target, { immediate: true });
-        } else {
-          window.scrollTo({ top: target, behavior: "instant" });
-        }
-      }, 1500);
-      return () => window.clearTimeout(timer);
+    if (window.location.hash) {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
     }
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [location.pathname]);
