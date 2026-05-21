@@ -20,7 +20,7 @@ import { SmsButton } from "@/components/layout/SmsButton";
 import { BackToTop } from "@/components/layout/BackToTop";
 import { ColophonProvider } from "@/lib/ColophonContext";
 import { CarnetProvider } from "@/lib/CarnetContext";
-import { useLenis } from "@/hooks/useLenis";
+import { useLenis, getLenis } from "@/hooks/useLenis";
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -34,18 +34,45 @@ export const Route = createRootRoute({
 function RootComponent() {
   useLenis();
 
-  // Scroll-to-top + strip hash sur chaque navigation de route (initial mount,
-  // refresh, back/forward nav). SectionRail clicks restent OK (scroll intra-page,
-  // pas de pathname change donc effect ne se re-execute pas).
-  // User feedback 2026-05-20 cross-4-sites : refresh/back doit revenir en haut.
+  // Scroll handling on route change. v1 Buteau 2026-05-21 (port EGSF v46) :
+  // deps [pathname, hash] pour cross-page nav (ex: /journal/X → /#contact).
+  // Wait 1.5s pour page mount + lazy content settle, puis UN seul scroll
+  // decisif via Lenis (immediate+lock+force). Fallback window.scrollTo mobile.
   const { location } = useRouterState();
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (window.location.hash) {
-      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    const winHash = window.location.hash;
+    const routerHash = location.hash;
+    const hash = winHash || (routerHash ? `#${routerHash}` : '');
+    if (hash) {
+      const id = hash.replace(/^#/, '');
+      const timer = window.setTimeout(() => {
+        const el = document.getElementById(id);
+        if (!el) {
+          window.history.replaceState(null, "", window.location.pathname + window.location.search);
+          window.scrollTo({ top: 0, behavior: "instant" });
+          return;
+        }
+        const nav = document.querySelector('nav') as HTMLElement | null;
+        const navHeight = nav?.getBoundingClientRect().height ?? 100;
+        let top = 0;
+        let current: HTMLElement | null = el;
+        while (current) {
+          top += current.offsetTop;
+          current = current.offsetParent as HTMLElement | null;
+        }
+        const target = top - navHeight - 24;
+        const lenis = getLenis();
+        if (lenis) {
+          lenis.scrollTo(target, { immediate: true, lock: true, force: true });
+        } else {
+          window.scrollTo({ top: target, behavior: "instant" });
+        }
+      }, 1500);
+      return () => window.clearTimeout(timer);
     }
     window.scrollTo({ top: 0, behavior: "instant" });
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
 
   return (
     <ColophonProvider>
