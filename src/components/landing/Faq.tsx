@@ -7,7 +7,6 @@ import { AutoGlossary } from "./AutoGlossary";
 import { ta, translations } from "@/lib/translations";
 import { useGlossary } from "@/lib/GlossaryContext";
 import { useCarnet } from "@/lib/CarnetContext";
-import { scrollToHash } from "@/hooks/useLenis";
 
 /**
  * Section FAQ — accordion 7 questions hypothecaires courantes.
@@ -91,14 +90,7 @@ export function Faq() {
           <p className="text-[color:var(--color-cream)]/80 text-sm">
             {t("home.faq.moreQuestionsLabel")}
           </p>
-          <a
-            href="#contact"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToHash("contact");
-            }}
-            className="btn-bronze"
-          >
+          <a href="#contact" className="btn-bronze">
             {t("common.writeUs")}
           </a>
 

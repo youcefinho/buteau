@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Phone, MessageSquare, CalendarCheck } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { config } from "@/lib/config";
-import { scrollToHash } from "@/hooks/useLenis";
 
 /**
  * MobileStickyCta — barre CTA fixe bas écran sur mobile uniquement.
@@ -113,10 +112,6 @@ export function MobileStickyCta() {
               0.12em) pour gagner ~15% de largeur et eviter truncate trop tot. */}
           <a
             href="#contact"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToHash("contact");
-            }}
             className="flex-1 min-w-0 inline-flex items-center justify-center gap-1.5 py-2.5 px-2 bg-[color:var(--color-bronze)] hover:bg-[color:var(--color-bronze-deep)] text-[color:var(--color-navy-deep)] font-bold rounded-md shadow-md text-[11px] uppercase tracking-[0.08em] active:scale-[0.97] transition-all duration-200"
             aria-label={t("common.contactCta")}
             tabIndex={visible ? 0 : -1}

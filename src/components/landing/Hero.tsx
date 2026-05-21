@@ -5,7 +5,6 @@ import { Container } from "@/components/layout/Container";
 import { config } from "@/lib/config";
 import { useMagnetic } from "@/hooks/useMagnetic";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
-import { scrollToHash } from "@/hooks/useLenis";
 import { ta, translations } from "@/lib/translations";
 import { useQuizTier } from "@/hooks/useQuizTier";
 import { useGlossary } from "@/lib/GlossaryContext";
@@ -53,7 +52,7 @@ export function Hero() {
           WebP partout). Old browsers (Safari < 14 ~0.5% market share) n'ont pas
           image-set(), donc on garde un fallback url() comme premiere declaration. */}
       <div
-        className="absolute inset-0 bg-cover bg-center md:bg-fixed"
+        className="absolute inset-0 bg-cover bg-center md:bg-fixed pointer-events-none"
         style={{
           backgroundImage:
             "linear-gradient(180deg, rgba(16, 34, 61, 0.55) 0%, rgba(16, 34, 61, 0.68) 45%, rgba(16, 34, 61, 0.82) 100%), image-set(url('/hero-buteau.avif') type('image/avif'), url('/hero-buteau.webp') type('image/webp'), url('/hero-buteau.jpg'))",
@@ -160,17 +159,7 @@ export function Hero() {
               Audit P0 council UX : CTA principal pointe vers Calculator (low-friction)
               au lieu de #contact (engagement max). Le tier-quiz écrase si user a complété. */}
           <div className="flex flex-col sm:flex-row gap-5 items-center animate-[buteauFadeUp_700ms_ease-out_1200ms_both]">
-            <a
-              ref={magneticCta}
-              href={tier ? "#contact" : "#calculateur"}
-              onClick={(e) => {
-                e.preventDefault();
-                // DIAGNOSTIC TEMPORAIRE : confirmer que onClick fire mobile
-                alert(`Hero CTA clicked! tier=${tier ?? 'none'} hash=${tier ? 'contact' : 'calculateur'}`);
-                scrollToHash(tier ? "contact" : "calculateur");
-              }}
-              className="btn-bronze btn-shine"
-            >
+            <a ref={magneticCta} href={tier ? "#contact" : "#calculateur"} className="btn-bronze btn-shine">
               {ctaLabel}
             </a>
             <Link
