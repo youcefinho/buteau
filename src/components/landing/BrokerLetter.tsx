@@ -72,21 +72,13 @@ export function BrokerLetter() {
             </p>
           </div>
 
-          {/* Signature column — col 4 (Signature manuscrite + nom + Photo entrevue) */}
-          <div className="lg:col-span-4 flex flex-col items-start lg:items-center lg:pt-32">
-            <div className="w-full max-w-[320px]">
-              <AnimatedSignature className="w-full h-auto" duration={2400} />
-            </div>
-            <div className="mt-6 lg:mt-8 lg:text-center w-full max-w-[320px]">
-              <div className="w-12 h-px bg-[color:var(--color-bronze)] lg:mx-auto mb-3" />
-              <p className="eyebrow text-[color:var(--color-taupe-dark)]">
-                {t("letter.role")}
-              </p>
-            </div>
-
-            {/* Photo Andrew en entrevue — cinematic chiaroscuro EN DESSOUS signature
-                (user choix 2026-05-21 : "switch en dessous + enleve caption"). */}
-            <figure className="w-full max-w-[320px] mt-10 lg:mt-12 photo-edito group">
+          {/* Signature column — col 4 (Photo entrevue + signature manuscrite + nom).
+              Option A polished 2026-05-21 v3 : photo au-dessus mais plus subtle
+              (pas de border carte, shadow softer, max-w reduit) + lg:pt-24
+              pour s'aligner avec le body letter (pas tout en haut). */}
+          <div className="lg:col-span-4 flex flex-col items-start lg:items-center lg:pt-24">
+            {/* Photo Andrew en entrevue — cinematic chiaroscuro, treatment editorial */}
+            <figure className="w-full max-w-[280px] mb-10 lg:mb-12 photo-edito group">
               <picture>
                 <source srcSet="/equipe/andrew-podcast.avif" type="image/avif" />
                 <source srcSet="/equipe/andrew-podcast.webp" type="image/webp" />
@@ -97,10 +89,20 @@ export function BrokerLetter() {
                   decoding="async"
                   width={800}
                   height={1200}
-                  className="w-full h-auto block border border-[color:var(--color-bronze)]/20 shadow-[0_12px_32px_-12px_rgba(16,34,61,0.35)] transition-shadow duration-500 group-hover:shadow-[0_18px_48px_-12px_rgba(16,34,61,0.5)]"
+                  className="w-full h-auto block shadow-[0_8px_24px_-12px_rgba(16,34,61,0.25)] transition-shadow duration-500 group-hover:shadow-[0_14px_36px_-12px_rgba(16,34,61,0.4)]"
                 />
               </picture>
             </figure>
+
+            <div className="w-full max-w-[320px]">
+              <AnimatedSignature className="w-full h-auto" duration={2400} />
+            </div>
+            <div className="mt-6 lg:mt-8 lg:text-center w-full max-w-[320px]">
+              <div className="w-12 h-px bg-[color:var(--color-bronze)] lg:mx-auto mb-3" />
+              <p className="eyebrow text-[color:var(--color-taupe-dark)]">
+                {t("letter.role")}
+              </p>
+            </div>
           </div>
         </div>
       </Container>
