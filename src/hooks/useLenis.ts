@@ -94,17 +94,8 @@ export function useLenis() {
         window.scrollTo({ top: targetY, behavior: useJump ? 'instant' : 'smooth' });
       }
 
-      // Correction post-1.5s seulement pour #contact (lazy content layout shift)
-      if (useJump) {
-        window.setTimeout(() => {
-          const newTarget = getAbsoluteOffsetTop(el) - navHeight - 24;
-          if (Math.abs(window.scrollY - newTarget) > 30) {
-            if (lenis) lenis.scrollTo(newTarget, { immediate: true });
-            else window.scrollTo({ top: newTarget, behavior: 'instant' });
-          }
-        }, 1500);
-      }
-
+      // v49 user 2026-05-21 : correction post-1.5s RETIREE (causait rogue
+      // scroll si user cliquait ailleurs avant les 1.5s).
       window.history.replaceState(null, '', `#${id}`);
     };
     document.addEventListener('click', handleAnchorClick);
