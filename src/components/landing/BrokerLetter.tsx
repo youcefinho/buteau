@@ -72,8 +72,30 @@ export function BrokerLetter() {
             </p>
           </div>
 
-          {/* Signature column — col 4 */}
-          <div className="lg:col-span-4 flex flex-col items-start lg:items-center lg:pt-32">
+          {/* Signature column — col 4 (Photo entrevue + signature manuscrite + nom) */}
+          <div className="lg:col-span-4 flex flex-col items-start lg:items-center lg:pt-16">
+            {/* Photo Andrew en entrevue — cinematic chiaroscuro, ajout 2026-05-21.
+                Format portrait 3:4.5, treatment photo-edito (saturate 0.78 -> 1 hover).
+                AVIF + WebP via picture pour LCP optimal. */}
+            <figure className="w-full max-w-[320px] mb-8 lg:mb-10 photo-edito group">
+              <picture>
+                <source srcSet="/equipe/andrew-podcast.avif" type="image/avif" />
+                <source srcSet="/equipe/andrew-podcast.webp" type="image/webp" />
+                <img
+                  src="/equipe/andrew-podcast.jpg"
+                  alt="Andrew Buteau en entrevue"
+                  loading="lazy"
+                  decoding="async"
+                  width={800}
+                  height={1200}
+                  className="w-full h-auto block border border-[color:var(--color-bronze)]/20 shadow-[0_12px_32px_-12px_rgba(16,34,61,0.35)] transition-shadow duration-500 group-hover:shadow-[0_18px_48px_-12px_rgba(16,34,61,0.5)]"
+                />
+              </picture>
+              <figcaption className="mt-3 font-[var(--font-editorial)] italic text-[color:var(--color-taupe-dark)] text-xs lg:text-center">
+                Andrew en entrevue, 2025
+              </figcaption>
+            </figure>
+
             <div className="w-full max-w-[320px]">
               <AnimatedSignature className="w-full h-auto" duration={2400} />
             </div>
