@@ -3,6 +3,12 @@
   "name": "equipe-buteau",
   "main": "src/worker.ts",
   "compatibility_date": "2025-04-01",
+  // [build] step auto-run bun run build avant wrangler deploy.
+  // Sans cela, deploy push juste ./dist/ actuel (potentiellement stale).
+  // Lesson session 2026-05-21 : 2h debug fantome car dist obsolete servi en prod.
+  "build": {
+    "command": "bun run build"
+  },
   "assets": {
     "binding": "ASSETS",
     "directory": "./dist",
