@@ -75,8 +75,9 @@ export function BrokerLetter() {
           {/* Signature column — col 4 (Photo entrevue + signature manuscrite + nom).
               Option A polished 2026-05-21 v3 : photo au-dessus mais plus subtle
               (pas de border carte, shadow softer, max-w reduit) + lg:pt-24
-              pour s'aligner avec le body letter (pas tout en haut). */}
-          <div className="lg:col-span-4 flex flex-col items-start lg:items-center lg:pt-24">
+              pour s'aligner avec le body letter (pas tout en haut).
+              lg:-translate-x-8 = decalage subtle vers la gauche (user 2026-05-21 v4). */}
+          <div className="lg:col-span-4 flex flex-col items-start lg:items-center lg:pt-24 lg:-translate-x-8">
             {/* Photo Andrew en entrevue — cinematic chiaroscuro, treatment editorial */}
             <figure className="w-full max-w-[280px] mb-10 lg:mb-12 photo-edito group">
               <picture>
