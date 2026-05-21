@@ -48,16 +48,22 @@ export function useLenis() {
       rafId = requestAnimationFrame(raf);
     }
 
-    // Click intercept pour CTAs vers #contact — TOUJOURS actif (PC + mobile).
-    // Bypass la dedup browser (qui skip re-scroll si URL hash inchange).
+    // Click intercept hash anchors — TOUJOURS actif (PC + mobile).
+    // v2 Buteau (port EGSF v48) : gere TOUS les hashes.
+    //  - #contact = form click → JUMP immediate + correction post-1.5s
+    //  - Plain <a href="#X"> non-contact = SectionRail → laisse natif
+    //  - <Link href="/#X"> TanStack Router = handle (TanStack Router update
+    //    URL mais ne scroll pas, faut prendre la main) → smooth scroll
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const anchor = target.closest<HTMLAnchorElement>('a');
       if (!anchor) return;
       const href = anchor.getAttribute('href');
       if (!href || !/^\/?#[\w-]+$/.test(href)) return;
+      const isLinkRouter = href.startsWith('/#'); // TanStack Router Link
       const id = href.replace(/^\/?#/, '');
-      if (id !== 'contact') return;
+      // Plain non-contact = SectionRail/anchor in-page → laisser natif
+      if (!isLinkRouter && id !== 'contact') return;
       const el = document.getElementById(id);
       if (!el) return;
       e.preventDefault();
@@ -75,24 +81,29 @@ export function useLenis() {
         return top;
       };
 
-      const scrollTo = (targetY: number) => {
-        if (lenis) {
+      const targetY = getAbsoluteOffsetTop(el) - navHeight - 24;
+      const useJump = id === 'contact';
+
+      if (lenis) {
+        if (useJump) {
           lenis.scrollTo(targetY, { immediate: true });
         } else {
-          window.scrollTo({ top: targetY, behavior: 'instant' });
+          lenis.scrollTo(targetY, { duration: 1.1 });
         }
-      };
+      } else {
+        window.scrollTo({ top: targetY, behavior: useJump ? 'instant' : 'smooth' });
+      }
 
-      const targetY = getAbsoluteOffsetTop(el) - navHeight - 24;
-      scrollTo(targetY);
-
-      // Correction apres 1.5s pour lazy content layout shift.
-      window.setTimeout(() => {
-        const newTarget = getAbsoluteOffsetTop(el) - navHeight - 24;
-        if (Math.abs(window.scrollY - newTarget) > 30) {
-          scrollTo(newTarget);
-        }
-      }, 1500);
+      // Correction post-1.5s seulement pour #contact (lazy content layout shift)
+      if (useJump) {
+        window.setTimeout(() => {
+          const newTarget = getAbsoluteOffsetTop(el) - navHeight - 24;
+          if (Math.abs(window.scrollY - newTarget) > 30) {
+            if (lenis) lenis.scrollTo(newTarget, { immediate: true });
+            else window.scrollTo({ top: newTarget, behavior: 'instant' });
+          }
+        }, 1500);
+      }
 
       window.history.replaceState(null, '', `#${id}`);
     };

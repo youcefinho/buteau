@@ -34,16 +34,15 @@ export const Route = createRootRoute({
 function RootComponent() {
   useLenis();
 
-  // Scroll handling on route change. v1 Buteau 2026-05-21 (port EGSF v46) :
-  // deps [pathname, hash] pour cross-page nav (ex: /journal/X → /#contact).
-  // Wait 1.5s pour page mount + lazy content settle, puis UN seul scroll
-  // decisif via Lenis (immediate+lock+force). Fallback window.scrollTo mobile.
+  // Scroll handling on route change. v2 Buteau 2026-05-21 (port EGSF v48) :
+  // deps [pathname] uniquement. Hash branch reste pour CROSS-PAGE nav
+  // (pathname change avec hash present, ex: /journal/X → /#contact).
+  // Same-page hash nav (Navbar items) gere par useLenis intercept.
+  // Sans lock+force (causait fight Lenis avec SectionRail).
   const { location } = useRouterState();
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const winHash = window.location.hash;
-    const routerHash = location.hash;
-    const hash = winHash || (routerHash ? `#${routerHash}` : '');
+    const hash = window.location.hash;
     if (hash) {
       const id = hash.replace(/^#/, '');
       const timer = window.setTimeout(() => {
@@ -64,7 +63,7 @@ function RootComponent() {
         const target = top - navHeight - 24;
         const lenis = getLenis();
         if (lenis) {
-          lenis.scrollTo(target, { immediate: true, lock: true, force: true });
+          lenis.scrollTo(target, { immediate: true });
         } else {
           window.scrollTo({ top: target, behavior: "instant" });
         }
@@ -72,7 +71,7 @@ function RootComponent() {
       return () => window.clearTimeout(timer);
     }
     window.scrollTo({ top: 0, behavior: "instant" });
-  }, [location.pathname, location.hash]);
+  }, [location.pathname]);
 
   return (
     <ColophonProvider>
