@@ -162,10 +162,10 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row gap-5 items-center animate-[buteauFadeUp_700ms_ease-out_1200ms_both]">
             <a
               ref={magneticCta}
-              href={tier ? "#contact" : "#calc-preview"}
+              href={tier ? "#contact" : "#calculateur"}
               onClick={(e) => {
                 e.preventDefault();
-                scrollToHash(tier ? "contact" : "calc-preview");
+                scrollToHash(tier ? "contact" : "calculateur");
               }}
               className="btn-bronze btn-shine"
             >
