@@ -165,6 +165,8 @@ export function Hero() {
               href={tier ? "#contact" : "#calculateur"}
               onClick={(e) => {
                 e.preventDefault();
+                // DIAGNOSTIC TEMPORAIRE : confirmer que onClick fire mobile
+                alert(`Hero CTA clicked! tier=${tier ?? 'none'} hash=${tier ? 'contact' : 'calculateur'}`);
                 scrollToHash(tier ? "contact" : "calculateur");
               }}
               className="btn-bronze btn-shine"
