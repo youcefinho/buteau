@@ -13,24 +13,25 @@ export function scrollToHash(id: string): void {
   if (typeof document === 'undefined') return;
   const el = document.getElementById(id);
   if (!el) return;
-  // v53 : utilise scroll-padding-top CSS au lieu de querySelector('nav').
-  // Plus fiable cross-site (Buteau Navbar=<header>, EGSF=<nav>, peu importe).
-  const scrollPadding = parseFloat(
-    getComputedStyle(document.documentElement).scrollPaddingTop || '80',
-  );
-  let top = 0;
-  let current: HTMLElement | null = el;
-  while (current) {
-    top += current.offsetTop;
-    current = current.offsetParent as HTMLElement | null;
-  }
-  const targetY = top - (Number.isFinite(scrollPadding) ? scrollPadding : 80);
   const useJump = id === 'contact';
   if (lenisInstance) {
+    // Desktop : Lenis. Compute targetY pour smoother control + scroll-padding offset.
+    const scrollPadding = parseFloat(
+      getComputedStyle(document.documentElement).scrollPaddingTop || '80',
+    );
+    let top = 0;
+    let current: HTMLElement | null = el;
+    while (current) {
+      top += current.offsetTop;
+      current = current.offsetParent as HTMLElement | null;
+    }
+    const targetY = top - (Number.isFinite(scrollPadding) ? scrollPadding : 80);
     if (useJump) lenisInstance.scrollTo(targetY, { immediate: true });
     else lenisInstance.scrollTo(targetY, { duration: 1.1 });
   } else {
-    window.scrollTo({ top: targetY, behavior: useJump ? 'instant' : 'smooth' });
+    // Mobile : scrollIntoView natif. Plus fiable que window.scrollTo({top:big})
+    // pour gros jumps sur iOS/Android. scroll-padding-top CSS gere l'offset navbar auto.
+    el.scrollIntoView({ behavior: useJump ? 'instant' : 'smooth', block: 'start' });
   }
   window.history.replaceState(null, '', `#${id}`);
 }
