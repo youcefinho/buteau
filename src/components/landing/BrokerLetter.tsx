@@ -72,14 +72,13 @@ export function BrokerLetter() {
             </p>
           </div>
 
-          {/* Signature column — col 4 (Photo entrevue + signature manuscrite + nom).
-              Option A polished 2026-05-21 v3 : photo au-dessus mais plus subtle
-              (pas de border carte, shadow softer, max-w reduit) + lg:pt-24
-              pour s'aligner avec le body letter (pas tout en haut).
-              lg:-translate-x-8 = decalage subtle vers la gauche (user 2026-05-21 v4). */}
-          <div className="lg:col-span-4 flex flex-col items-start lg:items-center lg:pt-24 lg:-translate-x-8">
-            {/* Photo Andrew en entrevue — cinematic chiaroscuro, treatment editorial */}
-            <figure className="w-full max-w-[280px] mb-10 lg:mb-12 photo-edito group">
+          {/* Signature column — col 4. Desktop : photo / signature / nom (order 1/2/3).
+              Mobile : signature / photo / nom (order 1/2/3 via CSS order, comme une
+              vraie lettre signee apres "A bientot," — user feedback 2026-05-21 v5).
+              lg:-translate-x-12 = decalage visible vers la gauche desktop seulement. */}
+          <div className="lg:col-span-4 flex flex-col items-start lg:items-center lg:pt-24 lg:-translate-x-12">
+            {/* Photo Andrew en entrevue — order 2 mobile, order 1 desktop */}
+            <figure className="order-2 lg:order-1 w-full max-w-[280px] mb-10 lg:mb-12 mt-10 lg:mt-0 photo-edito group">
               <picture>
                 <source srcSet="/equipe/andrew-podcast.avif" type="image/avif" />
                 <source srcSet="/equipe/andrew-podcast.webp" type="image/webp" />
@@ -95,10 +94,12 @@ export function BrokerLetter() {
               </picture>
             </figure>
 
-            <div className="w-full max-w-[320px]">
+            {/* Signature manuscrite — order 1 mobile (juste apres "A bientot,"), order 2 desktop */}
+            <div className="order-1 lg:order-2 w-full max-w-[320px]">
               <AnimatedSignature className="w-full h-auto" duration={2400} />
             </div>
-            <div className="mt-6 lg:mt-8 lg:text-center w-full max-w-[320px]">
+            {/* Nom + role — order 3 (toujours en dernier) */}
+            <div className="order-3 mt-6 lg:mt-8 lg:text-center w-full max-w-[320px]">
               <div className="w-12 h-px bg-[color:var(--color-bronze)] lg:mx-auto mb-3" />
               <p className="eyebrow text-[color:var(--color-taupe-dark)]">
                 {t("letter.role")}
