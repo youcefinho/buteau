@@ -72,24 +72,13 @@ export function BrokerLetter() {
             </p>
           </div>
 
-          {/* Signature column — col 4. Ordre unifie mobile + desktop (user 2026-05-21 v6) :
-              signature manuscrite -> nom -> photo. Style "lettre signee" naturel
-              apres "A bientot," partout. Retire le hack CSS order precedent.
+          {/* Signature column — col 4. Ordre Option A polish (user 2026-05-21 v7) :
+              photo -> signature -> nom. User preferait "photo en haut" — restoration.
+              Mobile + desktop ordre DOM identique.
               lg:-translate-x-12 = decalage visible vers la gauche desktop. */}
           <div className="lg:col-span-4 flex flex-col items-start lg:items-center lg:pt-24 lg:-translate-x-12">
-            {/* Signature manuscrite — first */}
-            <div className="w-full max-w-[320px]">
-              <AnimatedSignature className="w-full h-auto" duration={2400} />
-            </div>
-            {/* Nom + role — second */}
-            <div className="mt-6 lg:mt-8 lg:text-center w-full max-w-[320px]">
-              <div className="w-12 h-px bg-[color:var(--color-bronze)] lg:mx-auto mb-3" />
-              <p className="eyebrow text-[color:var(--color-taupe-dark)]">
-                {t("letter.role")}
-              </p>
-            </div>
-            {/* Photo Andrew en entrevue — third (bottom partout) */}
-            <figure className="w-full max-w-[280px] mt-10 lg:mt-12 photo-edito group">
+            {/* Photo Andrew en entrevue — first (haut partout) */}
+            <figure className="w-full max-w-[280px] photo-edito group">
               <picture>
                 <source srcSet="/equipe/andrew-podcast.avif" type="image/avif" />
                 <source srcSet="/equipe/andrew-podcast.webp" type="image/webp" />
@@ -104,6 +93,17 @@ export function BrokerLetter() {
                 />
               </picture>
             </figure>
+            {/* Signature manuscrite — second */}
+            <div className="w-full max-w-[320px] mt-10 lg:mt-12">
+              <AnimatedSignature className="w-full h-auto" duration={2400} />
+            </div>
+            {/* Nom + role — third */}
+            <div className="mt-6 lg:mt-8 lg:text-center w-full max-w-[320px]">
+              <div className="w-12 h-px bg-[color:var(--color-bronze)] lg:mx-auto mb-3" />
+              <p className="eyebrow text-[color:var(--color-taupe-dark)]">
+                {t("letter.role")}
+              </p>
+            </div>
           </div>
         </div>
       </Container>
