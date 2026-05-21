@@ -5,6 +5,34 @@ let lenisInstance: Lenis | null = null;
 export function getLenis(): Lenis | null { return lenisInstance; }
 
 /**
+ * scrollToHash — helper partage. Utilise par le click intercept ET par
+ * les composants qui ont besoin de scroller programmatiquement (ex: ExitIntent).
+ * #contact = jump immediate, autres = smooth scroll. Met aussi a jour URL.
+ */
+export function scrollToHash(id: string): void {
+  if (typeof document === 'undefined') return;
+  const el = document.getElementById(id);
+  if (!el) return;
+  const nav = document.querySelector('nav') as HTMLElement | null;
+  const navHeight = nav?.getBoundingClientRect().height ?? 100;
+  let top = 0;
+  let current: HTMLElement | null = el;
+  while (current) {
+    top += current.offsetTop;
+    current = current.offsetParent as HTMLElement | null;
+  }
+  const targetY = top - navHeight - 24;
+  const useJump = id === 'contact';
+  if (lenisInstance) {
+    if (useJump) lenisInstance.scrollTo(targetY, { immediate: true });
+    else lenisInstance.scrollTo(targetY, { duration: 1.1 });
+  } else {
+    window.scrollTo({ top: targetY, behavior: useJump ? 'instant' : 'smooth' });
+  }
+  window.history.replaceState(null, '', `#${id}`);
+}
+
+/**
  * useLenis — Buteau butter-smooth scroll (~5KB gzip).
  *
  * Phase Lenis cross-Intralys — duration 1.1s + Apple medium easing
@@ -67,36 +95,8 @@ export function useLenis() {
       const el = document.getElementById(id);
       if (!el) return;
       e.preventDefault();
-
-      const nav = document.querySelector('nav') as HTMLElement | null;
-      const navHeight = nav?.getBoundingClientRect().height ?? 100;
-
-      const getAbsoluteOffsetTop = (node: HTMLElement): number => {
-        let top = 0;
-        let current: HTMLElement | null = node;
-        while (current) {
-          top += current.offsetTop;
-          current = current.offsetParent as HTMLElement | null;
-        }
-        return top;
-      };
-
-      const targetY = getAbsoluteOffsetTop(el) - navHeight - 24;
-      const useJump = id === 'contact';
-
-      if (lenis) {
-        if (useJump) {
-          lenis.scrollTo(targetY, { immediate: true });
-        } else {
-          lenis.scrollTo(targetY, { duration: 1.1 });
-        }
-      } else {
-        window.scrollTo({ top: targetY, behavior: useJump ? 'instant' : 'smooth' });
-      }
-
-      // v49 user 2026-05-21 : correction post-1.5s RETIREE (causait rogue
-      // scroll si user cliquait ailleurs avant les 1.5s).
-      window.history.replaceState(null, '', `#${id}`);
+      // v50 : use shared scrollToHash helper (also used by ExitIntent et al.)
+      scrollToHash(id);
     };
     document.addEventListener('click', handleAnchorClick);
 

@@ -36,8 +36,10 @@ function markShown() {
 }
 
 function scrollToContact() {
-  if (typeof document === "undefined") return;
-  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  // v50 : delegue au helper partage useLenis (gere Lenis + fallback + offset
+  // navbar + jump immediate pour #contact). Evite scrollIntoView natif qui
+  // fight avec Lenis RAF.
+  void import("@/hooks/useLenis").then(({ scrollToHash }) => scrollToHash("contact"));
 }
 
 export function ExitIntent() {
