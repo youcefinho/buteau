@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Phone, MessageSquare, CalendarCheck } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { config } from "@/lib/config";
@@ -110,14 +111,18 @@ export function MobileStickyCta() {
               text-[11px] (vs text-[10px] avant) pour WCAG SC 1.4.4 (lisibilité
               CTA #1 conversion mobile). Tracking reduit (0.08em vs eyebrow
               0.12em) pour gagner ~15% de largeur et eviter truncate trop tot. */}
-          <a
-            href="#contact"
+          {/* Link Router (to="/" hash="contact") au lieu de plain anchor : sur sub-pages,
+              SPA nav vers /#contact + declenche v55 polling __root scroll au form.
+              Sur home, doc-level intercept handle directement. */}
+          <Link
+            to="/"
+            hash="contact"
             className="flex-1 min-w-0 inline-flex items-center justify-center gap-1.5 py-2.5 px-2 bg-[color:var(--color-bronze)] hover:bg-[color:var(--color-bronze-deep)] text-[color:var(--color-navy-deep)] font-bold rounded-md shadow-md text-[11px] uppercase tracking-[0.08em] active:scale-[0.97] transition-all duration-200"
             aria-label={t("common.contactCta")}
             tabIndex={visible ? 0 : -1}
           >
             <span className="truncate">{t("common.contactCta")}</span>
-          </a>
+          </Link>
         </div>
 
         {/* Safe area inset bottom (iOS notch) */}
