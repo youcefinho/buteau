@@ -34,28 +34,52 @@ export const Route = createRootRoute({
 function RootComponent() {
   useLenis();
 
-  // v54 user 2026-05-22 : ANCIEN replaceState retiré (race avec Router pushState
-  // -> nav 1er click avalee, user devait clicker 2 fois). Double rAF defer pour
-  // laisser Router terminer + layout. Si nouvelle URL a hash valide -> scroll
-  // vers cet element (resoud cross-page hash nav), sinon Lenis.scrollTo(0).
+  // v55 user 2026-05-22 : cross-page hash nav re-scroll polling avec auto-cancel.
+  // v54 reglait le bug "1er click navbar avale" (replaceState racy retire).
+  // v55 ajoute polling pour resoudre cross-page hash nav qui landait a 2230 au
+  // lieu de 15605 (layout shift home sections lourdes / images lazy).
+  // Polling re-scroll a chaque frame pendant ~1.5s, AUTO-CANCEL si user interagit
+  // (wheel/touch/keydown/click hors hash anchor) -> evite rogue scroll.
   const { location } = useRouterState();
   useEffect(() => {
     if (typeof window === "undefined") return;
     let cancelled = false;
+    const cancel = () => { cancelled = true; };
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         if (cancelled) return;
         const hash = window.location.hash.slice(1);
-        if (hash && document.getElementById(hash)) {
-          scrollToHash(hash);
+        if (!hash || !document.getElementById(hash)) {
+          const lenis = getLenis();
+          if (lenis) lenis.scrollTo(0, { immediate: true });
+          else window.scrollTo({ top: 0, behavior: "instant" });
           return;
         }
-        const lenis = getLenis();
-        if (lenis) lenis.scrollTo(0, { immediate: true });
-        else window.scrollTo({ top: 0, behavior: "instant" });
+        window.addEventListener("wheel", cancel, { once: true, passive: true });
+        window.addEventListener("touchstart", cancel, { once: true, passive: true });
+        window.addEventListener("keydown", cancel, { once: true });
+        const clickCancel = (e: MouseEvent) => {
+          const a = (e.target as HTMLElement | null)?.closest?.<HTMLAnchorElement>("a");
+          if (a && /^\/?#/.test(a.getAttribute("href") || "")) return;
+          cancel();
+        };
+        window.addEventListener("click", clickCancel, { once: true });
+        let attempts = 0;
+        const tick = () => {
+          if (cancelled || attempts++ > 90) return;
+          if (document.getElementById(hash)) scrollToHash(hash);
+          requestAnimationFrame(tick);
+        };
+        scrollToHash(hash);
+        requestAnimationFrame(tick);
       });
     });
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+      window.removeEventListener("wheel", cancel);
+      window.removeEventListener("touchstart", cancel);
+      window.removeEventListener("keydown", cancel);
+    };
   }, [location.pathname]);
 
   return (
