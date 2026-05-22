@@ -20,7 +20,7 @@ import { SmsButton } from "@/components/layout/SmsButton";
 import { BackToTop } from "@/components/layout/BackToTop";
 import { ColophonProvider } from "@/lib/ColophonContext";
 import { CarnetProvider } from "@/lib/CarnetContext";
-import { useLenis, getLenis } from "@/hooks/useLenis";
+import { useLenis, getLenis, scrollToHash } from "@/hooks/useLenis";
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -34,16 +34,28 @@ export const Route = createRootRoute({
 function RootComponent() {
   useLenis();
 
-  // v51 user 2026-05-21 : timer 1.5s cross-page scroll RETIRE. Strip hash
-  // + scroll top sur tout changement de route. Cross-page hash nav (clic
-  // <Link hash> depuis sub-page) landera au top home. User scroll manuel.
+  // v54 user 2026-05-22 : ANCIEN replaceState retiré (race avec Router pushState
+  // -> nav 1er click avalee, user devait clicker 2 fois). Double rAF defer pour
+  // laisser Router terminer + layout. Si nouvelle URL a hash valide -> scroll
+  // vers cet element (resoud cross-page hash nav), sinon Lenis.scrollTo(0).
   const { location } = useRouterState();
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (window.location.hash) {
-      window.history.replaceState(null, "", window.location.pathname + window.location.search);
-    }
-    window.scrollTo({ top: 0, behavior: "instant" });
+    let cancelled = false;
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (cancelled) return;
+        const hash = window.location.hash.slice(1);
+        if (hash && document.getElementById(hash)) {
+          scrollToHash(hash);
+          return;
+        }
+        const lenis = getLenis();
+        if (lenis) lenis.scrollTo(0, { immediate: true });
+        else window.scrollTo({ top: 0, behavior: "instant" });
+      });
+    });
+    return () => { cancelled = true; };
   }, [location.pathname]);
 
   return (
