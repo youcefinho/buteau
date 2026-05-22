@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import { X } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { AnimatedSignature } from "./AnimatedSignature";
@@ -18,7 +20,21 @@ import { AnimatedSignature } from "./AnimatedSignature";
  * Layout : asymétrique 8/4 (texte 8, signature 4) sur desktop ; vertical mobile.
  */
 export function BrokerLetter() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  // Lightbox state (user 2026-05-22) — click photo Andrew = agrandit modal.
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+
+  useEffect(() => {
+    if (!lightboxOpen) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setLightboxOpen(false); };
+    document.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [lightboxOpen]);
 
   return (
     <section id="lettre" className="relative py-[clamp(4rem,9vw,8rem)] surface-cream overflow-hidden lined-paper">
@@ -78,8 +94,13 @@ export function BrokerLetter() {
               CSS `order` + `lg:order` pilote l'ordre flex selon viewport.
               lg:-translate-x-12 = decalage visible vers la gauche desktop. */}
           <div className="lg:col-span-4 flex flex-col items-start lg:items-center lg:pt-24 lg:-translate-x-12">
-            {/* Photo Andrew en entrevue */}
-            <figure className="order-3 lg:order-1 w-full max-w-[280px] photo-edito group mt-10 lg:mt-0">
+            {/* Photo Andrew en entrevue — clickable lightbox user 2026-05-22 */}
+            <button
+              type="button"
+              onClick={() => setLightboxOpen(true)}
+              aria-label={lang === "fr" ? "Agrandir la photo d'Andrew" : "Enlarge Andrew's photo"}
+              className="order-3 lg:order-1 w-full max-w-[280px] photo-edito group mt-10 lg:mt-0 cursor-zoom-in p-0 border-0 bg-transparent"
+            >
               <picture>
                 <source srcSet="/equipe/andrew-podcast.avif" type="image/avif" />
                 <source srcSet="/equipe/andrew-podcast.webp" type="image/webp" />
@@ -93,7 +114,7 @@ export function BrokerLetter() {
                   className="w-full h-auto block shadow-[0_8px_24px_-12px_rgba(16,34,61,0.25)] transition-shadow duration-500 group-hover:shadow-[0_14px_36px_-12px_rgba(16,34,61,0.4)]"
                 />
               </picture>
-            </figure>
+            </button>
             {/* Signature manuscrite */}
             <div className="order-1 lg:order-2 w-full max-w-[320px] lg:mt-12">
               <AnimatedSignature className="w-full h-auto" duration={2400} />
@@ -108,6 +129,42 @@ export function BrokerLetter() {
           </div>
         </div>
       </Container>
+
+      {/* Lightbox modal — user 2026-05-22. Click photo Andrew = agrandit full-size
+          centré, backdrop noir 92% + blur. Click outside ou Escape ferme. */}
+      {lightboxOpen && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={lang === "fr" ? "Photo agrandie" : "Enlarged photo"}
+          onClick={() => setLightboxOpen(false)}
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 cursor-zoom-out animate-[buteauFadeIn_240ms_ease-out]"
+          style={{
+            backgroundColor: "rgba(0, 0, 0, 0.92)",
+            backdropFilter: "blur(8px)",
+            WebkitBackdropFilter: "blur(8px)",
+          }}
+        >
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); setLightboxOpen(false); }}
+            aria-label={lang === "fr" ? "Fermer" : "Close"}
+            className="absolute top-4 right-4 md:top-6 md:right-6 w-11 h-11 flex items-center justify-center rounded-full bg-[color:var(--color-navy-deep)]/80 border border-[color:var(--color-taupe)]/40 text-[color:var(--color-cream)] hover:bg-[color:var(--color-bronze)]/20 hover:border-[color:var(--color-bronze)]/60 transition-all duration-200 z-10"
+          >
+            <X size={20} strokeWidth={1.8} aria-hidden />
+          </button>
+          <picture onClick={(e) => e.stopPropagation()}>
+            <source srcSet="/equipe/andrew-podcast.avif" type="image/avif" />
+            <source srcSet="/equipe/andrew-podcast.webp" type="image/webp" />
+            <img
+              src="/equipe/andrew-podcast.jpg"
+              alt="Andrew Buteau en entrevue"
+              className="max-w-full max-h-full object-contain shadow-2xl cursor-default"
+              style={{ borderRadius: 2 }}
+            />
+          </picture>
+        </div>
+      )}
     </section>
   );
 }
