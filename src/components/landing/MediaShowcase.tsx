@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Play, Newspaper, Camera } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Play, Newspaper, Camera, X } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { ta, translations } from "@/lib/translations";
@@ -48,6 +48,29 @@ export function MediaShowcase() {
   // Lazy mount iframe (fix MEDIUM) : économise ~600 kB scripts YouTube au load initial.
   // Mount uniquement au clic sur le poster.
   const [videoPlaying, setVideoPlaying] = useState(false);
+  // Lightbox state (user 2026-05-22) — click photo = agrandit en modal.
+  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
+  const [lightboxAlt, setLightboxAlt] = useState<string>("");
+
+  // Escape key + body scroll lock pendant lightbox open
+  useEffect(() => {
+    if (!lightboxSrc) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLightboxSrc(null);
+    };
+    document.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [lightboxSrc]);
+
+  const openLightbox = (src: string, alt: string) => {
+    setLightboxSrc(src);
+    setLightboxAlt(alt);
+  };
 
   const tvCaptionLines = ta<string[]>(translations[lang], "media.tvCaptionLines");
   const eventCaptionLines = ta<string[]>(translations[lang], "media.eventCaptionLines");
@@ -129,31 +152,38 @@ export function MediaShowcase() {
               )}
             </div>
 
-            {/* Strip 3 thumbnails coulisses Art de Réussir — photos mail #1 client */}
+            {/* Strip 3 thumbnails coulisses Art de Réussir — photos mail #1 client.
+                Clickable -> lightbox (user 2026-05-22). */}
             <div className="grid grid-cols-3 gap-3">
-              {tvGallery.map((src, idx) => (
-                <figure
-                  key={src}
-                  className="halo-glow relative aspect-[4/5] overflow-hidden bg-[color:var(--color-navy)] border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-bronze)]/60 transition-colors group"
-                >
-                  <img
-                    src={src}
-                    alt={`${t("media.tvTitle")} — ${idx + 1}`}
-                    loading="lazy"
-                    className="photo-edito w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div
-                    className="absolute inset-0 bg-gradient-to-t from-[color:var(--color-navy-deep)]/30 via-transparent to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-20"
-                    aria-hidden="true"
-                  />
-                  <span
-                    aria-hidden="true"
-                    className="absolute bottom-2 right-2 font-[var(--font-editorial)] italic text-[color:var(--color-cream)] text-xs tabular-nums opacity-70"
+              {tvGallery.map((src, idx) => {
+                const altText = `${t("media.tvTitle")} — ${idx + 1}`;
+                return (
+                  <button
+                    key={src}
+                    type="button"
+                    onClick={() => openLightbox(src, altText)}
+                    aria-label={`${altText} — ${lang === "fr" ? "agrandir" : "enlarge"}`}
+                    className="halo-glow relative aspect-[4/5] overflow-hidden bg-[color:var(--color-navy)] border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-bronze)]/60 transition-colors group cursor-zoom-in"
                   >
-                    {String(idx + 1).padStart(2, "0")}
-                  </span>
-                </figure>
-              ))}
+                    <img
+                      src={src}
+                      alt={altText}
+                      loading="lazy"
+                      className="photo-edito w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div
+                      className="absolute inset-0 bg-gradient-to-t from-[color:var(--color-navy-deep)]/30 via-transparent to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-20"
+                      aria-hidden="true"
+                    />
+                    <span
+                      aria-hidden="true"
+                      className="absolute bottom-2 right-2 font-[var(--font-editorial)] italic text-[color:var(--color-cream)] text-xs tabular-nums opacity-70"
+                    >
+                      {String(idx + 1).padStart(2, "0")}
+                    </span>
+                  </button>
+                );
+              })}
             </div>
           </div>
 
@@ -249,14 +279,18 @@ export function MediaShowcase() {
                     default: return "";
                   }
                 })();
+                const altText = `${t("media.eventTitle")} — ${idx + 1}`;
                 return (
-                <figure
+                <button
                   key={src}
-                  className={`halo-glow relative aspect-[4/5] overflow-hidden bg-[color:var(--color-navy)] border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-bronze)]/60 transition-colors group ${staggerClass}`}
+                  type="button"
+                  onClick={() => openLightbox(src, altText)}
+                  aria-label={`${altText} — ${lang === "fr" ? "agrandir" : "enlarge"}`}
+                  className={`halo-glow relative aspect-[4/5] overflow-hidden bg-[color:var(--color-navy)] border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-bronze)]/60 transition-colors group cursor-zoom-in ${staggerClass}`}
                 >
                   <img
                     src={src}
-                    alt={`${t("media.eventTitle")} — ${idx + 1}`}
+                    alt={altText}
                     loading="lazy"
                     className="photo-edito w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -271,13 +305,46 @@ export function MediaShowcase() {
                   >
                     {String(idx + 1).padStart(2, "0")}
                   </span>
-                </figure>
+                </button>
                 );
               })}
             </div>
           </div>
         </div>
       </Container>
+
+      {/* Lightbox modal — user 2026-05-22. Click photo (tv ou event) -> agrandit
+          full-size centré dans backdrop noir 90%. Click-outside ou Escape ferme. */}
+      {lightboxSrc && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={lang === "fr" ? "Photo agrandie" : "Enlarged photo"}
+          onClick={() => setLightboxSrc(null)}
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 cursor-zoom-out animate-[buteauFadeIn_240ms_ease-out]"
+          style={{
+            backgroundColor: "rgba(0, 0, 0, 0.92)",
+            backdropFilter: "blur(8px)",
+            WebkitBackdropFilter: "blur(8px)",
+          }}
+        >
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); setLightboxSrc(null); }}
+            aria-label={lang === "fr" ? "Fermer" : "Close"}
+            className="absolute top-4 right-4 md:top-6 md:right-6 w-11 h-11 flex items-center justify-center rounded-full bg-[color:var(--color-navy-deep)]/80 border border-[color:var(--color-taupe)]/40 text-[color:var(--color-cream)] hover:bg-[color:var(--color-bronze)]/20 hover:border-[color:var(--color-bronze)]/60 transition-all duration-200 z-10"
+          >
+            <X size={20} strokeWidth={1.8} aria-hidden />
+          </button>
+          <img
+            src={lightboxSrc}
+            alt={lightboxAlt}
+            onClick={(e) => e.stopPropagation()}
+            className="max-w-full max-h-full object-contain shadow-2xl cursor-default"
+            style={{ borderRadius: 2 }}
+          />
+        </div>
+      )}
     </section>
   );
 }
