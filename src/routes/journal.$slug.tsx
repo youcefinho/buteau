@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, Clock } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
+import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
 import { LegalPageWrap } from "@/components/layout/LegalPageWrap";
 import { SchemaJsonLd } from "@/components/layout/SchemaJsonLd";
 import { ta, translations } from "@/lib/translations";
@@ -115,16 +116,18 @@ function JournalArticlePage() {
           {" · "}
           {article.date}
         </p>
-        <Link
-          to="/"
-          hash="contact"
-          className="group inline-flex items-center gap-2 font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze-deep)] hover:text-[color:var(--color-bronze)] transition-colors"
-        >
-          <span className="relative">
-            {isFr ? "En parler avec Andrew" : "Discuss with Andrew"}
-            <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-          </span>
-        </Link>
+        <HeartbeatCta>
+          <Link
+            to="/"
+            hash="contact"
+            className="group inline-flex items-center gap-2 font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze-deep)] hover:text-[color:var(--color-bronze)] transition-colors"
+          >
+            <span className="relative">
+              {isFr ? "En parler avec Andrew" : "Discuss with Andrew"}
+              <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+            </span>
+          </Link>
+        </HeartbeatCta>
       </div>
     </LegalPageWrap>
   );

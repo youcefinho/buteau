@@ -3,6 +3,7 @@ import { Phone, Home as HomeIcon } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { config } from "@/lib/config";
 import { Container } from "@/components/layout/Container";
+import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
 
 /**
  * Page 404 luxury éditoriale — "Égaré ?".
@@ -61,12 +62,14 @@ export function NotFoundEditorial() {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-12 animate-[buteauFadeUp_700ms_ease-out_800ms_both]">
-            <Link to="/" className="btn-bronze btn-shine inline-flex items-center gap-2">
-              <span className="inline-flex items-center gap-2">
-                <HomeIcon size={14} aria-hidden="true" />
-                {t("notFound.ctaHome")}
-              </span>
-            </Link>
+            <HeartbeatCta>
+              <Link to="/" className="btn-bronze btn-shine cta-sheen inline-flex items-center gap-2">
+                <span className="inline-flex items-center gap-2">
+                  <HomeIcon size={14} aria-hidden="true" />
+                  {t("notFound.ctaHome")}
+                </span>
+              </Link>
+            </HeartbeatCta>
             <a
               href={`tel:${config.phone.raw}`}
               className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-cream)]"

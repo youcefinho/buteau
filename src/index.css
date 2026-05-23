@@ -1329,6 +1329,14 @@ body {
   will-change: transform, box-shadow;
 }
 
+/* Modifier pour les btn-bronze w-full (HypothequeCalculator, CalcPreview).
+   Override le inline-block default pour que le wrapper occupe toute la
+   largeur disponible et que le bouton w-full s'aligne correctement. */
+.cta-heartbeat--block {
+  display: block;
+  width: 100%;
+}
+
 .cta-heartbeat[data-heartbeat="active"] {
   animation-play-state: running;
 }
@@ -1339,5 +1347,77 @@ body {
     animation: none !important;
     transform: none !important;
     box-shadow: none !important;
+  }
+}
+
+/* ============================================================
+   CTA SHEEN SWEEP — reflet bronze qui traverse horizontalement
+   les btn-bronze toutes les ~5s. Niveau 3 d'attention (combo
+   avec .cta-heartbeat sur les CTAs section-end les plus
+   importants — boutons solides).
+
+   Effet : ::before en linear-gradient blanc semi-transparent qui
+   slide de -100% a 150% sur l'axe X. Pause au repos, sweep cyclique
+   tant que data-heartbeat="active" (in viewport).
+
+   N'est PAS applique sur les inline-links (text+arrow) — ces
+   derniers se contentent du heartbeat. Reservé aux btn-bronze pour
+   preserver une hierarchie visuelle (boutons solides = full premium
+   treatment, liens textuels = signal subtle).
+
+   prefers-reduced-motion : sheen disabled.
+   ============================================================ */
+@keyframes ctaSheen {
+  0% {
+    transform: translateX(-120%) skewX(-20deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(180%) skewX(-20deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(180%) skewX(-20deg);
+    opacity: 0;
+  }
+}
+
+.cta-sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-sheen::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    oklch(0.95 0.04 70 / 0.35) 50%,
+    transparent 100%
+  );
+  transform: translateX(-120%) skewX(-20deg);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Sweep en boucle quand le parent wrapper .cta-heartbeat est in-view
+   (data-heartbeat="active"). 5s cycle pour ne pas saturer (heartbeat
+   pulse 1.8s + sheen 5s = rythme entrelace, pas synchrone, plus vivant). */
+.cta-heartbeat[data-heartbeat="active"] .cta-sheen::after {
+  animation: ctaSheen 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-sheen::after {
+    animation: none !important;
+    display: none;
   }
 }

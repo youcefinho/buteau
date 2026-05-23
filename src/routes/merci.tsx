@@ -6,6 +6,7 @@ import { useGlossary } from "@/lib/GlossaryContext";
 import { useQuizTier } from "@/hooks/useQuizTier";
 import { config } from "@/lib/config";
 import { Container } from "@/components/layout/Container";
+import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
 import { AnimatedSignature } from "@/components/landing/AnimatedSignature";
 import { ta, translations } from "@/lib/translations";
 
@@ -114,17 +115,19 @@ function MerciPage() {
 
             <ul className="space-y-3 max-w-md">
               <li>
-                <Link
-                  to="/outils"
-                  hash="calculateur"
-                  className="group flex items-center gap-4 py-3 border-b border-[color:var(--color-taupe)]/30 hover:border-[color:var(--color-bronze)] transition-colors"
-                >
-                  <CalcIcon size={18} className="shrink-0 text-[color:var(--color-bronze)]" aria-hidden="true" />
-                  <span className="font-[var(--font-display)] text-base text-[color:var(--color-navy-deep)] group-hover:text-[color:var(--color-bronze-deep)] transition-colors">
-                    {t("merci.nextStepCalc")}
-                  </span>
-                  <span aria-hidden="true" className="ml-auto text-[color:var(--color-taupe)] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">→</span>
-                </Link>
+                <HeartbeatCta className="cta-heartbeat--block">
+                  <Link
+                    to="/outils"
+                    hash="calculateur"
+                    className="group flex items-center gap-4 py-3 border-b border-[color:var(--color-taupe)]/30 hover:border-[color:var(--color-bronze)] transition-colors"
+                  >
+                    <CalcIcon size={18} className="shrink-0 text-[color:var(--color-bronze)]" aria-hidden="true" />
+                    <span className="font-[var(--font-display)] text-base text-[color:var(--color-navy-deep)] group-hover:text-[color:var(--color-bronze-deep)] transition-colors">
+                      {t("merci.nextStepCalc")}
+                    </span>
+                    <span aria-hidden="true" className="ml-auto text-[color:var(--color-taupe)] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">→</span>
+                  </Link>
+                </HeartbeatCta>
               </li>
               <li>
                 <button
@@ -140,16 +143,18 @@ function MerciPage() {
                 </button>
               </li>
               <li>
-                <Link
-                  to="/"
-                  className="group flex items-center gap-4 py-3 border-b border-[color:var(--color-taupe)]/30 hover:border-[color:var(--color-bronze)] transition-colors"
-                >
-                  <HomeIcon size={18} className="shrink-0 text-[color:var(--color-bronze)]" aria-hidden="true" />
-                  <span className="font-[var(--font-display)] text-base text-[color:var(--color-navy-deep)] group-hover:text-[color:var(--color-bronze-deep)] transition-colors">
-                    {t("merci.nextStepBack")}
-                  </span>
-                  <span aria-hidden="true" className="ml-auto text-[color:var(--color-taupe)] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">→</span>
-                </Link>
+                <HeartbeatCta className="cta-heartbeat--block">
+                  <Link
+                    to="/"
+                    className="group flex items-center gap-4 py-3 border-b border-[color:var(--color-taupe)]/30 hover:border-[color:var(--color-bronze)] transition-colors"
+                  >
+                    <HomeIcon size={18} className="shrink-0 text-[color:var(--color-bronze)]" aria-hidden="true" />
+                    <span className="font-[var(--font-display)] text-base text-[color:var(--color-navy-deep)] group-hover:text-[color:var(--color-bronze-deep)] transition-colors">
+                      {t("merci.nextStepBack")}
+                    </span>
+                    <span aria-hidden="true" className="ml-auto text-[color:var(--color-taupe)] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">→</span>
+                  </Link>
+                </HeartbeatCta>
               </li>
             </ul>
 

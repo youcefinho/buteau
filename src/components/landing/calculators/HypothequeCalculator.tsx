@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { Share2, Check } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
+import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
 import { SectionHeading } from "../SectionHeading";
 import { parseLocaleFloat, formatLocaleCurrency } from "@/lib/parseLocaleFloat";
 import { AmortizationSparkline } from "./AmortizationSparkline";
@@ -226,9 +227,11 @@ export function HypothequeCalculator() {
             </div>
 
             <div className="space-y-3">
-              <Link to="/" hash="contact" className="btn-bronze w-full relative">
-                {t("tools.calc.ctaLabel")}
-              </Link>
+              <HeartbeatCta className="cta-heartbeat--block">
+                <Link to="/" hash="contact" className="btn-bronze cta-sheen w-full relative">
+                  {t("tools.calc.ctaLabel")}
+                </Link>
+              </HeartbeatCta>
               <button
                 type="button"
                 onClick={handleShare}

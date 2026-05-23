@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
+import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
 
 /**
  * Bloc "Votre institution ne figure pas ?" — invitation a contacter un courtier.
@@ -21,9 +22,11 @@ export function InstitutionMissing() {
             {t("institutions.missing.body")}
           </p>
           <div className="pt-2">
-            <Link to="/" hash="contact" className="btn-bronze">
-              {t("institutions.missing.cta")}
-            </Link>
+            <HeartbeatCta>
+              <Link to="/" hash="contact" className="btn-bronze cta-sheen">
+                {t("institutions.missing.cta")}
+              </Link>
+            </HeartbeatCta>
           </div>
         </div>
       </Container>

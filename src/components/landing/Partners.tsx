@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Container } from "@/components/layout/Container";
+import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
 import { useLanguage } from "@/lib/LanguageContext";
 import { SectionHeading } from "./SectionHeading";
 import { ta, translations } from "@/lib/translations";
@@ -57,9 +58,11 @@ export function Partners() {
 
         {/* CTA toward institutions page */}
         <div className="text-center">
-          <Link to="/institutions" className="btn-bronze">
-            {t("home.partners.cta")}
-          </Link>
+          <HeartbeatCta>
+            <Link to="/institutions" className="btn-bronze cta-sheen">
+              {t("home.partners.cta")}
+            </Link>
+          </HeartbeatCta>
         </div>
       </Container>
 

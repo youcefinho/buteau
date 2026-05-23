@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { BookOpen, Star } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
+import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
 import { config } from "@/lib/config";
 import { useMagnetic } from "@/hooks/useMagnetic";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
@@ -160,19 +161,23 @@ export function Hero() {
               Faq/MobileStickyCta — user 2026-05-21 préfère cohérence).
               tier-quiz personnalise juste le LABEL, pas la destination. */}
           <div className="flex flex-col sm:flex-row gap-5 items-center animate-[buteauFadeUp_700ms_ease-out_1200ms_both]">
-            <a ref={magneticCta} href="#contact" className="btn-bronze btn-shine">
-              {ctaLabel}
-            </a>
-            <Link
-              to="/equipe"
-              className="group font-[var(--font-display)] text-[color:var(--color-cream)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] inline-flex items-center gap-2 transition-all"
-            >
-              <span className="relative">
-                {t("home.hero.ctaSecondary")}
-                <span className="absolute left-0 -bottom-1 w-0 h-px bg-[color:var(--color-taupe)] group-hover:w-full transition-[width] duration-500" />
-              </span>
-              <span aria-hidden="true" className="transition-transform duration-500 group-hover:translate-x-1">→</span>
-            </Link>
+            <HeartbeatCta>
+              <a ref={magneticCta} href="#contact" className="btn-bronze btn-shine cta-sheen">
+                {ctaLabel}
+              </a>
+            </HeartbeatCta>
+            <HeartbeatCta>
+              <Link
+                to="/equipe"
+                className="group font-[var(--font-display)] text-[color:var(--color-cream)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] inline-flex items-center gap-2 transition-all"
+              >
+                <span className="relative">
+                  {t("home.hero.ctaSecondary")}
+                  <span className="absolute left-0 -bottom-1 w-0 h-px bg-[color:var(--color-taupe)] group-hover:w-full transition-[width] duration-500" />
+                </span>
+                <span aria-hidden="true" className="transition-transform duration-500 group-hover:translate-x-1">→</span>
+              </Link>
+            </HeartbeatCta>
           </div>
 
           {/* Lien lexique discret — premier contact = jargon hypothécaire opaque */}

@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, RotateCcw } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
+import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
 import { ta, translations } from "@/lib/translations";
 import { useQuizTier } from "@/hooks/useQuizTier";
 
@@ -212,9 +213,11 @@ export function PreQualQuiz() {
 
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-4 items-center md:items-start">
-                <Link to="/" hash="contact" className="btn-bronze btn-shine">
-                  {result.ctaLabel}
-                </Link>
+                <HeartbeatCta>
+                  <Link to="/" hash="contact" className="btn-bronze btn-shine cta-sheen">
+                    {result.ctaLabel}
+                  </Link>
+                </HeartbeatCta>
                 <button
                   type="button"
                   onClick={handleRestart}

@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, BookOpen } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
+import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
 import { parseLocaleFloat, formatLocaleCurrency } from "@/lib/parseLocaleFloat";
 import { useCountUp } from "@/hooks/useCountUp";
 import { useGlossary } from "@/lib/GlossaryContext";
@@ -94,17 +95,19 @@ export function CalculatorPreview() {
               {t("home.calcPreview.subtitle")}
             </p>
 
-            <Link
-              to="/outils"
-              hash="calculateur"
-              className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze-deep)] hover:text-[color:var(--color-bronze)] transition-colors"
-            >
-              <span className="relative">
-                {t("home.calcPreview.ctaFull")}
-                <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-              </span>
-              <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
-            </Link>
+            <HeartbeatCta>
+              <Link
+                to="/outils"
+                hash="calculateur"
+                className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze-deep)] hover:text-[color:var(--color-bronze)] transition-colors"
+              >
+                <span className="relative">
+                  {t("home.calcPreview.ctaFull")}
+                  <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                </span>
+                <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+              </Link>
+            </HeartbeatCta>
           </div>
 
           {/* Calculator column — 7/12 */}
@@ -204,9 +207,11 @@ export function CalculatorPreview() {
                 )}
               </div>
 
-              <Link to="/outils" hash="calculateur" className="btn-bronze btn-shine w-full text-xs">
-                {t("home.calcPreview.ctaTools")}
-              </Link>
+              <HeartbeatCta className="cta-heartbeat--block">
+                <Link to="/outils" hash="calculateur" className="btn-bronze btn-shine cta-sheen w-full text-xs">
+                  {t("home.calcPreview.ctaTools")}
+                </Link>
+              </HeartbeatCta>
             </div>
           </div>
         </div>

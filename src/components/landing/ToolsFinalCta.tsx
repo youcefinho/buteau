@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
+import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
 
 /**
  * CTA final propre a la page Outils — "Besoin d'accompagnement ?".
@@ -47,9 +48,11 @@ export function ToolsFinalCta() {
           </p>
 
           <div className="pt-2">
-            <Link to="/" hash="contact" className="btn-bronze">
-              {t("tools.finalCta.button")}
-            </Link>
+            <HeartbeatCta>
+              <Link to="/" hash="contact" className="btn-bronze cta-sheen">
+                {t("tools.finalCta.button")}
+              </Link>
+            </HeartbeatCta>
           </div>
         </div>
       </Container>

@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Clock, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useGlossary } from "@/lib/GlossaryContext";
+import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
 import { LegalPageWrap } from "@/components/layout/LegalPageWrap";
 import { Tiltable } from "@/components/layout/Tiltable";
 import { SchemaJsonLd } from "@/components/layout/SchemaJsonLd";
@@ -182,18 +183,20 @@ function JournalPage() {
 
       {/* Liens croises Capsules + Lexique */}
       <div id="journal-explore" className="text-center mt-8 flex flex-col sm:flex-row gap-6 justify-center items-center scroll-mt-24">
-        <Link
-          to="/capsules"
-          className="group inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-base text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-bronze-deep)] transition-colors"
-        >
-          <span className="relative">
-            {isFr ? "Voir les capsules courtes" : "Browse the short capsules"}
-            <span className="absolute left-0 -bottom-0.5 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-          </span>
-          <span aria-hidden="true" className="transition-transform duration-500 group-hover:translate-x-1">
-            →
-          </span>
-        </Link>
+        <HeartbeatCta>
+          <Link
+            to="/capsules"
+            className="group inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-base text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-bronze-deep)] transition-colors"
+          >
+            <span className="relative">
+              {isFr ? "Voir les capsules courtes" : "Browse the short capsules"}
+              <span className="absolute left-0 -bottom-0.5 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+            </span>
+            <span aria-hidden="true" className="transition-transform duration-500 group-hover:translate-x-1">
+              →
+            </span>
+          </Link>
+        </HeartbeatCta>
         <button
           type="button"
           onClick={() => openGlossary()}

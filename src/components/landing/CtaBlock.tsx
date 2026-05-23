@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
+import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
 
 /**
  * Bloc CTA réutilisable — pattern "PRÊT À STRUCTURER VOTRE PROJET ?".
@@ -55,9 +56,11 @@ export function CtaBlock({ bgImageUrl = "/texture-navy-fixed.jpg" }: CtaBlockPro
 
           <div className="pt-2">
             {/* Anchor vers la section #contact de l'Accueil (formulaire) */}
-            <Link to="/" hash="contact" className="btn-bronze">
-              {t("cta.button")}
-            </Link>
+            <HeartbeatCta>
+              <Link to="/" hash="contact" className="btn-bronze cta-sheen">
+                {t("cta.button")}
+              </Link>
+            </HeartbeatCta>
           </div>
         </div>
       </Container>

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { X, ArrowRight, Search } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useGlossary } from "@/lib/GlossaryContext";
 import { glossary } from "@/lib/glossary";
@@ -191,26 +192,28 @@ export function GlossaryModal() {
 
           {/* CTA bas de modal — block premium vers /lexique (pattern Carnet/Colophon) */}
           <div className="pt-8 mt-4 border-t border-[color:var(--color-taupe)]/40">
-            <Link
-              to="/lexique"
-              onClick={close}
-              className="group flex items-center justify-between gap-4 p-5 rounded-sm bg-[color:var(--color-bronze)]/8 border border-[color:var(--color-bronze)]/30 hover:bg-[color:var(--color-bronze)]/15 hover:border-[color:var(--color-bronze)]/55 transition-all"
-            >
-              <div>
-                <div className="text-[10px] uppercase tracking-[0.32em] text-[color:var(--color-bronze-deep)] font-bold mb-1">
-                  {lang === "fr" ? "Voir le lexique complet" : "See the full glossary"}
+            <HeartbeatCta className="cta-heartbeat--block">
+              <Link
+                to="/lexique"
+                onClick={close}
+                className="group flex items-center justify-between gap-4 p-5 rounded-sm bg-[color:var(--color-bronze)]/8 border border-[color:var(--color-bronze)]/30 hover:bg-[color:var(--color-bronze)]/15 hover:border-[color:var(--color-bronze)]/55 transition-all"
+              >
+                <div>
+                  <div className="text-[10px] uppercase tracking-[0.32em] text-[color:var(--color-bronze-deep)] font-bold mb-1">
+                    {lang === "fr" ? "Voir le lexique complet" : "See the full glossary"}
+                  </div>
+                  <div className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em]">
+                    {lang === "fr"
+                      ? "Le lexique hypothécaire — version éditoriale"
+                      : "Mortgage glossary — editorial version"}
+                  </div>
                 </div>
-                <div className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em]">
-                  {lang === "fr"
-                    ? "Le lexique hypothécaire — version éditoriale"
-                    : "Mortgage glossary — editorial version"}
-                </div>
-              </div>
-              <ArrowRight
-                className="w-4 h-4 text-[color:var(--color-bronze-deep)]/70 group-hover:text-[color:var(--color-bronze-deep)] group-hover:translate-x-0.5 transition-all shrink-0"
-                aria-hidden
-              />
-            </Link>
+                <ArrowRight
+                  className="w-4 h-4 text-[color:var(--color-bronze-deep)]/70 group-hover:text-[color:var(--color-bronze-deep)] group-hover:translate-x-0.5 transition-all shrink-0"
+                  aria-hidden
+                />
+              </Link>
+            </HeartbeatCta>
           </div>
         </div>
       </div>

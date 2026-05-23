@@ -2,6 +2,7 @@ import * as Accordion from "@radix-ui/react-accordion";
 import { ChevronDown, BookOpen, BookMarked } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
+import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
 import { SectionHeading } from "./SectionHeading";
 import { AutoGlossary } from "./AutoGlossary";
 import { ta, translations } from "@/lib/translations";
@@ -90,9 +91,11 @@ export function Faq() {
           <p className="text-[color:var(--color-cream)]/80 text-sm">
             {t("home.faq.moreQuestionsLabel")}
           </p>
-          <a href="#contact" className="btn-bronze">
-            {t("common.writeUs")}
-          </a>
+          <HeartbeatCta>
+            <a href="#contact" className="btn-bronze cta-sheen">
+              {t("common.writeUs")}
+            </a>
+          </HeartbeatCta>
 
         </div>
       </Container>
