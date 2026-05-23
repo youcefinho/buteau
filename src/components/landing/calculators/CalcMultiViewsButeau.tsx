@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
+import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
 import {
   Wallet,
   Home as HomeIcon,
@@ -1462,14 +1463,16 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
                 ? "Graphiques d'amortissement, sensibilité au taux, courbes fixe vs variable et comparaisons mise de fonds — disponibles dans le calculateur complet."
                 : "Amortization charts, rate sensitivity, fixed vs variable curves and down payment comparisons — available in the full calculator."}
             </p>
-            <Link
-              to="/outils"
-              hash="calculateur"
-              className="group inline-flex items-center gap-2 px-6 py-3 border border-[color:var(--color-bronze)] text-[color:var(--color-bronze-deep)] hover:bg-[color:var(--color-bronze)] hover:text-[color:var(--color-cream)] hover:-translate-y-0.5 text-xs uppercase tracking-[0.22em] font-bold whitespace-nowrap transition-all duration-300"
-            >
-              <span>{isFr ? "Calculateur complet" : "Full calculator"}</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
-            </Link>
+            <HeartbeatCta>
+              <Link
+                to="/outils"
+                hash="calculateur"
+                className="group inline-flex items-center gap-2 px-6 py-3 border border-[color:var(--color-bronze)] text-[color:var(--color-bronze-deep)] hover:bg-[color:var(--color-bronze)] hover:text-[color:var(--color-cream)] hover:-translate-y-0.5 text-xs uppercase tracking-[0.22em] font-bold whitespace-nowrap transition-all duration-300"
+              >
+                <span>{isFr ? "Calculateur complet" : "Full calculator"}</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
+              </Link>
+            </HeartbeatCta>
           </div>
         )}
 

@@ -4,6 +4,7 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { config } from "@/lib/config";
 import { AutoGlossary } from "@/components/landing/AutoGlossary";
 import { ButeauMonogramInline } from "@/components/atmosphere/ButeauMonogramInline";
+import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
 
 // ═══════════════════════════════════════════════════════════
 // ColophonContent — Buteau (single source of truth).
@@ -154,24 +155,26 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
       {/* CTA "Lire la version complète" — uniquement en mode modal */}
       {variant === "modal" && (
         <div className="mt-10 pt-8 border-t border-[color:var(--color-taupe)]/40">
-          <Link
-            to="/colophon"
-            onClick={onClose}
-            className="group flex items-center justify-between gap-4 p-5 bg-[color:var(--color-bronze)]/5 border border-[color:var(--color-bronze)]/20 hover:bg-[color:var(--color-bronze)]/10 hover:border-[color:var(--color-bronze)]/40 transition-all"
-          >
-            <div>
-              <div className="eyebrow text-[color:var(--color-bronze-deep)] mb-1">
-                <ButeauMonogramInline className="mr-1" /> {isFr ? "Lire le colophon complet" : "Read the full colophon"}
+          <HeartbeatCta className="cta-heartbeat--block">
+            <Link
+              to="/colophon"
+              onClick={onClose}
+              className="group flex items-center justify-between gap-4 p-5 bg-[color:var(--color-bronze)]/5 border border-[color:var(--color-bronze)]/20 hover:bg-[color:var(--color-bronze)]/10 hover:border-[color:var(--color-bronze)]/40 transition-all"
+            >
+              <div>
+                <div className="eyebrow text-[color:var(--color-bronze-deep)] mb-1">
+                  <ButeauMonogramInline className="mr-1" /> {isFr ? "Lire le colophon complet" : "Read the full colophon"}
+                </div>
+                <div className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em]">
+                  {isFr ? "L'atelier — méthode et standards" : "The atelier — method and standards"}
+                </div>
               </div>
-              <div className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em]">
-                {isFr ? "L'atelier — méthode et standards" : "The atelier — method and standards"}
-              </div>
-            </div>
-            <ArrowRight
-              className="w-5 h-5 text-[color:var(--color-bronze)] group-hover:text-[color:var(--color-bronze-deep)] group-hover:translate-x-0.5 transition-all shrink-0"
-              aria-hidden
-            />
-          </Link>
+              <ArrowRight
+                className="w-5 h-5 text-[color:var(--color-bronze)] group-hover:text-[color:var(--color-bronze-deep)] group-hover:translate-x-0.5 transition-all shrink-0"
+                aria-hidden
+              />
+            </Link>
+          </HeartbeatCta>
         </div>
       )}
     </>
