@@ -130,7 +130,7 @@ export const translations = {
         alexisRole: "Assistant en gestion hypothécaire",
         felixName: "Felix",
         felixRole: "Coordonnateur des opérations",
-        cta: "Rencontrer Andrew, Abygaèle, Alexis & Felix",
+        cta: "Découvrir l'équipe complète",
       },
 
       services: {
@@ -1125,7 +1125,7 @@ export const translations = {
         alexisRole: "Mortgage management assistant",
         felixName: "Felix",
         felixRole: "Brokerage operations coordinator",
-        cta: "Meet Andrew, Abygaèle, Alexis & Felix",
+        cta: "Discover the full team",
       },
 
       services: {
