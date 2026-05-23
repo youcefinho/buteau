@@ -1323,6 +1323,8 @@ body {
 
 .cta-heartbeat {
   display: inline-block;
+  position: relative;
+  overflow: hidden;
   border-radius: inherit;
   animation: ctaHeartbeat 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   animation-play-state: paused;
@@ -1352,18 +1354,17 @@ body {
 
 /* ============================================================
    CTA SHEEN SWEEP — reflet bronze qui traverse horizontalement
-   les btn-bronze toutes les ~5s. Niveau 3 d'attention (combo
-   avec .cta-heartbeat sur les CTAs section-end les plus
-   importants — boutons solides).
+   TOUS les wrappers .cta-heartbeat toutes les ~5s. Niveau 3
+   d'attention universel (combo avec heartbeat sur les 25 CTAs
+   section-end du site — feedback user 2026-05-23 "tous amigos").
 
-   Effet : ::before en linear-gradient blanc semi-transparent qui
-   slide de -100% a 150% sur l'axe X. Pause au repos, sweep cyclique
-   tant que data-heartbeat="active" (in viewport).
-
-   N'est PAS applique sur les inline-links (text+arrow) — ces
-   derniers se contentent du heartbeat. Reservé aux btn-bronze pour
-   preserver une hierarchie visuelle (boutons solides = full premium
-   treatment, liens textuels = signal subtle).
+   Effet : ::after en linear-gradient blanc semi-transparent qui
+   slide de -120% a 180% sur l'axe X, skew -20deg. Pause au repos,
+   sweep cyclique tant que data-heartbeat="active" (in viewport).
+   Le wrapper a overflow:hidden pour contenir le sweep dans les
+   bounds du CTA. Pour les inline-link a underline -bottom-1, le
+   wrapper peut clipper legerement l'underline au hover — accepte
+   comme trade-off (signal sheen > preservation totale underline).
 
    prefers-reduced-motion : sheen disabled.
    ============================================================ */
@@ -1385,12 +1386,10 @@ body {
   }
 }
 
-.cta-sheen {
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-sheen::after {
+/* Sheen ::after sur tous les wrappers .cta-heartbeat (universel).
+   La position du wrapper est deja relative + overflow:hidden (cf.
+   bloc .cta-heartbeat plus haut), pas besoin de redoubler. */
+.cta-heartbeat::after {
   content: "";
   position: absolute;
   top: 0;
@@ -1400,7 +1399,7 @@ body {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    oklch(0.95 0.04 70 / 0.35) 50%,
+    oklch(0.95 0.04 70 / 0.4) 50%,
     transparent 100%
   );
   transform: translateX(-120%) skewX(-20deg);
@@ -1408,15 +1407,16 @@ body {
   z-index: 2;
 }
 
-/* Sweep en boucle quand le parent wrapper .cta-heartbeat est in-view
-   (data-heartbeat="active"). 5s cycle pour ne pas saturer (heartbeat
-   pulse 1.8s + sheen 5s = rythme entrelace, pas synchrone, plus vivant). */
-.cta-heartbeat[data-heartbeat="active"] .cta-sheen::after {
+/* Sweep en boucle quand le wrapper est in-view (data-heartbeat="active").
+   5s cycle pour ne pas saturer (heartbeat pulse 1.8s + sheen 5s = rythme
+   entrelace, pas synchrone, plus vivant). */
+.cta-heartbeat[data-heartbeat="active"]::after {
   animation: ctaSheen 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .cta-sheen::after {
+  .cta-heartbeat::after,
+  .cta-heartbeat[data-heartbeat="active"]::after {
     animation: none !important;
     display: none;
   }
