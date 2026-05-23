@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Play, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
+import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
 
 /**
  * Teaser capsules « 30 secondes top chrono » — pousse vers /capsules.
@@ -46,20 +47,22 @@ export function TikTokTeaser() {
 
             {/* CTAs : interne /capsules + externe TikTok */}
             <div className="flex flex-col sm:flex-row gap-4 items-start pt-3">
-              <Link
-                to="/capsules"
-                className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze-deep)] hover:text-[color:var(--color-bronze)] transition-colors"
-              >
-                <span className="relative">
-                  {t("tools.tiktok.ctaCollection")}
-                  <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-                </span>
-                <ArrowRight
-                  size={14}
-                  className="transition-transform duration-300 group-hover:translate-x-1"
-                  aria-hidden="true"
-                />
-              </Link>
+              <HeartbeatCta>
+                <Link
+                  to="/capsules"
+                  className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze-deep)] hover:text-[color:var(--color-bronze)] transition-colors"
+                >
+                  <span className="relative">
+                    {t("tools.tiktok.ctaCollection")}
+                    <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                  </span>
+                  <ArrowRight
+                    size={14}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                    aria-hidden="true"
+                  />
+                </Link>
+              </HeartbeatCta>
               <a
                 href="https://www.tiktok.com/@equipebuteau"
                 target="_blank"

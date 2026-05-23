@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { BookOpen, Video, FileText, Download, BookMarked } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
+import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
 import { SectionHeading } from "./SectionHeading";
 import { ta, translations } from "@/lib/translations";
 import { useGlossary } from "@/lib/GlossaryContext";
@@ -79,9 +80,11 @@ export function ToolsTeaser() {
         </div>
 
         <div className="text-center">
-          <Link to="/outils" className="btn-bronze">
-            {t("home.tools.cta")}
-          </Link>
+          <HeartbeatCta>
+            <Link to="/outils" className="btn-bronze">
+              {t("home.tools.cta")}
+            </Link>
+          </HeartbeatCta>
 
         </div>
       </Container>

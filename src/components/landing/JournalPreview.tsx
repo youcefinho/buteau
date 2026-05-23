@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, Clock } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
+import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
 import { Tiltable } from "@/components/layout/Tiltable";
 import { ta, translations } from "@/lib/translations";
 
@@ -58,20 +59,22 @@ export function JournalPreview() {
                 : "Insights, strategies and practical explanations on the Quebec mortgage market. Long-form reads, written to help you decide better before signing."}
             </p>
 
-            <Link
-              to="/journal"
-              className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze-soft)] hover:text-[color:var(--color-cream)] transition-colors"
-            >
-              <span className="relative">
-                {isFr ? "Voir tous les articles" : "Browse all articles"}
-                <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-              </span>
-              <ArrowRight
-                size={14}
-                className="transition-transform duration-300 group-hover:translate-x-1"
-                aria-hidden="true"
-              />
-            </Link>
+            <HeartbeatCta>
+              <Link
+                to="/journal"
+                className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze-soft)] hover:text-[color:var(--color-cream)] transition-colors"
+              >
+                <span className="relative">
+                  {isFr ? "Voir tous les articles" : "Browse all articles"}
+                  <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                </span>
+                <ArrowRight
+                  size={14}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
+              </Link>
+            </HeartbeatCta>
           </div>
 
           {/* Feature article card — 7/12 */}

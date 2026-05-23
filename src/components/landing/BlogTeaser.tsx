@@ -2,6 +2,7 @@ import { FileText, ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
+import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
 
 /**
  * Teaser /journal — depuis /outils, lien direct vers la page journal.
@@ -39,20 +40,22 @@ export function BlogTeaser() {
               {t("tools.blog.body")}
             </p>
             <div className="pt-3">
-              <Link
-                to="/journal"
-                className="group inline-flex items-center gap-2 font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze-soft)] hover:text-[color:var(--color-cream)] transition-colors"
-              >
-                <span className="relative">
-                  {t("tools.blog.ctaLabel")}
-                  <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-                </span>
-                <ArrowRight
-                  size={14}
-                  aria-hidden="true"
-                  className="transition-transform duration-300 group-hover:translate-x-1"
-                />
-              </Link>
+              <HeartbeatCta>
+                <Link
+                  to="/journal"
+                  className="group inline-flex items-center gap-2 font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze-soft)] hover:text-[color:var(--color-cream)] transition-colors"
+                >
+                  <span className="relative">
+                    {t("tools.blog.ctaLabel")}
+                    <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                  </span>
+                  <ArrowRight
+                    size={14}
+                    aria-hidden="true"
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  />
+                </Link>
+              </HeartbeatCta>
             </div>
           </div>
 

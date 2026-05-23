@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, BookOpen, FileText } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
+import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
 import { ta, translations } from "@/lib/translations";
 import { AutoGlossary } from "@/components/landing/AutoGlossary";
 
@@ -50,21 +51,23 @@ export function GuidesShelf() {
               {t("home.guidesShelf.subtitle")}
             </p>
 
-            <Link
-              to="/outils"
-              hash="guides"
-              className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze-deep)] hover:text-[color:var(--color-bronze)] transition-colors"
-            >
-              <span className="relative">
-                {t("home.guidesShelf.ctaFull")}
-                <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-              </span>
-              <ArrowRight
-                size={14}
-                className="transition-transform duration-300 group-hover:translate-x-1"
-                aria-hidden="true"
-              />
-            </Link>
+            <HeartbeatCta>
+              <Link
+                to="/outils"
+                hash="guides"
+                className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze-deep)] hover:text-[color:var(--color-bronze)] transition-colors"
+              >
+                <span className="relative">
+                  {t("home.guidesShelf.ctaFull")}
+                  <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                </span>
+                <ArrowRight
+                  size={14}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
+              </Link>
+            </HeartbeatCta>
           </div>
 
           {/* Items list — 7/12 — magazine table-of-contents éditorial */}

@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
+import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
 import { SectionHeading } from "./SectionHeading";
 import { config } from "@/lib/config";
 
@@ -92,9 +93,11 @@ export function TeamTeaser() {
         </div>
 
         <div className="text-center">
-          <Link to="/equipe" className="btn-bronze">
-            {t("home.teamTeaser.cta")}
-          </Link>
+          <HeartbeatCta>
+            <Link to="/equipe" className="btn-bronze">
+              {t("home.teamTeaser.cta")}
+            </Link>
+          </HeartbeatCta>
         </div>
       </Container>
     </section>

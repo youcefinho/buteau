@@ -1292,3 +1292,52 @@ body {
 @media (min-width: 1600px) and (max-width: 1699px) {
   header > nav { zoom: 0.97; }
 }
+
+/* ============================================================
+   CTA HEARTBEAT PULSE — battement de coeur subtle pour pousser au
+   clic les CTAs section-end qui pointent vers les pages dediees
+   (/equipe, /capsules, /journal, /outils, etc.).
+
+   Probleme resolu : feedback Aby 2026-05-23 — visiteurs restent
+   sur la home, ne realisent pas qu'il faut cliquer pour les pages
+   dediees. Heartbeat = signal visuel "il y a plus a voir ici".
+
+   Pattern : scale 1 -> 1.028 + halo bronze ripple, 3 iterations
+   declenchees sur viewport entry via useHeartbeatOnView qui
+   ajoute data-heartbeat="active". Paused par defaut hors viewport
+   pour eviter pollution visuelle + economie batterie.
+
+   Subtle volontairement (2.8% scale, halo 12px) pour preserver
+   le ton editorial Buteau — pas un "BUY NOW" Amazon-style.
+   ============================================================ */
+@keyframes ctaHeartbeat {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 oklch(0.704 0.077 56 / 0.5);
+  }
+  50% {
+    transform: scale(1.028);
+    box-shadow: 0 0 0 12px oklch(0.704 0.077 56 / 0);
+  }
+}
+
+.cta-heartbeat {
+  display: inline-block;
+  border-radius: inherit;
+  animation: ctaHeartbeat 1.8s cubic-bezier(0.4, 0, 0.2, 1) 3;
+  animation-play-state: paused;
+  will-change: transform, box-shadow;
+}
+
+.cta-heartbeat[data-heartbeat="active"] {
+  animation-play-state: running;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-heartbeat,
+  .cta-heartbeat[data-heartbeat="active"] {
+    animation: none !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
