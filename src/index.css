@@ -1302,10 +1302,10 @@ body {
    sur la home, ne realisent pas qu'il faut cliquer pour les pages
    dediees. Heartbeat = signal visuel "il y a plus a voir ici".
 
-   Pattern : scale 1 -> 1.028 + halo bronze ripple, 3 iterations
-   declenchees sur viewport entry via useHeartbeatOnView qui
-   ajoute data-heartbeat="active". Paused par defaut hors viewport
-   pour eviter pollution visuelle + economie batterie.
+   Pattern : scale 1 -> 1.028 + halo bronze ripple, animation infinie
+   tant que le CTA est visible (paused quand scrolled away pour
+   economie CPU/batterie). Toggle via useHeartbeatOnView qui ajoute
+   /retire data-heartbeat="active" sur enter/leave viewport.
 
    Subtle volontairement (2.8% scale, halo 12px) pour preserver
    le ton editorial Buteau — pas un "BUY NOW" Amazon-style.
@@ -1324,7 +1324,7 @@ body {
 .cta-heartbeat {
   display: inline-block;
   border-radius: inherit;
-  animation: ctaHeartbeat 1.8s cubic-bezier(0.4, 0, 0.2, 1) 3;
+  animation: ctaHeartbeat 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   animation-play-state: paused;
   will-change: transform, box-shadow;
 }
