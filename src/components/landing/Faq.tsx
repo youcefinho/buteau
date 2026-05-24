@@ -59,7 +59,7 @@ export function Faq() {
               className="group bg-[color:var(--color-cream)] border border-[color:var(--color-taupe)]/50 overflow-hidden transition-colors duration-300 data-[state=open]:border-[color:var(--color-bronze)]"
             >
               <Accordion.Header>
-                <Accordion.Trigger className="w-full px-[clamp(1.5rem,2.5vw,2rem)] py-[clamp(1.25rem,1.8vw,1.5rem)] flex items-center justify-between text-left hover:bg-[color:var(--color-cream-warm)] transition-colors gap-5">
+                <Accordion.Trigger className="w-full px-[clamp(1.5rem,2.5vw,2rem)] py-[clamp(1.25rem,1.8vw,1.5rem)] flex items-center justify-between text-left hover:bg-[color:var(--color-cream-warm)] transition-colors gap-5 min-h-[5.5rem]">
                   {/* Numero filigrane Cormorant a gauche */}
                   <span
                     aria-hidden="true"
