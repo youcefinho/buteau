@@ -67,7 +67,7 @@ function MerciPage() {
       <Container size="md" className="relative py-[clamp(5rem,11vw,10rem)]">
         <div className="max-w-3xl mx-auto">
           {/* Eyebrow encadré */}
-          <p className="eyebrow text-[color:var(--color-bronze)] inline-flex items-center gap-3 mb-8 animate-[buteauFadeUp_700ms_ease-out_100ms_both]">
+          <p className="eyebrow text-[color:var(--color-taupe-dark)] inline-flex items-center gap-3 mb-8 animate-[buteauFadeUp_700ms_ease-out_100ms_both]">
             <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
             {t("merci.eyebrow")}
             <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
@@ -100,7 +100,7 @@ function MerciPage() {
             <AnimatedSignature className="w-full h-auto" duration={2200} />
             <div className="mt-3 flex items-center gap-3">
               <span className="block w-8 h-px bg-[color:var(--color-bronze)]" />
-              <p className="eyebrow text-[color:var(--color-bronze)]">
+              <p className="eyebrow text-[color:var(--color-taupe-dark)]">
                 Andrew Buteau
               </p>
             </div>

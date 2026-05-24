@@ -139,7 +139,7 @@ export function GlossaryHovercard({ term, children }: GlossaryHovercardProps) {
             {matched.definition[lang]}
           </span>
           {matched.source && (
-            <span className="block eyebrow text-[color:var(--color-bronze)] mt-3">
+            <span className="block eyebrow text-[color:var(--color-taupe-dark)] mt-3">
               Source : {matched.source}
             </span>
           )}

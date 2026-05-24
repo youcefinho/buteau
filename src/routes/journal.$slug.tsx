@@ -89,7 +89,7 @@ function JournalArticlePage() {
             <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
           </span>
         </Link>
-        <p className="inline-flex items-center gap-2 text-xs italic text-[color:var(--color-bronze)]">
+        <p className="inline-flex items-center gap-2 text-xs italic text-[color:var(--color-taupe-dark)]">
           <Clock size={11} aria-hidden="true" />
           {article.readingTime} {t("journal.readingLabel")}
           <span aria-hidden="true" className="text-[color:var(--color-taupe)]/50 mx-1">·</span>

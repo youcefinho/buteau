@@ -79,7 +79,7 @@ export function ContactSection() {
 
             {/* Carte adresse — bordure taupe minimale */}
             <div className="bg-[color:var(--color-cream-warm)] border-l-[3px] border-[color:var(--color-bronze)] pl-5 py-4">
-              <p className="eyebrow text-[color:var(--color-bronze)] mb-2">
+              <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-2">
                 {t("nav.contact")} — {config.address.addressLocality}
               </p>
               <address className="not-italic text-sm leading-relaxed text-[color:var(--color-navy-deep)]/85">
@@ -115,7 +115,7 @@ function ContactLine({
         {icon}
       </div>
       <div className="flex-1 min-w-0">
-        <p className="eyebrow text-[color:var(--color-bronze)] mb-1">{label}</p>
+        <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-1">{label}</p>
         <p
           className={`font-[var(--font-display)] text-[color:var(--color-navy-deep)] text-[clamp(1rem,1.4vw,1.125rem)] font-semibold ${
             breakAll ? "break-all" : ""

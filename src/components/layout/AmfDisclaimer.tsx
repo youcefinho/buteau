@@ -28,7 +28,7 @@ export function AmfDisclaimer({ variant = "inline", className }: AmfDisclaimerPr
     return (
       <span
         className={cn(
-          "inline-flex items-center gap-1.5 px-2.5 py-1 border border-[color:var(--color-taupe)]/50 text-[color:var(--color-bronze)] eyebrow text-[10px]",
+          "inline-flex items-center gap-1.5 px-2.5 py-1 border border-[color:var(--color-taupe)]/50 text-[color:var(--color-taupe-dark)] eyebrow text-[10px]",
           className,
         )}
       >
@@ -66,7 +66,7 @@ export function AmfDisclaimer({ variant = "inline", className }: AmfDisclaimerPr
   return (
     <p
       className={cn(
-        "text-xs italic leading-relaxed text-[color:var(--color-bronze)]",
+        "text-xs italic leading-relaxed text-[color:var(--color-taupe-dark)]",
         className,
       )}
     >

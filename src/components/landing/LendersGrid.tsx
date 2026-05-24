@@ -71,7 +71,7 @@ export function LendersGrid() {
                 {l.city && (
                   <>
                     <br />
-                    <span className="text-[color:var(--color-bronze)]">{l.city}</span>
+                    <span className="text-[color:var(--color-taupe-dark)]">{l.city}</span>
                   </>
                 )}
               </address>

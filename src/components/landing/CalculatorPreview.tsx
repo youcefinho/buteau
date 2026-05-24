@@ -83,7 +83,7 @@ export function CalculatorPreview() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           {/* Header column — 5/12 */}
           <div className="lg:col-span-5 lg:sticky lg:top-32">
-            <p className="eyebrow text-[color:var(--color-bronze)] inline-flex items-center gap-3 mb-5">
+            <p className="eyebrow text-[color:var(--color-taupe-dark)] inline-flex items-center gap-3 mb-5">
               <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
               {t("home.calcPreview.eyebrow")}
             </p>
@@ -265,7 +265,7 @@ function CalcSliderMini({
   return (
     <div className="space-y-2">
       <div className="flex items-baseline justify-between gap-3">
-        <label htmlFor={id} className="eyebrow text-[color:var(--color-bronze)]">
+        <label htmlFor={id} className="eyebrow text-[color:var(--color-taupe-dark)]">
           {label}
         </label>
         {/* Fix MEDIUM : output sans htmlFor (l'attribut for sur output doit pointer vers les

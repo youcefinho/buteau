@@ -85,7 +85,7 @@ export function ContactForm({ source = "home_contact_form" }: ContactFormProps) 
     return (
       <div className="text-center py-12 space-y-3">
         <Loader2 size={32} className="mx-auto animate-spin text-[color:var(--color-bronze)]" aria-hidden="true" />
-        <p className="text-sm italic text-[color:var(--color-bronze)]">
+        <p className="text-sm italic text-[color:var(--color-taupe-dark)]">
           {t("form.submitting")}
         </p>
       </div>
@@ -221,7 +221,7 @@ function Field({
 
   return (
     <div className="space-y-1.5">
-      <label htmlFor={id} className="eyebrow text-[color:var(--color-bronze)] block">
+      <label htmlFor={id} className="eyebrow text-[color:var(--color-taupe-dark)] block">
         {label} {required && <span className="text-[color:var(--color-navy)]">*</span>}
       </label>
       {type === "textarea" ? (

@@ -91,7 +91,7 @@ export function MediaShowcase() {
       <Container size="xl" className="relative">
         {/* Header magazine — eyebrow encadré tirets longs + h2 + filet signature */}
         <div className="text-center mb-[clamp(4rem,6vw,6rem)] max-w-3xl mx-auto">
-          <p className="eyebrow text-[color:var(--color-bronze)] inline-flex items-center gap-3 mb-5">
+          <p className="eyebrow text-[color:var(--color-taupe-dark)] inline-flex items-center gap-3 mb-5">
             <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
             {t("media.eyebrow")}
             <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
@@ -216,7 +216,7 @@ export function MediaShowcase() {
                 </p>
               ))}
             </div>
-            <p className="eyebrow text-[color:var(--color-bronze)] mt-7 text-[10px] border-l-2 border-[color:var(--color-bronze)] pl-2.5">
+            <p className="eyebrow text-[color:var(--color-taupe-dark)] mt-7 text-[10px] border-l-2 border-[color:var(--color-bronze)] pl-2.5">
               {t("media.tvShowName")}
             </p>
           </div>
@@ -259,7 +259,7 @@ export function MediaShowcase() {
                 </p>
               ))}
             </div>
-            <p className="eyebrow text-[color:var(--color-bronze)] mt-7 text-[10px] border-l-2 border-[color:var(--color-bronze)] pl-2.5">
+            <p className="eyebrow text-[color:var(--color-taupe-dark)] mt-7 text-[10px] border-l-2 border-[color:var(--color-bronze)] pl-2.5">
               <Newspaper size={11} className="inline mr-1.5 -mt-0.5" aria-hidden="true" />
               {t("media.eventDate")}
             </p>

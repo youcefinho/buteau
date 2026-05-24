@@ -473,17 +473,17 @@ export function TerritoryMap() {
             </svg>
 
             {/* D - Mini-stats summary editorial sous la carte */}
-            <p className="mt-4 text-[10px] font-[var(--font-display)] tracking-[0.15em] uppercase text-[color:var(--color-bronze)]/85 text-center lg:text-left">
+            <p className="mt-4 text-[10px] font-[var(--font-display)] tracking-[0.15em] uppercase text-[color:var(--color-taupe-dark)]/85 text-center lg:text-left">
               {lang === "fr"
                 ? "4 régions desservies · 1 siège à Laval · 200 dossiers fermés en 2025"
                 : "4 regions served · 1 head office in Laval · 200 closed cases in 2025"}
             </p>
 
             {/* Footnote + attribution OSM */}
-            <p className="mt-3 text-xs italic text-[color:var(--color-bronze)] text-center lg:text-left">
+            <p className="mt-3 text-xs italic text-[color:var(--color-taupe-dark)] text-center lg:text-left">
               {t("territory.footnote")}
             </p>
-            <p className="mt-2 text-[10px] text-[color:var(--color-bronze)]/70 text-center lg:text-left">
+            <p className="mt-2 text-[10px] text-[color:var(--color-taupe-dark)]/70 text-center lg:text-left">
               {lang === "fr" ? "Fond cartographique : " : "Map data: "}
               <a
                 href="https://www.openstreetmap.org/copyright"
@@ -499,7 +499,7 @@ export function TerritoryMap() {
           {/* Liste regions column - col 5, INCHANGE */}
           <div className="lg:col-span-5 space-y-7">
             <div>
-              <p className="eyebrow text-[color:var(--color-bronze)] inline-flex items-center gap-3 mb-5">
+              <p className="eyebrow text-[color:var(--color-taupe-dark)] inline-flex items-center gap-3 mb-5">
                 <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
                 {t("territory.eyebrow")}
               </p>
@@ -538,7 +538,7 @@ export function TerritoryMap() {
                       <p className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em] leading-snug">
                         {r.name}
                       </p>
-                      <p className="text-xs italic text-[color:var(--color-bronze)] mt-1">
+                      <p className="text-xs italic text-[color:var(--color-taupe-dark)] mt-1">
                         {r.note}
                       </p>
                     </div>

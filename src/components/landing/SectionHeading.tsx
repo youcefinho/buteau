@@ -18,12 +18,12 @@ export function SectionHeading({
   className,
 }: SectionHeadingProps) {
   const titleColor = tone === "dark" ? "text-[color:var(--color-cream)]" : "text-[color:var(--color-navy-deep)]";
-  const subtitleColor = tone === "dark" ? "text-[color:var(--color-cream)]/80" : "text-[color:var(--color-bronze)]";
+  const subtitleColor = tone === "dark" ? "text-[color:var(--color-cream)]/80" : "text-[color:var(--color-taupe-dark)]";
   const eyebrowColor = tone === "dark"
     ? "text-[color:var(--color-taupe)]"
     : tone === "bronze"
       ? "text-[color:var(--color-bronze)]"
-      : "text-[color:var(--color-bronze)]";
+      : "text-[color:var(--color-taupe-dark)]";
 
   return (
     <div

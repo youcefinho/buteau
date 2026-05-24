@@ -139,7 +139,7 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
 
       {/* Crédits final */}
       <section className="pt-10 mt-8 border-t border-[color:var(--color-taupe)]/40 text-center">
-        <p className="eyebrow text-[color:var(--color-bronze)] mb-3">
+        <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-3">
           {isFr ? "Imprimé à Laval" : "Printed in Laval"}
         </p>
         <p className="italic text-[color:var(--color-navy-deep)]/85 text-base leading-relaxed text-pretty">
@@ -147,7 +147,7 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
             ? "par L'Équipe Buteau, en cabinet d'attache chez Planiprêt Cabinet en Courtage Hypothécaire."
             : "by Équipe Buteau, with Planiprêt Cabinet en Courtage Hypothécaire as their attached firm."}
         </p>
-        <p className="mt-6 eyebrow text-[color:var(--color-bronze)]/70 text-[10px]">
+        <p className="mt-6 eyebrow text-[color:var(--color-taupe-dark)]/70 text-[10px]">
           ☞ {isFr ? "Bureau" : "Office"} — {config.address.streetAddress}, {config.address.addressLocality} ({config.address.addressRegion}) {config.address.postalCode}
         </p>
       </section>
@@ -217,7 +217,7 @@ function ColophonRow({
 }) {
   return (
     <div className="grid grid-cols-12 gap-4 py-4 border-b border-[color:var(--color-taupe)]/20 last:border-b-0 items-baseline">
-      <p className="col-span-4 eyebrow text-[color:var(--color-bronze)] text-[10px]">
+      <p className="col-span-4 eyebrow text-[color:var(--color-taupe-dark)] text-[10px]">
         {label}
       </p>
       <div className="col-span-8 space-y-1.5">

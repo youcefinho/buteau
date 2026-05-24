@@ -105,7 +105,7 @@ export function ModalShell({
         {/* Header sticky */}
         <div className="sticky top-0 z-10 flex items-center justify-between px-[clamp(1.5rem,3vw,2.5rem)] py-5 bg-[color:var(--color-cream)] border-b border-[color:var(--color-border)]">
           <div>
-            <p className="eyebrow text-[color:var(--color-bronze)]">{eyebrow}</p>
+            <p className="eyebrow text-[color:var(--color-taupe-dark)]">{eyebrow}</p>
             <h2
               id={ariaLabelledById}
               className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.04em] text-balance"

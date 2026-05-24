@@ -71,7 +71,7 @@ export function Faq() {
                     {item.q}
                   </span>
                   <ChevronDown
-                    className="w-5 h-5 shrink-0 text-[color:var(--color-bronze)] group-data-[state=open]:text-[color:var(--color-bronze)] transition-all duration-300 group-data-[state=open]:rotate-180"
+                    className="w-5 h-5 shrink-0 text-[color:var(--color-taupe-dark)] group-data-[state=open]:text-[color:var(--color-bronze)] transition-all duration-300 group-data-[state=open]:rotate-180"
                     aria-hidden="true"
                   />
                 </Accordion.Trigger>

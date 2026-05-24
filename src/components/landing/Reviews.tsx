@@ -74,7 +74,7 @@ export function Reviews() {
                   aria-hidden="true"
                 />
               ))}
-              <span className="ml-2 eyebrow text-[color:var(--color-bronze)]">
+              <span className="ml-2 eyebrow text-[color:var(--color-taupe-dark)]">
                 {lang === "fr" ? "Avis Google" : "Google Reviews"}
               </span>
             </div>
@@ -91,7 +91,7 @@ export function Reviews() {
               {/* Letter header — date + ville (pattern courrier) */}
               <header className="flex items-baseline justify-between gap-3 px-[clamp(1.5rem,2vw,1.75rem)] pt-6 pb-4 border-b border-dashed border-[color:var(--color-taupe)]/40">
                 <div>
-                  <p className="eyebrow text-[color:var(--color-bronze)] mb-1">
+                  <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-1">
                     {t("home.reviews.letterDateLabel")}
                   </p>
                   <p className="italic text-sm text-[color:var(--color-navy-deep)]">
@@ -99,7 +99,7 @@ export function Reviews() {
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className="eyebrow text-[color:var(--color-bronze)] mb-1">
+                  <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-1">
                     {t("home.reviews.letterFromLabel")}
                   </p>
                   <p className="italic text-sm text-[color:var(--color-navy-deep)]">

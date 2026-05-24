@@ -108,7 +108,7 @@ export function JournalPreview() {
                       {featured.date}
                     </p>
                     <span aria-hidden="true" className="text-[color:var(--color-taupe)]/50">·</span>
-                    <p className="inline-flex items-center gap-1.5 text-xs italic text-[color:var(--color-bronze)]">
+                    <p className="inline-flex items-center gap-1.5 text-xs italic text-[color:var(--color-taupe-dark)]">
                       <Clock size={11} aria-hidden="true" />
                       {featured.readingTime} {t("journal.readingLabel")}
                     </p>

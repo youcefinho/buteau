@@ -84,7 +84,7 @@ export function TeamTeaser() {
                 </h3>
                 <div className="flex items-center justify-center gap-2.5">
                   <div className="w-6 h-0.5 bg-[color:var(--color-bronze)]" aria-hidden="true" />
-                  <p className="eyebrow text-[color:var(--color-bronze)] text-[10px] leading-tight">
+                  <p className="eyebrow text-[color:var(--color-taupe-dark)] text-[10px] leading-tight">
                     {m.role}
                   </p>
                 </div>

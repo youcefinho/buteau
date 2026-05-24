@@ -107,7 +107,7 @@ function JournalPage() {
                     {a.date}
                   </p>
                   <span aria-hidden="true" className="text-[color:var(--color-taupe)]/50">·</span>
-                  <p className="inline-flex items-center gap-1.5 text-xs italic text-[color:var(--color-bronze)]">
+                  <p className="inline-flex items-center gap-1.5 text-xs italic text-[color:var(--color-taupe-dark)]">
                     <Clock size={11} aria-hidden="true" />
                     {a.readingTime} {t("journal.readingLabel")}
                   </p>
@@ -177,7 +177,7 @@ function JournalPage() {
       </div>
 
       {/* Footnote */}
-      <p className="text-xs italic text-[color:var(--color-bronze)] mt-14 text-center">
+      <p className="text-xs italic text-[color:var(--color-taupe-dark)] mt-14 text-center">
         {t("journal.footnote")}
       </p>
 

@@ -39,7 +39,7 @@ export function CapsulesPreview() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-[clamp(2.5rem,5vw,4rem)]">
           {/* Header column — 5/12 sticky desktop */}
           <div className="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
-            <p className="eyebrow text-[color:var(--color-bronze)] inline-flex items-center gap-3 mb-5">
+            <p className="eyebrow text-[color:var(--color-taupe-dark)] inline-flex items-center gap-3 mb-5">
               <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
               {t("home.capsulesPreview.eyebrow")}
             </p>

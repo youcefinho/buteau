@@ -63,7 +63,7 @@ export function TeamGrid() {
                 {/* Eyebrow rôle (uppercase tracking) */}
                 <div className="flex items-center gap-2.5">
                   <div className="w-10 h-px bg-[color:var(--color-bronze)] transition-[width] duration-500 group-hover:w-16" aria-hidden="true" />
-                  <p className="eyebrow text-[color:var(--color-bronze)]">
+                  <p className="eyebrow text-[color:var(--color-taupe-dark)]">
                     {m.role}
                   </p>
                 </div>

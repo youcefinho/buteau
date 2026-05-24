@@ -75,7 +75,7 @@ export function Services() {
               <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 p-[clamp(1.75rem,3vw,2.5rem)] md:pl-32">
                 {/* Eyebrow + Title — col 5 */}
                 <div className="md:col-span-5">
-                  <p className="eyebrow text-[color:var(--color-bronze)] mb-3">
+                  <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-3">
                     {numerals[idx]} — {lang === "fr" ? "Service" : "Service"}
                   </p>
                   <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.04em] leading-[1.1] text-balance">

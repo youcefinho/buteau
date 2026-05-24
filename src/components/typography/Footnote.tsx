@@ -108,7 +108,7 @@ export function FootnoteList({ title, className }: { title?: string; className?:
       )}
       aria-label="Notes"
     >
-      <ol className="space-y-2 text-sm leading-relaxed text-[color:var(--color-bronze)]">
+      <ol className="space-y-2 text-sm leading-relaxed text-[color:var(--color-taupe-dark)]">
         {notes.map((note) => (
           <li
             key={note.n}

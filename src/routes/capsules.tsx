@@ -130,7 +130,7 @@ function CapsulesPage() {
             {String(totalCount).padStart(2, "0")}
           </span>
           <div>
-            <p className="eyebrow text-[color:var(--color-bronze)] text-[10px] mb-1">
+            <p className="eyebrow text-[color:var(--color-taupe-dark)] text-[10px] mb-1">
               {isFr ? "Capsules disponibles" : "Capsules available"}
             </p>
             <p className="text-sm text-[color:var(--color-navy-deep)]/75 max-w-xs">
@@ -316,7 +316,7 @@ function CapsulesPage() {
       </div>
 
       {/* Footnote */}
-      <p className="text-xs italic text-[color:var(--color-bronze)] mt-16 text-center max-w-2xl mx-auto">
+      <p className="text-xs italic text-[color:var(--color-taupe-dark)] mt-16 text-center max-w-2xl mx-auto">
         {t("capsules.footnote")}
       </p>
 

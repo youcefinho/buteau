@@ -176,7 +176,7 @@ function DonutSvg({
           {centerLabel && (
             <span
               className="text-[9px] md:text-[10px] uppercase tracking-[0.22em] font-semibold"
-              style={{ color: "color-mix(in oklch, var(--color-bronze) 95%, transparent)" }}
+              style={{ color: "color-mix(in oklch, var(--color-taupe-dark) 95%, transparent)" }}
             >
               {centerLabel}
             </span>
@@ -213,7 +213,7 @@ function BronzeSlider({
   return (
     <div>
       <div className="flex justify-between items-baseline mb-2 gap-3">
-        <label className="text-[11px] uppercase tracking-[0.18em] text-[color:var(--color-bronze)] flex-shrink-0 font-semibold">
+        <label className="text-[11px] uppercase tracking-[0.18em] text-[color:var(--color-taupe-dark)] flex-shrink-0 font-semibold">
           {label}
         </label>
         <div className="flex items-baseline gap-1.5 min-w-0">
@@ -237,7 +237,7 @@ function BronzeSlider({
             style={{ borderColor: "color-mix(in oklch, var(--color-bronze) 30%, transparent)" }}
           />
           {unit && (
-            <span className="text-[11px] text-[color:var(--color-bronze)] flex-shrink-0 tabular-nums">
+            <span className="text-[11px] text-[color:var(--color-taupe-dark)] flex-shrink-0 tabular-nums">
               {unit}
             </span>
           )}
@@ -294,7 +294,7 @@ function Tile({
 }) {
   return (
     <div className="border border-[color:var(--color-taupe)]/40 p-4 bg-[color:var(--color-cream)]/60 backdrop-blur-sm">
-      <p className="eyebrow text-[color:var(--color-bronze)] text-[9px] mb-1.5">{label}</p>
+      <p className="eyebrow text-[color:var(--color-taupe-dark)] text-[9px] mb-1.5">{label}</p>
       <p
         className={`font-[var(--font-display)] font-bold tabular-nums leading-none ${
           emphasis ? "text-[color:var(--color-navy)] text-[clamp(1.25rem,1.8vw,1.5rem)]" : "text-[color:var(--color-navy-deep)] text-[clamp(1.125rem,1.6vw,1.25rem)]"
@@ -315,7 +315,7 @@ function Tile({
 const SEG = {
   bronze: "var(--color-bronze)",
   bronzeDeep: "var(--color-navy)",
-  taupe: "var(--color-bronze)",
+  taupe: "var(--color-taupe-dark)",
   navy: "var(--color-navy-deep)",
 };
 
@@ -351,7 +351,7 @@ function RateSensitivityChart({
                   className={`tabular-nums font-semibold ${
                     isCurrent
                       ? "text-[color:var(--color-navy)]"
-                      : "text-[color:var(--color-bronze)]"
+                      : "text-[color:var(--color-taupe-dark)]"
                   }`}
                 >
                   {r.toFixed(2)}%
@@ -431,11 +431,11 @@ function CumulativeInterestChart({
         <div className="flex items-center gap-4 text-[10px] uppercase tracking-wider">
           <div className="flex items-center gap-1.5">
             <span className="inline-block w-3 h-0.5 bg-[color:var(--color-navy-deep)]" />
-            <span className="text-[color:var(--color-bronze)]">{fixedLabel}</span>
+            <span className="text-[color:var(--color-taupe-dark)]">{fixedLabel}</span>
           </div>
           <div className="flex items-center gap-1.5">
             <span className="inline-block w-3 h-0.5 bg-[color:var(--color-bronze)]" />
-            <span className="text-[color:var(--color-bronze)]">{variableLabel}</span>
+            <span className="text-[color:var(--color-taupe-dark)]">{variableLabel}</span>
           </div>
         </div>
       </div>
@@ -458,7 +458,7 @@ function CumulativeInterestChart({
                 x={PAD.l - 8}
                 y={y + 3}
                 textAnchor="end"
-                fill="var(--color-bronze)"
+                fill="var(--color-taupe-dark)"
                 fontSize="10"
                 className="tabular-nums"
               >
@@ -476,7 +476,7 @@ function CumulativeInterestChart({
               x={x}
               y={H - 8}
               textAnchor="middle"
-              fill="var(--color-bronze)"
+              fill="var(--color-taupe-dark)"
               fontSize="10"
             >
               {lbl}
@@ -552,12 +552,12 @@ function MdfComparisonGrid({
             <p className="font-[var(--font-display)] font-bold text-[color:var(--color-navy)] text-3xl mb-1">
               {s.pct}%
             </p>
-            <p className="text-[10px] uppercase tracking-wider text-[color:var(--color-bronze)] mb-3">
+            <p className="text-[10px] uppercase tracking-wider text-[color:var(--color-taupe-dark)] mb-3">
               MDF {fmtCAD(s.mdf)}
             </p>
             <div className="space-y-1.5 text-xs">
               <div>
-                <p className="text-[10px] uppercase tracking-wider text-[color:var(--color-bronze)]">
+                <p className="text-[10px] uppercase tracking-wider text-[color:var(--color-taupe-dark)]">
                   Paiement
                 </p>
                 <p className="font-bold text-[color:var(--color-navy-deep)] tabular-nums">
@@ -565,14 +565,14 @@ function MdfComparisonGrid({
                 </p>
               </div>
               <div className="pt-1.5 border-t border-[color:var(--color-taupe)]/30">
-                <p className="text-[10px] uppercase tracking-wider text-[color:var(--color-bronze)]">
+                <p className="text-[10px] uppercase tracking-wider text-[color:var(--color-taupe-dark)]">
                   Prime SCHL
                 </p>
                 <p
                   className={`font-bold tabular-nums ${
                     s.prime > 0
                       ? "text-[color:var(--color-navy)]"
-                      : "text-[color:var(--color-bronze)]"
+                      : "text-[color:var(--color-taupe-dark)]"
                   }`}
                 >
                   {s.prime > 0 ? fmtCAD(s.prime) : "—"}
@@ -1009,24 +1009,24 @@ function TabComparaison({ mode }: { mode: CalcMode }) {
             <p className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-2xl tabular-nums mb-1">
               {fmtCAD(pmtFixe)}
             </p>
-            <p className="text-[10px] uppercase tracking-wider text-[color:var(--color-bronze)] mb-4">
+            <p className="text-[10px] uppercase tracking-wider text-[color:var(--color-taupe-dark)] mb-4">
               /{isFr ? "mois" : "mo"}
             </p>
             <div className="space-y-2 text-xs">
               <div className="flex justify-between">
-                <span className="text-[color:var(--color-bronze)]">{isFr ? "Total payé (5 ans)" : "Total (5 yrs)"}</span>
+                <span className="text-[color:var(--color-taupe-dark)]">{isFr ? "Total payé (5 ans)" : "Total (5 yrs)"}</span>
                 <span className="text-[color:var(--color-navy-deep)] font-semibold tabular-nums">
                   {fmtCAD(totalFixe)}
                 </span>
               </div>
               <div className="flex justify-between">
-                <span className="text-[color:var(--color-bronze)]">{isFr ? "Intérêts (5 ans)" : "Interest (5 yrs)"}</span>
+                <span className="text-[color:var(--color-taupe-dark)]">{isFr ? "Intérêts (5 ans)" : "Interest (5 yrs)"}</span>
                 <span className="text-[color:var(--color-navy-deep)] font-semibold tabular-nums">
                   {fmtCAD(interetsFixe)}
                 </span>
               </div>
               <div className="flex justify-between pt-1.5 border-t border-[color:var(--color-taupe)]/30">
-                <span className="text-[color:var(--color-bronze)]">{isFr ? "Solde fin terme" : "End-of-term balance"}</span>
+                <span className="text-[color:var(--color-taupe-dark)]">{isFr ? "Solde fin terme" : "End-of-term balance"}</span>
                 <span className="text-[color:var(--color-navy-deep)] font-semibold tabular-nums">
                   {fmtCAD(soldeFixe)}
                 </span>
@@ -1051,26 +1051,26 @@ function TabComparaison({ mode }: { mode: CalcMode }) {
             <p className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-2xl tabular-nums mb-1">
               {fmtCAD(pmtVar1)}
             </p>
-            <p className="text-[10px] uppercase tracking-wider text-[color:var(--color-bronze)] mb-4">
+            <p className="text-[10px] uppercase tracking-wider text-[color:var(--color-taupe-dark)] mb-4">
               /{isFr ? "mois (an 1-2)" : "mo (yr 1-2)"}
               <br />
               {fmtCAD(pmtVar2)} /{isFr ? "mois (an 3-5)" : "mo (yr 3-5)"}
             </p>
             <div className="space-y-2 text-xs">
               <div className="flex justify-between">
-                <span className="text-[color:var(--color-bronze)]">{isFr ? "Total payé (5 ans)" : "Total (5 yrs)"}</span>
+                <span className="text-[color:var(--color-taupe-dark)]">{isFr ? "Total payé (5 ans)" : "Total (5 yrs)"}</span>
                 <span className="text-[color:var(--color-navy-deep)] font-semibold tabular-nums">
                   {fmtCAD(totalVar)}
                 </span>
               </div>
               <div className="flex justify-between">
-                <span className="text-[color:var(--color-bronze)]">{isFr ? "Intérêts (5 ans)" : "Interest (5 yrs)"}</span>
+                <span className="text-[color:var(--color-taupe-dark)]">{isFr ? "Intérêts (5 ans)" : "Interest (5 yrs)"}</span>
                 <span className="text-[color:var(--color-navy-deep)] font-semibold tabular-nums">
                   {fmtCAD(interetsVar)}
                 </span>
               </div>
               <div className="flex justify-between pt-1.5 border-t border-[color:var(--color-taupe)]/30">
-                <span className="text-[color:var(--color-bronze)]">{isFr ? "Solde fin terme" : "End-of-term balance"}</span>
+                <span className="text-[color:var(--color-taupe-dark)]">{isFr ? "Solde fin terme" : "End-of-term balance"}</span>
                 <span className="text-[color:var(--color-navy-deep)] font-semibold tabular-nums">
                   {fmtCAD(soldeVar)}
                 </span>
@@ -1194,7 +1194,7 @@ function TabMiseDeFonds({ mode }: { mode: CalcMode }) {
 
         {/* Toggle residence */}
         <div>
-          <p className="text-[11px] uppercase tracking-[0.18em] text-[color:var(--color-bronze)] font-semibold mb-2">
+          <p className="text-[11px] uppercase tracking-[0.18em] text-[color:var(--color-taupe-dark)] font-semibold mb-2">
             {isFr ? "Type d'occupation" : "Occupancy type"}
           </p>
           <div className="grid grid-cols-2 gap-2">
@@ -1206,7 +1206,7 @@ function TabMiseDeFonds({ mode }: { mode: CalcMode }) {
                 className={`text-sm font-semibold py-2.5 transition-colors duration-200 border ${
                   residence === opt
                     ? "border-[color:var(--color-bronze)] bg-[color:var(--color-bronze)]/10 text-[color:var(--color-navy)]"
-                    : "border-[color:var(--color-taupe)]/40 text-[color:var(--color-bronze)] hover:border-[color:var(--color-bronze)]/60"
+                    : "border-[color:var(--color-taupe)]/40 text-[color:var(--color-taupe-dark)] hover:border-[color:var(--color-bronze)]/60"
                 }`}
               >
                 {isFr
@@ -1240,27 +1240,27 @@ function TabMiseDeFonds({ mode }: { mode: CalcMode }) {
 
         <div className="space-y-2 text-sm border border-[color:var(--color-taupe)]/40 bg-[color:var(--color-cream)]/60 p-4">
           <div className="flex justify-between">
-            <span className="text-[color:var(--color-bronze)]">{isFr ? "Mise de fonds" : "Down payment"}</span>
+            <span className="text-[color:var(--color-taupe-dark)]">{isFr ? "Mise de fonds" : "Down payment"}</span>
             <span className="text-[color:var(--color-navy-deep)] font-semibold tabular-nums">{fmtCAD(mdf)}</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-[color:var(--color-bronze)]">{isFr ? "Taxe de bienvenue (QC)" : "Welcome tax (QC)"}</span>
+            <span className="text-[color:var(--color-taupe-dark)]">{isFr ? "Taxe de bienvenue (QC)" : "Welcome tax (QC)"}</span>
             <span className="text-[color:var(--color-navy-deep)] font-semibold tabular-nums">{fmtCAD(tdm)}</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-[color:var(--color-bronze)]">{isFr ? "Notaire + inspection + évaluation" : "Notary + inspection + appraisal"}</span>
+            <span className="text-[color:var(--color-taupe-dark)]">{isFr ? "Notaire + inspection + évaluation" : "Notary + inspection + appraisal"}</span>
             <span className="text-[color:var(--color-navy-deep)] font-semibold tabular-nums">
               {fmtCAD(notaire + inspection + evaluation)}
             </span>
           </div>
           <div className="flex justify-between">
-            <span className="text-[color:var(--color-bronze)]">{isFr ? "Ajustements taxes" : "Tax adjustments"}</span>
+            <span className="text-[color:var(--color-taupe-dark)]">{isFr ? "Ajustements taxes" : "Tax adjustments"}</span>
             <span className="text-[color:var(--color-navy-deep)] font-semibold tabular-nums">{fmtCAD(ajustementsTaxes)}</span>
           </div>
           {schlApplicable && (
             <>
               <div className="flex justify-between pt-2 border-t border-[color:var(--color-taupe)]/30">
-                <span className="text-[color:var(--color-bronze)]">
+                <span className="text-[color:var(--color-taupe-dark)]">
                   {isFr ? `Prime SCHL (${(primeRate * 100).toFixed(2)} %)` : `CMHC premium (${(primeRate * 100).toFixed(2)}%)`}
                 </span>
                 <span className="text-[color:var(--color-navy)] font-semibold tabular-nums">
@@ -1268,7 +1268,7 @@ function TabMiseDeFonds({ mode }: { mode: CalcMode }) {
                 </span>
               </div>
               <div className="flex justify-between">
-                <span className="text-[color:var(--color-bronze)]">{isFr ? "TVQ + TPS sur prime SCHL" : "QST + GST on CMHC"}</span>
+                <span className="text-[color:var(--color-taupe-dark)]">{isFr ? "TVQ + TPS sur prime SCHL" : "QST + GST on CMHC"}</span>
                 <span className="text-[color:var(--color-navy-deep)] font-semibold tabular-nums">{fmtCAD(tps)}</span>
               </div>
               <p className="italic text-xs text-[color:var(--color-bronze)] pt-1 leading-snug">
@@ -1425,7 +1425,7 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
                         className={`font-[var(--font-display)] font-semibold uppercase tracking-[0.05em] text-[clamp(0.75rem,1.1vw,0.875rem)] whitespace-nowrap transition-colors ${
                           active
                             ? "text-[color:var(--color-navy-deep)]"
-                            : "text-[color:var(--color-bronze)] group-hover/tab:text-[color:var(--color-navy-deep)]"
+                            : "text-[color:var(--color-taupe-dark)] group-hover/tab:text-[color:var(--color-navy-deep)]"
                         }`}
                       >
                         {tab.label}

@@ -104,7 +104,7 @@ export function PreQualQuiz() {
       <Container size="lg" className="relative">
         {/* Header */}
         <div className="text-center mb-[clamp(3rem,5vw,4rem)] max-w-2xl mx-auto">
-          <p className="eyebrow text-[color:var(--color-bronze)] inline-flex items-center gap-3 mb-5">
+          <p className="eyebrow text-[color:var(--color-taupe-dark)] inline-flex items-center gap-3 mb-5">
             <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
             {t("quiz.eyebrow")}
             <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
@@ -124,7 +124,7 @@ export function PreQualQuiz() {
             <>
               {/* Progress bar fine bronze */}
               <div className="flex items-center justify-between mb-8">
-                <p className="eyebrow text-[color:var(--color-bronze)]">
+                <p className="eyebrow text-[color:var(--color-taupe-dark)]">
                   {t("quiz.progressLabel")}{" "}
                   <span className="italic text-[color:var(--color-navy)] text-base">
                     {String(step + 1).padStart(2, "0")}

@@ -52,7 +52,7 @@ export function BrokerLetter() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-[clamp(2.5rem,5vw,4rem)] items-start">
           {/* Lettre — col 8 */}
           <div className="lg:col-span-8 lg:pr-8">
-            <p className="eyebrow text-[color:var(--color-bronze)] inline-flex items-center gap-3 mb-10">
+            <p className="eyebrow text-[color:var(--color-taupe-dark)] inline-flex items-center gap-3 mb-10">
               <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
               {t("letter.eyebrow")}
               <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
@@ -122,7 +122,7 @@ export function BrokerLetter() {
             {/* Nom + role */}
             <div className="order-2 lg:order-3 mt-6 lg:mt-8 lg:text-center w-full max-w-[320px]">
               <div className="w-12 h-px bg-[color:var(--color-bronze)] lg:mx-auto mb-3" />
-              <p className="eyebrow text-[color:var(--color-bronze)]">
+              <p className="eyebrow text-[color:var(--color-taupe-dark)]">
                 {t("letter.role")}
               </p>
             </div>

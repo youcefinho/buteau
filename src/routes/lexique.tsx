@@ -66,7 +66,7 @@ function LexiquePage() {
                 {g.term[lang]}
               </h2>
               {g.term.fr_alt && lang === "fr" && (
-                <span className="text-xs italic text-[color:var(--color-bronze)]">
+                <span className="text-xs italic text-[color:var(--color-taupe-dark)]">
                   {g.term.fr_alt.join(", ")}
                 </span>
               )}
@@ -76,7 +76,7 @@ function LexiquePage() {
               {g.definition[lang]}
             </p>
             {g.source && (
-              <p className="eyebrow text-[color:var(--color-bronze)] mt-3">
+              <p className="eyebrow text-[color:var(--color-taupe-dark)] mt-3">
                 Source : {g.source}
               </p>
             )}

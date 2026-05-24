@@ -16,7 +16,7 @@ export function ChapterMarker({ label, tone = "light" }: ChapterMarkerProps) {
   const labelColor =
     tone === "dark"
       ? "text-[color:var(--color-taupe)]"
-      : "text-[color:var(--color-bronze)]";
+      : "text-[color:var(--color-taupe-dark)]";
   const lineColor =
     tone === "dark"
       ? "bg-[color:var(--color-taupe)]/40"

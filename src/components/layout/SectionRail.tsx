@@ -176,7 +176,7 @@ export function SectionRail({ sections = HOME_SECTIONS }: SectionRailProps = {})
               } ${
                 isActive
                   ? "text-[color:var(--color-bronze)] opacity-100"
-                  : "text-[color:var(--color-bronze)] opacity-70 group-hover:opacity-100 group-hover:text-[color:var(--color-bronze)]"
+                  : "text-[color:var(--color-taupe-dark)] opacity-70 group-hover:opacity-100 group-hover:text-[color:var(--color-bronze)]"
               }`}
             >
               {label}

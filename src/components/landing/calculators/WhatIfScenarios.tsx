@@ -98,7 +98,7 @@ export function WhatIfScenarios({
         <p className="font-[var(--font-editorial)] italic text-[color:var(--color-navy)] text-[clamp(1.5rem,2.5vw,1.875rem)]">
           {t("tools.calc.scenariosTitle")}
         </p>
-        <p className="text-sm text-[color:var(--color-bronze)] italic mt-2 max-w-md mx-auto">
+        <p className="text-sm text-[color:var(--color-taupe-dark)] italic mt-2 max-w-md mx-auto">
           {t("tools.calc.scenariosSubtitle")}
         </p>
       </div>
@@ -127,7 +127,7 @@ export function WhatIfScenarios({
 
             <div className="grid grid-cols-2 gap-4 relative">
               <div>
-                <p className="eyebrow text-[color:var(--color-bronze)] mb-1.5">
+                <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-1.5">
                   {t("tools.calc.scenarioSavingsLabel")}
                 </p>
                 <p className="font-[var(--font-display)] font-extrabold text-[color:var(--color-navy)] text-[clamp(1.5rem,2.5vw,1.875rem)] tracking-[-0.01em] tabular-nums">
@@ -135,7 +135,7 @@ export function WhatIfScenarios({
                 </p>
               </div>
               <div className="border-l border-[color:var(--color-taupe)]/40 pl-4">
-                <p className="eyebrow text-[color:var(--color-bronze)] mb-1.5">
+                <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-1.5">
                   {t("tools.calc.scenarioMonthsSavedLabel")}
                 </p>
                 <p className="font-[var(--font-display)] font-extrabold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] tracking-[-0.01em] tabular-nums">
@@ -168,7 +168,7 @@ export function WhatIfScenarios({
 
             <div className="grid grid-cols-2 gap-4 relative">
               <div>
-                <p className="eyebrow text-[color:var(--color-bronze)] mb-1.5">
+                <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-1.5">
                   {t("tools.calc.scenarioNewPaymentLabel")}
                 </p>
                 <p className="font-[var(--font-display)] font-extrabold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] tracking-[-0.01em] tabular-nums">
@@ -176,7 +176,7 @@ export function WhatIfScenarios({
                 </p>
               </div>
               <div className="border-l border-[color:var(--color-taupe)]/40 pl-4">
-                <p className="eyebrow text-[color:var(--color-bronze)] mb-1.5">
+                <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-1.5">
                   {t("tools.calc.scenarioSavingsLabel")}
                 </p>
                 <p className="font-[var(--font-display)] font-extrabold text-[color:var(--color-navy)] text-[clamp(1.5rem,2.5vw,1.875rem)] tracking-[-0.01em] tabular-nums">
