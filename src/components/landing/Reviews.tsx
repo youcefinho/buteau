@@ -74,7 +74,7 @@ export function Reviews() {
                   aria-hidden="true"
                 />
               ))}
-              <span className="ml-2 eyebrow text-[color:var(--color-taupe-dark)]">
+              <span className="ml-2 eyebrow text-[color:var(--color-bronze)]">
                 {lang === "fr" ? "Avis Google" : "Google Reviews"}
               </span>
             </div>
@@ -86,12 +86,12 @@ export function Reviews() {
           {items.map((r, idx) => (
             <Tiltable key={`${r.author}-${r.date}`} maxDeg={4}>
             <article
-              className="group relative bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/45 transition-all duration-500 hover:border-[color:var(--color-taupe-dark)]/70 halo-glow flex flex-col h-full"
+              className="group relative bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/45 transition-all duration-500 hover:border-[color:var(--color-bronze)]/70 halo-glow flex flex-col h-full"
             >
               {/* Letter header — date + ville (pattern courrier) */}
               <header className="flex items-baseline justify-between gap-3 px-[clamp(1.5rem,2vw,1.75rem)] pt-6 pb-4 border-b border-dashed border-[color:var(--color-taupe)]/40">
                 <div>
-                  <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-1">
+                  <p className="eyebrow text-[color:var(--color-bronze)] mb-1">
                     {t("home.reviews.letterDateLabel")}
                   </p>
                   <p className="italic text-sm text-[color:var(--color-navy-deep)]">
@@ -99,7 +99,7 @@ export function Reviews() {
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-1">
+                  <p className="eyebrow text-[color:var(--color-bronze)] mb-1">
                     {t("home.reviews.letterFromLabel")}
                   </p>
                   <p className="italic text-sm text-[color:var(--color-navy-deep)]">
@@ -122,13 +122,13 @@ export function Reviews() {
                 </div>
 
                 <p className="italic text-[clamp(1rem,1.3vw,1.05rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/90 text-pretty">
-                  <span className="font-[var(--font-editorial)] not-italic font-bold text-[color:var(--color-taupe-dark)] text-2xl mr-0.5 leading-none align-baseline">
+                  <span className="font-[var(--font-editorial)] not-italic font-bold text-[color:var(--color-bronze)] text-2xl mr-0.5 leading-none align-baseline">
                     «
                   </span>
                   {" "}
                   {r.quote}
                   {" "}
-                  <span className="font-[var(--font-editorial)] not-italic font-bold text-[color:var(--color-taupe-dark)] text-2xl ml-0.5 leading-none align-baseline">
+                  <span className="font-[var(--font-editorial)] not-italic font-bold text-[color:var(--color-bronze)] text-2xl ml-0.5 leading-none align-baseline">
                     »
                   </span>
                 </p>
@@ -138,7 +138,7 @@ export function Reviews() {
               <footer className="px-[clamp(1.5rem,2vw,1.75rem)] pb-6 mt-auto">
                 <div className="flex items-center gap-3 pt-4 border-t border-[color:var(--color-taupe)]/30">
                   <div
-                    className="w-8 h-8 rounded-full bg-[color:var(--color-taupe-dark)]/15 flex items-center justify-center text-[color:var(--color-navy)] font-[var(--font-display)] font-bold text-xs tracking-wider"
+                    className="w-8 h-8 rounded-full bg-[color:var(--color-bronze)]/15 flex items-center justify-center text-[color:var(--color-navy)] font-[var(--font-display)] font-bold text-xs tracking-wider"
                     aria-hidden="true"
                   >
                     {r.authorInitial}
@@ -163,7 +163,7 @@ export function Reviews() {
           >
             <span className="relative">
               {t("common.seeAllReviews")}
-              <span className="absolute left-0 -bottom-0.5 w-full h-px bg-[color:var(--color-taupe-dark)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              <span className="absolute left-0 -bottom-0.5 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             </span>
             <span aria-hidden="true" className="transition-transform duration-500 group-hover:translate-x-1">→</span>
           </a>

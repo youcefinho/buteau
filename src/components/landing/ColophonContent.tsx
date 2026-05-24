@@ -58,14 +58,14 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
         />
         <ColophonRow
           label={isFr ? "Taupe doux" : "Soft taupe"}
-          value="oklch(0.722 0.018 84)"
+          value="oklch(0.704 0.077 56)"
           swatchClass="bg-[color:var(--color-taupe)]"
           note={isFr ? "Filets, marginalia, dividers" : "Hairlines, marginalia, dividers"}
         />
         <ColophonRow
           label={isFr ? "Bronze caramel" : "Bronze caramel"}
-          value="oklch(0.722 0.018 84)"
-          swatchClass="bg-[color:var(--color-taupe-dark)]"
+          value="oklch(0.704 0.077 56)"
+          swatchClass="bg-[color:var(--color-bronze)]"
           note={isFr ? "Accents — boutons, hover, signatures" : "Accents — buttons, hover, signatures"}
         />
         <ColophonRow
@@ -139,7 +139,7 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
 
       {/* Crédits final */}
       <section className="pt-10 mt-8 border-t border-[color:var(--color-taupe)]/40 text-center">
-        <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-3">
+        <p className="eyebrow text-[color:var(--color-bronze)] mb-3">
           {isFr ? "Imprimé à Laval" : "Printed in Laval"}
         </p>
         <p className="italic text-[color:var(--color-navy-deep)]/85 text-base leading-relaxed text-pretty">
@@ -147,7 +147,7 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
             ? "par L'Équipe Buteau, en cabinet d'attache chez Planiprêt Cabinet en Courtage Hypothécaire."
             : "by Équipe Buteau, with Planiprêt Cabinet en Courtage Hypothécaire as their attached firm."}
         </p>
-        <p className="mt-6 eyebrow text-[color:var(--color-taupe-dark)]/70 text-[10px]">
+        <p className="mt-6 eyebrow text-[color:var(--color-bronze)]/70 text-[10px]">
           ☞ {isFr ? "Bureau" : "Office"} — {config.address.streetAddress}, {config.address.addressLocality} ({config.address.addressRegion}) {config.address.postalCode}
         </p>
       </section>
@@ -159,7 +159,7 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
             <Link
               to="/colophon"
               onClick={onClose}
-              className="group flex items-center justify-between gap-4 p-5 bg-[color:var(--color-taupe-dark)]/5 border border-[color:var(--color-taupe-dark)]/20 hover:bg-[color:var(--color-taupe-dark)]/10 hover:border-[color:var(--color-taupe-dark)]/40 transition-all"
+              className="group flex items-center justify-between gap-4 p-5 bg-[color:var(--color-bronze)]/5 border border-[color:var(--color-bronze)]/20 hover:bg-[color:var(--color-bronze)]/10 hover:border-[color:var(--color-bronze)]/40 transition-all"
             >
               <div>
                 <div className="eyebrow text-[color:var(--color-navy)] mb-1">
@@ -170,7 +170,7 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
                 </div>
               </div>
               <ArrowRight
-                className="w-5 h-5 text-[color:var(--color-taupe-dark)] group-hover:text-[color:var(--color-navy)] group-hover:translate-x-0.5 transition-all shrink-0"
+                className="w-5 h-5 text-[color:var(--color-bronze)] group-hover:text-[color:var(--color-navy)] group-hover:translate-x-0.5 transition-all shrink-0"
                 aria-hidden
               />
             </Link>
@@ -195,7 +195,7 @@ function ColophonSection({
   return (
     <section id={id} className="pt-8 scroll-mt-24">
       <div className="flex items-center gap-4 mb-5">
-        <span className="block w-8 h-px bg-[color:var(--color-taupe-dark)]" aria-hidden="true" />
+        <span className="block w-8 h-px bg-[color:var(--color-bronze)]" aria-hidden="true" />
         <h3 className="eyebrow text-[color:var(--color-navy)]">{label}</h3>
         <span className="block flex-1 h-px bg-[color:var(--color-taupe)]/40" aria-hidden="true" />
       </div>
@@ -217,7 +217,7 @@ function ColophonRow({
 }) {
   return (
     <div className="grid grid-cols-12 gap-4 py-4 border-b border-[color:var(--color-taupe)]/20 last:border-b-0 items-baseline">
-      <p className="col-span-4 eyebrow text-[color:var(--color-taupe-dark)] text-[10px]">
+      <p className="col-span-4 eyebrow text-[color:var(--color-bronze)] text-[10px]">
         {label}
       </p>
       <div className="col-span-8 space-y-1.5">

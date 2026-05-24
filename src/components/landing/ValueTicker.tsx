@@ -29,7 +29,7 @@ export function ValueTicker() {
   return (
     <section
       aria-label={lang === "fr" ? "Faits clés" : "Key facts"}
-      className="relative bg-[color:var(--color-navy-deep)] border-y border-[color:var(--color-taupe-dark)]/20 py-5 overflow-hidden group"
+      className="relative bg-[color:var(--color-navy-deep)] border-y border-[color:var(--color-bronze)]/20 py-5 overflow-hidden group"
     >
       {/* Atmospheric continuity — embers per-section signature */}
 
@@ -57,7 +57,7 @@ export function ValueTicker() {
               className="inline-flex items-center gap-6 px-8 italic text-[color:var(--color-cream)]/90 text-[clamp(1rem,1.4vw,1.125rem)]"
             >
               <span>{item}</span>
-              <span aria-hidden="true" className="text-[color:var(--color-taupe-dark)] select-none">
+              <span aria-hidden="true" className="text-[color:var(--color-bronze)] select-none">
                 <ButeauMonogramInline size="lg" />
               </span>
             </span>

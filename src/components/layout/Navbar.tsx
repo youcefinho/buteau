@@ -242,10 +242,10 @@ function NavLink({ to, label }: { to: "/" | "/equipe" | "/institutions" | "/outi
   return (
     <Link
       to={to}
-      className="font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-current hover:text-[color:var(--color-taupe-dark)] transition-colors"
+      className="font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-current hover:text-[color:var(--color-bronze)] transition-colors"
       activeProps={{
         className:
-          "text-[color:var(--color-taupe-dark)]",
+          "text-[color:var(--color-bronze)]",
       }}
     >
       {label}

@@ -165,23 +165,23 @@ export function ExitIntent() {
       <div
         ref={boxRef}
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-md bg-[color:var(--color-navy)] border border-[color:var(--color-taupe-dark)]/30 rounded-sm p-[clamp(1.75rem,3vw,2.25rem)] shadow-2xl animate-[buteauScale_400ms_cubic-bezier(0.4,0,0.2,1)_both]"
+        className="relative w-full max-w-md bg-[color:var(--color-navy)] border border-[color:var(--color-bronze)]/30 rounded-sm p-[clamp(1.75rem,3vw,2.25rem)] shadow-2xl animate-[buteauScale_400ms_cubic-bezier(0.4,0,0.2,1)_both]"
       >
         {/* Close */}
         <button
           type="button"
           onClick={handleClose}
           aria-label={tr.close}
-          className="absolute top-3 right-3 w-9 h-9 inline-flex items-center justify-center rounded-full text-[color:var(--color-cream)]/55 hover:text-[color:var(--color-taupe-dark)] hover:bg-[color:var(--color-navy-deep)]/60 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
+          className="absolute top-3 right-3 w-9 h-9 inline-flex items-center justify-center rounded-full text-[color:var(--color-cream)]/55 hover:text-[color:var(--color-bronze)] hover:bg-[color:var(--color-navy-deep)]/60 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
         >
           <X className="w-4 h-4" strokeWidth={1.7} />
         </button>
 
         {/* Eyebrow tirets bronze */}
-        <p className="inline-flex items-center gap-3 mb-5 text-xs uppercase tracking-[0.22em] text-[color:var(--color-taupe-dark)]">
-          <span className="inline-block w-6 h-px bg-[color:var(--color-taupe-dark)]" />
+        <p className="inline-flex items-center gap-3 mb-5 text-xs uppercase tracking-[0.22em] text-[color:var(--color-bronze)]">
+          <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
           {tr.eyebrow}
-          <span className="inline-block w-6 h-px bg-[color:var(--color-taupe-dark)]" />
+          <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
         </p>
 
         {/* Titre — Cormorant italic édito */}
@@ -190,11 +190,11 @@ export function ExitIntent() {
           className="font-[var(--font-editorial)] text-[color:var(--color-cream)] text-[clamp(1.5rem,2.5vw,1.875rem)] leading-[1.15] tracking-tight mb-3 text-balance"
         >
           {tr.title}{" "}
-          <em className="italic text-[color:var(--color-taupe-light)]">{tr.titleAccent}</em>
+          <em className="italic text-[color:var(--color-bronze-soft)]">{tr.titleAccent}</em>
         </h3>
 
         {/* Filet bronze */}
-        <div className="h-px w-12 bg-[color:var(--color-taupe-dark)]/60 mb-5" aria-hidden />
+        <div className="h-px w-12 bg-[color:var(--color-bronze)]/60 mb-5" aria-hidden />
 
         {/* Body */}
         <p className="text-sm text-[color:var(--color-cream)]/75 leading-relaxed mb-7 text-pretty">
@@ -206,7 +206,7 @@ export function ExitIntent() {
           <a
             href={`tel:${config.phone.raw}`}
             onClick={handleClose}
-            className="group w-full inline-flex items-center justify-center gap-2 py-3 rounded-sm bg-[color:var(--color-taupe-dark)] text-[color:var(--color-cream)] font-semibold text-sm hover:bg-[color:var(--color-navy)] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-10px_oklch(0.62_0.082_52/0.5)] transition-all duration-300"
+            className="group w-full inline-flex items-center justify-center gap-2 py-3 rounded-sm bg-[color:var(--color-bronze)] text-[color:var(--color-cream)] font-semibold text-sm hover:bg-[color:var(--color-navy)] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-10px_oklch(0.62_0.082_52/0.5)] transition-all duration-300"
           >
             <Phone className="w-3.5 h-3.5" strokeWidth={1.8} />
             <span>
@@ -217,7 +217,7 @@ export function ExitIntent() {
           <button
             type="button"
             onClick={handleContactCta}
-            className="group w-full inline-flex items-center justify-center gap-2 py-3 rounded-sm border border-[color:var(--color-taupe-dark)]/35 text-[color:var(--color-cream)] font-medium text-sm hover:border-[color:var(--color-taupe-dark)]/70 hover:bg-[color:var(--color-taupe-dark)]/5 hover:-translate-y-0.5 transition-all duration-300"
+            className="group w-full inline-flex items-center justify-center gap-2 py-3 rounded-sm border border-[color:var(--color-bronze)]/35 text-[color:var(--color-cream)] font-medium text-sm hover:border-[color:var(--color-bronze)]/70 hover:bg-[color:var(--color-bronze)]/5 hover:-translate-y-0.5 transition-all duration-300"
           >
             <span>{tr.ctaContact}</span>
             <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />

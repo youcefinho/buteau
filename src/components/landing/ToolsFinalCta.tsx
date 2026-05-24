@@ -41,7 +41,7 @@ export function ToolsFinalCta() {
             {t("tools.finalCta.title")}
           </h2>
 
-          <div className="w-16 h-px bg-[color:var(--color-taupe-dark)] mx-auto" />
+          <div className="w-16 h-px bg-[color:var(--color-bronze)] mx-auto" />
 
           <p className="italic text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-cream)]/85 leading-[1.5] text-pretty">
             {t("tools.finalCta.body")}

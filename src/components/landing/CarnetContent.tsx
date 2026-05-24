@@ -226,7 +226,7 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
                 <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.125rem,1.6vw,1.25rem)] uppercase tracking-[0.04em] leading-snug text-balance">
                   {section.title}
                 </h3>
-                <div className="w-10 h-px bg-[color:var(--color-taupe-dark)] mt-3" aria-hidden="true" />
+                <div className="w-10 h-px bg-[color:var(--color-bronze)] mt-3" aria-hidden="true" />
               </div>
             </div>
             <p className="italic text-base leading-[1.7] text-[color:var(--color-navy-deep)]/75 mb-6 ml-12 text-pretty hyphens-auto">
@@ -237,7 +237,7 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
               {section.entries.map((entry) => (
                 <li
                   key={entry.name}
-                  className="border-l-2 border-[color:var(--color-taupe)]/40 pl-5 hover:border-[color:var(--color-taupe-dark)] transition-colors duration-[240ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+                  className="border-l-2 border-[color:var(--color-taupe)]/40 pl-5 hover:border-[color:var(--color-bronze)] transition-colors duration-[240ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
                 >
                   <a
                     href={entry.url}
@@ -248,7 +248,7 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
                     <span className="relative">
                       {entry.name}
                       <span
-                        className="absolute left-0 -bottom-0.5 w-0 h-px bg-[color:var(--color-taupe-dark)] group-hover:w-full transition-[width] duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+                        className="absolute left-0 -bottom-0.5 w-0 h-px bg-[color:var(--color-bronze)] group-hover:w-full transition-[width] duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
                         aria-hidden="true"
                       />
                     </span>
@@ -280,7 +280,7 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
             <Link
               to="/carnet"
               onClick={onClose}
-              className="group flex items-center justify-between gap-4 p-5 bg-[color:var(--color-taupe-dark)]/5 border border-[color:var(--color-taupe-dark)]/20 hover:bg-[color:var(--color-taupe-dark)]/10 hover:border-[color:var(--color-taupe-dark)]/40 transition-all"
+              className="group flex items-center justify-between gap-4 p-5 bg-[color:var(--color-bronze)]/5 border border-[color:var(--color-bronze)]/20 hover:bg-[color:var(--color-bronze)]/10 hover:border-[color:var(--color-bronze)]/40 transition-all"
             >
               <div>
                 <div className="eyebrow text-[color:var(--color-navy)] mb-1">
@@ -291,7 +291,7 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
                 </div>
               </div>
               <ArrowRight
-                className="w-5 h-5 text-[color:var(--color-taupe-dark)] group-hover:text-[color:var(--color-navy)] group-hover:translate-x-0.5 transition-all shrink-0"
+                className="w-5 h-5 text-[color:var(--color-bronze)] group-hover:text-[color:var(--color-navy)] group-hover:translate-x-0.5 transition-all shrink-0"
                 aria-hidden
               />
             </Link>

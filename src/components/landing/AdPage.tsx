@@ -42,12 +42,12 @@ export function AdPage({ entryKey = "adPage" }: { entryKey?: string }) {
           {/* Eyebrow magazine */}
           <p className="eyebrow text-[color:var(--color-taupe)] mb-10 inline-flex items-center gap-3">
             <span
-              className="inline-block w-6 h-px bg-[color:var(--color-taupe-dark)]"
+              className="inline-block w-6 h-px bg-[color:var(--color-bronze)]"
               aria-hidden="true"
             />
             {lang === "fr" ? "Édition spéciale" : "Special edition"}
             <span
-              className="inline-block w-6 h-px bg-[color:var(--color-taupe-dark)]"
+              className="inline-block w-6 h-px bg-[color:var(--color-bronze)]"
               aria-hidden="true"
             />
           </p>
@@ -59,7 +59,7 @@ export function AdPage({ entryKey = "adPage" }: { entryKey?: string }) {
 
           {/* Filet décoratif bronze */}
           <div
-            className="mx-auto mt-12 h-px w-16 bg-[color:var(--color-taupe-dark)]"
+            className="mx-auto mt-12 h-px w-16 bg-[color:var(--color-bronze)]"
             aria-hidden="true"
           />
 

@@ -22,7 +22,7 @@ type AnimatedSignatureProps = {
 
 export function AnimatedSignature({
   className,
-  stroke = "var(--color-taupe-dark)",
+  stroke = "var(--color-bronze)",
   duration = 2200,
 }: AnimatedSignatureProps) {
   const svgRef = useRef<SVGSVGElement | null>(null);

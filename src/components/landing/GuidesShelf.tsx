@@ -39,14 +39,14 @@ export function GuidesShelf() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-[clamp(2.5rem,5vw,4rem)]">
           {/* Header column — 5/12 sticky desktop */}
           <div className="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
-            <p className="eyebrow text-[color:var(--color-taupe-dark)] inline-flex items-center gap-3 mb-5">
+            <p className="eyebrow text-[color:var(--color-bronze)] inline-flex items-center gap-3 mb-5">
               <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
               {t("home.guidesShelf.eyebrow")}
             </p>
             <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,3vw,2.25rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
               {t("home.guidesShelf.title")}
             </h2>
-            <div className="w-12 h-px bg-[color:var(--color-taupe-dark)] mb-6" />
+            <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-6" />
             <p className="italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/80 mb-8 text-pretty">
               {t("home.guidesShelf.subtitle")}
             </p>
@@ -55,11 +55,11 @@ export function GuidesShelf() {
               <Link
                 to="/outils"
                 hash="guides"
-                className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-navy)] hover:text-[color:var(--color-taupe-dark)] transition-colors"
+                className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-navy)] hover:text-[color:var(--color-bronze)] transition-colors"
               >
                 <span className="relative">
                   {t("home.guidesShelf.ctaFull")}
-                  <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-taupe-dark)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                  <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                 </span>
                 <ArrowRight
                   size={14}
@@ -70,7 +70,7 @@ export function GuidesShelf() {
             </HeartbeatCta>
             {/* Teaser editorial — surface cream, taupe-dark pour contraste. */}
             <p
-              className="mt-4 italic text-[color:var(--color-taupe-dark)] text-[clamp(0.8125rem,1.05vw,0.875rem)] leading-snug max-w-md text-pretty"
+              className="mt-4 italic text-[color:var(--color-bronze)] text-[clamp(0.8125rem,1.05vw,0.875rem)] leading-snug max-w-md text-pretty"
             >
               {lang === "fr"
                 ? "Cinq guides et deux fiches techniques — pré-approbation, refi, renouvellement, première propriété."
@@ -87,7 +87,7 @@ export function GuidesShelf() {
                   <Link
                     to="/outils"
                     hash={item.kind === "guide" ? "guides" : "documents"}
-                    className="group flex items-start gap-[clamp(1.25rem,2vw,1.75rem)] py-[clamp(1.5rem,2vw,1.75rem)] border-b border-[color:var(--color-taupe)]/40 transition-colors duration-300 hover:border-[color:var(--color-taupe-dark)]"
+                    className="group flex items-start gap-[clamp(1.25rem,2vw,1.75rem)] py-[clamp(1.5rem,2vw,1.75rem)] border-b border-[color:var(--color-taupe)]/40 transition-colors duration-300 hover:border-[color:var(--color-bronze)]"
                   >
                     {/* Numéro Cormorant italic XL — pattern table-of-contents magazine */}
                     <span
@@ -103,7 +103,7 @@ export function GuidesShelf() {
                       <div className="flex items-center gap-2 mb-1">
                         <Icon
                           size={12}
-                          className="text-[color:var(--color-taupe-dark)]"
+                          className="text-[color:var(--color-bronze)]"
                           aria-hidden="true"
                         />
                         <p className="eyebrow text-[color:var(--color-navy)] text-[10px]">
@@ -124,7 +124,7 @@ export function GuidesShelf() {
 
                     {/* Right column : Coming Soon badge + arrow */}
                     <div className="shrink-0 flex flex-col items-end gap-3">
-                      <span className="eyebrow text-[color:var(--color-navy)] text-[9px] border-l-2 border-[color:var(--color-taupe-dark)] pl-2">
+                      <span className="eyebrow text-[color:var(--color-navy)] text-[9px] border-l-2 border-[color:var(--color-bronze)] pl-2">
                         {t("home.guidesShelf.comingSoon")}
                       </span>
                       <ArrowRight

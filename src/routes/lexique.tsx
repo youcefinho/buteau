@@ -66,17 +66,17 @@ function LexiquePage() {
                 {g.term[lang]}
               </h2>
               {g.term.fr_alt && lang === "fr" && (
-                <span className="text-xs italic text-[color:var(--color-taupe-dark)]">
+                <span className="text-xs italic text-[color:var(--color-bronze)]">
                   {g.term.fr_alt.join(", ")}
                 </span>
               )}
             </div>
-            <div className="w-8 h-0.5 bg-[color:var(--color-taupe-dark)] my-3" />
+            <div className="w-8 h-0.5 bg-[color:var(--color-bronze)] my-3" />
             <p className="text-[clamp(0.875rem,1.2vw,1rem)] leading-relaxed text-[color:var(--color-navy-deep)]/85 text-pretty hyphens-auto">
               {g.definition[lang]}
             </p>
             {g.source && (
-              <p className="eyebrow text-[color:var(--color-taupe-dark)] mt-3">
+              <p className="eyebrow text-[color:var(--color-bronze)] mt-3">
                 Source : {g.source}
               </p>
             )}

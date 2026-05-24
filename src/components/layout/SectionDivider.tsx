@@ -36,7 +36,7 @@ const B_PATH =
 function ButeauMonogram({ tone }: { tone: "light" | "dark" | "bronze" }) {
   const bColor =
     tone === "dark" ? "var(--color-cream)" : "var(--color-navy-deep)";
-  const bronzeColor = "var(--color-taupe-dark)";
+  const bronzeColor = "var(--color-bronze)";
   return (
     <svg
       width="56"
@@ -115,8 +115,8 @@ export function SectionDivider({
       : "bg-[color:var(--color-taupe)]/50";
   const ornamentColor =
     tone === "dark"
-      ? "text-[color:var(--color-taupe-dark)]/85"
-      : "text-[color:var(--color-taupe-dark)]";
+      ? "text-[color:var(--color-bronze)]/85"
+      : "text-[color:var(--color-bronze)]";
 
   return (
     <div

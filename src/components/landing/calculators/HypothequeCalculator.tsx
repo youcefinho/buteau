@@ -200,7 +200,7 @@ export function HypothequeCalculator() {
           <div className="lg:col-span-2 surface-navy p-8 md:p-12 flex flex-col justify-between gap-10 relative overflow-hidden">
             {/* Filigrane "$" éditorial en arrière-plan */}
             <span
-              className="absolute -top-8 -right-6 font-[var(--font-editorial)] italic text-[color:var(--color-taupe-dark)]/10 text-[16rem] leading-none pointer-events-none select-none"
+              className="absolute -top-8 -right-6 font-[var(--font-editorial)] italic text-[color:var(--color-bronze)]/10 text-[16rem] leading-none pointer-events-none select-none"
               aria-hidden="true"
             >
               $
@@ -219,7 +219,7 @@ export function HypothequeCalculator() {
                   : "—"}
               </p>
               <div className="flex items-center gap-3 mt-5">
-                <span className="w-6 h-px bg-[color:var(--color-taupe-dark)]" aria-hidden="true" />
+                <span className="w-6 h-px bg-[color:var(--color-bronze)]" aria-hidden="true" />
                 <p className="italic text-[color:var(--color-cream)]/70 text-sm">
                   {lang === "fr" ? "par mois" : "per month"}
                 </p>
@@ -235,10 +235,10 @@ export function HypothequeCalculator() {
               <button
                 type="button"
                 onClick={handleShare}
-                className="group w-full inline-flex items-center justify-center gap-2 py-2 font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-cream)]/70 hover:text-[color:var(--color-taupe-light)] transition-colors"
+                className="group w-full inline-flex items-center justify-center gap-2 py-2 font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-cream)]/70 hover:text-[color:var(--color-bronze-soft)] transition-colors"
               >
                 {shareCopied ? (
-                  <Check size={14} className="text-[color:var(--color-taupe-light)]" aria-hidden="true" />
+                  <Check size={14} className="text-[color:var(--color-bronze-soft)]" aria-hidden="true" />
                 ) : (
                   <Share2 size={14} aria-hidden="true" />
                 )}
@@ -254,10 +254,10 @@ export function HypothequeCalculator() {
             {/* Sparkline column */}
             <div className="lg:col-span-7 space-y-3">
               <div className="flex items-baseline justify-between gap-3">
-                <p className="eyebrow text-[color:var(--color-taupe-dark)]">
+                <p className="eyebrow text-[color:var(--color-bronze)]">
                   {lang === "fr" ? "Courbe d'amortissement" : "Amortization curve"}
                 </p>
-                <p className="text-xs italic text-[color:var(--color-taupe-dark)]">
+                <p className="text-xs italic text-[color:var(--color-bronze)]">
                   {lang === "fr"
                     ? `sur ${result.numberOfPayments / 12} ans`
                     : `over ${result.numberOfPayments / 12} years`}
@@ -269,7 +269,7 @@ export function HypothequeCalculator() {
                 monthlyRate={result.monthlyRate}
                 numberOfPayments={result.numberOfPayments}
               />
-              <p className="text-[10px] italic text-[color:var(--color-taupe-dark)] mt-2">
+              <p className="text-[10px] italic text-[color:var(--color-bronze)] mt-2">
                 {lang === "fr"
                   ? "Plus le contrat avance, plus la part capital remplace les intérêts."
                   : "As the loan progresses, the principal share replaces the interest share."}
@@ -279,7 +279,7 @@ export function HypothequeCalculator() {
             {/* Multi-résultats column — total intérêts vs total payé */}
             <div className="lg:col-span-5 space-y-5 lg:border-l lg:border-[color:var(--color-taupe)]/40 lg:pl-8">
               <div>
-                <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-2">
+                <p className="eyebrow text-[color:var(--color-bronze)] mb-2">
                   {lang === "fr" ? "Intérêts totaux" : "Total interest"}
                 </p>
                 <p className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-3xl tracking-[-0.01em] tabular-nums">
@@ -287,21 +287,21 @@ export function HypothequeCalculator() {
                 </p>
               </div>
 
-              <div className="signature-line w-12 bg-[color:var(--color-taupe-dark)]" />
+              <div className="signature-line w-12 bg-[color:var(--color-bronze)]" />
 
               <div>
-                <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-2">
+                <p className="eyebrow text-[color:var(--color-bronze)] mb-2">
                   {lang === "fr" ? "Coût total du prêt" : "Total cost of loan"}
                 </p>
                 <p className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-3xl tracking-[-0.01em] tabular-nums">
                   {formatLocaleCurrency(Math.round(result.totalPaid), lang)}
                 </p>
-                <p className="text-xs italic text-[color:var(--color-taupe-dark)] mt-1">
+                <p className="text-xs italic text-[color:var(--color-bronze)] mt-1">
                   {lang === "fr" ? "capital + intérêts" : "principal + interest"}
                 </p>
               </div>
 
-              <p className="text-[10px] leading-relaxed text-[color:var(--color-taupe-dark)] pt-2 italic border-t border-[color:var(--color-taupe)]/30 mt-4 text-pretty hyphens-auto">
+              <p className="text-[10px] leading-relaxed text-[color:var(--color-bronze)] pt-2 italic border-t border-[color:var(--color-taupe)]/30 mt-4 text-pretty hyphens-auto">
                 {lang === "fr"
                   ? "Estimation à taux constant. La réalité varie selon les renouvellements, les paiements anticipés et les conditions du prêteur."
                   : "Estimate at constant rate. Actual values vary with renewals, prepayments, and lender conditions."}
@@ -322,7 +322,7 @@ export function HypothequeCalculator() {
         )}
 
         {/* Disclaimer AMF en bas */}
-        <p className="text-xs leading-relaxed text-[color:var(--color-taupe-dark)] max-w-3xl mx-auto text-center mt-8 italic text-pretty hyphens-auto">
+        <p className="text-xs leading-relaxed text-[color:var(--color-bronze)] max-w-3xl mx-auto text-center mt-8 italic text-pretty hyphens-auto">
           {t("tools.calc.disclaimer")}
         </p>
       </Container>
@@ -361,7 +361,7 @@ function CalcSliderField({
     <div className="space-y-3">
       {/* Label eyebrow + value display */}
       <div className="flex items-baseline justify-between gap-3">
-        <label htmlFor={id} className="eyebrow text-[color:var(--color-taupe-dark)]">
+        <label htmlFor={id} className="eyebrow text-[color:var(--color-bronze)]">
           {label}
         </label>
         <output
@@ -376,7 +376,7 @@ function CalcSliderField({
       <div className="relative pt-1">
         {/* Fill colored portion (bronze) — utilise pseudo-element via background */}
         <div
-          className="absolute top-1/2 left-0 h-px bg-[color:var(--color-taupe-dark)] pointer-events-none transition-[width] duration-150"
+          className="absolute top-1/2 left-0 h-px bg-[color:var(--color-bronze)] pointer-events-none transition-[width] duration-150"
           style={{ width: `${percent}%`, transform: "translateY(-50%)" }}
           aria-hidden="true"
         />
@@ -394,7 +394,7 @@ function CalcSliderField({
       </div>
 
       {/* Min/Max labels */}
-      <div className="flex justify-between text-[10px] eyebrow text-[color:var(--color-taupe-dark)]/70">
+      <div className="flex justify-between text-[10px] eyebrow text-[color:var(--color-bronze)]/70">
         <span>{minLabel}</span>
         <span>{maxLabel}</span>
       </div>

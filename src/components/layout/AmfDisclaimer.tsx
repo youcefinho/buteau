@@ -28,11 +28,11 @@ export function AmfDisclaimer({ variant = "inline", className }: AmfDisclaimerPr
     return (
       <span
         className={cn(
-          "inline-flex items-center gap-1.5 px-2.5 py-1 border border-[color:var(--color-taupe)]/50 text-[color:var(--color-taupe-dark)] eyebrow text-[10px]",
+          "inline-flex items-center gap-1.5 px-2.5 py-1 border border-[color:var(--color-taupe)]/50 text-[color:var(--color-bronze)] eyebrow text-[10px]",
           className,
         )}
       >
-        <Shield size={11} aria-hidden="true" className="text-[color:var(--color-taupe-dark)]" />
+        <Shield size={11} aria-hidden="true" className="text-[color:var(--color-bronze)]" />
         {t("amf.certificateLabel")}
         {certNumber && <span className="ml-1 font-semibold">№ {certNumber}</span>}
       </span>
@@ -43,13 +43,13 @@ export function AmfDisclaimer({ variant = "inline", className }: AmfDisclaimerPr
     return (
       <aside
         className={cn(
-          "bg-[color:var(--color-cream-warm)] border-l-[3px] border-[color:var(--color-taupe-dark)] p-[clamp(1.25rem,2vw,1.5rem)] space-y-3",
+          "bg-[color:var(--color-cream-warm)] border-l-[3px] border-[color:var(--color-bronze)] p-[clamp(1.25rem,2vw,1.5rem)] space-y-3",
           className,
         )}
         aria-label={t("amf.certificateLabel")}
       >
         <div className="flex items-center gap-2.5">
-          <Shield size={16} className="text-[color:var(--color-taupe-dark)]" aria-hidden="true" />
+          <Shield size={16} className="text-[color:var(--color-bronze)]" aria-hidden="true" />
           <p className="eyebrow text-[color:var(--color-navy)]">
             {t("amf.certificateLabel")}
             {certNumber && <span className="ml-2 font-semibold">№ {certNumber}</span>}
@@ -66,7 +66,7 @@ export function AmfDisclaimer({ variant = "inline", className }: AmfDisclaimerPr
   return (
     <p
       className={cn(
-        "text-xs italic leading-relaxed text-[color:var(--color-taupe-dark)]",
+        "text-xs italic leading-relaxed text-[color:var(--color-bronze)]",
         className,
       )}
     >

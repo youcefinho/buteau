@@ -22,12 +22,12 @@ export function TikTokTeaser() {
           {/* Visual cluster */}
           <div className="lg:col-span-4 flex justify-center lg:justify-start">
             <div className="relative">
-              <div className="w-32 h-32 md:w-40 md:h-40 bg-[color:var(--color-navy)] flex items-center justify-center text-[color:var(--color-taupe-light)]">
+              <div className="w-32 h-32 md:w-40 md:h-40 bg-[color:var(--color-navy)] flex items-center justify-center text-[color:var(--color-bronze-soft)]">
                 <Play size={56} strokeWidth={1.5} aria-hidden="true" />
               </div>
               {/* Decorative offset block taupe */}
               <div
-                className="absolute -bottom-4 -right-4 w-32 h-32 md:w-40 md:h-40 border-2 border-[color:var(--color-taupe-dark)] -z-10"
+                className="absolute -bottom-4 -right-4 w-32 h-32 md:w-40 md:h-40 border-2 border-[color:var(--color-bronze)] -z-10"
                 aria-hidden="true"
               />
             </div>
@@ -51,11 +51,11 @@ export function TikTokTeaser() {
               <HeartbeatCta>
                 <Link
                   to="/capsules"
-                  className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-navy)] hover:text-[color:var(--color-taupe-dark)] transition-colors"
+                  className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-navy)] hover:text-[color:var(--color-bronze)] transition-colors"
                 >
                   <span className="relative">
                     {t("tools.tiktok.ctaCollection")}
-                    <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-taupe-dark)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                    <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                   </span>
                   <ArrowRight
                     size={14}
@@ -68,19 +68,19 @@ export function TikTokTeaser() {
                 href="https://www.tiktok.com/@equipebuteau"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-taupe-dark)] hover:text-[color:var(--color-navy)] transition-colors"
+                className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze)] hover:text-[color:var(--color-navy)] transition-colors"
               >
                 <Play size={12} aria-hidden="true" />
                 <span className="relative">
                   {t("tools.tiktok.ctaTikTok")}
-                  <span className="absolute left-0 -bottom-1 w-0 h-px bg-[color:var(--color-taupe-dark)] group-hover:w-full transition-[width] duration-500" />
+                  <span className="absolute left-0 -bottom-1 w-0 h-px bg-[color:var(--color-bronze)] group-hover:w-full transition-[width] duration-500" />
                 </span>
               </a>
             </div>
             {/* Teaser editorial — surface cream, taupe-dark. Décrit le canal
                 TikTok + la série de capsules courtes. */}
             <p
-              className="mt-3 italic text-[color:var(--color-taupe-dark)] text-[clamp(0.8125rem,1.05vw,0.875rem)] leading-snug max-w-md text-pretty"
+              className="mt-3 italic text-[color:var(--color-bronze)] text-[clamp(0.8125rem,1.05vw,0.875rem)] leading-snug max-w-md text-pretty"
             >
               {isFr
                 ? "Suivez @equipebuteau pour les capsules en série — toutes les questions hypothécaires courantes."

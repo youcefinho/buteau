@@ -30,13 +30,13 @@ export function BlogTeaser() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* Content (8 cols) */}
           <div className="lg:col-span-8 space-y-5 lg:order-1 order-2">
-            <p className="eyebrow text-[color:var(--color-taupe-light)]">
+            <p className="eyebrow text-[color:var(--color-bronze-soft)]">
               {t("tools.blog.eyebrow")}
             </p>
             <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(1.5rem,3vw,2.25rem)] tracking-[-0.01em] leading-tight text-balance">
               {t("tools.blog.title")}
             </h2>
-            <div className="w-12 h-0.5 bg-[color:var(--color-taupe-dark)]" />
+            <div className="w-12 h-0.5 bg-[color:var(--color-bronze)]" />
             <p className="text-[clamp(1rem,1.4vw,1.125rem)] leading-relaxed text-[color:var(--color-cream)]/85 text-pretty">
               {t("tools.blog.body")}
             </p>
@@ -44,11 +44,11 @@ export function BlogTeaser() {
               <HeartbeatCta>
                 <Link
                   to="/journal"
-                  className="group inline-flex items-center gap-2 font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-taupe-light)] hover:text-[color:var(--color-cream)] transition-colors"
+                  className="group inline-flex items-center gap-2 font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze-soft)] hover:text-[color:var(--color-cream)] transition-colors"
                 >
                   <span className="relative">
                     {t("tools.blog.ctaLabel")}
-                    <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-taupe-dark)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                    <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                   </span>
                   <ArrowRight
                     size={14}
@@ -79,7 +79,7 @@ export function BlogTeaser() {
                 <FileText size={56} strokeWidth={1.5} aria-hidden="true" />
               </div>
               <div
-                className="absolute -bottom-4 -left-4 w-32 h-32 md:w-40 md:h-40 border-2 border-[color:var(--color-taupe)] -z-10 transition-colors duration-500 group-hover:border-[color:var(--color-taupe-dark)]"
+                className="absolute -bottom-4 -left-4 w-32 h-32 md:w-40 md:h-40 border-2 border-[color:var(--color-taupe)] -z-10 transition-colors duration-500 group-hover:border-[color:var(--color-bronze)]"
                 aria-hidden="true"
               />
             </Link>

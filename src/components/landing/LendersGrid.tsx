@@ -35,12 +35,12 @@ export function LendersGrid() {
           {lenders.map((l, idx) => (
             <Tiltable key={idx} maxDeg={5}>
             <article
-              className="group relative halo-glow bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/40 p-8 transition-all duration-500 hover:border-[color:var(--color-taupe-dark)]/70 hover:shadow-[0_18px_40px_-22px_rgba(16,34,61,0.28)] flex flex-col h-full"
+              className="group relative halo-glow bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/40 p-8 transition-all duration-500 hover:border-[color:var(--color-bronze)]/70 hover:shadow-[0_18px_40px_-22px_rgba(16,34,61,0.28)] flex flex-col h-full"
             >
               {/* Numéro filigrane (01-09) */}
               <span
                 aria-hidden="true"
-                className="absolute top-4 right-5 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/30 text-4xl leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-[color:var(--color-taupe-dark)]/40"
+                className="absolute top-4 right-5 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/30 text-4xl leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-[color:var(--color-bronze)]/40"
               >
                 {String(idx + 1).padStart(2, "0")}
               </span>
@@ -58,7 +58,7 @@ export function LendersGrid() {
               </div>
 
               {/* Signature line bronze qui s'étend au hover */}
-              <div className="w-8 h-px bg-[color:var(--color-taupe-dark)] mb-4 transition-[width] duration-500 group-hover:w-14" />
+              <div className="w-8 h-px bg-[color:var(--color-bronze)] mb-4 transition-[width] duration-500 group-hover:w-14" />
 
               {/* Nom */}
               <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em] mb-3 leading-snug text-balance">
@@ -71,7 +71,7 @@ export function LendersGrid() {
                 {l.city && (
                   <>
                     <br />
-                    <span className="text-[color:var(--color-taupe-dark)]">{l.city}</span>
+                    <span className="text-[color:var(--color-bronze)]">{l.city}</span>
                   </>
                 )}
               </address>

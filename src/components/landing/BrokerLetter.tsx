@@ -52,7 +52,7 @@ export function BrokerLetter() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-[clamp(2.5rem,5vw,4rem)] items-start">
           {/* Lettre — col 8 */}
           <div className="lg:col-span-8 lg:pr-8">
-            <p className="eyebrow text-[color:var(--color-taupe-dark)] inline-flex items-center gap-3 mb-10">
+            <p className="eyebrow text-[color:var(--color-bronze)] inline-flex items-center gap-3 mb-10">
               <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
               {t("letter.eyebrow")}
               <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
@@ -121,8 +121,8 @@ export function BrokerLetter() {
             </div>
             {/* Nom + role */}
             <div className="order-2 lg:order-3 mt-6 lg:mt-8 lg:text-center w-full max-w-[320px]">
-              <div className="w-12 h-px bg-[color:var(--color-taupe-dark)] lg:mx-auto mb-3" />
-              <p className="eyebrow text-[color:var(--color-taupe-dark)]">
+              <div className="w-12 h-px bg-[color:var(--color-bronze)] lg:mx-auto mb-3" />
+              <p className="eyebrow text-[color:var(--color-bronze)]">
                 {t("letter.role")}
               </p>
             </div>
@@ -149,7 +149,7 @@ export function BrokerLetter() {
             type="button"
             onClick={(e) => { e.stopPropagation(); setLightboxOpen(false); }}
             aria-label={lang === "fr" ? "Fermer" : "Close"}
-            className="absolute top-4 right-4 md:top-6 md:right-6 w-11 h-11 flex items-center justify-center rounded-full bg-[color:var(--color-navy-deep)]/80 border border-[color:var(--color-taupe)]/40 text-[color:var(--color-cream)] hover:bg-[color:var(--color-taupe-dark)]/20 hover:border-[color:var(--color-taupe-dark)]/60 transition-all duration-200 z-10"
+            className="absolute top-4 right-4 md:top-6 md:right-6 w-11 h-11 flex items-center justify-center rounded-full bg-[color:var(--color-navy-deep)]/80 border border-[color:var(--color-taupe)]/40 text-[color:var(--color-cream)] hover:bg-[color:var(--color-bronze)]/20 hover:border-[color:var(--color-bronze)]/60 transition-all duration-200 z-10"
           >
             <X size={20} strokeWidth={1.8} aria-hidden />
           </button>

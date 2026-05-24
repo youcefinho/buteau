@@ -83,14 +83,14 @@ export function CalculatorPreview() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           {/* Header column — 5/12 */}
           <div className="lg:col-span-5 lg:sticky lg:top-32">
-            <p className="eyebrow text-[color:var(--color-taupe-dark)] inline-flex items-center gap-3 mb-5">
+            <p className="eyebrow text-[color:var(--color-bronze)] inline-flex items-center gap-3 mb-5">
               <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
               {t("home.calcPreview.eyebrow")}
             </p>
             <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,3vw,2.25rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
               {t("home.calcPreview.title")}
             </h2>
-            <div className="w-12 h-px bg-[color:var(--color-taupe-dark)] mb-6" />
+            <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-6" />
             <p className="text-base leading-[1.65] text-[color:var(--color-navy-deep)]/80 mb-8 text-pretty">
               {t("home.calcPreview.subtitle")}
             </p>
@@ -99,11 +99,11 @@ export function CalculatorPreview() {
               <Link
                 to="/outils"
                 hash="calculateur"
-                className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-navy)] hover:text-[color:var(--color-taupe-dark)] transition-colors"
+                className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-navy)] hover:text-[color:var(--color-bronze)] transition-colors"
               >
                 <span className="relative">
                   {t("home.calcPreview.ctaFull")}
-                  <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-taupe-dark)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                  <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                 </span>
                 <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
               </Link>
@@ -154,7 +154,7 @@ export function CalculatorPreview() {
             <div className="md:col-span-2 surface-navy p-[clamp(1.75rem,2.5vw,2rem)] flex flex-col justify-between gap-6 relative overflow-hidden">
               <span
                 aria-hidden="true"
-                className="absolute -top-6 -right-4 font-[var(--font-editorial)] italic text-[color:var(--color-taupe-dark)]/12 text-[10rem] leading-none pointer-events-none select-none"
+                className="absolute -top-6 -right-4 font-[var(--font-editorial)] italic text-[color:var(--color-bronze)]/12 text-[10rem] leading-none pointer-events-none select-none"
               >
                 $
               </span>
@@ -171,7 +171,7 @@ export function CalculatorPreview() {
                     : "—"}
                 </p>
                 <div className="flex items-center gap-2 mt-3">
-                  <span className="block w-5 h-px bg-[color:var(--color-taupe-dark)]" aria-hidden="true" />
+                  <span className="block w-5 h-px bg-[color:var(--color-bronze)]" aria-hidden="true" />
                   <p className="italic text-[color:var(--color-cream)]/70 text-xs">
                     {lang === "fr" ? "par mois" : "per month"}
                   </p>
@@ -265,7 +265,7 @@ function CalcSliderMini({
   return (
     <div className="space-y-2">
       <div className="flex items-baseline justify-between gap-3">
-        <label htmlFor={id} className="eyebrow text-[color:var(--color-taupe-dark)]">
+        <label htmlFor={id} className="eyebrow text-[color:var(--color-bronze)]">
           {label}
         </label>
         {/* Fix MEDIUM : output sans htmlFor (l'attribut for sur output doit pointer vers les
@@ -279,7 +279,7 @@ function CalcSliderMini({
       </div>
       <div className="relative pt-1">
         <div
-          className="absolute top-1/2 left-0 h-px bg-[color:var(--color-taupe-dark)] pointer-events-none transition-[width] duration-150"
+          className="absolute top-1/2 left-0 h-px bg-[color:var(--color-bronze)] pointer-events-none transition-[width] duration-150"
           style={{ width: `${percent}%`, transform: "translateY(-50%)" }}
           aria-hidden="true"
         />

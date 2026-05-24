@@ -84,8 +84,8 @@ export function ContactForm({ source = "home_contact_form" }: ContactFormProps) 
   if (status === "success") {
     return (
       <div className="text-center py-12 space-y-3">
-        <Loader2 size={32} className="mx-auto animate-spin text-[color:var(--color-taupe-dark)]" aria-hidden="true" />
-        <p className="text-sm italic text-[color:var(--color-taupe-dark)]">
+        <Loader2 size={32} className="mx-auto animate-spin text-[color:var(--color-bronze)]" aria-hidden="true" />
+        <p className="text-sm italic text-[color:var(--color-bronze)]">
           {t("form.submitting")}
         </p>
       </div>
@@ -152,7 +152,7 @@ export function ContactForm({ source = "home_contact_form" }: ContactFormProps) 
           name="consent"
           type="checkbox"
           required
-          className="mt-1 w-4 h-4 accent-[color:var(--color-taupe-dark)] cursor-pointer shrink-0"
+          className="mt-1 w-4 h-4 accent-[color:var(--color-bronze)] cursor-pointer shrink-0"
         />
         <span className="text-xs leading-relaxed text-[color:var(--color-navy-deep)]/85">
           {t("form.consentLabel")}{" "}
@@ -217,11 +217,11 @@ function Field({
   inputMode?: "text" | "email" | "tel" | "decimal" | "numeric";
 }) {
   const baseClass =
-    "w-full px-4 py-3 border-2 border-[color:var(--color-taupe)] bg-[color:var(--color-cream)] text-sm text-[color:var(--color-navy-deep)] outline-none transition-all duration-300 focus:border-[color:var(--color-taupe-dark)] focus:shadow-[0_0_0_3px_oklch(0.704_0.077_56/0.18)] focus:bg-[color:var(--color-cream-warm)] hover:border-[color:var(--color-taupe-dark)]/45";
+    "w-full px-4 py-3 border-2 border-[color:var(--color-taupe)] bg-[color:var(--color-cream)] text-sm text-[color:var(--color-navy-deep)] outline-none transition-all duration-300 focus:border-[color:var(--color-bronze)] focus:shadow-[0_0_0_3px_oklch(0.704_0.077_56/0.18)] focus:bg-[color:var(--color-cream-warm)] hover:border-[color:var(--color-bronze)]/45";
 
   return (
     <div className="space-y-1.5">
-      <label htmlFor={id} className="eyebrow text-[color:var(--color-taupe-dark)] block">
+      <label htmlFor={id} className="eyebrow text-[color:var(--color-bronze)] block">
         {label} {required && <span className="text-[color:var(--color-navy)]">*</span>}
       </label>
       {type === "textarea" ? (

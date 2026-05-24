@@ -119,7 +119,7 @@ export function GlossaryModal() {
         <div className="sticky top-0 z-10 px-[clamp(1.5rem,3vw,2.5rem)] py-5 bg-[color:var(--color-cream)] border-b border-[color:var(--color-border)]">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <p className="eyebrow text-[color:var(--color-taupe-dark)]">
+              <p className="eyebrow text-[color:var(--color-bronze)]">
                 {lang === "fr" ? "Lexique" : "Glossary"}
               </p>
               <h2
@@ -143,7 +143,7 @@ export function GlossaryModal() {
           <div className="relative">
             <Search
               size={16}
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-[color:var(--color-taupe-dark)] pointer-events-none"
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-[color:var(--color-bronze)] pointer-events-none"
               aria-hidden
             />
             <input
@@ -152,7 +152,7 @@ export function GlossaryModal() {
               onChange={(e) => setQuery(e.target.value)}
               placeholder={lang === "fr" ? "Rechercher un terme..." : "Search a term..."}
               aria-label={lang === "fr" ? "Rechercher un terme" : "Search a term"}
-              className="w-full pl-10 pr-4 py-2.5 bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/50 rounded-sm text-[color:var(--color-navy-deep)] placeholder:text-[color:var(--color-taupe-dark)] focus:outline-none focus:border-[color:var(--color-taupe-dark)] transition-colors"
+              className="w-full pl-10 pr-4 py-2.5 bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/50 rounded-sm text-[color:var(--color-navy-deep)] placeholder:text-[color:var(--color-bronze)] focus:outline-none focus:border-[color:var(--color-bronze)] transition-colors"
             />
           </div>
         </div>
@@ -160,7 +160,7 @@ export function GlossaryModal() {
         {/* Body — list of terms (filtered by query) */}
         <div className="px-[clamp(1.5rem,3vw,2.5rem)] py-8 space-y-8">
           {filteredGlossary.length === 0 && (
-            <p className="text-center italic text-sm text-[color:var(--color-taupe-dark)] py-8">
+            <p className="text-center italic text-sm text-[color:var(--color-bronze)] py-8">
               {lang === "fr"
                 ? `Aucun terme ne correspond à "${query}".`
                 : `No term matches "${query}".`}
@@ -173,17 +173,17 @@ export function GlossaryModal() {
                   {g.term[lang]}
                 </h3>
                 {g.term.fr_alt && lang === "fr" && (
-                  <span className="text-xs italic text-[color:var(--color-taupe-dark)]">
+                  <span className="text-xs italic text-[color:var(--color-bronze)]">
                     {g.term.fr_alt.join(", ")}
                   </span>
                 )}
               </div>
-              <div className="w-8 h-0.5 bg-[color:var(--color-taupe-dark)] my-3" />
+              <div className="w-8 h-0.5 bg-[color:var(--color-bronze)] my-3" />
               <p className="text-sm leading-relaxed text-[color:var(--color-navy-deep)]/85 text-pretty hyphens-auto">
                 {g.definition[lang]}
               </p>
               {g.source && (
-                <p className="eyebrow text-[color:var(--color-taupe-dark)] mt-3">
+                <p className="eyebrow text-[color:var(--color-bronze)] mt-3">
                   {lang === "fr" ? "Source" : "Source"} : {g.source}
                 </p>
               )}
@@ -196,7 +196,7 @@ export function GlossaryModal() {
               <Link
                 to="/lexique"
                 onClick={close}
-                className="group flex items-center justify-between gap-4 p-5 rounded-sm bg-[color:var(--color-taupe-dark)]/8 border border-[color:var(--color-taupe-dark)]/30 hover:bg-[color:var(--color-taupe-dark)]/15 hover:border-[color:var(--color-taupe-dark)]/55 transition-all"
+                className="group flex items-center justify-between gap-4 p-5 rounded-sm bg-[color:var(--color-bronze)]/8 border border-[color:var(--color-bronze)]/30 hover:bg-[color:var(--color-bronze)]/15 hover:border-[color:var(--color-bronze)]/55 transition-all"
               >
                 <div>
                   <div className="text-[10px] uppercase tracking-[0.32em] text-[color:var(--color-navy)] font-bold mb-1">

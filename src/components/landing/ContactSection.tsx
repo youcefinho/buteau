@@ -40,11 +40,11 @@ export function ContactSection() {
             {/* Corner accent bronze */}
             <span
               aria-hidden="true"
-              className="absolute top-0 left-0 w-12 h-px bg-[color:var(--color-taupe-dark)]"
+              className="absolute top-0 left-0 w-12 h-px bg-[color:var(--color-bronze)]"
             />
             <span
               aria-hidden="true"
-              className="absolute top-0 left-0 w-px h-12 bg-[color:var(--color-taupe-dark)]"
+              className="absolute top-0 left-0 w-px h-12 bg-[color:var(--color-bronze)]"
             />
 
             <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[var(--tracking-eyebrow)] mb-6 text-balance">
@@ -78,8 +78,8 @@ export function ContactSection() {
             </ul>
 
             {/* Carte adresse — bordure taupe minimale */}
-            <div className="bg-[color:var(--color-cream-warm)] border-l-[3px] border-[color:var(--color-taupe-dark)] pl-5 py-4">
-              <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-2">
+            <div className="bg-[color:var(--color-cream-warm)] border-l-[3px] border-[color:var(--color-bronze)] pl-5 py-4">
+              <p className="eyebrow text-[color:var(--color-bronze)] mb-2">
                 {t("nav.contact")} — {config.address.addressLocality}
               </p>
               <address className="not-italic text-sm leading-relaxed text-[color:var(--color-navy-deep)]/85">
@@ -111,11 +111,11 @@ function ContactLine({
 }) {
   const inner = (
     <div className="group flex items-start gap-4">
-      <div className="shrink-0 mt-1 text-[color:var(--color-taupe-dark)] transition-transform duration-300 group-hover:translate-x-0.5">
+      <div className="shrink-0 mt-1 text-[color:var(--color-bronze)] transition-transform duration-300 group-hover:translate-x-0.5">
         {icon}
       </div>
       <div className="flex-1 min-w-0">
-        <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-1">{label}</p>
+        <p className="eyebrow text-[color:var(--color-bronze)] mb-1">{label}</p>
         <p
           className={`font-[var(--font-display)] text-[color:var(--color-navy-deep)] text-[clamp(1rem,1.4vw,1.125rem)] font-semibold ${
             breakAll ? "break-all" : ""

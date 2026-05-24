@@ -17,8 +17,8 @@ export function InstitutionMissing() {
           <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.04em] leading-snug text-balance">
             {t("institutions.missing.title")}
           </h3>
-          <div className="w-12 h-0.5 bg-[color:var(--color-taupe-dark)] mx-auto" />
-          <p className="text-[clamp(1rem,1.4vw,1.125rem)] italic text-[color:var(--color-taupe-dark)] text-pretty">
+          <div className="w-12 h-0.5 bg-[color:var(--color-bronze)] mx-auto" />
+          <p className="text-[clamp(1rem,1.4vw,1.125rem)] italic text-[color:var(--color-bronze)] text-pretty">
             {t("institutions.missing.body")}
           </p>
           <div className="pt-2">

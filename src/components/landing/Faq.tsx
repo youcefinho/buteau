@@ -56,14 +56,14 @@ export function Faq() {
             <Accordion.Item
               key={item.q.slice(0, 30)}
               value={`faq-${idx}`}
-              className="group bg-[color:var(--color-cream)] border border-[color:var(--color-taupe)]/50 overflow-hidden transition-colors duration-300 data-[state=open]:border-[color:var(--color-taupe-dark)]"
+              className="group bg-[color:var(--color-cream)] border border-[color:var(--color-taupe)]/50 overflow-hidden transition-colors duration-300 data-[state=open]:border-[color:var(--color-bronze)]"
             >
               <Accordion.Header>
                 <Accordion.Trigger className="w-full px-[clamp(1.5rem,2.5vw,2rem)] py-[clamp(1.25rem,1.8vw,1.5rem)] flex items-center justify-between text-left hover:bg-[color:var(--color-cream-warm)] transition-colors gap-5 min-h-[5.5rem]">
                   {/* Numero filigrane Cormorant a gauche */}
                   <span
                     aria-hidden="true"
-                    className="font-[var(--font-editorial)] italic text-[color:var(--color-taupe)] group-data-[state=open]:text-[color:var(--color-taupe-dark)] text-2xl shrink-0 transition-colors w-8"
+                    className="font-[var(--font-editorial)] italic text-[color:var(--color-taupe)] group-data-[state=open]:text-[color:var(--color-bronze)] text-2xl shrink-0 transition-colors w-8"
                   >
                     {String(idx + 1).padStart(2, "0")}
                   </span>
@@ -71,7 +71,7 @@ export function Faq() {
                     {item.q}
                   </span>
                   <ChevronDown
-                    className="w-5 h-5 shrink-0 text-[color:var(--color-taupe-dark)] group-data-[state=open]:text-[color:var(--color-taupe-dark)] transition-all duration-300 group-data-[state=open]:rotate-180"
+                    className="w-5 h-5 shrink-0 text-[color:var(--color-bronze)] group-data-[state=open]:text-[color:var(--color-bronze)] transition-all duration-300 group-data-[state=open]:rotate-180"
                     aria-hidden="true"
                   />
                 </Accordion.Trigger>

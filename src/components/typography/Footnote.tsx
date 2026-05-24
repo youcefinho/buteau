@@ -79,7 +79,7 @@ export function Footnote({ n, children }: { n: number; children: ReactNode }) {
     >
       <a
         href={href}
-        className="text-[color:var(--color-taupe-dark)] hover:text-[color:var(--color-navy)] transition-colors no-underline"
+        className="text-[color:var(--color-bronze)] hover:text-[color:var(--color-navy)] transition-colors no-underline"
         aria-label={`Voir note ${n}`}
       >
         [{n}]
@@ -108,21 +108,21 @@ export function FootnoteList({ title, className }: { title?: string; className?:
       )}
       aria-label="Notes"
     >
-      <ol className="space-y-2 text-sm leading-relaxed text-[color:var(--color-taupe-dark)]">
+      <ol className="space-y-2 text-sm leading-relaxed text-[color:var(--color-bronze)]">
         {notes.map((note) => (
           <li
             key={note.n}
             id={note.id}
             className="flex gap-3"
           >
-            <span className="font-[family-name:var(--font-editorial)] italic text-[color:var(--color-taupe-dark)] flex-shrink-0">
+            <span className="font-[family-name:var(--font-editorial)] italic text-[color:var(--color-bronze)] flex-shrink-0">
               {note.n}.
             </span>
             <span>
               {note.content}{" "}
               <a
                 href={`#${ctx.scopeId}-ref-${note.n}`}
-                className="text-[color:var(--color-taupe-dark)] hover:text-[color:var(--color-navy)] transition-colors no-underline ml-1"
+                className="text-[color:var(--color-bronze)] hover:text-[color:var(--color-navy)] transition-colors no-underline ml-1"
                 aria-label={`Retour à la référence ${note.n}`}
               >
                 ↩

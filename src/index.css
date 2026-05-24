@@ -16,11 +16,9 @@
   --color-taupe-light: oklch(0.840 0.012 84);    /* taupe clarifié dividers */
   --color-taupe-dark: oklch(0.585 0.020 84);     /* taupe assombri texte secondaire */
 
-  /* Bronze caramel retire 2026-05-24 — pivot brand baseline client suite
-     feedback Aby "ne represente pas notre image de marque". Le mockup
-     scratch/buteau/Accueil.html ne definissait que navy + taupe + offwhite.
-     Tous les usages bronze migres vers taupe-dark (accent) + navy (CTAs)
-     + taupe-light (clair tints). */
+  --color-bronze: oklch(0.704 0.077 56);         /* #C69C6D — accent bronze caramel */
+  --color-bronze-deep: oklch(0.620 0.082 52);    /* bronze hover/active */
+  --color-bronze-soft: oklch(0.815 0.060 60);    /* bronze clair tints */
 
   --color-cream: oklch(0.978 0 0);               /* #f9f9f9 — off-white sections claires */
   --color-cream-warm: oklch(0.965 0.005 80);     /* off-white teinté chaud */
@@ -125,18 +123,18 @@ body {
 /* Custom selection — bronze background + cream text + slight letter-spacing
    pour effet "highlighter de luxe" magazine éditorial. */
 ::selection {
-  background: var(--color-taupe-dark);
+  background: var(--color-bronze);
   color: var(--color-cream);
   text-shadow: none;
 }
 ::-moz-selection {
-  background: var(--color-taupe-dark);
+  background: var(--color-bronze);
   color: var(--color-cream);
 }
 
 /* Focus-visible global (WCAG 2.4.7) — voir skill intralys-skip-content-a11y */
 :focus-visible {
-  outline: 2px solid var(--color-taupe-dark);
+  outline: 2px solid var(--color-bronze);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -171,7 +169,7 @@ body {
     border-radius: 0;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: oklch(0.722 0.018 84 / 0.85);
+    background: oklch(0.704 0.077 56 / 0.85);
   }
   /* Firefox */
   html {
@@ -211,15 +209,15 @@ body {
     /* 12 particules à positions pseudo-random */
     -120px 80px 0 oklch(0.722 0.018 84 / 0.3),
     240px 160px 0 oklch(0.722 0.018 84 / 0.4),
-    -80px 320px 0 oklch(0.722 0.018 84 / 0.5),
+    -80px 320px 0 oklch(0.704 0.077 56 / 0.5),
     180px -60px 0 oklch(0.722 0.018 84 / 0.35),
-    320px 240px 0 oklch(0.722 0.018 84 / 0.4),
+    320px 240px 0 oklch(0.704 0.077 56 / 0.4),
     -240px 200px 0 oklch(0.722 0.018 84 / 0.45),
     100px 400px 0 oklch(0.722 0.018 84 / 0.3),
-    -160px -40px 0 oklch(0.722 0.018 84 / 0.5),
+    -160px -40px 0 oklch(0.704 0.077 56 / 0.5),
     280px -120px 0 oklch(0.722 0.018 84 / 0.4),
     -320px 100px 0 oklch(0.722 0.018 84 / 0.35),
-    60px -180px 0 oklch(0.722 0.018 84 / 0.45),
+    60px -180px 0 oklch(0.704 0.077 56 / 0.45),
     160px 320px 0 oklch(0.722 0.018 84 / 0.4);
   animation: ambientFloat 12s ease-in-out infinite;
 }
@@ -260,7 +258,7 @@ body {
   position: absolute;
   inset: -1.25rem;
   border-radius: inherit;
-  background: oklch(0.722 0.018 84 / 0.45);
+  background: oklch(0.704 0.077 56 / 0.45);
   filter: blur(56px);
   pointer-events: none;
   opacity: 0;
@@ -281,11 +279,11 @@ body {
 .text-gradient-bronze {
   background: linear-gradient(
     90deg,
-    var(--color-taupe-dark),
-    var(--color-taupe-light),
-    var(--color-taupe-dark),
-    var(--color-navy),
-    var(--color-taupe-dark)
+    var(--color-bronze),
+    var(--color-bronze-soft),
+    var(--color-bronze),
+    var(--color-bronze-deep),
+    var(--color-bronze)
   );
   background-size: 300% 100%;
   -webkit-background-clip: text;
@@ -320,7 +318,7 @@ body {
     oklch(0.78 0.08 56 / 0.6) 40%,
     transparent 75%
   );
-  box-shadow: 0 0 12px 2px oklch(0.722 0.018 84 / 0.5);
+  box-shadow: 0 0 12px 2px oklch(0.704 0.077 56 / 0.5);
   pointer-events: none;
   z-index: 3;
   opacity: 0;
@@ -346,10 +344,10 @@ body {
   transition: color 240ms cubic-bezier(0.16, 1, 0.3, 1), text-shadow 240ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 .text-glow-hover:hover {
-  color: var(--color-taupe-light);
+  color: var(--color-bronze-soft);
   text-shadow:
     0 0 8px oklch(0.81 0.06 60 / 0.55),
-    0 0 18px oklch(0.722 0.018 84 / 0.30);
+    0 0 18px oklch(0.704 0.077 56 / 0.30);
 }
 
 /* Stagger reveal au mount via data-attribute (vs animation classes individuelles).
@@ -399,16 +397,16 @@ body {
 .custom-cursor[data-cursor-mode="link"] {
   width: 12px;
   height: 12px;
-  background: var(--color-taupe-dark);
-  border-color: var(--color-taupe-dark);
+  background: var(--color-bronze);
+  border-color: var(--color-bronze);
 }
 
 .custom-cursor[data-cursor-mode="text"] {
   width: 2px;
   height: 24px;
   border-radius: 0;
-  background: var(--color-taupe-dark);
-  border-color: var(--color-taupe-dark);
+  background: var(--color-bronze);
+  border-color: var(--color-bronze);
 }
 
 .custom-cursor[data-cursor-mode="image"] {
@@ -428,8 +426,8 @@ body {
 .custom-cursor[data-cursor-mode="drag"] {
   width: 48px;
   height: 48px;
-  background: oklch(0.722 0.018 84 / 0.35);
-  border-color: var(--color-taupe-dark);
+  background: oklch(0.704 0.077 56 / 0.35);
+  border-color: var(--color-bronze);
   backdrop-filter: blur(2px);
 }
 
@@ -479,9 +477,9 @@ body {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: var(--color-taupe-dark);
+  background: var(--color-bronze);
   border: 2px solid var(--color-cream);
-  box-shadow: 0 0 0 1px var(--color-taupe-dark), 0 4px 12px -4px oklch(0.722 0.018 84 / 0.5);
+  box-shadow: 0 0 0 1px var(--color-bronze), 0 4px 12px -4px oklch(0.704 0.077 56 / 0.5);
   cursor: grab;
   margin-top: -8px;
   transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 240ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -489,7 +487,7 @@ body {
 
 .calc-slider::-webkit-slider-thumb:hover {
   transform: scale(1.15);
-  box-shadow: 0 0 0 1px var(--color-taupe-dark), 0 6px 18px -4px oklch(0.722 0.018 84 / 0.7);
+  box-shadow: 0 0 0 1px var(--color-bronze), 0 6px 18px -4px oklch(0.704 0.077 56 / 0.7);
 }
 
 .calc-slider::-webkit-slider-thumb:active {
@@ -508,9 +506,9 @@ body {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: var(--color-taupe-dark);
+  background: var(--color-bronze);
   border: 2px solid var(--color-cream);
-  box-shadow: 0 0 0 1px var(--color-taupe-dark), 0 4px 12px -4px oklch(0.722 0.018 84 / 0.5);
+  box-shadow: 0 0 0 1px var(--color-bronze), 0 4px 12px -4px oklch(0.704 0.077 56 / 0.5);
   cursor: grab;
   transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -521,7 +519,7 @@ body {
 
 .calc-slider:focus-visible::-webkit-slider-thumb,
 .calc-slider:focus-visible::-moz-range-thumb {
-  outline: 2px solid var(--color-taupe-dark);
+  outline: 2px solid var(--color-bronze);
   outline-offset: 4px;
 }
 
@@ -599,7 +597,7 @@ body {
   top: 0;
   left: 0;
   height: 2px;
-  background: var(--color-taupe-dark);
+  background: var(--color-bronze);
   z-index: 60;
   transform-origin: left;
   transition: transform 80ms linear;
@@ -618,7 +616,7 @@ body {
   line-height: 0.85;
   float: left;
   margin: 0.05em 0.12em 0 -0.04em;
-  color: var(--color-taupe-dark);
+  color: var(--color-bronze);
   padding-top: 0.08em;
 }
 
@@ -786,7 +784,7 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    border-top: 1px solid var(--color-taupe-dark);
+    border-top: 1px solid var(--color-bronze);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -810,7 +808,7 @@ body {
   }
 
   .accent-border-bronze {
-    border-left: 3px solid var(--color-taupe-dark);
+    border-left: 3px solid var(--color-bronze);
     padding-left: 1.25rem;
   }
 
@@ -822,9 +820,6 @@ body {
        - Inset 3D : highlight top cream + ombre bottom dark warm
        - Letter-spacing tightening au hover (Cormorant ritual édito)
        - Lift translate-y bumped à -2px (vs -1px) */
-  /* Bouton principal — pivote 2026-05-24 de bronze caramel vers NAVY pour
-     aligner palette baseline client. Garde le slide-in fill pattern + shimmer
-     + inset 3D structure, juste retinté en navy + taupe-light highlight. */
   .btn-bronze {
     display: inline-flex;
     align-items: center;
@@ -837,24 +832,34 @@ body {
     letter-spacing: var(--tracking-eyebrow);
     text-transform: uppercase;
     color: var(--color-cream);
-    /* Living gradient navy — shimmer subtil entre navy + navy-soft */
+    /* Living gradient bronze — shimmer subtil entre bronze + bronze-soft */
     background: linear-gradient(
       135deg,
-      var(--color-navy) 0%,
-      var(--color-navy-soft) 50%,
-      var(--color-navy) 100%
+      var(--color-bronze) 0%,
+      oklch(0.745 0.077 56) 50%,
+      var(--color-bronze) 100%
     );
     background-size: 200% 200%;
     background-position: 0% 50%;
     animation: btn-bronze-shimmer 10s ease-in-out infinite;
-    border: 1px solid var(--color-navy);
-    /* Inset 3D : highlight top taupe-light + ombre bottom navy-deep
-       pour donner du relief au CTA navy sans surcharger visuellement. */
+    border: 1px solid var(--color-bronze);
+    /* Inset 3D SITE-SPECIFIC Buteau (bronze-soft + navy-deep) :
+       - top : bronze-soft clarifié → highlight chaud bronze
+       - bottom : navy-deep (hue 256) → ombre cool magazine luxe
+       Contraste bronze-warm / navy-cool unique au site. */
     box-shadow:
-      inset 0 1px 0 oklch(0.840 0.012 84 / 0.25),
-      inset 0 -1px 0 oklch(0.190 0.066 261 / 0.40);
+      inset 0 1px 0 oklch(0.815 0.060 60 / 0.40),
+      inset 0 -1px 0 oklch(0.205 0.060 256 / 0.40);
     position: relative;
     overflow: hidden;
+    /* isolation: isolate crée un nouveau stacking context. Permet au ::before
+       d'avoir z-index: -1 (donc PEINT SOUS le texte en flow) tout en restant
+       au-dessus du fond du bouton. Sans isolation, z-index -1 sortirait du
+       stacking context parent et paint sous d'autres éléments de la page.
+       Bug fix : sans isolation, le ::before z-index 0 paintait au-dessus du
+       texte en flow (règle CSS : positioned z-index>=0 paint après inline
+       content), donc le texte disparaissait au hover quand le slide-in fill
+       bronze-deep arrivait. */
     isolation: isolate;
     transition: color 400ms cubic-bezier(0.16, 1, 0.3, 1),
                 transform 240ms cubic-bezier(0.16, 1, 0.3, 1),
@@ -867,12 +872,11 @@ body {
     50%      { background-position: 100% 50%; }
   }
 
-  /* Slide-in fill hover — navy-deep glisse de gauche à droite au hover */
   .btn-bronze::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: var(--color-navy-deep);
+    background: var(--color-bronze-deep);
     transform: translateX(-101%);
     transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
     z-index: -1;
@@ -884,13 +888,13 @@ body {
   }
 
   .btn-bronze:hover {
-    border-color: var(--color-navy-deep);
+    border-color: var(--color-bronze-deep);
     transform: translateY(-2px);
     letter-spacing: 0.18em;
     box-shadow:
-      inset 0 1px 0 oklch(0.840 0.012 84 / 0.30),
-      inset 0 -1px 0 oklch(0.190 0.066 261 / 0.50),
-      0 12px 28px -10px oklch(0.238 0.074 261 / 0.55);
+      inset 0 1px 0 oklch(0.98 0.03 60 / 0.30),
+      inset 0 -1px 0 oklch(0.4 0.06 50 / 0.18),
+      0 12px 28px -10px oklch(0.62 0.082 52 / 0.55);
   }
 
   .btn-bronze:hover::before {
@@ -1172,10 +1176,10 @@ body {
    prefers-reduced-motion respecté via motion-safe: utility Tailwind. */
 @keyframes sectionRailActivePulse {
   0%, 100% {
-    box-shadow: 0 0 0 3px oklch(0.722 0.018 84 / 0.18);
+    box-shadow: 0 0 0 3px oklch(0.704 0.077 56 / 0.18);
   }
   50% {
-    box-shadow: 0 0 0 6px oklch(0.722 0.018 84 / 0.10);
+    box-shadow: 0 0 0 6px oklch(0.704 0.077 56 / 0.10);
   }
 }
 @keyframes sectionRailHintFloat {
@@ -1185,11 +1189,11 @@ body {
 @keyframes sectionRailHintArrowPulse {
   0%, 100% {
     transform: translateY(-50%) scale(1);
-    filter: drop-shadow(0 0 0 oklch(0.722 0.018 84 / 0));
+    filter: drop-shadow(0 0 0 oklch(0.704 0.077 56 / 0));
   }
   50% {
     transform: translateY(-50%) scale(1.25);
-    filter: drop-shadow(-2px 0 6px oklch(0.722 0.018 84 / 0.55));
+    filter: drop-shadow(-2px 0 6px oklch(0.704 0.077 56 / 0.55));
   }
 }
 /* Wave luminescent — cascade bronze qui descend a travers tous les dots
@@ -1198,16 +1202,16 @@ body {
 @keyframes sectionRailDotWave {
   0% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 oklch(0.722 0.018 84 / 0);
+    box-shadow: 0 0 0 0 oklch(0.704 0.077 56 / 0);
   }
   35% {
     transform: scale(1.8);
-    box-shadow: 0 0 0 6px oklch(0.722 0.018 84 / 0.45);
-    background-color: oklch(0.722 0.018 84);
+    box-shadow: 0 0 0 6px oklch(0.704 0.077 56 / 0.45);
+    background-color: oklch(0.704 0.077 56);
   }
   100% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 oklch(0.722 0.018 84 / 0);
+    box-shadow: 0 0 0 0 oklch(0.704 0.077 56 / 0);
   }
 }
 /* Tooltip shimmer — sweep gradient bronze qui traverse le fond navy
@@ -1229,8 +1233,8 @@ body {
   30% {
     opacity: 1;
     transform: translateX(-3px);
-    color: var(--color-taupe-dark);
-    filter: drop-shadow(-2px 0 4px oklch(0.722 0.018 84 / 0.45));
+    color: var(--color-bronze);
+    filter: drop-shadow(-2px 0 4px oklch(0.704 0.077 56 / 0.45));
   }
 }
 .border-beam {
@@ -1309,11 +1313,11 @@ body {
 @keyframes ctaHeartbeat {
   0%, 100% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 oklch(0.722 0.018 84 / 0.5);
+    box-shadow: 0 0 0 0 oklch(0.704 0.077 56 / 0.5);
   }
   50% {
     transform: scale(1.028);
-    box-shadow: 0 0 0 12px oklch(0.722 0.018 84 / 0);
+    box-shadow: 0 0 0 12px oklch(0.704 0.077 56 / 0);
   }
 }
 

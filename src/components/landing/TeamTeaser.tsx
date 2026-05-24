@@ -68,7 +68,7 @@ export function TeamTeaser() {
             <Link
               key={m.name}
               to="/equipe"
-              className="group block bg-[color:var(--color-cream)] overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-taupe-dark)]/60"
+              className="group block bg-[color:var(--color-cream)] overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-bronze)]/60"
             >
               <div className="relative h-72 lg:h-80 overflow-hidden bg-gradient-to-br from-[color:var(--color-navy)] to-[color:var(--color-taupe)]">
                 <img
@@ -83,8 +83,8 @@ export function TeamTeaser() {
                   {m.name}
                 </h3>
                 <div className="flex items-center justify-center gap-2.5">
-                  <div className="w-6 h-0.5 bg-[color:var(--color-taupe-dark)]" aria-hidden="true" />
-                  <p className="eyebrow text-[color:var(--color-taupe-dark)] text-[10px] leading-tight">
+                  <div className="w-6 h-0.5 bg-[color:var(--color-bronze)]" aria-hidden="true" />
+                  <p className="eyebrow text-[color:var(--color-bronze)] text-[10px] leading-tight">
                     {m.role}
                   </p>
                 </div>

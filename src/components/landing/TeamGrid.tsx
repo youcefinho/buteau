@@ -55,15 +55,15 @@ export function TeamGrid() {
                 {/* Marginalia — signature italic discrete a droite, signature manuscrite */}
                 <span
                   aria-hidden="true"
-                  className="hidden md:block absolute -right-2 top-2 italic text-[color:var(--color-taupe-dark)]/45 text-sm rotate-90 origin-right tracking-[0.18em]"
+                  className="hidden md:block absolute -right-2 top-2 italic text-[color:var(--color-bronze)]/45 text-sm rotate-90 origin-right tracking-[0.18em]"
                 >
                   {marginalia[idx]}
                 </span>
 
                 {/* Eyebrow rôle (uppercase tracking) */}
                 <div className="flex items-center gap-2.5">
-                  <div className="w-10 h-px bg-[color:var(--color-taupe-dark)] transition-[width] duration-500 group-hover:w-16" aria-hidden="true" />
-                  <p className="eyebrow text-[color:var(--color-taupe-dark)]">
+                  <div className="w-10 h-px bg-[color:var(--color-bronze)] transition-[width] duration-500 group-hover:w-16" aria-hidden="true" />
+                  <p className="eyebrow text-[color:var(--color-bronze)]">
                     {m.role}
                   </p>
                 </div>

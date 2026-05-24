@@ -46,17 +46,17 @@ export function DocumentsGrid() {
                   {String(idx + 1).padStart(2, "0")}
                 </span>
 
-                <div className="shrink-0 w-12 h-12 rounded-full bg-[color:var(--color-taupe)]/15 flex items-center justify-center text-[color:var(--color-navy)] transition-colors duration-500 group-hover:bg-[color:var(--color-taupe-dark)]/15">
+                <div className="shrink-0 w-12 h-12 rounded-full bg-[color:var(--color-taupe)]/15 flex items-center justify-center text-[color:var(--color-navy)] transition-colors duration-500 group-hover:bg-[color:var(--color-bronze)]/15">
                   <Icon size={20} strokeWidth={1.5} aria-hidden="true" />
                 </div>
                 <div className="flex-1 min-w-0 pr-6">
                   <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em] leading-snug mb-2 text-balance">
                     {doc.title}
                   </h3>
-                  <p className="text-xs italic text-[color:var(--color-taupe-dark)] mb-4">
+                  <p className="text-xs italic text-[color:var(--color-bronze)] mb-4">
                     <AutoGlossary text={doc.meta} />
                   </p>
-                  <span className="inline-block eyebrow text-[color:var(--color-navy)] border-l-2 border-[color:var(--color-taupe-dark)] pl-2.5">
+                  <span className="inline-block eyebrow text-[color:var(--color-navy)] border-l-2 border-[color:var(--color-bronze)] pl-2.5">
                     {t("tools.documents.comingSoonLabel")}
                   </span>
                 </div>
