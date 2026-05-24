@@ -171,7 +171,7 @@ export function PreQualQuiz() {
                     <button
                       type="button"
                       onClick={() => handleAnswer(opt.tier)}
-                      className="group w-full text-left bg-[color:var(--color-cream-warm)] border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-bronze)]/70 px-[clamp(1.25rem,2vw,1.5rem)] py-[clamp(1rem,1.5vw,1.25rem)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-12px_rgba(16,34,61,0.2)] flex items-center justify-between gap-4"
+                      className="group w-full text-left bg-[color:var(--color-cream-warm)] border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-bronze)]/70 focus-visible:border-[color:var(--color-bronze)] focus-visible:shadow-[0_0_0_3px_oklch(0.704_0.077_56/0.18)] focus-visible:outline-none px-[clamp(1.25rem,2vw,1.5rem)] py-[clamp(1rem,1.5vw,1.25rem)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-12px_rgba(16,34,61,0.2)] flex items-center justify-between gap-4"
                     >
                       <span className="flex items-baseline gap-4 flex-1">
                         <span className="italic text-[color:var(--color-bronze)] text-xl tabular-nums">

@@ -152,7 +152,7 @@ export function GlossaryModal() {
               onChange={(e) => setQuery(e.target.value)}
               placeholder={lang === "fr" ? "Rechercher un terme..." : "Search a term..."}
               aria-label={lang === "fr" ? "Rechercher un terme" : "Search a term"}
-              className="w-full pl-10 pr-4 py-2.5 bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/50 rounded-sm text-[color:var(--color-navy-deep)] placeholder:text-[color:var(--color-taupe-dark)] focus:outline-none focus:border-[color:var(--color-bronze)] transition-colors"
+              className="w-full pl-10 pr-4 py-2.5 bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/50 rounded-sm text-[color:var(--color-navy-deep)] placeholder:text-[color:var(--color-taupe-dark)] focus:outline-none focus:border-[color:var(--color-bronze)] focus:shadow-[0_0_0_3px_oklch(0.704_0.077_56/0.18)] focus:bg-[color:var(--color-cream-warm)] transition-all"
             />
           </div>
         </div>

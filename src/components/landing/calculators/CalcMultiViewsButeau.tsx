@@ -233,7 +233,7 @@ function BronzeSlider({
               else onChange(clamp(n, min, max));
             }}
             aria-label={label}
-            className="text-base font-bold text-[color:var(--color-navy-deep)] tabular-nums bg-transparent border-b outline-none text-right w-24 transition-colors [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none focus:border-[color:var(--color-bronze)]"
+            className="text-base font-bold text-[color:var(--color-navy-deep)] tabular-nums bg-transparent border-b outline-none text-right w-24 transition-all [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none focus:border-[color:var(--color-bronze)] focus:shadow-[0_2px_0_-0.5px_oklch(0.704_0.077_56/0.6)]"
             style={{ borderColor: "color-mix(in oklch, var(--color-bronze) 30%, transparent)" }}
           />
           {unit && (
