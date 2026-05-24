@@ -68,6 +68,14 @@ export function GuidesShelf() {
                 />
               </Link>
             </HeartbeatCta>
+            {/* Teaser editorial — surface cream, taupe-dark pour contraste. */}
+            <p
+              className="mt-4 font-[var(--font-editorial)] italic text-[color:var(--color-taupe-dark)] text-[clamp(0.8125rem,1.05vw,0.875rem)] leading-snug max-w-md text-pretty"
+            >
+              {lang === "fr"
+                ? "Cinq guides et deux fiches techniques — pré-approbation, refi, renouvellement, première propriété."
+                : "Five guides and two technical sheets — pre-approval, refi, renewal, first property."}
+            </p>
           </div>
 
           {/* Items list — 7/12 — magazine table-of-contents éditorial */}

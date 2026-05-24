@@ -9,7 +9,8 @@ import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
  * Layout : intro a gauche + visual a droite (inverse de TikTokTeaser pour rythme).
  */
 export function BlogTeaser() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  const isFr = lang === "fr";
 
   return (
     <section
@@ -56,6 +57,14 @@ export function BlogTeaser() {
                   />
                 </Link>
               </HeartbeatCta>
+              {/* Teaser editorial — surface navy, cream/70. */}
+              <p
+                className="mt-3 font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/70 text-[clamp(0.8125rem,1.05vw,0.875rem)] leading-snug max-w-md text-pretty"
+              >
+                {isFr
+                  ? "Articles longs voix Andrew — analyses, décryptages, mécaniques expliquées sans diluer."
+                  : "Long-form articles in Andrew's voice — analyses, breakdowns, mechanics explained without dilution."}
+              </p>
             </div>
           </div>
 

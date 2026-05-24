@@ -75,6 +75,14 @@ export function JournalPreview() {
                 />
               </Link>
             </HeartbeatCta>
+            {/* Teaser editorial — surface navy, taupe-cream pour visibilité. */}
+            <p
+              className="mt-4 font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/70 text-[clamp(0.8125rem,1.05vw,0.875rem)] leading-snug max-w-md text-pretty"
+            >
+              {isFr
+                ? "Articles longs voix Andrew — pré-approbation, refinancement, taux. La mécanique sans jargon."
+                : "Long-form articles in Andrew's voice — pre-approval, refinancing, rates. The mechanics without jargon."}
+            </p>
           </div>
 
           {/* Feature article card — 7/12 */}

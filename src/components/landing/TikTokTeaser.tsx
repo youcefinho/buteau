@@ -12,7 +12,8 @@ import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
  * (eyebrow + title + body + 2 CTAs : interne /capsules + externe TikTok).
  */
 export function TikTokTeaser() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  const isFr = lang === "fr";
 
   return (
     <section id="capsules" className="py-24 surface-cream">
@@ -76,6 +77,15 @@ export function TikTokTeaser() {
                 </span>
               </a>
             </div>
+            {/* Teaser editorial — surface cream, taupe-dark. Décrit le canal
+                TikTok + la série de capsules courtes. */}
+            <p
+              className="mt-3 font-[var(--font-editorial)] italic text-[color:var(--color-taupe-dark)] text-[clamp(0.8125rem,1.05vw,0.875rem)] leading-snug max-w-md text-pretty"
+            >
+              {isFr
+                ? "Suivez @equipebuteau pour les capsules en série — toutes les questions hypothécaires courantes."
+                : "Follow @equipebuteau for the capsule series — all common mortgage questions."}
+            </p>
           </div>
         </div>
       </Container>

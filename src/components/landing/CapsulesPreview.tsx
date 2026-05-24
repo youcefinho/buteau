@@ -67,6 +67,15 @@ export function CapsulesPreview() {
                 />
               </Link>
             </HeartbeatCta>
+            {/* Teaser editorial sous CTA — décrit le contenu /capsules (34
+                capsules, 7 catégories, sujets concrets) en voix Andrew. */}
+            <p
+              className="mt-4 font-[var(--font-editorial)] italic text-[color:var(--color-taupe-dark)] text-[clamp(0.8125rem,1.05vw,0.875rem)] leading-snug max-w-md text-pretty"
+            >
+              {lang === "fr"
+                ? "34 capsules vidéo en 7 catégories — mise de fonds, refi, dettes, stratégies, expliquées en 30 secondes."
+                : "34 video capsules in 7 categories — down payment, refi, debt, strategies, explained in 30 seconds."}
+            </p>
           </div>
 
           {/* Items list — 7/12 — magazine table-of-contents éditorial */}

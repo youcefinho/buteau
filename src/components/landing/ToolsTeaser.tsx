@@ -16,6 +16,7 @@ const ICONS = [BookOpen, Video, FileText, Download];
 
 export function ToolsTeaser() {
   const { t, lang } = useLanguage();
+  const isFr = lang === "fr";
   const { open: openGlossary } = useGlossary();
   const { open: openCarnet } = useCarnet();
   const items = ta<Array<{ title: string; desc: string }>>(
@@ -85,7 +86,15 @@ export function ToolsTeaser() {
               {t("home.tools.cta")}
             </Link>
           </HeartbeatCta>
-
+          {/* Teaser editorial — surface navy, cream/70. Liste les vraies
+              catégories de /outils (calculs + simulateurs + guides + lettres). */}
+          <p
+            className="mt-4 font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/70 text-[clamp(0.8125rem,1.05vw,0.875rem)] leading-snug max-w-md mx-auto text-pretty"
+          >
+            {isFr
+              ? "Calculatrices, simulateurs « et si », guides téléchargeables, lettres-types. Préparez votre dossier avant le RDV."
+              : "Calculators, what-if simulators, downloadable guides, template letters. Prepare your file before the meeting."}
+          </p>
         </div>
       </Container>
     </section>

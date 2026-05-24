@@ -13,7 +13,8 @@ import { config } from "@/lib/config";
  */
 
 export function TeamTeaser() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  const isFr = lang === "fr";
 
   const members = [
     {
@@ -98,6 +99,16 @@ export function TeamTeaser() {
               {t("home.teamTeaser.cta")}
             </Link>
           </HeartbeatCta>
+          {/* Teaser editorial sous CTA — décrit ce qu'on trouve sur /equipe
+              (4 noms réels) + mini-promesse humanisation. Italic Cormorant
+              taupe-dark, subtle visuel mais lit en 1 sec au scroll. */}
+          <p
+            className="mt-4 font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/70 text-[clamp(0.8125rem,1.05vw,0.875rem)] leading-snug max-w-md mx-auto text-pretty"
+          >
+            {isFr
+              ? "Andrew, Abygaèle, Alexis, Felix — quatre parcours, une seule méthode. Découvrez qui suit votre dossier."
+              : "Andrew, Abygaèle, Alexis, Felix — four paths, one method. Meet the people who handle your file."}
+          </p>
         </div>
       </Container>
     </section>
