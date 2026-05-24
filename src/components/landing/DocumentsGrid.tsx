@@ -41,7 +41,7 @@ export function DocumentsGrid() {
                 {/* Numéro filigrane Cormorant subtile */}
                 <span
                   aria-hidden="true"
-                  className="absolute top-3 right-4 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/25 text-4xl leading-none pointer-events-none select-none"
+                  className="absolute top-3 right-4 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/25 group-hover:text-[color:var(--color-bronze)]/35 text-4xl leading-none pointer-events-none select-none transition-colors duration-500"
                 >
                   {String(idx + 1).padStart(2, "0")}
                 </span>

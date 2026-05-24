@@ -92,7 +92,7 @@ export function GuidesShelf() {
                     {/* Numéro Cormorant italic XL — pattern table-of-contents magazine */}
                     <span
                       aria-hidden="true"
-                      className="shrink-0 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)] group-hover:text-[color:var(--color-navy)] text-[clamp(1.875rem,3vw,2.25rem)] leading-none tabular-nums w-12 md:w-14 transition-colors duration-300"
+                      className="shrink-0 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)] group-hover:text-[color:var(--color-bronze)] text-[clamp(1.875rem,3vw,2.25rem)] leading-none tabular-nums w-12 md:w-14 transition-colors duration-300"
                     >
                       {String(idx + 1).padStart(2, "0")}
                     </span>

@@ -74,7 +74,7 @@ export function Reviews() {
                   aria-hidden="true"
                 />
               ))}
-              <span className="ml-2 eyebrow text-[color:var(--color-taupe-dark)]">
+              <span className="ml-2 eyebrow text-[color:var(--color-bronze)]">
                 {lang === "fr" ? "Avis Google" : "Google Reviews"}
               </span>
             </div>

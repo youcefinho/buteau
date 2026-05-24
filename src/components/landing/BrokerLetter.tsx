@@ -52,10 +52,10 @@ export function BrokerLetter() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-[clamp(2.5rem,5vw,4rem)] items-start">
           {/* Lettre — col 8 */}
           <div className="lg:col-span-8 lg:pr-8">
-            <p className="eyebrow text-[color:var(--color-taupe-dark)] inline-flex items-center gap-3 mb-10">
-              <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
+            <p className="eyebrow text-[color:var(--color-bronze)] inline-flex items-center gap-3 mb-10">
+              <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
               {t("letter.eyebrow")}
-              <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
+              <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
             </p>
 
             {/* "Bonjour," — accroche Fraunces italic XL avec axes optical + WONK

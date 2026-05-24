@@ -93,10 +93,10 @@ export function Hero() {
       <Container size="xl" className="relative py-[clamp(5rem,12vw,10rem)]">
         <div className="text-center max-w-5xl mx-auto flex flex-col items-center">
           {/* Eyebrow (Planiprêt — l'arrière-plan métier) — reveal step 1 */}
-          <p className="eyebrow text-[color:var(--color-taupe)] mb-[clamp(1.5rem,3vw,2rem)] opacity-90 animate-[buteauFadeUp_800ms_ease-out_100ms_both]">
-            <span className="inline-block w-6 h-px align-middle bg-[color:var(--color-taupe)] mr-3" />
+          <p className="eyebrow text-[color:var(--color-bronze)] mb-[clamp(1.5rem,3vw,2rem)] opacity-90 animate-[buteauFadeUp_800ms_ease-out_100ms_both]">
+            <span className="inline-block w-6 h-px align-middle bg-[color:var(--color-bronze)] mr-3" />
             {t("home.hero.eyebrow")}
-            <span className="inline-block w-6 h-px align-middle bg-[color:var(--color-taupe)] ml-3" />
+            <span className="inline-block w-6 h-px align-middle bg-[color:var(--color-bronze)] ml-3" />
           </p>
 
           {/* Brand mark — letter-by-letter reveal AU MOUNT + hover word reveal interactif.

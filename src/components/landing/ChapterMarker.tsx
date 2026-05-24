@@ -16,11 +16,15 @@ export function ChapterMarker({ label, tone = "light" }: ChapterMarkerProps) {
   const labelColor =
     tone === "dark"
       ? "text-[color:var(--color-taupe)]"
-      : "text-[color:var(--color-taupe-dark)]";
+      : tone === "bronze"
+        ? "text-[color:var(--color-bronze)]"
+        : "text-[color:var(--color-bronze)]";
   const lineColor =
     tone === "dark"
       ? "bg-[color:var(--color-taupe)]/40"
-      : "bg-[color:var(--color-taupe)]";
+      : tone === "bronze"
+        ? "bg-[color:var(--color-bronze)]"
+        : "bg-[color:var(--color-bronze)]/70";
 
   return (
     <div

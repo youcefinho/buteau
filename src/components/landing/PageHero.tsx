@@ -64,10 +64,10 @@ export function PageHero({
       <Container size="lg" className="relative">
         <div className="text-center max-w-3xl mx-auto">
           {eyebrow && (
-            <p className="eyebrow text-[color:var(--color-taupe)] mb-6 inline-flex items-center gap-3 animate-[buteauFadeUp_700ms_ease-out_100ms_both]">
-              <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
+            <p className="eyebrow text-[color:var(--color-bronze)] mb-6 inline-flex items-center gap-3 animate-[buteauFadeUp_700ms_ease-out_100ms_both]">
+              <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
               {eyebrow}
-              <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
+              <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
             </p>
           )}
 

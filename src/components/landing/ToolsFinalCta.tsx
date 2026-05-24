@@ -31,10 +31,10 @@ export function ToolsFinalCta() {
 
       <Container size="md" className="relative">
         <div className="text-center space-y-7 max-w-2xl mx-auto">
-          <p className="eyebrow text-[color:var(--color-taupe)] inline-flex items-center gap-3">
-            <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
+          <p className="eyebrow text-[color:var(--color-bronze)] inline-flex items-center gap-3">
+            <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
             {t("tools.finalCta.eyebrow")}
-            <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
+            <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
           </p>
 
           <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(1.875rem,5vw,3.5rem)] uppercase tracking-[0.04em] leading-[1.05] text-balance">
