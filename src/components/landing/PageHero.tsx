@@ -75,10 +75,10 @@ export function PageHero({
             {title}
           </h1>
 
-          <div className="w-16 h-px bg-[color:var(--color-bronze)] mx-auto my-[clamp(2rem,3vw,2.5rem)] animate-[buteauWidth_700ms_ease-out_400ms_both]" />
+          <div className="w-16 h-px bg-[color:var(--color-taupe-dark)] mx-auto my-[clamp(2rem,3vw,2.5rem)] animate-[buteauWidth_700ms_ease-out_400ms_both]" />
 
           {subtitle && (
-            <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.5] text-[color:var(--color-cream)]/85 max-w-2xl mx-auto text-pretty animate-[buteauFadeUp_700ms_ease-out_500ms_both]">
+            <p className="italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.5] text-[color:var(--color-cream)]/85 max-w-2xl mx-auto text-pretty animate-[buteauFadeUp_700ms_ease-out_500ms_both]">
               {subtitle}
             </p>
           )}

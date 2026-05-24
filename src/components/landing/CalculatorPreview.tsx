@@ -90,7 +90,7 @@ export function CalculatorPreview() {
             <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,3vw,2.25rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
               {t("home.calcPreview.title")}
             </h2>
-            <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-6" />
+            <div className="w-12 h-px bg-[color:var(--color-taupe-dark)] mb-6" />
             <p className="text-base leading-[1.65] text-[color:var(--color-navy-deep)]/80 mb-8 text-pretty">
               {t("home.calcPreview.subtitle")}
             </p>
@@ -99,11 +99,11 @@ export function CalculatorPreview() {
               <Link
                 to="/outils"
                 hash="calculateur"
-                className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze-deep)] hover:text-[color:var(--color-bronze)] transition-colors"
+                className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-navy)] hover:text-[color:var(--color-taupe-dark)] transition-colors"
               >
                 <span className="relative">
                   {t("home.calcPreview.ctaFull")}
-                  <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                  <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-taupe-dark)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                 </span>
                 <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
               </Link>
@@ -154,7 +154,7 @@ export function CalculatorPreview() {
             <div className="md:col-span-2 surface-navy p-[clamp(1.75rem,2.5vw,2rem)] flex flex-col justify-between gap-6 relative overflow-hidden">
               <span
                 aria-hidden="true"
-                className="absolute -top-6 -right-4 font-[var(--font-editorial)] italic text-[color:var(--color-bronze)]/12 text-[10rem] leading-none pointer-events-none select-none"
+                className="absolute -top-6 -right-4 font-[var(--font-editorial)] italic text-[color:var(--color-taupe-dark)]/12 text-[10rem] leading-none pointer-events-none select-none"
               >
                 $
               </span>
@@ -171,8 +171,8 @@ export function CalculatorPreview() {
                     : "—"}
                 </p>
                 <div className="flex items-center gap-2 mt-3">
-                  <span className="block w-5 h-px bg-[color:var(--color-bronze)]" aria-hidden="true" />
-                  <p className="font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/70 text-xs">
+                  <span className="block w-5 h-px bg-[color:var(--color-taupe-dark)]" aria-hidden="true" />
+                  <p className="italic text-[color:var(--color-cream)]/70 text-xs">
                     {lang === "fr" ? "par mois" : "per month"}
                   </p>
                 </div>
@@ -198,7 +198,7 @@ export function CalculatorPreview() {
                         {formatLocaleCurrency(Math.round(totalCost), lang)}
                       </span>
                     </div>
-                    <p className="font-[var(--font-editorial)] italic text-[10px] text-[color:var(--color-cream)]/60 leading-snug pt-1">
+                    <p className="italic text-[10px] text-[color:var(--color-cream)]/60 leading-snug pt-1">
                       {lang === "fr"
                         ? "Ce chiffre n'est pas votre verdict — c'est un point de départ pour la conversation."
                         : "This number isn't your verdict — it's a starting point for the conversation."}
@@ -218,7 +218,7 @@ export function CalculatorPreview() {
 
         {/* Footer méthodologie + lexique — pédagogie hypothécaire */}
         <div className="mt-12 pt-8 border-t border-[color:var(--color-taupe)]/30 text-center max-w-2xl mx-auto">
-          <p className="font-[var(--font-editorial)] italic text-[clamp(0.875rem,1.2vw,1rem)] text-[color:var(--color-navy-deep)]/70 leading-relaxed mb-4 text-pretty">
+          <p className="italic text-[clamp(0.875rem,1.2vw,1rem)] text-[color:var(--color-navy-deep)]/70 leading-relaxed mb-4 text-pretty">
             {lang === "fr"
               ? "Composé semi-annuel canadien — la formule a ses termes."
               : "Canadian semi-annual compounding — the formula has its terms."}
@@ -227,9 +227,9 @@ export function CalculatorPreview() {
             <button
               type="button"
               onClick={() => openGlossary()}
-              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[color:var(--color-navy-deep)]/85 cursor-pointer"
+              className="text-glow-hover inline-flex items-center gap-2 italic text-[color:var(--color-navy-deep)]/85 cursor-pointer"
             >
-              <BookOpen className="w-3.5 h-3.5 text-[color:var(--color-bronze-deep)]" strokeWidth={1.5} aria-hidden />
+              <BookOpen className="w-3.5 h-3.5 text-[color:var(--color-navy)]" strokeWidth={1.5} aria-hidden />
               {lang === "fr" ? "Voir le lexique" : "View glossary"}
             </button>
           </div>
@@ -279,7 +279,7 @@ function CalcSliderMini({
       </div>
       <div className="relative pt-1">
         <div
-          className="absolute top-1/2 left-0 h-px bg-[color:var(--color-bronze)] pointer-events-none transition-[width] duration-150"
+          className="absolute top-1/2 left-0 h-px bg-[color:var(--color-taupe-dark)] pointer-events-none transition-[width] duration-150"
           style={{ width: `${percent}%`, transform: "translateY(-50%)" }}
           aria-hidden="true"
         />

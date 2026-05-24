@@ -41,7 +41,7 @@ export function TeamMethod() {
               </h3>
 
               {/* Signature line bronze */}
-              <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-5" />
+              <div className="w-12 h-px bg-[color:var(--color-taupe-dark)] mb-5" />
 
               {/* Description */}
               <p className="text-[clamp(0.875rem,1.2vw,1rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/80 text-pretty hyphens-auto">

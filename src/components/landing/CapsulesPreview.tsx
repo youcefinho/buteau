@@ -46,19 +46,19 @@ export function CapsulesPreview() {
             <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,3vw,2.25rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
               {t("home.capsulesPreview.title")}
             </h2>
-            <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-6" />
-            <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/80 mb-8 text-pretty">
+            <div className="w-12 h-px bg-[color:var(--color-taupe-dark)] mb-6" />
+            <p className="italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/80 mb-8 text-pretty">
               {t("home.capsulesPreview.subtitle")}
             </p>
 
             <HeartbeatCta>
               <Link
                 to="/capsules"
-                className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze-deep)] hover:text-[color:var(--color-bronze)] transition-colors"
+                className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-navy)] hover:text-[color:var(--color-taupe-dark)] transition-colors"
               >
                 <span className="relative">
                   {t("home.capsulesPreview.ctaFull")}
-                  <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                  <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-taupe-dark)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                 </span>
                 <ArrowRight
                   size={14}
@@ -70,7 +70,7 @@ export function CapsulesPreview() {
             {/* Teaser editorial sous CTA — décrit le contenu /capsules (34
                 capsules, 7 catégories, sujets concrets) en voix Andrew. */}
             <p
-              className="mt-4 font-[var(--font-editorial)] italic text-[color:var(--color-taupe-dark)] text-[clamp(0.8125rem,1.05vw,0.875rem)] leading-snug max-w-md text-pretty"
+              className="mt-4 italic text-[color:var(--color-taupe-dark)] text-[clamp(0.8125rem,1.05vw,0.875rem)] leading-snug max-w-md text-pretty"
             >
               {lang === "fr"
                 ? "34 capsules vidéo en 7 catégories — mise de fonds, refi, dettes, stratégies, expliquées en 30 secondes."
@@ -85,12 +85,12 @@ export function CapsulesPreview() {
                 <Link
                   to="/capsules"
                   hash={item.categoryId}
-                  className="group flex items-start gap-[clamp(1.25rem,2vw,1.75rem)] py-[clamp(1.5rem,2vw,1.75rem)] border-b border-[color:var(--color-taupe)]/40 transition-colors duration-300 hover:border-[color:var(--color-bronze)]"
+                  className="group flex items-start gap-[clamp(1.25rem,2vw,1.75rem)] py-[clamp(1.5rem,2vw,1.75rem)] border-b border-[color:var(--color-taupe)]/40 transition-colors duration-300 hover:border-[color:var(--color-taupe-dark)]"
                 >
                   {/* Numéro Cormorant italic XL — pattern table-of-contents magazine */}
                   <span
                     aria-hidden="true"
-                    className="shrink-0 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)] group-hover:text-[color:var(--color-bronze-deep)] text-[clamp(1.875rem,3vw,2.25rem)] leading-none tabular-nums w-12 md:w-14 transition-colors duration-300"
+                    className="shrink-0 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)] group-hover:text-[color:var(--color-navy)] text-[clamp(1.875rem,3vw,2.25rem)] leading-none tabular-nums w-12 md:w-14 transition-colors duration-300"
                   >
                     {String(idx + 1).padStart(2, "0")}
                   </span>
@@ -101,33 +101,33 @@ export function CapsulesPreview() {
                     <div className="flex items-center gap-2 mb-1">
                       <Play
                         size={11}
-                        className="text-[color:var(--color-bronze)]"
+                        className="text-[color:var(--color-taupe-dark)]"
                         aria-hidden="true"
                       />
-                      <p className="eyebrow text-[color:var(--color-bronze-deep)] text-[10px]">
+                      <p className="eyebrow text-[color:var(--color-navy)] text-[10px]">
                         {lang === "fr" ? "Capsule · 30 sec" : "Capsule · 30 sec"}
                       </p>
                     </div>
 
                     {/* Title */}
-                    <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.125rem,1.6vw,1.25rem)] uppercase tracking-[0.02em] leading-snug text-balance group-hover:text-[color:var(--color-bronze-deep)] transition-colors">
+                    <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.125rem,1.6vw,1.25rem)] uppercase tracking-[0.02em] leading-snug text-balance group-hover:text-[color:var(--color-navy)] transition-colors">
                       {item.title}
                     </h3>
 
                     {/* Hook entre guillemets italique — voix Andrew */}
-                    <p className="font-[var(--font-editorial)] italic text-[clamp(0.875rem,1.2vw,1rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/75 text-pretty">
+                    <p className="italic text-[clamp(0.875rem,1.2vw,1rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/75 text-pretty">
                       « {item.hook} »
                     </p>
                   </div>
 
                   {/* Right column : TikTok badge + arrow */}
                   <div className="shrink-0 flex flex-col items-end gap-3">
-                    <span className="eyebrow text-[color:var(--color-bronze-deep)] text-[9px] border-l-2 border-[color:var(--color-bronze)] pl-2">
+                    <span className="eyebrow text-[color:var(--color-navy)] text-[9px] border-l-2 border-[color:var(--color-taupe-dark)] pl-2">
                       TikTok
                     </span>
                     <ArrowRight
                       size={16}
-                      className="text-[color:var(--color-taupe)] opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-[color:var(--color-bronze-deep)] transition-all duration-300"
+                      className="text-[color:var(--color-taupe)] opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-[color:var(--color-navy)] transition-all duration-300"
                       aria-hidden="true"
                     />
                   </div>

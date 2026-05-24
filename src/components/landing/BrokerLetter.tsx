@@ -66,18 +66,18 @@ export function BrokerLetter() {
 
             {/* Body paragraphes */}
             <div className="space-y-7 max-w-2xl text-[color:var(--color-navy-deep)]/85">
-              <p className="font-[var(--font-editorial)] italic text-[clamp(1.125rem,1.6vw,1.25rem)] leading-[1.7] text-pretty hyphens-auto">
+              <p className="italic text-[clamp(1.125rem,1.6vw,1.25rem)] leading-[1.7] text-pretty hyphens-auto">
                 {t("letter.bodyP1")}{" "}
-                <span className="not-italic font-semibold text-[color:var(--color-bronze-deep)]">
+                <span className="not-italic font-semibold text-[color:var(--color-navy)]">
                   {t("letter.bodyP1Emphasis")}
                 </span>
               </p>
 
-              <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.75] text-pretty hyphens-auto">
+              <p className="italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.75] text-pretty hyphens-auto">
                 {t("letter.bodyP2")}
               </p>
 
-              <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.75] text-pretty hyphens-auto">
+              <p className="italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.75] text-pretty hyphens-auto">
                 {t("letter.bodyP3")}
               </p>
             </div>
@@ -121,7 +121,7 @@ export function BrokerLetter() {
             </div>
             {/* Nom + role */}
             <div className="order-2 lg:order-3 mt-6 lg:mt-8 lg:text-center w-full max-w-[320px]">
-              <div className="w-12 h-px bg-[color:var(--color-bronze)] lg:mx-auto mb-3" />
+              <div className="w-12 h-px bg-[color:var(--color-taupe-dark)] lg:mx-auto mb-3" />
               <p className="eyebrow text-[color:var(--color-taupe-dark)]">
                 {t("letter.role")}
               </p>
@@ -149,7 +149,7 @@ export function BrokerLetter() {
             type="button"
             onClick={(e) => { e.stopPropagation(); setLightboxOpen(false); }}
             aria-label={lang === "fr" ? "Fermer" : "Close"}
-            className="absolute top-4 right-4 md:top-6 md:right-6 w-11 h-11 flex items-center justify-center rounded-full bg-[color:var(--color-navy-deep)]/80 border border-[color:var(--color-taupe)]/40 text-[color:var(--color-cream)] hover:bg-[color:var(--color-bronze)]/20 hover:border-[color:var(--color-bronze)]/60 transition-all duration-200 z-10"
+            className="absolute top-4 right-4 md:top-6 md:right-6 w-11 h-11 flex items-center justify-center rounded-full bg-[color:var(--color-navy-deep)]/80 border border-[color:var(--color-taupe)]/40 text-[color:var(--color-cream)] hover:bg-[color:var(--color-taupe-dark)]/20 hover:border-[color:var(--color-taupe-dark)]/60 transition-all duration-200 z-10"
           >
             <X size={20} strokeWidth={1.8} aria-hidden />
           </button>

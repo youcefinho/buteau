@@ -26,7 +26,7 @@ export function LanguageToggle({ className = "" }: { className?: string }) {
         aria-pressed={lang === "fr"}
         className="font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] transition-colors max-md:min-h-[44px] max-md:min-w-[44px] inline-flex items-center justify-center"
         style={{
-          color: lang === "fr" ? "var(--color-bronze-deep)" : "color-mix(in oklch, currentColor 55%, transparent)",
+          color: lang === "fr" ? "var(--color-navy)" : "color-mix(in oklch, currentColor 55%, transparent)",
           fontSize: lang === "fr" ? "13px" : "11px",
           fontWeight: lang === "fr" ? 700 : 600,
         }}
@@ -49,7 +49,7 @@ export function LanguageToggle({ className = "" }: { className?: string }) {
         aria-pressed={lang === "en"}
         className="font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] transition-colors max-md:min-h-[44px] max-md:min-w-[44px] inline-flex items-center justify-center"
         style={{
-          color: lang === "en" ? "var(--color-bronze-deep)" : "color-mix(in oklch, currentColor 55%, transparent)",
+          color: lang === "en" ? "var(--color-navy)" : "color-mix(in oklch, currentColor 55%, transparent)",
           fontSize: lang === "en" ? "13px" : "11px",
           fontWeight: lang === "en" ? 700 : 600,
         }}

@@ -134,7 +134,7 @@ export function GlossaryModal() {
               type="button"
               onClick={close}
               aria-label={lang === "fr" ? "Fermer le lexique" : "Close glossary"}
-              className="p-2 -mr-2 text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-bronze-deep)] transition-colors"
+              className="p-2 -mr-2 text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-navy)] transition-colors"
             >
               <X size={24} aria-hidden="true" />
             </button>
@@ -152,7 +152,7 @@ export function GlossaryModal() {
               onChange={(e) => setQuery(e.target.value)}
               placeholder={lang === "fr" ? "Rechercher un terme..." : "Search a term..."}
               aria-label={lang === "fr" ? "Rechercher un terme" : "Search a term"}
-              className="w-full pl-10 pr-4 py-2.5 bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/50 rounded-sm text-[color:var(--color-navy-deep)] placeholder:text-[color:var(--color-taupe-dark)] focus:outline-none focus:border-[color:var(--color-bronze)] transition-colors"
+              className="w-full pl-10 pr-4 py-2.5 bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/50 rounded-sm text-[color:var(--color-navy-deep)] placeholder:text-[color:var(--color-taupe-dark)] focus:outline-none focus:border-[color:var(--color-taupe-dark)] transition-colors"
             />
           </div>
         </div>
@@ -160,7 +160,7 @@ export function GlossaryModal() {
         {/* Body — list of terms (filtered by query) */}
         <div className="px-[clamp(1.5rem,3vw,2.5rem)] py-8 space-y-8">
           {filteredGlossary.length === 0 && (
-            <p className="text-center font-[var(--font-editorial)] italic text-sm text-[color:var(--color-taupe-dark)] py-8">
+            <p className="text-center italic text-sm text-[color:var(--color-taupe-dark)] py-8">
               {lang === "fr"
                 ? `Aucun terme ne correspond à "${query}".`
                 : `No term matches "${query}".`}
@@ -178,7 +178,7 @@ export function GlossaryModal() {
                   </span>
                 )}
               </div>
-              <div className="w-8 h-0.5 bg-[color:var(--color-bronze)] my-3" />
+              <div className="w-8 h-0.5 bg-[color:var(--color-taupe-dark)] my-3" />
               <p className="text-sm leading-relaxed text-[color:var(--color-navy-deep)]/85 text-pretty hyphens-auto">
                 {g.definition[lang]}
               </p>
@@ -196,10 +196,10 @@ export function GlossaryModal() {
               <Link
                 to="/lexique"
                 onClick={close}
-                className="group flex items-center justify-between gap-4 p-5 rounded-sm bg-[color:var(--color-bronze)]/8 border border-[color:var(--color-bronze)]/30 hover:bg-[color:var(--color-bronze)]/15 hover:border-[color:var(--color-bronze)]/55 transition-all"
+                className="group flex items-center justify-between gap-4 p-5 rounded-sm bg-[color:var(--color-taupe-dark)]/8 border border-[color:var(--color-taupe-dark)]/30 hover:bg-[color:var(--color-taupe-dark)]/15 hover:border-[color:var(--color-taupe-dark)]/55 transition-all"
               >
                 <div>
-                  <div className="text-[10px] uppercase tracking-[0.32em] text-[color:var(--color-bronze-deep)] font-bold mb-1">
+                  <div className="text-[10px] uppercase tracking-[0.32em] text-[color:var(--color-navy)] font-bold mb-1">
                     {lang === "fr" ? "Voir le lexique complet" : "See the full glossary"}
                   </div>
                   <div className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em]">
@@ -209,7 +209,7 @@ export function GlossaryModal() {
                   </div>
                 </div>
                 <ArrowRight
-                  className="w-4 h-4 text-[color:var(--color-bronze-deep)]/70 group-hover:text-[color:var(--color-bronze-deep)] group-hover:translate-x-0.5 transition-all shrink-0"
+                  className="w-4 h-4 text-[color:var(--color-navy)]/70 group-hover:text-[color:var(--color-navy)] group-hover:translate-x-0.5 transition-all shrink-0"
                   aria-hidden
                 />
               </Link>

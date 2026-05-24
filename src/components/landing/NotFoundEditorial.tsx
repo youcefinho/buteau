@@ -53,7 +53,7 @@ export function NotFoundEditorial() {
           </h1>
 
           {/* Bronze line */}
-          <div className="w-12 h-px bg-[color:var(--color-bronze)] mx-auto mb-8 animate-[buteauWidth_700ms_ease-out_500ms_both]" />
+          <div className="w-12 h-px bg-[color:var(--color-taupe-dark)] mx-auto mb-8 animate-[buteauWidth_700ms_ease-out_500ms_both]" />
 
           {/* Subtitle */}
           <p className="text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-cream)]/80 leading-[1.6] mb-12 max-w-xl mx-auto text-pretty animate-[buteauFadeUp_700ms_ease-out_600ms_both]">
@@ -74,12 +74,12 @@ export function NotFoundEditorial() {
               href={`tel:${config.phone.raw}`}
               className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-cream)]"
             >
-              <Phone size={14} aria-hidden="true" className="text-[color:var(--color-bronze)]" />
+              <Phone size={14} aria-hidden="true" className="text-[color:var(--color-taupe-dark)]" />
               <span className="relative">
                 {t("notFound.ctaCall")}
-                <span className="absolute left-0 -bottom-1 w-0 h-px bg-[color:var(--color-bronze)] group-hover:w-full transition-[width] duration-500" />
+                <span className="absolute left-0 -bottom-1 w-0 h-px bg-[color:var(--color-taupe-dark)] group-hover:w-full transition-[width] duration-500" />
               </span>
-              <span className="font-[var(--font-editorial)] italic text-[color:var(--color-taupe)] text-base normal-case tracking-normal ml-1">
+              <span className="italic text-[color:var(--color-taupe)] text-base normal-case tracking-normal ml-1">
                 {config.phone.display}
               </span>
             </a>

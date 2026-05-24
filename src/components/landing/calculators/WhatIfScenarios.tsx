@@ -95,7 +95,7 @@ export function WhatIfScenarios({
     <div className="mt-8 max-w-5xl mx-auto">
       {/* Header signature */}
       <div className="text-center mb-7">
-        <p className="font-[var(--font-editorial)] italic text-[color:var(--color-bronze-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)]">
+        <p className="font-[var(--font-editorial)] italic text-[color:var(--color-navy)] text-[clamp(1.5rem,2.5vw,1.875rem)]">
           {t("tools.calc.scenariosTitle")}
         </p>
         <p className="text-sm text-[color:var(--color-taupe-dark)] italic mt-2 max-w-md mx-auto">
@@ -106,18 +106,18 @@ export function WhatIfScenarios({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {/* Scenario 1 — Paiement accéléré */}
         {scenarioAccelerated && (
-          <article className="group bg-[color:var(--color-cream-warm)] border border-[color:var(--color-taupe)]/40 p-6 md:p-7 transition-all duration-500 hover:border-[color:var(--color-bronze)]/70 relative overflow-hidden">
+          <article className="group bg-[color:var(--color-cream-warm)] border border-[color:var(--color-taupe)]/40 p-6 md:p-7 transition-all duration-500 hover:border-[color:var(--color-taupe-dark)]/70 relative overflow-hidden">
             {/* Halo bronze top-right */}
             <span
               aria-hidden="true"
-              className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-[color:var(--color-bronze)]/8 blur-3xl pointer-events-none"
+              className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-[color:var(--color-taupe-dark)]/8 blur-3xl pointer-events-none"
             />
 
             <div className="flex items-start gap-3 mb-4 relative">
               <TrendingDown
                 size={20}
                 strokeWidth={1.5}
-                className="shrink-0 mt-0.5 text-[color:var(--color-bronze-deep)]"
+                className="shrink-0 mt-0.5 text-[color:var(--color-navy)]"
                 aria-hidden="true"
               />
               <h4 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(0.875rem,1.2vw,1rem)] uppercase tracking-[0.04em] leading-snug">
@@ -130,7 +130,7 @@ export function WhatIfScenarios({
                 <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-1.5">
                   {t("tools.calc.scenarioSavingsLabel")}
                 </p>
-                <p className="font-[var(--font-display)] font-extrabold text-[color:var(--color-bronze-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] tracking-[-0.01em] tabular-nums">
+                <p className="font-[var(--font-display)] font-extrabold text-[color:var(--color-navy)] text-[clamp(1.5rem,2.5vw,1.875rem)] tracking-[-0.01em] tabular-nums">
                   {formatLocaleCurrency(Math.round(scenarioAccelerated.interestSavings), lang)}
                 </p>
               </div>
@@ -148,17 +148,17 @@ export function WhatIfScenarios({
 
         {/* Scenario 2 — Amortissement 20 ans */}
         {scenarioShorter && (
-          <article className="group bg-[color:var(--color-cream-warm)] border border-[color:var(--color-taupe)]/40 p-6 md:p-7 transition-all duration-500 hover:border-[color:var(--color-bronze)]/70 relative overflow-hidden">
+          <article className="group bg-[color:var(--color-cream-warm)] border border-[color:var(--color-taupe)]/40 p-6 md:p-7 transition-all duration-500 hover:border-[color:var(--color-taupe-dark)]/70 relative overflow-hidden">
             <span
               aria-hidden="true"
-              className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-[color:var(--color-bronze)]/8 blur-3xl pointer-events-none"
+              className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-[color:var(--color-taupe-dark)]/8 blur-3xl pointer-events-none"
             />
 
             <div className="flex items-start gap-3 mb-4 relative">
               <Clock
                 size={20}
                 strokeWidth={1.5}
-                className="shrink-0 mt-0.5 text-[color:var(--color-bronze-deep)]"
+                className="shrink-0 mt-0.5 text-[color:var(--color-navy)]"
                 aria-hidden="true"
               />
               <h4 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(0.875rem,1.2vw,1rem)] uppercase tracking-[0.04em] leading-snug">
@@ -179,7 +179,7 @@ export function WhatIfScenarios({
                 <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-1.5">
                   {t("tools.calc.scenarioSavingsLabel")}
                 </p>
-                <p className="font-[var(--font-display)] font-extrabold text-[color:var(--color-bronze-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] tracking-[-0.01em] tabular-nums">
+                <p className="font-[var(--font-display)] font-extrabold text-[color:var(--color-navy)] text-[clamp(1.5rem,2.5vw,1.875rem)] tracking-[-0.01em] tabular-nums">
                   {formatLocaleCurrency(Math.round(scenarioShorter.interestSavings), lang)}
                 </p>
               </div>

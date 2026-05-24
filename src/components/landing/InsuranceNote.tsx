@@ -26,14 +26,14 @@ export function InsuranceNote() {
           </p>
 
           {/* Encadré Attention */}
-          <div className="bg-[color:var(--color-cream-warm)] border-l-[3px] border-[color:var(--color-bronze)] p-[clamp(1.5rem,2.5vw,2rem)] space-y-4">
+          <div className="bg-[color:var(--color-cream-warm)] border-l-[3px] border-[color:var(--color-taupe-dark)] p-[clamp(1.5rem,2.5vw,2rem)] space-y-4">
             <div className="flex items-center gap-3">
               <AlertCircle
                 size={20}
-                className="text-[color:var(--color-bronze)] shrink-0"
+                className="text-[color:var(--color-taupe-dark)] shrink-0"
                 aria-hidden="true"
               />
-              <p className="eyebrow text-[color:var(--color-bronze-deep)]">
+              <p className="eyebrow text-[color:var(--color-navy)]">
                 {t("institutions.insurance.attentionLabel")}
               </p>
             </div>

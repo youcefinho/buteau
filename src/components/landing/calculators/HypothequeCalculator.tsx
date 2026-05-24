@@ -200,7 +200,7 @@ export function HypothequeCalculator() {
           <div className="lg:col-span-2 surface-navy p-8 md:p-12 flex flex-col justify-between gap-10 relative overflow-hidden">
             {/* Filigrane "$" éditorial en arrière-plan */}
             <span
-              className="absolute -top-8 -right-6 font-[var(--font-editorial)] italic text-[color:var(--color-bronze)]/10 text-[16rem] leading-none pointer-events-none select-none"
+              className="absolute -top-8 -right-6 font-[var(--font-editorial)] italic text-[color:var(--color-taupe-dark)]/10 text-[16rem] leading-none pointer-events-none select-none"
               aria-hidden="true"
             >
               $
@@ -219,8 +219,8 @@ export function HypothequeCalculator() {
                   : "—"}
               </p>
               <div className="flex items-center gap-3 mt-5">
-                <span className="w-6 h-px bg-[color:var(--color-bronze)]" aria-hidden="true" />
-                <p className="font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/70 text-sm">
+                <span className="w-6 h-px bg-[color:var(--color-taupe-dark)]" aria-hidden="true" />
+                <p className="italic text-[color:var(--color-cream)]/70 text-sm">
                   {lang === "fr" ? "par mois" : "per month"}
                 </p>
               </div>
@@ -235,10 +235,10 @@ export function HypothequeCalculator() {
               <button
                 type="button"
                 onClick={handleShare}
-                className="group w-full inline-flex items-center justify-center gap-2 py-2 font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-cream)]/70 hover:text-[color:var(--color-bronze-soft)] transition-colors"
+                className="group w-full inline-flex items-center justify-center gap-2 py-2 font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-cream)]/70 hover:text-[color:var(--color-taupe-light)] transition-colors"
               >
                 {shareCopied ? (
-                  <Check size={14} className="text-[color:var(--color-bronze-soft)]" aria-hidden="true" />
+                  <Check size={14} className="text-[color:var(--color-taupe-light)]" aria-hidden="true" />
                 ) : (
                   <Share2 size={14} aria-hidden="true" />
                 )}
@@ -287,7 +287,7 @@ export function HypothequeCalculator() {
                 </p>
               </div>
 
-              <div className="signature-line w-12 bg-[color:var(--color-bronze)]" />
+              <div className="signature-line w-12 bg-[color:var(--color-taupe-dark)]" />
 
               <div>
                 <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-2">
@@ -376,7 +376,7 @@ function CalcSliderField({
       <div className="relative pt-1">
         {/* Fill colored portion (bronze) — utilise pseudo-element via background */}
         <div
-          className="absolute top-1/2 left-0 h-px bg-[color:var(--color-bronze)] pointer-events-none transition-[width] duration-150"
+          className="absolute top-1/2 left-0 h-px bg-[color:var(--color-taupe-dark)] pointer-events-none transition-[width] duration-150"
           style={{ width: `${percent}%`, transform: "translateY(-50%)" }}
           aria-hidden="true"
         />

@@ -99,8 +99,8 @@ export function MediaShowcase() {
           <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,4vw,3rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
             {t("media.title")}
           </h2>
-          <div className="w-16 h-px bg-[color:var(--color-bronze)] mx-auto mb-6" />
-          <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-navy-deep)]/80 leading-[1.55] text-pretty">
+          <div className="w-16 h-px bg-[color:var(--color-taupe-dark)] mx-auto mb-6" />
+          <p className="italic text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-navy-deep)]/80 leading-[1.55] text-pretty">
             {t("media.subtitle")}
           </p>
         </div>
@@ -110,7 +110,7 @@ export function MediaShowcase() {
           {/* Chiffre filigrane "01" — pattern signature pages séquentielles */}
           <span
             aria-hidden="true"
-            className="hidden md:block absolute -top-12 -left-4 lg:-left-12 font-[var(--font-editorial)] italic text-[color:var(--color-bronze)]/12 text-[12rem] lg:text-[16rem] leading-none pointer-events-none select-none tabular-nums"
+            className="hidden md:block absolute -top-12 -left-4 lg:-left-12 font-[var(--font-editorial)] italic text-[color:var(--color-taupe-dark)]/12 text-[12rem] lg:text-[16rem] leading-none pointer-events-none select-none tabular-nums"
           >
             01
           </span>
@@ -145,7 +145,7 @@ export function MediaShowcase() {
                     aria-hidden="true"
                     className="absolute inset-0 bg-gradient-to-t from-[color:var(--color-navy-deep)]/60 via-[color:var(--color-navy-deep)]/20 to-[color:var(--color-navy-deep)]/40 transition-opacity duration-500 group-hover/play:opacity-80"
                   />
-                  <span className="relative z-10 flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full bg-[color:var(--color-bronze)]/95 text-[color:var(--color-navy-deep)] shadow-2xl transition-all duration-500 group-hover/play:scale-110 group-hover/play:bg-[color:var(--color-bronze-deep)]">
+                  <span className="relative z-10 flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full bg-[color:var(--color-taupe-dark)]/95 text-[color:var(--color-navy-deep)] shadow-2xl transition-all duration-500 group-hover/play:scale-110 group-hover/play:bg-[color:var(--color-navy)]">
                     <Play size={32} className="ml-1" aria-hidden="true" />
                   </span>
                 </button>
@@ -163,7 +163,7 @@ export function MediaShowcase() {
                     type="button"
                     onClick={() => openLightbox(src, altText)}
                     aria-label={`${altText} — ${lang === "fr" ? "agrandir" : "enlarge"}`}
-                    className="halo-glow relative aspect-[4/5] overflow-hidden bg-[color:var(--color-navy)] border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-bronze)]/60 transition-colors group cursor-zoom-in"
+                    className="halo-glow relative aspect-[4/5] overflow-hidden bg-[color:var(--color-navy)] border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-taupe-dark)]/60 transition-colors group cursor-zoom-in"
                   >
                     <img
                       src={src}
@@ -177,7 +177,7 @@ export function MediaShowcase() {
                     />
                     <span
                       aria-hidden="true"
-                      className="absolute bottom-2 right-2 font-[var(--font-editorial)] italic text-[color:var(--color-cream)] text-xs tabular-nums opacity-70"
+                      className="absolute bottom-2 right-2 italic text-[color:var(--color-cream)] text-xs tabular-nums opacity-70"
                     >
                       {String(idx + 1).padStart(2, "0")}
                     </span>
@@ -190,8 +190,8 @@ export function MediaShowcase() {
           {/* Caption éditoriale — 5/12 */}
           <div className="lg:col-span-5 order-1 lg:order-2 relative z-10">
             <div className="flex items-center gap-3 mb-4">
-              <Play size={14} className="text-[color:var(--color-bronze)]" aria-hidden="true" />
-              <p className="eyebrow text-[color:var(--color-bronze-deep)]">
+              <Play size={14} className="text-[color:var(--color-taupe-dark)]" aria-hidden="true" />
+              <p className="eyebrow text-[color:var(--color-navy)]">
                 {t("media.tvEyebrow")}
               </p>
             </div>
@@ -200,7 +200,7 @@ export function MediaShowcase() {
             </h3>
             {/* Signature line bronze qui s'étend au hover (pattern intralys-edito-magazine) */}
             <div className="group/line">
-              <div className="w-10 h-px bg-[color:var(--color-bronze)] mb-7 transition-[width] duration-500 hover:w-24" />
+              <div className="w-10 h-px bg-[color:var(--color-taupe-dark)] mb-7 transition-[width] duration-500 hover:w-24" />
             </div>
             <div className="space-y-4">
               {tvCaptionLines.map((line, idx) => (
@@ -209,14 +209,14 @@ export function MediaShowcase() {
                   className={
                     idx === 0
                       ? "dropcap text-[clamp(1rem,1.3vw,1.0625rem)] leading-[1.75] text-[color:var(--color-navy-deep)]/85"
-                      : "text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/80 font-[var(--font-editorial)] italic"
+                      : "text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/80 italic"
                   }
                 >
                   {line}
                 </p>
               ))}
             </div>
-            <p className="eyebrow text-[color:var(--color-taupe-dark)] mt-7 text-[10px] border-l-2 border-[color:var(--color-bronze)] pl-2.5">
+            <p className="eyebrow text-[color:var(--color-taupe-dark)] mt-7 text-[10px] border-l-2 border-[color:var(--color-taupe-dark)] pl-2.5">
               {t("media.tvShowName")}
             </p>
           </div>
@@ -227,7 +227,7 @@ export function MediaShowcase() {
           {/* Chiffre filigrane "02" — décalé à droite cette fois (asymétrie magazine) */}
           <span
             aria-hidden="true"
-            className="hidden md:block absolute -top-12 -right-4 lg:-right-12 font-[var(--font-editorial)] italic text-[color:var(--color-bronze)]/12 text-[12rem] lg:text-[16rem] leading-none pointer-events-none select-none tabular-nums"
+            className="hidden md:block absolute -top-12 -right-4 lg:-right-12 font-[var(--font-editorial)] italic text-[color:var(--color-taupe-dark)]/12 text-[12rem] lg:text-[16rem] leading-none pointer-events-none select-none tabular-nums"
           >
             02
           </span>
@@ -235,8 +235,8 @@ export function MediaShowcase() {
           {/* Caption éditoriale — 5/12 */}
           <div className="lg:col-span-5 relative z-10">
             <div className="flex items-center gap-3 mb-4">
-              <Camera size={14} className="text-[color:var(--color-bronze)]" aria-hidden="true" />
-              <p className="eyebrow text-[color:var(--color-bronze-deep)]">
+              <Camera size={14} className="text-[color:var(--color-taupe-dark)]" aria-hidden="true" />
+              <p className="eyebrow text-[color:var(--color-navy)]">
                 {t("media.eventEyebrow")}
               </p>
             </div>
@@ -244,7 +244,7 @@ export function MediaShowcase() {
               {t("media.eventTitle")}
             </h3>
             {/* Signature line bronze + dropcap intro (pattern intralys-edito-magazine) */}
-            <div className="w-10 h-px bg-[color:var(--color-bronze)] mb-7 transition-[width] duration-500 hover:w-24" />
+            <div className="w-10 h-px bg-[color:var(--color-taupe-dark)] mb-7 transition-[width] duration-500 hover:w-24" />
             <div className="space-y-4">
               {eventCaptionLines.map((line, idx) => (
                 <p
@@ -252,14 +252,14 @@ export function MediaShowcase() {
                   className={
                     idx === 0
                       ? "dropcap text-[clamp(1rem,1.3vw,1.0625rem)] leading-[1.75] text-[color:var(--color-navy-deep)]/85"
-                      : "text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/80 font-[var(--font-editorial)] italic"
+                      : "text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/80 italic"
                   }
                 >
                   {line}
                 </p>
               ))}
             </div>
-            <p className="eyebrow text-[color:var(--color-taupe-dark)] mt-7 text-[10px] border-l-2 border-[color:var(--color-bronze)] pl-2.5">
+            <p className="eyebrow text-[color:var(--color-taupe-dark)] mt-7 text-[10px] border-l-2 border-[color:var(--color-taupe-dark)] pl-2.5">
               <Newspaper size={11} className="inline mr-1.5 -mt-0.5" aria-hidden="true" />
               {t("media.eventDate")}
             </p>
@@ -286,7 +286,7 @@ export function MediaShowcase() {
                   type="button"
                   onClick={() => openLightbox(src, altText)}
                   aria-label={`${altText} — ${lang === "fr" ? "agrandir" : "enlarge"}`}
-                  className={`halo-glow relative aspect-[4/5] overflow-hidden bg-[color:var(--color-navy)] border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-bronze)]/60 transition-colors group cursor-zoom-in ${staggerClass}`}
+                  className={`halo-glow relative aspect-[4/5] overflow-hidden bg-[color:var(--color-navy)] border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-taupe-dark)]/60 transition-colors group cursor-zoom-in ${staggerClass}`}
                 >
                   <img
                     src={src}
@@ -301,7 +301,7 @@ export function MediaShowcase() {
                   {/* Numéro photo — pattern marginalia signature */}
                   <span
                     aria-hidden="true"
-                    className="absolute bottom-3 right-3 font-[var(--font-editorial)] italic text-[color:var(--color-cream)] text-sm tabular-nums opacity-70"
+                    className="absolute bottom-3 right-3 italic text-[color:var(--color-cream)] text-sm tabular-nums opacity-70"
                   >
                     {String(idx + 1).padStart(2, "0")}
                   </span>
@@ -332,7 +332,7 @@ export function MediaShowcase() {
             type="button"
             onClick={(e) => { e.stopPropagation(); setLightboxSrc(null); }}
             aria-label={lang === "fr" ? "Fermer" : "Close"}
-            className="absolute top-4 right-4 md:top-6 md:right-6 w-11 h-11 flex items-center justify-center rounded-full bg-[color:var(--color-navy-deep)]/80 border border-[color:var(--color-taupe)]/40 text-[color:var(--color-cream)] hover:bg-[color:var(--color-bronze)]/20 hover:border-[color:var(--color-bronze)]/60 transition-all duration-200 z-10"
+            className="absolute top-4 right-4 md:top-6 md:right-6 w-11 h-11 flex items-center justify-center rounded-full bg-[color:var(--color-navy-deep)]/80 border border-[color:var(--color-taupe)]/40 text-[color:var(--color-cream)] hover:bg-[color:var(--color-taupe-dark)]/20 hover:border-[color:var(--color-taupe-dark)]/60 transition-all duration-200 z-10"
           >
             <X size={20} strokeWidth={1.8} aria-hidden />
           </button>

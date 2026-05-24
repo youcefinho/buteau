@@ -56,7 +56,7 @@ export function Footer() {
             « {t("footer.coverStatement")} »
           </p>
           <div className="flex items-center gap-4 mt-6">
-            <span className="block w-12 h-px bg-[color:var(--color-bronze)]" />
+            <span className="block w-12 h-px bg-[color:var(--color-taupe-dark)]" />
             <p className="eyebrow text-[color:var(--color-taupe)]">
               Andrew Buteau
             </p>
@@ -72,7 +72,7 @@ export function Footer() {
             </p>
             <ul className="space-y-2.5 text-sm">
               <li className="flex items-start gap-3">
-                <Phone size={14} className="mt-1 shrink-0 text-[color:var(--color-bronze)]" aria-hidden="true" />
+                <Phone size={14} className="mt-1 shrink-0 text-[color:var(--color-taupe-dark)]" aria-hidden="true" />
                 <a
                   href={`tel:${config.phone.raw}`}
                   className="text-glow-hover font-[var(--font-display)] text-base font-semibold"
@@ -81,7 +81,7 @@ export function Footer() {
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <Mail size={14} className="mt-1 shrink-0 text-[color:var(--color-bronze)]" aria-hidden="true" />
+                <Mail size={14} className="mt-1 shrink-0 text-[color:var(--color-taupe-dark)]" aria-hidden="true" />
                 <a
                   href={`mailto:${config.email}`}
                   className="text-glow-hover break-all"
@@ -90,7 +90,7 @@ export function Footer() {
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin size={14} className="mt-1 shrink-0 text-[color:var(--color-bronze)]" aria-hidden="true" />
+                <MapPin size={14} className="mt-1 shrink-0 text-[color:var(--color-taupe-dark)]" aria-hidden="true" />
                 <span className="text-[color:var(--color-cream)]/80 leading-relaxed">
                   {config.address.streetAddress}
                   <br />
@@ -113,7 +113,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram Andrew Buteau"
-                    className="inline-flex items-center justify-center w-9 h-9 rounded-md border border-[color:var(--color-cream)]/25 text-[color:var(--color-cream)] hover:border-[color:var(--color-bronze)] hover:text-[color:var(--color-bronze)] transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+                    className="inline-flex items-center justify-center w-9 h-9 rounded-md border border-[color:var(--color-cream)]/25 text-[color:var(--color-cream)] hover:border-[color:var(--color-taupe-dark)] hover:text-[color:var(--color-taupe-dark)] transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
                   >
                     <Instagram className="w-4 h-4" strokeWidth={1.7} />
                   </a>
@@ -124,7 +124,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn Andrew Buteau"
-                    className="inline-flex items-center justify-center w-9 h-9 rounded-md border border-[color:var(--color-cream)]/25 text-[color:var(--color-cream)] hover:border-[color:var(--color-bronze)] hover:text-[color:var(--color-bronze)] transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+                    className="inline-flex items-center justify-center w-9 h-9 rounded-md border border-[color:var(--color-cream)]/25 text-[color:var(--color-cream)] hover:border-[color:var(--color-taupe-dark)] hover:text-[color:var(--color-taupe-dark)] transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
                   >
                     <Linkedin className="w-4 h-4" strokeWidth={1.7} />
                   </a>
@@ -135,7 +135,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Facebook Andrew Buteau"
-                    className="inline-flex items-center justify-center w-9 h-9 rounded-md border border-[color:var(--color-cream)]/25 text-[color:var(--color-cream)] hover:border-[color:var(--color-bronze)] hover:text-[color:var(--color-bronze)] transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+                    className="inline-flex items-center justify-center w-9 h-9 rounded-md border border-[color:var(--color-cream)]/25 text-[color:var(--color-cream)] hover:border-[color:var(--color-taupe-dark)] hover:text-[color:var(--color-taupe-dark)] transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
                   >
                     <Facebook className="w-4 h-4" strokeWidth={1.7} />
                   </a>
@@ -174,10 +174,10 @@ export function Footer() {
             <p className="eyebrow text-[color:var(--color-taupe)]">
               {t("footer.colophon")}
             </p>
-            <p className="font-[var(--font-editorial)] italic text-sm leading-[1.55] text-[color:var(--color-cream)]/75 text-pretty">
+            <p className="italic text-sm leading-[1.55] text-[color:var(--color-cream)]/75 text-pretty">
               {t("footer.colophonComposed")}
             </p>
-            <p className="font-[var(--font-editorial)] italic text-sm leading-[1.55] text-[color:var(--color-cream)]/75 text-pretty">
+            <p className="italic text-sm leading-[1.55] text-[color:var(--color-cream)]/75 text-pretty">
               {t("footer.colophonPrinted")}
             </p>
 
@@ -217,7 +217,7 @@ export function Footer() {
 
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3">
             <div className="flex items-center gap-3">
-              <span className="block w-8 h-px bg-[color:var(--color-bronze)]" />
+              <span className="block w-8 h-px bg-[color:var(--color-taupe-dark)]" />
               <p className="eyebrow text-[color:var(--color-taupe)] text-[10px]">
                 {t("footer.issn")}
               </p>

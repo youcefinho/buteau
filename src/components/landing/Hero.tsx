@@ -84,7 +84,7 @@ export function Hero() {
 
       {/* Scroll hint bottom — fine ligne verticale + texte */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3 animate-[buteauFadeUp_700ms_ease-out_1800ms_both]">
-        <span className="block w-px h-12 bg-gradient-to-b from-transparent via-[color:var(--color-taupe)]/70 to-[color:var(--color-bronze)]" />
+        <span className="block w-px h-12 bg-gradient-to-b from-transparent via-[color:var(--color-taupe)]/70 to-[color:var(--color-taupe-dark)]" />
         <p className="eyebrow text-[color:var(--color-taupe)]/70 text-[10px]">
           {t("home.hero.scrollHint")}
         </p>
@@ -109,7 +109,7 @@ export function Hero() {
                 return (
                   <span
                     key={idx}
-                    className="relative inline-block group/letter cursor-default transition-all duration-300 hover:text-[color:var(--color-bronze)] hover:-translate-y-1.5"
+                    className="relative inline-block group/letter cursor-default transition-all duration-300 hover:text-[color:var(--color-taupe-dark)] hover:-translate-y-1.5"
                     style={
                       reduceMotion
                         ? undefined
@@ -124,7 +124,7 @@ export function Hero() {
                     {/* Mot signature révélé au hover — Cormorant italic small sous la lettre */}
                     <span
                       aria-hidden="true"
-                      className="pointer-events-none absolute left-1/2 top-[110%] -translate-x-1/2 font-[var(--font-editorial)] italic text-[color:var(--color-bronze-soft)] text-[0.18em] tracking-normal whitespace-nowrap opacity-0 translate-y-2 transition-all duration-400 group-hover/letter:opacity-100 group-hover/letter:translate-y-0"
+                      className="pointer-events-none absolute left-1/2 top-[110%] -translate-x-1/2 italic text-[color:var(--color-taupe-light)] text-[0.18em] tracking-normal whitespace-nowrap opacity-0 translate-y-2 transition-all duration-400 group-hover/letter:opacity-100 group-hover/letter:translate-y-0"
                     >
                       {word}
                     </span>
@@ -133,7 +133,7 @@ export function Hero() {
               })}
             </p>
             <span
-              className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-[clamp(3rem,5vw,5rem)] h-px bg-[color:var(--color-bronze)] animate-[buteauWidth_700ms_ease-out_1100ms_both]"
+              className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-[clamp(3rem,5vw,5rem)] h-px bg-[color:var(--color-taupe-dark)] animate-[buteauWidth_700ms_ease-out_1100ms_both]"
               aria-hidden="true"
             />
             {/* Hint educatif "Survolez chaque lettre" retire 2026-05-19 (demande Andrew) */}
@@ -185,9 +185,9 @@ export function Hero() {
             <button
               type="button"
               onClick={() => openGlossary()}
-              className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[clamp(0.75rem,1.1vw,0.875rem)] text-[color:var(--color-cream)]/70 cursor-pointer"
+              className="text-glow-hover inline-flex items-center gap-2 italic text-[clamp(0.75rem,1.1vw,0.875rem)] text-[color:var(--color-cream)]/70 cursor-pointer"
             >
-              <BookOpen className="w-3.5 h-3.5 text-[color:var(--color-bronze)]" strokeWidth={1.5} aria-hidden />
+              <BookOpen className="w-3.5 h-3.5 text-[color:var(--color-taupe-dark)]" strokeWidth={1.5} aria-hidden />
               {lang === "fr"
                 ? "Premier contact ? Voir le lexique hypothécaire."
                 : "First time? View the mortgage glossary."}
@@ -203,13 +203,13 @@ export function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={t("home.reviews.googleBadgeLabel")}
-            className="group/chip mt-8 inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[color:var(--color-bronze)]/35 bg-[color:var(--color-bronze)]/[0.06] hover:border-[color:var(--color-bronze)]/65 hover:bg-[color:var(--color-bronze)]/10 transition-all duration-300 text-[clamp(0.75rem,1.1vw,0.875rem)] animate-[buteauFadeUp_700ms_ease-out_1600ms_both]"
+            className="group/chip mt-8 inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[color:var(--color-taupe-dark)]/35 bg-[color:var(--color-taupe-dark)]/[0.06] hover:border-[color:var(--color-taupe-dark)]/65 hover:bg-[color:var(--color-taupe-dark)]/10 transition-all duration-300 text-[clamp(0.75rem,1.1vw,0.875rem)] animate-[buteauFadeUp_700ms_ease-out_1600ms_both]"
           >
-            <Star className="w-3.5 h-3.5 fill-[color:var(--color-bronze)] text-[color:var(--color-bronze)] shrink-0" strokeWidth={1.5} aria-hidden />
+            <Star className="w-3.5 h-3.5 fill-[color:var(--color-taupe-dark)] text-[color:var(--color-taupe-dark)] shrink-0" strokeWidth={1.5} aria-hidden />
             <span className="font-[var(--font-display)] font-medium tracking-[0.06em] uppercase text-[color:var(--color-cream)]/90 whitespace-nowrap">
               {t("home.reviews.googleBadgeLabel")}
             </span>
-            <span aria-hidden="true" className="text-[color:var(--color-bronze)] transition-transform duration-300 group-hover/chip:translate-x-0.5">→</span>
+            <span aria-hidden="true" className="text-[color:var(--color-taupe-dark)] transition-transform duration-300 group-hover/chip:translate-x-0.5">→</span>
           </a>
         </div>
       </Container>

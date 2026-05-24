@@ -43,23 +43,23 @@ export function BackToTop() {
       type="button"
       onClick={scrollToTop}
       aria-label={label}
-      className={`group hidden lg:flex fixed bottom-6 left-6 z-40 w-12 h-12 items-center justify-center rounded-full bg-[color:var(--color-cream)]/95 backdrop-blur-xl border border-[color:var(--color-bronze)]/35 text-[color:var(--color-bronze-deep)] hover:border-[color:var(--color-bronze)]/70 hover:bg-[color:var(--color-bronze)]/10 hover:-translate-y-0.5 active:scale-95 transition-all duration-300 shadow-[0_8px_32px_-12px_rgba(16,34,61,0.18)] ${
+      className={`group hidden lg:flex fixed bottom-6 left-6 z-40 w-12 h-12 items-center justify-center rounded-full bg-[color:var(--color-cream)]/95 backdrop-blur-xl border border-[color:var(--color-taupe-dark)]/35 text-[color:var(--color-navy)] hover:border-[color:var(--color-taupe-dark)]/70 hover:bg-[color:var(--color-taupe-dark)]/10 hover:-translate-y-0.5 active:scale-95 transition-all duration-300 shadow-[0_8px_32px_-12px_rgba(16,34,61,0.18)] ${
         visible ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none"
       }`}
     >
       {/* Tooltip au hover desktop — apparait a droite du bouton */}
-      <span className="pointer-events-none absolute left-full ml-3 px-3 py-1.5 rounded-md bg-[color:var(--color-navy-deep)] border border-[color:var(--color-bronze)]/30 text-[color:var(--color-cream)] text-xs font-medium whitespace-nowrap opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 shadow-lg">
+      <span className="pointer-events-none absolute left-full ml-3 px-3 py-1.5 rounded-md bg-[color:var(--color-navy-deep)] border border-[color:var(--color-taupe-dark)]/30 text-[color:var(--color-cream)] text-xs font-medium whitespace-nowrap opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 shadow-lg">
         {label}
       </span>
 
       {/* Halo bronze pulsant 2-layer ripple (parite WhatsApp pill) — pause au hover */}
       <span
-        className="absolute inset-0 rounded-full bg-[color:var(--color-bronze)]/30 motion-safe:animate-ping pointer-events-none group-hover:hidden"
+        className="absolute inset-0 rounded-full bg-[color:var(--color-taupe-dark)]/30 motion-safe:animate-ping pointer-events-none group-hover:hidden"
         style={{ animationDuration: "2.4s" }}
         aria-hidden
       />
       <span
-        className="absolute -inset-1 rounded-full bg-[color:var(--color-bronze)]/15 motion-safe:animate-ping pointer-events-none group-hover:hidden"
+        className="absolute -inset-1 rounded-full bg-[color:var(--color-taupe-dark)]/15 motion-safe:animate-ping pointer-events-none group-hover:hidden"
         style={{ animationDuration: "2.4s", animationDelay: "0.6s" }}
         aria-hidden
       />

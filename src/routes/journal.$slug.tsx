@@ -46,7 +46,7 @@ function JournalArticlePage() {
   if (!article) {
     return (
       <LegalPageWrap eyebrow={isFr ? "Article introuvable" : "Article not found"} title="404">
-        <Link to="/journal" className="font-[var(--font-editorial)] italic text-[color:var(--color-bronze-deep)]">
+        <Link to="/journal" className="italic text-[color:var(--color-navy)]">
           {isFr ? "Retour aux articles" : "Back to articles"}
         </Link>
       </LegalPageWrap>
@@ -77,7 +77,7 @@ function JournalArticlePage() {
       <div className="mb-10 flex flex-wrap items-center justify-between gap-y-4 gap-x-6">
         <Link
           to="/journal"
-          className="group inline-flex items-center gap-2 font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze-deep)] hover:text-[color:var(--color-bronze)] transition-colors"
+          className="group inline-flex items-center gap-2 font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-navy)] hover:text-[color:var(--color-taupe-dark)] transition-colors"
         >
           <ArrowLeft
             size={14}
@@ -86,7 +86,7 @@ function JournalArticlePage() {
           />
           <span className="relative">
             {isFr ? "Retour aux articles" : "Back to articles"}
-            <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+            <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-taupe-dark)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
           </span>
         </Link>
         <p className="inline-flex items-center gap-2 text-xs italic text-[color:var(--color-taupe-dark)]">
@@ -98,10 +98,10 @@ function JournalArticlePage() {
       </div>
 
       {/* Lead + filet */}
-      <p className="font-[var(--font-editorial)] italic text-[clamp(1.125rem,1.6vw,1.25rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/85 mb-5 text-pretty hyphens-auto">
+      <p className="italic text-[clamp(1.125rem,1.6vw,1.25rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/85 mb-5 text-pretty hyphens-auto">
         {article.lead}
       </p>
-      <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-10" />
+      <div className="w-12 h-px bg-[color:var(--color-taupe-dark)] mb-10" />
 
       {/* HTML brut palette Buteau (CSS vars override appliques cote source HTML) */}
       <div
@@ -111,7 +111,7 @@ function JournalArticlePage() {
 
       {/* Signature de fin + retour */}
       <div className="mt-12 pt-8 border-t border-[color:var(--color-taupe)]/30 flex flex-wrap items-baseline justify-between gap-y-4 gap-x-6">
-        <p className="font-[var(--font-editorial)] italic text-sm text-[color:var(--color-taupe-dark)]">
+        <p className="italic text-sm text-[color:var(--color-taupe-dark)]">
           {isFr ? "Andrew Buteau, courtier hypothécaire" : "Andrew Buteau, mortgage broker"}
           {" · "}
           {article.date}
@@ -120,11 +120,11 @@ function JournalArticlePage() {
           <Link
             to="/"
             hash="contact"
-            className="group inline-flex items-center gap-2 font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze-deep)] hover:text-[color:var(--color-bronze)] transition-colors"
+            className="group inline-flex items-center gap-2 font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-navy)] hover:text-[color:var(--color-taupe-dark)] transition-colors"
           >
             <span className="relative">
               {isFr ? "En parler avec Andrew" : "Discuss with Andrew"}
-              <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-taupe-dark)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             </span>
           </Link>
         </HeartbeatCta>

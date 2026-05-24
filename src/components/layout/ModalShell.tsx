@@ -120,7 +120,7 @@ export function ModalShell({
                 onClick={() => window.print()}
                 aria-label={printLabel}
                 title={printLabel}
-                className="p-2 text-[color:var(--color-taupe-dark)] hover:text-[color:var(--color-bronze-deep)] transition-colors"
+                className="p-2 text-[color:var(--color-taupe-dark)] hover:text-[color:var(--color-navy)] transition-colors"
               >
                 <Printer size={20} aria-hidden="true" />
               </button>
@@ -130,7 +130,7 @@ export function ModalShell({
               type="button"
               onClick={onClose}
               aria-label={closeLabel}
-              className="p-2 -mr-2 text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-bronze-deep)] transition-colors"
+              className="p-2 -mr-2 text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-navy)] transition-colors"
             >
               <X size={24} aria-hidden="true" />
             </button>

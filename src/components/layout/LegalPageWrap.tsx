@@ -46,7 +46,7 @@ export function LegalPageWrap({
             <h1 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(1.875rem,4vw,3rem)] uppercase tracking-[0.04em] leading-[1.1] text-balance">
               {title}
             </h1>
-            <div className="w-16 h-px bg-[color:var(--color-bronze)] mx-auto" />
+            <div className="w-16 h-px bg-[color:var(--color-taupe-dark)] mx-auto" />
             {lastUpdated && (
               <p className="eyebrow text-[color:var(--color-cream)]/60">
                 {lastUpdated}

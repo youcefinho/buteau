@@ -26,27 +26,27 @@ export function SmsButton() {
     <a
       href={href}
       aria-label={`${t("common.smsButtonTooltip")} ${config.name} ${config.phone.display}`}
-      className="group fixed bottom-6 right-6 z-50 hidden lg:inline-flex items-center gap-3 pl-3 pr-4 py-2.5 rounded-full bg-[color:var(--color-navy-deep)] border border-[color:var(--color-bronze)]/35 hover:border-[color:var(--color-bronze)]/70 hover:bg-[color:var(--color-bronze)]/10 hover:-translate-y-0.5 transition-all duration-300 shadow-[0_8px_24px_-4px_rgba(0,0,0,0.4)]"
+      className="group fixed bottom-6 right-6 z-50 hidden lg:inline-flex items-center gap-3 pl-3 pr-4 py-2.5 rounded-full bg-[color:var(--color-navy-deep)] border border-[color:var(--color-taupe-dark)]/35 hover:border-[color:var(--color-taupe-dark)]/70 hover:bg-[color:var(--color-taupe-dark)]/10 hover:-translate-y-0.5 transition-all duration-300 shadow-[0_8px_24px_-4px_rgba(0,0,0,0.4)]"
     >
       {/* Tooltip hover desktop — apparait au-dessus du pill */}
-      <span className="pointer-events-none absolute bottom-full mb-3 right-0 px-3 py-1.5 rounded-md bg-[color:var(--color-navy-deep)] border border-[color:var(--color-bronze)]/35 text-[color:var(--color-cream)] text-xs font-medium whitespace-nowrap opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-lg">
+      <span className="pointer-events-none absolute bottom-full mb-3 right-0 px-3 py-1.5 rounded-md bg-[color:var(--color-navy-deep)] border border-[color:var(--color-taupe-dark)]/35 text-[color:var(--color-cream)] text-xs font-medium whitespace-nowrap opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-lg">
         {t("common.smsButtonTooltip")}
       </span>
 
       {/* Halo bronze pulsant 2 couches superposees (effet ripple) */}
       <span
-        className="absolute inset-0 rounded-full bg-[color:var(--color-bronze)]/30 motion-safe:animate-ping pointer-events-none group-hover:hidden"
+        className="absolute inset-0 rounded-full bg-[color:var(--color-taupe-dark)]/30 motion-safe:animate-ping pointer-events-none group-hover:hidden"
         style={{ animationDuration: "2.4s" }}
         aria-hidden
       />
       <span
-        className="absolute -inset-1 rounded-full bg-[color:var(--color-bronze)]/15 motion-safe:animate-ping pointer-events-none group-hover:hidden"
+        className="absolute -inset-1 rounded-full bg-[color:var(--color-taupe-dark)]/15 motion-safe:animate-ping pointer-events-none group-hover:hidden"
         style={{ animationDuration: "2.4s", animationDelay: "0.6s" }}
         aria-hidden
       />
 
       {/* Icone Message dans badge bronze circulaire */}
-      <span className="relative inline-flex items-center justify-center w-9 h-9 rounded-full bg-[color:var(--color-bronze)]/15 border border-[color:var(--color-bronze)]/40 text-[color:var(--color-bronze)] shrink-0">
+      <span className="relative inline-flex items-center justify-center w-9 h-9 rounded-full bg-[color:var(--color-taupe-dark)]/15 border border-[color:var(--color-taupe-dark)]/40 text-[color:var(--color-taupe-dark)] shrink-0">
         <MessageCircle className="w-4 h-4" strokeWidth={2} aria-hidden />
       </span>
 

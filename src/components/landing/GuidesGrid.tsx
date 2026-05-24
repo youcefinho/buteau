@@ -41,18 +41,18 @@ export function GuidesGrid() {
           {items.map((g, idx) => (
             <article
               key={idx}
-              className="group relative bg-[color:var(--color-cream)]/8 backdrop-blur-sm border border-[color:var(--color-cream)]/20 p-[clamp(1.75rem,3vw,2.5rem)] transition-all duration-500 hover:border-[color:var(--color-bronze)]/70 hover:bg-[color:var(--color-cream)]/15 hover:-translate-y-1 overflow-hidden"
+              className="group relative bg-[color:var(--color-cream)]/8 backdrop-blur-sm border border-[color:var(--color-cream)]/20 p-[clamp(1.75rem,3vw,2.5rem)] transition-all duration-500 hover:border-[color:var(--color-taupe-dark)]/70 hover:bg-[color:var(--color-cream)]/15 hover:-translate-y-1 overflow-hidden"
             >
               {/* Numéro Cormorant filigrane top-right */}
               <span
                 aria-hidden="true"
-                className="absolute top-4 right-5 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/30 text-5xl leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-[color:var(--color-bronze)]/45"
+                className="absolute top-4 right-5 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/30 text-5xl leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-[color:var(--color-taupe-dark)]/45"
               >
                 {["01", "02", "03"][idx]}
               </span>
 
               {/* Icone dans cercle bronze + halo subtle */}
-              <div className="mb-6 relative inline-flex items-center justify-center w-14 h-14 rounded-full bg-[color:var(--color-taupe)]/15 text-[color:var(--color-bronze-soft)] group-hover:bg-[color:var(--color-bronze)]/25 transition-colors">
+              <div className="mb-6 relative inline-flex items-center justify-center w-14 h-14 rounded-full bg-[color:var(--color-taupe)]/15 text-[color:var(--color-taupe-light)] group-hover:bg-[color:var(--color-taupe-dark)]/25 transition-colors">
                 <Download size={22} strokeWidth={1.5} aria-hidden="true" />
               </div>
 
@@ -62,7 +62,7 @@ export function GuidesGrid() {
               </h3>
 
               {/* Signature line bronze qui s'étend au hover */}
-              <div className="w-8 h-px bg-[color:var(--color-bronze)] mb-4 transition-[width] duration-500 group-hover:w-14" />
+              <div className="w-8 h-px bg-[color:var(--color-taupe-dark)] mb-4 transition-[width] duration-500 group-hover:w-14" />
 
               {/* Description */}
               <p className="text-sm leading-[1.65] text-[color:var(--color-cream)]/75 mb-6 text-pretty hyphens-auto">
@@ -70,7 +70,7 @@ export function GuidesGrid() {
               </p>
 
               {/* Badge "Bientôt" */}
-              <span className="inline-block eyebrow text-[color:var(--color-bronze-soft)] border-l-2 border-[color:var(--color-bronze)] pl-3">
+              <span className="inline-block eyebrow text-[color:var(--color-taupe-light)] border-l-2 border-[color:var(--color-taupe-dark)] pl-3">
                 {t("tools.guides.comingSoonLabel")}
               </span>
             </article>

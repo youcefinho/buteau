@@ -35,7 +35,7 @@ export function ScrollSideBronzeLine() {
         style={{
           scaleY,
           background:
-            "linear-gradient(to bottom, oklch(0.704 0.077 56 / 1) 0%, oklch(0.704 0.077 56 / 0.7) 50%, oklch(0.704 0.077 56 / 0.3) 100%)",
+            "linear-gradient(to bottom, oklch(0.722 0.018 84 / 1) 0%, oklch(0.722 0.018 84 / 0.7) 50%, oklch(0.722 0.018 84 / 0.3) 100%)",
         }}
         aria-hidden
       />
@@ -45,8 +45,8 @@ export function ScrollSideBronzeLine() {
         style={{
           y: headY,
           opacity: headOpacity,
-          backgroundColor: "oklch(0.704 0.077 56)",
-          boxShadow: "0 0 10px 2px oklch(0.704 0.077 56 / 0.55)",
+          backgroundColor: "oklch(0.722 0.018 84)",
+          boxShadow: "0 0 10px 2px oklch(0.722 0.018 84 / 0.55)",
         }}
         aria-hidden
       />

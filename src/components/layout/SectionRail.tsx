@@ -161,8 +161,8 @@ export function SectionRail({ sections = HOME_SECTIONS }: SectionRailProps = {})
                   isMain ? "w-3 h-3" : "w-1.5 h-1.5"
                 } ${
                   isActive
-                    ? "bg-[color:var(--color-bronze)] shadow-[0_0_0_3px_oklch(0.704_0.077_56/0.18)]"
-                    : "bg-[color:var(--color-taupe)]/45 group-hover:bg-[color:var(--color-bronze)]"
+                    ? "bg-[color:var(--color-taupe-dark)] shadow-[0_0_0_3px_oklch(0.704_0.077_56/0.18)]"
+                    : "bg-[color:var(--color-taupe)]/45 group-hover:bg-[color:var(--color-taupe-dark)]"
                 }`}
               />
             </span>
@@ -171,12 +171,12 @@ export function SectionRail({ sections = HOME_SECTIONS }: SectionRailProps = {})
                 Hover : scale-110 origin-left (zoom subtil sans pousser le dot)
                 + active déjà bronze + pulse. */}
             <span
-              className={`font-[var(--font-editorial)] italic transition-all duration-300 whitespace-nowrap origin-left group-hover:scale-110 ${
+              className={`italic transition-all duration-300 whitespace-nowrap origin-left group-hover:scale-110 ${
                 isMain ? "text-base" : "text-xs"
               } ${
                 isActive
-                  ? "text-[color:var(--color-bronze)] opacity-100"
-                  : "text-[color:var(--color-taupe-dark)] opacity-70 group-hover:opacity-100 group-hover:text-[color:var(--color-bronze)]"
+                  ? "text-[color:var(--color-taupe-dark)] opacity-100"
+                  : "text-[color:var(--color-taupe-dark)] opacity-70 group-hover:opacity-100 group-hover:text-[color:var(--color-taupe-dark)]"
               }`}
             >
               {label}
@@ -185,7 +185,7 @@ export function SectionRail({ sections = HOME_SECTIONS }: SectionRailProps = {})
             {/* Hairline bronze à droite du label, visible uniquement quand actif */}
             <span
               aria-hidden="true"
-              className={`block h-px bg-[color:var(--color-bronze)] transition-all duration-300 ${
+              className={`block h-px bg-[color:var(--color-taupe-dark)] transition-all duration-300 ${
                 isActive ? "w-4 ml-1 opacity-100" : "w-0 ml-0 opacity-0"
               }`}
             />
@@ -203,12 +203,12 @@ export function SectionRail({ sections = HOME_SECTIONS }: SectionRailProps = {})
           showHint
             ? {
                 background:
-                  "linear-gradient(110deg, oklch(0.252 0.067 256) 0%, oklch(0.252 0.067 256) 35%, oklch(0.704 0.077 56 / 0.45) 50%, oklch(0.252 0.067 256) 65%, oklch(0.252 0.067 256) 100%)",
+                  "linear-gradient(110deg, oklch(0.252 0.067 256) 0%, oklch(0.252 0.067 256) 35%, oklch(0.722 0.018 84 / 0.45) 50%, oklch(0.252 0.067 256) 65%, oklch(0.252 0.067 256) 100%)",
                 backgroundSize: "220% 100%",
               }
             : undefined
         }
-        className={`pointer-events-none absolute left-full top-1/2 -translate-y-1/2 ml-6 px-3.5 py-2 text-[color:var(--color-cream)] font-[var(--font-editorial)] italic text-sm rounded-md whitespace-nowrap shadow-[0_8px_24px_-12px_rgba(16,34,61,0.6)] transition-all duration-400 ${
+        className={`pointer-events-none absolute left-full top-1/2 -translate-y-1/2 ml-6 px-3.5 py-2 text-[color:var(--color-cream)] italic text-sm rounded-md whitespace-nowrap shadow-[0_8px_24px_-12px_rgba(16,34,61,0.6)] transition-all duration-400 ${
           showHint
             ? "opacity-100 translate-x-0 motion-safe:animate-[sectionRailHintFloat_3.2s_ease-in-out_infinite,sectionRailHintShimmer_2.8s_linear_infinite]"
             : "opacity-0 -translate-x-3 invisible bg-[color:var(--color-navy-deep)]"

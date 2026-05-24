@@ -76,9 +76,9 @@ export function SplashIntro() {
             aria-hidden="true"
           >
             {/* Cercle medaillon hairline bronze (sceau de cire vintage) */}
-            <circle cx="28" cy="28" r="22" fill="none" stroke="var(--color-bronze)" strokeWidth="0.8" opacity="0.7" />
+            <circle cx="28" cy="28" r="22" fill="none" stroke="var(--color-taupe-dark)" strokeWidth="0.8" opacity="0.7" />
             {/* Arc interieur depth */}
-            <circle cx="28" cy="28" r="19.5" fill="none" stroke="var(--color-bronze)" strokeWidth="0.4" opacity="0.4" />
+            <circle cx="28" cy="28" r="19.5" fill="none" stroke="var(--color-taupe-dark)" strokeWidth="0.4" opacity="0.4" />
             {/* "B" du logo officiel - scale 0.13 (occupe le medaillon) */}
             <g transform="translate(28, 28) scale(0.13) translate(-235, -705)">
               <path
@@ -95,10 +95,10 @@ export function SplashIntro() {
         </p>
 
         {/* Bronze line */}
-        <span className="block w-16 h-px bg-[color:var(--color-bronze)] mx-auto my-8 animate-[buteauWidth_600ms_ease-out_1100ms_both]" />
+        <span className="block w-16 h-px bg-[color:var(--color-taupe-dark)] mx-auto my-8 animate-[buteauWidth_600ms_ease-out_1100ms_both]" />
 
         {/* Tagline italic */}
-        <p className="font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/85 text-[clamp(1.25rem,2.5vw,1.875rem)] leading-tight animate-[buteauFadeUp_600ms_ease-out_1300ms_both]">
+        <p className="italic text-[color:var(--color-cream)]/85 text-[clamp(1.25rem,2.5vw,1.875rem)] leading-tight animate-[buteauFadeUp_600ms_ease-out_1300ms_both]">
           {t("common.tagline")}
         </p>
       </div>

@@ -178,7 +178,7 @@ function BodyFr() {
         <strong>Courriel :</strong>{" "}
         <a
           href={`mailto:${config.legal.dpoEmail || config.email}`}
-          className="underline hover:text-[color:var(--color-bronze-deep)] break-all"
+          className="underline hover:text-[color:var(--color-navy)] break-all"
         >
           {config.legal.dpoEmail || config.email}
         </a>
@@ -193,7 +193,7 @@ function BodyFr() {
           href="https://www.cai.gouv.qc.ca"
           target="_blank"
           rel="noopener noreferrer"
-          className="underline hover:text-[color:var(--color-bronze-deep)]"
+          className="underline hover:text-[color:var(--color-navy)]"
         >
           cai.gouv.qc.ca
         </a>
@@ -307,7 +307,7 @@ function BodyEn() {
         <strong>Email:</strong>{" "}
         <a
           href={`mailto:${config.legal.dpoEmail || config.email}`}
-          className="underline hover:text-[color:var(--color-bronze-deep)] break-all"
+          className="underline hover:text-[color:var(--color-navy)] break-all"
         >
           {config.legal.dpoEmail || config.email}
         </a>
@@ -321,7 +321,7 @@ function BodyEn() {
           href="https://www.cai.gouv.qc.ca"
           target="_blank"
           rel="noopener noreferrer"
-          className="underline hover:text-[color:var(--color-bronze-deep)]"
+          className="underline hover:text-[color:var(--color-navy)]"
         >
           cai.gouv.qc.ca
         </a>

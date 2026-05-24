@@ -30,7 +30,7 @@ export function CookieBanner() {
       role="dialog"
       aria-labelledby="cookie-banner-title"
       aria-describedby="cookie-banner-body"
-      className="fixed inset-x-0 bottom-0 z-[60] bg-[color:var(--color-navy)] border-t-2 border-[color:var(--color-bronze)] shadow-2xl"
+      className="fixed inset-x-0 bottom-0 z-[60] bg-[color:var(--color-navy)] border-t-2 border-[color:var(--color-taupe-dark)] shadow-2xl"
     >
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-5 md:py-6">
         <div className="flex flex-col lg:flex-row items-start lg:items-center gap-5 lg:gap-8">
@@ -38,7 +38,7 @@ export function CookieBanner() {
           <div className="flex items-start gap-4 flex-1">
             <Cookie
               size={28}
-              className="shrink-0 text-[color:var(--color-bronze)] mt-1"
+              className="shrink-0 text-[color:var(--color-taupe-dark)] mt-1"
               aria-hidden="true"
             />
             <div className="space-y-2">
@@ -55,7 +55,7 @@ export function CookieBanner() {
                 {t("cookies.body")}{" "}
                 <Link
                   to="/confidentialite"
-                  className="underline underline-offset-2 hover:text-[color:var(--color-bronze-soft)]"
+                  className="underline underline-offset-2 hover:text-[color:var(--color-taupe-light)]"
                 >
                   {t("cookies.learnMore")}
                 </Link>
@@ -76,7 +76,7 @@ export function CookieBanner() {
             <button
               type="button"
               onClick={acceptAll}
-              className="px-6 py-3 font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] bg-[color:var(--color-bronze)] text-[color:var(--color-cream)] hover:bg-[color:var(--color-bronze-deep)] transition-colors"
+              className="px-6 py-3 font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] bg-[color:var(--color-taupe-dark)] text-[color:var(--color-cream)] hover:bg-[color:var(--color-navy)] transition-colors"
             >
               {t("cookies.accept")}
             </button>

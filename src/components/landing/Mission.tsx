@@ -67,7 +67,7 @@ export function Mission() {
           {/* P1 avec drop cap luxury — col 5 desktop */}
           <p className="lg:col-span-5 dropcap text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.8] text-[color:var(--color-cream)]/90 font-light text-pretty hyphens-auto">
             {t("home.mission.bodyP1Lead")}
-            <span className="font-bold text-[color:var(--color-bronze)]">
+            <span className="font-bold text-[color:var(--color-taupe-dark)]">
               {t("home.mission.bodyP1Brand")}
             </span>
             {t("home.mission.bodyP1Continued")}
@@ -78,7 +78,7 @@ export function Mission() {
 
             <span
               aria-hidden="true"
-              className="absolute -top-6 left-0 font-[var(--font-editorial)] italic text-[color:var(--color-bronze)]/60 text-7xl md:text-8xl leading-none"
+              className="absolute -top-6 left-0 font-[var(--font-editorial)] italic text-[color:var(--color-taupe-dark)]/60 text-7xl md:text-8xl leading-none"
             >
               &ldquo;
             </span>
@@ -86,14 +86,14 @@ export function Mission() {
               <span className="text-[color:var(--color-cream)]/85">
                 {t("home.mission.bodyP2Lead")}
               </span>
-              <span className="font-bold text-[color:var(--color-bronze)] not-italic">
+              <span className="font-bold text-[color:var(--color-taupe-dark)] not-italic">
                 {t("home.mission.bodyP2Year")}
               </span>
               <span className="text-[color:var(--color-cream)]/85">
                 {t("home.mission.bodyP2Continued")}
               </span>
               <span
-                className="inline-block tabular-nums font-bold text-[color:var(--color-bronze)] mr-1"
+                className="inline-block tabular-nums font-bold text-[color:var(--color-taupe-dark)] mr-1"
                 aria-live="polite"
               >
                 {familiesCount}
@@ -105,7 +105,7 @@ export function Mission() {
             </p>
             <span
               aria-hidden="true"
-              className="block w-12 h-px bg-[color:var(--color-bronze)] mt-6"
+              className="block w-12 h-px bg-[color:var(--color-taupe-dark)] mt-6"
             />
           </blockquote>
         </div>
@@ -117,16 +117,16 @@ export function Mission() {
             return (
               <article
                 key={idx}
-                className="group relative bg-[color:var(--color-cream)] p-[clamp(1.75rem,3vw,2.5rem)] border border-[color:var(--color-taupe)]/60 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_18px_48px_-20px_rgba(16,34,61,0.32)] hover:border-[color:var(--color-bronze)] overflow-hidden"
+                className="group relative bg-[color:var(--color-cream)] p-[clamp(1.75rem,3vw,2.5rem)] border border-[color:var(--color-taupe)]/60 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_18px_48px_-20px_rgba(16,34,61,0.32)] hover:border-[color:var(--color-taupe-dark)] overflow-hidden"
               >
                 <span
                   aria-hidden="true"
-                  className="absolute top-4 right-5 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/20 text-5xl leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-[color:var(--color-bronze)]/30"
+                  className="absolute top-4 right-5 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/20 text-5xl leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-[color:var(--color-taupe-dark)]/30"
                 >
                   {String(idx + 1).padStart(2, "0")}
                 </span>
 
-                <div className="mb-6 inline-flex items-center justify-center w-12 h-12 rounded-full bg-[color:var(--color-taupe)]/15 text-[color:var(--color-bronze-deep)] transition-colors duration-500 group-hover:bg-[color:var(--color-bronze)]/15">
+                <div className="mb-6 inline-flex items-center justify-center w-12 h-12 rounded-full bg-[color:var(--color-taupe)]/15 text-[color:var(--color-navy)] transition-colors duration-500 group-hover:bg-[color:var(--color-taupe-dark)]/15">
                   <Icon size={22} strokeWidth={1.5} aria-hidden="true" />
                 </div>
 
@@ -134,7 +134,7 @@ export function Mission() {
                   {v.title}
                 </h3>
 
-                <div className="w-8 h-px bg-[color:var(--color-bronze)] mb-4 transition-[width] duration-500 group-hover:w-14" />
+                <div className="w-8 h-px bg-[color:var(--color-taupe-dark)] mb-4 transition-[width] duration-500 group-hover:w-14" />
 
                 <p className="text-sm leading-[1.55] text-[color:var(--color-navy-deep)]/80 text-pretty hyphens-auto">
                   <AutoGlossary text={v.desc} />
@@ -149,9 +149,9 @@ export function Mission() {
           <button
             type="button"
             onClick={openCarnet}
-            className="text-glow-hover inline-flex items-center gap-2 font-[var(--font-editorial)] italic text-[clamp(0.875rem,1.2vw,1rem)] text-[color:var(--color-cream)]/85 cursor-pointer"
+            className="text-glow-hover inline-flex items-center gap-2 italic text-[clamp(0.875rem,1.2vw,1rem)] text-[color:var(--color-cream)]/85 cursor-pointer"
           >
-            <BookMarked className="w-4 h-4 text-[color:var(--color-bronze)]" strokeWidth={1.5} aria-hidden />
+            <BookMarked className="w-4 h-4 text-[color:var(--color-taupe-dark)]" strokeWidth={1.5} aria-hidden />
             {lang === "fr"
               ? "Voir notre carnet de l'emprunteur"
               : "Open our borrower notebook"}

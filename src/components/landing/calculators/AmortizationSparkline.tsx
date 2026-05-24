@@ -110,8 +110,8 @@ export function AmortizationSparkline({
     >
       <defs>
         <linearGradient id="amort-area" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="oklch(0.704 0.077 56)" stopOpacity="0.45" />
-          <stop offset="100%" stopColor="oklch(0.704 0.077 56)" stopOpacity="0" />
+          <stop offset="0%" stopColor="oklch(0.722 0.018 84)" stopOpacity="0.45" />
+          <stop offset="100%" stopColor="oklch(0.722 0.018 84)" stopOpacity="0" />
         </linearGradient>
       </defs>
 
@@ -122,7 +122,7 @@ export function AmortizationSparkline({
       <path
         d={balancePath}
         fill="none"
-        stroke="oklch(0.704 0.077 56)"
+        stroke="oklch(0.722 0.018 84)"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"

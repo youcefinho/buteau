@@ -64,12 +64,12 @@ function BodyFr() {
         <strong>Adresse :</strong> {config.legal.streetAddress}
         <br />
         <strong>Téléphone :</strong>{" "}
-        <a href={`tel:${config.phone.raw}`} className="underline hover:text-[color:var(--color-bronze-deep)]">
+        <a href={`tel:${config.phone.raw}`} className="underline hover:text-[color:var(--color-navy)]">
           {config.phone.display}
         </a>
         <br />
         <strong>Courriel :</strong>{" "}
-        <a href={`mailto:${config.email}`} className="underline hover:text-[color:var(--color-bronze-deep)] break-all">
+        <a href={`mailto:${config.email}`} className="underline hover:text-[color:var(--color-navy)] break-all">
           {config.email}
         </a>
       </P>
@@ -120,7 +120,7 @@ function BodyFr() {
 
       <H2>Crédits</H2>
       <P>
-        Site conçu et développé par <a href="https://intralys.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-[color:var(--color-bronze-deep)]">Intralys</a>.
+        Site conçu et développé par <a href="https://intralys.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-[color:var(--color-navy)]">Intralys</a>.
       </P>
     </>
   );
@@ -148,12 +148,12 @@ function BodyEn() {
         <strong>Address:</strong> {config.legal.streetAddress}
         <br />
         <strong>Phone:</strong>{" "}
-        <a href={`tel:${config.phone.raw}`} className="underline hover:text-[color:var(--color-bronze-deep)]">
+        <a href={`tel:${config.phone.raw}`} className="underline hover:text-[color:var(--color-navy)]">
           {config.phone.display}
         </a>
         <br />
         <strong>Email:</strong>{" "}
-        <a href={`mailto:${config.email}`} className="underline hover:text-[color:var(--color-bronze-deep)] break-all">
+        <a href={`mailto:${config.email}`} className="underline hover:text-[color:var(--color-navy)] break-all">
           {config.email}
         </a>
       </P>
@@ -201,7 +201,7 @@ function BodyEn() {
 
       <H2>Credits</H2>
       <P>
-        Site designed and developed by <a href="https://intralys.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-[color:var(--color-bronze-deep)]">Intralys</a>.
+        Site designed and developed by <a href="https://intralys.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-[color:var(--color-navy)]">Intralys</a>.
       </P>
     </>
   );

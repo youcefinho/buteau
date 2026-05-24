@@ -32,7 +32,7 @@ export function AmfDisclaimer({ variant = "inline", className }: AmfDisclaimerPr
           className,
         )}
       >
-        <Shield size={11} aria-hidden="true" className="text-[color:var(--color-bronze)]" />
+        <Shield size={11} aria-hidden="true" className="text-[color:var(--color-taupe-dark)]" />
         {t("amf.certificateLabel")}
         {certNumber && <span className="ml-1 font-semibold">№ {certNumber}</span>}
       </span>
@@ -43,14 +43,14 @@ export function AmfDisclaimer({ variant = "inline", className }: AmfDisclaimerPr
     return (
       <aside
         className={cn(
-          "bg-[color:var(--color-cream-warm)] border-l-[3px] border-[color:var(--color-bronze)] p-[clamp(1.25rem,2vw,1.5rem)] space-y-3",
+          "bg-[color:var(--color-cream-warm)] border-l-[3px] border-[color:var(--color-taupe-dark)] p-[clamp(1.25rem,2vw,1.5rem)] space-y-3",
           className,
         )}
         aria-label={t("amf.certificateLabel")}
       >
         <div className="flex items-center gap-2.5">
-          <Shield size={16} className="text-[color:var(--color-bronze)]" aria-hidden="true" />
-          <p className="eyebrow text-[color:var(--color-bronze-deep)]">
+          <Shield size={16} className="text-[color:var(--color-taupe-dark)]" aria-hidden="true" />
+          <p className="eyebrow text-[color:var(--color-navy)]">
             {t("amf.certificateLabel")}
             {certNumber && <span className="ml-2 font-semibold">№ {certNumber}</span>}
           </p>

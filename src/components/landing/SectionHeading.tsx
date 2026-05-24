@@ -22,7 +22,7 @@ export function SectionHeading({
   const eyebrowColor = tone === "dark"
     ? "text-[color:var(--color-taupe)]"
     : tone === "bronze"
-      ? "text-[color:var(--color-bronze)]"
+      ? "text-[color:var(--color-taupe-dark)]"
       : "text-[color:var(--color-taupe-dark)]";
 
   return (

@@ -144,7 +144,7 @@ function DonutSvg({
           cy="100"
           r={RADIUS}
           fill="none"
-          stroke="color-mix(in oklch, var(--color-bronze) 14%, transparent)"
+          stroke="color-mix(in oklch, var(--color-taupe-dark) 14%, transparent)"
           strokeWidth={STROKE}
         />
         {segments.map((seg, i) => {
@@ -182,7 +182,7 @@ function DonutSvg({
             </span>
           )}
           {centerValue && (
-            <span className="font-[var(--font-editorial)] italic text-[clamp(1.25rem,1.8vw,1.5rem)] text-[color:var(--color-navy-deep)] tabular-nums mt-1.5 leading-none">
+            <span className="italic text-[clamp(1.25rem,1.8vw,1.5rem)] text-[color:var(--color-navy-deep)] tabular-nums mt-1.5 leading-none">
               {centerValue}
             </span>
           )}
@@ -233,8 +233,8 @@ function BronzeSlider({
               else onChange(clamp(n, min, max));
             }}
             aria-label={label}
-            className="text-base font-bold text-[color:var(--color-navy-deep)] tabular-nums bg-transparent border-b outline-none text-right w-24 transition-colors [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none focus:border-[color:var(--color-bronze)]"
-            style={{ borderColor: "color-mix(in oklch, var(--color-bronze) 30%, transparent)" }}
+            className="text-base font-bold text-[color:var(--color-navy-deep)] tabular-nums bg-transparent border-b outline-none text-right w-24 transition-colors [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none focus:border-[color:var(--color-taupe-dark)]"
+            style={{ borderColor: "color-mix(in oklch, var(--color-taupe-dark) 30%, transparent)" }}
           />
           {unit && (
             <span className="text-[11px] text-[color:var(--color-taupe-dark)] flex-shrink-0 tabular-nums">
@@ -246,14 +246,14 @@ function BronzeSlider({
       <div className="relative h-1.5">
         <div
           className="absolute inset-0 rounded-full"
-          style={{ backgroundColor: "color-mix(in oklch, var(--color-bronze) 14%, transparent)" }}
+          style={{ backgroundColor: "color-mix(in oklch, var(--color-taupe-dark) 14%, transparent)" }}
         />
         <div
           className="absolute inset-y-0 left-0 rounded-full"
           style={{
             width: `${percent}%`,
-            backgroundColor: "var(--color-bronze)",
-            boxShadow: "0 0 8px color-mix(in oklch, var(--color-bronze) 35%, transparent)",
+            backgroundColor: "var(--color-taupe-dark)",
+            boxShadow: "0 0 8px color-mix(in oklch, var(--color-taupe-dark) 35%, transparent)",
             transition: "width 0.15s ease",
           }}
         />
@@ -271,8 +271,8 @@ function BronzeSlider({
           className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 pointer-events-none w-4 h-4 rounded-full border-2 border-white"
           style={{
             left: `${percent}%`,
-            backgroundColor: "var(--color-bronze)",
-            boxShadow: "0 0 6px color-mix(in oklch, var(--color-bronze) 50%, transparent)",
+            backgroundColor: "var(--color-taupe-dark)",
+            boxShadow: "0 0 6px color-mix(in oklch, var(--color-taupe-dark) 50%, transparent)",
             transition: "left 0.15s ease",
           }}
         />
@@ -297,13 +297,13 @@ function Tile({
       <p className="eyebrow text-[color:var(--color-taupe-dark)] text-[9px] mb-1.5">{label}</p>
       <p
         className={`font-[var(--font-display)] font-bold tabular-nums leading-none ${
-          emphasis ? "text-[color:var(--color-bronze-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)]" : "text-[color:var(--color-navy-deep)] text-[clamp(1.125rem,1.6vw,1.25rem)]"
+          emphasis ? "text-[color:var(--color-navy)] text-[clamp(1.25rem,1.8vw,1.5rem)]" : "text-[color:var(--color-navy-deep)] text-[clamp(1.125rem,1.6vw,1.25rem)]"
         }`}
       >
         {value}
       </p>
       {hint && (
-        <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] mt-2 leading-snug">
+        <p className="italic text-xs text-[color:var(--color-taupe-dark)] mt-2 leading-snug">
           {hint}
         </p>
       )}
@@ -313,8 +313,8 @@ function Tile({
 
 // Palette donut — bronze + warm accents harmonious avec palette Buteau
 const SEG = {
-  bronze: "var(--color-bronze)",
-  bronzeDeep: "var(--color-bronze-deep)",
+  bronze: "var(--color-taupe-dark)",
+  bronzeDeep: "var(--color-navy)",
   taupe: "var(--color-taupe-dark)",
   navy: "var(--color-navy-deep)",
 };
@@ -338,7 +338,7 @@ function RateSensitivityChart({
   const max = Math.max(...capacities);
   return (
     <div className="border border-[color:var(--color-taupe)]/40 bg-[color:var(--color-cream)]/60 p-5">
-      <p className="eyebrow text-[color:var(--color-bronze-deep)] mb-4">{label}</p>
+      <p className="eyebrow text-[color:var(--color-navy)] mb-4">{label}</p>
       <div className="space-y-3">
         {rates.map((r, i) => {
           const cap = capacities[i];
@@ -350,7 +350,7 @@ function RateSensitivityChart({
                 <span
                   className={`tabular-nums font-semibold ${
                     isCurrent
-                      ? "text-[color:var(--color-bronze-deep)]"
+                      ? "text-[color:var(--color-navy)]"
                       : "text-[color:var(--color-taupe-dark)]"
                   }`}
                 >
@@ -360,7 +360,7 @@ function RateSensitivityChart({
                 <span
                   className={`tabular-nums font-semibold ${
                     isCurrent
-                      ? "text-[color:var(--color-bronze-deep)]"
+                      ? "text-[color:var(--color-navy)]"
                       : "text-[color:var(--color-navy-deep)]"
                   }`}
                 >
@@ -373,10 +373,10 @@ function RateSensitivityChart({
                   style={{
                     width: `${pct}%`,
                     backgroundColor: isCurrent
-                      ? "var(--color-bronze)"
-                      : "color-mix(in oklch, var(--color-bronze) 45%, transparent)",
+                      ? "var(--color-taupe-dark)"
+                      : "color-mix(in oklch, var(--color-taupe-dark) 45%, transparent)",
                     boxShadow: isCurrent
-                      ? "0 0 8px color-mix(in oklch, var(--color-bronze) 40%, transparent)"
+                      ? "0 0 8px color-mix(in oklch, var(--color-taupe-dark) 40%, transparent)"
                       : "none",
                   }}
                 />
@@ -425,7 +425,7 @@ function CumulativeInterestChart({
   return (
     <div className="border border-[color:var(--color-taupe)]/40 bg-[color:var(--color-cream)]/60 p-5">
       <div className="flex items-center justify-between mb-3">
-        <p className="eyebrow text-[color:var(--color-bronze-deep)]">
+        <p className="eyebrow text-[color:var(--color-navy)]">
           Intérêts cumulés
         </p>
         <div className="flex items-center gap-4 text-[10px] uppercase tracking-wider">
@@ -434,7 +434,7 @@ function CumulativeInterestChart({
             <span className="text-[color:var(--color-taupe-dark)]">{fixedLabel}</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="inline-block w-3 h-0.5 bg-[color:var(--color-bronze)]" />
+            <span className="inline-block w-3 h-0.5 bg-[color:var(--color-taupe-dark)]" />
             <span className="text-[color:var(--color-taupe-dark)]">{variableLabel}</span>
           </div>
         </div>
@@ -495,7 +495,7 @@ function CumulativeInterestChart({
         <path
           d={path(variableSeries)}
           fill="none"
-          stroke="var(--color-bronze)"
+          stroke="var(--color-taupe-dark)"
           strokeWidth={2}
           strokeLinecap="round"
         />
@@ -536,7 +536,7 @@ function MdfComparisonGrid({
 
   return (
     <div className="border border-[color:var(--color-taupe)]/40 bg-[color:var(--color-cream)]/60 p-5">
-      <p className="eyebrow text-[color:var(--color-bronze-deep)] mb-4">
+      <p className="eyebrow text-[color:var(--color-navy)] mb-4">
         Impact de la mise de fonds
       </p>
       <div className="grid grid-cols-3 gap-3">
@@ -545,11 +545,11 @@ function MdfComparisonGrid({
             key={s.pct}
             className={`border p-4 text-center ${
               s.pct === 20
-                ? "border-[color:var(--color-bronze)] bg-[color:var(--color-bronze)]/8"
+                ? "border-[color:var(--color-taupe-dark)] bg-[color:var(--color-taupe-dark)]/8"
                 : "border-[color:var(--color-taupe)]/40"
             }`}
           >
-            <p className="font-[var(--font-display)] font-bold text-[color:var(--color-bronze-deep)] text-3xl mb-1">
+            <p className="font-[var(--font-display)] font-bold text-[color:var(--color-navy)] text-3xl mb-1">
               {s.pct}%
             </p>
             <p className="text-[10px] uppercase tracking-wider text-[color:var(--color-taupe-dark)] mb-3">
@@ -571,7 +571,7 @@ function MdfComparisonGrid({
                 <p
                   className={`font-bold tabular-nums ${
                     s.prime > 0
-                      ? "text-[color:var(--color-bronze-deep)]"
+                      ? "text-[color:var(--color-navy)]"
                       : "text-[color:var(--color-taupe-dark)]"
                   }`}
                 >
@@ -582,7 +582,7 @@ function MdfComparisonGrid({
           </div>
         ))}
       </div>
-      <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] mt-4 leading-snug">
+      <p className="italic text-xs text-[color:var(--color-taupe-dark)] mt-4 leading-snug">
         20 % MDF = aucune prime SCHL + paiement réduit, mais cash initial plus élevé. Le bon arbitrage dépend de votre liquidité disponible.
       </p>
     </div>
@@ -684,7 +684,7 @@ function TabCapacite({ mode }: { mode: CalcMode }) {
         />
 
         <div className="pt-2">
-          <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] leading-relaxed text-pretty hyphens-auto">
+          <p className="italic text-xs text-[color:var(--color-taupe-dark)] leading-relaxed text-pretty hyphens-auto">
             {isFr
               ? "Estimation basée sur les ratios ABD/ATD courants (35 % / 42 %), amortissement 25 ans, charges habitation 350 $/mois (taxes + chauffage). Hors stress-test B-20 — un courtier valide votre dossier réel."
               : "Estimate based on standard GDS/TDS ratios (35% / 42%), 25-year amortization, $350/mo housing costs (taxes + heating). Excludes B-20 stress test — a broker validates your real file."}
@@ -718,7 +718,7 @@ function TabCapacite({ mode }: { mode: CalcMode }) {
         <Link
           to="/"
           hash="contact"
-          className="group inline-flex items-center gap-3 mt-3 text-xs uppercase tracking-[0.22em] font-bold text-[color:var(--color-bronze-deep)] hover:text-[color:var(--color-bronze)] transition-colors"
+          className="group inline-flex items-center gap-3 mt-3 text-xs uppercase tracking-[0.22em] font-bold text-[color:var(--color-navy)] hover:text-[color:var(--color-taupe-dark)] transition-colors"
         >
           {isFr ? "Valider avec Andrew" : "Validate with Andrew"}
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
@@ -734,7 +734,7 @@ function TabCapacite({ mode }: { mode: CalcMode }) {
             currentRate={taux}
             label={isFr ? "Sensibilité de votre capacité au taux" : "Capacity sensitivity to rate"}
           />
-          <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] mt-3 leading-snug">
+          <p className="italic text-xs text-[color:var(--color-taupe-dark)] mt-3 leading-snug">
             {isFr
               ? "Avec le même revenu et les mêmes dettes, une baisse d'1 % de taux peut bonifier votre capacité de plusieurs dizaines de milliers de dollars. Le timing du marché compte."
               : "With the same income and debts, a 1% rate drop can lift your capacity by tens of thousands. Market timing matters."}
@@ -818,7 +818,7 @@ function TabPaiement({ mode }: { mode: CalcMode }) {
         />
 
         <div className="pt-2">
-          <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] leading-relaxed text-pretty hyphens-auto">
+          <p className="italic text-xs text-[color:var(--color-taupe-dark)] leading-relaxed text-pretty hyphens-auto">
             {isFr
               ? "Calcul selon la formule canadienne semi-annuelle composée (LBC art. 6). Indicatif uniquement — votre prêteur établit le paiement réel selon le taux confirmé."
               : "Calculation per Canadian semi-annual compounded formula (IRA s. 6). Indicative only — your lender sets the actual payment based on confirmed rate."}
@@ -856,7 +856,7 @@ function TabPaiement({ mode }: { mode: CalcMode }) {
         <Link
           to="/"
           hash="contact"
-          className="group inline-flex items-center gap-3 mt-3 text-xs uppercase tracking-[0.22em] font-bold text-[color:var(--color-bronze-deep)] hover:text-[color:var(--color-bronze)] transition-colors"
+          className="group inline-flex items-center gap-3 mt-3 text-xs uppercase tracking-[0.22em] font-bold text-[color:var(--color-navy)] hover:text-[color:var(--color-taupe-dark)] transition-colors"
         >
           {isFr ? "Bloquer ce taux" : "Lock this rate"}
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
@@ -992,7 +992,7 @@ function TabComparaison({ mode }: { mode: CalcMode }) {
           unit="%"
         />
 
-        <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] leading-relaxed pt-2 text-pretty hyphens-auto">
+        <p className="italic text-xs text-[color:var(--color-taupe-dark)] leading-relaxed pt-2 text-pretty hyphens-auto">
           {isFr
             ? "Scénario simplifié : 24 mois au taux variable initial, puis 36 mois au taux moyen anticipé. La réalité dépend des décisions de la Banque du Canada — pas une prédiction."
             : "Simplified scenario: 24 months at initial variable rate, then 36 months at anticipated average. Reality depends on Bank of Canada decisions — not a prediction."}
@@ -1003,7 +1003,7 @@ function TabComparaison({ mode }: { mode: CalcMode }) {
         {/* Comparison side-by-side */}
         <div className="grid grid-cols-2 gap-4">
           <div className="border border-[color:var(--color-taupe)]/40 p-5 bg-[color:var(--color-cream)]/60">
-            <p className="eyebrow text-[color:var(--color-bronze-deep)] mb-3">
+            <p className="eyebrow text-[color:var(--color-navy)] mb-3">
               {isFr ? "Fixe" : "Fixed"}
             </p>
             <p className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-2xl tabular-nums mb-1">
@@ -1038,14 +1038,14 @@ function TabComparaison({ mode }: { mode: CalcMode }) {
             className="border p-5 transition-colors duration-500"
             style={{
               borderColor: variableGagnant
-                ? "var(--color-bronze)"
+                ? "var(--color-taupe-dark)"
                 : "color-mix(in oklch, var(--color-taupe) 50%, transparent)",
               background: variableGagnant
-                ? "color-mix(in oklch, var(--color-bronze) 8%, var(--color-cream))"
+                ? "color-mix(in oklch, var(--color-taupe-dark) 8%, var(--color-cream))"
                 : "color-mix(in oklch, var(--color-cream) 60%, transparent)",
             }}
           >
-            <p className="eyebrow text-[color:var(--color-bronze-deep)] mb-3">
+            <p className="eyebrow text-[color:var(--color-navy)] mb-3">
               {isFr ? "Variable" : "Variable"}
             </p>
             <p className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-2xl tabular-nums mb-1">
@@ -1080,15 +1080,15 @@ function TabComparaison({ mode }: { mode: CalcMode }) {
         </div>
 
         {/* Verdict */}
-        <div className="border-l-3 border-[color:var(--color-bronze)] pl-5 py-2 bg-[color:var(--color-cream-warm)]/40">
-          <p className="eyebrow text-[color:var(--color-bronze-deep)] mb-2">
+        <div className="border-l-3 border-[color:var(--color-taupe-dark)] pl-5 py-2 bg-[color:var(--color-cream-warm)]/40">
+          <p className="eyebrow text-[color:var(--color-navy)] mb-2">
             {isFr ? "Écart sur 5 ans" : "5-year delta"}
           </p>
           <p className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-2xl tabular-nums">
             {variableGagnant ? "+" : ""}
             {fmtCAD(Math.abs(ecart))}
           </p>
-          <p className="font-[var(--font-editorial)] italic text-sm text-[color:var(--color-navy-deep)]/80 mt-2 leading-snug">
+          <p className="italic text-sm text-[color:var(--color-navy-deep)]/80 mt-2 leading-snug">
             {variableGagnant
               ? isFr
                 ? `Dans ce scénario, le variable économise ${fmtCAD(Math.abs(ecartInterets))} d'intérêts. Mais le risque est sur vous : un taux supérieur changerait le verdict.`
@@ -1102,7 +1102,7 @@ function TabComparaison({ mode }: { mode: CalcMode }) {
         <Link
           to="/"
           hash="contact"
-          className="group inline-flex items-center gap-3 text-xs uppercase tracking-[0.22em] font-bold text-[color:var(--color-bronze-deep)] hover:text-[color:var(--color-bronze)] transition-colors"
+          className="group inline-flex items-center gap-3 text-xs uppercase tracking-[0.22em] font-bold text-[color:var(--color-navy)] hover:text-[color:var(--color-taupe-dark)] transition-colors"
         >
           {isFr ? "Discuter de ma stratégie" : "Discuss my strategy"}
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
@@ -1119,7 +1119,7 @@ function TabComparaison({ mode }: { mode: CalcMode }) {
             fixedLabel={isFr ? "Fixe" : "Fixed"}
             variableLabel={isFr ? "Variable" : "Variable"}
           />
-          <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] mt-3 leading-snug">
+          <p className="italic text-xs text-[color:var(--color-taupe-dark)] mt-3 leading-snug">
             {isFr
               ? "L'écart visuel entre les 2 courbes représente votre gain (ou perte) potentiel sur le terme. Plus la courbe est haute, plus vous payez d'intérêts."
               : "The visual gap between the 2 curves shows your potential gain (or loss) over the term. The higher the curve, the more interest paid."}
@@ -1205,8 +1205,8 @@ function TabMiseDeFonds({ mode }: { mode: CalcMode }) {
                 onClick={() => setResidence(opt)}
                 className={`text-sm font-semibold py-2.5 transition-colors duration-200 border ${
                   residence === opt
-                    ? "border-[color:var(--color-bronze)] bg-[color:var(--color-bronze)]/10 text-[color:var(--color-bronze-deep)]"
-                    : "border-[color:var(--color-taupe)]/40 text-[color:var(--color-taupe-dark)] hover:border-[color:var(--color-bronze)]/60"
+                    ? "border-[color:var(--color-taupe-dark)] bg-[color:var(--color-taupe-dark)]/10 text-[color:var(--color-navy)]"
+                    : "border-[color:var(--color-taupe)]/40 text-[color:var(--color-taupe-dark)] hover:border-[color:var(--color-taupe-dark)]/60"
                 }`}
               >
                 {isFr
@@ -1221,7 +1221,7 @@ function TabMiseDeFonds({ mode }: { mode: CalcMode }) {
           </div>
         </div>
 
-        <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] leading-relaxed pt-2 text-pretty hyphens-auto">
+        <p className="italic text-xs text-[color:var(--color-taupe-dark)] leading-relaxed pt-2 text-pretty hyphens-auto">
           {isFr
             ? "Frais estimés : taxe de bienvenue (barème Québec), notaire ~1 500 $, inspection 600 $, évaluation 400 $, ajustements taxes 800 $. SCHL applicable < 20 % MDF en résidence principale uniquement."
             : "Estimated fees: welcome tax (Quebec scale), notary ~$1,500, inspection $600, appraisal $400, tax adjustments $800. CMHC insurance only applies < 20% DP on primary residence."}
@@ -1263,7 +1263,7 @@ function TabMiseDeFonds({ mode }: { mode: CalcMode }) {
                 <span className="text-[color:var(--color-taupe-dark)]">
                   {isFr ? `Prime SCHL (${(primeRate * 100).toFixed(2)} %)` : `CMHC premium (${(primeRate * 100).toFixed(2)}%)`}
                 </span>
-                <span className="text-[color:var(--color-bronze-deep)] font-semibold tabular-nums">
+                <span className="text-[color:var(--color-navy)] font-semibold tabular-nums">
                   {fmtCAD(primeSchl)}
                 </span>
               </div>
@@ -1271,25 +1271,25 @@ function TabMiseDeFonds({ mode }: { mode: CalcMode }) {
                 <span className="text-[color:var(--color-taupe-dark)]">{isFr ? "TVQ + TPS sur prime SCHL" : "QST + GST on CMHC"}</span>
                 <span className="text-[color:var(--color-navy-deep)] font-semibold tabular-nums">{fmtCAD(tps)}</span>
               </div>
-              <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] pt-1 leading-snug">
+              <p className="italic text-xs text-[color:var(--color-taupe-dark)] pt-1 leading-snug">
                 {isFr
                   ? `Prime SCHL ajoutée au prêt — pas exigée en liquide, mais les taxes (${fmtCAD(tps)}) sont dues à la signature.`
                   : `CMHC premium added to loan — not due in cash, but taxes (${fmtCAD(tps)}) are due at signing.`}
               </p>
             </>
           )}
-          <div className="flex justify-between pt-2 mt-1 border-t border-[color:var(--color-bronze)]/30 bg-[color:var(--color-bronze)]/8 -mx-4 px-4 py-2">
-            <span className="text-[color:var(--color-bronze-deep)] font-semibold uppercase tracking-wider text-xs">
+          <div className="flex justify-between pt-2 mt-1 border-t border-[color:var(--color-taupe-dark)]/30 bg-[color:var(--color-taupe-dark)]/8 -mx-4 px-4 py-2">
+            <span className="text-[color:var(--color-navy)] font-semibold uppercase tracking-wider text-xs">
               {isFr ? "Total liquidités" : "Total cash"}
             </span>
-            <span className="text-[color:var(--color-bronze-deep)] font-bold tabular-nums">{fmtCAD(cashTotal)}</span>
+            <span className="text-[color:var(--color-navy)] font-bold tabular-nums">{fmtCAD(cashTotal)}</span>
           </div>
         </div>
 
         <Link
           to="/"
           hash="contact"
-          className="group inline-flex items-center gap-3 text-xs uppercase tracking-[0.22em] font-bold text-[color:var(--color-bronze-deep)] hover:text-[color:var(--color-bronze)] transition-colors"
+          className="group inline-flex items-center gap-3 text-xs uppercase tracking-[0.22em] font-bold text-[color:var(--color-navy)] hover:text-[color:var(--color-taupe-dark)] transition-colors"
         >
           {isFr ? "Préparer mon dossier" : "Prepare my file"}
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
@@ -1356,7 +1356,7 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
       {/* Filigrane $ XL */}
       <span
         aria-hidden="true"
-        className="absolute -top-12 right-0 font-[var(--font-editorial)] italic text-[color:var(--color-bronze)]/8 text-[22rem] leading-none pointer-events-none select-none"
+        className="absolute -top-12 right-0 font-[var(--font-editorial)] italic text-[color:var(--color-taupe-dark)]/8 text-[22rem] leading-none pointer-events-none select-none"
       >
         $
       </span>
@@ -1364,8 +1364,8 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
       <Container size="xl" className="relative">
         {/* Header signature — adapte au mode */}
         <div className={`max-w-3xl ${isPreview ? "mb-8 md:mb-10" : "mb-12 md:mb-16"}`}>
-          <p className="eyebrow text-[color:var(--color-bronze-deep)] inline-flex items-center gap-3 mb-5">
-            <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
+          <p className="eyebrow text-[color:var(--color-navy)] inline-flex items-center gap-3 mb-5">
+            <span className="inline-block w-6 h-px bg-[color:var(--color-taupe-dark)]" />
             {isPreview
               ? isFr ? "Calculateur · Aperçu" : "Calculator · Preview"
               : isFr ? "Calculateur" : "Calculator"}
@@ -1379,8 +1379,8 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
           >
             {isFr ? "Vos chiffres, sans détour." : "Your numbers, no detour."}
           </h2>
-          <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-6" />
-          <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/80 text-pretty">
+          <div className="w-12 h-px bg-[color:var(--color-taupe-dark)] mb-6" />
+          <p className="italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/80 text-pretty">
             {isPreview
               ? isFr
                 ? "Quatre vues du même dossier — capacité, paiement, stratégie de taux, liquidités. Faites bouger les chiffres, puis ouvrez le calculateur complet pour les graphiques et scénarios approfondis."
@@ -1405,8 +1405,8 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
                   aria-pressed={active}
                   className={`group/tab flex-shrink-0 px-4 md:px-6 py-4 md:py-5 transition-all duration-300 border-b-2 -mb-px ${
                     active
-                      ? "border-[color:var(--color-bronze)]"
-                      : "border-transparent hover:border-[color:var(--color-bronze)]/40"
+                      ? "border-[color:var(--color-taupe-dark)]"
+                      : "border-transparent hover:border-[color:var(--color-taupe-dark)]/40"
                   }`}
                 >
                   <div className="flex items-center gap-3">
@@ -1415,8 +1415,8 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
                       strokeWidth={active ? 2 : 1.5}
                       className={`transition-colors ${
                         active
-                          ? "text-[color:var(--color-bronze-deep)]"
-                          : "text-[color:var(--color-taupe-dark)] group-hover/tab:text-[color:var(--color-bronze-deep)]"
+                          ? "text-[color:var(--color-navy)]"
+                          : "text-[color:var(--color-taupe-dark)] group-hover/tab:text-[color:var(--color-navy)]"
                       }`}
                       aria-hidden="true"
                     />
@@ -1431,9 +1431,9 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
                         {tab.label}
                       </span>
                       <span
-                        className={`font-[var(--font-editorial)] italic text-[10px] md:text-xs transition-colors ${
+                        className={`italic text-[10px] md:text-xs transition-colors ${
                           active
-                            ? "text-[color:var(--color-bronze-deep)]"
+                            ? "text-[color:var(--color-navy)]"
                             : "text-[color:var(--color-taupe)]/80"
                         }`}
                       >
@@ -1458,7 +1458,7 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
         {/* CTA Aperçu -> calculateur complet (mode preview uniquement) */}
         {isPreview && (
           <div className="mt-10 pt-8 border-t border-[color:var(--color-taupe)]/30 flex flex-col sm:flex-row items-baseline justify-between gap-y-4 gap-x-6">
-            <p className="font-[var(--font-editorial)] italic text-sm text-[color:var(--color-taupe-dark)] leading-snug max-w-xl text-pretty">
+            <p className="italic text-sm text-[color:var(--color-taupe-dark)] leading-snug max-w-xl text-pretty">
               {isFr
                 ? "Graphiques d'amortissement, sensibilité au taux, courbes fixe vs variable et comparaisons mise de fonds — disponibles dans le calculateur complet."
                 : "Amortization charts, rate sensitivity, fixed vs variable curves and down payment comparisons — available in the full calculator."}
@@ -1467,7 +1467,7 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
               <Link
                 to="/outils"
                 hash="calculateur"
-                className="group inline-flex items-center gap-2 px-6 py-3 border border-[color:var(--color-bronze)] text-[color:var(--color-bronze-deep)] hover:bg-[color:var(--color-bronze)] hover:text-[color:var(--color-cream)] hover:-translate-y-0.5 text-xs uppercase tracking-[0.22em] font-bold whitespace-nowrap transition-all duration-300"
+                className="group inline-flex items-center gap-2 px-6 py-3 border border-[color:var(--color-taupe-dark)] text-[color:var(--color-navy)] hover:bg-[color:var(--color-taupe-dark)] hover:text-[color:var(--color-cream)] hover:-translate-y-0.5 text-xs uppercase tracking-[0.22em] font-bold whitespace-nowrap transition-all duration-300"
               >
                 <span>{isFr ? "Calculateur complet" : "Full calculator"}</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
@@ -1479,7 +1479,7 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
         {/* Footer note + AMF (mode full uniquement) */}
         {!isPreview && (
           <div className="mt-12 pt-6 border-t border-[color:var(--color-taupe)]/30 max-w-3xl">
-            <p className="font-[var(--font-editorial)] italic text-xs text-[color:var(--color-taupe-dark)] leading-relaxed text-pretty hyphens-auto">
+            <p className="italic text-xs text-[color:var(--color-taupe-dark)] leading-relaxed text-pretty hyphens-auto">
               {isFr
                 ? "Outils indicatifs uniquement. Les conditions, taux, primes SCHL et frais varient selon votre dossier, la propriété, le prêteur et le moment du marché. L'Équipe Buteau opère sous le cabinet Planiprêt — courtage hypothécaire inscrit à l'AMF. Le service de courtage est gratuit pour l'acheteur."
                 : "Indicative tools only. Conditions, rates, CMHC premiums and fees vary based on your file, the property, the lender and market timing. L'Équipe Buteau operates under Planiprêt — mortgage brokerage registered with AMF. Brokerage service is free for the buyer."}

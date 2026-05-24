@@ -113,9 +113,9 @@ export function TerritoryMap() {
                   r="100"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop offset="0%" stopColor="oklch(0.704 0.077 56 / 0.30)" />
-                  <stop offset="55%" stopColor="oklch(0.704 0.077 56 / 0.10)" />
-                  <stop offset="100%" stopColor="oklch(0.704 0.077 56 / 0)" />
+                  <stop offset="0%" stopColor="oklch(0.722 0.018 84 / 0.30)" />
+                  <stop offset="55%" stopColor="oklch(0.722 0.018 84 / 0.10)" />
+                  <stop offset="100%" stopColor="oklch(0.722 0.018 84 / 0)" />
                 </radialGradient>
 
                 {/* Mask feather identique - applique au path partage via use */}
@@ -220,7 +220,7 @@ export function TerritoryMap() {
                         y1={LAVAL_POS.y}
                         x2={line.to.x}
                         y2={line.to.y}
-                        stroke="oklch(0.704 0.077 56 / 0.55)"
+                        stroke="oklch(0.722 0.018 84 / 0.55)"
                         strokeWidth={isTargetActive ? "1.4" : "0.8"}
                         strokeDasharray={String(line.length)}
                         strokeDashoffset={isVisible ? 0 : line.length}
@@ -238,7 +238,7 @@ export function TerritoryMap() {
                             height="11"
                             rx="2"
                             fill="oklch(0.978 0 0)"
-                            stroke="oklch(0.704 0.077 56 / 0.5)"
+                            stroke="oklch(0.722 0.018 84 / 0.5)"
                             strokeWidth="0.4"
                           />
                           <text
@@ -279,7 +279,7 @@ export function TerritoryMap() {
                   >
                     {/* C - Pulse halo sur n'importe quel marker actif (pas juste Laval) */}
                     {isActive && (
-                      <circle r="14" fill="oklch(0.704 0.077 56 / 0.3)">
+                      <circle r="14" fill="oklch(0.722 0.018 84 / 0.3)">
                         <animate attributeName="r" from="10" to="22" dur="2s" repeatCount="indefinite" />
                         <animate attributeName="opacity" from="0.5" to="0" dur="2s" repeatCount="indefinite" />
                       </circle>
@@ -289,12 +289,12 @@ export function TerritoryMap() {
                     <circle
                       r={isActive ? 9 : 7}
                       fill="none"
-                      stroke="oklch(0.704 0.077 56)"
+                      stroke="oklch(0.722 0.018 84)"
                       strokeWidth="1.5"
                       style={{ transition: "r 280ms ease" }}
                     />
                     {/* Inner dot */}
-                    <circle r={isMain ? 4 : 3} fill="oklch(0.704 0.077 56)" />
+                    <circle r={isMain ? 4 : 3} fill="oklch(0.722 0.018 84)" />
 
                     {/* A - Micro-badge ★ Siege sous Laval (visible quand pas actif) */}
                     {isMain && !isActive && (
@@ -335,7 +335,7 @@ export function TerritoryMap() {
                           y1="-9"
                           x2="0"
                           y2="-24"
-                          stroke="oklch(0.704 0.077 56)"
+                          stroke="oklch(0.722 0.018 84)"
                           strokeWidth="1"
                         />
                         <rect
@@ -346,7 +346,7 @@ export function TerritoryMap() {
                           rx="2"
                           ry="2"
                           fill="oklch(0.978 0 0)"
-                          stroke="oklch(0.704 0.077 56 / 0.45)"
+                          stroke="oklch(0.722 0.018 84 / 0.45)"
                           strokeWidth="0.6"
                         />
                         <text
@@ -391,7 +391,7 @@ export function TerritoryMap() {
                 <circle r="13" fill="none" stroke="oklch(0.55 0.025 80)" strokeWidth="0.6" />
                 <line x1="0" y1="-8" x2="0" y2="8" stroke="oklch(0.55 0.025 80)" strokeWidth="0.4" />
                 <line x1="-8" y1="0" x2="8" y2="0" stroke="oklch(0.55 0.025 80)" strokeWidth="0.4" />
-                <path d="M 0 -11 L -3.5 3 L 0 0 L 3.5 3 Z" fill="oklch(0.704 0.077 56)" />
+                <path d="M 0 -11 L -3.5 3 L 0 0 L 3.5 3 Z" fill="oklch(0.722 0.018 84)" />
                 <text
                   x="0"
                   y="-15.5"
@@ -437,7 +437,7 @@ export function TerritoryMap() {
                 <rect x="6" y="6" width="388" height="468" fill="none" stroke="oklch(0.55 0.025 80)" strokeWidth="0.8" />
                 <rect x="10" y="10" width="380" height="460" fill="none" stroke="oklch(0.55 0.025 80)" strokeWidth="0.3" />
                 {/* Corner accents bronze (atlas vintage) */}
-                <g fill="oklch(0.704 0.077 56)">
+                <g fill="oklch(0.722 0.018 84)">
                   <circle cx="10" cy="10" r="1.4" />
                   <circle cx="390" cy="10" r="1.4" />
                   <circle cx="10" cy="470" r="1.4" />
@@ -489,7 +489,7 @@ export function TerritoryMap() {
                 href="https://www.openstreetmap.org/copyright"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline decoration-dotted underline-offset-2 hover:text-[color:var(--color-bronze-deep)] transition-colors"
+                className="underline decoration-dotted underline-offset-2 hover:text-[color:var(--color-navy)] transition-colors"
               >
                 © OpenStreetMap contributors
               </a>
@@ -506,7 +506,7 @@ export function TerritoryMap() {
               <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,3vw,2.25rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
                 {t("territory.title")}
               </h2>
-              <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-6" />
+              <div className="w-12 h-px bg-[color:var(--color-taupe-dark)] mb-6" />
               <p className="text-base leading-[1.65] text-[color:var(--color-navy-deep)]/80 text-pretty">
                 {t("territory.subtitle")}
               </p>
@@ -522,13 +522,13 @@ export function TerritoryMap() {
                     onFocus={() => setActiveIdx(idx)}
                     tabIndex={0}
                     className={`group cursor-pointer flex items-baseline gap-4 py-3 border-b border-[color:var(--color-taupe)]/30 transition-all duration-300 ${
-                      isActive ? "border-[color:var(--color-bronze)]" : ""
+                      isActive ? "border-[color:var(--color-taupe-dark)]" : ""
                     }`}
                   >
                     <span
                       className={`font-[var(--font-editorial)] italic text-2xl tabular-nums shrink-0 transition-colors duration-300 ${
                         isActive
-                          ? "text-[color:var(--color-bronze-deep)]"
+                          ? "text-[color:var(--color-navy)]"
                           : "text-[color:var(--color-taupe)]"
                       }`}
                     >

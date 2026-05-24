@@ -23,7 +23,7 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
   return (
     <>
       {/* Intro éditorial */}
-      <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.7] text-[color:var(--color-navy-deep)]/85 first-letter:font-[var(--font-editorial)] first-letter:italic first-letter:text-6xl first-letter:text-[color:var(--color-bronze-deep)] first-letter:float-left first-letter:mr-3 first-letter:leading-[0.85] first-letter:mt-1 text-pretty hyphens-auto">
+      <p className="italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.7] text-[color:var(--color-navy-deep)]/85 first-letter:italic first-letter:text-6xl first-letter:text-[color:var(--color-navy)] first-letter:float-left first-letter:mr-3 first-letter:leading-[0.85] first-letter:mt-1 text-pretty hyphens-auto">
         {isFr
           ? "Comme un magazine d'auteur, ce site assume sa fabrication. Voici les choix typographiques, chromatiques et de fond qui composent l'édition que vous parcourez."
           : "Like an author's magazine, this site owns its making. Here are the typographic, chromatic and substantive choices that compose the edition you are browsing."}
@@ -64,8 +64,8 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
         />
         <ColophonRow
           label={isFr ? "Bronze caramel" : "Bronze caramel"}
-          value="oklch(0.704 0.077 56)"
-          swatchClass="bg-[color:var(--color-bronze)]"
+          value="oklch(0.722 0.018 84)"
+          swatchClass="bg-[color:var(--color-taupe-dark)]"
           note={isFr ? "Accents — boutons, hover, signatures" : "Accents — buttons, hover, signatures"}
         />
         <ColophonRow
@@ -94,7 +94,7 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
               ]
           ).map(([title, body], idx) => (
             <li key={title} className="flex gap-5">
-              <span className="font-[var(--font-editorial)] italic text-[color:var(--color-bronze-deep)] text-2xl shrink-0 leading-none w-8">
+              <span className="font-[var(--font-editorial)] italic text-[color:var(--color-navy)] text-2xl shrink-0 leading-none w-8">
                 {String(idx + 1).padStart(2, "0")}
               </span>
               <div className="space-y-2">
@@ -142,7 +142,7 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
         <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-3">
           {isFr ? "Imprimé à Laval" : "Printed in Laval"}
         </p>
-        <p className="font-[var(--font-editorial)] italic text-[color:var(--color-navy-deep)]/85 text-base leading-relaxed text-pretty">
+        <p className="italic text-[color:var(--color-navy-deep)]/85 text-base leading-relaxed text-pretty">
           {isFr
             ? "par L'Équipe Buteau, en cabinet d'attache chez Planiprêt Cabinet en Courtage Hypothécaire."
             : "by Équipe Buteau, with Planiprêt Cabinet en Courtage Hypothécaire as their attached firm."}
@@ -159,10 +159,10 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
             <Link
               to="/colophon"
               onClick={onClose}
-              className="group flex items-center justify-between gap-4 p-5 bg-[color:var(--color-bronze)]/5 border border-[color:var(--color-bronze)]/20 hover:bg-[color:var(--color-bronze)]/10 hover:border-[color:var(--color-bronze)]/40 transition-all"
+              className="group flex items-center justify-between gap-4 p-5 bg-[color:var(--color-taupe-dark)]/5 border border-[color:var(--color-taupe-dark)]/20 hover:bg-[color:var(--color-taupe-dark)]/10 hover:border-[color:var(--color-taupe-dark)]/40 transition-all"
             >
               <div>
-                <div className="eyebrow text-[color:var(--color-bronze-deep)] mb-1">
+                <div className="eyebrow text-[color:var(--color-navy)] mb-1">
                   <ButeauMonogramInline className="mr-1" /> {isFr ? "Lire le colophon complet" : "Read the full colophon"}
                 </div>
                 <div className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em]">
@@ -170,7 +170,7 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
                 </div>
               </div>
               <ArrowRight
-                className="w-5 h-5 text-[color:var(--color-bronze)] group-hover:text-[color:var(--color-bronze-deep)] group-hover:translate-x-0.5 transition-all shrink-0"
+                className="w-5 h-5 text-[color:var(--color-taupe-dark)] group-hover:text-[color:var(--color-navy)] group-hover:translate-x-0.5 transition-all shrink-0"
                 aria-hidden
               />
             </Link>
@@ -195,8 +195,8 @@ function ColophonSection({
   return (
     <section id={id} className="pt-8 scroll-mt-24">
       <div className="flex items-center gap-4 mb-5">
-        <span className="block w-8 h-px bg-[color:var(--color-bronze)]" aria-hidden="true" />
-        <h3 className="eyebrow text-[color:var(--color-bronze-deep)]">{label}</h3>
+        <span className="block w-8 h-px bg-[color:var(--color-taupe-dark)]" aria-hidden="true" />
+        <h3 className="eyebrow text-[color:var(--color-navy)]">{label}</h3>
         <span className="block flex-1 h-px bg-[color:var(--color-taupe)]/40" aria-hidden="true" />
       </div>
       {children}
@@ -233,7 +233,7 @@ function ColophonRow({
           </p>
         </div>
         {note && (
-          <p className="font-[var(--font-editorial)] italic text-[color:var(--color-navy-deep)]/65 text-sm leading-snug">
+          <p className="italic text-[color:var(--color-navy-deep)]/65 text-sm leading-snug">
             {note}
           </p>
         )}

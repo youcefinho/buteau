@@ -112,8 +112,8 @@ export function PreQualQuiz() {
           <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,4vw,3rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
             {t("quiz.title")}
           </h2>
-          <div className="w-12 h-px bg-[color:var(--color-bronze)] mx-auto mb-6" />
-          <p className="font-[var(--font-editorial)] italic text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-navy-deep)]/80 leading-[1.55] text-pretty">
+          <div className="w-12 h-px bg-[color:var(--color-taupe-dark)] mx-auto mb-6" />
+          <p className="italic text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-navy-deep)]/80 leading-[1.55] text-pretty">
             {t("quiz.subtitle")}
           </p>
         </div>
@@ -126,11 +126,11 @@ export function PreQualQuiz() {
               <div className="flex items-center justify-between mb-8">
                 <p className="eyebrow text-[color:var(--color-taupe-dark)]">
                   {t("quiz.progressLabel")}{" "}
-                  <span className="font-[var(--font-editorial)] italic text-[color:var(--color-bronze-deep)] text-base">
+                  <span className="italic text-[color:var(--color-navy)] text-base">
                     {String(step + 1).padStart(2, "0")}
                   </span>
                   <span className="mx-1.5 text-[color:var(--color-taupe)]">/</span>
-                  <span className="font-[var(--font-editorial)] italic text-[color:var(--color-taupe-dark)] text-base">
+                  <span className="italic text-[color:var(--color-taupe-dark)] text-base">
                     {String(questions.length).padStart(2, "0")}
                   </span>
                 </p>
@@ -138,7 +138,7 @@ export function PreQualQuiz() {
                   <button
                     type="button"
                     onClick={handleBack}
-                    className="eyebrow text-[color:var(--color-taupe-dark)] hover:text-[color:var(--color-bronze-deep)] transition-colors"
+                    className="eyebrow text-[color:var(--color-taupe-dark)] hover:text-[color:var(--color-navy)] transition-colors"
                   >
                     ← {t("quiz.backLabel")}
                   </button>
@@ -148,7 +148,7 @@ export function PreQualQuiz() {
               {/* Progress fill */}
               <div className="h-px bg-[color:var(--color-taupe)]/30 mb-10 overflow-hidden">
                 <div
-                  className="h-px bg-[color:var(--color-bronze)] transition-[width] duration-700 ease-out"
+                  className="h-px bg-[color:var(--color-taupe-dark)] transition-[width] duration-700 ease-out"
                   style={{ width: `${progress * 100}%` }}
                 />
               </div>
@@ -171,10 +171,10 @@ export function PreQualQuiz() {
                     <button
                       type="button"
                       onClick={() => handleAnswer(opt.tier)}
-                      className="group w-full text-left bg-[color:var(--color-cream-warm)] border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-bronze)]/70 px-[clamp(1.25rem,2vw,1.5rem)] py-[clamp(1rem,1.5vw,1.25rem)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-12px_rgba(16,34,61,0.2)] flex items-center justify-between gap-4"
+                      className="group w-full text-left bg-[color:var(--color-cream-warm)] border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-taupe-dark)]/70 px-[clamp(1.25rem,2vw,1.5rem)] py-[clamp(1rem,1.5vw,1.25rem)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-12px_rgba(16,34,61,0.2)] flex items-center justify-between gap-4"
                     >
                       <span className="flex items-baseline gap-4 flex-1">
-                        <span className="font-[var(--font-editorial)] italic text-[color:var(--color-bronze)] text-xl tabular-nums">
+                        <span className="italic text-[color:var(--color-taupe-dark)] text-xl tabular-nums">
                           {String.fromCharCode(65 + idx)}
                         </span>
                         <span className="font-[var(--font-display)] text-[color:var(--color-navy-deep)] text-[clamp(1rem,1.4vw,1.125rem)] leading-snug">
@@ -183,7 +183,7 @@ export function PreQualQuiz() {
                       </span>
                       <ArrowRight
                         size={18}
-                        className="shrink-0 text-[color:var(--color-taupe)] opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-[color:var(--color-bronze-deep)] transition-all duration-300"
+                        className="shrink-0 text-[color:var(--color-taupe)] opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-[color:var(--color-navy)] transition-all duration-300"
                         aria-hidden="true"
                       />
                     </button>
@@ -194,8 +194,8 @@ export function PreQualQuiz() {
           ) : (
             <div className="animate-[buteauFadeUp_700ms_ease-out_both] text-center md:text-left">
               {/* Eyebrow + label profil */}
-              <p className="eyebrow text-[color:var(--color-bronze-deep)] inline-flex items-center gap-3 mb-5">
-                <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
+              <p className="eyebrow text-[color:var(--color-navy)] inline-flex items-center gap-3 mb-5">
+                <span className="inline-block w-6 h-px bg-[color:var(--color-taupe-dark)]" />
                 {result.eyebrow}
               </p>
 
@@ -204,7 +204,7 @@ export function PreQualQuiz() {
                 {result.title}
               </h3>
 
-              <div className="w-12 h-px bg-[color:var(--color-bronze)] mx-auto md:mx-0 mb-7" />
+              <div className="w-12 h-px bg-[color:var(--color-taupe-dark)] mx-auto md:mx-0 mb-7" />
 
               {/* Body */}
               <p className="text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/85 mb-10 max-w-2xl text-pretty hyphens-auto">
@@ -221,7 +221,7 @@ export function PreQualQuiz() {
                 <button
                   type="button"
                   onClick={handleRestart}
-                  className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-taupe-dark)] hover:text-[color:var(--color-bronze-deep)] transition-colors"
+                  className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-taupe-dark)] hover:text-[color:var(--color-navy)] transition-colors"
                 >
                   <RotateCcw
                     size={14}

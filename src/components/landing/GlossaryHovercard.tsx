@@ -110,7 +110,7 @@ export function GlossaryHovercard({ term, children }: GlossaryHovercardProps) {
             open(matched.slug, matched.term[lang]);
           }
         }}
-        className="relative cursor-pointer underline decoration-[color:var(--color-bronze)] decoration-dotted underline-offset-[3px] decoration-[1.5px] hover:text-[color:var(--color-bronze-deep)] transition-colors"
+        className="relative cursor-pointer underline decoration-[color:var(--color-taupe-dark)] decoration-dotted underline-offset-[3px] decoration-[1.5px] hover:text-[color:var(--color-navy)] transition-colors"
       >
         {children}
       </span>
@@ -134,7 +134,7 @@ export function GlossaryHovercard({ term, children }: GlossaryHovercardProps) {
           <span className="block font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-sm uppercase tracking-[0.04em] mb-2">
             {matched.term[lang]}
           </span>
-          <span className="block w-8 h-px bg-[color:var(--color-bronze)] mb-3" />
+          <span className="block w-8 h-px bg-[color:var(--color-taupe-dark)] mb-3" />
           <span className="block text-xs leading-[1.55] text-[color:var(--color-navy-deep)]/85">
             {matched.definition[lang]}
           </span>
@@ -149,7 +149,7 @@ export function GlossaryHovercard({ term, children }: GlossaryHovercardProps) {
               open(matched.slug);
               setIsOpen(false);
             }}
-            className="mt-3 inline-flex items-center gap-1.5 text-[10px] font-[var(--font-display)] font-semibold uppercase tracking-[0.12em] text-[color:var(--color-bronze-deep)] hover:text-[color:var(--color-bronze)] transition-colors"
+            className="mt-3 inline-flex items-center gap-1.5 text-[10px] font-[var(--font-display)] font-semibold uppercase tracking-[0.12em] text-[color:var(--color-navy)] hover:text-[color:var(--color-taupe-dark)] transition-colors"
           >
             {lang === "fr" ? "Voir tout le lexique" : "Open full glossary"} →
           </button>

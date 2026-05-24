@@ -62,12 +62,12 @@ export function Services() {
           {items.map((s, idx) => (
             <article
               key={s.title}
-              className={`group relative bg-[color:var(--color-surface)] border-l-[3px] border-[color:var(--color-taupe)] transition-all duration-500 hover:border-l-[5px] hover:border-[color:var(--color-bronze)] hover:shadow-[0_18px_44px_-22px_rgba(16,34,61,0.32)] hover:-translate-y-1 overflow-hidden md:max-w-[78%] ${offsetClasses[idx] ?? ""}`}
+              className={`group relative bg-[color:var(--color-surface)] border-l-[3px] border-[color:var(--color-taupe)] transition-all duration-500 hover:border-l-[5px] hover:border-[color:var(--color-taupe-dark)] hover:shadow-[0_18px_44px_-22px_rgba(16,34,61,0.32)] hover:-translate-y-1 overflow-hidden md:max-w-[78%] ${offsetClasses[idx] ?? ""}`}
             >
               {/* Numéro romain XL filigrane DEBORDANT à gauche (signature diagonal) */}
               <span
                 aria-hidden="true"
-                className="hidden md:block absolute -left-3 top-1/2 -translate-y-1/2 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/15 text-[12rem] leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-[color:var(--color-bronze)]/25"
+                className="hidden md:block absolute -left-3 top-1/2 -translate-y-1/2 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/15 text-[12rem] leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-[color:var(--color-taupe-dark)]/25"
               >
                 {numerals[idx]}
               </span>
@@ -81,12 +81,12 @@ export function Services() {
                   <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.04em] leading-[1.1] text-balance">
                     {s.title}
                   </h3>
-                  <div className="w-8 h-px bg-[color:var(--color-bronze)] mt-4 transition-[width] duration-500 group-hover:w-16" />
+                  <div className="w-8 h-px bg-[color:var(--color-taupe-dark)] mt-4 transition-[width] duration-500 group-hover:w-16" />
                 </div>
 
                 {/* Description — col 7. AutoGlossary wrap les termes hypothécaires détectés. */}
                 <div className="md:col-span-7">
-                  <p className="text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/80 font-[var(--font-editorial)] italic text-pretty hyphens-auto">
+                  <p className="text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/80 italic text-pretty hyphens-auto">
                     <AutoGlossary text={s.desc} maxWraps={2} />
                   </p>
                 </div>
@@ -94,7 +94,7 @@ export function Services() {
 
               {/* Bottom underline qui s'étend au hover */}
               <span
-                className="absolute bottom-0 left-0 h-px bg-[color:var(--color-bronze)] w-0 group-hover:w-full transition-[width] duration-500"
+                className="absolute bottom-0 left-0 h-px bg-[color:var(--color-taupe-dark)] w-0 group-hover:w-full transition-[width] duration-500"
                 aria-hidden="true"
               />
             </article>

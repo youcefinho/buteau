@@ -35,13 +35,13 @@ export function ButeauMonogramInline({
         style={{ display: "inline-block", verticalAlign: "-0.22em" }}
       >
         {/* Medaillon cercle hairline bronze autour du B */}
-        <circle cx="18" cy="8" r="6.5" fill="none" stroke="var(--color-bronze)" strokeWidth="0.5" opacity="0.7" />
+        <circle cx="18" cy="8" r="6.5" fill="none" stroke="var(--color-taupe-dark)" strokeWidth="0.5" opacity="0.7" />
         {/* B navy/currentColor */}
         <g transform="translate(18, 8) scale(0.038) translate(-235, -705)">
           <path d={B_PATH_INLINE} fill="currentColor" />
         </g>
         {/* 2 mini losanges bronze flanquants gauche+droite (echo divider) */}
-        <g fill="var(--color-bronze)" opacity="0.75">
+        <g fill="var(--color-taupe-dark)" opacity="0.75">
           <path d="M 2 8 L 4 6 L 6 8 L 4 10 Z" />
           <path d="M 30 8 L 32 6 L 34 8 L 32 10 Z" />
         </g>
@@ -62,7 +62,7 @@ export function ButeauMonogramInline({
       <g transform="translate(9, 5) scale(0.025) translate(-235, -705)">
         <path d={B_PATH_INLINE} fill="currentColor" />
       </g>
-      <circle cx="9" cy="12" r="0.7" fill="var(--color-bronze)" opacity="0.75" />
+      <circle cx="9" cy="12" r="0.7" fill="var(--color-taupe-dark)" opacity="0.75" />
     </svg>
   );
 }

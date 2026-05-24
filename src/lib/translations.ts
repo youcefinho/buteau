@@ -94,9 +94,9 @@ export const translations = {
         eyebrow: "Courtage hypothécaire — Planiprêt",
         title: "L'hypothèque autrement",
         subtitle:
-          "Première fois ou renouvellement stressant ? On commence par écouter — pas par juger votre dossier. 200 familles accompagnées en 2025, même rigueur pour chacune.",
-        ctaPrimary: "Estimer mon paiement en 60 secondes",
-        ctaSecondary: "Découvrir notre équipe",
+          "Premier achat ou renouvellement qui vous stresse ? On commence par vous écouter, pas par juger votre dossier. 200 familles accompagnées en 2025, la même rigueur pour chacune.",
+        ctaPrimary: "Calculer mon paiement en 60 secondes",
+        ctaSecondary: "Rencontrer notre équipe",
         // CTAs personnalisés selon le tier du quiz (sauvé en localStorage).
         // Active si le user a complété le PreQualQuiz, sinon ctaPrimary par défaut.
         ctaByTier: {
@@ -115,13 +115,13 @@ export const translations = {
       partners: {
         eyebrow: "Nos partenaires",
         title: "Un réseau de prêteurs reconnus",
-        subtitle: "Quelques-unes de nos institutions financières partenaires.",
-        cta: "Consulter les institutions financières",
+        subtitle: "Quelques-unes des institutions financières avec qui on travaille au quotidien.",
+        cta: "Voir les institutions financières",
       },
 
       teamTeaser: {
         eyebrow: "Notre équipe",
-        title: "Quatre pros, une seule rigueur",
+        title: "Quatre pros, la même rigueur",
         andrewName: "Andrew Buteau",
         andrewRole: "Courtier hypothécaire & Fondateur",
         abygaeleName: "Abygaèle Gagné",
@@ -135,60 +135,60 @@ export const translations = {
 
       services: {
         eyebrow: "Nos services",
-        title: "Cinq services, une seule philosophie",
+        title: "Cinq services, une seule approche",
         items: [
           {
             title: "Renouvellement",
-            desc: "Analyse de marché 120 jours avant l'échéance et négociation pour obtenir les meilleures conditions — avec ou sans changement de banque.",
+            desc: "On analyse le marché 120 jours avant l'échéance et on négocie les meilleures conditions pour vous — avec ou sans changement de banque.",
           },
           {
             title: "Refinancement",
-            desc: "Restructuration de votre financement pour optimiser vos liquidités, libérer de l'équité ou financer un projet de rénovation, d'études ou d'investissement.",
+            desc: "On restructure votre financement pour libérer des liquidités, sortir de l'équité ou financer une rénovation, des études ou un investissement.",
           },
           {
             title: "Consolidation de dettes",
-            desc: "Regroupement de vos dettes à taux élevé (cartes, marges, prêts) dans votre hypothèque pour réduire vos paiements mensuels et reprendre le contrôle.",
+            desc: "On regroupe vos dettes à taux élevé (cartes, marges, prêts) dans votre hypothèque pour baisser vos paiements mensuels et reprendre le contrôle.",
           },
           {
             title: "Achat d'une propriété",
-            desc: "Stratégie de A à Z pour l'acquisition d'une première propriété, d'une 2e propriété, d'un upgrade familial ou d'une résidence secondaire.",
+            desc: "On vous accompagne de A à Z : premier achat, 2e propriété, upgrade familial ou résidence secondaire.",
           },
           {
             title: "Investissement",
-            desc: "Stratégies de financement structurées pour développer votre portefeuille immobilier — multiplex, immeubles à revenus, effet de levier sur l'équité existante.",
+            desc: "Du financement bien structuré pour faire grandir votre portefeuille immobilier — multiplex, immeubles à revenus, levier sur votre équité actuelle.",
           },
         ],
       },
 
       mission: {
         eyebrow: "Notre mission",
-        title: "Notre raison d'être",
+        title: "Pourquoi nous existons",
         bodyP1Lead: "Chez ",
         bodyP1Brand: "L'Équipe BUTEAU",
         bodyP1Continued:
-          ", notre priorité est d'offrir un service rapide, efficace et humain. Notre mission est de simplifier le processus de financement, d'éliminer les zones grises et de créer des stratégies personnalisées qui s'adaptent à vos besoins uniques.",
+          ", on vous offre un service rapide, efficace et centré sur vos besoins. Notre mission : simplifier votre financement, clarifier ce qui est flou, et bâtir des solutions adaptées à votre situation.",
         bodyP2Lead: "En ",
         bodyP2Year: "2025",
-        bodyP2Continued: ", nous avons accompagné plus de ",
+        bodyP2Continued: ", on a accompagné plus de ",
         bodyP2Stat: "familles",
         bodyP2End:
-          " à travers le Québec. Avec méthode et disponibilité, nous propulsons chaque projet vers la réussite.",
+          " partout au Québec. Avec méthode et disponibilité, on fait avancer chaque projet jusqu'au bout.",
         values: [
           {
-            title: "Analyse des données",
-            desc: "Approche structurée basée sur vos chiffres pour des décisions optimales.",
+            title: "Décisions basées sur vos chiffres",
+            desc: "On part de vos vrais chiffres pour vous proposer la meilleure stratégie.",
           },
           {
-            title: "Expérience étendue",
-            desc: "Plus de 200 familles en 2025. Toutes les régions. Tous les profils.",
+            title: "Expérience concrète",
+            desc: "Plus de 200 familles en 2025. Toutes les régions, tous les profils.",
           },
           {
-            title: "Équipe professionnelle",
-            desc: "Courtiers méthodiques et disponibles à chaque étape — du premier appel à la signature.",
+            title: "Équipe disponible",
+            desc: "Des courtiers méthodiques, joignables à chaque étape — du premier appel à la signature.",
           },
           {
-            title: "Éventail de prêteurs",
-            desc: "Accès à plusieurs institutions pour trouver le meilleur taux et conditions.",
+            title: "Réseau de prêteurs",
+            desc: "Accès à plusieurs institutions pour vous décrocher le meilleur taux et les meilleures conditions.",
           },
         ],
       },
@@ -267,7 +267,7 @@ export const translations = {
         eyebrow: "Calculer en direct",
         title: "Combien va vous coûter votre hypothèque ?",
         subtitle:
-          "Estimation instantanée selon la formule canadienne semi-annuelle. Pour la courbe d'amortissement complète + les scénarios « Et si... », rendez-vous sur la page Outils.",
+          "Estimation instantanée selon la formule canadienne semi-annuelle. Pour la courbe d'amortissement complète et les scénarios « Et si... », allez voir la page Outils.",
         amountLabel: "Montant",
         rateLabel: "Taux",
         yearsLabel: "Durée",
@@ -279,26 +279,26 @@ export const translations = {
       // AdPage — pleine page édito style "publicité magazine luxe" (Cereal vol.18).
       // Statement dérivé du copy existant (4 pros teamTeaser + 5 services + valeur rigueur Mission).
       adPage: {
-        statement: "Quatre pros. Cinq services. Une signature.",
+        statement: "Quatre pros. Cinq services. Une même rigueur.",
         attribution: "L'Équipe Buteau",
       },
 
       tools: {
         eyebrow: "Outils & ressources",
         title: "Tout ce qu'il vous faut pour avancer",
-        subtitle: "Explorez nos ressources pour vous accompagner.",
+        subtitle: "Des ressources concrètes pour vous accompagner à chaque étape.",
         items: [
           {
             title: "Guides éducatifs",
-            desc: "Comprendre le financement hypothécaire simplement.",
+            desc: "Comprendre le financement hypothécaire, simplement.",
           },
           {
             title: "Capsules éducatives",
-            desc: "Vidéos courtes pour des conseils rapides et efficaces.",
+            desc: "Des vidéos courtes pour des réponses claires et rapides.",
           },
           {
             title: "Blog",
-            desc: "Articles, tendances et analyses de marché.",
+            desc: "Articles, tendances et analyses du marché.",
           },
           {
             title: "Documents",
@@ -309,8 +309,8 @@ export const translations = {
       },
 
       reviews: {
-        eyebrow: "Courrier des lecteurs",
-        title: "Ce que nos clients disent",
+        eyebrow: "Témoignages clients",
+        title: "Ce que nos clients en disent",
         googleBadgeLabel: "111 avis 5 étoiles Google",
         letterDateLabel: "Reçu le",
         letterFromLabel: "De",
@@ -321,7 +321,7 @@ export const translations = {
         items: [
           {
             quote:
-              "Un service professionnel et rassurant pour notre premier achat d'une propriété. L'équipe a su nous obtenir des conditions exceptionnelles et nous a accompagnés à chaque étape avec une grande clarté.",
+              "Un service professionnel et rassurant pour notre premier achat. L'équipe nous a décroché d'excellentes conditions et nous a accompagnés à chaque étape avec clarté.",
             authorInitial: "M",
             author: "Maxime T.",
             city: "Laval",
@@ -329,7 +329,7 @@ export const translations = {
           },
           {
             quote:
-              "Efficacité redoutable pour notre refinancement. Andrew est rigoureux et transparent, il a pris le temps d'analyser tous nos chiffres pour structurer une stratégie vraiment avantageuse.",
+              "Efficace et fiable pour notre refinancement. Andrew est rigoureux et transparent : il a pris le temps d'analyser tous nos chiffres pour bâtir une stratégie vraiment avantageuse.",
             authorInitial: "C",
             author: "Catherine P.",
             city: "Montréal",
@@ -337,7 +337,7 @@ export const translations = {
           },
           {
             quote:
-              "Disponibilité incroyable, ils font les choses autrement. Le suivi de dossier avec Abygaèle et Alexis était impeccable. On se sent entre de bonnes mains du début à la fin. Fortement recommandé.",
+              "Toujours disponibles, et ils font les choses autrement. Le suivi avec Abygaèle et Alexis était impeccable. On se sent entre de bonnes mains du début à la fin. Je recommande sans hésiter.",
             authorInitial: "J",
             author: "Jonathan D.",
             city: "Boisbriand",
@@ -362,36 +362,36 @@ export const translations = {
         moreQuestionsLabel: "Vous avez d'autres questions ?",
         items: [
           {
-            q: "Quel est le processus pour obtenir une pré-qualification ?",
-            a: "La pré-qualification est simple et rapide. Nous analysons votre situation financière, vos revenus, vos dettes et votre historique de crédit. Une fois complétée, vous recevrez une lettre de pré-qualification valide pour négocier une propriété en toute confiance.",
+            q: "C'est quoi le processus pour obtenir une préqualification ?",
+            a: "C'est simple et rapide. On regarde votre situation financière : revenus, dettes, historique de crédit. Une fois fait, vous recevez une lettre de préqualification pour négocier une propriété en toute confiance.",
           },
           {
             q: "Combien de temps prend un dossier hypothécaire ?",
-            a: "Généralement, comptez 30 à 45 jours du moment où l'offre d'achat est acceptée jusqu'à la clôture. Notre équipe travaille pour minimiser ce délai grâce à nos relations privilégiées avec les prêteurs.",
+            a: "En général, comptez 30 à 45 jours entre l'acceptation de l'offre d'achat et la clôture. On travaille à raccourcir ce délai grâce aux bonnes relations qu'on a avec nos prêteurs.",
           },
           {
-            q: "Quelle est la mise de fonds minimale requise ?",
-            a: "La mise de fonds minimale est généralement de 5 % pour l'achat d'une première propriété. Pour les investissements ou les propriétés de luxe, elle peut être plus élevée. Nous vous aiderons à explorer les options comme le RAP ou le CELIAPP pour réduire vos coûts initiaux.",
+            q: "Quelle est la mise de fonds minimale ?",
+            a: "Pour un premier achat, c'est généralement 5 %. Pour un investissement ou une propriété plus haut de gamme, ça peut être plus. On explore avec vous des options comme le RAP ou le CELIAPP pour réduire vos coûts au départ.",
           },
           {
-            q: "Taux fixe ou taux variable : lequel choisir ?",
-            a: "Le choix dépend de votre situation et de votre tolérance au risque. Un taux fixe offre une stabilité prévisible, tandis qu'un taux variable peut être avantageux en période de baisse des taux. Notre équipe analysera vos options pour recommander la stratégie qui colle à votre profil.",
+            q: "Taux fixe ou taux variable, lequel choisir ?",
+            a: "Ça dépend de votre situation et de votre tolérance au risque. Un taux fixe offre de la stabilité ; un taux variable peut être avantageux quand les taux baissent. On analyse vos options et on vous recommande ce qui colle vraiment à votre profil.",
           },
           {
             q: "Y a-t-il des frais cachés ?",
-            a: "Non. Nous croyons à la transparence totale. Tous les frais vous sont communiqués dès le départ et expliqués clairement. Notre rôle est de vous accompagner sans surprise, en sachant exactement ce que vous devez payer.",
+            a: "Non, jamais. On fonctionne en pleine transparence. Tous les frais sont annoncés dès le départ et expliqués clairement. Pas de mauvaises surprises — vous savez exactement ce que vous payez.",
           },
           {
             q: "Pouvez-vous refinancer ma propriété actuelle ?",
-            a: "Absolument. Le refinancement est l'une de nos spécialités. Que ce soit pour réduire vos paiements, libérer de l'équité ou consolider vos dettes, nous trouvons la solution adaptée à votre situation financière.",
+            a: "Oui, c'est une de nos spécialités. Que ce soit pour baisser vos paiements, sortir de l'équité ou consolider vos dettes, on trouve la solution qui colle à votre situation.",
           },
           {
-            q: "Comment puis-je améliorer mon score de crédit ?",
-            a: "Plusieurs actions peuvent améliorer votre score : payer vos factures à temps, réduire vos soldes de cartes de crédit, et éviter les nouvelles demandes de crédit inutiles. Nous pouvons vous conseiller sur des stratégies pour optimiser votre profil de crédit.",
+            q: "Comment améliorer mon score de crédit ?",
+            a: "Quelques gestes simples : payer vos factures à temps, baisser vos soldes de cartes de crédit, éviter les nouvelles demandes inutiles. On peut vous conseiller des stratégies pour booster votre profil.",
           },
           {
             q: "Quand devrais-je préparer mon renouvellement hypothécaire ?",
-            a: "Idéalement, 4 à 6 mois avant l'échéance. La majorité des emprunteurs acceptent par défaut l'offre de leur prêteur actuel — souvent sans magasiner. Préparer en avance permet de mettre votre dossier en concurrence auprès de plusieurs institutions, d'obtenir un meilleur taux et d'évaluer si une restructuration (consolidation, refinancement) serait avantageuse. Un renouvellement n'est pas qu'une signature de routine, c'est un point de levier financier.",
+            a: "Idéalement 4 à 6 mois avant l'échéance. La plupart des emprunteurs acceptent par défaut l'offre de leur prêteur actuel — souvent sans magasiner. En préparant à l'avance, on met votre dossier en compétition auprès de plusieurs institutions, on décroche un meilleur taux et on évalue si une consolidation ou un refi serait avantageux. Un renouvellement, c'est pas qu'une signature de routine — c'est une vraie occasion d'optimiser.",
           },
         ],
       },
@@ -402,7 +402,7 @@ export const translations = {
         eyebrow: "L'équipe",
         title: "Notre équipe",
         subtitle:
-          "Quatre courtiers hypothécaires passionnés, dédiés à structurer votre réussite financière avec méthode et humanité.",
+          "Quatre pros passionnés du courtage hypothécaire, qui travaillent ensemble pour la réussite de chacun de vos projets — avec méthode et énergie.",
       },
       marginalia: ["fondateur", "coordo.", "assist.", "opérations"],
       members: [
@@ -433,38 +433,38 @@ export const translations = {
       ],
       method: {
         eyebrow: "Notre méthode",
-        title: "Trois piliers, une exécution",
+        title: "Trois piliers, une seule équipe",
         intro:
-          "Chaque dossier est traité avec la même méthode et la même structure. Nous travaillons en collaboration étroite pour analyser votre situation, identifier les options les plus pertinentes et exécuter une stratégie de financement claire et adaptée à vos objectifs.",
+          "Chaque dossier est traité avec la même méthode et la même structure. On travaille ensemble pour analyser votre situation, identifier les meilleures options et exécuter un plan de financement clair, adapté à vos objectifs.",
         items: [
           {
             label: "Collaboration",
-            desc: "Chaque membre apporte son expertise — analyse, négociation, exécution. De la première rencontre à la finalisation, nous travaillons ensemble pour assurer cohérence et efficacité.",
+            desc: "Chaque membre amène son expertise — analyse, négociation, exécution. De la première rencontre à la signature, on travaille en équipe pour assurer cohérence et efficacité.",
           },
           {
             label: "Analyse",
-            desc: "Nous examinons votre situation financière en profondeur pour identifier les solutions les plus appropriées. Aucune hypothèse, uniquement des données concrètes et vérifiées.",
+            desc: "On regarde votre situation financière en profondeur pour identifier la meilleure solution. Pas de devinettes — uniquement des données concrètes et vérifiées.",
           },
           {
             label: "Exécution",
-            desc: "Une fois la stratégie définie, nous mettons en œuvre le plan avec rapidité et précision. Chaque étape est suivie rigoureusement jusqu'à la réalisation complète de votre projet.",
+            desc: "Une fois le plan défini, on l'exécute avec rapidité et précision. Chaque étape est suivie de près jusqu'à la conclusion de votre dossier.",
           },
         ],
       },
     },
 
     cta: {
-      eyebrow: "Prochaine étape",
-      title: "Prêt à structurer votre projet ?",
-      subtitle: "Des décisions claires. Une exécution structurée. Des résultats concrets.",
+      eyebrow: "On se parle ?",
+      title: "Prêt à avancer sur votre projet ?",
+      subtitle: "Des conseils clairs, un plan concret, des résultats au bout.",
       button: "Prendre rendez-vous",
     },
 
     journal: {
       eyebrow: "Articles",
-      title: "Réflexions de l'Équipe Buteau.",
+      title: "Les articles de l'Équipe Buteau.",
       subtitle:
-        "Chroniques, analyses de marché et explications éclairantes — publiées au rythme des tendances et des questions reçues. Cliquez un titre pour ouvrir l'article complet.",
+        "Analyses de marché, conseils pratiques et explications claires — publiés au fil des tendances et des questions qu'on reçoit. Cliquez un titre pour lire l'article complet.",
       readingLabel: "min de lecture",
       readMoreLabel: "Lire l'article",
       hideLabel: "Replier",
@@ -491,11 +491,11 @@ export const translations = {
 
     courrier: {
       subtitle:
-        "Sélection de témoignages reçus par courriel, en personne ou via Google. Chaque lettre est publiée avec l'autorisation de son auteur.",
+        "Une sélection de témoignages reçus par courriel, en personne ou via Google. Chaque message est publié avec l'accord de son auteur.",
       letterDateLabel: "Reçu le",
       letterFromLabel: "De",
       googleLinkLabel: "Voir tous les avis sur Google",
-      footnote: "Présentées de la plus récente à la plus ancienne.",
+      footnote: "Du plus récent au plus ancien.",
       // Lettres étendues — extension de home.reviews.items + 6 lettres additionnelles
       additionalLetters: [
         {
@@ -553,7 +553,7 @@ export const translations = {
       eyebrow: "Demande reçue",
       title: "Merci.",
       subtitle:
-        "Andrew a bien reçu votre demande et reviendra vers vous personnellement sous peu. Aucune zone grise — vous saurez exactement où vous en êtes.",
+        "Andrew a bien reçu votre demande et reviendra vers vous personnellement sous peu. Rien de flou — vous saurez exactement où vous en êtes.",
       footnote: "Reçu le · Andrew Buteau · Inscrit AMF",
       nextStepsLabel: "Pendant que vous attendez",
       nextStepCalc: "Explorer le calculateur",
@@ -561,18 +561,18 @@ export const translations = {
       nextStepBack: "Retour à l'accueil",
       // Personnalisations selon tier (si quiz fait)
       tierMessages: {
-        primo: "Votre dossier de premier achat est ma priorité — je vous appelle dans les 24 heures pour démarrer la préapprobation.",
-        refi: "Votre situation actuelle mérite une analyse complète — je vous appelle dans les 24 heures avec mes premières observations.",
-        investor: "Votre projet d'investissement est analysé — je vous appelle dans les 24 heures pour discuter votre stratégie de levier.",
+        primo: "Votre premier achat est ma priorité — je vous appelle dans les 24 heures pour démarrer la préapprobation.",
+        refi: "Votre situation mérite une analyse complète — je vous appelle dans les 24 heures avec mes premières observations.",
+        investor: "Je regarde votre projet d'investissement — je vous appelle dans les 24 heures pour parler de votre stratégie de levier.",
         explorer: "Pas de pression — je vous appelle dans les 24 heures pour clarifier votre situation, sans engagement.",
       },
     },
 
     notFound: {
-      eyebrow: "Égaré ?",
-      title: "Cette page n'existe pas dans notre édition.",
+      eyebrow: "Perdu ?",
+      title: "Cette page n'existe pas.",
       subtitle:
-        "Peut-être qu'un lien a été déplacé, ou que vous cherchez quelque chose de spécifique. Nous pouvons vous remettre sur la bonne voie.",
+        "Un lien a peut-être bougé, ou vous cherchez quelque chose en particulier. On peut vous remettre sur la bonne voie.",
       ctaHome: "Retour à l'accueil",
       ctaCall: "Appeler Andrew",
       footnote: "Code 404",
@@ -676,10 +676,10 @@ export const translations = {
     },
 
     media: {
-      eyebrow: "Vu & engagé",
+      eyebrow: "Médias & communauté",
       title: "Andrew dans les médias et dans la communauté.",
       subtitle:
-        "Le courtage hypothécaire ne se résume pas à un dossier de prêt. C'est aussi des plateaux de télé, des soirées caritatives et des conversations en région — partout où les gens parlent argent, projets et avenir.",
+        "Le courtage hypothécaire, ce n'est pas juste un dossier de prêt. C'est aussi des plateaux de télé, des soirées caritatives et des conversations en région — partout où les gens parlent argent, projets et avenir.",
       tvEyebrow: "Sur les ondes",
       tvTitle: "Andrew Buteau à l'émission « Art de Réussir »",
       tvVideoTitle: "Andrew Buteau à Art de Réussir",
@@ -739,26 +739,26 @@ export const translations = {
       results: {
         primo: {
           eyebrow: "Profil — Premier achat",
-          title: "Vous êtes prêt à structurer votre premier dossier.",
-          body: "RAP (jusqu'à 35 000 $ de votre REER sans impôt), CELIAPP (jusqu'à 40 000 $ à vie), taxe de bienvenue, mise de fonds 5 % — Andrew vous guide étape par étape, aucune zone grise, aucun jargon non expliqué.",
+          title: "Vous êtes prêt à monter votre premier dossier.",
+          body: "RAP (jusqu'à 35 000 $ de votre REER sans impôt), CELIAPP (jusqu'à 40 000 $ à vie), taxe de bienvenue, mise de fonds 5 % — Andrew vous guide étape par étape, sans rien laisser dans le flou et sans jargon inutile.",
           ctaLabel: "Démarrer mon dossier",
         },
         refi: {
           eyebrow: "Profil — Refi, renouvellement ou consolidation",
           title: "Votre hypothèque actuelle peut probablement travailler plus fort.",
-          body: "25 000 $ de carte de crédit à 19,99 % coûtent ~416 $/mois en intérêts seulement. Intégrés à votre hypothèque à ~4,5 %, ça tombe à ~85 $/mois — soit 320 $ libérés chaque mois. Andrew analyse votre dossier parmi 9+ prêteurs et négocie les meilleures conditions, avec ou sans changement de banque.",
+          body: "25 000 $ de carte de crédit à 19,99 %, ça coûte ~416 $/mois en intérêts seulement. Intégrés à votre hypothèque à ~4,5 %, ça tombe à ~85 $/mois — soit 320 $ libérés chaque mois. Andrew analyse votre dossier parmi 9+ prêteurs et négocie les meilleures conditions, avec ou sans changement de banque.",
           ctaLabel: "Comparer mes options",
         },
         investor: {
           eyebrow: "Profil — Investisseur",
-          title: "Une stratégie de financement qui fait travailler votre équité.",
-          body: "Multiplex, immeubles à revenus, refi par effet de levier sur l'équité existante. Andrew structure des dossiers complexes avec les ~9 prêteurs qui comprennent vraiment l'investissement immobilier — pas juste ceux qui acceptent un dossier résidentiel standard.",
+          title: "Un financement qui fait travailler votre équité.",
+          body: "Multiplex, immeubles à revenus, refi avec levier sur votre équité actuelle. Andrew monte des dossiers complexes avec les ~9 prêteurs qui comprennent vraiment l'investissement immobilier — pas juste ceux qui acceptent un dossier résidentiel standard.",
           ctaLabel: "Discuter ma stratégie",
         },
         explorer: {
           eyebrow: "Profil — Upgrade ou exploration",
-          title: "Une 2e propriété, un upgrade familial, ou simplement clarifier vos options.",
-          body: "Vendre pour acheter plus grand, garder votre maison actuelle en location, déménager, racheter une part suite à séparation — ou juste comprendre vos vraies marges de manœuvre. Andrew prend 20 minutes pour vous donner l'heure juste, sans engagement, avec des chiffres clairs.",
+          title: "Une 2e propriété, un upgrade familial, ou juste clarifier vos options.",
+          body: "Vendre pour acheter plus grand, garder votre maison actuelle en location, déménager, racheter une part après séparation — ou juste comprendre votre vraie marge de manœuvre. Andrew prend 20 minutes pour vous donner l'heure juste, sans engagement, avec des chiffres clairs.",
           ctaLabel: "Prendre 20 minutes avec Andrew",
         },
       },
@@ -766,9 +766,9 @@ export const translations = {
 
     territory: {
       eyebrow: "Territoire desservi",
-      title: "Présents partout au Québec.",
+      title: "On vous accompagne partout au Québec.",
       subtitle:
-        "Andrew Buteau accompagne ses clients en visioconférence ou en personne dans cinq régions principales. Chaque dossier reçoit la même rigueur, peu importe le code postal.",
+        "Andrew Buteau rencontre ses clients en visio ou en personne dans cinq régions principales. Chaque dossier reçoit la même rigueur, peu importe le code postal.",
       regions: [
         { name: "Laval", note: "Siège — 2300 boul. Saint-Martin Est" },
         { name: "Montréal", note: "Île + couronne" },
@@ -781,15 +781,15 @@ export const translations = {
     },
 
     letter: {
-      eyebrow: "Le mot du courtier",
+      eyebrow: "Un mot d'Andrew",
       heading: "Bonjour,",
       bodyP1:
-        "On me demande souvent ce qui distingue notre approche. Ma réponse est simple :",
-      bodyP1Emphasis: "le temps qu'on prend à comprendre votre dossier avant de signer quoi que ce soit.",
+        "On me demande souvent ce qui nous distingue. Ma réponse est simple :",
+      bodyP1Emphasis: "on prend le temps de comprendre votre situation au complet avant de proposer une solution.",
       bodyP2:
-        "Une hypothèque, ce n'est pas un produit. C'est une décision financière qui vous engage 25 ans. Mon rôle n'est pas de vous vendre le taux le plus bas affiché — c'est de structurer un dossier que vous comprenez, avec un prêteur qui vous correspond.",
+        "Une hypothèque, ce n'est pas juste un produit. C'est un engagement de 25 ans. Mon rôle, ce n'est pas de vous vendre le taux le plus bas affiché — c'est de bâtir avec vous un dossier que vous comprenez, avec un prêteur qui colle à votre profil.",
       bodyP3:
-        "Si on travaille ensemble, voici ce que je vous promets : aucune zone grise. Vous saurez chaque chiffre, chaque clause, chaque conséquence. Et quand le marché bougera, vous m'aurez au bout du fil.",
+        "Si on travaille ensemble, voici ma promesse : rien de flou. Vous allez connaître chaque chiffre, chaque clause, chaque conséquence. Et quand le marché bougera, vous m'aurez au bout du fil.",
       closing: "À bientôt,",
       role: "Andrew Buteau, courtier hypothécaire",
     },
@@ -996,9 +996,9 @@ export const translations = {
         ],
       },
       finalCta: {
-        eyebrow: "Au-delà des outils",
-        title: "Besoin d'un humain ?",
-        body: "Les outils ouvrent une porte. Andrew et son équipe vous aident à la franchir — sans pression, avec une stratégie chiffrée.",
+        eyebrow: "Besoin de parler à quelqu'un ?",
+        title: "On est là pour vous.",
+        body: "Les outils, c'est utile pour démarrer. Andrew et son équipe sont là pour aller plus loin avec vous — sans pression, avec un plan concret et chiffré.",
         button: "Prendre rendez-vous",
       },
     },
@@ -1020,8 +1020,8 @@ export const translations = {
     exitIntent: {
       eyebrow: "Avant de partir",
       title: "Un dossier hypothécaire, ça se prépare.",
-      titleAccent: "Une seule conversation suffit.",
-      body: "On structure votre financement sans pression. Vingt minutes au téléphone, c'est suffisant pour clarifier votre dossier — achat, refinancement ou renouvellement.",
+      titleAccent: "20 minutes au téléphone, ça suffit pour clarifier.",
+      body: "On regarde votre financement ensemble, sans pression. 20 minutes au téléphone, c'est assez pour clarifier votre dossier — achat, refi ou renouvellement.",
       ctaCall: "Appeler maintenant",
       ctaContact: "Aller au formulaire",
       decline: "Plus tard",
@@ -1092,8 +1092,8 @@ export const translations = {
         eyebrow: "Mortgage brokerage — Planiprêt",
         title: "Mortgage. Differently.",
         subtitle:
-          "First-time or stressful renewal? We start by listening — not by judging your file. 200 families supported in 2025, same rigor for each.",
-        ctaPrimary: "See my payment in 60 seconds",
+          "First-time buyer or a renewal that's stressing you out? We start by listening, not by judging your file. 200 families supported in 2025, the same rigor for each.",
+        ctaPrimary: "Calculate my payment in 60 seconds",
         ctaSecondary: "Meet our team",
         ctaByTier: {
           primo: "Start my first file",
@@ -1110,13 +1110,13 @@ export const translations = {
       partners: {
         eyebrow: "Our partners",
         title: "A network of leading lenders",
-        subtitle: "A few of our financial institution partners.",
+        subtitle: "A few of the financial institutions we work with every day.",
         cta: "Browse all financial institutions",
       },
 
       teamTeaser: {
         eyebrow: "Our team",
-        title: "Four pros, one rigor",
+        title: "Four pros, the same rigor",
         andrewName: "Andrew Buteau",
         andrewRole: "Mortgage broker & Founder",
         abygaeleName: "Abygaèle Gagné",
@@ -1130,27 +1130,27 @@ export const translations = {
 
       services: {
         eyebrow: "Our services",
-        title: "Five services, one philosophy",
+        title: "Five services, one approach",
         items: [
           {
             title: "Renewal",
-            desc: "Market analysis 120 days before maturity and negotiation to secure the best conditions — with or without switching banks.",
+            desc: "We analyze the market 120 days before maturity and negotiate the best conditions for you — with or without switching banks.",
           },
           {
             title: "Refinancing",
-            desc: "Restructure your financing to optimize liquidity, unlock equity, or fund a renovation, education or investment project.",
+            desc: "We restructure your financing to unlock cash flow, pull out equity, or fund a renovation, education or investment project.",
           },
           {
             title: "Debt consolidation",
-            desc: "Roll high-interest debts (cards, lines, loans) into your mortgage to lower monthly payments and regain control.",
+            desc: "We roll your high-interest debts (cards, lines, loans) into your mortgage to lower monthly payments and put you back in control.",
           },
           {
             title: "Property purchase",
-            desc: "Strategy from A to Z for buying a first home, a 2nd property, a family upgrade, or a secondary residence.",
+            desc: "We walk you through A to Z: first home, 2nd property, family upgrade, or secondary residence.",
           },
           {
             title: "Investment",
-            desc: "Structured financing strategies to grow your real-estate portfolio — multi-units, income properties, leverage on existing equity.",
+            desc: "Well-structured financing to grow your real-estate portfolio — multi-units, income properties, leverage on your existing equity.",
           },
         ],
       },
@@ -1161,29 +1161,29 @@ export const translations = {
         bodyP1Lead: "At ",
         bodyP1Brand: "Équipe BUTEAU",
         bodyP1Continued:
-          ", our priority is to deliver a fast, efficient and human service. Our mission is to simplify the financing process, eliminate grey areas, and design personalized strategies that fit your unique needs.",
+          ", we offer a service that's fast, efficient and centered on your needs. Our mission: simplify your financing, clear up what's confusing, and build solutions that fit your situation.",
         bodyP2Lead: "In ",
         bodyP2Year: "2025",
         bodyP2Continued: ", we supported more than ",
         bodyP2Stat: "families",
         bodyP2End:
-          " across Quebec. With method and availability, we move every project toward success.",
+          " across Quebec. With method and availability, we move every project all the way through.",
         values: [
           {
-            title: "Data-driven analysis",
-            desc: "A structured approach grounded in your numbers for optimal decisions.",
+            title: "Decisions based on your numbers",
+            desc: "We start from your real numbers to recommend the best strategy.",
           },
           {
-            title: "Extensive experience",
-            desc: "200+ families in 2025. All regions. All profiles.",
+            title: "Real-world experience",
+            desc: "200+ families in 2025. All regions, all profiles.",
           },
           {
-            title: "Professional team",
-            desc: "Methodical, available brokers at every step — from the first call to the signature.",
+            title: "Always-available team",
+            desc: "Methodical brokers you can actually reach at every step — from the first call to the signature.",
           },
           {
-            title: "Wide lender network",
-            desc: "Access to multiple institutions for the best rate and conditions.",
+            title: "Lender network",
+            desc: "Access to multiple institutions to get you the best rate and conditions.",
           },
         ],
       },
@@ -1271,7 +1271,7 @@ export const translations = {
 
       // AdPage — full-bleed editorial spread (Cereal vol.18 style).
       adPage: {
-        statement: "Four pros. Five services. One signature.",
+        statement: "Four pros. Five services. The same rigor.",
         attribution: "Équipe Buteau",
       },
 
@@ -1279,10 +1279,10 @@ export const translations = {
       tools: {
         eyebrow: "Tools & resources",
         title: "Everything you need to move forward",
-        subtitle: "Browse our resources designed to support you.",
+        subtitle: "Concrete resources to support you at every step.",
         items: [
-          { title: "Educational guides", desc: "Understand mortgage financing the simple way." },
-          { title: "Educational shorts", desc: "Quick videos for rapid, useful tips." },
+          { title: "Educational guides", desc: "Understand mortgage financing, simply." },
+          { title: "Educational shorts", desc: "Short videos with clear, quick answers." },
           { title: "Blog", desc: "Articles, market trends and analysis." },
           { title: "Documents", desc: "Downloadable checklists and forms." },
         ],
@@ -1290,7 +1290,7 @@ export const translations = {
       },
 
       reviews: {
-        eyebrow: "Letters to the editor",
+        eyebrow: "Client testimonials",
         title: "What our clients say",
         googleBadgeLabel: "111 reviews 5 stars Google",
         letterDateLabel: "Received",
@@ -1298,7 +1298,7 @@ export const translations = {
         items: [
           {
             quote:
-              "A professional and reassuring service for our first home purchase. The team secured exceptional conditions and walked us through every step with great clarity.",
+              "A professional and reassuring service for our first home purchase. The team got us excellent conditions and walked us through every step with clarity.",
             authorInitial: "M",
             author: "Maxime T.",
             city: "Laval",
@@ -1306,7 +1306,7 @@ export const translations = {
           },
           {
             quote:
-              "Outstanding efficiency for our refinancing. Andrew is rigorous and transparent — he took the time to analyze every number to structure a truly advantageous strategy.",
+              "Efficient and reliable for our refinancing. Andrew is rigorous and transparent — he took the time to analyze every number to build a truly advantageous strategy.",
             authorInitial: "C",
             author: "Catherine P.",
             city: "Montreal",
@@ -1314,7 +1314,7 @@ export const translations = {
           },
           {
             quote:
-              "Incredible availability — they really do things differently. File follow-up with Abygaèle and Alexis was flawless. We felt in good hands from start to finish. Highly recommended.",
+              "Always available, and they really do things differently. The follow-up with Abygaèle and Alexis was flawless. We felt in good hands from start to finish. I recommend without hesitation.",
             authorInitial: "J",
             author: "Jonathan D.",
             city: "Boisbriand",
@@ -1340,35 +1340,35 @@ export const translations = {
         items: [
           {
             q: "What's the pre-qualification process?",
-            a: "Pre-qualification is simple and fast. We analyze your financial situation — income, debts, credit history — and once complete, you receive a pre-qualification letter to negotiate a property with confidence.",
+            a: "It's simple and fast. We look at your financial situation — income, debts, credit history — and once it's done, you get a pre-qualification letter so you can negotiate a property with confidence.",
           },
           {
             q: "How long does a mortgage file take?",
-            a: "Generally, count on 30 to 45 days from accepted offer to closing. Our team works to minimize that delay through strong lender relationships.",
+            a: "Usually 30 to 45 days from accepted offer to closing. We work to shorten that delay thanks to the strong relationships we have with our lenders.",
           },
           {
             q: "What's the minimum down payment?",
-            a: "The minimum down payment is generally 5% for a first home purchase. For investment or luxury properties, it may be higher. We help explore options like HBP (RRSP) or FHSA (CELIAPP) to reduce your initial cost.",
+            a: "For a first home purchase, it's generally 5%. For investment or higher-end properties, it can be more. We explore options like HBP (RRSP) or FHSA (CELIAPP) to cut your initial cost.",
           },
           {
-            q: "Fixed or variable rate — which to choose?",
-            a: "It depends on your situation and risk tolerance. A fixed rate offers predictable stability; a variable rate can pay off in falling-rate environments. We analyze your options and recommend the strategy that fits you.",
+            q: "Fixed or variable rate — which one?",
+            a: "It depends on your situation and your risk tolerance. Fixed gives you stability; variable can pay off when rates drop. We analyze your options and recommend what truly fits your profile.",
           },
           {
-            q: "Are there hidden fees?",
-            a: "No. We believe in total transparency. All fees are disclosed and explained from day one. Our role is to support you with no surprises — you know exactly what you owe.",
+            q: "Are there any hidden fees?",
+            a: "No, never. We work in full transparency. Every fee is laid out and explained from day one. No surprises — you know exactly what you're paying.",
           },
           {
             q: "Can you refinance my current property?",
-            a: "Absolutely. Refinancing is one of our specialties. Whether to reduce your payments, free up equity, or consolidate debts, we find the right fit for your financial situation.",
+            a: "Yes — it's one of our specialties. Whether to lower your payments, pull out equity or consolidate debts, we find the solution that fits your situation.",
           },
           {
             q: "How can I improve my credit score?",
-            a: "Several actions help: paying bills on time, reducing credit-card balances, avoiding unnecessary new credit applications. We can advise on strategies to optimize your credit profile.",
+            a: "A few simple moves: pay your bills on time, lower your credit-card balances, avoid unnecessary new credit applications. We can walk you through strategies to boost your profile.",
           },
           {
             q: "When should I prepare my mortgage renewal?",
-            a: "Ideally 4 to 6 months before maturity. Most borrowers accept their lender's renewal offer by default — often without shopping around. Preparing in advance lets us put your file in competition across multiple institutions, secure a better rate, and assess whether restructuring (consolidation, refinancing) could be advantageous. A renewal isn't a routine signature, it's a financial leverage point.",
+            a: "Ideally 4 to 6 months before maturity. Most borrowers accept their lender's renewal offer by default — often without shopping around. Preparing ahead lets us put your file in competition across multiple institutions, secure a better rate, and assess whether a consolidation or refi could be advantageous. A renewal isn't just a routine signature — it's a real chance to optimize.",
           },
         ],
       },
@@ -1379,7 +1379,7 @@ export const translations = {
         eyebrow: "The team",
         title: "Our team",
         subtitle:
-          "Four dedicated mortgage brokers, structuring your financial success with method and humanity.",
+          "Four passionate mortgage brokers who work together for the success of each of your projects — with method and energy.",
       },
       marginalia: ["founder", "coord.", "assist.", "operations"],
       members: [
@@ -1410,38 +1410,38 @@ export const translations = {
       ],
       method: {
         eyebrow: "Our method",
-        title: "Three pillars, one execution",
+        title: "Three pillars, one team",
         intro:
-          "Every file is treated with the same method and structure. We work in close collaboration to analyze your situation, identify the most relevant options, and execute a clear financing strategy tailored to your goals.",
+          "Every file is handled with the same method and structure. We work together to analyze your situation, identify the best options, and execute a clear financing plan tailored to your goals.",
         items: [
           {
             label: "Collaboration",
-            desc: "Each member brings their expertise — analysis, negotiation, execution. From the first meeting to closing, we work together to ensure consistency and efficiency.",
+            desc: "Each member brings their expertise — analysis, negotiation, execution. From the first meeting to closing, we work as a team to keep things consistent and efficient.",
           },
           {
             label: "Analysis",
-            desc: "We examine your financial situation in depth to identify the most appropriate solutions. No assumptions — only concrete, verified data.",
+            desc: "We look at your financial situation in depth to find the best solution. No guesswork — only concrete, verified data.",
           },
           {
             label: "Execution",
-            desc: "Once the strategy is defined, we execute with speed and precision. Every step is rigorously tracked through to project completion.",
+            desc: "Once the plan is set, we execute with speed and precision. Every step is tracked closely all the way to closing.",
           },
         ],
       },
     },
 
     cta: {
-      eyebrow: "Next step",
-      title: "Ready to structure your project?",
-      subtitle: "Clear decisions. Structured execution. Concrete results.",
+      eyebrow: "Let's chat?",
+      title: "Ready to move forward on your project?",
+      subtitle: "Clear advice, a concrete plan, real results at the end.",
       button: "Book an appointment",
     },
 
     journal: {
       eyebrow: "Articles",
-      title: "Reflections from Équipe Buteau.",
+      title: "Articles from Équipe Buteau.",
       subtitle:
-        "Columns, market analyses and clarifying explanations — published at the rhythm of trends and questions received. Click a title to open the full article.",
+        "Market analyses, practical tips and clear explanations — published as trends evolve and as questions come in. Click a title to read the full article.",
       readingLabel: "min read",
       readMoreLabel: "Read article",
       hideLabel: "Collapse",
@@ -1467,7 +1467,7 @@ export const translations = {
 
     courrier: {
       subtitle:
-        "A selection of testimonials received by email, in person, or via Google. Each letter is published with the author's permission.",
+        "A selection of testimonials received by email, in person, or via Google. Each message is published with the author's consent.",
       letterDateLabel: "Received",
       letterFromLabel: "From",
       googleLinkLabel: "See all reviews on Google",
@@ -1528,25 +1528,25 @@ export const translations = {
       eyebrow: "Request received",
       title: "Thank you.",
       subtitle:
-        "Andrew has received your request and will personally get back to you shortly. No grey areas — you'll know exactly where things stand.",
+        "Andrew has received your request and will personally get back to you shortly. Nothing left unclear — you'll know exactly where things stand.",
       footnote: "Received · Andrew Buteau · AMF registered",
       nextStepsLabel: "While you wait",
       nextStepCalc: "Explore the calculator",
       nextStepLexique: "Browse the glossary",
       nextStepBack: "Back to home",
       tierMessages: {
-        primo: "Your first-time buyer file is my priority — I'll call you within 24 hours to start the pre-approval.",
-        refi: "Your current situation deserves a full review — I'll call you within 24 hours with my first observations.",
-        investor: "Your investment project is being analyzed — I'll call you within 24 hours to discuss your leverage strategy.",
+        primo: "Your first purchase is my priority — I'll call you within 24 hours to start the pre-approval.",
+        refi: "Your situation deserves a full review — I'll call you within 24 hours with my first observations.",
+        investor: "I'm taking a look at your investment project — I'll call you within 24 hours to talk through your leverage strategy.",
         explorer: "No pressure — I'll call you within 24 hours to clarify your situation, no commitment.",
       },
     },
 
     notFound: {
       eyebrow: "Lost?",
-      title: "This page doesn't exist in our edition.",
+      title: "This page doesn't exist.",
       subtitle:
-        "Perhaps a link has moved, or you're searching for something specific. We can guide you back on track.",
+        "A link may have moved, or you're looking for something specific. We can get you back on track.",
       ctaHome: "Back to home",
       ctaCall: "Call Andrew",
       footnote: "Code 404",
@@ -1650,10 +1650,10 @@ export const translations = {
     },
 
     media: {
-      eyebrow: "Featured & engaged",
+      eyebrow: "Media & community",
       title: "Andrew in the media and in the community.",
       subtitle:
-        "Mortgage brokerage isn't just a file. It's also TV sets, charity nights and regional conversations — wherever people talk money, projects and the future.",
+        "Mortgage brokerage isn't just about files. It's also TV sets, charity nights and regional conversations — wherever people talk money, projects and the future.",
       tvEyebrow: "On air",
       tvTitle: "Andrew Buteau on the show « Art de Réussir »",
       tvVideoTitle: "Andrew Buteau on Art de Réussir",
@@ -1713,8 +1713,8 @@ export const translations = {
       results: {
         primo: {
           eyebrow: "Profile — First purchase",
-          title: "You're ready to structure your first file.",
-          body: "HBP (up to $35,000 from your RRSP tax-free), FHSA (up to $40,000 lifetime), welcome tax, 5% down payment — Andrew guides you step by step. No grey areas, no unexplained jargon.",
+          title: "You're ready to build your first file.",
+          body: "HBP (up to $35,000 from your RRSP tax-free), FHSA (up to $40,000 lifetime), welcome tax, 5% down payment — Andrew guides you step by step, nothing left unclear, no unexplained jargon.",
           ctaLabel: "Start my file",
         },
         refi: {
@@ -1725,14 +1725,14 @@ export const translations = {
         },
         investor: {
           eyebrow: "Profile — Investor",
-          title: "A financing strategy that puts your equity to work.",
-          body: "Multi-units, income properties, leverage refi on existing equity. Andrew structures complex files with the ~9 lenders who truly understand real-estate investment — not just those who accept a standard residential file.",
+          title: "A financing plan that puts your equity to work.",
+          body: "Multi-units, income properties, leverage refi on existing equity. Andrew builds complex files with the ~9 lenders who truly understand real-estate investment — not just those who'll accept a standard residential file.",
           ctaLabel: "Discuss my strategy",
         },
         explorer: {
           eyebrow: "Profile — Upgrade or exploring",
-          title: "A 2nd property, a family upgrade, or simply clarifying your options.",
-          body: "Sell to buy bigger, keep your current home as a rental, relocate, buy out a share post-separation — or just understand your real margins. Andrew takes 20 minutes to give you the straight numbers, no commitment, with clarity.",
+          title: "A 2nd property, a family upgrade, or just clarifying your options.",
+          body: "Sell to buy bigger, keep your current home as a rental, relocate, buy out a share after separation — or just understand your real margins. Andrew takes 20 minutes to give you the straight numbers, no commitment, with clarity.",
           ctaLabel: "Take 20 minutes with Andrew",
         },
       },
@@ -1740,9 +1740,9 @@ export const translations = {
 
     territory: {
       eyebrow: "Service area",
-      title: "Across all of Quebec.",
+      title: "We support you anywhere in Quebec.",
       subtitle:
-        "Andrew Buteau supports clients via video conference or in person across five primary regions. Every file receives the same rigor — wherever you are.",
+        "Andrew Buteau meets with clients by video or in person across five main regions. Every file gets the same rigor, no matter the postal code.",
       regions: [
         { name: "Laval", note: "Head office — 2300 Saint-Martin East" },
         { name: "Montreal", note: "Island + suburbs" },
@@ -1755,15 +1755,15 @@ export const translations = {
     },
 
     letter: {
-      eyebrow: "A note from the broker",
+      eyebrow: "A word from Andrew",
       heading: "Hello,",
-      bodyP1: "I'm often asked what sets our approach apart. My answer is simple:",
-      bodyP1Emphasis: "the time we take to understand your file before signing anything.",
+      bodyP1: "I'm often asked what sets us apart. My answer is simple:",
+      bodyP1Emphasis: "we take the time to understand your full situation before recommending a solution.",
       bodyP2:
-        "A mortgage isn't a product. It's a financial decision that binds you for 25 years. My role isn't to sell you the lowest advertised rate — it's to structure a file you understand, with a lender that fits your profile.",
+        "A mortgage isn't just a product. It's a 25-year commitment. My job isn't to sell you the lowest advertised rate — it's to build with you a file you actually understand, with a lender that fits your profile.",
       bodyP3:
-        "If we work together, here's my promise: no grey areas. You'll know every number, every clause, every consequence. And when the market moves, you'll have me on the line.",
-      closing: "Until soon,",
+        "If we work together, here's my promise: nothing left unclear. You'll know every number, every clause, every consequence. And when the market moves, you'll have me on the line.",
+      closing: "Talk soon,",
       role: "Andrew Buteau, mortgage broker",
     },
 
@@ -1957,9 +1957,9 @@ export const translations = {
         ],
       },
       finalCta: {
-        eyebrow: "Beyond the tools",
-        title: "Need a human?",
-        body: "Tools open a door. Andrew and the team help you walk through it — no pressure, with a numbered strategy.",
+        eyebrow: "Need to talk to someone?",
+        title: "We're here for you.",
+        body: "Tools are useful to get started. Andrew and the team are here to take it further with you — no pressure, with a concrete plan and real numbers.",
         button: "Book an appointment",
       },
     },
@@ -1981,8 +1981,8 @@ export const translations = {
     exitIntent: {
       eyebrow: "Before you go",
       title: "A mortgage file deserves preparation.",
-      titleAccent: "One conversation is enough.",
-      body: "We structure your financing without pressure. Twenty minutes on the phone is enough to clarify your file — purchase, refinance or renewal.",
+      titleAccent: "20 minutes on the phone is enough to get clarity.",
+      body: "We look at your financing together, no pressure. 20 minutes on the phone is enough to clarify your file — purchase, refi or renewal.",
       ctaCall: "Call now",
       ctaContact: "Go to form",
       decline: "Later",

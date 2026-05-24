@@ -79,16 +79,16 @@ function MerciPage() {
           </h1>
 
           {/* Bronze line */}
-          <div className="w-16 h-px bg-[color:var(--color-bronze)] mb-8 animate-[buteauWidth_700ms_ease-out_500ms_both]" />
+          <div className="w-16 h-px bg-[color:var(--color-taupe-dark)] mb-8 animate-[buteauWidth_700ms_ease-out_500ms_both]" />
 
           {/* Subtitle */}
-          <p className="font-[var(--font-editorial)] italic text-[clamp(1.125rem,1.6vw,1.25rem)] text-[color:var(--color-navy-deep)]/85 leading-[1.65] mb-8 max-w-2xl text-pretty hyphens-auto animate-[buteauFadeUp_700ms_ease-out_600ms_both]">
+          <p className="italic text-[clamp(1.125rem,1.6vw,1.25rem)] text-[color:var(--color-navy-deep)]/85 leading-[1.65] mb-8 max-w-2xl text-pretty hyphens-auto animate-[buteauFadeUp_700ms_ease-out_600ms_both]">
             {t("merci.subtitle")}
           </p>
 
           {/* Tier-personalized message — si quiz fait */}
           {tierMessage && (
-            <div className="mb-12 pl-[clamp(1.5rem,2.3vw,2rem)] border-l-2 border-[color:var(--color-bronze)] animate-[buteauFadeUp_700ms_ease-out_750ms_both]">
+            <div className="mb-12 pl-[clamp(1.5rem,2.3vw,2rem)] border-l-2 border-[color:var(--color-taupe-dark)] animate-[buteauFadeUp_700ms_ease-out_750ms_both]">
               <p className="text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/85 text-pretty hyphens-auto">
                 {tierMessage}
               </p>
@@ -99,7 +99,7 @@ function MerciPage() {
           <div className="mb-16 max-w-[280px] animate-[buteauFadeUp_700ms_ease-out_900ms_both]">
             <AnimatedSignature className="w-full h-auto" duration={2200} />
             <div className="mt-3 flex items-center gap-3">
-              <span className="block w-8 h-px bg-[color:var(--color-bronze)]" />
+              <span className="block w-8 h-px bg-[color:var(--color-taupe-dark)]" />
               <p className="eyebrow text-[color:var(--color-taupe-dark)]">
                 Andrew Buteau
               </p>
@@ -108,8 +108,8 @@ function MerciPage() {
 
           {/* Next steps — 3 liens éditoriaux */}
           <div className="space-y-6 animate-[buteauFadeUp_700ms_ease-out_1100ms_both]">
-            <p className="eyebrow text-[color:var(--color-bronze-deep)] inline-flex items-center gap-3">
-              <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
+            <p className="eyebrow text-[color:var(--color-navy)] inline-flex items-center gap-3">
+              <span className="inline-block w-6 h-px bg-[color:var(--color-taupe-dark)]" />
               {t("merci.nextStepsLabel")}
             </p>
 
@@ -119,10 +119,10 @@ function MerciPage() {
                   <Link
                     to="/outils"
                     hash="calculateur"
-                    className="group flex items-center gap-4 py-3 border-b border-[color:var(--color-taupe)]/30 hover:border-[color:var(--color-bronze)] transition-colors"
+                    className="group flex items-center gap-4 py-3 border-b border-[color:var(--color-taupe)]/30 hover:border-[color:var(--color-taupe-dark)] transition-colors"
                   >
-                    <CalcIcon size={18} className="shrink-0 text-[color:var(--color-bronze)]" aria-hidden="true" />
-                    <span className="font-[var(--font-display)] text-base text-[color:var(--color-navy-deep)] group-hover:text-[color:var(--color-bronze-deep)] transition-colors">
+                    <CalcIcon size={18} className="shrink-0 text-[color:var(--color-taupe-dark)]" aria-hidden="true" />
+                    <span className="font-[var(--font-display)] text-base text-[color:var(--color-navy-deep)] group-hover:text-[color:var(--color-navy)] transition-colors">
                       {t("merci.nextStepCalc")}
                     </span>
                     <span aria-hidden="true" className="ml-auto text-[color:var(--color-taupe)] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">→</span>
@@ -133,10 +133,10 @@ function MerciPage() {
                 <button
                   type="button"
                   onClick={() => openGlossary()}
-                  className="group w-full flex items-center gap-4 py-3 border-b border-[color:var(--color-taupe)]/30 hover:border-[color:var(--color-bronze)] transition-colors text-left"
+                  className="group w-full flex items-center gap-4 py-3 border-b border-[color:var(--color-taupe)]/30 hover:border-[color:var(--color-taupe-dark)] transition-colors text-left"
                 >
-                  <BookOpen size={18} className="shrink-0 text-[color:var(--color-bronze)]" aria-hidden="true" />
-                  <span className="font-[var(--font-display)] text-base text-[color:var(--color-navy-deep)] group-hover:text-[color:var(--color-bronze-deep)] transition-colors">
+                  <BookOpen size={18} className="shrink-0 text-[color:var(--color-taupe-dark)]" aria-hidden="true" />
+                  <span className="font-[var(--font-display)] text-base text-[color:var(--color-navy-deep)] group-hover:text-[color:var(--color-navy)] transition-colors">
                     {t("merci.nextStepLexique")}
                   </span>
                   <span aria-hidden="true" className="ml-auto text-[color:var(--color-taupe)] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">→</span>
@@ -146,10 +146,10 @@ function MerciPage() {
                 <HeartbeatCta className="cta-heartbeat--block">
                   <Link
                     to="/"
-                    className="group flex items-center gap-4 py-3 border-b border-[color:var(--color-taupe)]/30 hover:border-[color:var(--color-bronze)] transition-colors"
+                    className="group flex items-center gap-4 py-3 border-b border-[color:var(--color-taupe)]/30 hover:border-[color:var(--color-taupe-dark)] transition-colors"
                   >
-                    <HomeIcon size={18} className="shrink-0 text-[color:var(--color-bronze)]" aria-hidden="true" />
-                    <span className="font-[var(--font-display)] text-base text-[color:var(--color-navy-deep)] group-hover:text-[color:var(--color-bronze-deep)] transition-colors">
+                    <HomeIcon size={18} className="shrink-0 text-[color:var(--color-taupe-dark)]" aria-hidden="true" />
+                    <span className="font-[var(--font-display)] text-base text-[color:var(--color-navy-deep)] group-hover:text-[color:var(--color-navy)] transition-colors">
                       {t("merci.nextStepBack")}
                     </span>
                     <span aria-hidden="true" className="ml-auto text-[color:var(--color-taupe)] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">→</span>
@@ -163,8 +163,8 @@ function MerciPage() {
               href={`tel:${config.phone.raw}`}
               className="inline-flex items-center gap-2.5 mt-8 group"
             >
-              <Phone size={14} className="text-[color:var(--color-bronze)]" aria-hidden="true" />
-              <span className="font-[var(--font-editorial)] italic text-[color:var(--color-navy-deep)] text-base group-hover:text-[color:var(--color-bronze-deep)] transition-colors">
+              <Phone size={14} className="text-[color:var(--color-taupe-dark)]" aria-hidden="true" />
+              <span className="italic text-[color:var(--color-navy-deep)] text-base group-hover:text-[color:var(--color-navy)] transition-colors">
                 {lang === "fr" ? "Ou appelez directement" : "Or call directly"} —{" "}
                 <span className="font-[var(--font-display)] not-italic font-semibold">
                   {config.phone.display}

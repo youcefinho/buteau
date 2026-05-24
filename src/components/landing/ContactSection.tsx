@@ -40,11 +40,11 @@ export function ContactSection() {
             {/* Corner accent bronze */}
             <span
               aria-hidden="true"
-              className="absolute top-0 left-0 w-12 h-px bg-[color:var(--color-bronze)]"
+              className="absolute top-0 left-0 w-12 h-px bg-[color:var(--color-taupe-dark)]"
             />
             <span
               aria-hidden="true"
-              className="absolute top-0 left-0 w-px h-12 bg-[color:var(--color-bronze)]"
+              className="absolute top-0 left-0 w-px h-12 bg-[color:var(--color-taupe-dark)]"
             />
 
             <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[var(--tracking-eyebrow)] mb-6 text-balance">
@@ -78,7 +78,7 @@ export function ContactSection() {
             </ul>
 
             {/* Carte adresse — bordure taupe minimale */}
-            <div className="bg-[color:var(--color-cream-warm)] border-l-[3px] border-[color:var(--color-bronze)] pl-5 py-4">
+            <div className="bg-[color:var(--color-cream-warm)] border-l-[3px] border-[color:var(--color-taupe-dark)] pl-5 py-4">
               <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-2">
                 {t("nav.contact")} — {config.address.addressLocality}
               </p>
@@ -111,7 +111,7 @@ function ContactLine({
 }) {
   const inner = (
     <div className="group flex items-start gap-4">
-      <div className="shrink-0 mt-1 text-[color:var(--color-bronze)] transition-transform duration-300 group-hover:translate-x-0.5">
+      <div className="shrink-0 mt-1 text-[color:var(--color-taupe-dark)] transition-transform duration-300 group-hover:translate-x-0.5">
         {icon}
       </div>
       <div className="flex-1 min-w-0">

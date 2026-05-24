@@ -68,14 +68,14 @@ export function MobileStickyCta() {
       }`}
     >
       {/* Signature line bronze top — micro-detail édito magazine */}
-      <div className="h-px bg-gradient-to-r from-transparent via-[color:var(--color-bronze)] to-transparent" />
+      <div className="h-px bg-gradient-to-r from-transparent via-[color:var(--color-taupe-dark)] to-transparent" />
 
-      <div className="bg-[color:var(--color-navy-deep)]/95 backdrop-blur-md border-t border-[color:var(--color-bronze)]/20 shadow-[0_-12px_32px_-8px_rgba(0,0,0,0.35)]">
+      <div className="bg-[color:var(--color-navy-deep)]/95 backdrop-blur-md border-t border-[color:var(--color-taupe-dark)]/20 shadow-[0_-12px_32px_-8px_rgba(0,0,0,0.35)]">
         <div className="flex items-center gap-1.5 p-2.5">
           {/* 1. Phone — icon only, tap = compose direct */}
           <a
             href={`tel:${config.phone.raw}`}
-            className="inline-flex items-center justify-center w-11 h-11 shrink-0 rounded-md border border-[color:var(--color-bronze)]/25 text-[color:var(--color-cream)]/85 hover:text-[color:var(--color-bronze)] hover:border-[color:var(--color-bronze)]/60 hover:bg-[color:var(--color-bronze)]/5 active:scale-95 transition-all duration-300"
+            className="inline-flex items-center justify-center w-11 h-11 shrink-0 rounded-md border border-[color:var(--color-taupe-dark)]/25 text-[color:var(--color-cream)]/85 hover:text-[color:var(--color-taupe-dark)] hover:border-[color:var(--color-taupe-dark)]/60 hover:bg-[color:var(--color-taupe-dark)]/5 active:scale-95 transition-all duration-300"
             aria-label={`${t("common.callUs")} ${config.phone.display}`}
             tabIndex={visible ? 0 : -1}
           >
@@ -85,7 +85,7 @@ export function MobileStickyCta() {
           {/* 2. SMS — icon only, tap = ouvre app SMS native avec body pre-rempli */}
           <a
             href={`sms:${config.phone.raw}?body=${encodeURIComponent(t("common.smsBody"))}`}
-            className="inline-flex items-center justify-center w-11 h-11 shrink-0 rounded-md border border-[color:var(--color-bronze)]/25 text-[color:var(--color-cream)]/85 hover:text-[color:var(--color-bronze)] hover:border-[color:var(--color-bronze)]/60 hover:bg-[color:var(--color-bronze)]/5 active:scale-95 transition-all duration-300"
+            className="inline-flex items-center justify-center w-11 h-11 shrink-0 rounded-md border border-[color:var(--color-taupe-dark)]/25 text-[color:var(--color-cream)]/85 hover:text-[color:var(--color-taupe-dark)] hover:border-[color:var(--color-taupe-dark)]/60 hover:bg-[color:var(--color-taupe-dark)]/5 active:scale-95 transition-all duration-300"
             aria-label={`${t("common.smsLabel")} Andrew`}
             tabIndex={visible ? 0 : -1}
           >
@@ -100,7 +100,7 @@ export function MobileStickyCta() {
             target={config.calendlyUrl ? "_blank" : undefined}
             rel={config.calendlyUrl ? "noopener noreferrer" : undefined}
             onClick={openCalendly}
-            className="inline-flex items-center justify-center w-11 h-11 shrink-0 rounded-md border border-[color:var(--color-bronze)]/25 text-[color:var(--color-cream)]/85 hover:text-[color:var(--color-bronze)] hover:border-[color:var(--color-bronze)]/60 hover:bg-[color:var(--color-bronze)]/5 active:scale-95 transition-all duration-300"
+            className="inline-flex items-center justify-center w-11 h-11 shrink-0 rounded-md border border-[color:var(--color-taupe-dark)]/25 text-[color:var(--color-cream)]/85 hover:text-[color:var(--color-taupe-dark)] hover:border-[color:var(--color-taupe-dark)]/60 hover:bg-[color:var(--color-taupe-dark)]/5 active:scale-95 transition-all duration-300"
             aria-label="Calendly"
             tabIndex={visible ? 0 : -1}
           >
@@ -117,7 +117,7 @@ export function MobileStickyCta() {
           <Link
             to="/"
             hash="contact"
-            className="flex-1 min-w-0 inline-flex items-center justify-center gap-1.5 py-2.5 px-2 bg-[color:var(--color-bronze)] hover:bg-[color:var(--color-bronze-deep)] text-[color:var(--color-navy-deep)] font-bold rounded-md shadow-md text-[11px] uppercase tracking-[0.08em] active:scale-[0.97] transition-all duration-200"
+            className="flex-1 min-w-0 inline-flex items-center justify-center gap-1.5 py-2.5 px-2 bg-[color:var(--color-taupe-dark)] hover:bg-[color:var(--color-navy)] text-[color:var(--color-navy-deep)] font-bold rounded-md shadow-md text-[11px] uppercase tracking-[0.08em] active:scale-[0.97] transition-all duration-200"
             aria-label={t("common.contactCta")}
             tabIndex={visible ? 0 : -1}
           >
