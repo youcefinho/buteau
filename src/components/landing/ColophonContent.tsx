@@ -94,7 +94,7 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
               ]
           ).map(([title, body], idx) => (
             <li key={title} className="flex gap-5">
-              <span className="font-[var(--font-editorial)] italic text-[color:var(--color-navy)] text-2xl shrink-0 leading-none w-8">
+              <span className="font-[var(--font-editorial)] italic text-[color:var(--color-bronze)] text-2xl shrink-0 leading-none w-8">
                 {String(idx + 1).padStart(2, "0")}
               </span>
               <div className="space-y-2">

@@ -35,7 +35,7 @@ export function TikTokTeaser() {
 
           {/* Content cluster */}
           <div className="lg:col-span-8 space-y-5">
-            <p className="eyebrow text-[color:var(--color-navy)]">
+            <p className="eyebrow text-[color:var(--color-bronze)]">
               {t("tools.tiktok.eyebrow")}
             </p>
             <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,3vw,2.25rem)] tracking-[-0.01em] leading-tight text-balance">

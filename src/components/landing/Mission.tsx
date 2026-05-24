@@ -130,7 +130,7 @@ export function Mission() {
                   <Icon size={22} strokeWidth={1.5} aria-hidden="true" />
                 </div>
 
-                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[var(--tracking-eyebrow)] mb-3 leading-snug text-balance">
+                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] group-hover:text-[color:var(--color-bronze)] transition-colors duration-500 text-base uppercase tracking-[var(--tracking-eyebrow)] mb-3 leading-snug text-balance">
                   {v.title}
                 </h3>
 

@@ -611,13 +611,14 @@ body {
 .dropcap::first-letter {
   font-family: var(--font-editorial);
   font-style: italic;
-  font-weight: 600;
-  font-size: 5em;
+  font-weight: 700;
+  font-size: 5.25em;
   line-height: 0.85;
   float: left;
-  margin: 0.05em 0.12em 0 -0.04em;
+  margin: 0.05em 0.14em 0 -0.04em;
   color: var(--color-bronze);
   padding-top: 0.08em;
+  text-shadow: 0 1px 0 color-mix(in oklch, var(--color-bronze-deep) 30%, transparent);
 }
 
 /* ============================================================
