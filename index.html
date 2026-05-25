@@ -190,14 +190,24 @@
       }
     </script>
 
-    <!-- Strip URL hash AVANT React mount = refresh/back nav reviennent en haut
-         de page au lieu de jumper sur la section sauvegardee par SectionRail.
-         User feedback 2026-05-20 cross-4-sites. SectionRail clicks restent OK
-         (scroll intra-page, pas de route change donc pas affecte par ce strip). -->
+    <!-- Force scroll-top sur refresh (peu importe le hash dans l'URL).
+         Detection via Navigation Timing API : 'reload' = vrai refresh.
+         Les liens directs (#contact, #equipe) gardent leur comportement
+         d'ancre normale (type 'navigate'). Pattern cross-4-sites Intralys
+         (user feedback 2026-05-25 Buteau : refresh restait sur section). -->
     <script>
-      if (window.location.hash) {
-        history.replaceState(null, "", window.location.pathname + window.location.search);
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
       }
+      try {
+        var navEntry = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+        if (navEntry && navEntry.type === 'reload') {
+          if (window.location.hash) {
+            history.replaceState(null, '', window.location.pathname + window.location.search);
+          }
+          window.scrollTo(0, 0);
+        }
+      } catch (e) {}
     </script>
 
     <!-- Loading splash édito — typographic mark "ÉQUIPE BUTEAU" Cormorant italic
