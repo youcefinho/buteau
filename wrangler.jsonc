@@ -2,7 +2,10 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "equipe-buteau",
   "main": "src/worker.ts",
-  "compatibility_date": "2025-04-01",
+  // Bump 2025-04-01 → 2026-05-20 pour bénéficier des optims runtime
+  // récentes (compute time, isolate reuse, fetch defaults). Date 6 jours
+  // en arrière vs "aujourd'hui" = recent mais stable.
+  "compatibility_date": "2026-05-20",
   // [build] step auto-run bun run build avant wrangler deploy.
   // Sans cela, deploy push juste ./dist/ actuel (potentiellement stale).
   // Lesson session 2026-05-21 : 2h debug fantome car dist obsolete servi en prod.
