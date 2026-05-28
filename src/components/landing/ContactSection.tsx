@@ -2,6 +2,7 @@ import { MapPin, Mail, Phone, ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { config } from "@/lib/config";
 import { Container } from "@/components/layout/Container";
+import { PoweredByIntralys } from "@/components/shared/PoweredByIntralys";
 import { SectionHeading } from "./SectionHeading";
 import { ContactForm } from "./ContactForm";
 
@@ -51,6 +52,7 @@ export function ContactSection() {
               {t("home.contact.formLabel")}
             </h3>
             <ContactForm source="home_contact_form" />
+            <PoweredByIntralys />
           </div>
 
           {/* Info column — 5/12 — éditorial vertical */}
