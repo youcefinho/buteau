@@ -1452,7 +1452,7 @@ body {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid color-mix(in oklch, var(--color-bronze) 35%, transparent);
+  border: 2px solid color-mix(in oklch, var(--color-bronze) 50%, transparent);
   box-shadow:
     0 3px 16px rgba(0, 0, 0, 0.25),
     0 0 8px color-mix(in oklch, var(--color-bronze) 8%, transparent);
@@ -1474,7 +1474,7 @@ body {
   padding: 5px 12px;
   justify-content: flex-start;
   background: #ffffff;
-  border-color: color-mix(in oklch, var(--color-bronze) 70%, transparent);
+  border-color: color-mix(in oklch, var(--color-bronze) 85%, transparent);
   box-shadow:
     0 8px 28px rgba(0, 0, 0, 0.35),
     0 0 18px color-mix(in oklch, var(--color-bronze) 15%, transparent);
