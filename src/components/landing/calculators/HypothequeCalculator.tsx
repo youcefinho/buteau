@@ -8,6 +8,7 @@ import { SectionHeading } from "../SectionHeading";
 import { parseLocaleFloat, formatLocaleCurrency } from "@/lib/parseLocaleFloat";
 import { AmortizationSparkline } from "./AmortizationSparkline";
 import { WhatIfScenarios } from "./WhatIfScenarios";
+import { PoweredByIntralys } from "@/components/shared/PoweredByIntralys";
 
 /**
  * Calculateur hypothécaire — formule canadienne (composé semi-annuel).
@@ -325,6 +326,8 @@ export function HypothequeCalculator() {
         <p className="text-xs leading-relaxed text-[color:var(--color-taupe-dark)] max-w-3xl mx-auto text-center mt-8 italic text-pretty hyphens-auto">
           {t("tools.calc.disclaimer")}
         </p>
+
+        <PoweredByIntralys />
       </Container>
     </section>
   );

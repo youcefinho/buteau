@@ -18,6 +18,7 @@ import { PageTransition } from "@/components/layout/PageTransition";
 import { MobileStickyCta } from "@/components/layout/MobileStickyCta";
 import { SmsButton } from "@/components/layout/SmsButton";
 import { BackToTop } from "@/components/layout/BackToTop";
+import { IntralysWidget } from "@/components/layout/IntralysWidget";
 import { ColophonProvider } from "@/lib/ColophonContext";
 import { CarnetProvider } from "@/lib/CarnetContext";
 import { useLenis, getLenis, scrollToHash } from "@/hooks/useLenis";
@@ -103,6 +104,7 @@ function RootComponent() {
         <MobileStickyCta />
         <SmsButton />
         <BackToTop />
+        <IntralysWidget clientId="equipe-buteau" category="hypothecaire" />
         <CustomCursor />
       </CarnetProvider>
     </ColophonProvider>

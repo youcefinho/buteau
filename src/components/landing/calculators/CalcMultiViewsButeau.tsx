@@ -12,6 +12,7 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { AmortizationSparkline } from "./AmortizationSparkline";
 import { WhatIfScenarios } from "./WhatIfScenarios";
+import { PoweredByIntralys } from "@/components/shared/PoweredByIntralys";
 
 /**
  * CalcMultiViewsButeau — Calculateur hypothécaire 4 facettes.
@@ -1486,6 +1487,8 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
             </p>
           </div>
         )}
+
+        <PoweredByIntralys />
       </Container>
     </section>
   );

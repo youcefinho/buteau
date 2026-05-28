@@ -6,6 +6,7 @@ import { useColophon } from "@/lib/ColophonContext";
 import { useCarnet } from "@/lib/CarnetContext";
 import { config } from "@/lib/config";
 import { Container } from "./Container";
+import { PoweredByIntralys } from "@/components/shared/PoweredByIntralys";
 
 /**
  * Footer "Back Cover" — refonte radicale (vs 4-col layout générique).
@@ -225,17 +226,11 @@ export function Footer() {
             <p className="text-xs text-[color:var(--color-cream)]/75">
               © {year} {config.name}. {t("footer.rights")}
             </p>
-            <p className="eyebrow text-[color:var(--color-taupe)]/70 text-[10px]">
-              {t("footer.websiteBy")} —{" "}
-              <a
-                href="https://intralys.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-glow-hover"
-              >
-                Intralys
-              </a>
-            </p>
+          </div>
+
+          {/* Signature Intralys — hairline taupe + pill inline universel (cross-clients) */}
+          <div className="pt-5 mt-2 border-t border-[color:var(--color-taupe)]/20">
+            <PoweredByIntralys variant="inline" />
           </div>
         </div>
       </Container>

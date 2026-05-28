@@ -7,6 +7,7 @@ import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
 import { parseLocaleFloat, formatLocaleCurrency } from "@/lib/parseLocaleFloat";
 import { useCountUp } from "@/hooks/useCountUp";
 import { useGlossary } from "@/lib/GlossaryContext";
+import { PoweredByIntralys } from "@/components/shared/PoweredByIntralys";
 
 /**
  * CalculatorPreview — version compacte du calculateur sur l'Accueil.
@@ -234,6 +235,8 @@ export function CalculatorPreview() {
             </button>
           </div>
         </div>
+
+        <PoweredByIntralys />
       </Container>
     </section>
   );

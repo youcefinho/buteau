@@ -1422,3 +1422,160 @@ body {
     display: none;
   }
 }
+
+/* ─── IntralysWidget — signature flottante agence (reproduction roynakhal.com)
+   Position : fixed bottom-left, A COTE du BackToTop Buteau (left-6 + w-12 + gap).
+   Buteau BackToTop : bottom-6 left-6 (24px), w-12 (48px) => widget commence
+   a 24+48+12 = 84px du bord gauche. Bottom : 24px (parite avec BackToTop).
+   Etat collapsed = cercle 42px fleur-de-lis. Hover = pill 258px avec stripes
+   + tagline + signature. Z-index 40. ────────────────────────────────────── */
+.intralys-widget-container {
+  position: fixed;
+  bottom: 24px;
+  left: 84px;
+  z-index: 40;
+  font-family: var(--font-sans, "Open Sans", -apple-system, "Segoe UI", sans-serif);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.intralys-widget-container:hover {
+  transform: translateY(-4px);
+}
+.intralys-widget-link {
+  padding: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: width, border-radius;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 154, 0, 0.6);
+  box-shadow:
+    0 3px 16px rgba(0, 0, 0, 0.25),
+    0 0 8px rgba(255, 154, 0, 0.12);
+  transition:
+    width 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    border-radius 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    padding 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+}
+.intralys-widget-link:hover {
+  width: 258px;
+  border-radius: 36px;
+  padding: 5px 12px;
+  justify-content: flex-start;
+  background: #ffffff;
+  border-color: rgba(255, 154, 0, 1);
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.35),
+    0 0 18px rgba(255, 154, 0, 0.28);
+}
+.intralys-widget-logo {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  object-fit: contain;
+  padding: 6px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  transition:
+    opacity 0.18s ease,
+    transform 0.28s cubic-bezier(0.4, 0, 1, 1);
+  will-change: opacity, transform;
+  pointer-events: none;
+}
+.intralys-widget-link:hover .intralys-widget-logo {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.55);
+}
+.intralys-widget-content {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(12px);
+  visibility: hidden;
+  width: 100%;
+  white-space: nowrap;
+  will-change: opacity, transform;
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease,
+    visibility 0s 0.15s;
+}
+.intralys-widget-link:hover .intralys-widget-content {
+  opacity: 1;
+  transform: translateX(0);
+  visibility: visible;
+  transition:
+    opacity 0.38s ease 0.22s,
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.22s,
+    visibility 0s 0.22s;
+}
+.intralys-widget-stripes {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+.intralys-widget-stripe {
+  width: 3px;
+  border-radius: 2px;
+}
+.intralys-widget-s-orange { background-color: #ff9a00; height: 11px; }
+.intralys-widget-s-lblue  { background-color: #93c5fd; height: 15px; }
+.intralys-widget-s-blue   { background-color: #6366f1; height: 19px; }
+.intralys-widget-s-black  { background-color: #1a1a1a; height: 22px; }
+.intralys-widget-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.2;
+}
+.intralys-widget-sub {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #777;
+  font-weight: 500;
+}
+.intralys-widget-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 0.2px;
+}
+.intralys-widget-dot {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background-color: #ff9a00;
+  border-radius: 50%;
+  margin-left: 2px;
+  margin-bottom: 2px;
+}
+/* Mobile : BackToTop est cache (hidden lg:flex) -> widget glisse a gauche (12px). */
+@media (max-width: 1023px) {
+  .intralys-widget-container {
+    bottom: 12px;
+    left: 12px;
+  }
+  .intralys-widget-link:hover {
+    width: 230px;
+  }
+  .intralys-widget-sub { font-size: 8px; }
+  .intralys-widget-title { font-size: 11px; }
+}
