@@ -48,7 +48,7 @@ export function BackToTop() {
       }`}
     >
       {/* Tooltip au hover desktop — apparait a droite du bouton */}
-      <span className="pointer-events-none absolute bottom-full mb-3 left-1/2 -translate-x-1/2 px-3 py-1.5 rounded-md bg-[color:var(--color-navy-deep)] border border-[color:var(--color-bronze)]/30 text-[color:var(--color-cream)] text-xs font-medium whitespace-nowrap opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-lg">
+      <span className="pointer-events-none absolute bottom-full mb-1 left-1/2 -translate-x-1/2 px-3 py-1.5 rounded-md bg-[color:var(--color-navy-deep)] border border-[color:var(--color-bronze)]/30 text-[color:var(--color-cream)] text-xs font-medium whitespace-nowrap opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-lg">
         {label}
       </span>
 
