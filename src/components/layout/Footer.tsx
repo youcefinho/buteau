@@ -158,8 +158,11 @@ export function Footer() {
             {lang === "fr" ? "Cabinet : " : "Firm: "}
             <span className="font-semibold text-[color:var(--color-cream)]">{config.cabinet}</span>
           </p>
-          <p className="text-xs leading-[1.6] text-[color:var(--color-cream)]/85 max-w-4xl text-pretty hyphens-auto">
-            {config.amf.disclaimer[lang]}
+          {/* Statement de marque — remplace le disclaimer AMF en bas (demande Rochdi 2026-05-29).
+              Le disclaimer AMF complet reste sur /mentions-legales + composant AmfDisclaimer ;
+              la mention « Inscrit AMF — N° … » ci-dessus assure l'identification réglementaire. */}
+          <p className="font-[family-name:var(--font-display)] text-[color:var(--color-cream)] text-[clamp(1.05rem,1.6vw,1.375rem)] font-medium tracking-[0.01em] leading-snug max-w-2xl text-balance">
+            {t("footer.coverStatement")}
           </p>
 
           <p className="text-xs text-[color:var(--color-cream)]/75 pt-1">
