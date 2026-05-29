@@ -141,7 +141,7 @@ export function Hero() {
               tier-quiz personnalise juste le LABEL, pas la destination. */}
           <div className="flex flex-col sm:flex-row gap-5 items-center animate-[buteauFadeUp_700ms_ease-out_1200ms_both]">
             <HeartbeatCta>
-              <a ref={magneticCta} href="#contact" className="btn-orange cta-sheen">
+              <a ref={magneticCta} href="#contact" className="btn-bronze btn-shine cta-sheen">
                 {ctaLabel}
               </a>
             </HeartbeatCta>

@@ -3,49 +3,31 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
 import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
 import { SectionHeading } from "./SectionHeading";
-import { config } from "@/lib/config";
+import { ta, translations } from "@/lib/translations";
 
 /**
  * Section Équipe (teaser sur Accueil).
- * 4 cartes : Andrew (lead), Abygaèle (coord), Alexis (assistant), Felix (coordo opérations).
- * Photos servies depuis config.assets.teamPhotos (3 anciennes imgur + Felix studio).
- * Grille responsive : 1 col mobile, 2 col tablet, 4 col desktop.
+ *
+ * Lit la liste canonique `team.members` (même source que la page /equipe) :
+ * ajouter un membre dans translations le fait apparaître ICI **et** sur /equipe,
+ * sans toucher au code. Extensible (demande client 2026-05-29 : la section doit
+ * pouvoir accueillir d'autres membres sans surcharge, pas figée sur « 4 pros »).
+ *
+ * Grille responsive : 1 col mobile, 2 col tablet, 4 col desktop (wrap au-delà).
  */
-
 export function TeamTeaser() {
   const { t, lang } = useLanguage();
-  const isFr = lang === "fr";
 
-  const members = [
-    {
-      name: t("home.teamTeaser.andrewName"),
-      role: t("home.teamTeaser.andrewRole"),
-      photo: config.assets.teamPhotos.andrew,
-    },
-    {
-      name: t("home.teamTeaser.abygaeleName"),
-      role: t("home.teamTeaser.abygaeleRole"),
-      photo: config.assets.teamPhotos.abygaele,
-    },
-    {
-      name: t("home.teamTeaser.alexisName"),
-      role: t("home.teamTeaser.alexisRole"),
-      photo: config.assets.teamPhotos.alexis,
-    },
-    {
-      name: t("home.teamTeaser.felixName"),
-      role: t("home.teamTeaser.felixRole"),
-      photo: config.assets.teamPhotos.felix,
-    },
-  ];
+  const members = ta<Array<{ name: string; role: string; photo: string; bio: string }>>(
+    translations[lang],
+    "team.members",
+  );
 
   return (
     <section
       id="equipe"
       className="relative py-24 surface-navy overflow-hidden grain-overlay"
     >
-      {/* Atmospheric continuity — embers per-section signature */}
-
       {/* Background image overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center md:bg-fixed"
@@ -99,15 +81,12 @@ export function TeamTeaser() {
               {t("home.teamTeaser.cta")}
             </Link>
           </HeartbeatCta>
-          {/* Teaser editorial sous CTA — décrit ce qu'on trouve sur /equipe
-              (4 noms réels) + mini-promesse humanisation. Italic Cormorant
-              taupe-dark, subtle visuel mais lit en 1 sec au scroll. */}
-          <p
-            className="mt-4 text-[color:var(--color-cream)]/70 text-[clamp(0.8125rem,1.05vw,0.875rem)] leading-snug max-w-md mx-auto text-pretty"
-          >
-            {isFr
-              ? "Andrew, Abygaèle, Alexis, Felix — des parcours complémentaires, une seule méthode. Découvrez qui suit votre dossier."
-              : "Andrew, Abygaèle, Alexis, Felix — complementary paths, one method. Meet the people who handle your file."}
+          {/* Teaser éditorial sous CTA — générique (pas de liste de noms figée) pour
+              rester valable quand l'équipe grandit. */}
+          <p className="mt-4 text-[color:var(--color-cream)]/70 text-[clamp(0.8125rem,1.05vw,0.875rem)] leading-snug max-w-md mx-auto text-pretty">
+            {lang === "fr"
+              ? "Des parcours complémentaires, une seule méthode. Découvrez qui suit votre dossier."
+              : "Complementary paths, one method. Meet the people who handle your file."}
           </p>
         </div>
       </Container>

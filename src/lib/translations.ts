@@ -95,7 +95,7 @@ export const translations = {
         title: "L'hypothèque autrement",
         subtitle:
           "Premier achat ou renouvellement qui vous stresse ? On commence par vous écouter, pas par juger votre dossier. 200 familles accompagnées en 2025, la même rigueur pour chacune.",
-        ctaPrimary: "Estimer mon paiement en 60 secondes",
+        ctaPrimary: "Démarrer mon premier dossier",
         ctaSecondary: "Rencontrer notre équipe",
         // CTAs personnalisés selon le tier du quiz (sauvé en localStorage).
         // Active si le user a complété le PreQualQuiz, sinon ctaPrimary par défaut.
@@ -1093,7 +1093,7 @@ export const translations = {
         title: "Mortgage. Differently.",
         subtitle:
           "First-time buyer or a renewal that's stressing you out? We start by listening, not by judging your file. 200 families supported in 2025, the same rigor for each.",
-        ctaPrimary: "Estimate my payment in 60 seconds",
+        ctaPrimary: "Start my first file",
         ctaSecondary: "Meet our team",
         ctaByTier: {
           primo: "Start my first file",

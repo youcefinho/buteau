@@ -229,7 +229,7 @@ export function HypothequeCalculator() {
 
             <div className="space-y-3">
               <HeartbeatCta className="cta-heartbeat--block">
-                <Link to="/" hash="contact" className="btn-orange cta-sheen w-full relative">
+                <Link to="/" hash="contact" className="btn-bronze cta-sheen w-full relative">
                   {t("tools.calc.ctaLabel")}
                 </Link>
               </HeartbeatCta>

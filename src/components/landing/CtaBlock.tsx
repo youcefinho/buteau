@@ -57,7 +57,7 @@ export function CtaBlock({ bgImageUrl = "/texture-navy-fixed.jpg" }: CtaBlockPro
           <div className="pt-2">
             {/* Anchor vers la section #contact de l'Accueil (formulaire) */}
             <HeartbeatCta>
-              <Link to="/" hash="contact" className="btn-orange cta-sheen">
+              <Link to="/" hash="contact" className="btn-bronze cta-sheen">
                 {t("cta.button")}
               </Link>
             </HeartbeatCta>

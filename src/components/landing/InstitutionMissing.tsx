@@ -23,7 +23,7 @@ export function InstitutionMissing() {
           </p>
           <div className="pt-2">
             <HeartbeatCta>
-              <Link to="/" hash="contact" className="btn-orange cta-sheen">
+              <Link to="/" hash="contact" className="btn-bronze cta-sheen">
                 {t("institutions.missing.cta")}
               </Link>
             </HeartbeatCta>

@@ -162,7 +162,7 @@ export function Navbar() {
           <Link
             to="/"
             hash="contact"
-            className="hidden md:inline-flex btn-orange"
+            className="hidden md:inline-flex btn-bronze"
           >
             {t("common.callUs")}
           </Link>

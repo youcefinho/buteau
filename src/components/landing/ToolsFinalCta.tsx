@@ -49,7 +49,7 @@ export function ToolsFinalCta() {
 
           <div className="pt-2">
             <HeartbeatCta>
-              <Link to="/" hash="contact" className="btn-orange cta-sheen">
+              <Link to="/" hash="contact" className="btn-bronze cta-sheen">
                 {t("tools.finalCta.button")}
               </Link>
             </HeartbeatCta>

@@ -214,7 +214,7 @@ export function PreQualQuiz() {
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-4 items-center md:items-start">
                 <HeartbeatCta>
-                  <Link to="/" hash="contact" className="btn-orange cta-sheen">
+                  <Link to="/" hash="contact" className="btn-bronze btn-shine cta-sheen">
                     {result.ctaLabel}
                   </Link>
                 </HeartbeatCta>
