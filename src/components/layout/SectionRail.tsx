@@ -173,11 +173,13 @@ export function SectionRail({ sections = HOME_SECTIONS }: SectionRailProps = {})
               />
             </span>
 
-            {/* Label Cormorant  — taille différente selon type.
-                Hover : scale-110 origin-left (zoom subtil sans pousser le dot)
-                + active déjà bronze + pulse. */}
+            {/* Label — taille différente selon type.
+                Visibilité : masqué tant que la souris n'est pas sur le rail
+                (collapse → group-hover/rail), demande client 2026-05-29.
+                Hover individuel : scale-110 origin-left (zoom magnétique) +
+                passage au bronze sur le label pointé. Actif = orange. */}
             <span
-              className={`transition-all duration-300 whitespace-nowrap origin-left ${
+              className={`transition-all duration-300 whitespace-nowrap origin-left group-hover:scale-110 ${
                 isMain ? "text-base" : "text-xs"
               } ${
                 collapsed
@@ -186,7 +188,7 @@ export function SectionRail({ sections = HOME_SECTIONS }: SectionRailProps = {})
               } ${
                 isActive
                   ? "text-[color:var(--color-orange)]"
-                  : "text-[color:var(--color-taupe-dark)] group-hover/rail:text-[color:var(--color-bronze)]"
+                  : "text-[color:var(--color-taupe-dark)] group-hover:text-[color:var(--color-bronze)]"
               }`}
             >
               {label}
