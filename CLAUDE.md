@@ -3,6 +3,27 @@
 > Lu automatiquement à chaque ouverture du projet. Respecter à la lettre.
 > Dernière mise à jour : 2026-05-09 — **60+ commits**, mail #1 + #2 intégrés, audits passés, **21/35 findings code-review fixés (7/7 BLOCKERS + 9/9 HIGH)**, 14 MEDIUM/LOW restants non-bloquants
 
+---
+
+## ⚡ MAJ 2026-05-29 — REFONTE CHARTE (branche `refonte-charte`, NON mergée, 0 push)
+
+> **Handoff complet + décisions en attente : voir `SESSION.md` (racine).**
+
+Pivot direction : « luxury magazine editorial » → **minimal haut de gamme aligné sur la CHARTE officielle** (`Copie de Guide identité visuelle.pdf`). 16/16 demandes client (Sacha) faites + vérifiées au Playwright sur toutes les pages.
+
+**Changements structurants (rendent partiellement STALE les sections plus bas) :**
+- **Fonts** : Montserrat/Open Sans/Cormorant/Fraunces → **Raleway** (display/logo, charte) + **Libre Franklin** (corps/tagline = sosie libre de l'ITC Franklin Gothic). Self-host Fontsource (`src/main.tsx`). ⚠️ Tailwind v4 : utiliser `font-[family-name:var(--font-X)]` (PAS `font-[var(--font-X)]` qui ne génère AUCUNE font-family).
+- **Couleurs CHARTE exactes** (hex en clair dans `src/index.css` @theme) : navy `#0E2442` · beige `#BBB2A9` · blancs `#F5F4F2` (`--color-cream`) / `#EEE9E3` (`--color-cream-warm`) · blanc. Bronze `#C69C6D` (ambiance) + orange `#ff4c00` (`--color-orange`, accent actif/énergie) = ajouts **hors-charte assumés**.
+- **Retraits** : serif + italiques, SplashIntro, médaillons « B » entre sections (composant `ButeauMonogramInline` supprimé), lignes papier signature, mots-au-survol Hero, footer simplifié (3 cols : Contact/Nav/Légal).
+- **Tagline** : « L'HYPOTHÈQUE AUTREMENT » uppercase, tracking charte 0.138em, largeur ≈ BUTEAU (lockup, ratio 0.99/1.0). BUTEAU tracking 0.055em (charte).
+- **Orange** : filets sous titres (`.signature-line`) + tirets eyebrows + hover cartes + barre scroll + point actif rail + focus + hover liens. JAMAIS en fill de bouton (CTA restés bronze — rejet client).
+
+**Décisions Rochdi en attente** : (1) dosage orange à valider à l'œil · (2) poids BUTEAU ExtraBold vs charte Bold · (3) déploiement (merge `refonte-charte`→`main` + `wrangler deploy`) vs validation Sacha d'abord.
+
+**⚠️ Tag rollback : `pre-refonte-charte`. Les sections ci-dessous (DA / fonts / palette « magazine editorial ») datent d'AVANT la refonte → source de vérité = `SESSION.md` + code sur `refonte-charte`.**
+
+---
+
 ## ⚡ MAJ session 2026-05-09 (suite intégration mail client)
 
 **Équipe : 4 membres maintenant** (Andrew + Abygaèle + Alexis + Felix)
