@@ -821,8 +821,8 @@ function TabPaiement({ mode }: { mode: CalcMode }) {
         <div className="pt-2">
           <p className=" text-xs text-[color:var(--color-bronze)] leading-relaxed text-pretty hyphens-auto">
             {isFr
-              ? "Calcul selon la formule canadienne semi-annuelle composée (LBC art. 6). Indicatif uniquement — votre prêteur établit le paiement réel selon le taux confirmé."
-              : "Calculation per Canadian semi-annual compounded formula (IRA s. 6). Indicative only — your lender sets the actual payment based on confirmed rate."}
+              ? "Estimation selon la formule canadienne semi-annuelle composée (LBC art. 6). Indicatif uniquement — votre prêteur établit le paiement réel selon le taux confirmé."
+              : "Estimate per the Canadian semi-annual compounded formula (IRA s. 6). Indicative only — your lender sets the actual payment based on confirmed rate."}
           </p>
         </div>
       </div>
