@@ -117,7 +117,7 @@ export function MobileStickyCta() {
           <Link
             to="/"
             hash="contact"
-            className="flex-1 min-w-0 inline-flex items-center justify-center gap-1.5 py-2.5 px-2 bg-[color:var(--color-bronze)] hover:bg-[color:var(--color-navy)] text-[color:var(--color-navy-deep)] font-bold rounded-md shadow-md text-[11px] uppercase tracking-[0.08em] active:scale-[0.97] transition-all duration-200"
+            className="flex-1 min-w-0 inline-flex items-center justify-center gap-1.5 py-2.5 px-2 bg-[color:var(--color-orange)] hover:bg-[color:var(--color-orange-deep)] text-[color:var(--color-navy)] font-bold rounded-md shadow-md text-[11px] uppercase tracking-[0.08em] active:scale-[0.97] transition-all duration-200"
             aria-label={t("common.contactCta")}
             tabIndex={visible ? 0 : -1}
           >

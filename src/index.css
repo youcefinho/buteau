@@ -8,20 +8,26 @@
 
 @theme inline {
   /* --- Couleurs principales (oklch) --- */
-  --color-navy: oklch(0.238 0.074 261);          /* #0E2442 — guide officiel Buteau (aligne 2026-05-19) */
-  --color-navy-deep: oklch(0.190 0.066 261);     /* navy plus profond pour contrastes */
-  --color-navy-soft: oklch(0.290 0.072 261);     /* navy clarifié pour cards */
+  /* === Palette CHARTE officielle (Guide identité visuelle, 2026-05-29) === */
+  --color-navy: oklch(0.260 0.063 257);          /* #0E2442 — bleu charte (exact) */
+  --color-navy-deep: oklch(0.220 0.060 257);     /* navy plus profond pour contrastes */
+  --color-navy-soft: oklch(0.310 0.060 257);     /* navy clarifié pour cards */
 
-  --color-taupe: oklch(0.722 0.018 84);          /* #b8af9f — taupe signature (guide #BBB2A9 quasi-identique) */
-  --color-taupe-light: oklch(0.840 0.012 84);    /* taupe clarifié dividers */
-  --color-taupe-dark: oklch(0.585 0.020 84);     /* taupe assombri texte secondaire */
+  --color-taupe: oklch(0.768 0.016 68);          /* #BBB2A9 — beige charte (exact) */
+  --color-taupe-light: oklch(0.860 0.010 70);    /* beige clarifié dividers */
+  --color-taupe-dark: oklch(0.620 0.018 68);     /* beige assombri texte secondaire */
 
-  --color-bronze: oklch(0.704 0.077 56);         /* #C69C6D — accent bronze caramel */
+  /* Bronze — accent d'AMBIANCE (effets, filets, hovers décoratifs). Conservé. */
+  --color-bronze: oklch(0.704 0.077 56);         /* #C69C6D — bronze caramel */
   --color-bronze-deep: oklch(0.620 0.082 52);    /* bronze hover/active */
   --color-bronze-soft: oklch(0.815 0.060 60);    /* bronze clair tints */
 
-  --color-cream: oklch(0.978 0 0);               /* #f9f9f9 — off-white sections claires */
-  --color-cream-warm: oklch(0.965 0.005 80);     /* off-white teinté chaud */
+  /* Orange — couleur d'ACTION (CTA principal, conversions clés). Ajout client. */
+  --color-orange: oklch(0.667 0.224 37);         /* #ff4c00 — orange action */
+  --color-orange-deep: oklch(0.590 0.205 35);    /* orange hover/active */
+
+  --color-cream: oklch(0.936 0.010 73);          /* #EEE9E3 — blanc cassé chaud charte */
+  --color-cream-warm: oklch(0.967 0.003 85);     /* #F5F4F2 — blanc cassé clair charte */
 
   /* --- Tokens spécialisés (audit P1-G) --- */
   --color-rating-amber: #FFC107;                 /* Google reviews stars */
@@ -40,13 +46,15 @@
      size-adjust + ascent/descent overrides qui matchent les metrics des web fonts.
      Quand la web font finit de charger, le swap ne provoque AUCUN reflow car
      les dimensions du texte restent identiques. Pattern next/font moderne. */
-  --font-sans: "Open Sans", "Open Sans fallback", system-ui, -apple-system, sans-serif;
-  --font-display: "Montserrat", "Montserrat fallback", "Open Sans", system-ui, sans-serif;
-  --font-editorial: "Cormorant Garamond", "Cormorant fallback", "Georgia", serif;
-  /* Fraunces variable — utilisé UNIQUEMENT sur 3 endroits signatures (Hero tagline,
-     Mission pull quote, BrokerLetter "Bonjour"). Variable axes : optical size + WONK
-     pour vraie distinctiveness vs Cormorant traditional. */
-  --font-signature: "Fraunces", "Fraunces fallback", "Cormorant Garamond", "Georgia", serif;
+  /* === Typo CHARTE : Raleway (logo/display) + Libre Franklin (corps/tagline) ===
+     Raleway = font du logo BUTEAU (charte). Libre Franklin = sosie libre de l'ITC
+     Franklin Gothic (tagline charte). 100% sans-serif (retrait serif demandé). */
+  --font-sans: "Libre Franklin Variable", "Libre Franklin fallback", system-ui, -apple-system, sans-serif;
+  --font-display: "Raleway Variable", "Raleway fallback", "Libre Franklin Variable", system-ui, sans-serif;
+  /* editorial/signature remappés vers la sans (ex-Cormorant/Fraunces) : l'effet
+     reste (drop cap, marginalia, filigranes, tagline), la police passe en sans. */
+  --font-editorial: "Raleway Variable", "Raleway fallback", system-ui, sans-serif;
+  --font-signature: "Libre Franklin Variable", "Libre Franklin fallback", system-ui, sans-serif;
 
   /* --- Letter-spacing signature (eyebrows, labels uppercase) --- */
   --tracking-eyebrow: 0.12em;
@@ -56,42 +64,22 @@
 /* ============================================================
    FONT FALLBACKS — size-adjust pour eviter CLS au swap web font
    ============================================================ */
-/* Metrics calculees pour matcher Montserrat (display sans-serif geometric).
-   Quand "Montserrat" finit le chargement, le swap depuis Arial fallback ne
-   provoque aucun reflow car les dimensions de chaque ligne restent identiques. */
+/* Metrics estimées pour matcher Raleway / Libre Franklin (anti-CLS au swap web font).
+   À affiner si un léger reflow subsiste au chargement (mesure réelle des fonts). */
 @font-face {
-  font-family: "Montserrat fallback";
+  font-family: "Raleway fallback";
   src: local("Arial");
-  size-adjust: 105%;
+  size-adjust: 96%;
   ascent-override: 92%;
-  descent-override: 22%;
+  descent-override: 24%;
   line-gap-override: 0%;
 }
-/* Open Sans : similaire a Arial donc fallback discret. */
 @font-face {
-  font-family: "Open Sans fallback";
+  font-family: "Libre Franklin fallback";
   src: local("Arial");
-  size-adjust: 101%;
-  ascent-override: 100%;
-  descent-override: 27%;
-  line-gap-override: 0%;
-}
-/* Cormorant Garamond (serif) : metrics plus etroites, ajustement avec Georgia. */
-@font-face {
-  font-family: "Cormorant fallback";
-  src: local("Georgia");
-  size-adjust: 95%;
-  ascent-override: 90%;
+  size-adjust: 102%;
+  ascent-override: 95%;
   descent-override: 25%;
-  line-gap-override: 0%;
-}
-/* Fraunces variable serif : optical sizing. */
-@font-face {
-  font-family: "Fraunces fallback";
-  src: local("Georgia");
-  size-adjust: 97%;
-  ascent-override: 92%;
-  descent-override: 23%;
   line-gap-override: 0%;
 }
 
@@ -610,7 +598,6 @@ body {
 
 .dropcap::first-letter {
   font-family: var(--font-editorial);
-  font-style: italic;
   font-weight: 700;
   font-size: 5.25em;
   line-height: 0.85;
@@ -745,15 +732,14 @@ body {
   /* Signature display — Fraunces variable italic avec axes optical + WONK activés.
      Vraie distinctiveness vs Cormorant traditional. À utiliser UNIQUEMENT sur les
      3 endroits signature : Hero tagline, Mission pull quote, BrokerLetter "Bonjour". */
+  /* Ex-Fraunces italic → Libre Franklin upright (retrait serif + italique charte). */
   .font-signature {
     font-family: var(--font-signature);
-    font-style: italic;
-    font-variation-settings: "opsz" 144, "wght" 400, "SOFT" 50, "WONK" 1;
+    font-weight: 400;
   }
   .font-signature-bold {
     font-family: var(--font-signature);
-    font-style: italic;
-    font-variation-settings: "opsz" 144, "wght" 600, "SOFT" 50, "WONK" 1;
+    font-weight: 600;
   }
 
   /* Signature line (taupe horizontal entre sections) */
@@ -918,6 +904,46 @@ body {
     .btn-bronze:hover,
     .btn-bronze:active {
       letter-spacing: var(--tracking-eyebrow);
+      transform: none;
+    }
+  }
+
+  /* Bouton ORANGE — couleur d'ACTION (CTA principal, conversions clés).
+     Texte navy = contraste WCAG AA 4.66 sur #ff4c00 (le blanc échoue à 3.34).
+     Volontairement clean (pas de shimmer/ember bronze) pour le ton sobre charte. */
+  .btn-orange {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.875rem;
+    letter-spacing: var(--tracking-eyebrow);
+    text-transform: uppercase;
+    color: var(--color-navy);
+    background: var(--color-orange);
+    border: 1px solid var(--color-orange);
+    box-shadow: 0 6px 18px -8px oklch(0.667 0.224 37 / 0.5);
+    transition: background 240ms cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 240ms cubic-bezier(0.16, 1, 0.3, 1),
+                transform 240ms cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .btn-orange:hover {
+    background: var(--color-orange-deep);
+    border-color: var(--color-orange-deep);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px -10px oklch(0.667 0.224 37 / 0.6);
+  }
+  .btn-orange:active {
+    transform: translateY(0) scale(0.98);
+    transition-duration: 100ms;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .btn-orange:hover,
+    .btn-orange:active {
       transform: none;
     }
   }

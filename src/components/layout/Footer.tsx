@@ -53,7 +53,7 @@ export function Footer() {
             <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
             {lang === "fr" ? "Quatrième de couverture" : "Back cover"}
           </p>
-          <p className="font-[var(--font-editorial)] italic text-[color:var(--color-cream)] text-[clamp(1.5rem,3.5vw,2.75rem)] leading-[1.1] tracking-tight">
+          <p className="font-[var(--font-editorial)] text-[color:var(--color-cream)] text-[clamp(1.5rem,3.5vw,2.75rem)] leading-[1.1] tracking-tight">
             « {t("footer.coverStatement")} »
           </p>
           <div className="flex items-center gap-4 mt-6">
@@ -175,10 +175,10 @@ export function Footer() {
             <p className="eyebrow text-[color:var(--color-taupe)]">
               {t("footer.colophon")}
             </p>
-            <p className="italic text-sm leading-[1.55] text-[color:var(--color-cream)]/75 text-pretty">
+            <p className="text-sm leading-[1.55] text-[color:var(--color-cream)]/75 text-pretty">
               {t("footer.colophonComposed")}
             </p>
-            <p className="italic text-sm leading-[1.55] text-[color:var(--color-cream)]/75 text-pretty">
+            <p className="text-sm leading-[1.55] text-[color:var(--color-cream)]/75 text-pretty">
               {t("footer.colophonPrinted")}
             </p>
 
@@ -212,7 +212,7 @@ export function Footer() {
             {lang === "fr" ? "Cabinet : " : "Firm: "}
             <span className="font-semibold text-[color:var(--color-cream)]">{config.cabinet}</span>
           </p>
-          <p className="text-xs leading-[1.6] text-[color:var(--color-cream)]/85 max-w-4xl italic text-pretty hyphens-auto">
+          <p className="text-xs leading-[1.6] text-[color:var(--color-cream)]/85 max-w-4xl text-pretty hyphens-auto">
             {config.amf.disclaimer[lang]}
           </p>
 

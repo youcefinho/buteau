@@ -103,11 +103,11 @@ export function TeamTeaser() {
               (4 noms réels) + mini-promesse humanisation. Italic Cormorant
               taupe-dark, subtle visuel mais lit en 1 sec au scroll. */}
           <p
-            className="mt-4 italic text-[color:var(--color-cream)]/70 text-[clamp(0.8125rem,1.05vw,0.875rem)] leading-snug max-w-md mx-auto text-pretty"
+            className="mt-4 text-[color:var(--color-cream)]/70 text-[clamp(0.8125rem,1.05vw,0.875rem)] leading-snug max-w-md mx-auto text-pretty"
           >
             {isFr
-              ? "Andrew, Abygaèle, Alexis, Felix — quatre parcours, une seule méthode. Découvrez qui suit votre dossier."
-              : "Andrew, Abygaèle, Alexis, Felix — four paths, one method. Meet the people who handle your file."}
+              ? "Andrew, Abygaèle, Alexis, Felix — des parcours complémentaires, une seule méthode. Découvrez qui suit votre dossier."
+              : "Andrew, Abygaèle, Alexis, Felix — complementary paths, one method. Meet the people who handle your file."}
           </p>
         </div>
       </Container>

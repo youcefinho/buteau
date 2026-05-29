@@ -55,7 +55,7 @@ export function TeamGrid() {
                 {/* Marginalia — signature italic discrete a droite, signature manuscrite */}
                 <span
                   aria-hidden="true"
-                  className="hidden md:block absolute -right-2 top-2 italic text-[color:var(--color-bronze)]/45 text-sm rotate-90 origin-right tracking-[0.18em]"
+                  className="hidden md:block absolute -right-2 top-2 text-[color:var(--color-bronze)]/45 text-sm rotate-90 origin-right tracking-[0.18em]"
                 >
                   {marginalia[idx]}
                 </span>

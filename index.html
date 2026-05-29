@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#10223d" />
+    <meta name="theme-color" content="#0E2442" />
 
     <title>Courtier hypothécaire Laval, QC | Équipe Buteau (Planiprêt)</title>
     <meta
@@ -210,11 +210,11 @@
       } catch (e) {}
     </script>
 
-    <!-- Loading splash édito — typographic mark "ÉQUIPE BUTEAU" Cormorant italic
-         + ligne bronze, navy bg. Masque le boot React ~2s sur chaque page load. -->
+    <!-- Loading — mark "Équipe Buteau" sans-serif (charte) + ligne bronze, navy bg.
+         Police système (s'affiche avant le chargement des web fonts). -->
     <style>
-      #app-loader{position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#10223d;transition:opacity .5s ease-out;gap:24px}
-      .app-loader-mark{font-family:"Cormorant Garamond","Georgia",serif;font-style:italic;font-weight:600;color:#f9f9f9;font-size:clamp(2.25rem,7vw,3.5rem);letter-spacing:.02em;line-height:1;animation:mark-breathe 2.4s ease-in-out infinite;text-shadow:0 8px 24px rgba(198,156,109,.15)}
+      #app-loader{position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#0E2442;transition:opacity .5s ease-out;gap:24px}
+      .app-loader-mark{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-weight:600;color:#EEE9E3;font-size:clamp(2rem,6vw,3rem);letter-spacing:.06em;line-height:1;animation:mark-breathe 2.4s ease-in-out infinite}
       .app-loader-bar{position:relative;width:80px;height:1px;background:rgba(198,156,109,.18);overflow:hidden;border-radius:1px}
       .app-loader-bar::after{content:"";position:absolute;top:0;left:-40%;width:40%;height:100%;background:linear-gradient(90deg,transparent,#c69c6d,transparent);animation:bar-slide 1.6s ease-in-out infinite}
       @keyframes mark-breathe{0%,100%{opacity:.78}50%{opacity:1}}

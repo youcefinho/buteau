@@ -18,12 +18,12 @@ export function InstitutionMissing() {
             {t("institutions.missing.title")}
           </h3>
           <div className="w-12 h-0.5 bg-[color:var(--color-bronze)] mx-auto" />
-          <p className="text-[clamp(1rem,1.4vw,1.125rem)] italic text-[color:var(--color-taupe-dark)] text-pretty">
+          <p className="text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-taupe-dark)] text-pretty">
             {t("institutions.missing.body")}
           </p>
           <div className="pt-2">
             <HeartbeatCta>
-              <Link to="/" hash="contact" className="btn-bronze cta-sheen">
+              <Link to="/" hash="contact" className="btn-orange cta-sheen">
                 {t("institutions.missing.cta")}
               </Link>
             </HeartbeatCta>

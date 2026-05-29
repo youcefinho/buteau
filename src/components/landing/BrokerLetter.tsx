@@ -37,13 +37,13 @@ export function BrokerLetter() {
   }, [lightboxOpen]);
 
   return (
-    <section id="lettre" className="relative py-[clamp(4rem,9vw,8rem)] surface-cream overflow-hidden lined-paper">
+    <section id="lettre" className="relative py-[clamp(4rem,9vw,8rem)] surface-cream overflow-hidden">
       {/* Atmospheric continuity — embers per-section signature */}
 
       {/* Filigrane "lettre M" Cormorant en filigrane (référence "mot du courtier") */}
       <span
         aria-hidden="true"
-        className="absolute -top-12 -left-8 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/8 text-[28rem] leading-none pointer-events-none select-none"
+        className="absolute -top-12 -left-8 font-[var(--font-editorial)] text-[color:var(--color-taupe)]/8 text-[28rem] leading-none pointer-events-none select-none"
       >
         m
       </span>
@@ -66,24 +66,24 @@ export function BrokerLetter() {
 
             {/* Body paragraphes */}
             <div className="space-y-7 max-w-2xl text-[color:var(--color-navy-deep)]/85">
-              <p className="italic text-[clamp(1.125rem,1.6vw,1.25rem)] leading-[1.7] text-pretty hyphens-auto">
+              <p className="text-[clamp(1.125rem,1.6vw,1.25rem)] leading-[1.7] text-pretty hyphens-auto">
                 {t("letter.bodyP1")}{" "}
                 <span className="not-italic font-semibold text-[color:var(--color-navy)]">
                   {t("letter.bodyP1Emphasis")}
                 </span>
               </p>
 
-              <p className="italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.75] text-pretty hyphens-auto">
+              <p className="text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.75] text-pretty hyphens-auto">
                 {t("letter.bodyP2")}
               </p>
 
-              <p className="italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.75] text-pretty hyphens-auto">
+              <p className="text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.75] text-pretty hyphens-auto">
                 {t("letter.bodyP3")}
               </p>
             </div>
 
             {/* Closing manuscrit */}
-            <p className="font-[var(--font-editorial)] italic text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] mt-10 leading-none">
+            <p className="font-[var(--font-editorial)] text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] mt-10 leading-none">
               {t("letter.closing")}
             </p>
           </div>

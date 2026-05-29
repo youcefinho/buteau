@@ -7,7 +7,6 @@ import { CookieBanner } from "@/components/layout/CookieBanner";
 import { CustomCursor } from "@/components/layout/CustomCursor";
 import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { ScrollSideBronzeLine } from "@/components/atmosphere/ScrollSideBronzeLine";
-import { SplashIntro } from "@/components/layout/SplashIntro";
 import { TrackingPixels } from "@/components/landing/TrackingPixels";
 import { GlossaryModal } from "@/components/landing/GlossaryModal";
 import { ColophonModal } from "@/components/landing/ColophonModal";
@@ -86,7 +85,6 @@ function RootComponent() {
   return (
     <ColophonProvider>
       <CarnetProvider>
-        <SplashIntro />
         <TrackingPixels />
         <SkipToContent />
         <ScrollProgress />

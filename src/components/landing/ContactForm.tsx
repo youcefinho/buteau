@@ -184,7 +184,7 @@ export function ContactForm({ source = "home_contact_form" }: ContactFormProps) 
       <button
         type="submit"
         disabled={status === "submitting"}
-        className={cn("btn-bronze w-full", status === "submitting" && "opacity-70 cursor-wait")}
+        className={cn("btn-orange w-full", status === "submitting" && "opacity-70 cursor-wait")}
       >
         {status === "submitting" ? (
           <>

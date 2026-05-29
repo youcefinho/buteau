@@ -92,7 +92,7 @@ export function Faq() {
             {t("home.faq.moreQuestionsLabel")}
           </p>
           <HeartbeatCta>
-            <a href="#contact" className="btn-bronze cta-sheen">
+            <a href="#contact" className="btn-orange cta-sheen">
               {t("common.writeUs")}
             </a>
           </HeartbeatCta>

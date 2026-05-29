@@ -1,5 +1,4 @@
 import { Container } from "./Container";
-import { ButeauMonogramInline } from "@/components/atmosphere/ButeauMonogramInline";
 
 /**
  * PageFooterMark — signature de page Buteau, placée juste avant le Footer.
@@ -20,9 +19,7 @@ export function PageFooterMark() {
       <Container size="md">
         <div className="flex items-center justify-center gap-5 opacity-65 hover:opacity-100 transition-opacity duration-700">
           <span className="block w-[clamp(3rem,6vw,5rem)] h-px bg-[color:var(--color-taupe)]/70" />
-          <span className="text-[color:var(--color-navy-deep)] inline-flex items-center text-xl">
-            <ButeauMonogramInline size="lg" />
-          </span>
+          <span className="block w-1.5 h-1.5 rounded-full bg-[color:var(--color-bronze)]/70 shrink-0" />
           <span className="block w-[clamp(3rem,6vw,5rem)] h-px bg-[color:var(--color-taupe)]/70" />
         </div>
       </Container>

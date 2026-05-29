@@ -20,20 +20,9 @@ export function Hero() {
   const { t, lang } = useLanguage();
   const { open: openGlossary } = useGlossary();
   const magneticCta = useMagnetic<HTMLAnchorElement>({ strength: 0.3, maxOffset: 14 });
-  const letterWords = ta<string[]>(translations[lang], "home.hero.letterWords");
   const { tier } = useQuizTier();
   // A11y : skip l'animation inline si user a opt-in prefers-reduced-motion.
-  // Fix audit UI-REVIEW-2026-05-19 motion 7/10 — inline `style={{ animation: ... }}`
-  // avec cubic-bezier custom echappe au global @media rule (bug Chrome).
   const reduceMotion = useReducedMotion();
-
-  // Fix MEDIUM dev-only warning si letterWords ne matche pas brandName length
-  if (import.meta.env.DEV && letterWords.length !== config.brandName.length) {
-    // eslint-disable-next-line no-console
-    console.warn(
-      `[Hero] letterWords.length (${letterWords.length}) ne matche pas brandName "${config.brandName}" (${config.brandName.length}). Ajuster home.hero.letterWords.`,
-    );
-  }
 
   // CTA personnalisé selon le tier du quiz (si complété), sinon CTA par défaut.
   const ctaLabel = tier
@@ -103,34 +92,24 @@ export function Hero() {
               Chaque lettre B/U/T/E/A/U révèle un mot signature au hover (Buteau / Unique /
               Transparence / Expert / Accessible / Utile). */}
           <div className="relative inline-block group/brand">
-            <p className="font-[var(--font-display)] text-[color:var(--color-cream)] text-[clamp(5rem,16vw,15rem)] font-extrabold tracking-[0.15em] leading-[0.95] pl-[0.15em] flex">
-              {config.brandName.split("").map((letter, idx) => {
-                const word = letterWords[idx] ?? letter;
-                return (
-                  <span
-                    key={idx}
-                    className="relative inline-block group/letter cursor-default transition-all duration-300 hover:text-[color:var(--color-bronze)] hover:-translate-y-1.5"
-                    style={
-                      reduceMotion
-                        ? undefined
-                        : {
-                            animation: `buteauLetterIn 900ms cubic-bezier(0.34, 1.56, 0.64, 1) ${
-                              400 + idx * 90
-                            }ms backwards`,
-                          }
-                    }
-                  >
-                    {letter}
-                    {/* Mot signature révélé au hover — Cormorant italic small sous la lettre */}
-                    <span
-                      aria-hidden="true"
-                      className="pointer-events-none absolute left-1/2 top-[110%] -translate-x-1/2 italic text-[color:var(--color-bronze-soft)] text-[0.18em] tracking-normal whitespace-nowrap opacity-0 translate-y-2 transition-all duration-400 group-hover/letter:opacity-100 group-hover/letter:translate-y-0"
-                    >
-                      {word}
-                    </span>
-                  </span>
-                );
-              })}
+            <p className="font-[var(--font-display)] text-[color:var(--color-cream)] text-[clamp(3.5rem,11vw,9rem)] font-extrabold tracking-[0.18em] leading-[0.95] pl-[0.18em] flex">
+              {config.brandName.split("").map((letter, idx) => (
+                <span
+                  key={idx}
+                  className="relative inline-block"
+                  style={
+                    reduceMotion
+                      ? undefined
+                      : {
+                          animation: `buteauLetterIn 900ms cubic-bezier(0.34, 1.56, 0.64, 1) ${
+                            400 + idx * 90
+                          }ms backwards`,
+                        }
+                  }
+                >
+                  {letter}
+                </span>
+              ))}
             </p>
             <span
               className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-[clamp(3rem,5vw,5rem)] h-px bg-[color:var(--color-bronze)] animate-[buteauWidth_700ms_ease-out_1100ms_both]"
@@ -139,11 +118,11 @@ export function Hero() {
             {/* Hint educatif "Survolez chaque lettre" retire 2026-05-19 (demande Andrew) */}
           </div>
 
-          {/* Tagline mega — reveal step 3. Fraunces italic variable (axes optical + WONK)
-              pour distinctiveness vs Cormorant générique. Signature endroit #1.
-              Agrandi 2026-05-19 (demande Andrew) : 30-56px -> 40-80px (+43% max). */}
+          {/* Tagline — lockup CHARTE : MAJUSCULES, Libre Franklin, tracking large
+              (≈ ITC Franklin Gothic 138) pour s'aligner en largeur sous BUTEAU.
+              Taille à calibrer à l'œil pour matcher exactement la largeur du logo. */}
           <h1
-            className="font-signature text-[color:var(--color-cream)]/95 text-[clamp(2.5rem,6vw,5rem)] font-light tracking-[-0.01em] leading-[1.05] mt-[clamp(2.5rem,4vw,3rem)] text-balance md:whitespace-nowrap animate-[buteauFadeUp_800ms_ease-out_700ms_both]"
+            className="font-[var(--font-sans)] uppercase text-[color:var(--color-cream)]/90 text-[clamp(0.8rem,1.7vw,1.2rem)] font-medium tracking-[0.22em] leading-[1.3] mt-[clamp(1rem,2vw,1.5rem)] text-balance animate-[buteauFadeUp_800ms_ease-out_700ms_both]"
           >
             {t("home.hero.title")}
           </h1>
@@ -162,7 +141,7 @@ export function Hero() {
               tier-quiz personnalise juste le LABEL, pas la destination. */}
           <div className="flex flex-col sm:flex-row gap-5 items-center animate-[buteauFadeUp_700ms_ease-out_1200ms_both]">
             <HeartbeatCta>
-              <a ref={magneticCta} href="#contact" className="btn-bronze btn-shine cta-sheen">
+              <a ref={magneticCta} href="#contact" className="btn-orange cta-sheen">
                 {ctaLabel}
               </a>
             </HeartbeatCta>
@@ -185,7 +164,7 @@ export function Hero() {
             <button
               type="button"
               onClick={() => openGlossary()}
-              className="text-glow-hover inline-flex items-center gap-2 italic text-[clamp(0.75rem,1.1vw,0.875rem)] text-[color:var(--color-cream)]/70 cursor-pointer"
+              className="text-glow-hover inline-flex items-center gap-2 text-[clamp(0.75rem,1.1vw,0.875rem)] text-[color:var(--color-cream)]/70 cursor-pointer"
             >
               <BookOpen className="w-3.5 h-3.5 text-[color:var(--color-bronze)]" strokeWidth={1.5} aria-hidden />
               {lang === "fr"

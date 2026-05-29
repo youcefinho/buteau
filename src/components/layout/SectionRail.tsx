@@ -58,6 +58,9 @@ export function SectionRail({ sections = HOME_SECTIONS }: SectionRailProps = {})
   // Wave luminescente — boolean qui declenche cascade bronze a travers les dots
   // (1x sur appearance, 1x re-trigger a mid-life pour effet attention double)
   const [waveKey, setWaveKey] = useState(0);
+  // Après l'intro (tooltip "cliquez ici"), le rail se réduit aux points seuls ;
+  // les labels n'apparaissent qu'au survol de la souris (demande client 2026-05-29).
+  const [collapsed, setCollapsed] = useState(false);
 
   // Slide-in animation au mount (delay 800ms, puis fade-in 600ms)
   useEffect(() => {
@@ -76,7 +79,10 @@ export function SectionRail({ sections = HOME_SECTIONS }: SectionRailProps = {})
     const wave2Timer = window.setTimeout(() => {
       setWaveKey((k) => k + 1);
     }, 1800 + 2500);
-    const hideTimer = window.setTimeout(() => setShowHint(false), 6800);
+    const hideTimer = window.setTimeout(() => {
+      setShowHint(false);
+      setCollapsed(true);
+    }, 6800);
     return () => {
       window.clearTimeout(showTimer);
       window.clearTimeout(wave2Timer);
@@ -127,7 +133,7 @@ export function SectionRail({ sections = HOME_SECTIONS }: SectionRailProps = {})
   return (
     <nav
       aria-label={lang === "fr" ? "Navigation des sections" : "Section navigation"}
-      className={`hidden lg:flex fixed left-6 top-1/2 -translate-y-1/2 z-40 flex-col gap-3.5 pointer-events-none transition-all duration-700 ease-out ${
+      className={`group/rail hidden lg:flex fixed left-6 top-1/2 -translate-y-1/2 z-40 flex-col gap-3.5 pointer-events-none transition-all duration-700 ease-out ${
         mounted ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
       }`}
     >
@@ -171,12 +177,16 @@ export function SectionRail({ sections = HOME_SECTIONS }: SectionRailProps = {})
                 Hover : scale-110 origin-left (zoom subtil sans pousser le dot)
                 + active déjà bronze + pulse. */}
             <span
-              className={`italic transition-all duration-300 whitespace-nowrap origin-left group-hover:scale-110 ${
+              className={`transition-all duration-300 whitespace-nowrap origin-left ${
                 isMain ? "text-base" : "text-xs"
               } ${
+                collapsed
+                  ? "opacity-0 -translate-x-2 group-hover/rail:opacity-100 group-hover/rail:translate-x-0"
+                  : "opacity-100 translate-x-0"
+              } ${
                 isActive
-                  ? "text-[color:var(--color-bronze)] opacity-100"
-                  : "text-[color:var(--color-taupe-dark)] opacity-70 group-hover:opacity-100 group-hover:text-[color:var(--color-bronze)]"
+                  ? "text-[color:var(--color-bronze)]"
+                  : "text-[color:var(--color-taupe-dark)] group-hover/rail:text-[color:var(--color-bronze)]"
               }`}
             >
               {label}
@@ -208,7 +218,7 @@ export function SectionRail({ sections = HOME_SECTIONS }: SectionRailProps = {})
               }
             : undefined
         }
-        className={`pointer-events-none absolute left-full top-1/2 -translate-y-1/2 ml-6 px-3.5 py-2 text-[color:var(--color-cream)] italic text-sm rounded-md whitespace-nowrap shadow-[0_8px_24px_-12px_rgba(16,34,61,0.6)] transition-all duration-400 ${
+        className={`pointer-events-none absolute left-full top-1/2 -translate-y-1/2 ml-6 px-3.5 py-2 text-[color:var(--color-cream)] text-sm rounded-md whitespace-nowrap shadow-[0_8px_24px_-12px_rgba(16,34,61,0.6)] transition-all duration-400 ${
           showHint
             ? "opacity-100 translate-x-0 motion-safe:animate-[sectionRailHintFloat_3.2s_ease-in-out_infinite,sectionRailHintShimmer_2.8s_linear_infinite]"
             : "opacity-0 -translate-x-3 invisible bg-[color:var(--color-navy-deep)]"

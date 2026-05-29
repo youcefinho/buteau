@@ -95,7 +95,7 @@ export const translations = {
         title: "L'hypothèque autrement",
         subtitle:
           "Premier achat ou renouvellement qui vous stresse ? On commence par vous écouter, pas par juger votre dossier. 200 familles accompagnées en 2025, la même rigueur pour chacune.",
-        ctaPrimary: "Calculer mon paiement en 60 secondes",
+        ctaPrimary: "Estimer mon paiement en 60 secondes",
         ctaSecondary: "Rencontrer notre équipe",
         // CTAs personnalisés selon le tier du quiz (sauvé en localStorage).
         // Active si le user a complété le PreQualQuiz, sinon ctaPrimary par défaut.
@@ -121,7 +121,7 @@ export const translations = {
 
       teamTeaser: {
         eyebrow: "Notre équipe",
-        title: "Quatre pros, la même rigueur",
+        title: "Une équipe, la même rigueur",
         andrewName: "Andrew Buteau",
         andrewRole: "Courtier hypothécaire & Fondateur",
         abygaeleName: "Abygaèle Gagné",
@@ -264,7 +264,7 @@ export const translations = {
       },
 
       calcPreview: {
-        eyebrow: "Calculer en direct",
+        eyebrow: "Estimer en direct",
         title: "Combien va vous coûter votre hypothèque ?",
         subtitle:
           "Estimation instantanée selon la formule canadienne semi-annuelle. Pour la courbe d'amortissement complète et les scénarios « Et si... », allez voir la page Outils.",
@@ -279,7 +279,7 @@ export const translations = {
       // AdPage — pleine page édito style "publicité magazine luxe" (Cereal vol.18).
       // Statement dérivé du copy existant (4 pros teamTeaser + 5 services + valeur rigueur Mission).
       adPage: {
-        statement: "Quatre pros. Cinq services. Une même rigueur.",
+        statement: "Une équipe. Cinq services. Une même rigueur.",
         attribution: "L'Équipe Buteau",
       },
 
@@ -402,7 +402,7 @@ export const translations = {
         eyebrow: "L'équipe",
         title: "Notre équipe",
         subtitle:
-          "Quatre pros passionnés du courtage hypothécaire, qui travaillent ensemble pour la réussite de chacun de vos projets — avec méthode et énergie.",
+          "Une équipe passionnée du courtage hypothécaire, qui travaille ensemble pour la réussite de chacun de vos projets — avec méthode et énergie.",
       },
       marginalia: ["fondateur", "coordo.", "assist.", "opérations"],
       members: [
@@ -1093,7 +1093,7 @@ export const translations = {
         title: "Mortgage. Differently.",
         subtitle:
           "First-time buyer or a renewal that's stressing you out? We start by listening, not by judging your file. 200 families supported in 2025, the same rigor for each.",
-        ctaPrimary: "Calculate my payment in 60 seconds",
+        ctaPrimary: "Estimate my payment in 60 seconds",
         ctaSecondary: "Meet our team",
         ctaByTier: {
           primo: "Start my first file",
@@ -1116,7 +1116,7 @@ export const translations = {
 
       teamTeaser: {
         eyebrow: "Our team",
-        title: "Four pros, the same rigor",
+        title: "One team, the same rigor",
         andrewName: "Andrew Buteau",
         andrewRole: "Mortgage broker & Founder",
         abygaeleName: "Abygaèle Gagné",
@@ -1271,7 +1271,7 @@ export const translations = {
 
       // AdPage — full-bleed editorial spread (Cereal vol.18 style).
       adPage: {
-        statement: "Four pros. Five services. The same rigor.",
+        statement: "One team. Five services. The same rigor.",
         attribution: "Équipe Buteau",
       },
 
@@ -1379,7 +1379,7 @@ export const translations = {
         eyebrow: "The team",
         title: "Our team",
         subtitle:
-          "Four passionate mortgage brokers who work together for the success of each of your projects — with method and energy.",
+          "A passionate mortgage team working together for the success of each of your projects — with method and energy.",
       },
       marginalia: ["founder", "coord.", "assist.", "operations"],
       members: [
