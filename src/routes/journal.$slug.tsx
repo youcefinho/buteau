@@ -77,7 +77,7 @@ function JournalArticlePage() {
       <div className="mb-10 flex flex-wrap items-center justify-between gap-y-4 gap-x-6">
         <Link
           to="/journal"
-          className="group inline-flex items-center gap-2 font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-navy)] hover:text-[color:var(--color-bronze)] transition-colors"
+          className="group inline-flex items-center gap-2 font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-navy)] hover:text-[color:var(--color-bronze)] transition-colors"
         >
           <ArrowLeft
             size={14}
@@ -120,7 +120,7 @@ function JournalArticlePage() {
           <Link
             to="/"
             hash="contact"
-            className="group inline-flex items-center gap-2 font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-navy)] hover:text-[color:var(--color-bronze)] transition-colors"
+            className="group inline-flex items-center gap-2 font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-navy)] hover:text-[color:var(--color-bronze)] transition-colors"
           >
             <span className="relative">
               {isFr ? "En parler avec Andrew" : "Discuss with Andrew"}

@@ -39,7 +39,7 @@ export function Reviews() {
       {/* Filigrane "✉" enveloppe — Cormorant XL background */}
       <span
         aria-hidden="true"
-        className="absolute -top-12 -right-12 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/8 text-[24rem] leading-none pointer-events-none select-none"
+        className="absolute -top-12 -right-12 font-[family-name:var(--font-editorial)]  text-[color:var(--color-taupe)]/8 text-[24rem] leading-none pointer-events-none select-none"
       >
         ✉
       </span>
@@ -61,7 +61,7 @@ export function Reviews() {
           >
             <div className="flex items-center gap-3 mb-2">
               <GoogleLogo />
-              <span className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-lg tracking-wide group-hover:text-[color:var(--color-navy)]">
+              <span className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-lg tracking-wide group-hover:text-[color:var(--color-navy)]">
                 {t("home.reviews.googleBadgeLabel")}
               </span>
             </div>
@@ -122,13 +122,13 @@ export function Reviews() {
                 </div>
 
                 <p className=" text-[clamp(1rem,1.3vw,1.05rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/90 text-pretty">
-                  <span className="font-[var(--font-editorial)] not-italic font-bold text-[color:var(--color-bronze)] text-2xl mr-0.5 leading-none align-baseline">
+                  <span className="font-[family-name:var(--font-editorial)] not-italic font-bold text-[color:var(--color-bronze)] text-2xl mr-0.5 leading-none align-baseline">
                     «
                   </span>
                   {" "}
                   {r.quote}
                   {" "}
-                  <span className="font-[var(--font-editorial)] not-italic font-bold text-[color:var(--color-bronze)] text-2xl ml-0.5 leading-none align-baseline">
+                  <span className="font-[family-name:var(--font-editorial)] not-italic font-bold text-[color:var(--color-bronze)] text-2xl ml-0.5 leading-none align-baseline">
                     »
                   </span>
                 </p>
@@ -138,7 +138,7 @@ export function Reviews() {
               <footer className="px-[clamp(1.5rem,2vw,1.75rem)] pb-6 mt-auto">
                 <div className="flex items-center gap-3 pt-4 border-t border-[color:var(--color-taupe)]/30">
                   <div
-                    className="w-8 h-8 rounded-full bg-[color:var(--color-bronze)]/15 flex items-center justify-center text-[color:var(--color-navy)] font-[var(--font-display)] font-bold text-xs tracking-wider"
+                    className="w-8 h-8 rounded-full bg-[color:var(--color-bronze)]/15 flex items-center justify-center text-[color:var(--color-navy)] font-[family-name:var(--font-display)] font-bold text-xs tracking-wider"
                     aria-hidden="true"
                   >
                     {r.authorInitial}

@@ -23,7 +23,7 @@ export function NotFoundEditorial() {
       {/* "404" Cormorant  gigantesque en filigrane */}
       <span
         aria-hidden="true"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/12 text-[18rem] sm:text-[24rem] md:text-[32rem] leading-none pointer-events-none select-none whitespace-nowrap"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-[family-name:var(--font-editorial)]  text-[color:var(--color-taupe)]/12 text-[18rem] sm:text-[24rem] md:text-[32rem] leading-none pointer-events-none select-none whitespace-nowrap"
       >
         404
       </span>
@@ -72,7 +72,7 @@ export function NotFoundEditorial() {
             </HeartbeatCta>
             <a
               href={`tel:${config.phone.raw}`}
-              className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-cream)]"
+              className="group inline-flex items-center gap-2 font-[family-name:var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-cream)]"
             >
               <Phone size={14} aria-hidden="true" className="text-[color:var(--color-bronze)]" />
               <span className="relative">

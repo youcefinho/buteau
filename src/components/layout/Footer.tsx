@@ -30,7 +30,7 @@ export function Footer() {
       {/* Monogramme BUTEAU filigrane gigantesque arrière-plan */}
       <span
         aria-hidden="true"
-        className="absolute -bottom-24 -right-12 font-[var(--font-display)] font-extrabold text-[color:var(--color-cream)]/[0.04] text-[20rem] md:text-[28rem] lg:text-[36rem] leading-none tracking-[0.18em] pointer-events-none select-none whitespace-nowrap"
+        className="absolute -bottom-24 -right-12 font-[family-name:var(--font-display)] font-extrabold text-[color:var(--color-cream)]/[0.04] text-[20rem] md:text-[28rem] lg:text-[36rem] leading-none tracking-[0.18em] pointer-events-none select-none whitespace-nowrap"
       >
         {config.brandName}
       </span>
@@ -53,7 +53,7 @@ export function Footer() {
             <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
             {lang === "fr" ? "Quatrième de couverture" : "Back cover"}
           </p>
-          <p className="font-[var(--font-editorial)] text-[color:var(--color-cream)] text-[clamp(1.5rem,3.5vw,2.75rem)] leading-[1.1] tracking-tight">
+          <p className="font-[family-name:var(--font-editorial)] text-[color:var(--color-cream)] text-[clamp(1.5rem,3.5vw,2.75rem)] leading-[1.1] tracking-tight">
             « {t("footer.coverStatement")} »
           </p>
           <div className="flex items-center gap-4 mt-6">
@@ -76,7 +76,7 @@ export function Footer() {
                 <Phone size={14} className="mt-1 shrink-0 text-[color:var(--color-bronze)]" aria-hidden="true" />
                 <a
                   href={`tel:${config.phone.raw}`}
-                  className="text-glow-hover font-[var(--font-display)] text-base font-semibold"
+                  className="text-glow-hover font-[family-name:var(--font-display)] text-base font-semibold"
                 >
                   {config.phone.display}
                 </a>

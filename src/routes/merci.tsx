@@ -59,7 +59,7 @@ function MerciPage() {
       {/* "M" Cormorant  gigantesque en filigrane */}
       <span
         aria-hidden="true"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/12 text-[18rem] sm:text-[24rem] md:text-[32rem] leading-none pointer-events-none select-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-[family-name:var(--font-editorial)]  text-[color:var(--color-taupe)]/12 text-[18rem] sm:text-[24rem] md:text-[32rem] leading-none pointer-events-none select-none"
       >
         M
       </span>
@@ -122,7 +122,7 @@ function MerciPage() {
                     className="group flex items-center gap-4 py-3 border-b border-[color:var(--color-taupe)]/30 hover:border-[color:var(--color-bronze)] transition-colors"
                   >
                     <CalcIcon size={18} className="shrink-0 text-[color:var(--color-bronze)]" aria-hidden="true" />
-                    <span className="font-[var(--font-display)] text-base text-[color:var(--color-navy-deep)] group-hover:text-[color:var(--color-navy)] transition-colors">
+                    <span className="font-[family-name:var(--font-display)] text-base text-[color:var(--color-navy-deep)] group-hover:text-[color:var(--color-navy)] transition-colors">
                       {t("merci.nextStepCalc")}
                     </span>
                     <span aria-hidden="true" className="ml-auto text-[color:var(--color-taupe)] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">→</span>
@@ -136,7 +136,7 @@ function MerciPage() {
                   className="group w-full flex items-center gap-4 py-3 border-b border-[color:var(--color-taupe)]/30 hover:border-[color:var(--color-bronze)] transition-colors text-left"
                 >
                   <BookOpen size={18} className="shrink-0 text-[color:var(--color-bronze)]" aria-hidden="true" />
-                  <span className="font-[var(--font-display)] text-base text-[color:var(--color-navy-deep)] group-hover:text-[color:var(--color-navy)] transition-colors">
+                  <span className="font-[family-name:var(--font-display)] text-base text-[color:var(--color-navy-deep)] group-hover:text-[color:var(--color-navy)] transition-colors">
                     {t("merci.nextStepLexique")}
                   </span>
                   <span aria-hidden="true" className="ml-auto text-[color:var(--color-taupe)] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">→</span>
@@ -149,7 +149,7 @@ function MerciPage() {
                     className="group flex items-center gap-4 py-3 border-b border-[color:var(--color-taupe)]/30 hover:border-[color:var(--color-bronze)] transition-colors"
                   >
                     <HomeIcon size={18} className="shrink-0 text-[color:var(--color-bronze)]" aria-hidden="true" />
-                    <span className="font-[var(--font-display)] text-base text-[color:var(--color-navy-deep)] group-hover:text-[color:var(--color-navy)] transition-colors">
+                    <span className="font-[family-name:var(--font-display)] text-base text-[color:var(--color-navy-deep)] group-hover:text-[color:var(--color-navy)] transition-colors">
                       {t("merci.nextStepBack")}
                     </span>
                     <span aria-hidden="true" className="ml-auto text-[color:var(--color-taupe)] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">→</span>
@@ -166,7 +166,7 @@ function MerciPage() {
               <Phone size={14} className="text-[color:var(--color-bronze)]" aria-hidden="true" />
               <span className=" text-[color:var(--color-navy-deep)] text-base group-hover:text-[color:var(--color-navy)] transition-colors">
                 {lang === "fr" ? "Ou appelez directement" : "Or call directly"} —{" "}
-                <span className="font-[var(--font-display)] not-italic font-semibold">
+                <span className="font-[family-name:var(--font-display)] not-italic font-semibold">
                   {config.phone.display}
                 </span>
               </span>

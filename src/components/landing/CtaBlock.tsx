@@ -30,7 +30,7 @@ export function CtaBlock({ bgImageUrl = "/texture-navy-fixed.jpg" }: CtaBlockPro
       {/* Filigrane "buteau" Cormorant gigantesque en arriere-plan */}
       <span
         aria-hidden="true"
-        className="absolute -bottom-12 left-1/2 -translate-x-1/2 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/8 text-[18rem] md:text-[24rem] leading-none whitespace-nowrap pointer-events-none select-none"
+        className="absolute -bottom-12 left-1/2 -translate-x-1/2 font-[family-name:var(--font-editorial)]  text-[color:var(--color-taupe)]/8 text-[18rem] md:text-[24rem] leading-none whitespace-nowrap pointer-events-none select-none"
       >
         buteau.
       </span>
@@ -44,7 +44,7 @@ export function CtaBlock({ bgImageUrl = "/texture-navy-fixed.jpg" }: CtaBlockPro
             <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
           </p>
 
-          <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(1.875rem,5vw,3.5rem)] uppercase tracking-[0.04em] leading-[1.05] text-balance">
+          <h2 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(1.875rem,5vw,3.5rem)] uppercase tracking-[0.04em] leading-[1.05] text-balance">
             {t("cta.title")}
           </h2>
 

@@ -30,7 +30,7 @@ export function CapsulesPreview() {
       {/* Filigrane Play XL background — signature édito magazine */}
       <span
         aria-hidden="true"
-        className="absolute -top-12 left-0 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/8 text-[24rem] leading-none pointer-events-none select-none"
+        className="absolute -top-12 left-0 font-[family-name:var(--font-editorial)]  text-[color:var(--color-taupe)]/8 text-[24rem] leading-none pointer-events-none select-none"
       >
         ▶
       </span>
@@ -43,7 +43,7 @@ export function CapsulesPreview() {
               <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
               {t("home.capsulesPreview.eyebrow")}
             </p>
-            <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,3vw,2.25rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
+            <h2 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,3vw,2.25rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
               {t("home.capsulesPreview.title")}
             </h2>
             <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-6" />
@@ -54,7 +54,7 @@ export function CapsulesPreview() {
             <HeartbeatCta>
               <Link
                 to="/capsules"
-                className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-navy)] hover:text-[color:var(--color-bronze)] transition-colors"
+                className="group inline-flex items-center gap-2 font-[family-name:var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-navy)] hover:text-[color:var(--color-bronze)] transition-colors"
               >
                 <span className="relative">
                   {t("home.capsulesPreview.ctaFull")}
@@ -90,7 +90,7 @@ export function CapsulesPreview() {
                   {/* Numéro Cormorant  XL — pattern table-of-contents magazine */}
                   <span
                     aria-hidden="true"
-                    className="shrink-0 font-[var(--font-editorial)]  text-[color:var(--color-taupe)] group-hover:text-[color:var(--color-bronze)] text-[clamp(1.875rem,3vw,2.25rem)] leading-none tabular-nums w-12 md:w-14 transition-colors duration-300"
+                    className="shrink-0 font-[family-name:var(--font-editorial)]  text-[color:var(--color-taupe)] group-hover:text-[color:var(--color-bronze)] text-[clamp(1.875rem,3vw,2.25rem)] leading-none tabular-nums w-12 md:w-14 transition-colors duration-300"
                   >
                     {String(idx + 1).padStart(2, "0")}
                   </span>
@@ -110,7 +110,7 @@ export function CapsulesPreview() {
                     </div>
 
                     {/* Title */}
-                    <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.125rem,1.6vw,1.25rem)] uppercase tracking-[0.02em] leading-snug text-balance group-hover:text-[color:var(--color-navy)] transition-colors">
+                    <h3 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.125rem,1.6vw,1.25rem)] uppercase tracking-[0.02em] leading-snug text-balance group-hover:text-[color:var(--color-navy)] transition-colors">
                       {item.title}
                     </h3>
 

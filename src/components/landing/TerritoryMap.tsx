@@ -80,7 +80,7 @@ export function TerritoryMap() {
       {/* Filigrane "QC" Cormorant  arriere-plan */}
       <span
         aria-hidden="true"
-        className="absolute -bottom-16 -right-8 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/10 text-[24rem] leading-none pointer-events-none select-none"
+        className="absolute -bottom-16 -right-8 font-[family-name:var(--font-editorial)]  text-[color:var(--color-taupe)]/10 text-[24rem] leading-none pointer-events-none select-none"
       >
         QC
       </span>
@@ -473,7 +473,7 @@ export function TerritoryMap() {
             </svg>
 
             {/* D - Mini-stats summary editorial sous la carte */}
-            <p className="mt-4 text-[10px] font-[var(--font-display)] tracking-[0.15em] uppercase text-[color:var(--color-taupe-dark)]/85 text-center lg:text-left">
+            <p className="mt-4 text-[10px] font-[family-name:var(--font-display)] tracking-[0.15em] uppercase text-[color:var(--color-taupe-dark)]/85 text-center lg:text-left">
               {lang === "fr"
                 ? "4 régions desservies · 1 siège à Laval · 200 dossiers fermés en 2025"
                 : "4 regions served · 1 head office in Laval · 200 closed cases in 2025"}
@@ -503,7 +503,7 @@ export function TerritoryMap() {
                 <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
                 {t("territory.eyebrow")}
               </p>
-              <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,3vw,2.25rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
+              <h2 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,3vw,2.25rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
                 {t("territory.title")}
               </h2>
               <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-6" />
@@ -526,7 +526,7 @@ export function TerritoryMap() {
                     }`}
                   >
                     <span
-                      className={`font-[var(--font-editorial)]  text-2xl tabular-nums shrink-0 transition-colors duration-300 ${
+                      className={`font-[family-name:var(--font-editorial)]  text-2xl tabular-nums shrink-0 transition-colors duration-300 ${
                         isActive
                           ? "text-[color:var(--color-navy)]"
                           : "text-[color:var(--color-taupe)]"
@@ -535,7 +535,7 @@ export function TerritoryMap() {
                       {String(idx + 1).padStart(2, "0")}
                     </span>
                     <div className="flex-1 min-w-0">
-                      <p className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em] leading-snug">
+                      <p className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em] leading-snug">
                         {r.name}
                       </p>
                       <p className="text-xs  text-[color:var(--color-taupe-dark)] mt-1">

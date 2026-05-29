@@ -110,7 +110,7 @@ function CapsulesPage() {
       {/* Pull-quote signature Andrew — pattern intralys-edito-magazine
           Citation factuelle extraite de la voix Andrew (capsules TikTok existantes) */}
       <blockquote className="not-prose relative mb-14 py-2 border-l-2 border-[color:var(--color-bronze)] pl-6 lg:pl-8">
-        <p className="font-[var(--font-editorial)]  text-[clamp(1.25rem,2.2vw,1.65rem)] leading-[1.3] text-[color:var(--color-navy-deep)] tracking-tight text-pretty">
+        <p className="font-[family-name:var(--font-editorial)]  text-[clamp(1.25rem,2.2vw,1.65rem)] leading-[1.3] text-[color:var(--color-navy-deep)] tracking-tight text-pretty">
           {isFr
             ? "« L'hypothèque, c'est pas compliqué. Ce qui est compliqué, c'est qu'on te l'explique mal. En 30 secondes, je te montre que la plupart des règles sont plus simples — et plus généreuses — que ce qu'on t'a dit. »"
             : "« Mortgages aren't complicated. What's complicated is the way it's been explained to you. In 30 seconds, I show you most rules are simpler — and more generous — than you were told. »"}
@@ -125,7 +125,7 @@ function CapsulesPage() {
         <div className="flex items-center gap-4">
           <span
             aria-hidden="true"
-            className="font-[var(--font-editorial)]  text-[color:var(--color-bronze)] text-[clamp(3rem,5vw,3.75rem)] leading-none tabular-nums"
+            className="font-[family-name:var(--font-editorial)]  text-[color:var(--color-bronze)] text-[clamp(3rem,5vw,3.75rem)] leading-none tabular-nums"
           >
             {String(totalCount).padStart(2, "0")}
           </span>
@@ -151,7 +151,7 @@ function CapsulesPage() {
           </a>
           <a
             href={`tel:${config.phone.raw}`}
-            className="group font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-navy)] transition-colors inline-flex items-center gap-2"
+            className="group font-[family-name:var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-navy)] transition-colors inline-flex items-center gap-2"
           >
             <Sparkles size={14} className="text-[color:var(--color-bronze)]" aria-hidden="true" />
             <span className="relative">
@@ -187,7 +187,7 @@ function CapsulesPage() {
                 : "bg-transparent border-[color:var(--color-taupe)]/50 text-[color:var(--color-navy-deep)] hover:border-[color:var(--color-bronze)] hover:text-[color:var(--color-navy)]"
             }`}
           >
-            <span className="font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)]">
+            <span className="font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)]">
               {isFr ? "Tous" : "All"}
             </span>
             <span className=" text-xs tabular-nums opacity-70">
@@ -207,7 +207,7 @@ function CapsulesPage() {
                   : "bg-transparent border-[color:var(--color-taupe)]/50 text-[color:var(--color-navy-deep)] hover:border-[color:var(--color-bronze)] hover:text-[color:var(--color-navy)]"
               }`}
             >
-              <span className="font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)]">
+              <span className="font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)]">
                 {cat.eyebrow}
               </span>
               <span className=" text-xs tabular-nums opacity-70">
@@ -238,7 +238,7 @@ function CapsulesPage() {
             {/* Numéro XL filigrane à gauche */}
             <span
               aria-hidden="true"
-              className="hidden md:block absolute -left-20 top-0 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/15 text-[10rem] leading-none pointer-events-none select-none tabular-nums"
+              className="hidden md:block absolute -left-20 top-0 font-[family-name:var(--font-editorial)]  text-[color:var(--color-taupe)]/15 text-[10rem] leading-none pointer-events-none select-none tabular-nums"
             >
               {String(ci + 1).padStart(2, "0")}
             </span>
@@ -253,7 +253,7 @@ function CapsulesPage() {
                 <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
                 {isFr ? "Rubrique" : "Section"}
               </p>
-              <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] uppercase tracking-[0.04em] leading-[1.15] mb-4 text-balance">
+              <h2 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] uppercase tracking-[0.04em] leading-[1.15] mb-4 text-balance">
                 {cat.eyebrow}
               </h2>
               {/* Filet décoratif w-10 → w-20 hover (signature line bronze) */}
@@ -280,14 +280,14 @@ function CapsulesPage() {
                     {/* Numéro Cormorant  */}
                     <span
                       aria-hidden="true"
-                      className="shrink-0 font-[var(--font-editorial)]  text-[color:var(--color-taupe)] group-hover:text-[color:var(--color-navy)] text-[clamp(1.5rem,2.5vw,1.875rem)] leading-none tabular-nums w-10 md:w-12 transition-colors duration-300"
+                      className="shrink-0 font-[family-name:var(--font-editorial)]  text-[color:var(--color-taupe)] group-hover:text-[color:var(--color-navy)] text-[clamp(1.5rem,2.5vw,1.875rem)] leading-none tabular-nums w-10 md:w-12 transition-colors duration-300"
                     >
                       {String(ii + 1).padStart(2, "0")}
                     </span>
 
                     {/* Body */}
                     <div className="flex-1 min-w-0 space-y-2">
-                      <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1rem,1.4vw,1.125rem)] uppercase tracking-[0.02em] leading-snug text-balance group-hover:text-[color:var(--color-navy)] transition-colors">
+                      <h3 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1rem,1.4vw,1.125rem)] uppercase tracking-[0.02em] leading-snug text-balance group-hover:text-[color:var(--color-navy)] transition-colors">
                         {item.title}
                       </h3>
                       <p className=" text-[clamp(0.875rem,1.2vw,1rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/75 text-pretty">

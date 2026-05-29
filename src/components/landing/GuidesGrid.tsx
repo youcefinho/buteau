@@ -46,7 +46,7 @@ export function GuidesGrid() {
               {/* Numéro Cormorant filigrane top-right */}
               <span
                 aria-hidden="true"
-                className="absolute top-4 right-5 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/30 text-5xl leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-[color:var(--color-bronze)]/45"
+                className="absolute top-4 right-5 font-[family-name:var(--font-editorial)]  text-[color:var(--color-taupe)]/30 text-5xl leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-[color:var(--color-bronze)]/45"
               >
                 {["01", "02", "03"][idx]}
               </span>
@@ -57,7 +57,7 @@ export function GuidesGrid() {
               </div>
 
               {/* Titre */}
-              <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(1rem,1.4vw,1.125rem)] uppercase tracking-[0.04em] mb-3 leading-snug pr-10 text-balance">
+              <h3 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(1rem,1.4vw,1.125rem)] uppercase tracking-[0.04em] mb-3 leading-snug pr-10 text-balance">
                 {g.title}
               </h3>
 

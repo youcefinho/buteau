@@ -187,7 +187,7 @@ export function ExitIntent() {
         {/* Titre — Cormorant  édito */}
         <h3
           id="exit-intent-title"
-          className="font-[var(--font-editorial)] text-[color:var(--color-cream)] text-[clamp(1.5rem,2.5vw,1.875rem)] leading-[1.15] tracking-tight mb-3 text-balance"
+          className="font-[family-name:var(--font-editorial)] text-[color:var(--color-cream)] text-[clamp(1.5rem,2.5vw,1.875rem)] leading-[1.15] tracking-tight mb-3 text-balance"
         >
           {tr.title}{" "}
           <em className="not-italic text-[color:var(--color-bronze-soft)]">{tr.titleAccent}</em>

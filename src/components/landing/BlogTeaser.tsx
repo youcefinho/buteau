@@ -33,7 +33,7 @@ export function BlogTeaser() {
             <p className="eyebrow text-[color:var(--color-bronze-soft)]">
               {t("tools.blog.eyebrow")}
             </p>
-            <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(1.5rem,3vw,2.25rem)] tracking-[-0.01em] leading-tight text-balance">
+            <h2 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(1.5rem,3vw,2.25rem)] tracking-[-0.01em] leading-tight text-balance">
               {t("tools.blog.title")}
             </h2>
             <div className="w-12 h-0.5 bg-[color:var(--color-bronze)]" />
@@ -44,7 +44,7 @@ export function BlogTeaser() {
               <HeartbeatCta>
                 <Link
                   to="/journal"
-                  className="group inline-flex items-center gap-2 font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze-soft)] hover:text-[color:var(--color-cream)] transition-colors"
+                  className="group inline-flex items-center gap-2 font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze-soft)] hover:text-[color:var(--color-cream)] transition-colors"
                 >
                   <span className="relative">
                     {t("tools.blog.ctaLabel")}

@@ -43,7 +43,7 @@ export function BrokerLetter() {
       {/* Filigrane "lettre M" Cormorant en filigrane (référence "mot du courtier") */}
       <span
         aria-hidden="true"
-        className="absolute -top-12 -left-8 font-[var(--font-editorial)] text-[color:var(--color-taupe)]/8 text-[28rem] leading-none pointer-events-none select-none"
+        className="absolute -top-12 -left-8 font-[family-name:var(--font-editorial)] text-[color:var(--color-taupe)]/8 text-[28rem] leading-none pointer-events-none select-none"
       >
         m
       </span>
@@ -83,7 +83,7 @@ export function BrokerLetter() {
             </div>
 
             {/* Closing manuscrit */}
-            <p className="font-[var(--font-editorial)] text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] mt-10 leading-none">
+            <p className="font-[family-name:var(--font-editorial)] text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] mt-10 leading-none">
               {t("letter.closing")}
             </p>
           </div>

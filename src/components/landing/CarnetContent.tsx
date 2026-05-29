@@ -219,11 +219,11 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
             className={isPage ? "scroll-mt-24" : ""}
           >
             <div className="flex items-baseline gap-5 mb-5">
-              <span className="font-[var(--font-editorial)]  text-[color:var(--color-navy)] text-3xl shrink-0 leading-none">
+              <span className="font-[family-name:var(--font-editorial)]  text-[color:var(--color-navy)] text-3xl shrink-0 leading-none">
                 {section.numeral}
               </span>
               <div className="flex-1">
-                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.125rem,1.6vw,1.25rem)] uppercase tracking-[0.04em] leading-snug text-balance">
+                <h3 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.125rem,1.6vw,1.25rem)] uppercase tracking-[0.04em] leading-snug text-balance">
                   {section.title}
                 </h3>
                 <div className="w-10 h-px bg-[color:var(--color-bronze)] mt-3" aria-hidden="true" />
@@ -243,7 +243,7 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
                     href={entry.url}
                     target="_blank"
                     rel={linkRel}
-                    className="group inline-flex items-baseline gap-2 font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base hover:text-[color:var(--color-navy)] transition-colors duration-[240ms]"
+                    className="group inline-flex items-baseline gap-2 font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base hover:text-[color:var(--color-navy)] transition-colors duration-[240ms]"
                   >
                     <span className="relative">
                       {entry.name}
@@ -286,7 +286,7 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
                 <div className="eyebrow text-[color:var(--color-navy)] mb-1">
                   <ButeauMonogramInline className="mr-1" /> {isFr ? "Lire le carnet complet" : "Read the full address book"}
                 </div>
-                <div className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em]">
+                <div className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em]">
                   {isFr ? "Le carnet de l'emprunteur québécois" : "The Quebec borrower's address book"}
                 </div>
               </div>

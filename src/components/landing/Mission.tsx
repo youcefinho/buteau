@@ -78,7 +78,7 @@ export function Mission() {
 
             <span
               aria-hidden="true"
-              className="absolute -top-6 left-0 font-[var(--font-editorial)]  text-[color:var(--color-bronze)]/60 text-7xl md:text-8xl leading-none"
+              className="absolute -top-6 left-0 font-[family-name:var(--font-editorial)]  text-[color:var(--color-bronze)]/60 text-7xl md:text-8xl leading-none"
             >
               &ldquo;
             </span>
@@ -121,7 +121,7 @@ export function Mission() {
               >
                 <span
                   aria-hidden="true"
-                  className="absolute top-4 right-5 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/20 text-5xl leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-[color:var(--color-bronze)]/30"
+                  className="absolute top-4 right-5 font-[family-name:var(--font-editorial)]  text-[color:var(--color-taupe)]/20 text-5xl leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-[color:var(--color-bronze)]/30"
                 >
                   {String(idx + 1).padStart(2, "0")}
                 </span>
@@ -130,7 +130,7 @@ export function Mission() {
                   <Icon size={22} strokeWidth={1.5} aria-hidden="true" />
                 </div>
 
-                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] group-hover:text-[color:var(--color-bronze)] transition-colors duration-500 text-base uppercase tracking-[var(--tracking-eyebrow)] mb-3 leading-snug text-balance">
+                <h3 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] group-hover:text-[color:var(--color-bronze)] transition-colors duration-500 text-base uppercase tracking-[var(--tracking-eyebrow)] mb-3 leading-snug text-balance">
                   {v.title}
                 </h3>
 

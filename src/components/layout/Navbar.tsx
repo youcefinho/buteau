@@ -214,7 +214,7 @@ export function Navbar() {
                 >
                   <Link
                     to={item.to}
-                    className="block font-[var(--font-display)] text-2xl text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-navy)] transition-colors"
+                    className="block font-[family-name:var(--font-display)] text-2xl text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-navy)] transition-colors"
                   >
                     {t(item.key)}
                   </Link>
@@ -242,7 +242,7 @@ function NavLink({ to, label }: { to: "/" | "/equipe" | "/institutions" | "/outi
   return (
     <Link
       to={to}
-      className="font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-current hover:text-[color:var(--color-bronze)] transition-colors"
+      className="font-[family-name:var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-current hover:text-[color:var(--color-bronze)] transition-colors"
       activeProps={{
         className:
           "text-[color:var(--color-bronze)]",

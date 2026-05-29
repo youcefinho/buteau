@@ -32,7 +32,7 @@ export function AdPage({ entryKey = "adPage" }: { entryKey?: string }) {
       {/* Filigrane « ¶ » pilcrow Cormorant — touche éditoriale typographique */}
       <span
         aria-hidden="true"
-        className="absolute -top-12 -left-8 md:-left-16 font-[var(--font-editorial)]  text-[color:var(--color-cream)]/[0.04] text-[18rem] md:text-[24rem] leading-none pointer-events-none select-none"
+        className="absolute -top-12 -left-8 md:-left-16 font-[family-name:var(--font-editorial)]  text-[color:var(--color-cream)]/[0.04] text-[18rem] md:text-[24rem] leading-none pointer-events-none select-none"
       >
         ¶
       </span>

@@ -131,7 +131,7 @@ export function GlossaryHovercard({ term, children }: GlossaryHovercardProps) {
           onMouseEnter={() => setIsOpen(true)}
           onMouseLeave={() => setIsOpen(false)}
         >
-          <span className="block font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-sm uppercase tracking-[0.04em] mb-2">
+          <span className="block font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-sm uppercase tracking-[0.04em] mb-2">
             {matched.term[lang]}
           </span>
           <span className="block w-8 h-px bg-[color:var(--color-bronze)] mb-3" />
@@ -149,7 +149,7 @@ export function GlossaryHovercard({ term, children }: GlossaryHovercardProps) {
               open(matched.slug);
               setIsOpen(false);
             }}
-            className="mt-3 inline-flex items-center gap-1.5 text-[10px] font-[var(--font-display)] font-semibold uppercase tracking-[0.12em] text-[color:var(--color-navy)] hover:text-[color:var(--color-bronze)] transition-colors"
+            className="mt-3 inline-flex items-center gap-1.5 text-[10px] font-[family-name:var(--font-display)] font-semibold uppercase tracking-[0.12em] text-[color:var(--color-navy)] hover:text-[color:var(--color-bronze)] transition-colors"
           >
             {lang === "fr" ? "Voir tout le lexique" : "Open full glossary"} →
           </button>

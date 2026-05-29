@@ -38,7 +38,7 @@ export function TikTokTeaser() {
             <p className="eyebrow text-[color:var(--color-bronze)]">
               {t("tools.tiktok.eyebrow")}
             </p>
-            <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,3vw,2.25rem)] tracking-[-0.01em] leading-tight text-balance">
+            <h2 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,3vw,2.25rem)] tracking-[-0.01em] leading-tight text-balance">
               {t("tools.tiktok.title")}
             </h2>
             <div className="signature-line" />
@@ -51,7 +51,7 @@ export function TikTokTeaser() {
               <HeartbeatCta>
                 <Link
                   to="/capsules"
-                  className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-navy)] hover:text-[color:var(--color-bronze)] transition-colors"
+                  className="group inline-flex items-center gap-2 font-[family-name:var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-navy)] hover:text-[color:var(--color-bronze)] transition-colors"
                 >
                   <span className="relative">
                     {t("tools.tiktok.ctaCollection")}
@@ -68,7 +68,7 @@ export function TikTokTeaser() {
                 href="https://www.tiktok.com/@equipebuteau"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze)] hover:text-[color:var(--color-navy)] transition-colors"
+                className="group inline-flex items-center gap-2 font-[family-name:var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze)] hover:text-[color:var(--color-navy)] transition-colors"
               >
                 <Play size={12} aria-hidden="true" />
                 <span className="relative">

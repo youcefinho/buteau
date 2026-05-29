@@ -62,7 +62,7 @@ function LexiquePage() {
         {glossary.map((g) => (
           <article id={g.slug} key={g.slug} className="scroll-mt-32">
             <div className="flex items-baseline gap-3 flex-wrap">
-              <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-xl uppercase tracking-[0.04em] text-balance">
+              <h2 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-xl uppercase tracking-[0.04em] text-balance">
                 {g.term[lang]}
               </h2>
               {g.term.fr_alt && lang === "fr" && (

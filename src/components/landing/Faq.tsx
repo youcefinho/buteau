@@ -63,11 +63,11 @@ export function Faq() {
                   {/* Numero filigrane Cormorant a gauche */}
                   <span
                     aria-hidden="true"
-                    className="font-[var(--font-editorial)]  text-[color:var(--color-taupe)] group-data-[state=open]:text-[color:var(--color-bronze)] text-2xl shrink-0 transition-colors w-8"
+                    className="font-[family-name:var(--font-editorial)]  text-[color:var(--color-taupe)] group-data-[state=open]:text-[color:var(--color-bronze)] text-2xl shrink-0 transition-colors w-8"
                   >
                     {String(idx + 1).padStart(2, "0")}
                   </span>
-                  <span className="flex-1 min-w-0 font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(0.875rem,1.2vw,1rem)] uppercase tracking-[0.04em] leading-snug text-balance">
+                  <span className="flex-1 min-w-0 font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(0.875rem,1.2vw,1rem)] uppercase tracking-[0.04em] leading-snug text-balance">
                     {item.q}
                   </span>
                   <ChevronDown

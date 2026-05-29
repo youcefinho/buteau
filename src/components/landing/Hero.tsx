@@ -92,7 +92,7 @@ export function Hero() {
               Chaque lettre B/U/T/E/A/U révèle un mot signature au hover (Buteau / Unique /
               Transparence / Expert / Accessible / Utile). */}
           <div className="relative inline-block group/brand">
-            <p className="font-[var(--font-display)] text-[color:var(--color-cream)] text-[clamp(3.5rem,11vw,9rem)] font-extrabold tracking-[0.18em] leading-[0.95] pl-[0.18em] flex">
+            <p className="font-[family-name:var(--font-display)] text-[color:var(--color-cream)] text-[clamp(3.5rem,11vw,9rem)] font-extrabold tracking-[0.18em] leading-[0.95] pl-[0.18em] flex">
               {config.brandName.split("").map((letter, idx) => (
                 <span
                   key={idx}
@@ -122,7 +122,7 @@ export function Hero() {
               (≈ ITC Franklin Gothic 138) pour s'aligner en largeur sous BUTEAU.
               Taille à calibrer à l'œil pour matcher exactement la largeur du logo. */}
           <h1
-            className="font-[var(--font-sans)] uppercase text-[color:var(--color-cream)]/90 text-[clamp(0.8rem,1.7vw,1.2rem)] font-medium tracking-[0.22em] leading-[1.3] mt-[clamp(1rem,2vw,1.5rem)] text-balance animate-[buteauFadeUp_800ms_ease-out_700ms_both]"
+            className="font-[family-name:var(--font-sans)] uppercase text-[color:var(--color-cream)]/90 text-[clamp(0.8rem,1.7vw,1.2rem)] font-medium tracking-[0.22em] leading-[1.3] mt-[clamp(1rem,2vw,1.5rem)] text-balance animate-[buteauFadeUp_800ms_ease-out_700ms_both]"
           >
             {t("home.hero.title")}
           </h1>
@@ -148,7 +148,7 @@ export function Hero() {
             <HeartbeatCta>
               <Link
                 to="/equipe"
-                className="group font-[var(--font-display)] text-[color:var(--color-cream)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] inline-flex items-center gap-2 transition-all"
+                className="group font-[family-name:var(--font-display)] text-[color:var(--color-cream)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] inline-flex items-center gap-2 transition-all"
               >
                 <span className="relative">
                   {t("home.hero.ctaSecondary")}
@@ -185,7 +185,7 @@ export function Hero() {
             className="group/chip mt-8 inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[color:var(--color-bronze)]/35 bg-[color:var(--color-bronze)]/[0.06] hover:border-[color:var(--color-bronze)]/65 hover:bg-[color:var(--color-bronze)]/10 transition-all duration-300 text-[clamp(0.75rem,1.1vw,0.875rem)] animate-[buteauFadeUp_700ms_ease-out_1600ms_both]"
           >
             <Star className="w-3.5 h-3.5 fill-[color:var(--color-bronze)] text-[color:var(--color-bronze)] shrink-0" strokeWidth={1.5} aria-hidden />
-            <span className="font-[var(--font-display)] font-medium tracking-[0.06em] uppercase text-[color:var(--color-cream)]/90 whitespace-nowrap">
+            <span className="font-[family-name:var(--font-display)] font-medium tracking-[0.06em] uppercase text-[color:var(--color-cream)]/90 whitespace-nowrap">
               {t("home.reviews.googleBadgeLabel")}
             </span>
             <span aria-hidden="true" className="text-[color:var(--color-bronze)] transition-transform duration-300 group-hover/chip:translate-x-0.5">→</span>

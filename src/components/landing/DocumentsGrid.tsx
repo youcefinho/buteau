@@ -41,7 +41,7 @@ export function DocumentsGrid() {
                 {/* Numéro filigrane Cormorant subtile */}
                 <span
                   aria-hidden="true"
-                  className="absolute top-3 right-4 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/25 group-hover:text-[color:var(--color-bronze)]/35 text-4xl leading-none pointer-events-none select-none transition-colors duration-500"
+                  className="absolute top-3 right-4 font-[family-name:var(--font-editorial)]  text-[color:var(--color-taupe)]/25 group-hover:text-[color:var(--color-bronze)]/35 text-4xl leading-none pointer-events-none select-none transition-colors duration-500"
                 >
                   {String(idx + 1).padStart(2, "0")}
                 </span>
@@ -50,7 +50,7 @@ export function DocumentsGrid() {
                   <Icon size={20} strokeWidth={1.5} aria-hidden="true" />
                 </div>
                 <div className="flex-1 min-w-0 pr-6">
-                  <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em] leading-snug mb-2 text-balance">
+                  <h3 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em] leading-snug mb-2 text-balance">
                     {doc.title}
                   </h3>
                   <p className="text-xs  text-[color:var(--color-taupe-dark)] mb-4">

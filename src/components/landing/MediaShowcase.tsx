@@ -83,7 +83,7 @@ export function MediaShowcase() {
       {/* Filigrane "¶" Cormorant XL background — signature édito magazine */}
       <span
         aria-hidden="true"
-        className="absolute -top-16 -right-12 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/10 text-[24rem] leading-none pointer-events-none select-none"
+        className="absolute -top-16 -right-12 font-[family-name:var(--font-editorial)]  text-[color:var(--color-taupe)]/10 text-[24rem] leading-none pointer-events-none select-none"
       >
         ¶
       </span>
@@ -96,7 +96,7 @@ export function MediaShowcase() {
             {t("media.eyebrow")}
             <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
           </p>
-          <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,4vw,3rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
+          <h2 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,4vw,3rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
             {t("media.title")}
           </h2>
           <div className="w-16 h-px bg-[color:var(--color-bronze)] mx-auto mb-6" />
@@ -110,7 +110,7 @@ export function MediaShowcase() {
           {/* Chiffre filigrane "01" — pattern signature pages séquentielles */}
           <span
             aria-hidden="true"
-            className="hidden md:block absolute -top-12 -left-4 lg:-left-12 font-[var(--font-editorial)]  text-[color:var(--color-bronze)]/12 text-[12rem] lg:text-[16rem] leading-none pointer-events-none select-none tabular-nums"
+            className="hidden md:block absolute -top-12 -left-4 lg:-left-12 font-[family-name:var(--font-editorial)]  text-[color:var(--color-bronze)]/12 text-[12rem] lg:text-[16rem] leading-none pointer-events-none select-none tabular-nums"
           >
             01
           </span>
@@ -195,7 +195,7 @@ export function MediaShowcase() {
                 {t("media.tvEyebrow")}
               </p>
             </div>
-            <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] uppercase tracking-[0.02em] leading-[1.15] mb-5 text-balance">
+            <h3 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] uppercase tracking-[0.02em] leading-[1.15] mb-5 text-balance">
               {t("media.tvTitle")}
             </h3>
             {/* Signature line bronze qui s'étend au hover (pattern intralys-edito-magazine) */}
@@ -227,7 +227,7 @@ export function MediaShowcase() {
           {/* Chiffre filigrane "02" — décalé à droite cette fois (asymétrie magazine) */}
           <span
             aria-hidden="true"
-            className="hidden md:block absolute -top-12 -right-4 lg:-right-12 font-[var(--font-editorial)]  text-[color:var(--color-bronze)]/12 text-[12rem] lg:text-[16rem] leading-none pointer-events-none select-none tabular-nums"
+            className="hidden md:block absolute -top-12 -right-4 lg:-right-12 font-[family-name:var(--font-editorial)]  text-[color:var(--color-bronze)]/12 text-[12rem] lg:text-[16rem] leading-none pointer-events-none select-none tabular-nums"
           >
             02
           </span>
@@ -240,7 +240,7 @@ export function MediaShowcase() {
                 {t("media.eventEyebrow")}
               </p>
             </div>
-            <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] uppercase tracking-[0.02em] leading-[1.15] mb-5 text-balance">
+            <h3 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] uppercase tracking-[0.02em] leading-[1.15] mb-5 text-balance">
               {t("media.eventTitle")}
             </h3>
             {/* Signature line bronze + dropcap intro (pattern intralys-edito-magazine) */}

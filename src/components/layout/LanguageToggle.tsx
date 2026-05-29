@@ -24,7 +24,7 @@ export function LanguageToggle({ className = "" }: { className?: string }) {
         onClick={() => setLang("fr")}
         aria-label="Francais"
         aria-pressed={lang === "fr"}
-        className="font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] transition-colors max-md:min-h-[44px] max-md:min-w-[44px] inline-flex items-center justify-center"
+        className="font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] transition-colors max-md:min-h-[44px] max-md:min-w-[44px] inline-flex items-center justify-center"
         style={{
           color: lang === "fr" ? "var(--color-bronze)" : "color-mix(in oklch, currentColor 55%, transparent)",
           fontSize: lang === "fr" ? "13px" : "11px",
@@ -47,7 +47,7 @@ export function LanguageToggle({ className = "" }: { className?: string }) {
         onClick={() => setLang("en")}
         aria-label="English"
         aria-pressed={lang === "en"}
-        className="font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] transition-colors max-md:min-h-[44px] max-md:min-w-[44px] inline-flex items-center justify-center"
+        className="font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] transition-colors max-md:min-h-[44px] max-md:min-w-[44px] inline-flex items-center justify-center"
         style={{
           color: lang === "en" ? "var(--color-bronze)" : "color-mix(in oklch, currentColor 55%, transparent)",
           fontSize: lang === "en" ? "13px" : "11px",

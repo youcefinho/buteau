@@ -78,22 +78,22 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
             ? [
                 ["L'hypothèque autrement.", "La promesse signature du site (hero h1) — appliquée à chaque mot, chaque chiffre. Pas de jargon non expliqué, pas de promesse irréaliste."],
                 ["200 familles accompagnées en 2025.", "Chiffre vérifiable — pas une projection. La cible Buteau est large : 40 % primo-acheteurs, 60 % refi/upgrade/famille. Aucun dossier traité avec moins de soin parce que plus petit."],
-                ["Quatre pros, un seul interlocuteur.", "Andrew, Abygaèle, Alexis et Felix — chaque dossier passe par une équipe de quatre, mais le client a un point de contact principal. Pas de relais à un assistant à mi-parcours."],
+                ["Une équipe, un seul interlocuteur.", "Chaque dossier passe par une équipe dédiée, mais le client garde un point de contact principal. Pas de relais à un assistant à mi-parcours."],
                 ["La pédagogie avant la transaction.", "Le calculateur, les guides, les capsules vidéo, le carnet — gratuits, sans email obligatoire. On vous outille même si vous ne signez pas avec nous."],
               ]
             : [
                 ["Mortgage. Differently.", "The site's signature promise (hero h1) — applied to every word, every figure. No unexplained jargon, no unrealistic promise."],
                 ["200 families supported in 2025.", "Verifiable number — not a projection. Buteau's target is broad: 40% first-time buyers, 60% refi/upgrade/family. No file handled with less care because smaller."],
-                ["Four pros, one main contact.", "Andrew, Abygaèle, Alexis and Felix — every file goes through a team of four, but the client has one main contact. No mid-process handover to an assistant."],
+                ["One team, one main contact.", "Every file goes through a dedicated team, but the client keeps one main contact. No mid-process handover to an assistant."],
                 ["Pedagogy before transaction.", "The calculator, guides, video shorts, address book — free, no mandatory email. We equip you even if you don't sign with us."],
               ]
           ).map(([title, body], idx) => (
             <li key={title} className="flex gap-5">
-              <span className="font-[var(--font-editorial)]  text-[color:var(--color-bronze)] text-2xl shrink-0 leading-none w-8">
+              <span className="font-[family-name:var(--font-editorial)]  text-[color:var(--color-bronze)] text-2xl shrink-0 leading-none w-8">
                 {String(idx + 1).padStart(2, "0")}
               </span>
               <div className="space-y-2">
-                <p className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em] text-balance">
+                <p className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em] text-balance">
                   {title}
                 </p>
                 <p className="text-sm leading-[1.7] text-[color:var(--color-navy-deep)]/75 text-pretty hyphens-auto">
@@ -160,7 +160,7 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
                 <div className="eyebrow text-[color:var(--color-navy)] mb-1">
                   <ButeauMonogramInline className="mr-1" /> {isFr ? "Lire le colophon complet" : "Read the full colophon"}
                 </div>
-                <div className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em]">
+                <div className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em]">
                   {isFr ? "L'atelier — méthode et standards" : "The atelier — method and standards"}
                 </div>
               </div>
@@ -223,7 +223,7 @@ function ColophonRow({
               aria-hidden="true"
             />
           )}
-          <p className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base tabular-nums">
+          <p className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base tabular-nums">
             {value}
           </p>
         </div>

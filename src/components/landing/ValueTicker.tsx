@@ -1,7 +1,6 @@
 import { useMemo } from "react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { ta, translations } from "@/lib/translations";
-import { ButeauMonogramInline } from "@/components/atmosphere/ButeauMonogramInline";
 
 /**
  * ValueTicker — bandeau scrolling éditorial avec valeurs vérifiées.
@@ -57,9 +56,7 @@ export function ValueTicker() {
               className="inline-flex items-center gap-6 px-8  text-[color:var(--color-cream)]/90 text-[clamp(1rem,1.4vw,1.125rem)]"
             >
               <span>{item}</span>
-              <span aria-hidden="true" className="text-[color:var(--color-bronze)] select-none">
-                <ButeauMonogramInline size="lg" />
-              </span>
+              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-[color:var(--color-bronze)]/70 select-none shrink-0" />
             </span>
           );
         })}

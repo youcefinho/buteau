@@ -124,7 +124,7 @@ export function GlossaryModal() {
               </p>
               <h2
                 id="glossary-title"
-                className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.04em] text-balance"
+                className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.04em] text-balance"
               >
                 {lang === "fr" ? "Termes hypothécaires" : "Mortgage terminology"}
               </h2>
@@ -169,7 +169,7 @@ export function GlossaryModal() {
           {filteredGlossary.map((g) => (
             <article id={`term-${g.slug}`} key={g.slug} className="scroll-mt-24">
               <div className="flex items-baseline gap-3 flex-wrap">
-                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-lg uppercase tracking-[0.04em] text-balance">
+                <h3 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-lg uppercase tracking-[0.04em] text-balance">
                   {g.term[lang]}
                 </h3>
                 {g.term.fr_alt && lang === "fr" && (
@@ -202,7 +202,7 @@ export function GlossaryModal() {
                   <div className="text-[10px] uppercase tracking-[0.32em] text-[color:var(--color-navy)] font-bold mb-1">
                     {lang === "fr" ? "Voir le lexique complet" : "See the full glossary"}
                   </div>
-                  <div className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em]">
+                  <div className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em]">
                     {lang === "fr"
                       ? "Le lexique hypothécaire — version éditoriale"
                       : "Mortgage glossary — editorial version"}

@@ -96,7 +96,7 @@ export function PreQualQuiz() {
       {/* Filigrane "?" Cormorant XL background */}
       <span
         aria-hidden="true"
-        className="absolute -top-20 -left-12 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/10 text-[28rem] leading-none pointer-events-none select-none"
+        className="absolute -top-20 -left-12 font-[family-name:var(--font-editorial)]  text-[color:var(--color-taupe)]/10 text-[28rem] leading-none pointer-events-none select-none"
       >
         ?
       </span>
@@ -109,7 +109,7 @@ export function PreQualQuiz() {
             {t("quiz.eyebrow")}
             <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
           </p>
-          <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,4vw,3rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
+          <h2 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,4vw,3rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
             {t("quiz.title")}
           </h2>
           <div className="w-12 h-px bg-[color:var(--color-bronze)] mx-auto mb-6" />
@@ -156,7 +156,7 @@ export function PreQualQuiz() {
               {/* Question */}
               <h3
                 key={step}
-                className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] uppercase tracking-[0.02em] leading-[1.2] mb-8 text-balance animate-[buteauFadeUp_500ms_ease-out_both]"
+                className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] uppercase tracking-[0.02em] leading-[1.2] mb-8 text-balance animate-[buteauFadeUp_500ms_ease-out_both]"
               >
                 {currentQ?.q}
               </h3>
@@ -177,7 +177,7 @@ export function PreQualQuiz() {
                         <span className=" text-[color:var(--color-bronze)] text-xl tabular-nums">
                           {String.fromCharCode(65 + idx)}
                         </span>
-                        <span className="font-[var(--font-display)] text-[color:var(--color-navy-deep)] text-[clamp(1rem,1.4vw,1.125rem)] leading-snug">
+                        <span className="font-[family-name:var(--font-display)] text-[color:var(--color-navy-deep)] text-[clamp(1rem,1.4vw,1.125rem)] leading-snug">
                           {opt.label}
                         </span>
                       </span>
@@ -221,7 +221,7 @@ export function PreQualQuiz() {
                 <button
                   type="button"
                   onClick={handleRestart}
-                  className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze)] hover:text-[color:var(--color-navy)] transition-colors"
+                  className="group inline-flex items-center gap-2 font-[family-name:var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze)] hover:text-[color:var(--color-navy)] transition-colors"
                 >
                   <RotateCcw
                     size={14}

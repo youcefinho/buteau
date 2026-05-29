@@ -106,7 +106,7 @@ function CourrierPage() {
               {/* Numéro filigrane Cormorant top-right */}
               <span
                 aria-hidden="true"
-                className="absolute top-3 right-5 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/25 text-3xl leading-none pointer-events-none select-none"
+                className="absolute top-3 right-5 font-[family-name:var(--font-editorial)]  text-[color:var(--color-taupe)]/25 text-3xl leading-none pointer-events-none select-none"
               >
                 {String(idx + 1).padStart(2, "0")}
               </span>
@@ -144,13 +144,13 @@ function CourrierPage() {
                   ))}
                 </div>
                 <p className=" text-sm leading-[1.6] text-[color:var(--color-navy-deep)]/90 text-pretty">
-                  <span className="font-[var(--font-editorial)] not-italic font-bold text-[color:var(--color-bronze)] text-xl mr-0.5 align-baseline">
+                  <span className="font-[family-name:var(--font-editorial)] not-italic font-bold text-[color:var(--color-bronze)] text-xl mr-0.5 align-baseline">
                     «
                   </span>
                   {" "}
                   {r.quote}
                   {" "}
-                  <span className="font-[var(--font-editorial)] not-italic font-bold text-[color:var(--color-bronze)] text-xl ml-0.5 align-baseline">
+                  <span className="font-[family-name:var(--font-editorial)] not-italic font-bold text-[color:var(--color-bronze)] text-xl ml-0.5 align-baseline">
                     »
                   </span>
                 </p>
@@ -160,7 +160,7 @@ function CourrierPage() {
               <footer className="px-6 pb-5">
                 <div className="flex items-center gap-3 pt-3 border-t border-[color:var(--color-taupe)]/30">
                   <div
-                    className="w-7 h-7 rounded-full bg-[color:var(--color-bronze)]/15 flex items-center justify-center text-[color:var(--color-navy)] font-[var(--font-display)] font-bold text-[10px] tracking-wider"
+                    className="w-7 h-7 rounded-full bg-[color:var(--color-bronze)]/15 flex items-center justify-center text-[color:var(--color-navy)] font-[family-name:var(--font-display)] font-bold text-[10px] tracking-wider"
                     aria-hidden="true"
                   >
                     {r.authorInitial}

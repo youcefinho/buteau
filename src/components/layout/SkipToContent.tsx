@@ -15,7 +15,7 @@ export function SkipToContent() {
         focus:px-4 focus:py-2
         focus:bg-[color:var(--color-bronze)] focus:text-[color:var(--color-cream)]
         focus:rounded-sm focus:shadow-lg
-        focus:font-[var(--font-display)] focus:text-sm focus:font-semibold
+        focus:font-[family-name:var(--font-display)] focus:text-sm focus:font-semibold
         focus:outline-none
       "
     >

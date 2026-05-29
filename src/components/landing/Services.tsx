@@ -67,7 +67,7 @@ export function Services() {
               {/* Numéro romain XL filigrane DEBORDANT à gauche (signature diagonal) */}
               <span
                 aria-hidden="true"
-                className="hidden md:block absolute -left-3 top-1/2 -translate-y-1/2 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/15 text-[12rem] leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-[color:var(--color-bronze)]/25"
+                className="hidden md:block absolute -left-3 top-1/2 -translate-y-1/2 font-[family-name:var(--font-editorial)]  text-[color:var(--color-taupe)]/15 text-[12rem] leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-[color:var(--color-bronze)]/25"
               >
                 {numerals[idx]}
               </span>
@@ -78,7 +78,7 @@ export function Services() {
                   <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-3">
                     {numerals[idx]} — {lang === "fr" ? "Service" : "Service"}
                   </p>
-                  <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.04em] leading-[1.1] text-balance">
+                  <h3 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.04em] leading-[1.1] text-balance">
                     {s.title}
                   </h3>
                   <div className="w-8 h-px bg-[color:var(--color-bronze)] mt-4 transition-[width] duration-500 group-hover:w-16" />

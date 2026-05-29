@@ -75,7 +75,7 @@ export function CalculatorPreview() {
       {/* Filigrane "$" Cormorant background */}
       <span
         aria-hidden="true"
-        className="absolute -top-16 -right-12 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/8 text-[24rem] leading-none pointer-events-none select-none"
+        className="absolute -top-16 -right-12 font-[family-name:var(--font-editorial)]  text-[color:var(--color-taupe)]/8 text-[24rem] leading-none pointer-events-none select-none"
       >
         $
       </span>
@@ -88,7 +88,7 @@ export function CalculatorPreview() {
               <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
               {t("home.calcPreview.eyebrow")}
             </p>
-            <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,3vw,2.25rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
+            <h2 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,3vw,2.25rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
               {t("home.calcPreview.title")}
             </h2>
             <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-6" />
@@ -100,7 +100,7 @@ export function CalculatorPreview() {
               <Link
                 to="/outils"
                 hash="calculateur"
-                className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-navy)] hover:text-[color:var(--color-bronze)] transition-colors"
+                className="group inline-flex items-center gap-2 font-[family-name:var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-navy)] hover:text-[color:var(--color-bronze)] transition-colors"
               >
                 <span className="relative">
                   {t("home.calcPreview.ctaFull")}
@@ -155,7 +155,7 @@ export function CalculatorPreview() {
             <div className="md:col-span-2 surface-navy p-[clamp(1.75rem,2.5vw,2rem)] flex flex-col justify-between gap-6 relative overflow-hidden">
               <span
                 aria-hidden="true"
-                className="absolute -top-6 -right-4 font-[var(--font-editorial)]  text-[color:var(--color-bronze)]/12 text-[10rem] leading-none pointer-events-none select-none"
+                className="absolute -top-6 -right-4 font-[family-name:var(--font-editorial)]  text-[color:var(--color-bronze)]/12 text-[10rem] leading-none pointer-events-none select-none"
               >
                 $
               </span>
@@ -164,7 +164,7 @@ export function CalculatorPreview() {
                   {t("home.calcPreview.resultLabel")}
                 </p>
                 <p
-                  className="font-[var(--font-display)] font-extrabold text-[color:var(--color-cream)] text-[clamp(1.875rem,3vw,2.25rem)] tracking-[-0.02em] leading-[0.95] tabular-nums"
+                  className="font-[family-name:var(--font-display)] font-extrabold text-[color:var(--color-cream)] text-[clamp(1.875rem,3vw,2.25rem)] tracking-[-0.02em] leading-[0.95] tabular-nums"
                   aria-live="polite"
                 >
                   {monthlyPayment !== null
@@ -184,18 +184,18 @@ export function CalculatorPreview() {
                 {monthlyPayment !== null && totalInterest !== null && totalCost !== null && (
                   <div className="mt-5 pt-4 border-t border-[color:var(--color-taupe)]/20 space-y-2">
                     <div className="flex items-baseline justify-between gap-3">
-                      <span className="font-[var(--font-display)] text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-taupe)]">
+                      <span className="font-[family-name:var(--font-display)] text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-taupe)]">
                         {lang === "fr" ? "Intérêts sur la durée" : "Interest over term"}
                       </span>
-                      <span className="font-[var(--font-display)] text-sm tabular-nums text-[color:var(--color-cream)]/85">
+                      <span className="font-[family-name:var(--font-display)] text-sm tabular-nums text-[color:var(--color-cream)]/85">
                         {formatLocaleCurrency(Math.round(totalInterest), lang)}
                       </span>
                     </div>
                     <div className="flex items-baseline justify-between gap-3">
-                      <span className="font-[var(--font-display)] text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-taupe)]">
+                      <span className="font-[family-name:var(--font-display)] text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-taupe)]">
                         {lang === "fr" ? "Coût total" : "Total cost"}
                       </span>
-                      <span className="font-[var(--font-display)] text-sm tabular-nums text-[color:var(--color-cream)]/85">
+                      <span className="font-[family-name:var(--font-display)] text-sm tabular-nums text-[color:var(--color-cream)]/85">
                         {formatLocaleCurrency(Math.round(totalCost), lang)}
                       </span>
                     </div>
@@ -275,7 +275,7 @@ function CalcSliderMini({
             éléments source du calcul, pas l'input — sémantique imprécise). Output autonome OK. */}
         <output
           aria-live="polite"
-          className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1rem,1.4vw,1.125rem)] tabular-nums"
+          className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1rem,1.4vw,1.125rem)] tabular-nums"
         >
           {format(clamped)}
         </output>

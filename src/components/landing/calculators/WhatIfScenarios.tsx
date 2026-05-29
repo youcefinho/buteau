@@ -95,7 +95,7 @@ export function WhatIfScenarios({
     <div className="mt-8 max-w-5xl mx-auto">
       {/* Header signature */}
       <div className="text-center mb-7">
-        <p className="font-[var(--font-editorial)]  text-[color:var(--color-navy)] text-[clamp(1.5rem,2.5vw,1.875rem)]">
+        <p className="font-[family-name:var(--font-editorial)]  text-[color:var(--color-navy)] text-[clamp(1.5rem,2.5vw,1.875rem)]">
           {t("tools.calc.scenariosTitle")}
         </p>
         <p className="text-sm text-[color:var(--color-taupe-dark)]  mt-2 max-w-md mx-auto">
@@ -120,7 +120,7 @@ export function WhatIfScenarios({
                 className="shrink-0 mt-0.5 text-[color:var(--color-navy)]"
                 aria-hidden="true"
               />
-              <h4 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(0.875rem,1.2vw,1rem)] uppercase tracking-[0.04em] leading-snug">
+              <h4 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(0.875rem,1.2vw,1rem)] uppercase tracking-[0.04em] leading-snug">
                 {t("tools.calc.scenarioAcceleratedTitle")}
               </h4>
             </div>
@@ -130,7 +130,7 @@ export function WhatIfScenarios({
                 <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-1.5">
                   {t("tools.calc.scenarioSavingsLabel")}
                 </p>
-                <p className="font-[var(--font-display)] font-extrabold text-[color:var(--color-navy)] text-[clamp(1.5rem,2.5vw,1.875rem)] tracking-[-0.01em] tabular-nums">
+                <p className="font-[family-name:var(--font-display)] font-extrabold text-[color:var(--color-navy)] text-[clamp(1.5rem,2.5vw,1.875rem)] tracking-[-0.01em] tabular-nums">
                   {formatLocaleCurrency(Math.round(scenarioAccelerated.interestSavings), lang)}
                 </p>
               </div>
@@ -138,7 +138,7 @@ export function WhatIfScenarios({
                 <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-1.5">
                   {t("tools.calc.scenarioMonthsSavedLabel")}
                 </p>
-                <p className="font-[var(--font-display)] font-extrabold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] tracking-[-0.01em] tabular-nums">
+                <p className="font-[family-name:var(--font-display)] font-extrabold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] tracking-[-0.01em] tabular-nums">
                   {scenarioAccelerated.monthsSaved}
                 </p>
               </div>
@@ -161,7 +161,7 @@ export function WhatIfScenarios({
                 className="shrink-0 mt-0.5 text-[color:var(--color-navy)]"
                 aria-hidden="true"
               />
-              <h4 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(0.875rem,1.2vw,1rem)] uppercase tracking-[0.04em] leading-snug">
+              <h4 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(0.875rem,1.2vw,1rem)] uppercase tracking-[0.04em] leading-snug">
                 {t("tools.calc.scenarioShorterTitle")}
               </h4>
             </div>
@@ -171,7 +171,7 @@ export function WhatIfScenarios({
                 <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-1.5">
                   {t("tools.calc.scenarioNewPaymentLabel")}
                 </p>
-                <p className="font-[var(--font-display)] font-extrabold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] tracking-[-0.01em] tabular-nums">
+                <p className="font-[family-name:var(--font-display)] font-extrabold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] tracking-[-0.01em] tabular-nums">
                   {formatLocaleCurrency(Math.round(scenarioShorter.newMonthly), lang)}
                 </p>
               </div>
@@ -179,7 +179,7 @@ export function WhatIfScenarios({
                 <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-1.5">
                   {t("tools.calc.scenarioSavingsLabel")}
                 </p>
-                <p className="font-[var(--font-display)] font-extrabold text-[color:var(--color-navy)] text-[clamp(1.5rem,2.5vw,1.875rem)] tracking-[-0.01em] tabular-nums">
+                <p className="font-[family-name:var(--font-display)] font-extrabold text-[color:var(--color-navy)] text-[clamp(1.5rem,2.5vw,1.875rem)] tracking-[-0.01em] tabular-nums">
                   {formatLocaleCurrency(Math.round(scenarioShorter.interestSavings), lang)}
                 </p>
               </div>

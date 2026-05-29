@@ -23,7 +23,7 @@ export function TeamGrid() {
       {/* Filigrane "&" decoratif arriere-plan editorial */}
       <span
         aria-hidden="true"
-        className="absolute top-12 right-0 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/8 text-[28rem] leading-none pointer-events-none select-none"
+        className="absolute top-12 right-0 font-[family-name:var(--font-editorial)]  text-[color:var(--color-taupe)]/8 text-[28rem] leading-none pointer-events-none select-none"
       >
         &
       </span>
@@ -69,7 +69,7 @@ export function TeamGrid() {
                 </div>
 
                 {/* Name display — taille adaptée 4 cards (text-xl/2xl vs 2xl/3xl avant) */}
-                <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.02em] leading-tight text-balance">
+                <h3 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.02em] leading-tight text-balance">
                   {m.name}
                 </h3>
 

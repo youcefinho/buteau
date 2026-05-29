@@ -201,7 +201,7 @@ export function HypothequeCalculator() {
           <div className="lg:col-span-2 surface-navy p-8 md:p-12 flex flex-col justify-between gap-10 relative overflow-hidden">
             {/* Filigrane "$" éditorial en arrière-plan */}
             <span
-              className="absolute -top-8 -right-6 font-[var(--font-editorial)]  text-[color:var(--color-bronze)]/10 text-[16rem] leading-none pointer-events-none select-none"
+              className="absolute -top-8 -right-6 font-[family-name:var(--font-editorial)]  text-[color:var(--color-bronze)]/10 text-[16rem] leading-none pointer-events-none select-none"
               aria-hidden="true"
             >
               $
@@ -212,7 +212,7 @@ export function HypothequeCalculator() {
                 {t("tools.calc.resultLabel")}
               </p>
               <p
-                className="font-[var(--font-display)] font-extrabold text-[color:var(--color-cream)] text-[clamp(3rem,6vw,4.5rem)] tracking-[-0.025em] leading-[0.9]"
+                className="font-[family-name:var(--font-display)] font-extrabold text-[color:var(--color-cream)] text-[clamp(3rem,6vw,4.5rem)] tracking-[-0.025em] leading-[0.9]"
                 aria-live="polite"
               >
                 {monthlyPayment !== null
@@ -236,7 +236,7 @@ export function HypothequeCalculator() {
               <button
                 type="button"
                 onClick={handleShare}
-                className="group w-full inline-flex items-center justify-center gap-2 py-2 font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-cream)]/70 hover:text-[color:var(--color-bronze-soft)] transition-colors"
+                className="group w-full inline-flex items-center justify-center gap-2 py-2 font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-cream)]/70 hover:text-[color:var(--color-bronze-soft)] transition-colors"
               >
                 {shareCopied ? (
                   <Check size={14} className="text-[color:var(--color-bronze-soft)]" aria-hidden="true" />
@@ -283,7 +283,7 @@ export function HypothequeCalculator() {
                 <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-2">
                   {lang === "fr" ? "Intérêts totaux" : "Total interest"}
                 </p>
-                <p className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-3xl tracking-[-0.01em] tabular-nums">
+                <p className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-3xl tracking-[-0.01em] tabular-nums">
                   {formatLocaleCurrency(Math.round(result.totalInterest), lang)}
                 </p>
               </div>
@@ -294,7 +294,7 @@ export function HypothequeCalculator() {
                 <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-2">
                   {lang === "fr" ? "Coût total du prêt" : "Total cost of loan"}
                 </p>
-                <p className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-3xl tracking-[-0.01em] tabular-nums">
+                <p className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-3xl tracking-[-0.01em] tabular-nums">
                   {formatLocaleCurrency(Math.round(result.totalPaid), lang)}
                 </p>
                 <p className="text-xs  text-[color:var(--color-taupe-dark)] mt-1">
@@ -369,7 +369,7 @@ function CalcSliderField({
         </label>
         <output
           htmlFor={id}
-          className="font-[var(--font-display)] font-bold tracking-[-0.01em] text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] tabular-nums"
+          className="font-[family-name:var(--font-display)] font-bold tracking-[-0.01em] text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] tabular-nums"
         >
           {format(clamped)}
         </output>

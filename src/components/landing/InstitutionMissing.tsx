@@ -14,7 +14,7 @@ export function InstitutionMissing() {
     <section id="autre-institution" className="py-20 surface-cream">
       <Container size="md">
         <div className="bg-[color:var(--color-surface)] border-2 border-[color:var(--color-taupe)] p-[clamp(2.5rem,4vw,3rem)] text-center space-y-6">
-          <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.04em] leading-snug text-balance">
+          <h3 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.25rem,1.8vw,1.5rem)] uppercase tracking-[0.04em] leading-snug text-balance">
             {t("institutions.missing.title")}
           </h3>
           <div className="w-12 h-0.5 bg-[color:var(--color-bronze)] mx-auto" />

@@ -92,7 +92,7 @@ function JournalPage() {
               <div className="md:w-[120px] md:shrink-0 bg-[color:var(--color-cream-warm)] border-r border-[color:var(--color-taupe)]/30 flex items-center justify-center py-6 md:py-0">
                 <span
                   aria-hidden="true"
-                  className="font-[var(--font-editorial)]  text-[color:var(--color-bronze)] text-[clamp(3rem,6vw,4.5rem)] leading-none"
+                  className="font-[family-name:var(--font-editorial)]  text-[color:var(--color-bronze)] text-[clamp(3rem,6vw,4.5rem)] leading-none"
                 >
                   {String(idx + 1).padStart(2, "0")}
                 </span>
@@ -114,7 +114,7 @@ function JournalPage() {
                 </div>
 
                 {/* Title display — clickable */}
-                <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] uppercase tracking-[0.02em] leading-[1.15] mb-4 text-balance group-hover:text-[color:var(--color-navy)] transition-colors">
+                <h2 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] uppercase tracking-[0.02em] leading-[1.15] mb-4 text-balance group-hover:text-[color:var(--color-navy)] transition-colors">
                   <Link
                     to="/journal/$slug"
                     params={{ slug: a.slug }}
@@ -141,7 +141,7 @@ function JournalPage() {
                   <Link
                     to="/journal/$slug"
                     params={{ slug: a.slug }}
-                    className="group/btn inline-flex items-center gap-2 font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-navy)] hover:text-[color:var(--color-bronze)] transition-colors"
+                    className="group/btn inline-flex items-center gap-2 font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-navy)] hover:text-[color:var(--color-bronze)] transition-colors"
                   >
                     <span className="relative">
                       {t("journal.readMoreLabel")}
@@ -157,7 +157,7 @@ function JournalPage() {
                   <Link
                     to="/"
                     hash="contact"
-                    className="hidden md:inline-flex items-center gap-2 font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze)] hover:text-[color:var(--color-navy)] transition-colors"
+                    className="hidden md:inline-flex items-center gap-2 font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze)] hover:text-[color:var(--color-navy)] transition-colors"
                   >
                     <span className="relative">
                       {isFr ? "En parler avec Andrew" : "Discuss with Andrew"}

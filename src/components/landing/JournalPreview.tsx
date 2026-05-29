@@ -36,7 +36,7 @@ export function JournalPreview() {
       {/* Filigrane § XL background — signature editoriale */}
       <span
         aria-hidden="true"
-        className="absolute -top-12 right-0 font-[var(--font-editorial)]  text-[color:var(--color-bronze)]/8 text-[22rem] leading-none pointer-events-none select-none"
+        className="absolute -top-12 right-0 font-[family-name:var(--font-editorial)]  text-[color:var(--color-bronze)]/8 text-[22rem] leading-none pointer-events-none select-none"
       >
         §
       </span>
@@ -49,7 +49,7 @@ export function JournalPreview() {
               <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
               Articles
             </p>
-            <h2 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(1.875rem,3vw,2.25rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
+            <h2 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(1.875rem,3vw,2.25rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
               {isFr ? "Articles et analyses du marché." : "Articles and market analyses."}
             </h2>
             <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-6" />
@@ -62,7 +62,7 @@ export function JournalPreview() {
             <HeartbeatCta>
               <Link
                 to="/journal"
-                className="group inline-flex items-center gap-2 font-[var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze-soft)] hover:text-[color:var(--color-cream)] transition-colors"
+                className="group inline-flex items-center gap-2 font-[family-name:var(--font-display)] text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-bronze-soft)] hover:text-[color:var(--color-cream)] transition-colors"
               >
                 <span className="relative">
                   {isFr ? "Voir tous les articles" : "Browse all articles"}
@@ -93,7 +93,7 @@ export function JournalPreview() {
                 <div className="absolute top-0 left-0 bottom-0 w-[100px] bg-[color:var(--color-cream-warm)] border-r border-[color:var(--color-taupe)]/30 hidden md:flex items-center justify-center pointer-events-none">
                   <span
                     aria-hidden="true"
-                    className="font-[var(--font-editorial)]  text-[color:var(--color-bronze)] text-7xl leading-none"
+                    className="font-[family-name:var(--font-editorial)]  text-[color:var(--color-bronze)] text-7xl leading-none"
                   >
                     01
                   </span>
@@ -115,7 +115,7 @@ export function JournalPreview() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] uppercase tracking-[0.02em] leading-[1.15] mb-4 text-balance group-hover:text-[color:var(--color-navy)] transition-colors">
+                  <h3 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] uppercase tracking-[0.02em] leading-[1.15] mb-4 text-balance group-hover:text-[color:var(--color-navy)] transition-colors">
                     <Link
                       to="/journal/$slug"
                       params={{ slug: featured.slug }}
@@ -142,7 +142,7 @@ export function JournalPreview() {
                     <Link
                       to="/journal/$slug"
                       params={{ slug: featured.slug }}
-                      className="group/btn inline-flex items-center gap-2 font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-navy)] hover:text-[color:var(--color-bronze)] transition-colors"
+                      className="group/btn inline-flex items-center gap-2 font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-[color:var(--color-navy)] hover:text-[color:var(--color-bronze)] transition-colors"
                     >
                       <span className="relative">
                         {t("journal.readMoreLabel")}

@@ -44,7 +44,7 @@ export function CookieBanner() {
             <div className="space-y-2">
               <h2
                 id="cookie-banner-title"
-                className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-sm uppercase tracking-[0.06em]"
+                className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-cream)] text-sm uppercase tracking-[0.06em]"
               >
                 {t("cookies.title")}
               </h2>
@@ -69,14 +69,14 @@ export function CookieBanner() {
             <button
               type="button"
               onClick={refuseAll}
-              className="px-6 py-3 font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] border border-[color:var(--color-cream)]/40 text-[color:var(--color-cream)] hover:bg-[color:var(--color-cream)]/10 transition-colors"
+              className="px-6 py-3 font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] border border-[color:var(--color-cream)]/40 text-[color:var(--color-cream)] hover:bg-[color:var(--color-cream)]/10 transition-colors"
             >
               {t("cookies.refuse")}
             </button>
             <button
               type="button"
               onClick={acceptAll}
-              className="px-6 py-3 font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] bg-[color:var(--color-bronze)] text-[color:var(--color-cream)] hover:bg-[color:var(--color-navy)] transition-colors"
+              className="px-6 py-3 font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] bg-[color:var(--color-bronze)] text-[color:var(--color-cream)] hover:bg-[color:var(--color-navy)] transition-colors"
             >
               {t("cookies.accept")}
             </button>

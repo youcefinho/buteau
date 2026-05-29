@@ -22,7 +22,7 @@ export function ContactSection() {
       {/* Filigrane décoratif éditorial */}
       <span
         aria-hidden="true"
-        className="absolute -top-10 -right-10 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/10 text-[24rem] leading-none pointer-events-none select-none"
+        className="absolute -top-10 -right-10 font-[family-name:var(--font-editorial)]  text-[color:var(--color-taupe)]/10 text-[24rem] leading-none pointer-events-none select-none"
       >
         &
       </span>
@@ -48,7 +48,7 @@ export function ContactSection() {
               className="absolute top-0 left-0 w-px h-12 bg-[color:var(--color-bronze)]"
             />
 
-            <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[var(--tracking-eyebrow)] mb-6 text-balance">
+            <h3 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[var(--tracking-eyebrow)] mb-6 text-balance">
               {t("home.contact.formLabel")}
             </h3>
             <ContactForm source="home_contact_form" />
@@ -119,7 +119,7 @@ function ContactLine({
       <div className="flex-1 min-w-0">
         <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-1">{label}</p>
         <p
-          className={`font-[var(--font-display)] text-[color:var(--color-navy-deep)] text-[clamp(1rem,1.4vw,1.125rem)] font-semibold ${
+          className={`font-[family-name:var(--font-display)] text-[color:var(--color-navy-deep)] text-[clamp(1rem,1.4vw,1.125rem)] font-semibold ${
             breakAll ? "break-all" : ""
           }`}
         >

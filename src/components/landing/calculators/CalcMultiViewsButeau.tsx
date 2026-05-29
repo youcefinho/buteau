@@ -297,7 +297,7 @@ function Tile({
     <div className="border border-[color:var(--color-taupe)]/40 p-4 bg-[color:var(--color-cream)]/60 backdrop-blur-sm">
       <p className="eyebrow text-[color:var(--color-taupe-dark)] text-[9px] mb-1.5">{label}</p>
       <p
-        className={`font-[var(--font-display)] font-bold tabular-nums leading-none ${
+        className={`font-[family-name:var(--font-display)] font-bold tabular-nums leading-none ${
           emphasis ? "text-[color:var(--color-navy)] text-[clamp(1.25rem,1.8vw,1.5rem)]" : "text-[color:var(--color-navy-deep)] text-[clamp(1.125rem,1.6vw,1.25rem)]"
         }`}
       >
@@ -550,7 +550,7 @@ function MdfComparisonGrid({
                 : "border-[color:var(--color-taupe)]/40"
             }`}
           >
-            <p className="font-[var(--font-display)] font-bold text-[color:var(--color-navy)] text-3xl mb-1">
+            <p className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy)] text-3xl mb-1">
               {s.pct}%
             </p>
             <p className="text-[10px] uppercase tracking-wider text-[color:var(--color-taupe-dark)] mb-3">
@@ -1007,7 +1007,7 @@ function TabComparaison({ mode }: { mode: CalcMode }) {
             <p className="eyebrow text-[color:var(--color-navy)] mb-3">
               {isFr ? "Fixe" : "Fixed"}
             </p>
-            <p className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-2xl tabular-nums mb-1">
+            <p className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-2xl tabular-nums mb-1">
               {fmtCAD(pmtFixe)}
             </p>
             <p className="text-[10px] uppercase tracking-wider text-[color:var(--color-taupe-dark)] mb-4">
@@ -1049,7 +1049,7 @@ function TabComparaison({ mode }: { mode: CalcMode }) {
             <p className="eyebrow text-[color:var(--color-navy)] mb-3">
               {isFr ? "Variable" : "Variable"}
             </p>
-            <p className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-2xl tabular-nums mb-1">
+            <p className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-2xl tabular-nums mb-1">
               {fmtCAD(pmtVar1)}
             </p>
             <p className="text-[10px] uppercase tracking-wider text-[color:var(--color-taupe-dark)] mb-4">
@@ -1085,7 +1085,7 @@ function TabComparaison({ mode }: { mode: CalcMode }) {
           <p className="eyebrow text-[color:var(--color-navy)] mb-2">
             {isFr ? "Écart sur 5 ans" : "5-year delta"}
           </p>
-          <p className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-2xl tabular-nums">
+          <p className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-2xl tabular-nums">
             {variableGagnant ? "+" : ""}
             {fmtCAD(Math.abs(ecart))}
           </p>
@@ -1357,7 +1357,7 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
       {/* Filigrane $ XL */}
       <span
         aria-hidden="true"
-        className="absolute -top-12 right-0 font-[var(--font-editorial)]  text-[color:var(--color-bronze)]/8 text-[22rem] leading-none pointer-events-none select-none"
+        className="absolute -top-12 right-0 font-[family-name:var(--font-editorial)]  text-[color:var(--color-bronze)]/8 text-[22rem] leading-none pointer-events-none select-none"
       >
         $
       </span>
@@ -1372,7 +1372,7 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
               : isFr ? "Calculateur" : "Calculator"}
           </p>
           <h2
-            className={`font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] uppercase tracking-[0.04em] leading-[1.05] mb-5 text-balance ${
+            className={`font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] uppercase tracking-[0.04em] leading-[1.05] mb-5 text-balance ${
               isPreview
                 ? "text-[clamp(1.5rem,3vw,2.25rem)]"
                 : "text-[clamp(1.875rem,4vw,3rem)]"
@@ -1423,7 +1423,7 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
                     />
                     <div className="flex flex-col items-start text-left">
                       <span
-                        className={`font-[var(--font-display)] font-semibold uppercase tracking-[0.05em] text-[clamp(0.75rem,1.1vw,0.875rem)] whitespace-nowrap transition-colors ${
+                        className={`font-[family-name:var(--font-display)] font-semibold uppercase tracking-[0.05em] text-[clamp(0.75rem,1.1vw,0.875rem)] whitespace-nowrap transition-colors ${
                           active
                             ? "text-[color:var(--color-navy-deep)]"
                             : "text-[color:var(--color-taupe-dark)] group-hover/tab:text-[color:var(--color-navy-deep)]"

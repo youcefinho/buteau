@@ -20,7 +20,7 @@ export function LendersGrid() {
       {/* Filigrane decoratif chiffre 9 (= nombre d'institutions) */}
       <span
         aria-hidden="true"
-        className="absolute -top-12 left-1/2 -translate-x-1/2 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/10 text-[24rem] leading-none pointer-events-none select-none"
+        className="absolute -top-12 left-1/2 -translate-x-1/2 font-[family-name:var(--font-editorial)]  text-[color:var(--color-taupe)]/10 text-[24rem] leading-none pointer-events-none select-none"
       >
         9
       </span>
@@ -40,7 +40,7 @@ export function LendersGrid() {
               {/* Numéro filigrane (01-09) */}
               <span
                 aria-hidden="true"
-                className="absolute top-4 right-5 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/30 text-4xl leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-[color:var(--color-bronze)]/40"
+                className="absolute top-4 right-5 font-[family-name:var(--font-editorial)]  text-[color:var(--color-taupe)]/30 text-4xl leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-[color:var(--color-bronze)]/40"
               >
                 {String(idx + 1).padStart(2, "0")}
               </span>
@@ -61,7 +61,7 @@ export function LendersGrid() {
               <div className="w-8 h-px bg-[color:var(--color-bronze)] mb-4 transition-[width] duration-500 group-hover:w-14" />
 
               {/* Nom */}
-              <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em] mb-3 leading-snug text-balance">
+              <h3 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em] mb-3 leading-snug text-balance">
                 {l.name}
               </h3>
 

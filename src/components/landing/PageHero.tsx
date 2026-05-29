@@ -55,7 +55,7 @@ export function PageHero({
       {ornament && (
         <span
           aria-hidden="true"
-          className="absolute top-24 left-1/2 -translate-x-1/2 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/15 text-[12rem] md:text-[16rem] leading-none pointer-events-none select-none animate-[buteauFadeUp_900ms_ease-out_forwards]"
+          className="absolute top-24 left-1/2 -translate-x-1/2 font-[family-name:var(--font-editorial)]  text-[color:var(--color-taupe)]/15 text-[12rem] md:text-[16rem] leading-none pointer-events-none select-none animate-[buteauFadeUp_900ms_ease-out_forwards]"
         >
           {ornament}
         </span>
@@ -71,7 +71,7 @@ export function PageHero({
             </p>
           )}
 
-          <h1 className="font-[var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(2rem,4vw,3rem)] uppercase tracking-[0.04em] leading-[1.05] text-balance animate-[buteauFadeUp_700ms_ease-out_200ms_both]">
+          <h1 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(2rem,4vw,3rem)] uppercase tracking-[0.04em] leading-[1.05] text-balance animate-[buteauFadeUp_700ms_ease-out_200ms_both]">
             {title}
           </h1>
 
