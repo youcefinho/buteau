@@ -92,7 +92,7 @@ export function Hero() {
               Chaque lettre B/U/T/E/A/U révèle un mot signature au hover (Buteau / Unique /
               Transparence / Expert / Accessible / Utile). */}
           <div className="relative inline-block group/brand">
-            <p className="font-[family-name:var(--font-display)] text-[color:var(--color-cream)] text-[clamp(3.5rem,11vw,9rem)] font-extrabold tracking-[0.18em] leading-[0.95] pl-[0.18em] flex">
+            <p className="font-[family-name:var(--font-display)] text-[color:var(--color-cream)] text-[clamp(3.5rem,11vw,9rem)] font-extrabold tracking-[0.055em] leading-[0.95] pl-[0.055em] flex">
               {config.brandName.split("").map((letter, idx) => (
                 <span
                   key={idx}
@@ -122,7 +122,7 @@ export function Hero() {
               (≈ ITC Franklin Gothic 138). Taille en vw proportionnelle à BUTEAU
               (~0.26× la taille du logo) pour s'aligner en LARGEUR sous lui, responsive. */}
           <h1
-            className="font-[family-name:var(--font-sans)] uppercase text-[color:var(--color-cream)]/90 text-[clamp(0.9rem,2.9vw,2.3rem)] font-medium tracking-[0.2em] leading-[1.2] mt-[clamp(0.85rem,1.8vw,1.4rem)] whitespace-nowrap animate-[buteauFadeUp_800ms_ease-out_700ms_both]"
+            className="font-[family-name:var(--font-sans)] uppercase text-[color:var(--color-cream)]/90 text-[clamp(0.9rem,2.9vw,2.3rem)] font-medium tracking-[0.138em] leading-[1.2] mt-[clamp(0.85rem,1.8vw,1.4rem)] whitespace-nowrap animate-[buteauFadeUp_800ms_ease-out_700ms_both]"
           >
             {t("home.hero.title")}
           </h1>
