@@ -9,11 +9,11 @@
 @theme inline {
   /* --- Couleurs principales (oklch) --- */
   /* === Palette CHARTE officielle (Guide identité visuelle, 2026-05-29) === */
-  --color-navy: oklch(0.260 0.063 257);          /* #0E2442 — bleu charte (exact) */
+  --color-navy: #0E2442;                          /* bleu charte (exact) */
   --color-navy-deep: oklch(0.220 0.060 257);     /* navy plus profond pour contrastes */
   --color-navy-soft: oklch(0.310 0.060 257);     /* navy clarifié pour cards */
 
-  --color-taupe: oklch(0.768 0.016 68);          /* #BBB2A9 — beige charte (exact) */
+  --color-taupe: #BBB2A9;                         /* beige charte (exact) */
   --color-taupe-light: oklch(0.860 0.010 70);    /* beige clarifié dividers */
   --color-taupe-dark: oklch(0.620 0.018 68);     /* beige assombri texte secondaire */
 
@@ -29,8 +29,8 @@
   /* cream = texte clair sur fond foncé + boutons + surfaces claires : doit rester
      LUMINEUX (contraste). On prend le #F5F4F2 charte (clair) ; #EEE9E3 (plus chaud
      mais plus sombre) est réservé aux accents/cartes via --color-cream-warm. */
-  --color-cream: oklch(0.967 0.003 85);          /* #F5F4F2 — blanc cassé clair charte */
-  --color-cream-warm: oklch(0.936 0.010 73);     /* #EEE9E3 — blanc cassé plus chaud charte */
+  --color-cream: #F5F4F2;                         /* blanc cassé clair charte (exact) */
+  --color-cream-warm: #EEE9E3;                    /* blanc cassé plus chaud charte (exact) */
 
   /* --- Tokens spécialisés (audit P1-G) --- */
   --color-rating-amber: #FFC107;                 /* Google reviews stars */
