@@ -11,3 +11,5 @@ dist
 src/routeTree.gen.ts
 .audit/
 .screenshots/
+
+.playwright-mcp/
