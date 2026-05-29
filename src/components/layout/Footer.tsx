@@ -9,14 +9,11 @@ import { Container } from "./Container";
 import { PoweredByIntralys } from "@/components/shared/PoweredByIntralys";
 
 /**
- * Footer "Back Cover" — refonte radicale (vs 4-col layout générique).
+ * Footer — version SIMPLIFIÉE (refonte charte 2026-05-29, demande client « simplifier »).
  *
- * Pourquoi NOVEL : pattern 4-col footer = AI generic. Ici on a une vraie 4ème
- * de couverture de magazine luxury :
- * - Statement éditorial Cormorant  en énorme (la "tagline du dos")
- * - Monogramme BUTEAU XL en filigrane
- * - Colophon (typo credits) — détail magazine print
- * - Bandeau navigation + contact + légal en pied minimaliste
+ * Retiré (flourish magazine) : bloc « Quatrième de couverture » + statement, crédits
+ * colophon (« Composé/Imprimé »), ligne ISSN, filigrane BUTEAU géant.
+ * Gardé : logo BUTEAU complet, contact, navigation, légal, conformité AMF, signature.
  */
 export function Footer() {
   const { t, lang } = useLanguage();
@@ -27,16 +24,8 @@ export function Footer() {
 
   return (
     <footer className="relative surface-navy overflow-hidden grain-overlay">
-      {/* Monogramme BUTEAU filigrane gigantesque arrière-plan */}
-      <span
-        aria-hidden="true"
-        className="absolute -bottom-24 -right-12 font-[family-name:var(--font-display)] font-extrabold text-[color:var(--color-cream)]/[0.04] text-[20rem] md:text-[28rem] lg:text-[36rem] leading-none tracking-[0.18em] pointer-events-none select-none whitespace-nowrap"
-      >
-        {config.brandName}
-      </span>
-
       <Container size="xl" className="relative pt-[clamp(2.5rem,5vw,4rem)] pb-6">
-        {/* === Logo SVG officiel (guide identite visuelle 2026-05-19) === */}
+        {/* Logo officiel BUTEAU + tagline (« Buteau au complet ») */}
         <img
           src="/logo-buteau-white.svg"
           alt="Buteau — L'hypothèque autrement"
@@ -44,33 +33,14 @@ export function Footer() {
           height={368}
           loading="lazy"
           decoding="async"
-          className="h-[clamp(2.5rem,4vw,3.5rem)] w-auto mb-[clamp(1.5rem,2.5vw,2rem)] opacity-95"
+          className="h-[clamp(2.5rem,4vw,3.5rem)] w-auto mb-[clamp(2rem,3.5vw,3rem)] opacity-95"
         />
 
-        {/* === Couverture statement — Cormorant  XL === */}
-        <div className="max-w-4xl mb-[clamp(2rem,3vw,2.5rem)]">
-          <p className="eyebrow text-[color:var(--color-taupe)] mb-4 inline-flex items-center gap-3">
-            <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
-            {lang === "fr" ? "Quatrième de couverture" : "Back cover"}
-          </p>
-          <p className="font-[family-name:var(--font-editorial)] text-[color:var(--color-cream)] text-[clamp(1.5rem,3.5vw,2.75rem)] leading-[1.1] tracking-tight">
-            « {t("footer.coverStatement")} »
-          </p>
-          <div className="flex items-center gap-4 mt-6">
-            <span className="block w-12 h-px bg-[color:var(--color-bronze)]" />
-            <p className="eyebrow text-[color:var(--color-taupe)]">
-              Andrew Buteau
-            </p>
-          </div>
-        </div>
-
-        {/* === Grid asymétrique : Contact / Navigation / Colophon === */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-[clamp(2rem,3vw,3rem)] pb-6 border-b border-[color:var(--color-taupe)]/30">
-          {/* Contact — col 5 */}
+        {/* Grid : Contact / Navigation / Légal */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-[clamp(2rem,3vw,3rem)] pb-8 border-b border-[color:var(--color-taupe)]/30">
+          {/* Contact */}
           <div className="md:col-span-5 space-y-4">
-            <p className="eyebrow text-[color:var(--color-taupe)]">
-              {t("footer.contact")}
-            </p>
+            <p className="eyebrow text-[color:var(--color-taupe)]">{t("footer.contact")}</p>
             <ul className="space-y-2.5 text-sm">
               <li className="flex items-start gap-3">
                 <Phone size={14} className="mt-1 shrink-0 text-[color:var(--color-bronze)]" aria-hidden="true" />
@@ -83,10 +53,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Mail size={14} className="mt-1 shrink-0 text-[color:var(--color-bronze)]" aria-hidden="true" />
-                <a
-                  href={`mailto:${config.email}`}
-                  className="text-glow-hover break-all"
-                >
+                <a href={`mailto:${config.email}`} className="text-glow-hover break-all">
                   {config.email}
                 </a>
               </li>
@@ -100,9 +67,7 @@ export function Footer() {
               </li>
             </ul>
 
-            {/* Reseaux sociaux — deplaces de la Navbar vers le Footer 2026-05-19.
-                Style identique a la Navbar (border + hover translate + scale active).
-                Adapte au fond navy : foreground cream + hover bronze. */}
+            {/* Réseaux sociaux */}
             <div className="pt-4 space-y-3">
               <p className="eyebrow text-[color:var(--color-taupe)]">
                 {lang === "fr" ? "Suivez-moi" : "Follow"}
@@ -145,11 +110,9 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Navigation — col 3 */}
-          <div className="md:col-span-3 space-y-3">
-            <p className="eyebrow text-[color:var(--color-taupe)]">
-              {t("footer.sitemap")}
-            </p>
+          {/* Navigation */}
+          <div className="md:col-span-4 space-y-3">
+            <p className="eyebrow text-[color:var(--color-taupe)]">{t("footer.sitemap")}</p>
             <ul className="space-y-2 text-sm">
               <li><Link to="/" className="text-glow-hover">{t("nav.home")}</Link></li>
               <li><Link to="/equipe" className="text-glow-hover">{t("nav.team")}</Link></li>
@@ -168,40 +131,23 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Colophon — col 4 — pattern magazine print (typo credits).
-              Compression verticale 2026-05-20 (user) : space-y-2.5 -> space-y-2,
-              pt-3 mt-3 -> pt-2 mt-2. Doublon "Lexique" retire (deja dans Navigation col 3). */}
-          <div className="md:col-span-4 space-y-2">
-            <p className="eyebrow text-[color:var(--color-taupe)]">
-              {t("footer.colophon")}
-            </p>
-            <p className="text-sm leading-[1.55] text-[color:var(--color-cream)]/75 text-pretty">
-              {t("footer.colophonComposed")}
-            </p>
-            <p className="text-sm leading-[1.55] text-[color:var(--color-cream)]/75 text-pretty">
-              {t("footer.colophonPrinted")}
-            </p>
-
-            {/* Legal/colophon links (modal pour colophon, pages pour legal) */}
-            <div className="pt-2 mt-2 border-t border-[color:var(--color-taupe)]/30 flex flex-wrap gap-x-5 gap-y-2 text-xs">
-              <button type="button" onClick={openColophon} className="text-glow-hover text-left">
-                {lang === "fr" ? "Colophon" : "Colophon"}
-              </button>
-              <Link to="/mentions-legales" className="text-glow-hover">
-                {t("footer.legal")}
-              </Link>
-              <Link to="/confidentialite" className="text-glow-hover">
-                {t("footer.privacy")}
-              </Link>
-            </div>
+          {/* Légal */}
+          <div className="md:col-span-3 space-y-3">
+            <p className="eyebrow text-[color:var(--color-taupe)]">{lang === "fr" ? "Légal" : "Legal"}</p>
+            <ul className="space-y-2 text-sm">
+              <li><Link to="/mentions-legales" className="text-glow-hover">{t("footer.legal")}</Link></li>
+              <li><Link to="/confidentialite" className="text-glow-hover">{t("footer.privacy")}</Link></li>
+              <li>
+                <button type="button" onClick={openColophon} className="text-glow-hover text-left">
+                  Colophon
+                </button>
+              </li>
+            </ul>
           </div>
         </div>
 
-        {/* === Disclaimer AMF + bottom bar === */}
-        <div className="pt-5 space-y-3">
-          {/* Ligne compliance explicite — AMF cert + NEQ (visibles en footer
-              au-dessus du disclaimer, lecture rapide pour visiteurs verifiant
-              la legitimite). User feedback 2026-05-20. */}
+        {/* === Conformité AMF + bas de page === */}
+        <div className="pt-6 space-y-3">
           <p className="text-[11px] tracking-[0.04em] text-[color:var(--color-cream)]/80">
             {lang === "fr" ? "Inscrit AMF — N° " : "AMF registered — No. "}
             <span className="font-semibold text-[color:var(--color-cream)]">{config.amf.certificateNumberAndrew}</span>
@@ -216,19 +162,11 @@ export function Footer() {
             {config.amf.disclaimer[lang]}
           </p>
 
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3">
-            <div className="flex items-center gap-3">
-              <span className="block w-8 h-px bg-[color:var(--color-bronze)]" />
-              <p className="eyebrow text-[color:var(--color-taupe)] text-[10px]">
-                {t("footer.issn")}
-              </p>
-            </div>
-            <p className="text-xs text-[color:var(--color-cream)]/75">
-              © {year} {config.name}. {t("footer.rights")}
-            </p>
-          </div>
+          <p className="text-xs text-[color:var(--color-cream)]/75 pt-1">
+            © {year} {config.name}. {t("footer.rights")}
+          </p>
 
-          {/* Signature Intralys — hairline taupe + pill inline universel (cross-clients) */}
+          {/* Signature Intralys */}
           <div className="pt-5 mt-2 border-t border-[color:var(--color-taupe)]/20">
             <PoweredByIntralys variant="inline" />
           </div>
