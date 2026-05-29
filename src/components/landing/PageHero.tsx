@@ -65,9 +65,9 @@ export function PageHero({
         <div className="text-center max-w-3xl mx-auto">
           {eyebrow && (
             <p className="eyebrow text-[color:var(--color-bronze)] mb-6 inline-flex items-center gap-3 animate-[buteauFadeUp_700ms_ease-out_100ms_both]">
-              <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
+              <span className="inline-block w-6 h-px bg-[color:var(--color-orange)]" />
               {eyebrow}
-              <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
+              <span className="inline-block w-6 h-px bg-[color:var(--color-orange)]" />
             </p>
           )}
 

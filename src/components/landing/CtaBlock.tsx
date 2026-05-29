@@ -39,9 +39,9 @@ export function CtaBlock({ bgImageUrl = "/texture-navy-fixed.jpg" }: CtaBlockPro
         <div className="text-center space-y-8 max-w-2xl mx-auto">
           {/* Eyebrow ligne bronze encadrée */}
           <p className="eyebrow text-[color:var(--color-bronze)] inline-flex items-center gap-3">
-            <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
+            <span className="inline-block w-6 h-px bg-[color:var(--color-orange)]" />
             {t("cta.eyebrow")}
-            <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
+            <span className="inline-block w-6 h-px bg-[color:var(--color-orange)]" />
           </p>
 
           <h2 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(1.875rem,5vw,3.5rem)] uppercase tracking-[0.04em] leading-[1.05] text-balance">

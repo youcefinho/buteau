@@ -68,9 +68,9 @@ function MerciPage() {
         <div className="max-w-3xl mx-auto">
           {/* Eyebrow encadré */}
           <p className="eyebrow text-[color:var(--color-taupe-dark)] inline-flex items-center gap-3 mb-8 animate-[buteauFadeUp_700ms_ease-out_100ms_both]">
-            <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
+            <span className="inline-block w-6 h-px bg-[color:var(--color-orange)]" />
             {t("merci.eyebrow")}
-            <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
+            <span className="inline-block w-6 h-px bg-[color:var(--color-orange)]" />
           </p>
 
           {/* Title Fraunces signature XL */}
@@ -109,7 +109,7 @@ function MerciPage() {
           {/* Next steps — 3 liens éditoriaux */}
           <div className="space-y-6 animate-[buteauFadeUp_700ms_ease-out_1100ms_both]">
             <p className="eyebrow text-[color:var(--color-navy)] inline-flex items-center gap-3">
-              <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
+              <span className="inline-block w-6 h-px bg-[color:var(--color-orange)]" />
               {t("merci.nextStepsLabel")}
             </p>
 

@@ -1366,7 +1366,7 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
         {/* Header signature — adapte au mode */}
         <div className={`max-w-3xl ${isPreview ? "mb-8 md:mb-10" : "mb-12 md:mb-16"}`}>
           <p className="eyebrow text-[color:var(--color-navy)] inline-flex items-center gap-3 mb-5">
-            <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
+            <span className="inline-block w-6 h-px bg-[color:var(--color-orange)]" />
             {isPreview
               ? isFr ? "Calculateur · Aperçu" : "Calculator · Preview"
               : isFr ? "Calculateur" : "Calculator"}

@@ -86,7 +86,7 @@ export function Reviews() {
           {items.map((r, idx) => (
             <Tiltable key={`${r.author}-${r.date}`} maxDeg={4}>
             <article
-              className="group relative bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/45 transition-all duration-500 hover:border-[color:var(--color-bronze)]/70 halo-glow flex flex-col h-full"
+              className="group relative bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/45 transition-all duration-500 hover:border-[color:var(--color-orange)]/70 halo-glow flex flex-col h-full"
             >
               {/* Letter header — date + ville (pattern courrier) */}
               <header className="flex items-baseline justify-between gap-3 px-[clamp(1.5rem,2vw,1.75rem)] pt-6 pb-4 border-b border-dashed border-[color:var(--color-taupe)]/40">

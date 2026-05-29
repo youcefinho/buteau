@@ -62,7 +62,7 @@ export function Services() {
           {items.map((s, idx) => (
             <article
               key={s.title}
-              className={`group relative bg-[color:var(--color-surface)] border-l-[3px] border-[color:var(--color-taupe)] transition-all duration-500 hover:border-l-[5px] hover:border-[color:var(--color-bronze)] hover:shadow-[0_18px_44px_-22px_rgba(16,34,61,0.32)] hover:-translate-y-1 overflow-hidden md:max-w-[78%] ${offsetClasses[idx] ?? ""}`}
+              className={`group relative bg-[color:var(--color-surface)] border-l-[3px] border-[color:var(--color-taupe)] transition-all duration-500 hover:border-l-[5px] hover:border-[color:var(--color-orange)] hover:shadow-[0_18px_44px_-22px_rgba(16,34,61,0.32)] hover:-translate-y-1 overflow-hidden md:max-w-[78%] ${offsetClasses[idx] ?? ""}`}
             >
               {/* Numéro romain XL filigrane DEBORDANT à gauche (signature diagonal) */}
               <span

@@ -42,12 +42,12 @@ export function AdPage({ entryKey = "adPage" }: { entryKey?: string }) {
           {/* Eyebrow magazine */}
           <p className="eyebrow text-[color:var(--color-taupe)] mb-10 inline-flex items-center gap-3">
             <span
-              className="inline-block w-6 h-px bg-[color:var(--color-bronze)]"
+              className="inline-block w-6 h-px bg-[color:var(--color-orange)]"
               aria-hidden="true"
             />
             {lang === "fr" ? "Édition spéciale" : "Special edition"}
             <span
-              className="inline-block w-6 h-px bg-[color:var(--color-bronze)]"
+              className="inline-block w-6 h-px bg-[color:var(--color-orange)]"
               aria-hidden="true"
             />
           </p>

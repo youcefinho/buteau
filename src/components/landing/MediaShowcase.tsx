@@ -92,9 +92,9 @@ export function MediaShowcase() {
         {/* Header magazine — eyebrow encadré tirets longs + h2 + filet signature */}
         <div className="text-center mb-[clamp(4rem,6vw,6rem)] max-w-3xl mx-auto">
           <p className="eyebrow text-[color:var(--color-taupe-dark)] inline-flex items-center gap-3 mb-5">
-            <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
+            <span className="inline-block w-6 h-px bg-[color:var(--color-orange)]" />
             {t("media.eyebrow")}
-            <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
+            <span className="inline-block w-6 h-px bg-[color:var(--color-orange)]" />
           </p>
           <h2 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,4vw,3rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
             {t("media.title")}

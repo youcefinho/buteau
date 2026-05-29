@@ -220,7 +220,7 @@ export function HypothequeCalculator() {
                   : "—"}
               </p>
               <div className="flex items-center gap-3 mt-5">
-                <span className="w-6 h-px bg-[color:var(--color-bronze)]" aria-hidden="true" />
+                <span className="w-6 h-px bg-[color:var(--color-orange)]" aria-hidden="true" />
                 <p className=" text-[color:var(--color-cream)]/70 text-sm">
                   {lang === "fr" ? "par mois" : "per month"}
                 </p>

@@ -41,7 +41,7 @@ export function GuidesGrid() {
           {items.map((g, idx) => (
             <article
               key={idx}
-              className="group relative bg-[color:var(--color-cream)]/8 backdrop-blur-sm border border-[color:var(--color-cream)]/20 p-[clamp(1.75rem,3vw,2.5rem)] transition-all duration-500 hover:border-[color:var(--color-bronze)]/70 hover:bg-[color:var(--color-cream)]/15 hover:-translate-y-1 overflow-hidden"
+              className="group relative bg-[color:var(--color-cream)]/8 backdrop-blur-sm border border-[color:var(--color-cream)]/20 p-[clamp(1.75rem,3vw,2.5rem)] transition-all duration-500 hover:border-[color:var(--color-orange)]/70 hover:bg-[color:var(--color-cream)]/15 hover:-translate-y-1 overflow-hidden"
             >
               {/* Numéro Cormorant filigrane top-right */}
               <span

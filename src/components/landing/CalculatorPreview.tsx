@@ -85,7 +85,7 @@ export function CalculatorPreview() {
           {/* Header column — 5/12 */}
           <div className="lg:col-span-5 lg:sticky lg:top-32">
             <p className="eyebrow text-[color:var(--color-taupe-dark)] inline-flex items-center gap-3 mb-5">
-              <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
+              <span className="inline-block w-6 h-px bg-[color:var(--color-orange)]" />
               {t("home.calcPreview.eyebrow")}
             </p>
             <h2 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,3vw,2.25rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">

@@ -93,7 +93,7 @@ export function Mission() {
                 {t("home.mission.bodyP2Continued")}
               </span>
               <span
-                className="inline-block tabular-nums font-bold text-[color:var(--color-orange)] mr-1"
+                className="inline-block tabular-nums font-bold text-[color:var(--color-bronze)] mr-1"
                 aria-live="polite"
               >
                 {familiesCount}
@@ -117,7 +117,7 @@ export function Mission() {
             return (
               <article
                 key={idx}
-                className="group relative bg-[color:var(--color-cream)] p-[clamp(1.75rem,3vw,2.5rem)] border border-[color:var(--color-taupe)]/60 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_18px_48px_-20px_rgba(16,34,61,0.32)] hover:border-[color:var(--color-bronze)] overflow-hidden"
+                className="group relative bg-[color:var(--color-cream)] p-[clamp(1.75rem,3vw,2.5rem)] border border-[color:var(--color-taupe)]/60 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_18px_48px_-20px_rgba(16,34,61,0.32)] hover:border-[color:var(--color-orange)] overflow-hidden"
               >
                 <span
                   aria-hidden="true"

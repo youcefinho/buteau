@@ -86,7 +86,7 @@ function JournalPage() {
           <Tiltable key={a.slug} maxDeg={2}>
             <article
               id={a.slug}
-              className="group relative bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-bronze)]/70 transition-all duration-500 halo-glow flex flex-col md:flex-row gap-0 overflow-hidden"
+              className="group relative bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-orange)]/70 transition-all duration-500 halo-glow flex flex-col md:flex-row gap-0 overflow-hidden"
             >
               {/* Numero editorial XL filigrane gauche */}
               <div className="md:w-[120px] md:shrink-0 bg-[color:var(--color-cream-warm)] border-r border-[color:var(--color-taupe)]/30 flex items-center justify-center py-6 md:py-0">

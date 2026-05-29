@@ -102,7 +102,7 @@ function CourrierPage() {
       >
         {allLetters.map((r, idx) => (
           <Tiltable key={idx} maxDeg={3}>
-            <article className="group relative bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/45 transition-all duration-500 hover:border-[color:var(--color-bronze)]/70 halo-glow flex flex-col h-full">
+            <article className="group relative bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/45 transition-all duration-500 hover:border-[color:var(--color-orange)]/70 halo-glow flex flex-col h-full">
               {/* Numéro filigrane Cormorant top-right */}
               <span
                 aria-hidden="true"

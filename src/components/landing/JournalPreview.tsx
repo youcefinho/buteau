@@ -46,7 +46,7 @@ export function JournalPreview() {
           {/* Header column — 5/12 sticky desktop */}
           <div className="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
             <p className="eyebrow text-[color:var(--color-bronze-soft)] inline-flex items-center gap-3 mb-5">
-              <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
+              <span className="inline-block w-6 h-px bg-[color:var(--color-orange)]" />
               Articles
             </p>
             <h2 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(1.875rem,3vw,2.25rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
@@ -88,7 +88,7 @@ export function JournalPreview() {
           {/* Feature article card — 7/12 */}
           <div className="lg:col-span-7" style={{ perspective: "1500px" }}>
             <Tiltable maxDeg={2}>
-              <article className="group relative bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-bronze)]/70 transition-all duration-500 halo-glow overflow-hidden">
+              <article className="group relative bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-orange)]/70 transition-all duration-500 halo-glow overflow-hidden">
                 {/* Numero filigrane gauche */}
                 <div className="absolute top-0 left-0 bottom-0 w-[100px] bg-[color:var(--color-cream-warm)] border-r border-[color:var(--color-taupe)]/30 hidden md:flex items-center justify-center pointer-events-none">
                   <span

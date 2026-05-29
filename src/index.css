@@ -743,10 +743,10 @@ body {
     font-weight: 600;
   }
 
-  /* Signature line (taupe horizontal entre sections) */
+  /* Signature line — filet sous les titres + accents. Orange (accent charte client). */
   .signature-line {
-    height: 1px;
-    background: var(--color-taupe);
+    height: 2px;
+    background: var(--color-orange);
     width: 4rem;
     display: block;
   }

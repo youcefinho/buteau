@@ -106,7 +106,7 @@ export function WhatIfScenarios({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {/* Scenario 1 — Paiement accéléré */}
         {scenarioAccelerated && (
-          <article className="group bg-[color:var(--color-cream-warm)] border border-[color:var(--color-taupe)]/40 p-6 md:p-7 transition-all duration-500 hover:border-[color:var(--color-bronze)]/70 relative overflow-hidden">
+          <article className="group bg-[color:var(--color-cream-warm)] border border-[color:var(--color-taupe)]/40 p-6 md:p-7 transition-all duration-500 hover:border-[color:var(--color-orange)]/70 relative overflow-hidden">
             {/* Halo bronze top-right */}
             <span
               aria-hidden="true"
@@ -148,7 +148,7 @@ export function WhatIfScenarios({
 
         {/* Scenario 2 — Amortissement 20 ans */}
         {scenarioShorter && (
-          <article className="group bg-[color:var(--color-cream-warm)] border border-[color:var(--color-taupe)]/40 p-6 md:p-7 transition-all duration-500 hover:border-[color:var(--color-bronze)]/70 relative overflow-hidden">
+          <article className="group bg-[color:var(--color-cream-warm)] border border-[color:var(--color-taupe)]/40 p-6 md:p-7 transition-all duration-500 hover:border-[color:var(--color-orange)]/70 relative overflow-hidden">
             <span
               aria-hidden="true"
               className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-[color:var(--color-bronze)]/8 blur-3xl pointer-events-none"

@@ -37,9 +37,9 @@ export function LegalPageWrap({
           <div className="text-center space-y-5">
             {eyebrow && (
               <p className="eyebrow text-[color:var(--color-taupe)] inline-flex items-center gap-3">
-                <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
+                <span className="inline-block w-6 h-px bg-[color:var(--color-orange)]" />
                 {eyebrow}
-                <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
+                <span className="inline-block w-6 h-px bg-[color:var(--color-orange)]" />
               </p>
             )}
             <h1 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-cream)] text-[clamp(1.875rem,4vw,3rem)] uppercase tracking-[0.04em] leading-[1.1] text-balance">

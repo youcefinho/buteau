@@ -35,7 +35,7 @@ export function LendersGrid() {
           {lenders.map((l, idx) => (
             <Tiltable key={idx} maxDeg={5}>
             <article
-              className="group relative halo-glow bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/40 p-8 transition-all duration-500 hover:border-[color:var(--color-bronze)]/70 hover:shadow-[0_18px_40px_-22px_rgba(16,34,61,0.28)] flex flex-col h-full"
+              className="group relative halo-glow bg-[color:var(--color-surface)] border border-[color:var(--color-taupe)]/40 p-8 transition-all duration-500 hover:border-[color:var(--color-orange)]/70 hover:shadow-[0_18px_40px_-22px_rgba(16,34,61,0.28)] flex flex-col h-full"
             >
               {/* Numéro filigrane (01-09) */}
               <span

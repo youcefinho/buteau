@@ -250,7 +250,7 @@ function CapsulesPage() {
                 <span className=" text-base text-[color:var(--color-bronze)] tabular-nums">
                   {String(ci + 1).padStart(2, "0")}
                 </span>
-                <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
+                <span className="inline-block w-6 h-px bg-[color:var(--color-orange)]" />
                 {isFr ? "Rubrique" : "Section"}
               </p>
               <h2 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.5rem,2.5vw,1.875rem)] uppercase tracking-[0.04em] leading-[1.15] mb-4 text-balance">

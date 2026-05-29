@@ -42,9 +42,9 @@ export function NotFoundEditorial() {
         <div className="text-center max-w-2xl mx-auto">
           {/* Eyebrow encadré */}
           <p className="eyebrow text-[color:var(--color-taupe)] inline-flex items-center gap-3 mb-8 animate-[buteauFadeUp_700ms_ease-out_100ms_both]">
-            <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
+            <span className="inline-block w-6 h-px bg-[color:var(--color-orange)]" />
             {t("notFound.eyebrow")}
-            <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
+            <span className="inline-block w-6 h-px bg-[color:var(--color-orange)]" />
           </p>
 
           {/* Titre principal Fraunces signature */}

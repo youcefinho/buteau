@@ -105,9 +105,9 @@ export function PreQualQuiz() {
         {/* Header */}
         <div className="text-center mb-[clamp(3rem,5vw,4rem)] max-w-2xl mx-auto">
           <p className="eyebrow text-[color:var(--color-taupe-dark)] inline-flex items-center gap-3 mb-5">
-            <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
+            <span className="inline-block w-6 h-px bg-[color:var(--color-orange)]" />
             {t("quiz.eyebrow")}
-            <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />
+            <span className="inline-block w-6 h-px bg-[color:var(--color-orange)]" />
           </p>
           <h2 className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1.875rem,4vw,3rem)] uppercase tracking-[0.04em] leading-[1.1] mb-5 text-balance">
             {t("quiz.title")}
@@ -195,7 +195,7 @@ export function PreQualQuiz() {
             <div className="animate-[buteauFadeUp_700ms_ease-out_both] text-center md:text-left">
               {/* Eyebrow + label profil */}
               <p className="eyebrow text-[color:var(--color-navy)] inline-flex items-center gap-3 mb-5">
-                <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
+                <span className="inline-block w-6 h-px bg-[color:var(--color-orange)]" />
                 {result.eyebrow}
               </p>
 

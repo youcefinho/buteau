@@ -53,9 +53,9 @@ export function BrokerLetter() {
           {/* Lettre — col 8 */}
           <div className="lg:col-span-8 lg:pr-8">
             <p className="eyebrow text-[color:var(--color-bronze)] inline-flex items-center gap-3 mb-10">
-              <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
+              <span className="inline-block w-6 h-px bg-[color:var(--color-orange)]" />
               {t("letter.eyebrow")}
-              <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
+              <span className="inline-block w-6 h-px bg-[color:var(--color-orange)]" />
             </p>
 
             {/* "Bonjour," — accroche Fraunces  XL avec axes optical + WONK

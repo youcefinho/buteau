@@ -1,0 +1,829 @@
+- generic [ref=e5]:
+  - link "Passer au contenu principal" [ref=e6] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e7]:
+    - navigation [ref=e8]:
+      - link "BUTEAU — L'hypothèque autrement Planiprêt — Cabinet en courtage hypothécaire" [ref=e9] [cursor=pointer]:
+        - /url: /
+        - img "BUTEAU — L'hypothèque autrement" [ref=e10]
+        - img "Planiprêt — Cabinet en courtage hypothécaire" [ref=e12]
+      - generic [ref=e13]:
+        - link "Accueil" [ref=e14] [cursor=pointer]:
+          - /url: /
+        - link "Équipe" [ref=e15] [cursor=pointer]:
+          - /url: /equipe
+        - link "Institutions" [ref=e16] [cursor=pointer]:
+          - /url: /institutions
+        - link "Outils" [ref=e17] [cursor=pointer]:
+          - /url: /outils
+        - link "Articles" [ref=e18] [cursor=pointer]:
+          - /url: /journal
+        - link "Capsules" [ref=e19] [cursor=pointer]:
+          - /url: /capsules
+      - generic [ref=e20]:
+        - group "Selecteur de langue" [ref=e21]:
+          - button "Francais" [pressed] [ref=e22]: FR
+          - generic [ref=e23]: ·
+          - button "English" [ref=e24]: EN
+        - generic [ref=e25]:
+          - link "Discuter avec Andrew 438-494-4567" [ref=e26] [cursor=pointer]:
+            - /url: tel:+14384944567
+            - img [ref=e27]
+          - link "Calendly" [ref=e29] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e30]
+        - link "Discuter avec Andrew" [ref=e33] [cursor=pointer]:
+          - /url: /#contact
+        - link "Portail client Planiprêt (nouvel onglet)" [ref=e34] [cursor=pointer]:
+          - /url: https://client.planipret.com/
+          - img [ref=e35]
+  - main [ref=e39]:
+    - navigation "Navigation des sections":
+      - link "Accueil" [ref=e40] [cursor=pointer]:
+        - /url: "#hero"
+        - generic [ref=e43]: Accueil
+      - link "Partenaires" [ref=e45] [cursor=pointer]:
+        - /url: "#partenaires"
+        - generic [ref=e48]: Partenaires
+      - link "L'équipe" [ref=e49] [cursor=pointer]:
+        - /url: "#equipe"
+        - generic [ref=e52]: L'équipe
+      - link "Andrew" [ref=e53] [cursor=pointer]:
+        - /url: "#lettre"
+        - generic [ref=e56]: Andrew
+      - link "Services" [ref=e57] [cursor=pointer]:
+        - /url: "#services"
+        - generic [ref=e60]: Services
+      - link "Calculateur" [ref=e61] [cursor=pointer]:
+        - /url: "#calculateur"
+        - generic [ref=e64]: Calculateur
+      - link "Articles" [ref=e65] [cursor=pointer]:
+        - /url: "#journal-preview"
+        - generic [ref=e68]: Articles
+      - link "Outils" [ref=e69] [cursor=pointer]:
+        - /url: "#outils-teaser"
+        - generic [ref=e72]: Outils
+      - link "Mission" [ref=e73] [cursor=pointer]:
+        - /url: "#mission"
+        - generic [ref=e76]: Mission
+      - link "Quiz" [ref=e77] [cursor=pointer]:
+        - /url: "#prequalification"
+        - generic [ref=e80]: Quiz
+      - link "Témoignages" [ref=e81] [cursor=pointer]:
+        - /url: "#avis"
+        - generic [ref=e84]: Témoignages
+      - link "Territoire" [ref=e85] [cursor=pointer]:
+        - /url: "#territoire"
+        - generic [ref=e88]: Territoire
+      - link "Contact" [ref=e89] [cursor=pointer]:
+        - /url: "#contact"
+        - generic [ref=e92]: Contact
+      - link "FAQ" [ref=e93] [cursor=pointer]:
+        - /url: "#faq"
+        - generic [ref=e96]: FAQ
+    - generic [ref=e97]:
+      - paragraph [ref=e99]: Laval · Québec
+      - paragraph [ref=e103]: Faire défiler
+      - generic [ref=e105]:
+        - paragraph [ref=e106]: Courtage hypothécaire — Planiprêt
+        - paragraph [ref=e110]:
+          - generic [ref=e111]: B
+          - generic [ref=e112]: U
+          - generic [ref=e113]: T
+          - generic [ref=e114]: E
+          - generic [ref=e115]: A
+          - generic [ref=e116]: U
+        - heading "L'hypothèque autrement" [level=1] [ref=e118]
+        - paragraph [ref=e120]: Premier achat ou renouvellement qui vous stresse ? On commence par vous écouter, pas par juger votre dossier. 200 familles accompagnées en 2025, la même rigueur pour chacune.
+        - generic [ref=e121]:
+          - link "Démarrer mon premier dossier" [ref=e123] [cursor=pointer]:
+            - /url: "#contact"
+          - link "Rencontrer notre équipe" [ref=e125] [cursor=pointer]:
+            - /url: /equipe
+            - generic [ref=e126]: Rencontrer notre équipe
+            - generic [ref=e127]: →
+        - button "Premier contact ? Voir le lexique hypothécaire." [ref=e129] [cursor=pointer]:
+          - img [ref=e130]
+          - text: Premier contact ? Voir le lexique hypothécaire.
+        - link "111 avis 5 étoiles Google" [ref=e132] [cursor=pointer]:
+          - /url: https://www.google.com/search?q=Andrew+Buteau+Courtier+Hypothecaire
+          - img [ref=e133]
+          - generic [ref=e135]: 111 avis 5 étoiles Google
+          - generic [ref=e136]: →
+    - generic [ref=e139]:
+      - generic [ref=e140]:
+        - paragraph [ref=e141]: Nos partenaires
+        - heading "Un réseau de prêteurs reconnus" [level=2] [ref=e142]
+        - paragraph [ref=e144]: Quelques-unes des institutions financières avec qui on travaille au quotidien.
+      - generic [ref=e146]:
+        - img "Banque Nationale" [ref=e148]
+        - img "Société de services MCAP" [ref=e150]
+        - img "First National" [ref=e152]
+        - img "CIBC" [ref=e154]
+        - img "CMLS" [ref=e156]
+        - img "Banque Toronto-Dominion" [ref=e158]
+        - img "Banque Scotia" [ref=e160]
+        - img "La financière Manuvie" [ref=e162]
+        - img "Caisses Desjardins" [ref=e164]
+        - img "Banque Nationale" [ref=e166]
+        - img "Société de services MCAP" [ref=e168]
+        - img "First National" [ref=e170]
+        - img "CIBC" [ref=e172]
+        - img "CMLS" [ref=e174]
+        - img "Banque Toronto-Dominion" [ref=e176]
+        - img "Banque Scotia" [ref=e178]
+        - img "La financière Manuvie" [ref=e180]
+        - img "Caisses Desjardins" [ref=e182]
+      - link "Voir les institutions financières" [ref=e185] [cursor=pointer]:
+        - /url: /institutions
+    - region "Faits clés" [ref=e186]:
+      - generic [ref=e187]:
+        - generic [ref=e189]: 200 dossiers fermés en 2025
+        - generic [ref=e192]: 9+ institutions financières partenaires
+        - generic [ref=e195]: Inscrit AMF — Cabinet Planiprêt
+        - generic [ref=e198]: L'hypothèque autrement
+        - generic [ref=e201]: Premier achat · Refinancement · Renouvellement · Investissement
+        - generic [ref=e204]: Tout le Québec — siège à Laval
+        - generic [ref=e207]: Andrew Buteau, courtier hypothécaire
+        - generic [ref=e210]: 200 dossiers fermés en 2025
+        - generic [ref=e213]: 9+ institutions financières partenaires
+        - generic [ref=e216]: Inscrit AMF — Cabinet Planiprêt
+        - generic [ref=e219]: L'hypothèque autrement
+        - generic [ref=e222]: Premier achat · Refinancement · Renouvellement · Investissement
+        - generic [ref=e225]: Tout le Québec — siège à Laval
+        - generic [ref=e228]: Andrew Buteau, courtier hypothécaire
+    - generic [ref=e233]:
+      - generic [ref=e234]:
+        - paragraph [ref=e235]: Notre équipe
+        - heading "Une équipe, la même rigueur" [level=2] [ref=e236]
+      - generic [ref=e238]:
+        - link "Andrew Buteau Andrew Buteau Courtier hypothécaire & Fondateur" [ref=e239] [cursor=pointer]:
+          - /url: /equipe
+          - img "Andrew Buteau" [ref=e241]
+          - generic [ref=e242]:
+            - heading "Andrew Buteau" [level=3] [ref=e243]
+            - paragraph [ref=e246]: Courtier hypothécaire & Fondateur
+        - link "Abygaèle Gagné Abygaèle Gagné Coordonnatrice exécutive" [ref=e247] [cursor=pointer]:
+          - /url: /equipe
+          - img "Abygaèle Gagné" [ref=e249]
+          - generic [ref=e250]:
+            - heading "Abygaèle Gagné" [level=3] [ref=e251]
+            - paragraph [ref=e254]: Coordonnatrice exécutive
+        - link "Alexis Buteau Alexis Buteau Assistant en gestion hypothécaire" [ref=e255] [cursor=pointer]:
+          - /url: /equipe
+          - img "Alexis Buteau" [ref=e257]
+          - generic [ref=e258]:
+            - heading "Alexis Buteau" [level=3] [ref=e259]
+            - paragraph [ref=e262]: Assistant en gestion hypothécaire
+        - link "Felix Felix Coordonnateur des opérations de courtage hypothécaire" [ref=e263] [cursor=pointer]:
+          - /url: /equipe
+          - img "Felix" [ref=e265]
+          - generic [ref=e266]:
+            - heading "Felix" [level=3] [ref=e267]
+            - paragraph [ref=e270]: Coordonnateur des opérations de courtage hypothécaire
+      - generic [ref=e271]:
+        - link "Découvrir l'équipe complète" [ref=e273] [cursor=pointer]:
+          - /url: /equipe
+        - paragraph [ref=e274]: Des parcours complémentaires, une seule méthode. Découvrez qui suit votre dossier.
+    - generic [ref=e276]:
+      - generic: m
+      - generic [ref=e278]:
+        - generic [ref=e279]:
+          - paragraph [ref=e280]: Un mot d'Andrew
+          - paragraph [ref=e283]: Bonjour,
+          - generic [ref=e284]:
+            - paragraph [ref=e285]: "On me demande souvent ce qui nous distingue. Ma réponse est simple : on prend le temps de comprendre votre situation au complet avant de proposer une solution."
+            - paragraph [ref=e286]: Une hypothèque, ce n'est pas juste un produit. C'est un engagement de 25 ans. Mon rôle, ce n'est pas de vous vendre le taux le plus bas affiché — c'est de bâtir avec vous un dossier que vous comprenez, avec un prêteur qui colle à votre profil.
+            - paragraph [ref=e287]: "Si on travaille ensemble, voici ma promesse : rien de flou. Vous allez connaître chaque chiffre, chaque clause, chaque conséquence. Et quand le marché bougera, vous m'aurez au bout du fil."
+          - paragraph [ref=e288]: À bientôt,
+        - generic [ref=e289]:
+          - button "Agrandir la photo d'Andrew" [ref=e290]:
+            - img "Andrew Buteau en entrevue" [ref=e292]
+          - img "Signature Andrew Buteau" [ref=e294]
+          - paragraph [ref=e303]: Andrew Buteau, courtier hypothécaire
+    - generic [ref=e306]:
+      - generic [ref=e307]:
+        - paragraph [ref=e308]: Nos services
+        - heading "Cinq services, une seule approche" [level=2] [ref=e309]
+      - generic [ref=e311]:
+        - article [ref=e312]:
+          - generic: "01"
+          - generic [ref=e313]:
+            - generic [ref=e314]:
+              - paragraph [ref=e315]: 01 — Service
+              - heading "Renouvellement" [level=3] [ref=e316]
+            - paragraph [ref=e319]: On analyse le marché 120 jours avant l'échéance et on négocie les meilleures conditions pour vous — avec ou sans changement de banque.
+        - article [ref=e320]:
+          - generic: "02"
+          - generic [ref=e321]:
+            - generic [ref=e322]:
+              - paragraph [ref=e323]: 02 — Service
+              - heading "Refinancement" [level=3] [ref=e324]
+            - paragraph [ref=e327]: On restructure votre financement pour libérer des liquidités, sortir de l'équité ou financer une rénovation, des études ou un investissement.
+        - article [ref=e328]:
+          - generic: "03"
+          - generic [ref=e329]:
+            - generic [ref=e330]:
+              - paragraph [ref=e331]: 03 — Service
+              - heading "Consolidation de dettes" [level=3] [ref=e332]
+            - paragraph [ref=e335]: On regroupe vos dettes à taux élevé (cartes, marges, prêts) dans votre hypothèque pour baisser vos paiements mensuels et reprendre le contrôle.
+        - article [ref=e336]:
+          - generic: "04"
+          - generic [ref=e337]:
+            - generic [ref=e338]:
+              - paragraph [ref=e339]: 04 — Service
+              - heading "Achat d'une propriété" [level=3] [ref=e340]
+            - paragraph [ref=e343]: "On vous accompagne de A à Z : premier achat, 2e propriété, upgrade familial ou résidence secondaire."
+        - article [ref=e344]:
+          - generic: "05"
+          - generic [ref=e345]:
+            - generic [ref=e346]:
+              - paragraph [ref=e347]: 05 — Service
+              - heading "Investissement" [level=3] [ref=e348]
+            - paragraph [ref=e351]: Du financement bien structuré pour faire grandir votre portefeuille immobilier — multiplex, immeubles à revenus, levier sur votre équité actuelle.
+    - generic [ref=e353]:
+      - generic: $
+      - generic [ref=e354]:
+        - generic [ref=e355]:
+          - paragraph [ref=e356]: Calculateur · Aperçu
+          - heading "Vos chiffres, sans détour." [level=2] [ref=e358]
+          - paragraph [ref=e360]: Quatre vues du même dossier — capacité, paiement, stratégie de taux, liquidités. Faites bouger les chiffres, puis ouvrez le calculateur complet pour les graphiques et scénarios approfondis.
+        - generic [ref=e362]:
+          - button "Capacité d'emprunt ABD / ATD" [ref=e363]:
+            - generic [ref=e364]:
+              - img [ref=e365]
+              - generic [ref=e368]:
+                - generic [ref=e369]: Capacité d'emprunt
+                - generic [ref=e370]: ABD / ATD
+          - button "Paiement mensuel Formule canadienne" [pressed] [ref=e371]:
+            - generic [ref=e372]:
+              - img [ref=e373]
+              - generic [ref=e376]:
+                - generic [ref=e377]: Paiement mensuel
+                - generic [ref=e378]: Formule canadienne
+          - button "Fixe vs variable Sur 5 ans" [ref=e379]:
+            - generic [ref=e380]:
+              - img [ref=e381]
+              - generic [ref=e384]:
+                - generic [ref=e385]: Fixe vs variable
+                - generic [ref=e386]: Sur 5 ans
+          - button "Mise de fonds + frais clôture" [ref=e387]:
+            - generic [ref=e388]:
+              - img [ref=e389]
+              - generic [ref=e392]:
+                - generic [ref=e393]: Mise de fonds
+                - generic [ref=e394]: + frais clôture
+        - generic [ref=e396]:
+          - generic [ref=e397]:
+            - generic [ref=e398]:
+              - generic [ref=e399]:
+                - generic [ref=e400]: Prix de la propriété
+                - generic [ref=e401]:
+                  - spinbutton "Prix de la propriété" [ref=e402]: "450000"
+                  - generic [ref=e403]: $
+              - slider "Prix de la propriété" [ref=e407] [cursor=pointer]: "450000"
+            - generic [ref=e408]:
+              - generic [ref=e409]:
+                - generic [ref=e410]: Mise de fonds
+                - generic [ref=e411]:
+                  - spinbutton "Mise de fonds" [ref=e412]: "45000"
+                  - generic [ref=e413]: $
+              - slider "Mise de fonds" [ref=e417] [cursor=pointer]: "45000"
+            - generic [ref=e418]:
+              - generic [ref=e419]:
+                - generic [ref=e420]: Taux hypothécaire
+                - generic [ref=e421]:
+                  - spinbutton "Taux hypothécaire" [ref=e422]: "5.25"
+                  - generic [ref=e423]: "%"
+              - slider "Taux hypothécaire" [ref=e427] [cursor=pointer]: "5.25"
+            - generic [ref=e428]:
+              - generic [ref=e429]:
+                - generic [ref=e430]: Amortissement
+                - generic [ref=e431]:
+                  - spinbutton "Amortissement" [ref=e432]: "25"
+                  - generic [ref=e433]: ans
+              - slider "Amortissement" [ref=e437] [cursor=pointer]: "25"
+            - paragraph [ref=e439]: Calcul selon la formule canadienne semi-annuelle composée (LBC art. 6). Indicatif uniquement — votre prêteur établit le paiement réel selon le taux confirmé.
+          - generic [ref=e440]:
+            - generic [ref=e442]:
+              - img [ref=e443]
+              - generic:
+                - generic: Mensualité
+                - generic: 2 413 $
+            - generic [ref=e447]:
+              - generic [ref=e448]:
+                - paragraph [ref=e449]: Capital emprunté
+                - paragraph [ref=e450]: 405 000 $
+              - generic [ref=e451]:
+                - paragraph [ref=e452]: Intérêts totaux
+                - paragraph [ref=e453]: 319 040 $
+                - paragraph [ref=e454]: Sur 25 ans à 5.25 %
+            - link "Bloquer ce taux" [ref=e455] [cursor=pointer]:
+              - /url: /#contact
+              - text: Bloquer ce taux
+              - img [ref=e456]
+        - generic [ref=e458]:
+          - paragraph [ref=e459]: Graphiques d'amortissement, sensibilité au taux, courbes fixe vs variable et comparaisons mise de fonds — disponibles dans le calculateur complet.
+          - link "Calculateur complet" [ref=e461] [cursor=pointer]:
+            - /url: /outils#calculateur
+            - generic [ref=e462]: Calculateur complet
+            - img [ref=e463]
+        - link "Site réalisé par Intralys" [ref=e466] [cursor=pointer]:
+          - /url: https://intralys.net/
+          - generic [ref=e467]: Création fièrement québécoise signée
+          - img [ref=e468]
+          - generic [ref=e472]: INTRALYS
+          - img [ref=e473]
+    - generic [ref=e477]:
+      - generic: §
+      - generic [ref=e479]:
+        - generic [ref=e480]:
+          - paragraph [ref=e481]: Articles
+          - heading "Articles et analyses du marché." [level=2] [ref=e483]
+          - paragraph [ref=e485]: Décryptages, stratégies et explications pratiques sur le marché hypothécaire québécois. Lectures longues, rédigées pour aider à mieux décider avant de signer.
+          - link "Voir tous les articles" [ref=e487] [cursor=pointer]:
+            - /url: /journal
+            - generic [ref=e488]: Voir tous les articles
+            - img [ref=e489]
+          - paragraph [ref=e491]: Articles longs voix Andrew — pré-approbation, refinancement, taux. La mécanique sans jargon.
+        - article [ref=e494]:
+          - generic:
+            - generic: "01"
+          - generic [ref=e495]:
+            - generic [ref=e496]:
+              - paragraph [ref=e497]: Préapprobation
+              - generic [ref=e498]: ·
+              - paragraph [ref=e499]: 1er mai 2026
+              - generic [ref=e500]: ·
+              - paragraph [ref=e501]:
+                - img [ref=e502]
+                - text: 8 min de lecture
+            - 'heading "Préapprobation hypothécaire 2026 : obtenez votre lettre en 24 h." [level=3] [ref=e505]':
+              - 'link "Préapprobation hypothécaire 2026 : obtenez votre lettre en 24 h." [ref=e506] [cursor=pointer]':
+                - /url: /journal/preapprobation-hypothecaire-2026
+            - paragraph [ref=e508]: Une préapprobation hypothécaire est un engagement écrit officiel d'un prêteur confirmant votre capacité d'emprunt maximale. Elle permet de bloquer un taux d'intérêt pour une période de 90 à 120 jours, vous protégeant ainsi des hausses du marché pendant vos recherches immobilières au Québec.
+            - paragraph [ref=e509]: Maximisez vos chances d'achat ce printemps. Obtenez une préapprobation rapide avec L'Équipe Buteau — accès à 20+ banques et institutions financières.
+            - link "Lire l'article" [ref=e511] [cursor=pointer]:
+              - /url: /journal/preapprobation-hypothecaire-2026
+              - generic [ref=e512]: Lire l'article
+              - img [ref=e513]
+    - generic [ref=e518]:
+      - generic [ref=e519]:
+        - paragraph [ref=e520]: Outils & ressources
+        - heading "Tout ce qu'il vous faut pour avancer" [level=2] [ref=e521]
+        - paragraph [ref=e523]: Des ressources concrètes pour vous accompagner à chaque étape.
+      - generic [ref=e524]:
+        - link "Guides éducatifs Comprendre le financement hypothécaire, simplement." [ref=e525] [cursor=pointer]:
+          - /url: /outils
+          - generic: "01"
+          - img [ref=e527]
+          - heading "Guides éducatifs" [level=3] [ref=e530]
+          - paragraph [ref=e531]: Comprendre le financement hypothécaire, simplement.
+        - link "Capsules éducatives Des vidéos courtes pour des réponses claires et rapides." [ref=e532] [cursor=pointer]:
+          - /url: /outils
+          - generic: "02"
+          - img [ref=e534]
+          - heading "Capsules éducatives" [level=3] [ref=e538]
+          - paragraph [ref=e539]: Des vidéos courtes pour des réponses claires et rapides.
+        - link "Blog Articles, tendances et analyses du marché." [ref=e540] [cursor=pointer]:
+          - /url: /outils
+          - generic: "03"
+          - img [ref=e542]
+          - heading "Blog" [level=3] [ref=e546]
+          - paragraph [ref=e547]: Articles, tendances et analyses du marché.
+        - link "Documents Checklists et formulaires à télécharger." [ref=e548] [cursor=pointer]:
+          - /url: /outils
+          - generic: "04"
+          - img [ref=e550]
+          - heading "Documents" [level=3] [ref=e554]
+          - paragraph [ref=e555]: Checklists et formulaires à télécharger.
+      - generic [ref=e556]:
+        - link "Voir tous nos outils" [ref=e558] [cursor=pointer]:
+          - /url: /outils
+        - paragraph [ref=e559]: Calculatrices, simulateurs « et si », guides téléchargeables, lettres-types. Préparez votre dossier avant le RDV.
+    - generic [ref=e563]:
+      - generic [ref=e564]:
+        - paragraph [ref=e565]: Notre mission
+        - heading "Pourquoi nous existons" [level=2] [ref=e566]
+      - generic [ref=e568]:
+        - paragraph [ref=e569]: "Chez L'Équipe BUTEAU, on vous offre un service rapide, efficace et centré sur vos besoins. Notre mission : simplifier votre financement, clarifier ce qui est flou, et bâtir des solutions adaptées à votre situation."
+        - blockquote [ref=e570]:
+          - generic [ref=e571]: “
+          - paragraph [ref=e572]:
+            - text: En 2025, on a accompagné plus de
+            - generic [ref=e573]: "200"
+            - generic [ref=e574]: familles partout au Québec. Avec méthode et disponibilité, on fait avancer chaque projet jusqu'au bout.
+      - generic [ref=e576]:
+        - article [ref=e577]:
+          - generic: "01"
+          - img [ref=e579]
+          - heading "Décisions basées sur vos chiffres" [level=3] [ref=e582]
+          - paragraph [ref=e584]: On part de vos vrais chiffres pour vous proposer la meilleure stratégie.
+        - article [ref=e585]:
+          - generic: "02"
+          - img [ref=e587]
+          - heading "Expérience concrète" [level=3] [ref=e592]
+          - paragraph [ref=e594]: Plus de 200 familles en 2025. Toutes les régions, tous les profils.
+        - article [ref=e595]:
+          - generic: "03"
+          - img [ref=e597]
+          - heading "Équipe disponible" [level=3] [ref=e600]
+          - paragraph [ref=e602]: Des courtiers méthodiques, joignables à chaque étape — du premier appel à la signature.
+        - article [ref=e603]:
+          - generic: "04"
+          - img [ref=e605]
+          - heading "Réseau de prêteurs" [level=3] [ref=e608]
+          - paragraph [ref=e610]: Accès à plusieurs institutions pour vous décrocher le meilleur taux et les meilleures conditions.
+      - button "Voir notre carnet de l'emprunteur" [ref=e612] [cursor=pointer]:
+        - img [ref=e613]
+        - text: Voir notre carnet de l'emprunteur
+    - region "Édition spéciale" [ref=e621]:
+      - generic: ¶
+      - generic [ref=e623]:
+        - paragraph [ref=e624]: Édition spéciale
+        - paragraph [ref=e627]: « Une équipe. Cinq services. Une même rigueur. »
+        - paragraph [ref=e629]: — L'Équipe Buteau
+    - generic [ref=e632]: "&"
+    - generic [ref=e635]:
+      - generic: "?"
+      - generic [ref=e636]:
+        - generic [ref=e637]:
+          - paragraph [ref=e638]: Pré-qualification éclair
+          - heading "Trois questions. Un dossier sur mesure." [level=2] [ref=e641]
+          - paragraph [ref=e643]: Répondez en 30 secondes pour découvrir le parcours qui correspond à votre situation — sans engagement.
+        - generic [ref=e644]:
+          - paragraph [ref=e646]: Question 01/03
+          - heading "Quel est votre projet hypothécaire ?" [level=3] [ref=e648]
+          - list [ref=e649]:
+            - listitem [ref=e650]:
+              - button "A Renouvellement, refinancement ou consolidation de dettes" [ref=e651]:
+                - generic [ref=e652]:
+                  - generic [ref=e653]: A
+                  - generic [ref=e654]: Renouvellement, refinancement ou consolidation de dettes
+                - img [ref=e655]
+            - listitem [ref=e657]:
+              - button "B Acheter ma première propriété" [ref=e658]:
+                - generic [ref=e659]:
+                  - generic [ref=e660]: B
+                  - generic [ref=e661]: Acheter ma première propriété
+                - img [ref=e662]
+            - listitem [ref=e664]:
+              - button "C Acheter une 2e propriété ou faire un upgrade familial" [ref=e665]:
+                - generic [ref=e666]:
+                  - generic [ref=e667]: C
+                  - generic [ref=e668]: Acheter une 2e propriété ou faire un upgrade familial
+                - img [ref=e669]
+            - listitem [ref=e671]:
+              - button "D Investir dans un immeuble à revenus ou multiplex" [ref=e672]:
+                - generic [ref=e673]:
+                  - generic [ref=e674]: D
+                  - generic [ref=e675]: Investir dans un immeuble à revenus ou multiplex
+                - img [ref=e676]
+    - generic [ref=e679]:
+      - generic: ✉
+      - generic [ref=e680]:
+        - generic [ref=e681]:
+          - paragraph [ref=e682]: Témoignages clients
+          - heading "Ce que nos clients en disent" [level=2] [ref=e683]
+        - link "111 avis 5 étoiles Google Avis Google" [ref=e686] [cursor=pointer]:
+          - /url: https://www.google.com/search?q=Andrew+Buteau+Courtier+Hypothecaire
+          - generic [ref=e687]:
+            - img [ref=e688]
+            - generic [ref=e693]: 111 avis 5 étoiles Google
+          - generic [ref=e694]:
+            - img [ref=e695]
+            - img [ref=e697]
+            - img [ref=e699]
+            - img [ref=e701]
+            - img [ref=e703]
+            - generic [ref=e705]: Avis Google
+        - generic [ref=e706]:
+          - article [ref=e708]:
+            - generic [ref=e709]:
+              - generic [ref=e710]:
+                - paragraph [ref=e711]: Reçu le
+                - paragraph [ref=e712]: 12 mars 2026
+              - generic [ref=e713]:
+                - paragraph [ref=e714]: De
+                - paragraph [ref=e715]: Laval
+            - generic [ref=e716]:
+              - generic "5 stars" [ref=e717]:
+                - img [ref=e718]
+                - img [ref=e720]
+                - img [ref=e722]
+                - img [ref=e724]
+                - img [ref=e726]
+              - paragraph [ref=e728]: « Un service professionnel et rassurant pour notre premier achat. L'équipe nous a décroché d'excellentes conditions et nous a accompagnés à chaque étape avec clarté. »
+            - generic [ref=e730]:
+              - generic [ref=e731]: M
+              - paragraph [ref=e732]: — Maxime T.
+          - article [ref=e734]:
+            - generic [ref=e735]:
+              - generic [ref=e736]:
+                - paragraph [ref=e737]: Reçu le
+                - paragraph [ref=e738]: 28 février 2026
+              - generic [ref=e739]:
+                - paragraph [ref=e740]: De
+                - paragraph [ref=e741]: Montréal
+            - generic [ref=e742]:
+              - generic "5 stars" [ref=e743]:
+                - img [ref=e744]
+                - img [ref=e746]
+                - img [ref=e748]
+                - img [ref=e750]
+                - img [ref=e752]
+              - paragraph [ref=e754]: "« Efficace et fiable pour notre refinancement. Andrew est rigoureux et transparent : il a pris le temps d'analyser tous nos chiffres pour bâtir une stratégie vraiment avantageuse. »"
+            - generic [ref=e756]:
+              - generic [ref=e757]: C
+              - paragraph [ref=e758]: — Catherine P.
+          - article [ref=e760]:
+            - generic [ref=e761]:
+              - generic [ref=e762]:
+                - paragraph [ref=e763]: Reçu le
+                - paragraph [ref=e764]: 5 février 2026
+              - generic [ref=e765]:
+                - paragraph [ref=e766]: De
+                - paragraph [ref=e767]: Boisbriand
+            - generic [ref=e768]:
+              - generic "5 stars" [ref=e769]:
+                - img [ref=e770]
+                - img [ref=e772]
+                - img [ref=e774]
+                - img [ref=e776]
+                - img [ref=e778]
+              - paragraph [ref=e780]: « Toujours disponibles, et ils font les choses autrement. Le suivi avec Abygaèle et Alexis était impeccable. On se sent entre de bonnes mains du début à la fin. Je recommande sans hésiter. »
+            - generic [ref=e782]:
+              - generic [ref=e783]: J
+              - paragraph [ref=e784]: — Jonathan D.
+        - link "Lire tous nos avis Google" [ref=e786] [cursor=pointer]:
+          - /url: https://www.google.com/search?q=Andrew+Buteau+Courtier+Hypothecaire
+          - generic [ref=e787]: Lire tous nos avis Google
+          - generic [ref=e788]: →
+    - generic [ref=e794]:
+      - generic: QC
+      - generic [ref=e796]:
+        - generic [ref=e797]:
+          - img "On vous accompagne partout au Québec." [ref=e798]:
+            - generic "Laval" [ref=e802] [cursor=pointer]:
+              - generic [ref=e806]: "01"
+              - generic:
+                - generic: LAVAL
+                - generic: Siège — 2300 boul. Saint…
+            - generic "Montréal" [ref=e808] [cursor=pointer]:
+              - generic [ref=e811]: "02"
+            - generic "Rive-Nord" [ref=e813] [cursor=pointer]:
+              - generic [ref=e816]: "03"
+            - generic "Rive-Sud" [ref=e818] [cursor=pointer]:
+              - generic [ref=e821]: "04"
+            - generic [ref=e826]: "N"
+            - generic [ref=e828]: 30 km
+            - generic:
+              - generic:
+                - generic: 46°N
+              - generic:
+                - generic: 45°N
+              - generic:
+                - generic: 74°W
+              - generic:
+                - generic: 73°W
+          - paragraph [ref=e829]: 4 régions desservies · 1 siège à Laval · 200 dossiers fermés en 2025
+          - paragraph [ref=e830]: Une question hors région ? Écrivez-nous. La distance n'est jamais un obstacle.
+          - paragraph [ref=e831]:
+            - text: "Fond cartographique :"
+            - link "© OpenStreetMap contributors" [ref=e832] [cursor=pointer]:
+              - /url: https://www.openstreetmap.org/copyright
+        - generic [ref=e833]:
+          - generic [ref=e834]:
+            - paragraph [ref=e835]: Territoire desservi
+            - heading "On vous accompagne partout au Québec." [level=2] [ref=e837]
+            - paragraph [ref=e839]: Andrew Buteau rencontre ses clients en visio ou en personne dans cinq régions principales. Chaque dossier reçoit la même rigueur, peu importe le code postal.
+          - list [ref=e840]:
+            - listitem [ref=e841] [cursor=pointer]:
+              - generic [ref=e842]: "01"
+              - generic [ref=e843]:
+                - paragraph [ref=e844]: Laval
+                - paragraph [ref=e845]: Siège — 2300 boul. Saint-Martin Est
+            - listitem [ref=e846] [cursor=pointer]:
+              - generic [ref=e847]: "02"
+              - generic [ref=e848]:
+                - paragraph [ref=e849]: Montréal
+                - paragraph [ref=e850]: Île + couronne
+            - listitem [ref=e851] [cursor=pointer]:
+              - generic [ref=e852]: "03"
+              - generic [ref=e853]:
+                - paragraph [ref=e854]: Rive-Nord
+                - paragraph [ref=e855]: Laurentides + Lanaudière
+            - listitem [ref=e856] [cursor=pointer]:
+              - generic [ref=e857]: "04"
+              - generic [ref=e858]:
+                - paragraph [ref=e859]: Rive-Sud
+                - paragraph [ref=e860]: Montérégie
+            - listitem [ref=e861] [cursor=pointer]:
+              - generic [ref=e862]: "05"
+              - generic [ref=e863]:
+                - paragraph [ref=e864]: Province
+                - paragraph [ref=e865]: Reste du Québec — visioconférence
+    - generic [ref=e867]:
+      - generic: "&"
+      - generic [ref=e868]:
+        - generic [ref=e869]:
+          - paragraph [ref=e870]: Contact
+          - heading "Contactez-nous" [level=2] [ref=e871]
+          - paragraph [ref=e873]: Prêt à structurer votre projet hypothécaire ?
+        - generic [ref=e874]:
+          - generic [ref=e875]:
+            - heading "Demande d'information" [level=3] [ref=e878]
+            - generic [ref=e879]:
+              - text: Leave this field empty
+              - textbox [ref=e880]
+              - generic [ref=e881]:
+                - generic [ref=e882]: Nom complet *
+                - textbox "Nom complet *" [ref=e883]
+              - generic [ref=e884]:
+                - generic [ref=e885]: Courriel *
+                - textbox "Courriel *" [ref=e886]
+              - generic [ref=e887]:
+                - generic [ref=e888]: Téléphone (optionnel)
+                - textbox "Téléphone (optionnel)" [ref=e889]
+              - generic [ref=e890]:
+                - generic [ref=e891]: Votre projet (optionnel)
+                - textbox "Votre projet (optionnel)" [ref=e892]
+              - generic [ref=e893] [cursor=pointer]:
+                - checkbox "J'accepte que mes renseignements soient utilisés par l'Équipe Buteau pour répondre à ma demande, conformément à la politique de confidentialité." [ref=e894]
+                - generic [ref=e895]:
+                  - text: J'accepte que mes renseignements soient utilisés par l'Équipe Buteau pour répondre à ma demande, conformément à la
+                  - link "politique de confidentialité" [ref=e896]:
+                    - /url: /confidentialite
+                  - text: .
+              - button "Envoyer ma demande" [ref=e897]
+            - link "Site réalisé par Intralys" [ref=e899] [cursor=pointer]:
+              - /url: https://intralys.net/
+              - generic [ref=e900]: Création fièrement québécoise signée
+              - img [ref=e901]
+              - generic [ref=e905]: INTRALYS
+              - img [ref=e906]
+          - complementary [ref=e909]:
+            - list [ref=e910]:
+              - listitem [ref=e911]:
+                - link "Contact 438-494-4567" [ref=e912] [cursor=pointer]:
+                  - /url: tel:+14384944567
+                  - generic [ref=e913]:
+                    - img [ref=e915]
+                    - generic [ref=e917]:
+                      - paragraph [ref=e918]: Contact
+                      - paragraph [ref=e919]: 438-494-4567
+                    - img [ref=e920]
+              - listitem [ref=e923]:
+                - link "Écrire un courriel gestion@equipebuteau.com" [ref=e924] [cursor=pointer]:
+                  - /url: mailto:gestion@equipebuteau.com
+                  - generic [ref=e925]:
+                    - img [ref=e927]
+                    - generic [ref=e930]:
+                      - paragraph [ref=e931]: Écrire un courriel
+                      - paragraph [ref=e932]: gestion@equipebuteau.com
+                    - img [ref=e933]
+              - listitem [ref=e936]:
+                - generic [ref=e937]:
+                  - img [ref=e939]
+                  - generic [ref=e942]:
+                    - paragraph [ref=e943]: Territoire desservi
+                    - paragraph [ref=e944]: Nous finançons vos propriétés partout à travers le Québec.
+            - generic [ref=e945]:
+              - paragraph [ref=e946]: Contact — Laval
+              - generic [ref=e947]:
+                - text: 2300 boul. Saint-Martin Est, suite 200
+                - text: Laval, QC H7E 5P3
+    - generic [ref=e951]:
+      - generic [ref=e952]:
+        - paragraph [ref=e953]: FAQ
+        - heading "Questions fréquemment posées" [level=2] [ref=e954]
+      - generic [ref=e956]:
+        - heading "C'est quoi le processus pour obtenir une préqualification ?" [level=3] [ref=e958]:
+          - button "C'est quoi le processus pour obtenir une préqualification ?" [ref=e959]:
+            - generic [ref=e960]: "01"
+            - generic [ref=e961]: C'est quoi le processus pour obtenir une préqualification ?
+            - img [ref=e962]
+        - heading "Combien de temps prend un dossier hypothécaire ?" [level=3] [ref=e965]:
+          - button "Combien de temps prend un dossier hypothécaire ?" [ref=e966]:
+            - generic [ref=e967]: "02"
+            - generic [ref=e968]: Combien de temps prend un dossier hypothécaire ?
+            - img [ref=e969]
+        - heading "Quelle est la mise de fonds minimale ?" [level=3] [ref=e972]:
+          - button "Quelle est la mise de fonds minimale ?" [ref=e973]:
+            - generic [ref=e974]: "03"
+            - generic [ref=e975]: Quelle est la mise de fonds minimale ?
+            - img [ref=e976]
+        - heading "Taux fixe ou taux variable, lequel choisir ?" [level=3] [ref=e979]:
+          - button "Taux fixe ou taux variable, lequel choisir ?" [ref=e980]:
+            - generic [ref=e981]: "04"
+            - generic [ref=e982]: Taux fixe ou taux variable, lequel choisir ?
+            - img [ref=e983]
+        - heading "Y a-t-il des frais cachés ?" [level=3] [ref=e986]:
+          - button "Y a-t-il des frais cachés ?" [ref=e987]:
+            - generic [ref=e988]: "05"
+            - generic [ref=e989]: Y a-t-il des frais cachés ?
+            - img [ref=e990]
+        - heading "Pouvez-vous refinancer ma propriété actuelle ?" [level=3] [ref=e993]:
+          - button "Pouvez-vous refinancer ma propriété actuelle ?" [ref=e994]:
+            - generic [ref=e995]: "06"
+            - generic [ref=e996]: Pouvez-vous refinancer ma propriété actuelle ?
+            - img [ref=e997]
+        - heading "Comment améliorer mon score de crédit ?" [level=3] [ref=e1000]:
+          - button "Comment améliorer mon score de crédit ?" [ref=e1001]:
+            - generic [ref=e1002]: "07"
+            - generic [ref=e1003]: Comment améliorer mon score de crédit ?
+            - img [ref=e1004]
+        - heading "Quand devrais-je préparer mon renouvellement hypothécaire ?" [level=3] [ref=e1007]:
+          - button "Quand devrais-je préparer mon renouvellement hypothécaire ?" [ref=e1008]:
+            - generic [ref=e1009]: "08"
+            - generic [ref=e1010]: Quand devrais-je préparer mon renouvellement hypothécaire ?
+            - img [ref=e1011]
+      - generic [ref=e1013]:
+        - paragraph [ref=e1014]: Vous avez d'autres questions ?
+        - link "Nous écrire" [ref=e1016] [cursor=pointer]:
+          - /url: "#contact"
+  - contentinfo [ref=e1023]:
+    - generic [ref=e1024]:
+      - img "Buteau — L'hypothèque autrement" [ref=e1025]
+      - generic [ref=e1026]:
+        - generic [ref=e1027]:
+          - paragraph [ref=e1028]: Contact
+          - list [ref=e1029]:
+            - listitem [ref=e1030]:
+              - img [ref=e1031]
+              - link "438-494-4567" [ref=e1033] [cursor=pointer]:
+                - /url: tel:+14384944567
+            - listitem [ref=e1034]:
+              - img [ref=e1035]
+              - link "gestion@equipebuteau.com" [ref=e1038] [cursor=pointer]:
+                - /url: mailto:gestion@equipebuteau.com
+            - listitem [ref=e1039]:
+              - img [ref=e1040]
+              - generic [ref=e1043]:
+                - text: 2300 boul. Saint-Martin Est, suite 200
+                - text: Laval, QC H7E 5P3
+          - generic [ref=e1044]:
+            - paragraph [ref=e1045]: Suivez-moi
+            - generic [ref=e1046]:
+              - link "Instagram Andrew Buteau" [ref=e1047] [cursor=pointer]:
+                - /url: https://www.instagram.com/andrew.buteau/
+                - img [ref=e1048]
+              - link "LinkedIn Andrew Buteau" [ref=e1051] [cursor=pointer]:
+                - /url: https://ca.linkedin.com/in/andrew-buteau-a133a415a
+                - img [ref=e1052]
+              - link "Facebook Andrew Buteau" [ref=e1056] [cursor=pointer]:
+                - /url: https://www.facebook.com/andrew.buteau.1/
+                - img [ref=e1057]
+        - generic [ref=e1059]:
+          - paragraph [ref=e1060]: Navigation
+          - list [ref=e1061]:
+            - listitem [ref=e1062]:
+              - link "Accueil" [ref=e1063] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e1064]:
+              - link "Équipe" [ref=e1065] [cursor=pointer]:
+                - /url: /equipe
+            - listitem [ref=e1066]:
+              - link "Institutions" [ref=e1067] [cursor=pointer]:
+                - /url: /institutions
+            - listitem [ref=e1068]:
+              - link "Outils" [ref=e1069] [cursor=pointer]:
+                - /url: /outils
+            - listitem [ref=e1070]:
+              - button "Le carnet" [ref=e1071]
+            - listitem [ref=e1072]:
+              - button "Lexique" [ref=e1073]
+        - generic [ref=e1074]:
+          - paragraph [ref=e1075]: Légal
+          - list [ref=e1076]:
+            - listitem [ref=e1077]:
+              - link "Mentions légales" [ref=e1078] [cursor=pointer]:
+                - /url: /mentions-legales
+            - listitem [ref=e1079]:
+              - link "Confidentialité" [ref=e1080] [cursor=pointer]:
+                - /url: /confidentialite
+            - listitem [ref=e1081]:
+              - button "Colophon" [ref=e1082]
+      - generic [ref=e1083]:
+        - paragraph [ref=e1084]: "Inscrit AMF — N° 609394·NEQ 1180553555·Cabinet : Planiprêt Cabinet en Courtage Hypothécaire"
+        - paragraph [ref=e1085]: Les renseignements présentés sur ce site ne constituent pas une offre ni une recommandation personnalisée. Tout dossier hypothécaire est sujet à approbation par le prêteur. Les taux et conditions varient selon le profil de l'emprunteur, la propriété et l'institution financière. Équipe Buteau opère sous le permis de Planiprêt Cabinet en Courtage Hypothécaire, inscrit auprès de l'Autorité des marchés financiers (AMF).
+        - paragraph [ref=e1086]: © 2026 Équipe Buteau. Tous droits réservés.
+        - link "Site réalisé par Intralys" [ref=e1089] [cursor=pointer]:
+          - /url: https://intralys.net/
+          - generic [ref=e1090]: Création fièrement québécoise signée
+          - img [ref=e1091]
+          - generic [ref=e1095]: INTRALYS
+          - img [ref=e1096]
+  - link "Écrivez-nous par SMS Équipe Buteau 438-494-4567" [ref=e1099] [cursor=pointer]:
+    - /url: sms:+14384944567?&body=Bonjour%20Andrew%2C%20j'ai%20consult%C3%A9%20votre%20site%20et%20j'aimerais%20discuter%20d'un%20projet%20hypoth%C3%A9caire.%20Quel%20serait%20le%20meilleur%20moment%20pour%20%C3%A9changer%20%3F
+    - generic: Écrivez-nous par SMS
+    - img [ref=e1101]
+    - generic [ref=e1103]:
+      - generic [ref=e1104]: Équipe Buteau
+      - generic [ref=e1105]: 438-494-4567
+  - button "Retour en haut" [ref=e1106]:
+    - generic: Retour en haut
+    - img [ref=e1107]
+  - link "Site realise par Intralys - Decouvrez nos ecosystemes" [ref=e1110] [cursor=pointer]:
+    - /url: https://intralys.com/ecosysteme/hypothecaire?ref=equipe-buteau
+    - img "Intralys"

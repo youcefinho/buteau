@@ -55,7 +55,7 @@ export function ToolsTeaser() {
               <Link
                 key={idx}
                 to="/outils"
-                className="group relative block bg-[color:var(--color-cream)]/8 backdrop-blur-sm border border-[color:var(--color-cream)]/20 p-[clamp(1.5rem,2.5vw,2rem)] text-center transition-all duration-500 hover:bg-[color:var(--color-cream)]/15 hover:border-[color:var(--color-bronze)]/70 hover:-translate-y-1.5 overflow-hidden"
+                className="group relative block bg-[color:var(--color-cream)]/8 backdrop-blur-sm border border-[color:var(--color-cream)]/20 p-[clamp(1.5rem,2.5vw,2rem)] text-center transition-all duration-500 hover:bg-[color:var(--color-cream)]/15 hover:border-[color:var(--color-orange)]/70 hover:-translate-y-1.5 overflow-hidden"
               >
                 {/* Numéro Cormorant filigrane top-right */}
                 <span

@@ -179,9 +179,9 @@ export function ExitIntent() {
 
         {/* Eyebrow tirets bronze */}
         <p className="inline-flex items-center gap-3 mb-5 text-xs uppercase tracking-[0.22em] text-[color:var(--color-bronze)]">
-          <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
+          <span className="inline-block w-6 h-px bg-[color:var(--color-orange)]" />
           {tr.eyebrow}
-          <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
+          <span className="inline-block w-6 h-px bg-[color:var(--color-orange)]" />
         </p>
 
         {/* Titre — Cormorant  édito */}
