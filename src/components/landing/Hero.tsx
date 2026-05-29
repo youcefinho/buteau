@@ -152,7 +152,7 @@ export function Hero() {
               >
                 <span className="relative">
                   {t("home.hero.ctaSecondary")}
-                  <span className="absolute left-0 -bottom-1 w-0 h-px bg-[color:var(--color-taupe)] group-hover:w-full transition-[width] duration-500" />
+                  <span className="absolute left-0 -bottom-1 w-0 h-px bg-[color:var(--color-orange)] group-hover:w-full transition-[width] duration-500" />
                 </span>
                 <span aria-hidden="true" className="transition-transform duration-500 group-hover:translate-x-1">→</span>
               </Link>

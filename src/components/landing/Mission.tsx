@@ -93,7 +93,7 @@ export function Mission() {
                 {t("home.mission.bodyP2Continued")}
               </span>
               <span
-                className="inline-block tabular-nums font-bold text-[color:var(--color-bronze)] mr-1"
+                className="inline-block tabular-nums font-bold text-[color:var(--color-orange)] mr-1"
                 aria-live="polite"
               >
                 {familiesCount}

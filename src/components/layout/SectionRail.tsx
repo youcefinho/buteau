@@ -167,7 +167,7 @@ export function SectionRail({ sections = HOME_SECTIONS }: SectionRailProps = {})
                   isMain ? "w-3 h-3" : "w-1.5 h-1.5"
                 } ${
                   isActive
-                    ? "bg-[color:var(--color-bronze)] shadow-[0_0_0_3px_oklch(0.704_0.077_56/0.18)]"
+                    ? "bg-[color:var(--color-orange)] shadow-[0_0_0_3px_oklch(0.667_0.224_37/0.20)]"
                     : "bg-[color:var(--color-taupe)]/45 group-hover:bg-[color:var(--color-bronze)]"
                 }`}
               />
@@ -185,7 +185,7 @@ export function SectionRail({ sections = HOME_SECTIONS }: SectionRailProps = {})
                   : "opacity-100 translate-x-0"
               } ${
                 isActive
-                  ? "text-[color:var(--color-bronze)]"
+                  ? "text-[color:var(--color-orange)]"
                   : "text-[color:var(--color-taupe-dark)] group-hover/rail:text-[color:var(--color-bronze)]"
               }`}
             >
