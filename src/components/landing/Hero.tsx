@@ -119,10 +119,10 @@ export function Hero() {
           </div>
 
           {/* Tagline — lockup CHARTE : MAJUSCULES, Libre Franklin, tracking large
-              (≈ ITC Franklin Gothic 138) pour s'aligner en largeur sous BUTEAU.
-              Taille à calibrer à l'œil pour matcher exactement la largeur du logo. */}
+              (≈ ITC Franklin Gothic 138). Taille en vw proportionnelle à BUTEAU
+              (~0.26× la taille du logo) pour s'aligner en LARGEUR sous lui, responsive. */}
           <h1
-            className="font-[family-name:var(--font-sans)] uppercase text-[color:var(--color-cream)]/90 text-[clamp(0.8rem,1.7vw,1.2rem)] font-medium tracking-[0.22em] leading-[1.3] mt-[clamp(1rem,2vw,1.5rem)] text-balance animate-[buteauFadeUp_800ms_ease-out_700ms_both]"
+            className="font-[family-name:var(--font-sans)] uppercase text-[color:var(--color-cream)]/90 text-[clamp(0.9rem,2.9vw,2.3rem)] font-medium tracking-[0.2em] leading-[1.2] mt-[clamp(0.85rem,1.8vw,1.4rem)] whitespace-nowrap animate-[buteauFadeUp_800ms_ease-out_700ms_both]"
           >
             {t("home.hero.title")}
           </h1>

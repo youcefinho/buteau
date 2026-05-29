@@ -145,7 +145,7 @@ export function AmortizationSparkline({
         y={PADDING + 9}
         fontSize="7"
         fill="oklch(0.585 0.020 84)"
-        fontFamily="Open Sans, system-ui"
+        fontFamily="system-ui, sans-serif"
         textAnchor="start"
       >
         Capital restant
@@ -155,7 +155,7 @@ export function AmortizationSparkline({
         y={PADDING + innerH - 2}
         fontSize="7"
         fill="oklch(0.585 0.020 84)"
-        fontFamily="Open Sans, system-ui"
+        fontFamily="system-ui, sans-serif"
         textAnchor="end"
       >
         Intérêts cumulés
