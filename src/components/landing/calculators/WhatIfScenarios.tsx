@@ -95,10 +95,10 @@ export function WhatIfScenarios({
     <div className="mt-8 max-w-5xl mx-auto">
       {/* Header signature */}
       <div className="text-center mb-7">
-        <p className="font-[var(--font-editorial)] italic text-[color:var(--color-navy)] text-[clamp(1.5rem,2.5vw,1.875rem)]">
+        <p className="font-[var(--font-editorial)]  text-[color:var(--color-navy)] text-[clamp(1.5rem,2.5vw,1.875rem)]">
           {t("tools.calc.scenariosTitle")}
         </p>
-        <p className="text-sm text-[color:var(--color-taupe-dark)] italic mt-2 max-w-md mx-auto">
+        <p className="text-sm text-[color:var(--color-taupe-dark)]  mt-2 max-w-md mx-auto">
           {t("tools.calc.scenariosSubtitle")}
         </p>
       </div>

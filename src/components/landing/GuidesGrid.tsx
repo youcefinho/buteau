@@ -46,7 +46,7 @@ export function GuidesGrid() {
               {/* Numéro Cormorant filigrane top-right */}
               <span
                 aria-hidden="true"
-                className="absolute top-4 right-5 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/30 text-5xl leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-[color:var(--color-bronze)]/45"
+                className="absolute top-4 right-5 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/30 text-5xl leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-[color:var(--color-bronze)]/45"
               >
                 {["01", "02", "03"][idx]}
               </span>

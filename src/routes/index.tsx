@@ -79,7 +79,7 @@ function HomePage() {
       <SectionDivider variant="fleuron" tone="light" />
 
       {/* AdPage — pleine page édito style "publicité magazine luxe" (Cereal vol.18).
-          Une seule phrase Fraunces italic XL. Cree respiration entre Mission
+          Une seule phrase Fraunces  XL. Cree respiration entre Mission
           corporate et la qualification du lead (Quiz). */}
       <ScrollReveal><AdPage /></ScrollReveal>
 

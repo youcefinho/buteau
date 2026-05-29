@@ -80,7 +80,7 @@ export function TikTokTeaser() {
             {/* Teaser editorial — surface cream, taupe-dark. Décrit le canal
                 TikTok + la série de capsules courtes. */}
             <p
-              className="mt-3 italic text-[color:var(--color-bronze)] text-[clamp(0.8125rem,1.05vw,0.875rem)] leading-snug max-w-md text-pretty"
+              className="mt-3  text-[color:var(--color-bronze)] text-[clamp(0.8125rem,1.05vw,0.875rem)] leading-snug max-w-md text-pretty"
             >
               {isFr
                 ? "Suivez @equipebuteau pour les capsules en série — toutes les questions hypothécaires courantes."

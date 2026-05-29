@@ -160,7 +160,7 @@ export function GlossaryModal() {
         {/* Body — list of terms (filtered by query) */}
         <div className="px-[clamp(1.5rem,3vw,2.5rem)] py-8 space-y-8">
           {filteredGlossary.length === 0 && (
-            <p className="text-center italic text-sm text-[color:var(--color-bronze)] py-8">
+            <p className="text-center  text-sm text-[color:var(--color-bronze)] py-8">
               {lang === "fr"
                 ? `Aucun terme ne correspond à "${query}".`
                 : `No term matches "${query}".`}
@@ -173,7 +173,7 @@ export function GlossaryModal() {
                   {g.term[lang]}
                 </h3>
                 {g.term.fr_alt && lang === "fr" && (
-                  <span className="text-xs italic text-[color:var(--color-taupe-dark)]">
+                  <span className="text-xs  text-[color:var(--color-taupe-dark)]">
                     {g.term.fr_alt.join(", ")}
                   </span>
                 )}

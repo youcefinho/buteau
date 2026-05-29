@@ -60,7 +60,7 @@ export function ToolsTeaser() {
                 {/* Numéro Cormorant filigrane top-right */}
                 <span
                   aria-hidden="true"
-                  className="absolute top-3 right-4 italic text-[color:var(--color-taupe)]/25 text-3xl leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-[color:var(--color-bronze)]/35"
+                  className="absolute top-3 right-4  text-[color:var(--color-taupe)]/25 text-3xl leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-[color:var(--color-bronze)]/35"
                 >
                   {String(idx + 1).padStart(2, "0")}
                 </span>
@@ -89,7 +89,7 @@ export function ToolsTeaser() {
           {/* Teaser editorial — surface navy, cream/70. Liste les vraies
               catégories de /outils (calculs + simulateurs + guides + lettres). */}
           <p
-            className="mt-4 italic text-[color:var(--color-cream)]/70 text-[clamp(0.8125rem,1.05vw,0.875rem)] leading-snug max-w-md mx-auto text-pretty"
+            className="mt-4  text-[color:var(--color-cream)]/70 text-[clamp(0.8125rem,1.05vw,0.875rem)] leading-snug max-w-md mx-auto text-pretty"
           >
             {isFr
               ? "Calculatrices, simulateurs « et si », guides téléchargeables, lettres-types. Préparez votre dossier avant le RDV."

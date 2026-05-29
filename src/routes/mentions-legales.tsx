@@ -53,7 +53,7 @@ function BodyFr() {
         <br />
         <strong>NEQ :</strong>{" "}
         {config.legal.neq || (
-          <em className="text-[color:var(--color-taupe-dark)]">
+          <em className="not-italic text-[color:var(--color-taupe-dark)]">
             (Numéro d'entreprise du Québec — à compléter)
           </em>
         )}
@@ -78,7 +78,7 @@ function BodyFr() {
       <P>
         <strong>Numéro de certificat AMF :</strong>{" "}
         {config.amf.certificateNumberAndrew || (
-          <em className="text-[color:var(--color-taupe-dark)]">(à compléter — voir AMF.qc.ca)</em>
+          <em className="not-italic text-[color:var(--color-taupe-dark)]">(à compléter — voir AMF.qc.ca)</em>
         )}
       </P>
       <AmfDisclaimer variant="card" className="my-6" />
@@ -139,7 +139,7 @@ function BodyEn() {
         <br />
         <strong>NEQ:</strong>{" "}
         {config.legal.neq || (
-          <em className="text-[color:var(--color-taupe-dark)]">(Quebec business number — to be filled)</em>
+          <em className="not-italic text-[color:var(--color-taupe-dark)]">(Quebec business number — to be filled)</em>
         )}
       </P>
 
@@ -162,7 +162,7 @@ function BodyEn() {
       <P>
         <strong>AMF certificate number:</strong>{" "}
         {config.amf.certificateNumberAndrew || (
-          <em className="text-[color:var(--color-taupe-dark)]">(to be filled — see lautorite.qc.ca)</em>
+          <em className="not-italic text-[color:var(--color-taupe-dark)]">(to be filled — see lautorite.qc.ca)</em>
         )}
       </P>
       <AmfDisclaimer variant="card" className="my-6" />

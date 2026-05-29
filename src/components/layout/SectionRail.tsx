@@ -6,7 +6,7 @@ import { useLanguage } from "@/lib/LanguageContext";
  * SectionRail — navigation latérale fixée à gauche (desktop only).
  *
  * Pattern : table-of-contents éditorial magazine, dots cliquables + labels
- * Cormorant italic. Gros cercles pour les sections principales (chapitres),
+ * Cormorant . Gros cercles pour les sections principales (chapitres),
  * mini cercles pour les sous-sections. Active section tracking via
  * IntersectionObserver. Smooth scroll vers la section au click.
  *
@@ -173,7 +173,7 @@ export function SectionRail({ sections = HOME_SECTIONS }: SectionRailProps = {})
               />
             </span>
 
-            {/* Label Cormorant italic — taille différente selon type.
+            {/* Label Cormorant  — taille différente selon type.
                 Hover : scale-110 origin-left (zoom subtil sans pousser le dot)
                 + active déjà bronze + pulse. */}
             <span

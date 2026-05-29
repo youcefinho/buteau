@@ -11,10 +11,10 @@ import { ButeauMonogramInline } from "@/components/atmosphere/ButeauMonogramInli
  * tagline officielle, territoires desservis).
  *
  * Pattern : marquee CSS-only infinite scroll, deux copies du contenu pour
- * loop seamless. Police Cormorant italic XL pour cohérence édito magazine.
+ * loop seamless. Police Cormorant  XL pour cohérence édito magazine.
  *
  * Skills appliquées :
- * - intralys-edito-magazine : Cormorant italic + bronze accents + grain feel
+ * - intralys-edito-magazine : Cormorant  + bronze accents + grain feel
  * - frontend-design : motion subtle CSS-only, pas de lib JS pour perf
  * - feedback_factualite_zero_invention : que des faits vérifiés depuis sources
  *   officielles (Planiprêt + Équipe Buteau site)
@@ -54,7 +54,7 @@ export function ValueTicker() {
             <span
               key={`${idx}-${item.slice(0, 12)}`}
               aria-hidden={isClone ? "true" : undefined}
-              className="inline-flex items-center gap-6 px-8 italic text-[color:var(--color-cream)]/90 text-[clamp(1rem,1.4vw,1.125rem)]"
+              className="inline-flex items-center gap-6 px-8  text-[color:var(--color-cream)]/90 text-[clamp(1rem,1.4vw,1.125rem)]"
             >
               <span>{item}</span>
               <span aria-hidden="true" className="text-[color:var(--color-bronze)] select-none">

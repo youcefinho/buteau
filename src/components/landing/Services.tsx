@@ -67,7 +67,7 @@ export function Services() {
               {/* Numéro romain XL filigrane DEBORDANT à gauche (signature diagonal) */}
               <span
                 aria-hidden="true"
-                className="hidden md:block absolute -left-3 top-1/2 -translate-y-1/2 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/15 text-[12rem] leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-[color:var(--color-bronze)]/25"
+                className="hidden md:block absolute -left-3 top-1/2 -translate-y-1/2 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/15 text-[12rem] leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-[color:var(--color-bronze)]/25"
               >
                 {numerals[idx]}
               </span>
@@ -86,7 +86,7 @@ export function Services() {
 
                 {/* Description — col 7. AutoGlossary wrap les termes hypothécaires détectés. */}
                 <div className="md:col-span-7">
-                  <p className="text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/80 italic text-pretty hyphens-auto">
+                  <p className="text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/80  text-pretty hyphens-auto">
                     <AutoGlossary text={s.desc} maxWraps={2} />
                   </p>
                 </div>

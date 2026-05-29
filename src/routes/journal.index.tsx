@@ -75,8 +75,8 @@ function JournalPage() {
         }}
       />
 
-      {/* Subtitle Cormorant italic */}
-      <p className="italic text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-navy-deep)]/80 leading-[1.65] mb-[clamp(2.5rem,5vw,3rem)] text-pretty">
+      {/* Subtitle Cormorant  */}
+      <p className=" text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-navy-deep)]/80 leading-[1.65] mb-[clamp(2.5rem,5vw,3rem)] text-pretty">
         {t("journal.subtitle")}
       </p>
 
@@ -92,7 +92,7 @@ function JournalPage() {
               <div className="md:w-[120px] md:shrink-0 bg-[color:var(--color-cream-warm)] border-r border-[color:var(--color-taupe)]/30 flex items-center justify-center py-6 md:py-0">
                 <span
                   aria-hidden="true"
-                  className="font-[var(--font-editorial)] italic text-[color:var(--color-bronze)] text-[clamp(3rem,6vw,4.5rem)] leading-none"
+                  className="font-[var(--font-editorial)]  text-[color:var(--color-bronze)] text-[clamp(3rem,6vw,4.5rem)] leading-none"
                 >
                   {String(idx + 1).padStart(2, "0")}
                 </span>
@@ -103,11 +103,11 @@ function JournalPage() {
                 <div className="flex flex-wrap items-baseline gap-x-5 gap-y-2 mb-5">
                   <p className="eyebrow text-[color:var(--color-navy)]">{a.category}</p>
                   <span aria-hidden="true" className="text-[color:var(--color-taupe)]/50">·</span>
-                  <p className="italic text-xs text-[color:var(--color-bronze)]">
+                  <p className=" text-xs text-[color:var(--color-bronze)]">
                     {a.date}
                   </p>
                   <span aria-hidden="true" className="text-[color:var(--color-taupe)]/50">·</span>
-                  <p className="inline-flex items-center gap-1.5 text-xs italic text-[color:var(--color-taupe-dark)]">
+                  <p className="inline-flex items-center gap-1.5 text-xs  text-[color:var(--color-taupe-dark)]">
                     <Clock size={11} aria-hidden="true" />
                     {a.readingTime} {t("journal.readingLabel")}
                   </p>
@@ -126,8 +126,8 @@ function JournalPage() {
 
                 <div className="w-10 h-px bg-[color:var(--color-bronze)] mb-5 transition-[width] duration-500 group-hover:w-20" />
 
-                {/* Lead Cormorant italic */}
-                <p className="italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/85 mb-4 text-pretty">
+                {/* Lead Cormorant  */}
+                <p className=" text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/85 mb-4 text-pretty">
                   {a.lead}
                 </p>
 
@@ -177,7 +177,7 @@ function JournalPage() {
       </div>
 
       {/* Footnote */}
-      <p className="text-xs italic text-[color:var(--color-taupe-dark)] mt-14 text-center">
+      <p className="text-xs  text-[color:var(--color-taupe-dark)] mt-14 text-center">
         {t("journal.footnote")}
       </p>
 
@@ -186,7 +186,7 @@ function JournalPage() {
         <HeartbeatCta>
           <Link
             to="/capsules"
-            className="group inline-flex items-center gap-2 italic text-base text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-navy)] transition-colors"
+            className="group inline-flex items-center gap-2  text-base text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-navy)] transition-colors"
           >
             <span className="relative">
               {isFr ? "Voir les capsules courtes" : "Browse the short capsules"}
@@ -200,7 +200,7 @@ function JournalPage() {
         <button
           type="button"
           onClick={() => openGlossary()}
-          className="group inline-flex items-center gap-2 italic text-base text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-navy)] transition-colors"
+          className="group inline-flex items-center gap-2  text-base text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-navy)] transition-colors"
         >
           <span className="relative">
             {isFr ? "Consulter le lexique" : "Browse the glossary"}

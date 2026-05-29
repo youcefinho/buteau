@@ -46,7 +46,7 @@ function JournalArticlePage() {
   if (!article) {
     return (
       <LegalPageWrap eyebrow={isFr ? "Article introuvable" : "Article not found"} title="404">
-        <Link to="/journal" className="italic text-[color:var(--color-navy)]">
+        <Link to="/journal" className=" text-[color:var(--color-navy)]">
           {isFr ? "Retour aux articles" : "Back to articles"}
         </Link>
       </LegalPageWrap>
@@ -89,7 +89,7 @@ function JournalArticlePage() {
             <span className="absolute left-0 -bottom-1 w-full h-px bg-[color:var(--color-bronze)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
           </span>
         </Link>
-        <p className="inline-flex items-center gap-2 text-xs italic text-[color:var(--color-taupe-dark)]">
+        <p className="inline-flex items-center gap-2 text-xs  text-[color:var(--color-taupe-dark)]">
           <Clock size={11} aria-hidden="true" />
           {article.readingTime} {t("journal.readingLabel")}
           <span aria-hidden="true" className="text-[color:var(--color-taupe)]/50 mx-1">·</span>
@@ -98,7 +98,7 @@ function JournalArticlePage() {
       </div>
 
       {/* Lead + filet */}
-      <p className="italic text-[clamp(1.125rem,1.6vw,1.25rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/85 mb-5 text-pretty hyphens-auto">
+      <p className=" text-[clamp(1.125rem,1.6vw,1.25rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/85 mb-5 text-pretty hyphens-auto">
         {article.lead}
       </p>
       <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-10" />
@@ -111,7 +111,7 @@ function JournalArticlePage() {
 
       {/* Signature de fin + retour */}
       <div className="mt-12 pt-8 border-t border-[color:var(--color-taupe)]/30 flex flex-wrap items-baseline justify-between gap-y-4 gap-x-6">
-        <p className="italic text-sm text-[color:var(--color-bronze)]">
+        <p className=" text-sm text-[color:var(--color-bronze)]">
           {isFr ? "Andrew Buteau, courtier hypothécaire" : "Andrew Buteau, mortgage broker"}
           {" · "}
           {article.date}

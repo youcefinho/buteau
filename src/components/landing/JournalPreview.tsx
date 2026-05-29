@@ -36,7 +36,7 @@ export function JournalPreview() {
       {/* Filigrane § XL background — signature editoriale */}
       <span
         aria-hidden="true"
-        className="absolute -top-12 right-0 font-[var(--font-editorial)] italic text-[color:var(--color-bronze)]/8 text-[22rem] leading-none pointer-events-none select-none"
+        className="absolute -top-12 right-0 font-[var(--font-editorial)]  text-[color:var(--color-bronze)]/8 text-[22rem] leading-none pointer-events-none select-none"
       >
         §
       </span>
@@ -53,7 +53,7 @@ export function JournalPreview() {
               {isFr ? "Articles et analyses du marché." : "Articles and market analyses."}
             </h2>
             <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-6" />
-            <p className="italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-cream)]/80 mb-8 text-pretty hyphens-auto">
+            <p className=" text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-cream)]/80 mb-8 text-pretty hyphens-auto">
               {isFr
                 ? "Décryptages, stratégies et explications pratiques sur le marché hypothécaire québécois. Lectures longues, rédigées pour aider à mieux décider avant de signer."
                 : "Insights, strategies and practical explanations on the Quebec mortgage market. Long-form reads, written to help you decide better before signing."}
@@ -77,7 +77,7 @@ export function JournalPreview() {
             </HeartbeatCta>
             {/* Teaser editorial — surface navy, taupe-cream pour visibilité. */}
             <p
-              className="mt-4 italic text-[color:var(--color-cream)]/70 text-[clamp(0.8125rem,1.05vw,0.875rem)] leading-snug max-w-md text-pretty"
+              className="mt-4  text-[color:var(--color-cream)]/70 text-[clamp(0.8125rem,1.05vw,0.875rem)] leading-snug max-w-md text-pretty"
             >
               {isFr
                 ? "Articles longs voix Andrew — pré-approbation, refinancement, taux. La mécanique sans jargon."
@@ -93,7 +93,7 @@ export function JournalPreview() {
                 <div className="absolute top-0 left-0 bottom-0 w-[100px] bg-[color:var(--color-cream-warm)] border-r border-[color:var(--color-taupe)]/30 hidden md:flex items-center justify-center pointer-events-none">
                   <span
                     aria-hidden="true"
-                    className="font-[var(--font-editorial)] italic text-[color:var(--color-bronze)] text-7xl leading-none"
+                    className="font-[var(--font-editorial)]  text-[color:var(--color-bronze)] text-7xl leading-none"
                   >
                     01
                   </span>
@@ -104,11 +104,11 @@ export function JournalPreview() {
                   <div className="flex flex-wrap items-baseline gap-x-5 gap-y-2 mb-5">
                     <p className="eyebrow text-[color:var(--color-navy)]">{featured.category}</p>
                     <span aria-hidden="true" className="text-[color:var(--color-taupe)]/50">·</span>
-                    <p className="italic text-xs text-[color:var(--color-bronze)]">
+                    <p className=" text-xs text-[color:var(--color-bronze)]">
                       {featured.date}
                     </p>
                     <span aria-hidden="true" className="text-[color:var(--color-taupe)]/50">·</span>
-                    <p className="inline-flex items-center gap-1.5 text-xs italic text-[color:var(--color-taupe-dark)]">
+                    <p className="inline-flex items-center gap-1.5 text-xs  text-[color:var(--color-taupe-dark)]">
                       <Clock size={11} aria-hidden="true" />
                       {featured.readingTime} {t("journal.readingLabel")}
                     </p>
@@ -128,7 +128,7 @@ export function JournalPreview() {
                   <div className="w-10 h-px bg-[color:var(--color-bronze)] mb-5 transition-[width] duration-500 group-hover:w-20" />
 
                   {/* Lead */}
-                  <p className="italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/85 mb-4 text-pretty">
+                  <p className=" text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/85 mb-4 text-pretty">
                     {featured.lead}
                   </p>
 

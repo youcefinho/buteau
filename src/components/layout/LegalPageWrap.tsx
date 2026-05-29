@@ -29,7 +29,7 @@ export function LegalPageWrap({
         {/* Filigrane "§" éditorial luxury */}
         <span
           aria-hidden="true"
-          className="absolute -top-12 left-1/2 -translate-x-1/2 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/12 text-[18rem] md:text-[22rem] leading-none pointer-events-none select-none"
+          className="absolute -top-12 left-1/2 -translate-x-1/2 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/12 text-[18rem] md:text-[22rem] leading-none pointer-events-none select-none"
         >
           §
         </span>

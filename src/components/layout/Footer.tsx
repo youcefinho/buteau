@@ -13,7 +13,7 @@ import { PoweredByIntralys } from "@/components/shared/PoweredByIntralys";
  *
  * Pourquoi NOVEL : pattern 4-col footer = AI generic. Ici on a une vraie 4ème
  * de couverture de magazine luxury :
- * - Statement éditorial Cormorant italic en énorme (la "tagline du dos")
+ * - Statement éditorial Cormorant  en énorme (la "tagline du dos")
  * - Monogramme BUTEAU XL en filigrane
  * - Colophon (typo credits) — détail magazine print
  * - Bandeau navigation + contact + légal en pied minimaliste
@@ -47,7 +47,7 @@ export function Footer() {
           className="h-[clamp(2.5rem,4vw,3.5rem)] w-auto mb-[clamp(1.5rem,2.5vw,2rem)] opacity-95"
         />
 
-        {/* === Couverture statement — Cormorant italic XL === */}
+        {/* === Couverture statement — Cormorant  XL === */}
         <div className="max-w-4xl mb-[clamp(2rem,3vw,2.5rem)]">
           <p className="eyebrow text-[color:var(--color-taupe)] mb-4 inline-flex items-center gap-3">
             <span className="inline-block w-6 h-px bg-[color:var(--color-taupe)]" />

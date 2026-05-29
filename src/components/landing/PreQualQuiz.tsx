@@ -96,7 +96,7 @@ export function PreQualQuiz() {
       {/* Filigrane "?" Cormorant XL background */}
       <span
         aria-hidden="true"
-        className="absolute -top-20 -left-12 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/10 text-[28rem] leading-none pointer-events-none select-none"
+        className="absolute -top-20 -left-12 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/10 text-[28rem] leading-none pointer-events-none select-none"
       >
         ?
       </span>
@@ -113,7 +113,7 @@ export function PreQualQuiz() {
             {t("quiz.title")}
           </h2>
           <div className="w-12 h-px bg-[color:var(--color-bronze)] mx-auto mb-6" />
-          <p className="italic text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-navy-deep)]/80 leading-[1.55] text-pretty">
+          <p className=" text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-navy-deep)]/80 leading-[1.55] text-pretty">
             {t("quiz.subtitle")}
           </p>
         </div>
@@ -126,11 +126,11 @@ export function PreQualQuiz() {
               <div className="flex items-center justify-between mb-8">
                 <p className="eyebrow text-[color:var(--color-taupe-dark)]">
                   {t("quiz.progressLabel")}{" "}
-                  <span className="italic text-[color:var(--color-navy)] text-base">
+                  <span className=" text-[color:var(--color-navy)] text-base">
                     {String(step + 1).padStart(2, "0")}
                   </span>
                   <span className="mx-1.5 text-[color:var(--color-taupe)]">/</span>
-                  <span className="italic text-[color:var(--color-bronze)] text-base">
+                  <span className=" text-[color:var(--color-bronze)] text-base">
                     {String(questions.length).padStart(2, "0")}
                   </span>
                 </p>
@@ -174,7 +174,7 @@ export function PreQualQuiz() {
                       className="group w-full text-left bg-[color:var(--color-cream-warm)] border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-bronze)]/70 focus-visible:border-[color:var(--color-bronze)] focus-visible:shadow-[0_0_0_3px_oklch(0.704_0.077_56/0.18)] focus-visible:outline-none px-[clamp(1.25rem,2vw,1.5rem)] py-[clamp(1rem,1.5vw,1.25rem)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-12px_rgba(16,34,61,0.2)] flex items-center justify-between gap-4"
                     >
                       <span className="flex items-baseline gap-4 flex-1">
-                        <span className="italic text-[color:var(--color-bronze)] text-xl tabular-nums">
+                        <span className=" text-[color:var(--color-bronze)] text-xl tabular-nums">
                           {String.fromCharCode(65 + idx)}
                         </span>
                         <span className="font-[var(--font-display)] text-[color:var(--color-navy-deep)] text-[clamp(1rem,1.4vw,1.125rem)] leading-snug">

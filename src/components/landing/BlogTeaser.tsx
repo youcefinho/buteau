@@ -59,7 +59,7 @@ export function BlogTeaser() {
               </HeartbeatCta>
               {/* Teaser editorial — surface navy, cream/70. */}
               <p
-                className="mt-3 italic text-[color:var(--color-cream)]/70 text-[clamp(0.8125rem,1.05vw,0.875rem)] leading-snug max-w-md text-pretty"
+                className="mt-3  text-[color:var(--color-cream)]/70 text-[clamp(0.8125rem,1.05vw,0.875rem)] leading-snug max-w-md text-pretty"
               >
                 {isFr
                   ? "Articles longs voix Andrew — analyses, décryptages, mécaniques expliquées sans diluer."

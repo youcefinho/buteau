@@ -10,7 +10,7 @@ import { useLanguage } from "@/lib/LanguageContext";
  * - default  : cercle taupe outline 24px
  * - link     : cercle bronze plein 12px (sur les <a>, <button>, [role=button])
  * - text     : i-beam bronze (sur input, textarea)
- * - image    : cercle taupe agrandi 56px avec texte VOIR italic à l'intérieur (sur img + figure)
+ * - image    : cercle taupe agrandi 56px avec texte VOIR  à l'intérieur (sur img + figure)
  *
  * Respecte prefers-reduced-motion (pas d'effet — cursor natif visible).
  */

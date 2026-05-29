@@ -12,8 +12,8 @@ import { AnimatedSignature } from "./AnimatedSignature";
  *
  * Structure :
  * - Eyebrow tirets longs encadrants
- * - "Bonjour," dropcap Cormorant italic XL
- * - 3 paragraphes Cormorant italic 1.7-1.8 leading (effet papier à lettre)
+ * - "Bonjour," dropcap Cormorant  XL
+ * - 3 paragraphes Cormorant  1.7-1.8 leading (effet papier à lettre)
  * - Signature SVG animée au scroll-into-view
  * - Texte signataire italique sous la signature
  *
@@ -58,7 +58,7 @@ export function BrokerLetter() {
               <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
             </p>
 
-            {/* "Bonjour," — accroche Fraunces italic XL avec axes optical + WONK
+            {/* "Bonjour," — accroche Fraunces  XL avec axes optical + WONK
                 (signature endroit #3, plus distinctive que Cormorant). */}
             <p className="font-signature text-[color:var(--color-navy-deep)] text-[clamp(2.25rem,5vw,3.75rem)] leading-none mb-10 tracking-[-0.015em]">
               {t("letter.heading")}

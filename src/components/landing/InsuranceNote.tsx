@@ -46,7 +46,7 @@ export function InsuranceNote() {
           </div>
 
           {/* Réassurance */}
-          <p className="text-[clamp(0.875rem,1.2vw,1rem)] italic text-center text-[color:var(--color-taupe-dark)] pt-4">
+          <p className="text-[clamp(0.875rem,1.2vw,1rem)]  text-center text-[color:var(--color-taupe-dark)] pt-4">
             {t("institutions.reassurance")}
           </p>
         </div>

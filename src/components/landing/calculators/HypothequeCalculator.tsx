@@ -201,7 +201,7 @@ export function HypothequeCalculator() {
           <div className="lg:col-span-2 surface-navy p-8 md:p-12 flex flex-col justify-between gap-10 relative overflow-hidden">
             {/* Filigrane "$" éditorial en arrière-plan */}
             <span
-              className="absolute -top-8 -right-6 font-[var(--font-editorial)] italic text-[color:var(--color-bronze)]/10 text-[16rem] leading-none pointer-events-none select-none"
+              className="absolute -top-8 -right-6 font-[var(--font-editorial)]  text-[color:var(--color-bronze)]/10 text-[16rem] leading-none pointer-events-none select-none"
               aria-hidden="true"
             >
               $
@@ -221,7 +221,7 @@ export function HypothequeCalculator() {
               </p>
               <div className="flex items-center gap-3 mt-5">
                 <span className="w-6 h-px bg-[color:var(--color-bronze)]" aria-hidden="true" />
-                <p className="italic text-[color:var(--color-cream)]/70 text-sm">
+                <p className=" text-[color:var(--color-cream)]/70 text-sm">
                   {lang === "fr" ? "par mois" : "per month"}
                 </p>
               </div>
@@ -258,7 +258,7 @@ export function HypothequeCalculator() {
                 <p className="eyebrow text-[color:var(--color-taupe-dark)]">
                   {lang === "fr" ? "Courbe d'amortissement" : "Amortization curve"}
                 </p>
-                <p className="text-xs italic text-[color:var(--color-taupe-dark)]">
+                <p className="text-xs  text-[color:var(--color-taupe-dark)]">
                   {lang === "fr"
                     ? `sur ${result.numberOfPayments / 12} ans`
                     : `over ${result.numberOfPayments / 12} years`}
@@ -270,7 +270,7 @@ export function HypothequeCalculator() {
                 monthlyRate={result.monthlyRate}
                 numberOfPayments={result.numberOfPayments}
               />
-              <p className="text-[10px] italic text-[color:var(--color-taupe-dark)] mt-2">
+              <p className="text-[10px]  text-[color:var(--color-taupe-dark)] mt-2">
                 {lang === "fr"
                   ? "Plus le contrat avance, plus la part capital remplace les intérêts."
                   : "As the loan progresses, the principal share replaces the interest share."}
@@ -297,12 +297,12 @@ export function HypothequeCalculator() {
                 <p className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-3xl tracking-[-0.01em] tabular-nums">
                   {formatLocaleCurrency(Math.round(result.totalPaid), lang)}
                 </p>
-                <p className="text-xs italic text-[color:var(--color-taupe-dark)] mt-1">
+                <p className="text-xs  text-[color:var(--color-taupe-dark)] mt-1">
                   {lang === "fr" ? "capital + intérêts" : "principal + interest"}
                 </p>
               </div>
 
-              <p className="text-[10px] leading-relaxed text-[color:var(--color-taupe-dark)] pt-2 italic border-t border-[color:var(--color-taupe)]/30 mt-4 text-pretty hyphens-auto">
+              <p className="text-[10px] leading-relaxed text-[color:var(--color-taupe-dark)] pt-2  border-t border-[color:var(--color-taupe)]/30 mt-4 text-pretty hyphens-auto">
                 {lang === "fr"
                   ? "Estimation à taux constant. La réalité varie selon les renouvellements, les paiements anticipés et les conditions du prêteur."
                   : "Estimate at constant rate. Actual values vary with renewals, prepayments, and lender conditions."}
@@ -323,7 +323,7 @@ export function HypothequeCalculator() {
         )}
 
         {/* Disclaimer AMF en bas */}
-        <p className="text-xs leading-relaxed text-[color:var(--color-taupe-dark)] max-w-3xl mx-auto text-center mt-8 italic text-pretty hyphens-auto">
+        <p className="text-xs leading-relaxed text-[color:var(--color-taupe-dark)] max-w-3xl mx-auto text-center mt-8  text-pretty hyphens-auto">
           {t("tools.calc.disclaimer")}
         </p>
 

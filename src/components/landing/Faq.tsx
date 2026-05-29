@@ -63,7 +63,7 @@ export function Faq() {
                   {/* Numero filigrane Cormorant a gauche */}
                   <span
                     aria-hidden="true"
-                    className="font-[var(--font-editorial)] italic text-[color:var(--color-taupe)] group-data-[state=open]:text-[color:var(--color-bronze)] text-2xl shrink-0 transition-colors w-8"
+                    className="font-[var(--font-editorial)]  text-[color:var(--color-taupe)] group-data-[state=open]:text-[color:var(--color-bronze)] text-2xl shrink-0 transition-colors w-8"
                   >
                     {String(idx + 1).padStart(2, "0")}
                   </span>

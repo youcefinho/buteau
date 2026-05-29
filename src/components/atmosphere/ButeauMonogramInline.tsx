@@ -1,6 +1,6 @@
 /**
  * ButeauMonogramInline — monogramme B Buteau pour usage inline dans le texte
- * (remplace l'ancien char ❦ Cormorant italic inline).
+ * (remplace l'ancien char ❦ Cormorant  inline).
  *
  * Sizing RELATIF en em -> scale automatiquement avec font-size du parent.
  * Par defaut "sm" = 1.2em width (eyebrow context). "lg" = 1.6em (ticker, dividers).

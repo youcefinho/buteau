@@ -29,7 +29,7 @@ export function TeamMethod() {
             <div key={idx} className="relative pt-[clamp(4rem,6vw,5rem)]">
               {/* Roman numeral filigrane — drop cap éditorial XL (audit P2-I) */}
               <span
-                className="absolute -top-4 -left-2 md:-left-3 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/30 text-[8rem] md:text-[10rem] lg:text-[11rem] leading-[0.85] pointer-events-none select-none"
+                className="absolute -top-4 -left-2 md:-left-3 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/30 text-[8rem] md:text-[10rem] lg:text-[11rem] leading-[0.85] pointer-events-none select-none"
                 aria-hidden="true"
               >
                 {["01", "02", "03"][idx]}

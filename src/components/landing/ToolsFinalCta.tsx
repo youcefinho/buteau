@@ -24,7 +24,7 @@ export function ToolsFinalCta() {
       {/* Filigrane editorial */}
       <span
         aria-hidden="true"
-        className="absolute -bottom-10 right-0 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/8 text-[18rem] leading-none pointer-events-none select-none"
+        className="absolute -bottom-10 right-0 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/8 text-[18rem] leading-none pointer-events-none select-none"
       >
         ?
       </span>
@@ -43,7 +43,7 @@ export function ToolsFinalCta() {
 
           <div className="w-16 h-px bg-[color:var(--color-bronze)] mx-auto" />
 
-          <p className="italic text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-cream)]/85 leading-[1.5] text-pretty">
+          <p className=" text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-cream)]/85 leading-[1.5] text-pretty">
             {t("tools.finalCta.body")}
           </p>
 

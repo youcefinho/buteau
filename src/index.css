@@ -377,7 +377,7 @@ body {
 
 .custom-cursor__label {
   font-family: var(--font-editorial);
-  font-style: italic;
+  font-style: normal;
   font-size: 0;
   color: var(--color-cream);
   letter-spacing: 0.05em;

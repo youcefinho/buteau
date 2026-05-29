@@ -39,7 +39,7 @@ export function Reviews() {
       {/* Filigrane "✉" enveloppe — Cormorant XL background */}
       <span
         aria-hidden="true"
-        className="absolute -top-12 -right-12 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/8 text-[24rem] leading-none pointer-events-none select-none"
+        className="absolute -top-12 -right-12 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/8 text-[24rem] leading-none pointer-events-none select-none"
       >
         ✉
       </span>
@@ -94,7 +94,7 @@ export function Reviews() {
                   <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-1">
                     {t("home.reviews.letterDateLabel")}
                   </p>
-                  <p className="italic text-sm text-[color:var(--color-navy-deep)]">
+                  <p className=" text-sm text-[color:var(--color-navy-deep)]">
                     {r.date}
                   </p>
                 </div>
@@ -102,13 +102,13 @@ export function Reviews() {
                   <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-1">
                     {t("home.reviews.letterFromLabel")}
                   </p>
-                  <p className="italic text-sm text-[color:var(--color-navy-deep)]">
+                  <p className=" text-sm text-[color:var(--color-navy-deep)]">
                     {r.city}
                   </p>
                 </div>
               </header>
 
-              {/* Letter body — drop cap subtle + Cormorant italic */}
+              {/* Letter body — drop cap subtle + Cormorant  */}
               <div className="px-[clamp(1.5rem,2vw,1.75rem)] py-7 flex-1 flex flex-col">
                 <div className="flex gap-1 mb-5" aria-label="5 stars">
                   {Array.from({ length: 5 }).map((_, i) => (
@@ -121,7 +121,7 @@ export function Reviews() {
                   ))}
                 </div>
 
-                <p className="italic text-[clamp(1rem,1.3vw,1.05rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/90 text-pretty">
+                <p className=" text-[clamp(1rem,1.3vw,1.05rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/90 text-pretty">
                   <span className="font-[var(--font-editorial)] not-italic font-bold text-[color:var(--color-bronze)] text-2xl mr-0.5 leading-none align-baseline">
                     «
                   </span>
@@ -143,7 +143,7 @@ export function Reviews() {
                   >
                     {r.authorInitial}
                   </div>
-                  <p className="italic text-sm text-[color:var(--color-navy-deep)]">
+                  <p className=" text-sm text-[color:var(--color-navy-deep)]">
                     — {r.author}
                   </p>
                 </div>
@@ -159,7 +159,7 @@ export function Reviews() {
             href={GOOGLE_REVIEWS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 italic text-base text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-navy)] transition-colors"
+            className="group inline-flex items-center gap-2  text-base text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-navy)] transition-colors"
           >
             <span className="relative">
               {t("common.seeAllReviews")}

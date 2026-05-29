@@ -102,15 +102,15 @@ function CapsulesPage() {
         }}
       />
 
-      {/* Subtitle Cormorant italic */}
-      <p className="italic text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-navy-deep)]/80 leading-[1.65] mb-10 text-pretty">
+      {/* Subtitle Cormorant  */}
+      <p className=" text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-navy-deep)]/80 leading-[1.65] mb-10 text-pretty">
         {t("capsules.subtitle")}
       </p>
 
       {/* Pull-quote signature Andrew — pattern intralys-edito-magazine
           Citation factuelle extraite de la voix Andrew (capsules TikTok existantes) */}
       <blockquote className="not-prose relative mb-14 py-2 border-l-2 border-[color:var(--color-bronze)] pl-6 lg:pl-8">
-        <p className="font-[var(--font-editorial)] italic text-[clamp(1.25rem,2.2vw,1.65rem)] leading-[1.3] text-[color:var(--color-navy-deep)] tracking-tight text-pretty">
+        <p className="font-[var(--font-editorial)]  text-[clamp(1.25rem,2.2vw,1.65rem)] leading-[1.3] text-[color:var(--color-navy-deep)] tracking-tight text-pretty">
           {isFr
             ? "« L'hypothèque, c'est pas compliqué. Ce qui est compliqué, c'est qu'on te l'explique mal. En 30 secondes, je te montre que la plupart des règles sont plus simples — et plus généreuses — que ce qu'on t'a dit. »"
             : "« Mortgages aren't complicated. What's complicated is the way it's been explained to you. In 30 seconds, I show you most rules are simpler — and more generous — than you were told. »"}
@@ -125,7 +125,7 @@ function CapsulesPage() {
         <div className="flex items-center gap-4">
           <span
             aria-hidden="true"
-            className="font-[var(--font-editorial)] italic text-[color:var(--color-bronze)] text-[clamp(3rem,5vw,3.75rem)] leading-none tabular-nums"
+            className="font-[var(--font-editorial)]  text-[color:var(--color-bronze)] text-[clamp(3rem,5vw,3.75rem)] leading-none tabular-nums"
           >
             {String(totalCount).padStart(2, "0")}
           </span>
@@ -190,7 +190,7 @@ function CapsulesPage() {
             <span className="font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)]">
               {isFr ? "Tous" : "All"}
             </span>
-            <span className="italic text-xs tabular-nums opacity-70">
+            <span className=" text-xs tabular-nums opacity-70">
               {totalCount}
             </span>
           </button>
@@ -210,7 +210,7 @@ function CapsulesPage() {
               <span className="font-[var(--font-display)] text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)]">
                 {cat.eyebrow}
               </span>
-              <span className="italic text-xs tabular-nums opacity-70">
+              <span className=" text-xs tabular-nums opacity-70">
                 {cat.items.length}
               </span>
             </button>
@@ -224,7 +224,7 @@ function CapsulesPage() {
             ? `${visibleCount} ${isPlural ? "capsules affichées" : "capsule affichée"} sur ${totalCount}`
             : `${visibleCount} ${isPlural ? "capsules shown" : "capsule shown"} of ${totalCount}`;
           return (
-            <p className="italic text-xs text-[color:var(--color-bronze)] mt-3">
+            <p className=" text-xs text-[color:var(--color-bronze)] mt-3">
               {fmt}
             </p>
           );
@@ -238,7 +238,7 @@ function CapsulesPage() {
             {/* Numéro XL filigrane à gauche */}
             <span
               aria-hidden="true"
-              className="hidden md:block absolute -left-20 top-0 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/15 text-[10rem] leading-none pointer-events-none select-none tabular-nums"
+              className="hidden md:block absolute -left-20 top-0 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/15 text-[10rem] leading-none pointer-events-none select-none tabular-nums"
             >
               {String(ci + 1).padStart(2, "0")}
             </span>
@@ -247,7 +247,7 @@ function CapsulesPage() {
                 Fix BLOCKER code-review : eyebrow ne duplique plus le h2 (avant les 2 affichaient cat.eyebrow). */}
             <div className="mb-8 md:mb-10">
               <p className="eyebrow text-[color:var(--color-navy)] mb-3 inline-flex items-center gap-3">
-                <span className="italic text-base text-[color:var(--color-bronze)] tabular-nums">
+                <span className=" text-base text-[color:var(--color-bronze)] tabular-nums">
                   {String(ci + 1).padStart(2, "0")}
                 </span>
                 <span className="inline-block w-6 h-px bg-[color:var(--color-bronze)]" />
@@ -277,10 +277,10 @@ function CapsulesPage() {
                       : `${item.title} — ${isFr ? "voir le profil TikTok" : "view TikTok profile"}`}
                     className="group flex items-start gap-[clamp(1.25rem,2vw,1.75rem)] py-[clamp(1.25rem,1.5vw,1.5rem)] border-b border-[color:var(--color-taupe)]/40 transition-colors duration-300 hover:border-[color:var(--color-bronze)]"
                   >
-                    {/* Numéro Cormorant italic */}
+                    {/* Numéro Cormorant  */}
                     <span
                       aria-hidden="true"
-                      className="shrink-0 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)] group-hover:text-[color:var(--color-navy)] text-[clamp(1.5rem,2.5vw,1.875rem)] leading-none tabular-nums w-10 md:w-12 transition-colors duration-300"
+                      className="shrink-0 font-[var(--font-editorial)]  text-[color:var(--color-taupe)] group-hover:text-[color:var(--color-navy)] text-[clamp(1.5rem,2.5vw,1.875rem)] leading-none tabular-nums w-10 md:w-12 transition-colors duration-300"
                     >
                       {String(ii + 1).padStart(2, "0")}
                     </span>
@@ -290,7 +290,7 @@ function CapsulesPage() {
                       <h3 className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-[clamp(1rem,1.4vw,1.125rem)] uppercase tracking-[0.02em] leading-snug text-balance group-hover:text-[color:var(--color-navy)] transition-colors">
                         {item.title}
                       </h3>
-                      <p className="italic text-[clamp(0.875rem,1.2vw,1rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/75 text-pretty">
+                      <p className=" text-[clamp(0.875rem,1.2vw,1rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/75 text-pretty">
                         « {item.hook} »
                       </p>
                     </div>
@@ -316,7 +316,7 @@ function CapsulesPage() {
       </div>
 
       {/* Footnote */}
-      <p className="text-xs italic text-[color:var(--color-taupe-dark)] mt-16 text-center max-w-2xl mx-auto">
+      <p className="text-xs  text-[color:var(--color-taupe-dark)] mt-16 text-center max-w-2xl mx-auto">
         {t("capsules.footnote")}
       </p>
 
@@ -325,7 +325,7 @@ function CapsulesPage() {
         <HeartbeatCta>
           <Link
             to="/journal"
-            className="group inline-flex items-center gap-2 italic text-base text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-navy)] transition-colors"
+            className="group inline-flex items-center gap-2  text-base text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-navy)] transition-colors"
           >
             <span className="relative">
               {isFr ? "Lire nos articles longs" : "Read our long articles"}

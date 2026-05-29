@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 /**
  * Hero secondaire pour pages internes (Équipe / Institutions / Outils).
  * Pattern luxury éditorial : overlay tonal dégradé + numéro romain filigrane optionnel
- * + tagline Cormorant italic + animation staggered reveal au mount.
+ * + tagline Cormorant  + animation staggered reveal au mount.
  */
 type PageHeroProps = {
   eyebrow?: string;
@@ -51,11 +51,11 @@ export function PageHero({
         aria-hidden="true"
       />
 
-      {/* Ornement filigrane Cormorant italic (numéro romain) si fourni */}
+      {/* Ornement filigrane Cormorant  (numéro romain) si fourni */}
       {ornament && (
         <span
           aria-hidden="true"
-          className="absolute top-24 left-1/2 -translate-x-1/2 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/15 text-[12rem] md:text-[16rem] leading-none pointer-events-none select-none animate-[buteauFadeUp_900ms_ease-out_forwards]"
+          className="absolute top-24 left-1/2 -translate-x-1/2 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/15 text-[12rem] md:text-[16rem] leading-none pointer-events-none select-none animate-[buteauFadeUp_900ms_ease-out_forwards]"
         >
           {ornament}
         </span>
@@ -78,7 +78,7 @@ export function PageHero({
           <div className="w-16 h-px bg-[color:var(--color-bronze)] mx-auto my-[clamp(2rem,3vw,2.5rem)] animate-[buteauWidth_700ms_ease-out_400ms_both]" />
 
           {subtitle && (
-            <p className="italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.5] text-[color:var(--color-cream)]/85 max-w-2xl mx-auto text-pretty animate-[buteauFadeUp_700ms_ease-out_500ms_both]">
+            <p className=" text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.5] text-[color:var(--color-cream)]/85 max-w-2xl mx-auto text-pretty animate-[buteauFadeUp_700ms_ease-out_500ms_both]">
               {subtitle}
             </p>
           )}

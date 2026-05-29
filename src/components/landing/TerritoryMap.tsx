@@ -77,10 +77,10 @@ export function TerritoryMap() {
 
   return (
     <section id="territoire" className="relative py-[clamp(4rem,9vw,8rem)] surface-cream overflow-hidden">
-      {/* Filigrane "QC" Cormorant italic arriere-plan */}
+      {/* Filigrane "QC" Cormorant  arriere-plan */}
       <span
         aria-hidden="true"
-        className="absolute -bottom-16 -right-8 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/10 text-[24rem] leading-none pointer-events-none select-none"
+        className="absolute -bottom-16 -right-8 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/10 text-[24rem] leading-none pointer-events-none select-none"
       >
         QC
       </span>
@@ -246,7 +246,7 @@ export function TerritoryMap() {
                             y={midY + 2.5}
                             fontSize="6"
                             fontFamily="Georgia, serif"
-                            fontStyle="italic"
+                            fontStyle=""
                             fill="oklch(0.55 0.025 80)"
                             textAnchor="middle"
                           >
@@ -303,7 +303,7 @@ export function TerritoryMap() {
                         y="20"
                         fontSize="6"
                         fontFamily="Georgia, serif"
-                        fontStyle="italic"
+                        fontStyle=""
                         fill="oklch(0.252 0.067 256)"
                         textAnchor="middle"
                         opacity="0.85"
@@ -319,7 +319,7 @@ export function TerritoryMap() {
                       y="-2"
                       fontSize="7"
                       fontFamily="Georgia, serif"
-                      fontStyle="italic"
+                      fontStyle=""
                       fill="oklch(0.55 0.025 80)"
                       opacity={isActive ? 0 : 0.75}
                       style={{ transition: "opacity 200ms ease" }}
@@ -327,7 +327,7 @@ export function TerritoryMap() {
                       {String(idx + 1).padStart(2, "0")}
                     </text>
 
-                    {/* C - Mini-card actif (NAME bold + NOTE italic, cream bg + border bronze) */}
+                    {/* C - Mini-card actif (NAME bold + NOTE , cream bg + border bronze) */}
                     {isActive && (
                       <g style={{ pointerEvents: "none" }}>
                         <line
@@ -367,7 +367,7 @@ export function TerritoryMap() {
                           y="-31"
                           fontSize="6.5"
                           fontFamily="Georgia, serif"
-                          fontStyle="italic"
+                          fontStyle=""
                           fill="oklch(0.55 0.025 80)"
                           textAnchor="middle"
                         >
@@ -397,7 +397,7 @@ export function TerritoryMap() {
                   y="-15.5"
                   fontSize="6"
                   fontFamily="Georgia, serif"
-                  fontStyle="italic"
+                  fontStyle=""
                   textAnchor="middle"
                   fill="oklch(0.55 0.025 80)"
                 >
@@ -420,7 +420,7 @@ export function TerritoryMap() {
                   y="13"
                   fontSize="6.5"
                   fontFamily="Georgia, serif"
-                  fontStyle="italic"
+                  fontStyle=""
                   textAnchor="middle"
                   fill="oklch(0.55 0.025 80)"
                 >
@@ -454,20 +454,20 @@ export function TerritoryMap() {
                 {/* Lat ticks gauche : 46°N a ~170, 45°N a ~342 (calcul mercator pour bbox) */}
                 <g transform="translate(12, 170)">
                   <line x1="0" y1="0" x2="6" y2="0" stroke="oklch(0.55 0.025 80)" strokeWidth="0.5" />
-                  <text x="20" y="2" fontSize="5" fontFamily="Georgia, serif" fontStyle="italic" fill="oklch(0.55 0.025 80)">46°N</text>
+                  <text x="20" y="2" fontSize="5" fontFamily="Georgia, serif" fontStyle="" fill="oklch(0.55 0.025 80)">46°N</text>
                 </g>
                 <g transform="translate(12, 342)">
                   <line x1="0" y1="0" x2="6" y2="0" stroke="oklch(0.55 0.025 80)" strokeWidth="0.5" />
-                  <text x="20" y="2" fontSize="5" fontFamily="Georgia, serif" fontStyle="italic" fill="oklch(0.55 0.025 80)">45°N</text>
+                  <text x="20" y="2" fontSize="5" fontFamily="Georgia, serif" fontStyle="" fill="oklch(0.55 0.025 80)">45°N</text>
                 </g>
                 {/* Lng ticks bas : -74°W a ~165, -73°W a ~285 */}
                 <g transform="translate(165, 468)">
                   <line x1="0" y1="0" x2="0" y2="-6" stroke="oklch(0.55 0.025 80)" strokeWidth="0.5" />
-                  <text x="0" y="-9" fontSize="5" fontFamily="Georgia, serif" fontStyle="italic" textAnchor="middle" fill="oklch(0.55 0.025 80)">74°W</text>
+                  <text x="0" y="-9" fontSize="5" fontFamily="Georgia, serif" fontStyle="" textAnchor="middle" fill="oklch(0.55 0.025 80)">74°W</text>
                 </g>
                 <g transform="translate(285, 468)">
                   <line x1="0" y1="0" x2="0" y2="-6" stroke="oklch(0.55 0.025 80)" strokeWidth="0.5" />
-                  <text x="0" y="-9" fontSize="5" fontFamily="Georgia, serif" fontStyle="italic" textAnchor="middle" fill="oklch(0.55 0.025 80)">73°W</text>
+                  <text x="0" y="-9" fontSize="5" fontFamily="Georgia, serif" fontStyle="" textAnchor="middle" fill="oklch(0.55 0.025 80)">73°W</text>
                 </g>
               </g>
             </svg>
@@ -480,7 +480,7 @@ export function TerritoryMap() {
             </p>
 
             {/* Footnote + attribution OSM */}
-            <p className="mt-3 text-xs italic text-[color:var(--color-taupe-dark)] text-center lg:text-left">
+            <p className="mt-3 text-xs  text-[color:var(--color-taupe-dark)] text-center lg:text-left">
               {t("territory.footnote")}
             </p>
             <p className="mt-2 text-[10px] text-[color:var(--color-taupe-dark)]/70 text-center lg:text-left">
@@ -526,7 +526,7 @@ export function TerritoryMap() {
                     }`}
                   >
                     <span
-                      className={`font-[var(--font-editorial)] italic text-2xl tabular-nums shrink-0 transition-colors duration-300 ${
+                      className={`font-[var(--font-editorial)]  text-2xl tabular-nums shrink-0 transition-colors duration-300 ${
                         isActive
                           ? "text-[color:var(--color-navy)]"
                           : "text-[color:var(--color-taupe)]"
@@ -538,7 +538,7 @@ export function TerritoryMap() {
                       <p className="font-[var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em] leading-snug">
                         {r.name}
                       </p>
-                      <p className="text-xs italic text-[color:var(--color-taupe-dark)] mt-1">
+                      <p className="text-xs  text-[color:var(--color-taupe-dark)] mt-1">
                         {r.note}
                       </p>
                     </div>

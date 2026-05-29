@@ -12,8 +12,8 @@ import { AutoGlossary } from "@/components/landing/AutoGlossary";
  * Section Mission — refonte cinematic luxury éditorial.
  *
  * Détails signature :
- * - Drop cap Cormorant italic bronze sur le 1er paragraphe (utility .dropcap)
- * - Pull quote asymétrique entre les 2 paragraphes (Cormorant italic 4xl)
+ * - Drop cap Cormorant  bronze sur le 1er paragraphe (utility .dropcap)
+ * - Pull quote asymétrique entre les 2 paragraphes (Cormorant  4xl)
  * - Counter animé "200 familles" qui démarre à l'intersection scroll (useCountUp)
  * - 4 cards valeurs avec numéro filigrane + signature line + halo bronze
  * - Grain texture overlay pour print magazine feel
@@ -73,12 +73,12 @@ export function Mission() {
             {t("home.mission.bodyP1Continued")}
           </p>
 
-          {/* Pull quote — col 7 desktop, Cormorant italic XL */}
+          {/* Pull quote — col 7 desktop, Cormorant  XL */}
           <blockquote className="lg:col-span-7 relative pl-8 md:pl-14 pr-4 md:pr-0">
 
             <span
               aria-hidden="true"
-              className="absolute -top-6 left-0 font-[var(--font-editorial)] italic text-[color:var(--color-bronze)]/60 text-7xl md:text-8xl leading-none"
+              className="absolute -top-6 left-0 font-[var(--font-editorial)]  text-[color:var(--color-bronze)]/60 text-7xl md:text-8xl leading-none"
             >
               &ldquo;
             </span>
@@ -121,7 +121,7 @@ export function Mission() {
               >
                 <span
                   aria-hidden="true"
-                  className="absolute top-4 right-5 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/20 text-5xl leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-[color:var(--color-bronze)]/30"
+                  className="absolute top-4 right-5 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/20 text-5xl leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-[color:var(--color-bronze)]/30"
                 >
                   {String(idx + 1).padStart(2, "0")}
                 </span>
@@ -149,7 +149,7 @@ export function Mission() {
           <button
             type="button"
             onClick={openCarnet}
-            className="text-glow-hover inline-flex items-center gap-2 italic text-[clamp(0.875rem,1.2vw,1rem)] text-[color:var(--color-cream)]/85 cursor-pointer"
+            className="text-glow-hover inline-flex items-center gap-2  text-[clamp(0.875rem,1.2vw,1rem)] text-[color:var(--color-cream)]/85 cursor-pointer"
           >
             <BookMarked className="w-4 h-4 text-[color:var(--color-bronze)]" strokeWidth={1.5} aria-hidden />
             {lang === "fr"

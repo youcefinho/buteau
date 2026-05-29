@@ -90,7 +90,7 @@ function CourrierPage() {
       />
 
       {/* Subtitle éditorial */}
-      <p className="italic text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-navy-deep)]/80 leading-[1.65] mb-[clamp(2.5rem,5vw,3rem)] text-pretty">
+      <p className=" text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-navy-deep)]/80 leading-[1.65] mb-[clamp(2.5rem,5vw,3rem)] text-pretty">
         {ta<string>(translations[lang], "courrier.subtitle")}
       </p>
 
@@ -106,7 +106,7 @@ function CourrierPage() {
               {/* Numéro filigrane Cormorant top-right */}
               <span
                 aria-hidden="true"
-                className="absolute top-3 right-5 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/25 text-3xl leading-none pointer-events-none select-none"
+                className="absolute top-3 right-5 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/25 text-3xl leading-none pointer-events-none select-none"
               >
                 {String(idx + 1).padStart(2, "0")}
               </span>
@@ -117,7 +117,7 @@ function CourrierPage() {
                   <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-1 text-[10px]">
                     {ta<string>(translations[lang], "courrier.letterDateLabel")}
                   </p>
-                  <p className="italic text-xs text-[color:var(--color-navy-deep)]">
+                  <p className=" text-xs text-[color:var(--color-navy-deep)]">
                     {r.date}
                   </p>
                 </div>
@@ -125,7 +125,7 @@ function CourrierPage() {
                   <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-1 text-[10px]">
                     {ta<string>(translations[lang], "courrier.letterFromLabel")}
                   </p>
-                  <p className="italic text-xs text-[color:var(--color-navy-deep)]">
+                  <p className=" text-xs text-[color:var(--color-navy-deep)]">
                     {r.city}
                   </p>
                 </div>
@@ -143,7 +143,7 @@ function CourrierPage() {
                     />
                   ))}
                 </div>
-                <p className="italic text-sm leading-[1.6] text-[color:var(--color-navy-deep)]/90 text-pretty">
+                <p className=" text-sm leading-[1.6] text-[color:var(--color-navy-deep)]/90 text-pretty">
                   <span className="font-[var(--font-editorial)] not-italic font-bold text-[color:var(--color-bronze)] text-xl mr-0.5 align-baseline">
                     «
                   </span>
@@ -165,7 +165,7 @@ function CourrierPage() {
                   >
                     {r.authorInitial}
                   </div>
-                  <p className="italic text-xs text-[color:var(--color-navy-deep)]">
+                  <p className=" text-xs text-[color:var(--color-navy-deep)]">
                     — {r.author}
                   </p>
                 </div>
@@ -176,7 +176,7 @@ function CourrierPage() {
       </div>
 
       {/* Footnote chronologique */}
-      <p className="text-xs italic text-[color:var(--color-taupe-dark)] mt-10 text-center">
+      <p className="text-xs  text-[color:var(--color-taupe-dark)] mt-10 text-center">
         {ta<string>(translations[lang], "courrier.footnote")}
       </p>
 
@@ -186,7 +186,7 @@ function CourrierPage() {
           href={GOOGLE_REVIEWS_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="group inline-flex items-center gap-2 italic text-base text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-navy)] transition-colors"
+          className="group inline-flex items-center gap-2  text-base text-[color:var(--color-navy-deep)] hover:text-[color:var(--color-navy)] transition-colors"
         >
           <span className="relative">
             {ta<string>(translations[lang], "courrier.googleLinkLabel")}

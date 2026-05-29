@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
  * Pattern adapté au theme luxury minimal corporate Buteau :
  * - Numérotation auto (1, 2, 3…) per-scope
  * - Marker inline en exposant bronze, cliquable, ancre vers la note
- * - Liste de notes en pied de scope (filet taupe + numérotation italic Cormorant)
+ * - Liste de notes en pied de scope (filet taupe + numérotation  Cormorant)
  * - Retour-back ↩ pour revenir au marker dans le texte
  *
  * Justifié pour Buteau : ton magazine luxury corporate qui parle de jargon
@@ -90,7 +90,7 @@ export function Footnote({ n, children }: { n: number; children: ReactNode }) {
 
 /**
  * FootnoteList — rend la liste des notes enregistrées dans le scope courant.
- * À placer en bas du <FootnoteScope>. Filet taupe au-dessus + numérotation italic.
+ * À placer en bas du <FootnoteScope>. Filet taupe au-dessus + numérotation .
  */
 export function FootnoteList({ title, className }: { title?: string; className?: string }) {
   const ctx = useContext(FootnoteCtx);
@@ -115,7 +115,7 @@ export function FootnoteList({ title, className }: { title?: string; className?:
             id={note.id}
             className="flex gap-3"
           >
-            <span className="font-[family-name:var(--font-editorial)] italic text-[color:var(--color-bronze)] flex-shrink-0">
+            <span className="font-[family-name:var(--font-editorial)]  text-[color:var(--color-bronze)] flex-shrink-0">
               {note.n}.
             </span>
             <span>

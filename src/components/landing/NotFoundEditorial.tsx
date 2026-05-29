@@ -8,7 +8,7 @@ import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
 /**
  * Page 404 luxury éditoriale — "Égaré ?".
  *
- * Pourquoi NOVEL : pattern 404 minimaliste mais soigné. Cormorant italic XL
+ * Pourquoi NOVEL : pattern 404 minimaliste mais soigné. Cormorant  XL
  * "404" en filigrane + recovery CTAs. Sensation magazine : on ne vous abandonne
  * pas, on vous remet sur la bonne page.
  */
@@ -20,10 +20,10 @@ export function NotFoundEditorial() {
       id="main"
       className="min-h-screen surface-navy grain-overlay relative flex items-center overflow-hidden"
     >
-      {/* "404" Cormorant italic gigantesque en filigrane */}
+      {/* "404" Cormorant  gigantesque en filigrane */}
       <span
         aria-hidden="true"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/12 text-[18rem] sm:text-[24rem] md:text-[32rem] leading-none pointer-events-none select-none whitespace-nowrap"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/12 text-[18rem] sm:text-[24rem] md:text-[32rem] leading-none pointer-events-none select-none whitespace-nowrap"
       >
         404
       </span>
@@ -79,7 +79,7 @@ export function NotFoundEditorial() {
                 {t("notFound.ctaCall")}
                 <span className="absolute left-0 -bottom-1 w-0 h-px bg-[color:var(--color-bronze)] group-hover:w-full transition-[width] duration-500" />
               </span>
-              <span className="italic text-[color:var(--color-taupe)] text-base normal-case tracking-normal ml-1">
+              <span className=" text-[color:var(--color-taupe)] text-base normal-case tracking-normal ml-1">
                 {config.phone.display}
               </span>
             </a>

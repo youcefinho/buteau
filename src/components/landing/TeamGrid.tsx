@@ -23,7 +23,7 @@ export function TeamGrid() {
       {/* Filigrane "&" decoratif arriere-plan editorial */}
       <span
         aria-hidden="true"
-        className="absolute top-12 right-0 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/8 text-[28rem] leading-none pointer-events-none select-none"
+        className="absolute top-12 right-0 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/8 text-[28rem] leading-none pointer-events-none select-none"
       >
         &
       </span>
@@ -52,7 +52,7 @@ export function TeamGrid() {
 
               {/* Info — design éditorial avec hierarchy magazine */}
               <div className="pt-[clamp(1.75rem,2.5vw,2rem)] space-y-4 relative">
-                {/* Marginalia — signature italic discrete a droite, signature manuscrite */}
+                {/* Marginalia — signature  discrete a droite, signature manuscrite */}
                 <span
                   aria-hidden="true"
                   className="hidden md:block absolute -right-2 top-2 text-[color:var(--color-bronze)]/45 text-sm rotate-90 origin-right tracking-[0.18em]"

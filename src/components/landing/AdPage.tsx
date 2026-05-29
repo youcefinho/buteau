@@ -6,7 +6,7 @@ import { ta, translations } from "@/lib/translations";
  * AdPage — pleine page éditoriale style "publicité magazine luxe" (Cereal vol.18).
  *
  * Pourquoi : entre 2 sections denses, insérer une page-respiration. UNE seule
- * phrase signature en Fraunces italic XL, beaucoup de vide, attribution discrète.
+ * phrase signature en Fraunces  XL, beaucoup de vide, attribution discrète.
  * Crée du rythme + autorité (le luxe vrai chuchote).
  *
  * Pattern : pleine page navy deep, statement centré, filet bronze, attribution
@@ -32,7 +32,7 @@ export function AdPage({ entryKey = "adPage" }: { entryKey?: string }) {
       {/* Filigrane « ¶ » pilcrow Cormorant — touche éditoriale typographique */}
       <span
         aria-hidden="true"
-        className="absolute -top-12 -left-8 md:-left-16 font-[var(--font-editorial)] italic text-[color:var(--color-cream)]/[0.04] text-[18rem] md:text-[24rem] leading-none pointer-events-none select-none"
+        className="absolute -top-12 -left-8 md:-left-16 font-[var(--font-editorial)]  text-[color:var(--color-cream)]/[0.04] text-[18rem] md:text-[24rem] leading-none pointer-events-none select-none"
       >
         ¶
       </span>
@@ -52,8 +52,8 @@ export function AdPage({ entryKey = "adPage" }: { entryKey?: string }) {
             />
           </p>
 
-          {/* Statement Fraunces italic XL — la "publicité" elle-même */}
-          <p className="font-signature italic text-[color:var(--color-cream)] text-[clamp(1.875rem,5vw,3.75rem)] leading-[1.1] tracking-[-0.01em] text-balance">
+          {/* Statement Fraunces  XL — la "publicité" elle-même */}
+          <p className="font-signature  text-[color:var(--color-cream)] text-[clamp(1.875rem,5vw,3.75rem)] leading-[1.1] tracking-[-0.01em] text-balance">
             « {data.statement} »
           </p>
 

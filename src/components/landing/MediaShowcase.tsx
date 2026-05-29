@@ -83,7 +83,7 @@ export function MediaShowcase() {
       {/* Filigrane "¶" Cormorant XL background — signature édito magazine */}
       <span
         aria-hidden="true"
-        className="absolute -top-16 -right-12 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/10 text-[24rem] leading-none pointer-events-none select-none"
+        className="absolute -top-16 -right-12 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/10 text-[24rem] leading-none pointer-events-none select-none"
       >
         ¶
       </span>
@@ -100,7 +100,7 @@ export function MediaShowcase() {
             {t("media.title")}
           </h2>
           <div className="w-16 h-px bg-[color:var(--color-bronze)] mx-auto mb-6" />
-          <p className="italic text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-navy-deep)]/80 leading-[1.55] text-pretty">
+          <p className=" text-[clamp(1rem,1.4vw,1.125rem)] text-[color:var(--color-navy-deep)]/80 leading-[1.55] text-pretty">
             {t("media.subtitle")}
           </p>
         </div>
@@ -110,7 +110,7 @@ export function MediaShowcase() {
           {/* Chiffre filigrane "01" — pattern signature pages séquentielles */}
           <span
             aria-hidden="true"
-            className="hidden md:block absolute -top-12 -left-4 lg:-left-12 font-[var(--font-editorial)] italic text-[color:var(--color-bronze)]/12 text-[12rem] lg:text-[16rem] leading-none pointer-events-none select-none tabular-nums"
+            className="hidden md:block absolute -top-12 -left-4 lg:-left-12 font-[var(--font-editorial)]  text-[color:var(--color-bronze)]/12 text-[12rem] lg:text-[16rem] leading-none pointer-events-none select-none tabular-nums"
           >
             01
           </span>
@@ -177,7 +177,7 @@ export function MediaShowcase() {
                     />
                     <span
                       aria-hidden="true"
-                      className="absolute bottom-2 right-2 italic text-[color:var(--color-cream)] text-xs tabular-nums opacity-70"
+                      className="absolute bottom-2 right-2  text-[color:var(--color-cream)] text-xs tabular-nums opacity-70"
                     >
                       {String(idx + 1).padStart(2, "0")}
                     </span>
@@ -209,7 +209,7 @@ export function MediaShowcase() {
                   className={
                     idx === 0
                       ? "dropcap text-[clamp(1rem,1.3vw,1.0625rem)] leading-[1.75] text-[color:var(--color-navy-deep)]/85"
-                      : "text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/80 italic"
+                      : "text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/80 "
                   }
                 >
                   {line}
@@ -227,7 +227,7 @@ export function MediaShowcase() {
           {/* Chiffre filigrane "02" — décalé à droite cette fois (asymétrie magazine) */}
           <span
             aria-hidden="true"
-            className="hidden md:block absolute -top-12 -right-4 lg:-right-12 font-[var(--font-editorial)] italic text-[color:var(--color-bronze)]/12 text-[12rem] lg:text-[16rem] leading-none pointer-events-none select-none tabular-nums"
+            className="hidden md:block absolute -top-12 -right-4 lg:-right-12 font-[var(--font-editorial)]  text-[color:var(--color-bronze)]/12 text-[12rem] lg:text-[16rem] leading-none pointer-events-none select-none tabular-nums"
           >
             02
           </span>
@@ -252,7 +252,7 @@ export function MediaShowcase() {
                   className={
                     idx === 0
                       ? "dropcap text-[clamp(1rem,1.3vw,1.0625rem)] leading-[1.75] text-[color:var(--color-navy-deep)]/85"
-                      : "text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/80 italic"
+                      : "text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/80 "
                   }
                 >
                   {line}
@@ -301,7 +301,7 @@ export function MediaShowcase() {
                   {/* Numéro photo — pattern marginalia signature */}
                   <span
                     aria-hidden="true"
-                    className="absolute bottom-3 right-3 italic text-[color:var(--color-cream)] text-sm tabular-nums opacity-70"
+                    className="absolute bottom-3 right-3  text-[color:var(--color-cream)] text-sm tabular-nums opacity-70"
                   >
                     {String(idx + 1).padStart(2, "0")}
                   </span>

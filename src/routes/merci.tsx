@@ -56,10 +56,10 @@ function MerciPage() {
       id="main"
       className="min-h-screen surface-cream relative flex items-center overflow-hidden"
     >
-      {/* "M" Cormorant italic gigantesque en filigrane */}
+      {/* "M" Cormorant  gigantesque en filigrane */}
       <span
         aria-hidden="true"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/12 text-[18rem] sm:text-[24rem] md:text-[32rem] leading-none pointer-events-none select-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/12 text-[18rem] sm:text-[24rem] md:text-[32rem] leading-none pointer-events-none select-none"
       >
         M
       </span>
@@ -82,7 +82,7 @@ function MerciPage() {
           <div className="w-16 h-px bg-[color:var(--color-bronze)] mb-8 animate-[buteauWidth_700ms_ease-out_500ms_both]" />
 
           {/* Subtitle */}
-          <p className="italic text-[clamp(1.125rem,1.6vw,1.25rem)] text-[color:var(--color-navy-deep)]/85 leading-[1.65] mb-8 max-w-2xl text-pretty hyphens-auto animate-[buteauFadeUp_700ms_ease-out_600ms_both]">
+          <p className=" text-[clamp(1.125rem,1.6vw,1.25rem)] text-[color:var(--color-navy-deep)]/85 leading-[1.65] mb-8 max-w-2xl text-pretty hyphens-auto animate-[buteauFadeUp_700ms_ease-out_600ms_both]">
             {t("merci.subtitle")}
           </p>
 
@@ -164,7 +164,7 @@ function MerciPage() {
               className="inline-flex items-center gap-2.5 mt-8 group"
             >
               <Phone size={14} className="text-[color:var(--color-bronze)]" aria-hidden="true" />
-              <span className="italic text-[color:var(--color-navy-deep)] text-base group-hover:text-[color:var(--color-navy)] transition-colors">
+              <span className=" text-[color:var(--color-navy-deep)] text-base group-hover:text-[color:var(--color-navy)] transition-colors">
                 {lang === "fr" ? "Ou appelez directement" : "Or call directly"} —{" "}
                 <span className="font-[var(--font-display)] not-italic font-semibold">
                   {config.phone.display}

@@ -2,7 +2,7 @@ import { Container } from "@/components/layout/Container";
 
 /**
  * ChapterMarker — séparateur éditorial entre sections (numéro Cormorant
- * italic + label optionnel). Détail luxury magazine qui rythme la lecture.
+ *  + label optionnel). Détail luxury magazine qui rythme la lecture.
  *
  * Usage : `<ChapterMarker numeral="02" label="Notre équipe" />` entre 2 sections.
  */

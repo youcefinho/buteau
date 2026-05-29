@@ -30,7 +30,7 @@ export function CapsulesPreview() {
       {/* Filigrane Play XL background — signature édito magazine */}
       <span
         aria-hidden="true"
-        className="absolute -top-12 left-0 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/8 text-[24rem] leading-none pointer-events-none select-none"
+        className="absolute -top-12 left-0 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/8 text-[24rem] leading-none pointer-events-none select-none"
       >
         ▶
       </span>
@@ -47,7 +47,7 @@ export function CapsulesPreview() {
               {t("home.capsulesPreview.title")}
             </h2>
             <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-6" />
-            <p className="italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/80 mb-8 text-pretty">
+            <p className=" text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/80 mb-8 text-pretty">
               {t("home.capsulesPreview.subtitle")}
             </p>
 
@@ -70,7 +70,7 @@ export function CapsulesPreview() {
             {/* Teaser editorial sous CTA — décrit le contenu /capsules (34
                 capsules, 7 catégories, sujets concrets) en voix Andrew. */}
             <p
-              className="mt-4 italic text-[color:var(--color-bronze)] text-[clamp(0.8125rem,1.05vw,0.875rem)] leading-snug max-w-md text-pretty"
+              className="mt-4  text-[color:var(--color-bronze)] text-[clamp(0.8125rem,1.05vw,0.875rem)] leading-snug max-w-md text-pretty"
             >
               {lang === "fr"
                 ? "34 capsules vidéo en 7 catégories — mise de fonds, refi, dettes, stratégies, expliquées en 30 secondes."
@@ -87,10 +87,10 @@ export function CapsulesPreview() {
                   hash={item.categoryId}
                   className="group flex items-start gap-[clamp(1.25rem,2vw,1.75rem)] py-[clamp(1.5rem,2vw,1.75rem)] border-b border-[color:var(--color-taupe)]/40 transition-colors duration-300 hover:border-[color:var(--color-bronze)]"
                 >
-                  {/* Numéro Cormorant italic XL — pattern table-of-contents magazine */}
+                  {/* Numéro Cormorant  XL — pattern table-of-contents magazine */}
                   <span
                     aria-hidden="true"
-                    className="shrink-0 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)] group-hover:text-[color:var(--color-bronze)] text-[clamp(1.875rem,3vw,2.25rem)] leading-none tabular-nums w-12 md:w-14 transition-colors duration-300"
+                    className="shrink-0 font-[var(--font-editorial)]  text-[color:var(--color-taupe)] group-hover:text-[color:var(--color-bronze)] text-[clamp(1.875rem,3vw,2.25rem)] leading-none tabular-nums w-12 md:w-14 transition-colors duration-300"
                   >
                     {String(idx + 1).padStart(2, "0")}
                   </span>
@@ -115,7 +115,7 @@ export function CapsulesPreview() {
                     </h3>
 
                     {/* Hook entre guillemets italique — voix Andrew */}
-                    <p className="italic text-[clamp(0.875rem,1.2vw,1rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/75 text-pretty">
+                    <p className=" text-[clamp(0.875rem,1.2vw,1rem)] leading-[1.6] text-[color:var(--color-navy-deep)]/75 text-pretty">
                       « {item.hook} »
                     </p>
                   </div>

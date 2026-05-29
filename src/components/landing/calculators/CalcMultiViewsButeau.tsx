@@ -183,7 +183,7 @@ function DonutSvg({
             </span>
           )}
           {centerValue && (
-            <span className="italic text-[clamp(1.25rem,1.8vw,1.5rem)] text-[color:var(--color-navy-deep)] tabular-nums mt-1.5 leading-none">
+            <span className=" text-[clamp(1.25rem,1.8vw,1.5rem)] text-[color:var(--color-navy-deep)] tabular-nums mt-1.5 leading-none">
               {centerValue}
             </span>
           )}
@@ -304,7 +304,7 @@ function Tile({
         {value}
       </p>
       {hint && (
-        <p className="italic text-xs text-[color:var(--color-bronze)] mt-2 leading-snug">
+        <p className=" text-xs text-[color:var(--color-bronze)] mt-2 leading-snug">
           {hint}
         </p>
       )}
@@ -583,7 +583,7 @@ function MdfComparisonGrid({
           </div>
         ))}
       </div>
-      <p className="italic text-xs text-[color:var(--color-bronze)] mt-4 leading-snug">
+      <p className=" text-xs text-[color:var(--color-bronze)] mt-4 leading-snug">
         20 % MDF = aucune prime SCHL + paiement réduit, mais cash initial plus élevé. Le bon arbitrage dépend de votre liquidité disponible.
       </p>
     </div>
@@ -685,7 +685,7 @@ function TabCapacite({ mode }: { mode: CalcMode }) {
         />
 
         <div className="pt-2">
-          <p className="italic text-xs text-[color:var(--color-bronze)] leading-relaxed text-pretty hyphens-auto">
+          <p className=" text-xs text-[color:var(--color-bronze)] leading-relaxed text-pretty hyphens-auto">
             {isFr
               ? "Estimation basée sur les ratios ABD/ATD courants (35 % / 42 %), amortissement 25 ans, charges habitation 350 $/mois (taxes + chauffage). Hors stress-test B-20 — un courtier valide votre dossier réel."
               : "Estimate based on standard GDS/TDS ratios (35% / 42%), 25-year amortization, $350/mo housing costs (taxes + heating). Excludes B-20 stress test — a broker validates your real file."}
@@ -735,7 +735,7 @@ function TabCapacite({ mode }: { mode: CalcMode }) {
             currentRate={taux}
             label={isFr ? "Sensibilité de votre capacité au taux" : "Capacity sensitivity to rate"}
           />
-          <p className="italic text-xs text-[color:var(--color-bronze)] mt-3 leading-snug">
+          <p className=" text-xs text-[color:var(--color-bronze)] mt-3 leading-snug">
             {isFr
               ? "Avec le même revenu et les mêmes dettes, une baisse d'1 % de taux peut bonifier votre capacité de plusieurs dizaines de milliers de dollars. Le timing du marché compte."
               : "With the same income and debts, a 1% rate drop can lift your capacity by tens of thousands. Market timing matters."}
@@ -819,7 +819,7 @@ function TabPaiement({ mode }: { mode: CalcMode }) {
         />
 
         <div className="pt-2">
-          <p className="italic text-xs text-[color:var(--color-bronze)] leading-relaxed text-pretty hyphens-auto">
+          <p className=" text-xs text-[color:var(--color-bronze)] leading-relaxed text-pretty hyphens-auto">
             {isFr
               ? "Calcul selon la formule canadienne semi-annuelle composée (LBC art. 6). Indicatif uniquement — votre prêteur établit le paiement réel selon le taux confirmé."
               : "Calculation per Canadian semi-annual compounded formula (IRA s. 6). Indicative only — your lender sets the actual payment based on confirmed rate."}
@@ -993,7 +993,7 @@ function TabComparaison({ mode }: { mode: CalcMode }) {
           unit="%"
         />
 
-        <p className="italic text-xs text-[color:var(--color-bronze)] leading-relaxed pt-2 text-pretty hyphens-auto">
+        <p className=" text-xs text-[color:var(--color-bronze)] leading-relaxed pt-2 text-pretty hyphens-auto">
           {isFr
             ? "Scénario simplifié : 24 mois au taux variable initial, puis 36 mois au taux moyen anticipé. La réalité dépend des décisions de la Banque du Canada — pas une prédiction."
             : "Simplified scenario: 24 months at initial variable rate, then 36 months at anticipated average. Reality depends on Bank of Canada decisions — not a prediction."}
@@ -1089,7 +1089,7 @@ function TabComparaison({ mode }: { mode: CalcMode }) {
             {variableGagnant ? "+" : ""}
             {fmtCAD(Math.abs(ecart))}
           </p>
-          <p className="italic text-sm text-[color:var(--color-navy-deep)]/80 mt-2 leading-snug">
+          <p className=" text-sm text-[color:var(--color-navy-deep)]/80 mt-2 leading-snug">
             {variableGagnant
               ? isFr
                 ? `Dans ce scénario, le variable économise ${fmtCAD(Math.abs(ecartInterets))} d'intérêts. Mais le risque est sur vous : un taux supérieur changerait le verdict.`
@@ -1120,7 +1120,7 @@ function TabComparaison({ mode }: { mode: CalcMode }) {
             fixedLabel={isFr ? "Fixe" : "Fixed"}
             variableLabel={isFr ? "Variable" : "Variable"}
           />
-          <p className="italic text-xs text-[color:var(--color-bronze)] mt-3 leading-snug">
+          <p className=" text-xs text-[color:var(--color-bronze)] mt-3 leading-snug">
             {isFr
               ? "L'écart visuel entre les 2 courbes représente votre gain (ou perte) potentiel sur le terme. Plus la courbe est haute, plus vous payez d'intérêts."
               : "The visual gap between the 2 curves shows your potential gain (or loss) over the term. The higher the curve, the more interest paid."}
@@ -1222,7 +1222,7 @@ function TabMiseDeFonds({ mode }: { mode: CalcMode }) {
           </div>
         </div>
 
-        <p className="italic text-xs text-[color:var(--color-bronze)] leading-relaxed pt-2 text-pretty hyphens-auto">
+        <p className=" text-xs text-[color:var(--color-bronze)] leading-relaxed pt-2 text-pretty hyphens-auto">
           {isFr
             ? "Frais estimés : taxe de bienvenue (barème Québec), notaire ~1 500 $, inspection 600 $, évaluation 400 $, ajustements taxes 800 $. SCHL applicable < 20 % MDF en résidence principale uniquement."
             : "Estimated fees: welcome tax (Quebec scale), notary ~$1,500, inspection $600, appraisal $400, tax adjustments $800. CMHC insurance only applies < 20% DP on primary residence."}
@@ -1272,7 +1272,7 @@ function TabMiseDeFonds({ mode }: { mode: CalcMode }) {
                 <span className="text-[color:var(--color-taupe-dark)]">{isFr ? "TVQ + TPS sur prime SCHL" : "QST + GST on CMHC"}</span>
                 <span className="text-[color:var(--color-navy-deep)] font-semibold tabular-nums">{fmtCAD(tps)}</span>
               </div>
-              <p className="italic text-xs text-[color:var(--color-bronze)] pt-1 leading-snug">
+              <p className=" text-xs text-[color:var(--color-bronze)] pt-1 leading-snug">
                 {isFr
                   ? `Prime SCHL ajoutée au prêt — pas exigée en liquide, mais les taxes (${fmtCAD(tps)}) sont dues à la signature.`
                   : `CMHC premium added to loan — not due in cash, but taxes (${fmtCAD(tps)}) are due at signing.`}
@@ -1357,7 +1357,7 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
       {/* Filigrane $ XL */}
       <span
         aria-hidden="true"
-        className="absolute -top-12 right-0 font-[var(--font-editorial)] italic text-[color:var(--color-bronze)]/8 text-[22rem] leading-none pointer-events-none select-none"
+        className="absolute -top-12 right-0 font-[var(--font-editorial)]  text-[color:var(--color-bronze)]/8 text-[22rem] leading-none pointer-events-none select-none"
       >
         $
       </span>
@@ -1381,7 +1381,7 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
             {isFr ? "Vos chiffres, sans détour." : "Your numbers, no detour."}
           </h2>
           <div className="w-12 h-px bg-[color:var(--color-bronze)] mb-6" />
-          <p className="italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/80 text-pretty">
+          <p className=" text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.65] text-[color:var(--color-navy-deep)]/80 text-pretty">
             {isPreview
               ? isFr
                 ? "Quatre vues du même dossier — capacité, paiement, stratégie de taux, liquidités. Faites bouger les chiffres, puis ouvrez le calculateur complet pour les graphiques et scénarios approfondis."
@@ -1432,7 +1432,7 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
                         {tab.label}
                       </span>
                       <span
-                        className={`italic text-[10px] md:text-xs transition-colors ${
+                        className={` text-[10px] md:text-xs transition-colors ${
                           active
                             ? "text-[color:var(--color-navy)]"
                             : "text-[color:var(--color-taupe)]/80"
@@ -1459,7 +1459,7 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
         {/* CTA Aperçu -> calculateur complet (mode preview uniquement) */}
         {isPreview && (
           <div className="mt-10 pt-8 border-t border-[color:var(--color-taupe)]/30 flex flex-col sm:flex-row items-baseline justify-between gap-y-4 gap-x-6">
-            <p className="italic text-sm text-[color:var(--color-bronze)] leading-snug max-w-xl text-pretty">
+            <p className=" text-sm text-[color:var(--color-bronze)] leading-snug max-w-xl text-pretty">
               {isFr
                 ? "Graphiques d'amortissement, sensibilité au taux, courbes fixe vs variable et comparaisons mise de fonds — disponibles dans le calculateur complet."
                 : "Amortization charts, rate sensitivity, fixed vs variable curves and down payment comparisons — available in the full calculator."}
@@ -1480,7 +1480,7 @@ export function CalcMultiViewsButeau({ mode = "full" }: { mode?: CalcMode } = {}
         {/* Footer note + AMF (mode full uniquement) */}
         {!isPreview && (
           <div className="mt-12 pt-6 border-t border-[color:var(--color-taupe)]/30 max-w-3xl">
-            <p className="italic text-xs text-[color:var(--color-bronze)] leading-relaxed text-pretty hyphens-auto">
+            <p className=" text-xs text-[color:var(--color-bronze)] leading-relaxed text-pretty hyphens-auto">
               {isFr
                 ? "Outils indicatifs uniquement. Les conditions, taux, primes SCHL et frais varient selon votre dossier, la propriété, le prêteur et le moment du marché. L'Équipe Buteau opère sous le cabinet Planiprêt — courtage hypothécaire inscrit à l'AMF. Le service de courtage est gratuit pour l'acheteur."
                 : "Indicative tools only. Conditions, rates, CMHC premiums and fees vary based on your file, the property, the lender and market timing. L'Équipe Buteau operates under Planiprêt — mortgage brokerage registered with AMF. Brokerage service is free for the buyer."}

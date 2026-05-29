@@ -22,7 +22,7 @@ export function ContactSection() {
       {/* Filigrane décoratif éditorial */}
       <span
         aria-hidden="true"
-        className="absolute -top-10 -right-10 font-[var(--font-editorial)] italic text-[color:var(--color-taupe)]/10 text-[24rem] leading-none pointer-events-none select-none"
+        className="absolute -top-10 -right-10 font-[var(--font-editorial)]  text-[color:var(--color-taupe)]/10 text-[24rem] leading-none pointer-events-none select-none"
       >
         &
       </span>

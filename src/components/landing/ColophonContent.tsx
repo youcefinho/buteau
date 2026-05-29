@@ -23,7 +23,7 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
   return (
     <>
       {/* Intro éditorial */}
-      <p className="italic text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.7] text-[color:var(--color-navy-deep)]/85 first-letter:italic first-letter:text-6xl first-letter:text-[color:var(--color-navy)] first-letter:float-left first-letter:mr-3 first-letter:leading-[0.85] first-letter:mt-1 text-pretty hyphens-auto">
+      <p className=" text-[clamp(1rem,1.4vw,1.125rem)] leading-[1.7] text-[color:var(--color-navy-deep)]/85 first-letter:text-6xl first-letter:text-[color:var(--color-navy)] first-letter:float-left first-letter:mr-3 first-letter:leading-[0.85] first-letter:mt-1 text-pretty hyphens-auto">
         {isFr
           ? "Comme un magazine d'auteur, ce site assume sa fabrication. Voici les choix typographiques, chromatiques et de fond qui composent l'édition que vous parcourez."
           : "Like an author's magazine, this site owns its making. Here are the typographic, chromatic and substantive choices that compose the edition you are browsing."}
@@ -33,18 +33,13 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
       <ColophonSection id="colophon-typo" label={isFr ? "Typographie" : "Typography"}>
         <ColophonRow
           label={isFr ? "Caractères de titre" : "Display"}
-          value="Cormorant Garamond"
-          note={isFr ? "Italique de titre — éclats, marginalia, numéros décoratifs" : "Display italic — accents, marginalia, decorative numerals"}
-        />
-        <ColophonRow
-          label={isFr ? "Caractères signature" : "Signature"}
-          value="Fraunces (variable)"
-          note={isFr ? "Axes opsz, ital, SOFT, WONK — réservé à 3 endroits signature" : "Axes opsz, ital, SOFT, WONK — reserved to 3 signature places"}
+          value="Raleway"
+          note={isFr ? "Caractères du logo BUTEAU (guide de marque) — titres et eyebrows" : "BUTEAU logo typeface (brand guide) — headings and eyebrows"}
         />
         <ColophonRow
           label={isFr ? "Caractères de labeur" : "Body"}
-          value="Montserrat"
-          note={isFr ? "Sans-serif, eyebrows uppercase tracking 0.12em" : "Sans-serif, uppercase eyebrows tracking 0.12em"}
+          value="Libre Franklin"
+          note={isFr ? "Sosie libre de l'ITC Franklin Gothic (charte) — corps de texte et tagline" : "Free alternate to ITC Franklin Gothic (brand) — body copy and tagline"}
         />
       </ColophonSection>
 
@@ -94,7 +89,7 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
               ]
           ).map(([title, body], idx) => (
             <li key={title} className="flex gap-5">
-              <span className="font-[var(--font-editorial)] italic text-[color:var(--color-bronze)] text-2xl shrink-0 leading-none w-8">
+              <span className="font-[var(--font-editorial)]  text-[color:var(--color-bronze)] text-2xl shrink-0 leading-none w-8">
                 {String(idx + 1).padStart(2, "0")}
               </span>
               <div className="space-y-2">
@@ -142,7 +137,7 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
         <p className="eyebrow text-[color:var(--color-taupe-dark)] mb-3">
           {isFr ? "Imprimé à Laval" : "Printed in Laval"}
         </p>
-        <p className="italic text-[color:var(--color-navy-deep)]/85 text-base leading-relaxed text-pretty">
+        <p className=" text-[color:var(--color-navy-deep)]/85 text-base leading-relaxed text-pretty">
           {isFr
             ? "par L'Équipe Buteau, en cabinet d'attache chez Planiprêt Cabinet en Courtage Hypothécaire."
             : "by Équipe Buteau, with Planiprêt Cabinet en Courtage Hypothécaire as their attached firm."}
@@ -233,7 +228,7 @@ function ColophonRow({
           </p>
         </div>
         {note && (
-          <p className="italic text-[color:var(--color-navy-deep)]/65 text-sm leading-snug">
+          <p className=" text-[color:var(--color-navy-deep)]/65 text-sm leading-snug">
             {note}
           </p>
         )}

@@ -66,7 +66,7 @@ export function AmfDisclaimer({ variant = "inline", className }: AmfDisclaimerPr
   return (
     <p
       className={cn(
-        "text-xs italic leading-relaxed text-[color:var(--color-taupe-dark)]",
+        "text-xs  leading-relaxed text-[color:var(--color-taupe-dark)]",
         className,
       )}
     >
