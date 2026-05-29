@@ -24,7 +24,7 @@ export function GuidesShelf() {
   >(translations[lang], "home.guidesShelf.items");
 
   return (
-    <section className="relative py-[clamp(4rem,9vw,8rem)] surface-cream overflow-hidden lined-paper">
+    <section className="relative py-[clamp(4rem,9vw,8rem)] surface-cream overflow-hidden">
       {/* Atmospheric continuity — embers per-section signature */}
 
       {/* Filigrane Cormorant "&" decoratif */}

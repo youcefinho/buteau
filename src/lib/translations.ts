@@ -84,7 +84,6 @@ export const translations = {
       coverStatement:
         "L'hypothèque ne devrait jamais être un mystère.",
       colophon: "Colophon",
-      colophonComposed: "Composé en Montserrat & Cormorant Garamond",
       colophonPrinted: "Imprimé en pixels — Cloudflare, Quebec",
       issn: "Andrew Buteau — Inscrit AMF",
     },
@@ -1082,7 +1081,6 @@ export const translations = {
       websiteBy: "Website by",
       coverStatement: "A mortgage should never be a mystery.",
       colophon: "Colophon",
-      colophonComposed: "Set in Montserrat & Cormorant Garamond",
       colophonPrinted: "Printed in pixels — Cloudflare, Quebec",
       issn: "Andrew Buteau — AMF registered",
     },

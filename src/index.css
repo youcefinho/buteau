@@ -516,27 +516,6 @@ body {
    GEOMETRIC PATTERNS (luxury wallpaper / print details)
    ============================================================ */
 
-/* Lined paper — fines lignes horizontales subtiles, effet papier à lettre. */
-.lined-paper {
-  position: relative;
-}
-.lined-paper::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: repeating-linear-gradient(
-    0deg,
-    transparent 0,
-    transparent 31px,
-    oklch(0.722 0.018 84 / 0.18) 31px,
-    oklch(0.722 0.018 84 / 0.18) 32px
-  );
-  mask-image: linear-gradient(180deg, transparent 0%, black 8%, black 92%, transparent 100%);
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 8%, black 92%, transparent 100%);
-  z-index: 0;
-}
-
 /* Dot grid — points taupe régulièrement espacés (luxury wallpaper). */
 .dot-grid {
   position: relative;
