@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 import { Container } from "./Container";
-import { ButeauMonogramInline } from "@/components/atmosphere/ButeauMonogramInline";
 
 /**
  * Wrapper layout pour les pages légales (mentions / confidentialité / lexique).
@@ -59,14 +58,12 @@ export function LegalPageWrap({
         <div className="absolute bottom-0 left-0 right-0 h-px bg-[color:var(--color-taupe)]" />
       </section>
 
-      {/* Monogramme B Buteau decoratif entre hero et body (remplace ancien ❦ 2026-05-20).
-          Style mini par souci d'integration discrete (pas un divider hero proeminent). */}
+      {/* Séparateur discret entre hero et body — point bronze (ex-monogramme B retiré,
+          demande client 2026-05-29 : pas de logo « B » entre les sections). */}
       <div className="flex items-center justify-center py-[clamp(2.5rem,4vw,3.5rem)] relative" aria-hidden="true">
         <div className="flex items-center gap-5">
           <span className="block w-[clamp(4rem,8vw,6rem)] h-px bg-[color:var(--color-taupe)]" />
-          <span className="text-[color:var(--color-navy-deep)] inline-flex items-center text-2xl">
-            <ButeauMonogramInline size="lg" />
-          </span>
+          <span className="block w-1.5 h-1.5 rounded-full bg-[color:var(--color-bronze)]/70 shrink-0" />
           <span className="block w-[clamp(4rem,8vw,6rem)] h-px bg-[color:var(--color-taupe)]" />
         </div>
       </div>

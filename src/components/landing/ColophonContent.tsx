@@ -3,7 +3,6 @@ import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { config } from "@/lib/config";
 import { AutoGlossary } from "@/components/landing/AutoGlossary";
-import { ButeauMonogramInline } from "@/components/atmosphere/ButeauMonogramInline";
 import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
 
 // ═══════════════════════════════════════════════════════════
@@ -158,7 +157,7 @@ export function ColophonContent({ variant, onClose }: ColophonContentProps) {
             >
               <div>
                 <div className="eyebrow text-[color:var(--color-navy)] mb-1">
-                  <ButeauMonogramInline className="mr-1" /> {isFr ? "Lire le colophon complet" : "Read the full colophon"}
+                  {isFr ? "Lire le colophon complet" : "Read the full colophon"}
                 </div>
                 <div className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em]">
                   {isFr ? "L'atelier — méthode et standards" : "The atelier — method and standards"}

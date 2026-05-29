@@ -3,7 +3,6 @@ import { Link } from "@tanstack/react-router";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { AutoGlossary } from "@/components/landing/AutoGlossary";
-import { ButeauMonogramInline } from "@/components/atmosphere/ButeauMonogramInline";
 import { HeartbeatCta } from "@/components/layout/HeartbeatCta";
 
 // ═══════════════════════════════════════════════════════════
@@ -284,7 +283,7 @@ export function CarnetContent({ variant, onClose }: CarnetContentProps) {
             >
               <div>
                 <div className="eyebrow text-[color:var(--color-navy)] mb-1">
-                  <ButeauMonogramInline className="mr-1" /> {isFr ? "Lire le carnet complet" : "Read the full address book"}
+                  {isFr ? "Lire le carnet complet" : "Read the full address book"}
                 </div>
                 <div className="font-[family-name:var(--font-display)] font-bold text-[color:var(--color-navy-deep)] text-base uppercase tracking-[0.04em]">
                   {isFr ? "Le carnet de l'emprunteur québécois" : "The Quebec borrower's address book"}
