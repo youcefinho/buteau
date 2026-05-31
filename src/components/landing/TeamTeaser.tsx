@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Container } from "@/components/layout/Container";
@@ -45,12 +46,15 @@ export function TeamTeaser() {
           tone="dark"
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[clamp(1.5rem,2.5vw,2rem)] mb-12">
+        <div
+          className="flex flex-wrap justify-center gap-[var(--team-gap)] mb-12"
+          style={{ "--team-gap": "clamp(1.5rem,2.5vw,2rem)" } as CSSProperties}
+        >
           {members.map((m) => (
             <Link
               key={m.name}
               to="/equipe"
-              className="group block bg-[color:var(--color-cream)] overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-orange)]/60"
+              className="group block w-full sm:w-[calc((100%-var(--team-gap))/2)] lg:w-[calc((100%-3*var(--team-gap))/4)] bg-[color:var(--color-cream)] overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-orange)]/60"
             >
               <div className="relative h-72 lg:h-80 overflow-hidden bg-gradient-to-br from-[color:var(--color-navy)] to-[color:var(--color-taupe)]">
                 <img
