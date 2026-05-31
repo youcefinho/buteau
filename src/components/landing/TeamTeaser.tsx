@@ -50,9 +50,9 @@ export function TeamTeaser() {
           className="flex flex-wrap justify-center gap-[var(--team-gap)] mb-12"
           style={{ "--team-gap": "clamp(1.5rem,2.5vw,2rem)" } as CSSProperties}
         >
-          {members.map((m) => (
+          {members.map((m, idx) => (
             <Link
-              key={m.name}
+              key={idx}
               to="/equipe"
               className="group block w-full sm:w-[calc((100%-var(--team-gap))/2)] lg:w-[calc((100%-3*var(--team-gap))/4)] bg-[color:var(--color-cream)] overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 border border-[color:var(--color-taupe)]/40 hover:border-[color:var(--color-orange)]/60"
             >

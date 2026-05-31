@@ -37,7 +37,7 @@ export function TeamGrid() {
         >
           {members.map((m, idx) => (
             <article
-              key={m.name}
+              key={idx}
               className="group relative flex flex-col w-full sm:w-[calc((100%-var(--team-gap))/2)] lg:w-[calc((100%-3*var(--team-gap))/4)]"
             >
               {/* Photo with editorial frame — h-80 lg:h-[24rem] pour 4 cards balance */}

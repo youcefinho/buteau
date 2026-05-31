@@ -83,9 +83,6 @@ export const translations = {
       websiteBy: "Site web par",
       coverStatement:
         "L'hypothèque ne devrait jamais être un mystère.",
-      colophon: "Colophon",
-      colophonPrinted: "Imprimé en pixels — Cloudflare, Quebec",
-      issn: "Andrew Buteau — Inscrit AMF",
     },
 
     home: {
@@ -1079,9 +1076,6 @@ export const translations = {
       territoryValue: "All of Quebec",
       websiteBy: "Website by",
       coverStatement: "A mortgage should never be a mystery.",
-      colophon: "Colophon",
-      colophonPrinted: "Printed in pixels — Cloudflare, Quebec",
-      issn: "Andrew Buteau — AMF registered",
     },
 
     home: {
