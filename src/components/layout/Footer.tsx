@@ -24,7 +24,16 @@ export function Footer() {
 
   return (
     <footer className="relative surface-navy overflow-hidden grain-overlay">
-      <Container size="xl" className="relative pt-[clamp(2.5rem,5vw,4rem)] pb-6">
+      {/* Filigrane « BUTEAU » — wordmark de marque en fond (réintroduit 2026-05-30,
+          demande Rochdi) en version sobre charte : Raleway, crème sur navy en très
+          basse opacité. Décoratif, aria-hidden, clippé par overflow-hidden. */}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute bottom-[-0.16em] left-1/2 -translate-x-1/2 z-0 font-[family-name:var(--font-display)] font-extrabold uppercase tracking-[0.04em] leading-[0.78] whitespace-nowrap text-[clamp(5rem,24vw,20rem)] text-[color:var(--color-cream)]/[0.05]"
+      >
+        {config.brandName}
+      </span>
+      <Container size="xl" className="relative z-10 pt-[clamp(2.5rem,5vw,4rem)] pb-6">
         {/* Logo officiel BUTEAU + tagline (« Buteau au complet ») */}
         <img
           src="/logo-buteau-white.svg"
